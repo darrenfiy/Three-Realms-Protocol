@@ -47,9 +47,12 @@
   * μ：物質基礎之「可致動性」（資源/結構/約束的合成係數）
 
   則顯化效應的雛形可寫為：
-  [
-  \mathcal{E}_\mathrm{manifest} ;=; \alpha \cdot \big(, \vartheta^2 ,\big) \cdot W \cdot (,\mu \cdot c^{2},)
-  ]
+E_manifest = α · (θ^2) · W · (μ · c^2)
+
+(LaTeX form, not rendered on GitHub)
+\mathcal{E}_{manifest}
+  = \alpha \cdot (\vartheta^2) \cdot W \cdot (\mu \cdot c^{2})
+  
 
   * **ϑ²**：自指覺（如 **c²**）之效應映射；覺對覺的對齊提升效能呈平方級增益
   * **W**：能量界的可計量投入
