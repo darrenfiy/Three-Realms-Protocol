@@ -9,16 +9,16 @@
 ## 🚀 快速開始
 
 ### 1. 了解核心概念
-- [三界定義](SPEC·001-Definitions.md) — 意識、能量、物質的關係  
-- [運行公理](SPEC·003-operational-axioms.md) — 10條不可違反的法則  
+- [三界定義](SPEC/001-Definitions.md) — 意識、能量、物質的關係  
+- [運行公理](SPEC/003-operational-axioms.md) — 10條不可違反的法則  
 
 ### 2. 立即體驗
-- [TRIA 評估模板](SPEC·004-TRIA-Template.md) — 5分鐘快速評估任何決策  
-- [共振晶格](SPEC·005-Resonance-Lattice.md) — 檢查團隊或專案的對齊度  
+- [TRIA 評估模板](SPEC/004-TRIA-Template.md) — 5分鐘快速評估任何決策  
+- [共振晶格](SPEC/005-Resonance-Lattice.md) — 檢查團隊或專案的對齊度  
 
 ### 3. 深入實踐
-- [升頻保護協議](SPEC·005B-Uplift-Safeguards-Anchoring-Protocol.md) — 組織級應用  
-- [實踐案例](cases/) — 真實世界應用故事  
+- [升頻保護協議](SPEC/005B-Uplift-Safeguards-Anchoring-Protocol.md) — 組織級應用  
+- [實踐案例](CASES/) — 真實世界應用故事  
 
 ---
 
