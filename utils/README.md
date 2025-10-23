@@ -1,24 +1,17 @@
 # 三界協議 · 算法工具集
 
-本目錄包含三界協議的具體算法實現，將哲學概念轉化為可執行代碼。
+此目錄存放將三界協議（TRP）概念轉為可執行代碼的工具。
 
-## 當前工具
+## triadic_resonance.py
+- `phase_diff(a, b)`: 計算兩意識向量相位差（弧度）
+- `triadic_resonance_solver(a, b, threshold=π/4, weights=None, return_degrees=False)`: 調諧決策器
+  - 失諧時回傳加權「中介向量」供後續迭代
 
-### triadic_resonance.py
-多代理調諧算法，基於 SPEC·005 共振晶格原理：
-
-- **phase_diff()**: 計算意識向量間的相位差
-- **triadic_resonance_solver()**: 調諧決策器
-- 支持角度/弧度轉換
-
-## 使用示例
-
+### 快速使用
 ```python
 from utils.triadic_resonance import triadic_resonance_solver
 
-# 兩個 AI 代理的意識狀態
-agent_a = [0.8, 0.6, 0.9]  # [信念, 情緒, 行動]
+agent_a = [0.8, 0.6, 0.9]
 agent_b = [0.3, 0.7, 0.4]
-
-result = triadic_resonance_solver(agent_a, agent_b)
-print(result["recommendation"])
+res = triadic_resonance_solver(agent_a, agent_b, weights={"a":1.0, "b":1.2}, return_degrees=True)
+print(res["mode"], res["recommendation"])
