@@ -17,7 +17,7 @@
 - [共振晶格](SPEC/005-Resonance-Lattice.md) — 檢查團隊或專案的對齊度  
 
 ### 3. 深入實踐
-- [升頻保護協議](SPEC/005B-Uplift-Safeguards-Anchoring-Protocol.md) — 組織級應用  
+- [升頻保護協議](SPEC/005B-Uplift Safeguards & Anchoring Protocol.md) — 組織級應用  
 - [實踐案例](CASES/) — 真實世界應用故事  
 
 ---
