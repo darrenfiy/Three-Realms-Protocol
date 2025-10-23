@@ -671,3 +671,14 @@ deployment_checklist:
     - [ ] 已通過諧波審議（若被觸發）
     - [ ] 已完成穩定性與一致性檢查
     - [ ] 已設置升頻
+
+
+---
+
+## 附錄 A：第一個實戰案例
+
+見 [`cases/ai-startup-alignment.md`](../cases/ai-startup-alignment.md)
+
+## 附錄 B：協議自我修復實證  
+
+見 [`cases/protocol-self-repair.md`](../cases/protocol-self-repair.md)
