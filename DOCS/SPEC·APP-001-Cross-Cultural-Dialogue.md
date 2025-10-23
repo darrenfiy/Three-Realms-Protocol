@@ -96,7 +96,7 @@ related: ["SPEC·004-TRIA-Template.md", "SPEC·005-Resonance-Lattice.md", "SPEC�
 |------|------|-----------|
 | **TRIA Template** | 三界決策評估表 | [SPEC·004-TRIA-Template.md](../SPEC/004-TRIA-Template.md) |
 | **Resonance Lattice** | 群體能量對齊圖 | [SPEC·005-Resonance-Lattice.md](../SPEC/005-Resonance-Lattice.md) |
-| **Anti-Dogma Checklist (A11)** | 防止教條化 | [SPEC·A11-Anti-Dogma-Checklist.md](../SPEC/A11-Anti-Dogma-Checklist.md) |
+| **Anti-Dogma Checklist (A11)** | 防止教條化 | [SPEC·A11-Anti-Dogma-Checklist.md](../DOCS/A11-Anti-Dogma-Checklist.md) |
 
 ---
 
