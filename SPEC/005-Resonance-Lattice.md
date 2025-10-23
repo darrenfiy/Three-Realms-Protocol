@@ -1,5 +1,3 @@
-三界協議 · 共振晶格 v0.1 (Emergent)
-
 ---
 title: "SPEC · 005 — Resonance Lattice"
 version: "v0.1 (Emergent)"
