@@ -25,6 +25,22 @@ related: ["SPEC·004-TRIA-Template.md", "SPEC·005-Resonance-Lattice.md", "SPEC�
 本模板 **不討論主權、宗教或政權問題**；  
 而是聚焦於 **人類經驗的結構性共通點**：信念（C）、情緒（E）、行動（M）。
 
+
+## ⚠️ 本模板的限制（Limitations）
+
+本模板適用於：
+- ✅ 文化理解與交流
+- ✅ 價值觀差異的探索
+- ✅ 群體共識的尋找（非決策性）
+
+本模板不適用於：
+- ❌ 法律糾紛或權利爭議
+- ❌ 涉及傷害或暴力的情境
+- ❌ 需要專業調解或心理諮商的衝突
+- ❌ 任一方不願意參與的情況
+
+若出現以上情況，請尋求專業協助。
+
 ---
 
 ## 🜂 2. 三界對話框架（Three-Realm Dialogue Frame）
@@ -56,6 +72,39 @@ related: ["SPEC·004-TRIA-Template.md", "SPEC·005-Resonance-Lattice.md", "SPEC�
    - 由主持人朗讀所有共振點，確認每方同意。
    - 差異點不求解決，只需確認「被理解」。
    - 以一句感謝或祝福結尾，標記對話閉環。
+
+
+## 🧭 常見失敗模式與應對（Common Failure Patterns）
+
+**failure_mode_1：表面和諧，實際壓抑**  
+症狀：
+- 大家都說「我理解」但避免眼神接觸
+- 未標記任何差異點，會後出現抱怨  
+介入：
+- 主持人點名場域狀態：「我感到能量在收縮」
+- 提問：「有人願意說出此刻不舒服的感受嗎？」
+
+**failure_mode_2：單方主導，變成演講**  
+症狀：一人佔用 >40% 發言；他人轉入被動等待  
+介入：
+- 溫和打斷並轉場：「感謝分享，現在想聽聽其他人的經驗」
+
+**failure_mode_3：情緒爆發後僵化**  
+症狀：爆發後全場緊繃沉默、真實性下降  
+介入：
+- 正常化情緒：「謝謝你讓我們看見情緒的重量」
+- 再提問群體感受：「當你聽到這份情緒，你的感受是？」
+
+
+## ⏱️ 會議時長規劃（Time Planning）
+
+- **Minimum Viable Dialogue｜45 分鐘**
+  - 開場 5 · C 10 · E 15 · M 10 · 整合 5
+- **Standard Session｜90 分鐘**
+  - 靜心 5 · 開場 10 · C/E/M 60 · 整合 15
+- **Deep Dive｜180 分鐘**
+  - 多輪循環 + 茶歇，預留沉澱期
+
 
 ---
 
@@ -97,6 +146,13 @@ related: ["SPEC·004-TRIA-Template.md", "SPEC·005-Resonance-Lattice.md", "SPEC�
 | **TRIA Template** | 三界決策評估表 | [SPEC·004-TRIA-Template.md](../SPEC/004-TRIA-Template.md) |
 | **Resonance Lattice** | 群體能量對齊圖 | [SPEC·005-Resonance-Lattice.md](../SPEC/005-Resonance-Lattice.md) |
 | **Anti-Dogma Checklist (A11)** | 防止教條化 | [SPEC·A11-Anti-Dogma-Checklist.md](../DOCS/A11-Anti-Dogma-Checklist.md) |
+| **Uplift Safeguards** | 群體對話升頻的保護與少數保障 | [SPEC·005B-Uplift-Safeguards-Anchoring-Protocol.md](../SPEC/005B-Uplift-Safeguards-Anchoring-Protocol.md) |
+
+**將對話視為「微型升頻事件」**  
+當共識出現並達到 ~51% 共鳴時，參照 005B 啟動升頻保護：
+- 確保少數聲音被真實聽見（非表面同意）
+- 記錄異議與保留條件
+- 避免「假性共識」造成後續反彈
 
 ---
 
