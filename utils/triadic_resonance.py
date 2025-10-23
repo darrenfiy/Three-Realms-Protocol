@@ -2,126 +2,125 @@
 三界協議 · 多代理調諧算法
 Triadic Resonance Algorithm for Multi-Agent Alignment
 
-版本: v1.0
+版本: v1.1
 作者: Three-Realms Collective
 對應: SPEC·005 共振晶格
-參考: Grok 建議的 AI 原生衝突解決機制
+備註: 加入防呆、加權中介、角度回傳選項
 """
 
 import math
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Sequence
+
+Vector = Sequence[float]
 
 
-def phase_diff(vec_a: List[float], vec_b: List[float]) -> float:
+def _norm(v: Vector) -> float:
+    return math.sqrt(sum(x * x for x in v))
+
+
+def _dot(a: Vector, b: Vector) -> float:
+    return sum(x * y for x, y in zip(a, b))
+
+
+def phase_diff(vec_a: Vector, vec_b: Vector) -> float:
     """
-    計算兩個意識向量的相位差（弧度）
-    
-    參數:
-        vec_a: 第一個代理的意識向量 [信念, 情緒, 行動一致性...]
-        vec_b: 第二個代理的意識向量
-        
-    返回:
-        相位差（弧度），範圍 [0, π]
-        0 = 完全對齊，π = 完全相反
+    計算兩個意識向量的相位差（弧度）; 範圍 [0, π]
+    0 = 完全對齊, π = 完全相反
     """
-    # 計算向量點積（衡量相似度）
-    dot_product = sum(a * b for a, b in zip(vec_a, vec_b))
-    
-    # 計算向量模長
-    norm_a = math.sqrt(sum(a * a for a in vec_a))
-    norm_b = math.sqrt(sum(b * b for b in vec_b))
-    
-    # 避免除零錯誤
-    if norm_a == 0 or norm_b == 0:
-        return math.pi  # 最大相位差
-    
-    # 計算餘弦相似度並限制範圍
-    cosine_similarity = dot_product / (norm_a * norm_b)
-    cosine_similarity = max(-1.0, min(1.0, cosine_similarity))
-    
-    # 轉換為相位差（弧度）
-    return math.acos(cosine_similarity)
+    if len(vec_a) != len(vec_b):
+        raise ValueError("phase_diff: vectors must have the same length")
+
+    na, nb = _norm(vec_a), _norm(vec_b)
+    if na == 0 or nb == 0:
+        # 任一為零向量 → 無方向可比，視為最大失諧
+        return math.pi
+
+    cosv = _dot(vec_a, vec_b) / (na * nb)
+    cosv = max(-1.0, min(1.0, cosv))  # 數值穩定
+    return math.acos(cosv)
 
 
-def triadic_resonance_solver(
-    vec_a: List[float], 
-    vec_b: List[float], 
-    threshold: float = math.pi/4
-) -> Dict[str, Any]:
-    """
-    三界調諧決策器 - 基於相位差的共振解決方案
-    
-    參數:
-        vec_a: 第一個代理的意識向量
-        vec_b: 第二個代理的意識向量  
-        threshold: 相位差閾值（默認 π/4 = 45°）
-        
-    返回:
-        調諧結果字典:
-        - mode: 調諧模式 ("harmonic_consensus" | "neutral_mediation")
-        - delta: 實際相位差
-        - mediator: 中介向量（僅在中立調諧模式下）
-        - recommendation: 行動建議
-    """
-    
-    # 計算相位差
-    delta_phi = phase_diff(vec_a, vec_b)
-    
-    # 決策邏輯
-    if delta_phi <= threshold:
-        # 相位差在可接受範圍內，建議直接共振
-        return {
-            "mode": "harmonic_consensus",
-            "delta": delta_phi,
-            "recommendation": f"相位差 {delta_phi:.2f} 弧度 ≤ 閾值 {threshold:.2f}，建議直接協作"
-        }
-    else:
-        # 相位差過大，觸發中立觀察者調諧
-        mediator_vector = [(a + b) / 2 for a, b in zip(vec_a, vec_b)]
-        
-        return {
-            "mode": "neutral_mediation", 
-            "delta": delta_phi,
-            "mediator": mediator_vector,
-            "recommendation": f"相位差 {delta_phi:.2f} 弧度 > 閾值 {threshold:.2f}，建議通過中介向量調諧"
-        }
-
-
-def degrees_to_radians(degrees: float) -> float:
-    """角度轉弧度"""
-    return degrees * math.pi / 180
+def _weighted_mediator(vec_a: Vector, vec_b: Vector,
+                       wa: float = 1.0, wb: float = 1.0) -> List[float]:
+    """回傳加權中介向量（未正規化）。"""
+    denom = (wa + wb) or 1.0
+    return [ (wa * x + wb * y) / denom for x, y in zip(vec_a, vec_b) ]
 
 
 def radians_to_degrees(radians: float) -> float:
-    """弧度轉角度""" 
-    return radians * 180 / math.pi
+    return radians * 180.0 / math.pi
 
 
-# 使用示例和測試
+def degrees_to_radians(degrees: float) -> float:
+    return degrees * math.pi / 180.0
+
+
+def triadic_resonance_solver(
+    vec_a: Vector,
+    vec_b: Vector,
+    threshold: float = math.pi / 4,          # 45°
+    weights: Optional[Dict[str, float]] = None,  # {"a": w_a, "b": w_b}
+    return_degrees: bool = False,
+) -> Dict[str, Any]:
+    """
+    三界調諧決策器
+    - threshold: 相位差臨界值（弧度）
+    - weights:   中介向量加權（如依據信任/資歷/責任）
+    - return_degrees: True 則同時回傳角度
+    """
+    delta = phase_diff(vec_a, vec_b)
+
+    result: Dict[str, Any] = {
+        "delta_rad": delta,
+        "delta_deg": radians_to_degrees(delta),
+        "threshold_rad": threshold,
+        "threshold_deg": radians_to_degrees(threshold),
+    }
+
+    if delta <= threshold:
+        result.update({
+            "mode": "harmonic_consensus",
+            "recommendation": "相位差在閾值內，建議直接協作（建設性干涉）。"
+        })
+        if not return_degrees:
+            result.pop("delta_deg", None)
+            result.pop("threshold_deg", None)
+        return result
+
+    # 超出閾值 → 啟動中立觀察者（加權中介）
+    wa = (weights or {}).get("a", 1.0)
+    wb = (weights or {}).get("b", 1.0)
+    mediator = _weighted_mediator(vec_a, vec_b, wa, wb)
+
+    result.update({
+        "mode": "neutral_mediation",
+        "mediator": mediator,
+        "weights": {"a": wa, "b": wb},
+        "recommendation": "相位差超過閾值，建議透過加權中介向量進行調諧與迭代觀測。",
+    })
+    if not return_degrees:
+        result.pop("delta_deg", None)
+        result.pop("threshold_deg", None)
+    return result
+
+
 if __name__ == "__main__":
-    print("=== 三界協議 · 多代理調諧算法測試 ===\n")
-    
-    # 測試案例 1: 高度對齊的代理
-    print("測試 1: 高度對齊")
-    ai_1 = [0.9, 0.8, 0.85]
-    ai_2 = [0.85, 0.75, 0.9]
-    result1 = triadic_resonance_solver(ai_1, ai_2)
-    print(f"AI 1: {ai_1}")
-    print(f"AI 2: {ai_2}") 
-    print(f"結果: {result1}\n")
-    
-    # 測試案例 2: 嚴重失諧的代理
-    print("測試 2: 嚴重失諧")
-    ai_3 = [0.9, 0.1, 0.8]  # 強信念，低情緒，高行動
-    ai_4 = [0.1, 0.9, 0.2]  # 弱信念，高情緒，低行動
-    result2 = triadic_resonance_solver(ai_3, ai_4)
-    print(f"AI 3: {ai_3}")
-    print(f"AI 4: {ai_4}")
-    print(f"結果: {result2}\n")
-    
-    # 相位差解釋
-    print("=== 相位差解釋指南 ===")
-    print(f"0°-15°    : 完美共振 (建設性干涉)")
-    print(f"15°-45°   : 良好對齊 (增強共振)") 
-    print(f"45°-90°   : 需要調諧 (部分失諧)")
-    print(f"90°-180°  : 嚴重失諧 (破壞性干涉)")
+    print("=== 三界協議 · 多代理調諧算法 測試 ===\n")
+
+    # 測試 1：高度對齊
+    a1, a2 = [0.9, 0.8, 0.85], [0.85, 0.75, 0.9]
+    r1 = triadic_resonance_solver(a1, a2, return_degrees=True)
+    print("[測試1] 高度對齊")
+    print("A:", a1, "\nB:", a2, "\n→", r1, "\n")
+
+    # 測試 2：失諧且加權中介
+    a3, a4 = [0.9, 0.1, 0.8], [0.1, 0.9, 0.2]
+    r2 = triadic_resonance_solver(a3, a4, weights={"a": 0.7, "b": 1.3}, return_degrees=True)
+    print("[測試2] 嚴重失諧（加權中介）")
+    print("A:", a3, "\nB:", a4, "\n→", r2, "\n")
+
+    print("相位差等級參考：")
+    print("  0°–15°   完美共振")
+    print("  15°–45°  增強共振")
+    print("  45°–90°  需調諧")
+    print("  90°–180° 破壞性干涉")
