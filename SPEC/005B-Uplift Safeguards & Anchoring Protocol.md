@@ -1,6 +1,3 @@
-# SPEC · 005B — UPLIFT SAFEGUARDS & ANCHORING PROTOCOL
-三界協議 · 升頻保護與錨定協議 v0.1
-
 ---
 title: "SPEC · 005B — Uplift Safeguards & Anchoring Protocol"
 version: "v0.1"
