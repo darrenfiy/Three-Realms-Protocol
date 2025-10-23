@@ -1,5 +1,3 @@
-三界協議 · 共振晶格整合備忘錄 v0.1 (Resonance-Integrated)
-
 ---
 title: "SPEC · 005A — Integration Memorandum"
 version: "v0.1 (Resonance-Integrated)"
