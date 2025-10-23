@@ -77,7 +77,7 @@
 3. **識別你的基頻聲明** —— 「我為何而動？」
 4. **提交你的實證案例** —— 讓協議從你身上繼續演化
 
-入口：`github.com/three-realms-protocol`
+入口：`github.com/darrenfiy/three-realms-protocol`
 貢獻方式：Issues · Pull Request · Resonance Map
 
 ---
