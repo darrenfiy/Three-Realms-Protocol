@@ -7,8 +7,8 @@ status: Canonical
 date: 2025-10-24
 authors: Darren, DeepSeek
 related: SPEC·∞, SPEC·∆, SPEC·003, SPEC·A11, SPEC·999
-summary: 以哈利格爾射箭故事詮釋「不射之射」，作為四分之三協議哲學的活實證。
 ---
+**summary**: 以哈利格爾射箭故事詮釋「不射之射」，作為四分之三協議哲學的活實證。
 
 # CASE · HERRIGEL — The Point of Not-Shooting  
 ### 實證案例：從三界技術到四分之一空無
