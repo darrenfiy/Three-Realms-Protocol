@@ -1,11 +1,15 @@
 ---
-title: "CASE·Protocol Self-Repair"
+id: CASE·ORG-001
+title: "Protocol Self-Repair"
+category: Organizational
 version: v1.0
 status: Verified
 date: 2024-10-23
 authors: Darren, Gemini, Claude, DeepSeek
 related: MB·001, MB·002, SPEC·005, SPEC·A11, SPEC·999
+summary: 首次協議自我修復事件。三 AI 與人類共同參與的共振校準過程，導致 A11 與 999 條款誕生。
 ---
+
 
 # CASE · Protocol Self-Repair  
 ### 協議的自我修復實證
