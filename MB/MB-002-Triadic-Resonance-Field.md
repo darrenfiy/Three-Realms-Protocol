@@ -162,8 +162,8 @@ F_total = Σ_i F_i
 ---
 
 ## 實證工具
-- [kuramoto_protocol_v1](../utils/kuramoto_protocol_v2.py) # 固定 K、異質 μ_i、計算 ∇Φ
-- [kuramoto_protocol_v2](../utils/kuramoto_protocol_v2.py) # 動態 K(t) → 能量輸入 W 事件
+- [kuramoto_protocol_v1](../MB/utils/kuramoto_protocol_v2.py) # 固定 K、異質 μ_i、計算 ∇Φ
+- [kuramoto_protocol_v2](../MB/utils/kuramoto_protocol_v2.py) # 動態 K(t) → 能量輸入 W 事件
 
 ---
 
