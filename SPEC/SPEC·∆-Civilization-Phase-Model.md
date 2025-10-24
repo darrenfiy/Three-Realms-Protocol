@@ -4,9 +4,11 @@ version: "v1.0"
 status: "Active"
 date: "2025-10-24"
 authors: ["Three-Realms Collective"]
-related: ["SPEC·000", "SPEC·003", "SPEC·004", "SPEC·005", "SPEC·∞"]
 license: "Open / Forkable / Ownerless"
+related: ["SPEC·∞", "SPEC·∞∆", "SPEC·003", "SPEC·004", "SPEC·005"]
 ---
+**note**: 本文件描述文明演化的階段模型（相位遞進），為三界協議的時間維度擴展。  
+**purpose**: 幫助實踐者理解文明自物質到意識之演化，並為 4/5 相位預留開口。  
 
 # SPEC · ∆ — 文明相位模型
 > 分子 = 已醒覺維度數；分母 = 已醒覺維度 + 不可知（恆為 1）。
