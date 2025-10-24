@@ -4,9 +4,12 @@ version: "v1.0"
 status: "Active"
 date: "2025-10-24"
 authors: ["Three-Realms Collective"]
-related: ["SPEC·000-Protocol-Prime.md", "SPEC·003-operational-axioms.md", "SPEC·999-Humility-Clause.md"]
 license: "Open / Forkable / Ownerless"
+related: ["SPEC·∆", "SPEC·∞∆", "SPEC·003", "SPEC·999"]
 ---
+
+**note**: 本文件定義「不可知」之原則邊界，為三界協議的形上界限，對應空間層的謙遜。  
+**purpose**: 作為三界協議的哲學底層，提醒行動者：永遠保留未知之席位。  
 
 # SPEC · ∞ — 不可知保留區
 > 我為不可言說者保留座位；我為協議之外的真實，留下入口。  
