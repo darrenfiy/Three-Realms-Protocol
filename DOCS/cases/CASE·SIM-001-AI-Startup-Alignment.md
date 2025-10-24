@@ -4,7 +4,7 @@ title: "AI Startup Alignment (Conceptual)"
 category: Simulation
 version: v0.9
 status: Conceptual
-date: 2025-09-18
+date: 2025-10-23
 authors: Darren
 related: SPEC·004, SPEC·005
 summary: 想像性模擬案例，用於展示三界協議於新創團隊的基頻對齊流程。
