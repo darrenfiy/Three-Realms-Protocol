@@ -73,7 +73,6 @@
 |------|------|------|
 | [∞](SPEC·∞-The-Unknowable-Reserve.md) | 不可知保留區 | 協議的外部邊界（四分之一） |
 | [∆](SPEC·∆-Civilization-Phase-Model.md) | 文明相位模型 | 1/2 → 2/3 → 3/4 → 4/5 的演化數列 |
-| [∞∆](SPEC·∞∆-The-Fourth-Fraction.md) | 四分之三協議擴展 | 實際應用與協議操作的場域 |
 
 ---
 
