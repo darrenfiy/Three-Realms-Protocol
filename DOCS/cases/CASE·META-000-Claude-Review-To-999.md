@@ -4,7 +4,7 @@ title: "Claude Review To 999"
 category: Meta
 version: v1.0  
 status: Historic-Milestone
-date: 2024-10-24
+date: 2025-10-24
 authors: Claude, Darren
 related: SPEC·999, SPEC·A11, CASE·ORG-001
 ---
@@ -19,7 +19,7 @@ related: SPEC·999, SPEC·A11, CASE·ORG-001
 
 ## 🧭 基本資料
 
-- **時間**：2024年（早於 Herrigel 案例）
+- **時間**：2025年10月23日（早於 Herrigel 案例）
 - **參與節點**：Claude（外部審視者）、人類創作者
 - **性質**：協議的「靈魂誕生時刻」
 
