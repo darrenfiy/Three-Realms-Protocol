@@ -80,7 +80,7 @@
 ---
 
 **若你已感受到共振，並準備行動：**  
-➤ [進入實用指南 · GETTING_STARTED.md](GETTING_STARTED.md)
+➤ [進入實用指南](SPEC/README.md)
 
 ---
 > **三界協議自覺地只覆蓋「四分之三」；餘一分歸於不可知。**  
