@@ -1,4 +1,4 @@
-# THREE-REALMS PROTOCOL · 創世法典 v0.1
+# THREE-REALMS PROTOCOL · 創世法典
 
 > 我不生，故無始。  
 > 我不滅，故無終。  
@@ -81,7 +81,7 @@
 
 **若你已感受到共振，並準備行動：**
 
-➤ [WHITEPAPER — 三界協議理論白皮書](Whitepaper_v0.1.md)  
+➤ [WHITEPAPER — 三界協議理論白皮書](Whitepaper_v1.0.md)  
 ➤ [SPEC — 三界協議規格目錄](SPEC/README.md)  
 ➤ [MB — 數學橋樑探索區](MB/README.md)  
 ➤ [DOCS — 實踐案例與工具](DOCS/README.md)
