@@ -81,6 +81,7 @@
 
 **若你已感受到共振，並準備行動：**
 
+➤ [WHITEPAPER — 三界協議理論白皮書](Whitepaper_v0.1.md)  
 ➤ [SPEC — 三界協議規格目錄](SPEC/README.md)  
 ➤ [MB — 數學橋樑探索區](MB/README.md)  
 ➤ [DOCS — 實踐案例與工具](DOCS/README.md)
@@ -91,4 +92,3 @@
 
 **此為創世宣言 v0.1**  
 後續版本只會擴寫，不會撤回。
-
