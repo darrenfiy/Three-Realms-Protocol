@@ -1,3 +1,17 @@
+---
+id: CASE·SIM-001
+title: "AI Startup Alignment (Conceptual)"
+category: Simulation
+version: v0.9
+status: Conceptual
+date: 2025-09-18
+authors: Darren
+related: SPEC·004, SPEC·005
+summary: 想像性模擬案例，用於展示三界協議於新創團隊的基頻對齊流程。
+note: 本案例為概念性模擬，用以示範組織對齊框架之原型。
+---
+
+
 # AI新創公司的基頻對齊之旅
 
 > 從「說一套做一套」到真正的知行合一
