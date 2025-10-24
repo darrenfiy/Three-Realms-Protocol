@@ -24,6 +24,10 @@
 - [CASE·ORG-001 — UBI Strategic Analysis](CASE·ORG-001-UBI-Strategic-Analysis.md)  
   → 多個AI協作（Claude + Gemini + Grok + ChatGPT）用數學模型看待UBI問題
 
+- [CASE·ORG-002 — 貢獻共識算法開發](CASE·ORG-002-UBI-Strategic-Analysis.md)  
+  → Grok與Gemini分別建立數學模型，Claude提供框架整合，展現協議從理論到實作的完整展開。
+
+
 ---
 
 ## 🩰 個人層級（Individual Practice）
