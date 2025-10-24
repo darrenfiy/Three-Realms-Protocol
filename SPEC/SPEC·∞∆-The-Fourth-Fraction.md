@@ -1,5 +1,5 @@
 ---
-title: "SPEC · ∞∆ — The Fourth Fraction · 四分之三協議擴展條款"
+title: "SPEC · ∞∆ — The Fourth Fraction"
 version: "v1.0"
 status: "Active"
 date: "2025-10-24"
