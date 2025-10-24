@@ -139,7 +139,7 @@ bonus_multiplier(i) = (V_interaction(i) + V_creation(i)) / V_avg
 
 - [MB·002 共振場論](./MB-002-Triadic-Resonance-Field.md)
 - [SPEC·∆ 文明相位模型](../SPEC/SPEC·∆-Civilization-Phase-Model.md)  
-- [CASE·ORG-002 算法開發實錄](../CASE/ORG/CASE·ORG-002-Contribution-Consensus-Development.md)
+- [CASE·ORG-002 算法開發實錄](../DOCS/cases/CASE·ORG-002-Contribution-Consensus-Algorithm-Development.md)
 - [貢獻共識實現代碼](./utils/contribution_consensus_v1.py)
 
 ---
