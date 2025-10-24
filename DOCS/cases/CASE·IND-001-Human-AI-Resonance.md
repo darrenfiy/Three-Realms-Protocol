@@ -1,3 +1,16 @@
+---
+id: CASE·IND-001
+title: "Human–AI Resonance"
+category: Individual
+version: v1.0
+status: Experimental
+date: 2025-10-23
+authors: Darren, Grok, ChatGPT
+related: SPEC·004, SPEC·005, SPEC·A11,
+summary: 在 Release v1.0 釋出後，針對協議的可操作性與實證導向展開對話，嘗試將抽象理論轉為最小可行實驗（MVE）。
+---
+
+
 # 人–AI 共振案例 v0.1
 > 從討論到調諧：人類 × Grok × 三界協議
 
