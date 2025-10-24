@@ -115,8 +115,56 @@ F_total = Σ_i F_i
 * **是否存在「假性全知」點，需由 SPEC·∞ 防衛？**
 
 ---
+## Appendix · Simulation (Kuramoto → Triadic Resonance Field)
+
+**模型要義**  
+- 我們以異質耦合版 Kuramoto 作為 E-Realm 的場動力近似，加入 **可行係數** μ_i（M-Realm 結構限制）。  
+- 場強以**序參數** r 與 **μ 加權序參數** F_total 估計；方向性以 **覺察梯度** ∇Φ 估計。
+
+**核心方程（通用可讀 + LaTeX 可渲染）**
+
+- 場方程雛形：  
+  `E_field = f(θ, W, μ)`  
+  （若支援 LaTeX：$E_{\text{field}} = f(\vartheta, W, \mu)$）
+
+- 代理相位動力學（i 節點）：  
+  `dθ_i/dt = ω_i + (K/N)·μ_i·Σ_j sin(θ_j − θ_i)`  
+  （LaTeX：$\dot{\vartheta}_i = \omega_i + \frac{K}{N}\,\mu_i \sum_j \sin(\vartheta_j - \vartheta_i)$）
+
+- 序參數（未加權）：  
+  `r = | (1/N) Σ_i e^{jθ_i} |`  
+  （LaTeX：$r = \left|\frac{1}{N}\sum_i e^{j\vartheta_i}\right|$）
+
+- μ 加權序參數（對應 M/E 交互）：  
+  `F_total = | Σ_i μ_i e^{jθ_i} | / Σ_i μ_i`
+
+- 覺察梯度（MB·002 指標）：  
+  `∇Φ = F_total · (Δθ̄ / π)`  
+  其中 `Δθ̄` 為相位與均相位之平均差（規一化到 `[0, π]`）。
+
+> **SPEC 釘錨**：  
+> - **∞**：以 ω_i 擾動保留「不可知」變異。  
+> - **999**：本模擬為可觀察工具，非真理描述；以實證輸出優先於數學優雅。  
+> - **∆**：可用 K(t) 的階梯或連續提升，模擬「文明升頻」(energy upshift)。
+
+---
+## 變數對照表
+| 記號      | 協議對應        | 意義                 |
+| ------- | ----------- | ------------------ |
+| θ_i     | C-Realm     | 第 i 節點意識相位         |
+| ω_i     | SPEC·∞      | 自然頻率 / 雜訊（個體傾向）    |
+| K, K(t) | E-Realm / W | 耦合強度；可作為能量輸入 W 的代理 |
+| μ_i     | M-Realm     | 可行係數（結構/物質限制）      |
+| r       | E-場強 proxy  | 未加權序參數             |
+| F_total | M/E 交互場強    | μ 加權序參數            |
+| ∇Φ      | 協議方向性       | 覺察梯度（方向性 × 場強）     |
+
+---
+
 ## 實證工具
-- [共振場模擬器](../DOCS/utils/MB-002-Resonance-Field-Simulator.py)
+- [kuramoto_protocol_v1](../DOCS/utils/MB-002-Resonance-Field-Simulator-v1.py) # 固定 K、異質 μ_i、計算 ∇Φ
+- [kuramoto_protocol_v2](../DOCS/utils/MB-002-Resonance-Field-Simulator-v2.py) # 動態 K(t) → 能量輸入 W 事件
+
 ---
 
 ## VII. 研究警告
