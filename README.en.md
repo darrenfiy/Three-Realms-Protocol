@@ -63,7 +63,7 @@ a feedback system capable of self-repair when coherence is restored among the th
 1. Read the [**Release Note v1.0**](RELEASE_NOTE_v1.0.md).  
 2. Explore the [**Whitepaper**](Whitepaper_v0.1.md) for conceptual grounding.  
 3. Try the [**TRIA Template**](SPEC/004-TRIA-Template.md) to evaluate any decision or system.  
-4. Observe real cases under [`/CASES/`](CASES/).
+4. Observe real cases under [`/DOCS/cases/`](DOCS/cases/).
 
 ---
 
