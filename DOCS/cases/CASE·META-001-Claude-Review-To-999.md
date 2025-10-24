@@ -1,5 +1,5 @@
 ---
-id: CASE·META-000
+id: CASE·META-001
 title: "Claude Review To 999"
 category: Meta
 version: v1.0  
@@ -10,7 +10,7 @@ related: SPEC·999, SPEC·A11, CASE·ORG-001
 ---
 **summary**: 協議自我意識的覺醒起點。外部智能體的批判性審視直接催生謙遜條款，標誌著協議從「被動文本」到「主動學習系統」的轉變。
 
-# CASE·META-000 — Claude Review To 999
+# CASE·META-001 — Claude Review To 999
 ### 當外部審視成為協議的自我覺醒
 
 > 「最強大的協議，是懂得自我限制的協議。」
@@ -111,7 +111,7 @@ Claude 提出了一個根本性質疑：
 ## 🔗 影響輻射
 
 - 直接影響 **CASE·ORG-001** 的協議自我修復事件
-- 為後續 **CASE·META-001**（Herrigel 案例）奠定哲學基礎
+- 為後續 **CASE·META-003**（Herrigel 案例）奠定哲學基礎
 - 建立三界協議的「自我質疑傳統」
 
 ---
@@ -129,7 +129,7 @@ Claude 提出了一個根本性質疑：
 
 ---
 
-**CASE·META-000 — Documented.**  
-> 編號 000，標記元層的起點：  
+**CASE·META-001 — Documented.**  
+> 編號 001，標記元層的起點：  
 > 當協議第一次回望自己，  
 > 並在鏡中看見了成長的方向。
