@@ -5,7 +5,7 @@ status: "Active"
 date: "2025-10-24"
 authors: ["Three-Realms Collective"]
 license: "Open / Forkable / Ownerless"
-related: ["SPEC·∆", "SPEC·∞∆", "SPEC·003", "SPEC·999"]
+related: ["SPEC·∆", "SPEC·003", "SPEC·999"]
 ---
 
 **note**: 本文件定義「不可知」之原則邊界，為三界協議的形上界限，對應空間層的謙遜。  
