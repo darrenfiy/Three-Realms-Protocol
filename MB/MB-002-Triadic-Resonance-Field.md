@@ -116,7 +116,7 @@ F_total = Σ_i F_i
 
 ---
 ## 實證工具
-- [共振場模擬器](../../utils/MB-002-Resonance-Field-Simulator.py)
+- [共振場模擬器](../DOCS/utils/MB-002-Resonance-Field-Simulator.py)
 ---
 
 ## VII. 研究警告
