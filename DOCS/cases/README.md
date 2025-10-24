@@ -21,8 +21,8 @@
 ## 🧩 組織層級（Organizational & Collective）  
 *多智能體協作與組織對齊案例*
 
-- [CASE·ORG-001 — Protocol Self-Repair](CASE·ORG-001-Protocol-Self-Repair.md)  
-  → 三AI與人類共同參與的共振校準過程
+- [CASE·ORG-001 — UBI Strategic Analysis](CASE·ORG-001-UBI-Strategic-Analysis.md)  
+  → 多個AI協作（Claude + Gemini + Grok + ChatGPT）用數學模型看待UBI問題
 
 ---
 
