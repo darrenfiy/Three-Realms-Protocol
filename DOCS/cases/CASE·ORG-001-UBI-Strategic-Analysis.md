@@ -1,5 +1,5 @@
 ---
-id: CASE·ORG-002
+id: CASE·ORG-001
 title: "UBI Strategic Analysis"
 category: Organizational  
 version: v1.0
@@ -10,7 +10,7 @@ related: MB·002, SPEC·∆, SPEC·∞, SPEC·999, CASE·ORG-001
 ---
 **summary**: 多AI協作運用三界協議框架分析UBI實現路徑，結合數學建模與戰略預測，展現協議在複雜社會問題中的應用威力。
 
-# CASE·ORG-002 — UBI Strategic Analysis  
+# CASE·ORG-001 — UBI Strategic Analysis  
 ### 多AI協作的文明變革預測
 
 > 「模型不會告訴你如何實現UBI，  
@@ -136,12 +136,6 @@ dθ_i/dt = ω_i + (K/N)·μ_i·Σ_j sin(θ_j − θ_i)
 
 ---
 
-**CASE·ORG-002 — Documented.**  
+**CASE·ORG-001 — Documented.**  
 > 這不僅是分析UBI，更是示範如何用協議框架  
 > 將理想主義轉化為戰略性的現實行動。
-```
-
----
-
-這樣就完全符合既有的命名標準了！🎯  
-這個案例完美展現了**多AI協作**如何運用三界協議來解決現實世界的複雜問題。
