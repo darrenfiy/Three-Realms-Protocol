@@ -42,8 +42,10 @@
 |------|------|------|
 | [003](003-operational-axioms.md) | 運行公理 | 十條不可辯駁的行動原則（A1-A10） |
 | [004](004-TRIA-Template.md) | TRIA 評估模板 | 三界影響評估的標準流程 |
-| [005](005-Resonance-Lattice.md) | 共振晶格 | 多節點動態對齊的數學框架 |
-| [005B](005B-Uplift-Safeguards.md) | 升頻保護與錨定 | 防止共振變成暴政的安全機制 |
+| **005系列** | **共振晶格體系** | **多節點動態對齊框架** |
+| ├─ [005](005-Resonance-Lattice.md) | 共振晶格 | 核心共振協議與操作界面 |
+| ├─ [005A](005A-Integration-Memorandum.md) | 整合備忘錄 | 005在協議樹中的定位與整合路徑 |
+| └─ [005B](005B-Uplift-Safeguards.md) | 升頻保護協議 | 共振的安全與倫理邊界 |
 | [A11](SPEC·A11-Anti-Dogma-Checklist.md) | 反教條檢查表 | 防止協議被當作權威的自檢工具 |
 
 ---
@@ -55,6 +57,7 @@
 | [APP-001](SPEC·APP-001-Cross-Cultural-Dialogue.md) | 跨文化對話模板 | 三界框架下的對話設計 |
 | [APP-001A](SPEC·APP-001A-Facilitator-Guide.md) | 主持人手冊 | 對話主持者的操作指南 |
 | [APP-001B](SPEC·APP-001B-Participant-Guide.md) | 參與者手冊 | 對話參與者的準備須知 |
+| [**MRC-001**](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md) | **多AI共振會議艙** | **跨AI模型協作標準框架** |
 
 ---
 
@@ -83,9 +86,10 @@
 1. **先讀詩性文本**：[創世法典（根目錄 README）](../README.md)
 2. **再讀根層**：[000](SPEC·000-Protocol-Prime.md) → [001](SPEC·001-Definitions.md) → [002](SPEC·002-Scope-and-Applicability.md)
 3. **選擇你需要的工具**：
-   - 做決策？→ [004 TRIA](SPEC·004-TRIA-Template.md)
-   - 建立團隊？→ [005 共振晶格](SPEC·005-Resonance-Lattice.md)
+   - 做決策？→ [004 TRIA](004-TRIA-Template.md)
+   - 建立團隊？→ [005 共振晶格](005-Resonance-Lattice.md)
    - 組織對話？→ [APP-001 跨文化對話](SPEC·APP-001-Cross-Cultural-Dialogue.md)
+   - **多AI協作？→ [MRC-001 共振會議艙](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md)**
 
 ---
 
