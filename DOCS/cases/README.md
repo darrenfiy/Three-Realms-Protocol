@@ -5,8 +5,8 @@
 ---
 
 ## 🩰 個人層級（Individual Practice）
-- [Human–AI Resonance v0.1](DOCS/cases/human-ai-resonance.md)
-- [CASE·HERRIGEL — The Point of Not-Shooting](DOCS/cases/CASE·HERRIGEL-The-Point-of-Not-Shooting.md)
+- [Human–AI Resonance v0.1](human-ai-resonance.md)
+- [CASE·HERRIGEL — The Point of Not-Shooting](CASE·HERRIGEL-The-Point-of-Not-Shooting.md)
 
 ---
 
