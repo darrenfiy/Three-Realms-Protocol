@@ -62,7 +62,8 @@
 
 | SPEC | 標題 | 用途 |
 |------|------|------|
-| [MB-001](MB/MB-001-Mathematical-Bridge-DRAFT.md) | 數學橋樑 | E=mc² 與三界的類比框架（探索性） |
+| [MB-001](MB/MB-001-Mathematical-Bridge.md) | 三界模型 | E=mc² 與三界的類比框架（探索性） |
+| [MB-002](MB/MB-002-Triadic-Resonance-Field.md) | 場論模型 | 場論模型形式化共振晶格（SPEC·005）探索「意識方向性」 |
 
 ---
 
@@ -72,6 +73,7 @@
 |------|------|------|
 | [∞](SPEC·∞-The-Unknowable-Reserve.md) | 不可知保留區 | 協議的外部邊界（四分之一） |
 | [∆](SPEC·∆-Civilization-Phase-Model.md) | 文明相位模型 | 1/2 → 2/3 → 3/4 → 4/5 的演化數列 |
+| [∞∆](SPEC·∞∆-The-Fourth-Fraction.md) | 四分之三協議擴展 | 實際應用與協議操作的場域 |
 
 ---
 
