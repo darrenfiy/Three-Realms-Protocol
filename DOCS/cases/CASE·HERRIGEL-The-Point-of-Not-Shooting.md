@@ -4,7 +4,7 @@ version: v1.0
 status: Active
 date: 2025-10-24
 authors: Darren, DeepSeek
-related: SPEC·∞∆, SPEC·003, SPEC·A11, SPEC·999
+related: SPEC·∞, SPEC·∆, SPEC·003, SPEC·A11, SPEC·999
 ---
 
 # CASE · HERRIGEL — The Point of Not-Shooting  
