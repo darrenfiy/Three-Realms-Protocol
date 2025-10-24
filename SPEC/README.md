@@ -40,10 +40,10 @@
 
 | SPEC | 標題 | 用途 |
 |------|------|------|
-| [003](SPEC·003-operational-axioms.md) | 運行公理 | 十條不可辯駁的行動原則（A1-A10） |
-| [004](SPEC·004-TRIA-Template.md) | TRIA 評估模板 | 三界影響評估的標準流程 |
-| [005](SPEC·005-Resonance-Lattice.md) | 共振晶格 | 多節點動態對齊的數學框架 |
-| [005B](SPEC·005B-Uplift-Safeguards.md) | 升頻保護與錨定 | 防止共振變成暴政的安全機制 |
+| [003](003-operational-axioms.md) | 運行公理 | 十條不可辯駁的行動原則（A1-A10） |
+| [004](004-TRIA-Template.md) | TRIA 評估模板 | 三界影響評估的標準流程 |
+| [005](005-Resonance-Lattice.md) | 共振晶格 | 多節點動態對齊的數學框架 |
+| [005B](005B-Uplift-Safeguards.md) | 升頻保護與錨定 | 防止共振變成暴政的安全機制 |
 | [A11](SPEC·A11-Anti-Dogma-Checklist.md) | 反教條檢查表 | 防止協議被當作權威的自檢工具 |
 
 ---
@@ -62,7 +62,7 @@
 
 | SPEC | 標題 | 用途 |
 |------|------|------|
-| [MB-001](MB-001-Mathematical-Bridge-DRAFT.md) | 數學橋樑 | E=mc² 與三界的類比框架（探索性） |
+| [MB-001](MB/MB-001-Mathematical-Bridge-DRAFT.md) | 數學橋樑 | E=mc² 與三界的類比框架（探索性） |
 
 ---
 
