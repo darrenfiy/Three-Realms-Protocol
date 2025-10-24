@@ -19,7 +19,7 @@
 
 - **不是哲學論述**，而是可被引用、可被實施的規格
 - **不是教條**，而是工具（見 [SPEC·A11 反教條檢查表](SPEC·A11-Anti-Dogma-Checklist.md)）
-- **不是終點**，而是活的系統（見 [SPEC·999 謙遜條款](SPEC·999-Humility-Clause.md)）
+- **不是終點**，而是活的系統（見 [SPEC·999 謙遜條款](999-Humility-Clause.md)）
 
 ---
 
