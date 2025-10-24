@@ -1,13 +1,14 @@
 ---
-title: "SPEC·∞∆ — The Fourth Fraction · 四分之三協議擴展條款"
+title: "SPEC · ∞∆ — The Fourth Fraction · 四分之三協議擴展條款"
 version: "v1.0"
 status: "Active"
 date: "2025-10-24"
 authors: ["Three-Realms Collective"]
 license: "Open / Forkable / Ownerless"
-related:
-  ["SPEC·000-Protocol-Prime.md", "SPEC·003-operational-axioms.md", "SPEC·005-Resonance-Lattice.md", "SPEC·999-Humility-Clause.md"]
+related: ["SPEC·∞", "SPEC·∆", "SPEC·003", "SPEC·005", "SPEC·999"]  
 ---
+**note**: 本文件整合 ∞ 與 ∆ 條款，作為四分之三協議的時空統合視角。  
+**purpose**: 指導實踐者如何在具體操作與評估中，同時維持「不可知覺察」與「相位謙遜」。
 
 # SPEC·∞∆ — The Fourth Fraction
 ### The Unknowable Reserve + Civilization Phase Model
