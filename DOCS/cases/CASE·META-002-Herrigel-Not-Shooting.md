@@ -1,5 +1,5 @@
 ---
-id: CASE·META-001
+id: CASE·META-002
 title: "Herrigel — The Point of Not-Shooting"
 category: Meta
 version: v1.0
