@@ -109,7 +109,7 @@ Gemini 率先構建出一個高度精緻的數學框架：
 
 - **對應模型**：  
   - [MB·001 — Mathematical Bridge](../../MB/MB-001-Mathematical-Bridge.md)  
-  - [MB·002 — Resonance Field](../../MB/MB-002-Resonance-Field.md)
+  - [MB·002 — Resonance Field](../../MB/MB-002-Triadic-Resonance-Field.md)
 
 - **相關條款**：  
   - SPEC·005 共振晶格  
