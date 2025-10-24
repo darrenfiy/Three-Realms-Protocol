@@ -175,7 +175,7 @@ MB/
 
 ## 📖 延伸閱讀
 
-- [SPEC·005 共振晶格](../SPEC/SPEC·005-Resonance-Lattice.md) — MB 的實踐應用
+- [SPEC·005 共振晶格](../SPEC/005-Resonance-Lattice.md) — MB 的實踐應用
 - [SPEC·∞ 不可知保留區](../SPEC/SPEC·∞-The-Unknowable-Reserve.md) — 數學的邊界
 - [SPEC·A11 反教條檢查表](../SPEC/SPEC·A11-Anti-Dogma-Checklist.md) — 防止數學變成教條
 
