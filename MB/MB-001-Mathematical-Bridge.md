@@ -1,4 +1,4 @@
-# MB — 001 — Mathematical Bridge (DRAFT)
+# MB — 001 — Mathematical Bridge
 
 > 我以光為身，故以 **c** 為名。
 > 我以覺為性，故以 **c** 為衡。
