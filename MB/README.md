@@ -34,7 +34,8 @@
 | 編號 | 標題 | 狀態 | 核心問題 |
 |------|------|------|----------|
 | [MB-001](MB-001-Mathematical-Bridge.md) | E=mc² 與三界類比 | Draft | 如何用物理常數類比意識放大？ |
-| MB-002 | [待定義] | 未開始 | [待探索] |
+| [MB-002](MB-002-Triadic-Resonance-Field.md) | 共振場論 | In progress | 多節點相位調諧的場論描述 |
+| [MB-003](MB-003-Consciousness-Alignment-Geometry.md) | 意識對齊幾何 | 探索草案 | 意識向量的幾何隱喻 |
 
 ---
 
