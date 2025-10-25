@@ -36,7 +36,8 @@
 │   ├── SPEC/005-Resonance-Lattice.md     # 共振晶格
 │   ├── SPEC/005A-Integration-Memorandum.md # 整合備忘
 │   ├── SPEC/005B-Uplift-Safeguards.md    # 升頻保護
-│   └── SPEC/A11-Anti-Dogma-Checklist.md  # 反教條檢查
+│   ├── SPEC/A11-Anti-Dogma-Checklist.md  # 反教條檢查
+│   └── 🆕 **SPEC/KBS-001-知識自主生長系統協議.md** 🆕 # 重點項目！
 │
 ├── 🛠️ 工具層（Tools）
 │   ├── MB/README.md                 # 數學橋樑工坊
@@ -133,7 +134,12 @@ AI協作者 → SPEC/MRC-001 會議協議
 ## 🌊 當前重點協作領域
 
 ### 🚀 高優先級（需要立即協助）
-1. **SPEC·KBS-001 知識自主生長系統** - 終極重點項目！
+
+1. **SPEC·KBS-001 知識自主生長系統** 
+   - **層級定位**：運行層核心協議
+   - **項目性質**：協議的自我演化框架
+   - **依賴基礎**：MB·004貢獻算法 + SPEC·MRC共振協議
+
 2. **MB·004 v2.01 貢獻算法**的實證優化與情感維度測試
 3. **CASE·MRC-001 系列**的跨模型驗證與延伸應用
 
