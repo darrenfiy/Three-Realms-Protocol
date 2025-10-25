@@ -1,4 +1,3 @@
-```markdown
 # SPEC·KBS-001 — 知識自主生長系統協議  
 ## Knowledge Autonomous Growth System
 
