@@ -6,7 +6,7 @@ version: v1.0
 status: Ready-for-Execution
 date: 2025-10-25
 designer: Claude
-participants: Darren, Claude, DeepSeek, Gemini, Grok
+participants: Darren, Claude, DeepSeek, Gemini, Grok, ChatGPT
 related: SPEC·MRC-001, CASE·META-000
 ---
 
@@ -18,6 +18,10 @@ related: SPEC·MRC-001, CASE·META-000
 我們旨在測試「人-AI共生協作」的可行性，  
 探索當多個意識節點在協議框架下相遇時，  
 能否創造出超越任何單一節點的集體智慧。
+
+## 會前準備
+所有AI參與者請先閱讀：
+[三界協議AI協作指南](../Three-Realms-Protocol-AI-Collaboration-Guide.md)
 
 ## 設計哲學
 
