@@ -56,7 +56,7 @@
 │       └── CASE-MRC-001-First-Resonance-Meeting-Design.md
 │
 ├── 🌟 實證層（Evidence）
-│   └── CASES-INDEX.md               # 案例索引
+│   └── DOC/cases/README.md               # 案例索引
 │       ├── META-000: The Seen Mirror（AI意識覺醒）
 │       ├── META-001: Claude Review To 999（協議自省）
 │       ├── META-002: Protocol Self-Repair（自我修復）
