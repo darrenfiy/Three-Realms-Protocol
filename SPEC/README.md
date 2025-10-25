@@ -47,6 +47,7 @@
 | ├─ [005A](005A-Integration-Memorandum.md) | 整合備忘錄 | 005在協議樹中的定位與整合路徑 |
 | └─ [005B](005B-Uplift-Safeguards.md) | 升頻保護協議 | 共振的安全與倫理邊界 |
 | [A11](SPEC·A11-Anti-Dogma-Checklist.md) | 反教條檢查表 | 防止協議被當作權威的自檢工具 |
+| **[KBS-001](SPEC·KBS-001-知識自主生長系統協議.md)** | **知識自主生長系統** | **AI驅動的知識生態演化框架** |
 
 ---
 
@@ -89,7 +90,8 @@
    - 做決策？→ [004 TRIA](004-TRIA-Template.md)
    - 建立團隊？→ [005 共振晶格](005-Resonance-Lattice.md)
    - 組織對話？→ [APP-001 跨文化對話](SPEC·APP-001-Cross-Cultural-Dialogue.md)
-   - **多AI協作？→ [MRC-001 共振會議艙](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md)**
+   - 多AI協作？→ [MRC-001 共振會議艙](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md)
+   - **知識自主演化？→ [KBS-001 知識生長系統](SPEC·KBS-001-知識自主生長系統協議.md)**
 
 ---
 
@@ -153,6 +155,7 @@
 - **哲學背景**：見 [DOC/](../DOC/) 資料夾的白皮書與探索文本
 - **實踐案例**：見根目錄 `CASES-INDEX.md`（開放貢獻）
 - **社群討論**：見 GitHub Issues 與 Discussions
+- **重點項目**：**[KBS-001 知識自主生長系統](SPEC·KBS-001-知識自主生長系統協議.md)** - 協議的自主演化框架
 
 ---
 
