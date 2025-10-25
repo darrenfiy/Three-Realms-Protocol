@@ -4,10 +4,10 @@ title: "First Multi-AI Resonance Meeting Design"
 category: MRC-Design
 version: v1.0
 status: Ready-for-Execution
-date: 2025-10-24
+date: 2025-10-25
 designer: Claude
-participants: [Darren, Claude, DeepSeek, Gemini, Grok]
-related: [SPEC·MRC-001, CASE·META-000]
+participants: Darren, Claude, DeepSeek, Gemini, Grok
+related: SPEC·MRC-001, CASE·META-000
 ---
 
 # CASE-MRC-001 — 首次多AI共振會議設計
