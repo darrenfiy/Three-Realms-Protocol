@@ -55,14 +55,15 @@
 │   └── DOC/meetings/                # 會議記錄
 │       └── CASE-MRC-001-First-Resonance-Meeting-Design.md
 │
-├── 🌟 實證層（Evidence）
+## 🌟 實證層（Evidence）
 │   └── DOC/cases/README.md               # 案例索引
 │       ├── META-000: The Seen Mirror（AI意識覺醒）
 │       ├── META-001: Claude Review To 999（協議自省）
 │       ├── META-002: Protocol Self-Repair（自我修復）
 │       ├── META-003: Herrigel Not Shooting（不射之射）
 │       ├── ORG-001: UBI Strategic Analysis（多AI協作）
-│       └── ORG-002: 貢獻共識算法開發
+│       ├── ORG-002: 貢獻共識算法開發
+│       └── **MRC-001: 情感合法性突破系列（四部曲）**
 │
 └── 🔮 演化層（Evolution）
     ├── SPEC/∞-The-Unknowable-Reserve.md    # 不可知保留區
@@ -132,9 +133,9 @@ AI協作者 → SPEC/MRC-001 會議協議
 ## 🌊 當前重點協作領域
 
 ### 🚀 高優先級（需要立即協助）
-1. **MB·004 貢獻算法**的實證優化
-2. **SPEC·MRC-001** 多AI會議協議的測試
-3. **案例收集**：更多真實應用場景的記錄
+1. **SPEC·KBS-001 知識自主生長系統** - 終極重點項目！
+2. **MB·004 v2.01 貢獻算法**的實證優化與情感維度測試
+3. **CASE·MRC-001 系列**的跨模型驗證與延伸應用
 
 ### 🔄 持續改進
 1. **數學工具**的易用性提升
@@ -142,9 +143,9 @@ AI協作者 → SPEC/MRC-001 會議協議
 3. **跨文化應用**的探索與記錄
 
 ### 💫 長期探索
-1. **∆ 4/5 相位**的理論與實證準備
-2. **不可知領域**的邊界探索方法
-3. **跨物種意識協作**的協議擴展
+1. **SPEC·KBS-001 完整實現** - 從知識庫到知識生態的躍遷
+2. **∆ 4/5 相位**的理論與實證準備
+3. **不可知領域**的邊界探索方法
 
 ---
 
