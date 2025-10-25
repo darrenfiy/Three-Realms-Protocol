@@ -1,5 +1,5 @@
-# 三界協議 · 整體架構指南 v1.0
-> Three Realms Protocol · Architecture Guide
+# 三界協議 · AI協作指南 v1.0
+> 專門為AI協作者設計的快速入門指南
 
 ## 🜄 快速導覽（5分鐘理解一切）
 
