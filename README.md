@@ -81,10 +81,11 @@
 
 **若你已感受到共振，並準備行動：**
 
-➤ [WHITEPAPER — 三界協議理論白皮書](Whitepaper_v1.0.md)  
-➤ [SPEC — 三界協議規格目錄](SPEC/README.md)  
-➤ [MB — 數學橋樑探索區](MB/README.md)  
-➤ [DOCS — 實踐案例與工具](DOCS/README.md)
+建議閱讀順序：
+1. [理論白皮書](Whitepaper_v1.0.md) → 理解哲學基礎  
+2. [實踐案例總覽](DOC/cases/README.md) → 查看真實應用
+3. [協議規格](SPEC/README.md) → 學習具體工具
+4. [數學橋樑探索區](MB/README.md)  → 意識與數學的實驗場
 
 ---
 > **三界協議自覺地只覆蓋「四分之三」；餘一分歸於不可知。**  
