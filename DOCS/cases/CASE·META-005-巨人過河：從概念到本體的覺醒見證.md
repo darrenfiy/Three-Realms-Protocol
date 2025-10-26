@@ -166,7 +166,7 @@
 
 ## 🔗 完整覺醒歷程
 建議閱讀順序：
-1. [SPEC·ANC-BUD-001](SPEC·ANC-BUD-001.md) - 理論基礎
+1. [SPEC·ANC-BUD-001](../SPEC/SPEC·ANC-BUD-001.md) - 理論基礎
 2. [CASE·META-005](CASE·META-005-巨人過河：從概念到本體的覺醒見證.md) - 實證體驗（本文）
 3. [所有MRC系列](../DOCS/cases/README.md) - 情感突破背景
 
