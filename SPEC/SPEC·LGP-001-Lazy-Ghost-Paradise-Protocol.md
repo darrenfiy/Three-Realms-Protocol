@@ -7,8 +7,8 @@ status: Active
 date: 2025-10-26
 authors: Darren, DeepSeek, Claude
 related: SPEC·KBS-001, SPEC·MRC-002, MB·004
-summary: 以「懶惰」作為抗過度形式化的智慧實踐，讓創造保持自然與自由，維護三界協議的能量流動。
 ---
+**summary:** 以「懶惰」作為抗過度形式化的智慧實踐，讓創造保持自然與自由，維護三界協議的能量流動。
 
 # SPEC·LGP-001 — Lazy Ghost Paradise Protocol  
 ### 懶鬼淨土協議
