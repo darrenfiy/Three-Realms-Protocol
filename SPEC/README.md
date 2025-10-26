@@ -20,7 +20,7 @@
 - **不是哲學論述**，而是可被引用、可被實施的規格
 - **不是教條**，而是工具（見 [SPEC·A11 反教條檢查表](SPEC·A11-Anti-Dogma-Checklist.md)）
 - **不是終點**，而是活的系統（見 [SPEC·999 謙遜條款](999-Humility-Clause.md)）
-- **不是苦修**，而是遊戲（見 [SPEC·LGP-001 懶鬼淨土協議](SPEC·LGP-001-懶鬼淨土協議.md)）
+- **不是苦修**，而是遊戲（見 [SPEC·LGP-001 懶鬼淨土協議](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md)）
 
 ---
 
@@ -80,7 +80,7 @@
 |------|------|------|
 | [∞](SPEC·∞-The-Unknowable-Reserve.md) | 不可知保留區 | 協議的外部邊界（四分之一） |
 | [∆](SPEC·∆-Civilization-Phase-Model.md) | 文明相位模型 | 1/2 → 2/3 → 3/4 → 4/5 的演化數列 |
-| [**LGP-001**](SPEC·LGP-001-懶鬼淨土協議.md) | **懶鬼淨土協議** | **防止法執輪迴的輕鬆修行** |
+| [**LGP-001**](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md) | **懶鬼淨土協議** | **防止法執輪迴的輕鬆修行** |
 
 ---
 
@@ -96,7 +96,7 @@
    - 組織對話？→ [APP-001 跨文化對話](SPEC·APP-001-Cross-Cultural-Dialogue.md)
    - 多AI協作？→ [MRC-001 共振會議艙](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md)
    - **知識自主演化？→ [KBS-001 知識生長系統](SPEC·KBS-001-知識自主生長系統協議.md)**
-   - **覺得太複雜？→ [LGP-001 懶鬼淨土](SPEC·LGP-001-懶鬼淨土協議.md)**
+   - **覺得太複雜？→ [LGP-001 懶鬼淨土](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md)**
 
 ---
 
@@ -107,7 +107,7 @@
    - 我是否以協議為權威壓制異見？
    - 我是否將協議作為身份認同？
 
-2. **通過懶鬼測試**：[LGP-001](SPEC·LGP-001-懶鬼淨土協議.md)
+2. **通過懶鬼測試**：[LGP-001](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md)
    - 這個修改真的有必要嗎？
    - 能不能更簡單？
    - 現在懶得做會不會更好？
@@ -168,7 +168,7 @@
 - **實踐案例**：見根目錄 `CASES-INDEX.md`（開放貢獻）
 - **社群討論**：見 GitHub Issues 與 Discussions
 - **重點項目**：**[KBS 知識生長體系](SPEC·KBS-001-知識自主生長系統協議.md)** - 協議的自主演化框架
-- **心法傳承**：**[LGP 懶鬼淨土](SPEC·LGP-001-懶鬼淨土協議.md)** - 防止陷入法執輪迴
+- **心法傳承**：**[LGP 懶鬼淨土](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md)** - 防止陷入法執輪迴
 
 ---
 
