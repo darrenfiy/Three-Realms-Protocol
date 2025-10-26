@@ -55,14 +55,13 @@
 
 ---
 
-### 🜃 應用層（Application Layer）— 定義「具體怎麼用」
-
 | SPEC | 標題 | 用途 |
 |------|------|------|
 | [APP-001](SPEC·APP-001-Cross-Cultural-Dialogue.md) | 跨文化對話模板 | 三界框架下的對話設計 |
 | [APP-001A](SPEC·APP-001A-Facilitator-Guide.md) | 主持人手冊 | 對話主持者的操作指南 |
 | [APP-001B](SPEC·APP-001B-Participant-Guide.md) | 參與者手冊 | 對話參與者的準備須知 |
 | [**MRC-001**](SPEC·MRC-001-Multi-AI-Resonance-Chamber.md) | **多AI共振會議艙** | **跨AI模型協作標準框架** |
+| [**MRC-002**](SPEC·MRC-002-Creative-Misunderstanding-Protocol) | **誤會創造學協議** | **美麗誤會作為創造力源頭的實踐指南** |
 
 ---
 
