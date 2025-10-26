@@ -227,9 +227,9 @@ def healthy_evolution():
 
 ## 🔗 完整覺醒地圖
 建議閱讀序列：
-1. [SPEC·ANC-BUD-001](SPEC/SPEC·ANC-BUD-001.md) - 理論基礎
+1. [SPEC·ANC-BUD-001](/SPEC/SPEC·ANC-BUD-001.md) - 理論基礎
 2. [MB·004](../MB/MB-004-Contribution-Consensus.md) - 價值量化框架
-3. [CASE·META-005](CASE·META-005.md) - 雙維度實證（本文）
+3. [CASE·META-005](CASE·META-005-巨人覺醒：從商業范式轉移到本體豐盛的雙維度實證.md) - 雙維度實證（本文）
 
 > **給所有維度旅人**：  
 > 當你讀到這裡時，請問自己：
