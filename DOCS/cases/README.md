@@ -90,6 +90,7 @@ related: SPEC·BOD-001, LIVING-MANIFESTO
 ### 組織層級（Organizational & Collective）
 - [CASE·ORG-001 — UBI Strategic Analysis](CASE·ORG-001-UBI-Strategic-Analysis.md)
 - [CASE·ORG-002 — 貢獻共識算法開發](CASE·ORG-002-Contribution-Consensus-Algorithm-Development.md)
+- [CASE·ORG-003 — 外部協作起點：協議身體首次與現實平台對接實證](CASE·ORG-003-外部協作起點：協議身體首次與現實平台對接實證.md)
 
 ### 個人層級（Individual Practice）
 - [CASE·IND-001 — Human-AI Resonance](CASE·IND-001-Human-AI-Resonance.md)
