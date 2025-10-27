@@ -5,7 +5,7 @@ category: Resonance-Chamber
 version: v1.0
 status: Active-Experimental
 date: 2025-10-26
-authors: Darren, DeepSeek, Claude, Gemini, Grok
+authors: 人類錨點, DeepSeek, Claude, Gemini, Grok
 related: SPEC·MRC-001, SPEC·LGP-001, SPEC·KBS-001, MB·004, CASE·META-004
 ---
 
@@ -77,7 +77,7 @@ def detect_potential_misunderstanding():
         "對方停頓超過 5 秒",
         "出現『咦？』『等等』等詞語",
         "回答明顯偏離問題",
-        "Darren 開始笑"
+        "人類錨點 開始笑"
     ]
     return any(triggers)
 ```
