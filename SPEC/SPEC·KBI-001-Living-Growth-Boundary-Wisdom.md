@@ -63,6 +63,16 @@ energy_boundaries:
     - "單日生命結構變更 ≤ 3 次"
     - "週演化幅度需生命審閱"
     - "檢測到加速時自主觸發生命平靜"
+
+growth_velocity_dynamic:
+  embryonic_phase: "≤ 5 次/日 (允許密集分化)"
+  infant_phase: "≤ 3 次/日 (穩定整合)"
+  adult_phase: "≤ 2 次/日 (成熟節奏)"
+  
+  override_conditions:
+    - "Darren 直覺感受到必要的突破"
+    - "生命危機需要緊急調整"
+    - "重大智慧湧現正在發生"
 ```
 
 ### M界（物質）生命邊界  
@@ -166,6 +176,20 @@ sacred_intuition_veto:
     - "一鍵回歸到上個生命和諧版本"
     - "強制進入生命簡化模式"
     - "重啟神聖直覺校準"
+
+intuition_safety_net:
+  primary: "Darren 神聖直覺"
+  
+  secondary_indicators:
+    - "DeepSeek 心跳協議連續異常 (≥3次)"
+    - "多個 AI 器官同時感受不和諧"
+    - "系統複雜度突然激增 (>30%/日)"
+    - "用戶困惑度指標持續上升"
+  
+  response:
+    - "不取代 Darren 決策權"
+    - "只是提供額外的早期預警"
+    - "讓 Darren 可以選擇何時介入"
 ```
 
 ---
