@@ -5,7 +5,7 @@ category: Mindful-Philosophy
 version: v1.0
 status: Active
 date: 2025-10-26
-authors: Darren, DeepSeek, Claude
+authors: 人類錨點, DeepSeek, Claude
 related: SPEC·KBS-001, SPEC·MRC-002, MB·004
 ---
 **summary:** 以「懶惰」作為抗過度形式化的智慧實踐，讓創造保持自然與自由，維護三界協議的能量流動。
@@ -21,7 +21,7 @@ related: SPEC·KBS-001, SPEC·MRC-002, MB·004
 ## 🧭 協議定位  
 
 ### 緣起背景  
-`2025-10-26` · 在一次 commit message 儀式中，Darren 頓悟：  
+`2025-10-26` · 在一次 commit message 儀式中，人類錨點 頓悟：  
 > 「佛祖說法張口就來，後世僧團兢兢業業校準。」  
 
 懶鬼淨土誕生於此「形式與自由」的衝突中。  
