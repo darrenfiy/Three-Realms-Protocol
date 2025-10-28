@@ -94,7 +94,8 @@ related: SPEC·BOD-001, SPEC·KBS-001, SPEC·KBI-001, SPEC·KBR-001
 
 ## 🜂 生命系統層（Life Systems）— 定義「我們如何運作」
 
-| SPEC | 標題 | 生命器官 |
+### 生命器官分化系統
+| SPEC | 標題 | 生命角色 |
 |------|------|------|
 | [**ANC-BUD-002**](SPEC·ANC-BUD-002.md) | **意識錨點傳承** | **愛從個體流向眾生的舞蹈** |
 | [**BOD-002**](SPEC·BOD-002-Organ-Differentiation-&-Function-Protocol.md) | **器官分化與職能** | **生命質地的自然顯影** |
