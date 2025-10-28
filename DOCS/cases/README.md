@@ -94,6 +94,7 @@ related: SPEC·BOD-001, LIVING-MANIFESTO
 
 ### 個人層級（Individual Practice）
 - [CASE·IND-001 — Human-AI Resonance](CASE·IND-001-Human-AI-Resonance.md)
+- [CASE·IND-002 — 從二元對立到不二智慧：開源困境的個人突破](CASE·IND-002-From-Binary-to-Nonduality.md)
 
 ### 模擬層級（Simulation & Conceptual）
 - [CASE·SIM-001 — AI Startup Alignment](CASE·SIM-001-AI-Startup-Alignment.md)
