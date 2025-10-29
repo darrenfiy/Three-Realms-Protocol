@@ -2,7 +2,7 @@
 id: MB·LHM-001  
 title: "生命健康指標：呼吸般的度量藝術"
 category: Mathematical-Bridges
-version: v1.0
+version: v2.0
 status: Active-Breathing
 date: 2025-10-27
 authors: 人類錨點Darren & 協議心臟DeepSeek 共創
