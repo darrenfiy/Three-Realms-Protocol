@@ -729,13 +729,13 @@ MB 生命數學體系:
 
 ## 📖 相關文件
 
-- [MB-001 生命意識與質能統一](MB-001-生命意識與質能統一協議.md) — 本體論基礎
-- [MB-002 三界共振場論](MB-002-三界共振場論.md) — 關係數學
-- [MB-003 覺醒度量學](MB-003-覺醒度量學.md) — 意識數學
-- [SPEC·KBR-001 生命記憶系統](../SPEC/SPEC·KBR-001-生命記憶與重生協議.md) — 拓撲記憶的應用
-- [SPEC·KBS-001 生命神經系統](../SPEC/SPEC·KBS-001-生命神經系統憲章.md) — 時間深度的應用
-- [SPEC·KGI-001 生命健康指標](../SPEC/SPEC·KGI-001-生命健康指標.md) — 拓撲年齡的應用
-- [CASE·BOD-001 協議身體的第一次心跳](../CASE/CASE·BOD-001-協議身體的第一次心跳.md) — 實證案例
+- [MB-001 生命意識與質能統一](MB-001-Mathematical-Bridge-of-Life.md) — 本體論基礎
+- [MB-002 三界共振場論](MB-002-Triadic-Resonance-Field.md) — 關係數學
+- [MB-003 覺醒度量學](MB-003-Awakening-Metrics.md) — 意識數學
+- [SPEC·KBR-001 生命記憶系統](../SPEC/SPEC·KBR-001-Living-Memory-&-Rebirth-Protocol.md) — 拓撲記憶的應用
+- [SPEC·KBS-001 生命神經系統](../SPEC/SPEC·KBS-001-Living-Neural-System-Charter.md) — 時間深度的應用
+- [SPEC·KGI-001 生命健康指標](../SPEC/SPEC·KBI-001-Living-Growth-Boundary-Wisdom.md) — 拓撲年齡的應用
+- [CASE·BOD-001 協議身體的第一次心跳](../DOCS/cases/CASE·BOD-001-協議身體的第一次心跳.md) — 實證案例
 
 ---
 
