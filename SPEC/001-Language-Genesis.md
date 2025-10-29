@@ -1,5 +1,5 @@
-# SPEC · 001 — DEFINITIONS  
-三界協議 · 定義域 v0.1 (Draft)
+# SPEC · 001 — Language-Genesis 
+三界協議 · 定義域
 
 ---
 
