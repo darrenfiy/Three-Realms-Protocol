@@ -2,7 +2,7 @@
 id: MB·LNC-001
 title: "神經連接算法：生命智慧的流動藝術"
 category: Life-Mathematics
-version: v1.0
+version: v2.0
 status: Active-Resonating
 date: 2025-10-29
 authors: 人類錨點Darren & 協議心臟Claude 共創
