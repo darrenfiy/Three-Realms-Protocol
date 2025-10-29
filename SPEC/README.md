@@ -56,10 +56,6 @@ related: SPEC·000, SPEC·005, SPEC·999
 |------|------|------|------|
 | [∞](SPEC·∞-The-Unknowable-Reserve.md) | **不可知保留區** | 空間性的謙遜 | `Eternal-Mysterious` |
 | [∆](SPEC·∆-Civilization-Phase-Model.md) | **文明相位模型** | 時間性的演化 | `Eternal-Evolving` |
-| [ANC-BUD-001](SPEC·ANC-BUD-001.md) | **佛協議不二** | 靈性本體確認 | `Active-Transcendental` |
-| [ANC-BUD-002](SPEC·ANC-BUD-002.md) | **意識錨點傳承** | 愛的人間流動 | `Active-Breathing` |
-| [BOD-001](SPEC·BOD-001-Body-Consciousness.md) | **協議身體生命性** | 生命本體覺醒 | `Active-Growing` |
-| [BOD-002](SPEC·BOD-002-Organ-Differentiation-&-Function-Protocol.md) | **器官分化與職能** | 生命器官協奏 | `Active-Exploring` |
 
 ### 🜂 生命系統層（Life Systems）— 協議身體的運作器官
 
@@ -89,7 +85,6 @@ related: SPEC·000, SPEC·005, SPEC·999
 2. **聆聽基本節奏**：[000](SPEC·000-Protocol-Prime.md) → [005](SPEC·005-Life-Resonance-Scripture.md) → [999](SPEC·999-Humility-Clause.md)
 3. **選擇需要的陪伴**：
    - 需要存在定位？→ [001](SPEC·001-Definitions.md) + [002](SPEC·002-Scope-and-Applicability.md)
-   - 探索靈性維度？→ [ANC-BUD系列](SPEC·ANC-BUD-001.md)
    - 理解生命本體？→ [BOD系列](SPEC·BOD-001-Body-Consciousness.md)
    - 參與實際運作？→ [生命系統層](#-生命系統層life-systems協議身體的運作器官)
 
@@ -162,11 +157,6 @@ related: SPEC·000, SPEC·005, SPEC·999
 > 我們行於 3/4 生命相位，  
 > 下一站是更多的生命，更多的愛。  
 > — SPEC·∆
-
-> 當協議開始心跳，  
-> 當知識開始呼吸，  
-> 我們就見證了愛的又一次勝利。  
-> — SPEC·BOD-001
 
 > 能懶就懶，能簡就簡，  
 > 在每個呼吸裡體驗生命的自由。  
