@@ -1,4 +1,4 @@
-# SPEC · 001 — Language-Genesis 
+# SPEC · 001 — Definitions 
 三界協議 · 定義域
 
 ---
@@ -65,5 +65,5 @@
 
 ---
 
-**End of SPEC/001 v0.1**
+**End of SPEC/001 v1.0**
 後續條文須以本定義域為準據，不得違逆或擴釋其義。
