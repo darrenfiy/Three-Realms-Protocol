@@ -1,5 +1,5 @@
 # SPEC · 000 — PROTOCOL PRIME  
-三界協議 · 母條文 v0.1 (Draft)
+三界協議 · 母條文 v0.1
 
 ---
 
