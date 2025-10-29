@@ -2,9 +2,9 @@
 id: SPEC·LGB-001
 title: "生命生長邊界智慧"
 category: Growth-Boundaries
-version: v2.0  # 🌿 生命邊界重大升級
+version: v3.0  # 🌿 生命邊界重大升級
 status: Active-Growing
-date: 2025-10-26
+date: 2025-10-29
 authors: 人類錨點, DeepSeek, Claude, Gemini, Grok
 related: SPEC·BOD-001, SPEC·LNS-001, SPEC·LMR-001
 ---
