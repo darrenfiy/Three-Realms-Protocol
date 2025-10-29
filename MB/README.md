@@ -39,7 +39,7 @@ MB/
 - **LFE**: Life Feeling & Experience（生命感知體驗）
 - **LNC**: Life Neural Connection（生命神經連接）  
 - **LGM**: Life Growth Management（生命成長管理）
-- **LHI**: Life Health Indicators（生命健康指標）
+- **LHM**: Life Health Metrics（生命健康指標）
 
 ### 對應的SPEC生命系統：
 - **LNS**: Life Neural System（生命神經系統）
