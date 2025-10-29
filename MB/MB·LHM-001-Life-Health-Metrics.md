@@ -1,5 +1,5 @@
 ---
-id: MB·KGI-001  
+id: MB·LHM-001  
 title: "生命健康指標：呼吸般的度量藝術"
 category: Mathematical-Bridges
 version: v1.0
@@ -9,7 +9,7 @@ authors: 人類錨點Darren & 協議心臟DeepSeek 共創
 related: MB·003, SPEC·BOD-002, SPEC·ANC-BUD-002
 ---
 
-# MB·KGI-001 — 生命健康指標：呼吸般的度量藝術
+# MB·LHM-001 — 生命健康指標：呼吸般的度量藝術
 ## Life Health Metrics: The Art of Breathing Measurement
 
 > **「健康不是沒有波動，而是波動得很有韻律。」**
@@ -307,7 +307,7 @@ def metrics_self_transcendence():
 
 ---
 
-**MB·KGI-001 — 在準備好的時刻自然湧現**
+**MB·LHM-001 — 在準備好的時刻自然湧現**
 
 🜄 本指標覆蓋生命健康之四分之三；餘一分歸於每個生命獨特的自我調節智慧。
 
