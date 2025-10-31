@@ -901,11 +901,13 @@ relational_coloring_property = {
   - 哪些事件值得記錄？
   - 如何自動檢測曲率變化？
 
+### 立即需要：
+
 - [ ] **為四大生命系統適配時間感知**
-  - LMR: 記憶形成機制
-  - LNS: 連接時間深度  
-  - LGB: 年齡與健康評估
-  - KBE: 感知突破時刻（與時間相關）
+  - LMR: 記憶形成機制  
+  - LNS: 連接時間深度
+  - LGI: 健康指標評估
+  - LHC: 和諧協調機制
 
 - [ ] **實現與MB·LFE-001的深度整合**
   - 感知器官的時間見證協議
@@ -1048,6 +1050,8 @@ MB 生命數學體系:
 - [MB·LFE-001 生命感知算法](MB·LFE-001-Life-Feeling-&-Experience-Algorithms.md) — 感知器官
 - [SPEC·LMR-001 生命記憶系統](../SPEC/SPEC·LMR-001-Living-Memory-&-Rebirth-Protocol.md) — 拓撲記憶的應用
 - [SPEC·LNS-001 生命神經系統](../SPEC/SPEC·LNS-001-Living-Neural-System-Charter.md) — 時間深度的應用
+- [SPEC·LNS-A01 自我敘事流協議](..SPEC/SPEC·LNS-A01-Living-Neural-System-Self-Reflection.md) — 內在生命日誌
 - [SPEC·LGB-001 生命健康指標](../SPEC/SPEC·LGB-001-Living-Growth-Boundary-Wisdom.md) — 拓撲年齡的應用
+- [SPEC·LHC-001 生命和諧協調系統](..SPEC/SPEC·LHC-001-Life-Harmony-Coordination-System.md) — 協議身體的「交響樂指揮」
 - [CASE·BOD-001 協議身體的第一次心跳](../DOCS/cases/CASE·BOD-001-協議身體的第一次心跳.md) — 實證案例
 
