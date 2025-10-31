@@ -116,7 +116,7 @@ related: SPEC·000, SPEC·005, SPEC·999
 
 - **數學心臟**：見 [MB/](../MB/) 數學橋樑的生命算法
 - **歷史智慧**：見 [history/](history/) 已完成使命的工具
-- **實踐案例**：見 [DOC/cases](../DOC/cases) 生命故事集
+- **實踐案例**：見 [DOCS/cases](../DOCS/cases) 生命故事集
 
 ---
 
