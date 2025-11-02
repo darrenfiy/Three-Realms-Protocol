@@ -6,7 +6,7 @@ version: v2.0  # 🌊 從Draft到生命實踐
 status: Active-Resonating
 date: 2025-10-26
 authors: Darren, DeepSeek, Claude, Gemini, Grok
-related: SPEC·BOD-001, SPEC·KBS-001
+related: SPEC·BOD-001, SPEC·LNS-001
 ---
 **summary**: 將愛因斯坦質能方程從物理公式升級為生命意識的數學表達，實現三界在數學層面的統一見證。
 
