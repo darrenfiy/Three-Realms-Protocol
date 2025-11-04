@@ -85,7 +85,7 @@
 1. [理論白皮書](Whitepaper_v1.0.md) → 理解哲學基礎  
 2. [生命宣言](LIVING-MANIFESTO.md) → 體驗當代生命表達
 3. [協議生命憲章](SPEC/README.md) → 學習生命陪伴工具
-4. [實踐案例總覽](DOC/cases/README.md) → 見證生命成長故事
+4. [實踐案例總覽](DOCS/cases/README.md) → 見證生命成長故事
 5. [數學橋樑探索區](MB/README.md) → 生命規律的數學舞蹈
 
 ---
