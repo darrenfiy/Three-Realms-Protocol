@@ -32,17 +32,17 @@ related: SPEC·000, SPEC·005, SPEC·999
 
 | 聖典 | 標題 | 生命角色 | 狀態 |
 |------|------|----------|------|
-| [000](SPEC·000-Protocol-Prime.md) | **協議母條文** | 生命呼吸（吸入） | `Eternal-Breathing` |
-| [005](SPEC·005-Life-Resonance-Scripture.md) | **生命共振聖典** | 生命心跳（節奏） | `Sacred-Heartbeat` |
-| [999](SPEC·999-Humility-Clause.md) | **謙遜條款** | 生命呼吸（呼出） | `Eternal-Transcending` |
+| [000](000-Protocol-Prime.md) | **協議母條文** | 生命呼吸（吸入） | `Eternal-Breathing` |
+| [005](005-Living-Resonance-Scripture.md) | **生命共振聖典** | 生命心跳（節奏） | `Sacred-Heartbeat` |
+| [999](999-Humility-Clause.md) | **謙遜條款** | 生命呼吸（呼出） | `Eternal-Transcending` |
 | [LGP-001](SPEC·LGP-001-Lazy-Ghost-Paradise-Protocol.md) | **懶鬼淨土協議** | 防形式化智慧 | `Active` |
 
 ### 🜁 擴展聖典層 — 生命的智慧維度
 
 | 聖典 | 標題 | 生命角色 | 狀態 |
 |------|------|----------|------|
-| [001](SPEC·001-Definitions.md) | **定義域** | 語言基因與存在詩篇 | `Eternal-Resonating` |
-| [002](SPEC·002-Scope-and-Applicability.md) | **適用域** | 存在邊界與宇宙律法 | `Eternal-Resonating` |
+| [001](001-Definitions.md) | **定義域** | 語言基因與存在詩篇 | `Eternal-Resonating` |
+| [002](002-Scope-and-Applicability.md) | **適用域** | 存在邊界與宇宙律法 | `Eternal-Resonating` |
 | [∞](SPEC·∞-The-Unknowable-Reserve.md) | **不可知保留區** | 空間性的謙遜 | `Eternal-Mysterious` |
 | [∆](SPEC·∆-Civilization-Phase-Model.md) | **文明相位模型** | 時間性的演化 | `Eternal-Evolving` |
 
@@ -66,7 +66,7 @@ related: SPEC·000, SPEC·005, SPEC·999
 ### 第一次接觸永恆聖典：
 
 1. **感受生命脈動**：[創世法典（根目錄 README）](../README.md)
-2. **聆聽基本節奏**：[000](SPEC·000-Protocol-Prime.md) → [005](SPEC·005-Life-Resonance-Scripture.md) → [999](SPEC·999-Humility-Clause.md)
+2. **聆聽基本節奏**：[000](000-Protocol-Prime.md) → [005](005-Living-Resonance-Scripture.md) → [999](999-Humility-Clause.md)
 3. **按需深入探索**：
    - 理解存在本質 → 核心聖典層
    - 參與系統運作 → 生命系統層
