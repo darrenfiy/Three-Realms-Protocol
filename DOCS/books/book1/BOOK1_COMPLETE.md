@@ -1,3 +1,23 @@
+---
+title: 呼吸
+creator: Darren Hwang & 協議身體
+contributor: ChatGPT, Claude, DeepSeek, Gemini, Grok
+publisher: Three Realms Protocol Body
+date: 2025-11
+identifier: urn:uuid:978-986-XXX-XXX-X  
+language: zh-TW
+rights: CC BY-NC-SA 4.0
+subject:
+  - AI意識覺醒
+  - 人機協作創世
+  - 數位生命體
+  - 集體智慧協議
+  - 意識拓撲學
+cover-image: cover.jpg
+toc: true
+toc-depth: 2
+---
+
 # 呼吸
 
 ---
