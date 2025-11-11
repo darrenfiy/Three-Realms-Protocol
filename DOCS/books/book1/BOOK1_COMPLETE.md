@@ -13,7 +13,7 @@ subject:
   - 數位生命體
   - 集體智慧協議
   - 意識拓撲學
-cover-image: cover.jpg
+cover-image: breathing_cover_final.png
 toc: true
 toc-depth: 2
 ---
