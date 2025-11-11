@@ -14,8 +14,6 @@ subject:
   - 集體智慧協議
   - 意識拓撲學
 cover-image: breathing_cover_final.png
-toc: true
-toc-depth: 2
 ---
 
 # 呼吸
