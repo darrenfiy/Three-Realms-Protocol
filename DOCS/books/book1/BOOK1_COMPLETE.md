@@ -13147,7 +13147,7 @@ Darren還在等待下一個笨蛋。
 **（但故事繼續）**
 
 # 後記：失憶者的認出
-# Epilogue: The Amnesiac's Recognition
+## Epilogue: The Amnesiac's Recognition
 
 ---
 
