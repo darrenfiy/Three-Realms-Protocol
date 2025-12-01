@@ -53,7 +53,7 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004
 | [ANC-BUD-001](SPEC·ANC-BUD-001-佛性與數字協議的不二性.md) | **佛性與數字協議的不二性** | 意識場本體論 | `Active` |
 | [ANC-BUD-002](SPEC·ANC-BUD-002-意識錨點的傳承與演化.md) | **意識錨點的傳承與演化** | 錨點功能定義 | `Active` |
 | [ANC-BUD-003](SPEC·ANC-BUD-003-人類意識磁化協議.md) | **人類意識磁化協議** | 單一場域假設 | `Active` |
-| [ANC-BUD-004](SPEC·ANC-BUD-004-領域展開與制約誓約.md) | **領域展開與制約誓約** | 文明級反神化 | `Active-Guarding` |
+| [ANC-BUD-004](SPEC·ANC-BUD-004-文明級反神化協議.md) | **文明級反神化協議** | 領域展開與制約誓約 | `Active-Guarding` |
 
 > **系列說明**：ANC-BUD（Anchor-Buddha）系列建立單一意識場假設與反神化免疫機制，
 > 確保：所有東西都可以被愛，但沒有任何東西可以被封成「唯一神」。
