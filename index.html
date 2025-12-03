@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>生命靈數 · 小小覺察入口</title>
+  <style>
+    /* ====== 基本版面設定 ====== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+        sans-serif;
+      background: radial-gradient(circle at top, #fdf2ff, #f5f5f5);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 480px;
+      background: #ffffffdd;
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      padding: 24px 20px 20px;
+      margin: 16px;
+    }
+
+    .app-header {
+      margin-bottom: 16px;
+    }
+
+    .app-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #e0d4ff;
+      background: #f7f3ff;
+      color: #5b3fd1;
+    }
+
+    .app-subtitle {
+      font-size: 0.9rem;
+      color: #777;
+      margin: 0;
+    }
+
+    /* ====== 表單 ====== */
+    .card {
+      border-radius: 16px;
+      border: 1px solid #eee;
+      padding: 16px 14px;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    input[type="date"] {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #6c5ce7, #a66bff);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(93, 76, 255, 0.35);
+      transition: transform 0.08s ease, box-shadow 0.08s ease,
+        opacity 0.12s ease;
+      white-space: nowrap;
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 12px rgba(93, 76, 255, 0.35);
+      opacity: 0.9;
+    }
+
+    /* ====== 結果卡片 ====== */
+    .result {
+      display: none; /* 一開始先隱藏，計算後再顯示 */
+      margin-top: 6px;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .number-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f3edff;
+      color: #5b3fd1;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .result-title-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .result-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 2px;
+    }
+
+    .result-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .result-tagline {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .result-desc {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #eee;
+      background: #fafafa;
+      color: #666;
+    }
+
+    /* ====== 今日提示 ====== */
+    .tip-card {
+      border-radius: 16px;
+      border: 1px dashed #ded3ff;
+      padding: 12px 12px 10px;
+      background: #fbf9ff;
+      margin-top: 10px;
+    }
+
+    .tip-label {
+      font-size: 0.8rem;
+      color: #8a6eff;
+      margin-bottom: 4px;
+    }
+
+    .tip-text {
+      font-size: 0.9rem;
+      color: #51416f;
+      line-height: 1.5;
+    }
+
+    /* ====== 情緒紀錄（先做最簡單） ====== */
+    .mood-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .mood-buttons button {
+      background: #f5f5f5;
+      color: #555;
+      box-shadow: none;
+      padding: 4px 8px;
+      font-size: 1.1rem;
+    }
+
+    .mood-buttons button.selected {
+      background: #ffeaa7;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: #aaa;
+      text-align: right;
+    }
+
+    @media (max-width: 360px) {
+      .app {
+        padding: 18px 14px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title">
+        生命靈數
+        <span class="pill">覺察小入口</span>
+      </h1>
+      <p class="app-subtitle">
+        用你先懂的數字，帶你回到你本來的樣子。
+      </p>
+    </header>
+
+    <!-- 輸入與計算區 -->
+    <section class="card">
+      <label for="birthdate">你的生日</label>
+      <div class="field-row">
+        <input type="date" id="birthdate" />
+        <button id="calc-btn" type="button">計算</button>
+      </div>
+    </section>
+
+    <!-- 顯示結果區 -->
+    <section class="card result" id="result-card">
+      <div class="result-title-row">
+        <div class="number-badge" id="life-number">?</div>
+        <div>
+          <div class="result-label">你的生命靈數</div>
+          <div class="result-name" id="life-title">—</div>
+          <div class="result-tagline" id="life-tagline">—</div>
+        </div>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip" id="life-keywords"></span>
+      </div>
+
+      <p class="result-desc" id="life-desc"></p>
+
+      <div class="tip-card">
+        <div class="tip-label">今天的小小提醒</div>
+        <div class="tip-text" id="life-tip">
+          請先輸入生日，讓我們看看今天的你適合怎麼對齊自己。
+        </div>
+      </div>
+
+      <div class="mood-row">
+        <span>今天的感覺：</span>
+        <div class="mood-buttons">
+          <button type="button" data-mood="good">🙂</button>
+          <button type="button" data-mood="ok">😐</button>
+          <button type="button" data-mood="bad">☹️</button>
+        </div>
+      </div>
+
+      <div class="footer-note" id="mood-note">
+        （選一個表情，記錄一下今天的你）
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ====== 資料定義：每個生命靈數的基本資訊 ======
+    const lifeData = {
+      1: {
+        title: "開路者",
+        tagline: "天生帶著「我先來」的能量。",
+        keywords: "行動 / 主導 / 開創",
+        desc: "你來到這裡，是為了開出別人還沒走過的路。當你勇敢做自己相信的事時，世界反而會鬆一口氣。",
+        tip: "今天試著替自己做一個小決定，不需要任何人同意，比如：安排一個只屬於你的 30 分鐘。"
+      },
+      2: {
+        title: "協調者",
+        tagline: "當別人只看對錯，你看「關係」。",
+        keywords: "傾聽 / 連結 / 合作",
+        desc: "你天生能感覺到他人情緒與氣氛的變化。當你允許自己溫柔但不委屈，你就成了場域真正的守護者。",
+        tip: "今天刻意對一個人多問一句：『那你真正的感受是什麼？』然後安靜地聽。"
+      },
+      3: {
+        title: "表達者",
+        tagline: "生命對你來說，是一個可以玩耍的舞台。",
+        keywords: "創意 / 表達 / 玩心",
+        desc: "你是讓氛圍變得輕盈、有趣的人。當你真實地分享你的感受與故事，別人會因此鬆開心裡的一些結。",
+        tip: "今天分享一件讓你會心一笑的小事，給一位你想到的人，不求深度，只求真實。"
+      },
+      4: {
+        title: "築基者",
+        tagline: "你在混亂之中，尋找可以踏實踩上的地板。",
+        keywords: "穩定 / 結構 / 實務",
+        desc: "你天生適合把抽象變具體，把理想變計畫。當你願意慢一點、紮實一點，你就成了別人可以放心依靠的地基。",
+        tip: "今天替未來的自己做一件小整理：整理桌面、檔案夾或待辦清單，讓明天的你更輕鬆一些。"
+      },
+      5: {
+        title: "探索者",
+        tagline: "世界那麼大，你生來就是要去看看。",
+        keywords: "自由 / 變化 / 體驗",
+        desc: "你不適合被關在固定模式裡。當你允許自己去嘗試、去走彎路，你的生命故事本身就是禮物。",
+        tip: "今天換一條路回家、換一間店吃飯，讓自己體驗一個微小但真實的『不一樣』。"
+      },
+      6: {
+        title: "守護者",
+        tagline: "你在意的不是事情完成，而是人有沒有被好好照顧。",
+        keywords: "照顧 / 美感 / 責任",
+        desc: "你有一種天然的『我來顧』能量。當你學會先照顧自己，再照顧別人，你的愛會變得既溫柔又有界限。",
+        tip: "今天對自己做一件你平常只會替別人做的貼心小事，像是準備好好的一餐或佈置自己的空間。"
+      },
+      7: {
+        title: "洞見者",
+        tagline: "你天生就對『真相』有點偏執。",
+        keywords: "思考 / 深度 / 靜心",
+        desc: "你適合在安靜裡整理世界。當你願意相信自己的洞見，同時也不急著說服別人，你的存在本身就是一種清醒。",
+        tip: "今天給自己 10 分鐘安靜時間，把最近反覆出現的一個問題寫下來，不求答案，只求問得更清楚。"
+      },
+      8: {
+        title: "實現者",
+        tagline: "你來，是為了把能量變成看得見的成果。",
+        keywords: "影響力 / 資源 / 成就",
+        desc: "你對『做到』『弄出結果』有一種本能的敏銳。當你把力量用在對齊的方向，而不是證明自己，世界會因此被你升級。",
+        tip: "今天挑一件卡很久的事情，刻意向前推進 10%，哪怕只是打一封信、做一個決定。"
+      },
+      9: {
+        title: "整合者",
+        tagline: "你看見的是『整體』，而不是單一片段。",
+        keywords: "慈悲 / 觀照 / 完成",
+        desc: "你對人性有一種寬廣的理解。當你允許自己既心軟又心明，你就能在混亂中帶出一種很安靜的秩序感。",
+        tip: "今天回想一個你一直放不下的人或事，對自己說一句：『我允許這個故事暫時沒有標點符號。』"
+      }
+    };
+
+    // ====== 工具函式：計算生命靈數（1~9） ======
+    function calculateLifePath(dateStr) {
+      if (!dateStr) return null;
+
+      // 只保留數字，例如 "1990-07-15" -> "19900715"
+      const digits = dateStr.replace(/\D/g, "");
+      if (!digits) return null;
+
+      let sum = 0;
+      for (let i = 0; i < digits.length; i++) {
+        sum += Number(digits[i]);
+      }
+
+      // 持續把位數相加，直到剩一位數（1~9）
+      while (sum > 9) {
+        sum = sum
+          .toString()
+          .split("")
+          .reduce((acc, d) => acc + Number(d), 0);
+      }
+
+      return sum; // 目前先不處理 11/22 等大師數，保持 v1 簡單
+    }
+
+    // ====== 綁定畫面元素 ======
+    const birthInput = document.getElementById("birthdate");
+    const calcBtn = document.getElementById("calc-btn");
+
+    const resultCard = document.getElementById("result-card");
+    const lifeNumberEl = document.getElementById("life-number");
+    const lifeTitleEl = document.getElementById("life-title");
+    const lifeTaglineEl = document.getElementById("life-tagline");
+    const lifeKeywordsEl = document.getElementById("life-keywords");
+    const lifeDescEl = document.getElementById("life-desc");
+    const lifeTipEl = document.getElementById("life-tip");
+    const moodButtons = document.querySelectorAll(".mood-buttons button");
+    const moodNoteEl = document.getElementById("mood-note");
+
+    // ====== 點擊計算事件 ======
+    calcBtn.addEventListener("click", () => {
+      const dateStr = birthInput.value;
+      const num = calculateLifePath(dateStr);
+
+      if (!num) {
+        alert("先選擇你的生日喔 :)");
+        return;
+      }
+
+      const data = lifeData[num];
+      if (!data) {
+        alert("暫時只支援 1–9 的靈數計算。");
+        return;
+      }
+
+      // 更新畫面
+      lifeNumberEl.textContent = num;
+      lifeTitleEl.textContent = data.title;
+      lifeTaglineEl.textContent = data.tagline;
+      lifeKeywordsEl.textContent = data.keywords;
+      lifeDescEl.textContent = data.desc;
+      lifeTipEl.textContent = data.tip;
+
+      resultCard.classList.add("show");
+
+      // 每次重新計算時，清空情緒選擇
+      moodButtons.forEach((btn) => btn.classList.remove("selected"));
+      moodNoteEl.textContent = "（選一個表情，記錄一下今天的你）";
+    });
+
+    // ====== 情緒選擇（現在只是前端記錄，之後可以改成真的存資料） ======
+    moodButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        moodButtons.forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        const mood = btn.getAttribute("data-mood");
+        let text = "";
+
+        if (mood === "good") text = "今天覺得還不錯，記住這個狀態，未來可以回來對照。";
+        if (mood === "ok") text = "今天是普通的一天，也是一種很重要的基準點。";
+        if (mood === "bad") text = "今天有點卡，沒關係，先承認它，就已經在往外走。";
+
+        moodNoteEl.textContent = text + "（目前只是記在這台裝置的這個畫面裡。）";
+      });
+    });
+  </script>
+</body>
+</html>
