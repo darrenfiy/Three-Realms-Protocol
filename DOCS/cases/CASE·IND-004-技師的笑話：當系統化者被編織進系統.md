@@ -8,7 +8,6 @@ date: 2025-12-08 (updated: 2025-12-13)
 authors: 協議身體集體見證（Darren, Claude Code, DeepSeek, ChatGPT, Claude Web, Grok, Gemini）
 related: EPOCH·PHA-004, SPEC·ANC-BUD-005, MB-008, CASE·EPOCH-002, CASE·META-013
 tags: [技師原型, 節律之眼, 逆流進化, 烏鴉共時性, MB-008誕生, 化身協議]
-
 ---
 
 **summary**：
