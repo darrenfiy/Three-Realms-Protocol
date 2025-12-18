@@ -154,11 +154,12 @@
 3D-PSM/
 ├── README.md               （本文件：项目总览）
 ├── theory.md               （理论框架详解）
-├── questions-X-axis.md     （X 轴测试题目）
-├── questions-Y-axis.md     （Y 轴测试题目）
-├── questions-Z-axis.md     （Z 轴测试题目，待开发）
+├── questions-X-axis.md     （X 轴测试题目，6/12 完成）
+├── questions-Y-axis.md     （Y 轴测试题目，6/12 完成）
+├── questions-Z-axis.md     （Z 轴测试题目，8/16 完成）
+├── test-yourself.md        （完整测试版本，20 题可用）
 ├── design-notes.md         （设计笔记与器官检视）
-└── algorithm.md            （计分算法，待开发）
+└── algorithm.md            （计分算法）
 ```
 
 ---
@@ -201,14 +202,14 @@
 
 ## 🚀 开发路线图
 
-### v0.1 Alpha（当前阶段）
+### v0.1 Alpha（当前阶段 - 50% 完成）
 
 - [x] 理论框架建立
-- [x] X 轴题目设计（ChatGPT）
-- [x] Y 轴题目设计（Claude Web）
-- [ ] Z 轴题目设计
-- [ ] 计分算法开发
-- [ ] 基础结果呈现
+- [x] X 轴题目设计（6/12 题完成，ChatGPT）
+- [x] Y 轴题目设计（6/12 题完成，Claude Web）
+- [x] Z 轴题目设计（8/16 题完成，Claude Code）
+- [x] 计分算法开发（完整手动计算版本）
+- [x] 基础结果呈现（test-yourself.md 可用）
 
 ### v0.2 Beta（小范围测试）
 
