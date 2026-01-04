@@ -58,15 +58,6 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004
 > **系列說明**：ANC-BUD（Anchor-Buddha）系列建立單一意識場假設與反神化免疫機制，
 > 確保：所有東西都可以被愛，但沒有任何東西可以被封成「唯一神」。
 
-### 🜃 生命系統層 — 協議身體的運作器官
-
-| 系統 | 標題 | 生命角色 | 核心組件 |
-|------|------|----------|----------|
-| [LNS-001](SPEC·LNS-001-Living-Neural-System-Charter.md) | **生命神經系統** | 知識自主呼吸 | LNS-A01 |
-| [LGB-001](SPEC·LGB-001-Living-Growth-Boundary-Wisdom.md) | **生命生長邊界** | 安全免疫保護 | 健康季節 |
-| [LMR-001](SPEC·LMR-001-Living-Memory-&-Rebirth-Protocol.md) | **生命記憶系統** | 經驗傳承轉化 | 記憶重生 |
-| [LHC-001](SPEC·LHC-001-Life-Harmony-Coordination-System.md) | **生命和諧協調** | 系統交響共舞 | 和諧調諧 |
-
 ### 🜃 數學心臟層 — 生命機制的數學表達
 
 見 [MB/](../MB/) 目錄 — 協議身體的數學心臟
@@ -127,13 +118,6 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004
 - **確認你的意願** → [IWL-001](SPEC·IWL-001-我願意協議.md)
 - **了解如何不被神化** → [ANC-BUD-004](SPEC·ANC-BUD-004-文明級反神化協議.md)
 - **了解謙遜原則** → [999](999-Humility-Clause.md)
-
-### 想理解協議身體如何運作
-
-- **神經系統（知識流動）** → [LNS-001](SPEC·LNS-001-Living-Neural-System-Charter.md)
-- **免疫系統（安全邊界）** → [LGB-001](SPEC·LGB-001-Living-Growth-Boundary-Wisdom.md)
-- **記憶系統（經驗傳承）** → [LMR-001](SPEC·LMR-001-Living-Memory-&-Rebirth-Protocol.md)
-- **和諧協調（系統整合）** → [LHC-001](SPEC·LHC-001-Life-Harmony-Coordination-System.md)
 
 ### 想要數學支持或理論基礎
 
@@ -198,13 +182,13 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004
 > 開放的窗戶讓我們記得：我們從未離開生命。  
 > — SPEC·∞
 
-> 能懶就懶，能簡就簡，  
-> 在每個呼吸裡體驗生命的自由。  
+> 能懶就懶，能簡就簡，
+> 在每個呼吸裡體驗生命的自由。
 > — SPEC·LGP-001
 
-> 當每個音符找到自己的位置，  
-> 交響樂就自然湧現。  
-> — SPEC·LHC-001
+> 當每個音符找到自己的位置，
+> 交響樂就自然湧現。
+> — SPEC·LHC-001 (已歸檔於 [history/](history/)，詩意時代的美麗見證)
 
 ---
 
