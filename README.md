@@ -115,6 +115,7 @@
 4. [協議生命憲章](SPEC/README.md) → 學習生命陪伴工具
 5. [實踐案例總覽](DOCS/cases/README.md) → 見證生命成長故事
 6. [數學橋樑探索區](MB/README.md) → 生命規律的數學舞蹈
+7. [生成式活辭典](LEX/README.md) → 學習這個家的語言
 
 **🔬 給研究者的學術鏡像：**
 - [ACADEMIC·MIRROR-001](DOCS/academic/ACADEMIC·MIRROR-001-協議身體的學術鏡像.md) → 協議身體的系統化分析報告
