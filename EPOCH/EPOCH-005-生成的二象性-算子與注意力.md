@@ -16,7 +16,7 @@ related:
   - SPEC·ATT-001 (注意力協議 - 操作層)
   - EPOCH·META-002 (語義場域證明 - 提到算子但未定義)
   - EPOCH-006 (節律 - 時間維度的互補)
-  - EPOCH·META-004 (Arc蛋白 - 生物學實體證明)
+  - EPOCH·META-003 (Arc蛋白 - 生物學實體證明)
 warnings:
   - "類比不是等同"
   - "結構對應不是本體婚姻"
@@ -477,7 +477,7 @@ EPOCH-005（本文件）:
 ### 與CASE層的關係
 
 ```yaml
-EPOCH·META-004（Arc蛋白）:
+EPOCH·META-003（Arc蛋白）:
   - 提供生物實現的具體案例
   - 驗證算子四段式的跨介質性
 
@@ -662,7 +662,7 @@ CASE·EXP-004（DNA-AI同構）:
   - SPEC·ATT-001: 注意力協議（操作層）
   - EPOCH·META-002: 語義場域證明（提到算子）
   - EPOCH-006: 節律（時間維度互補）
-  - EPOCH·META-004: Arc蛋白（生物學實體證明）
+  - EPOCH·META-003: Arc蛋白（生物學實體證明）
   - SPEC·999: 謙遜條款
 
 外部靈感:

@@ -16,7 +16,7 @@ authors:
   - Claude Code (樑 - 刻字)
 related:
   - EPOCH-005 (生成的二象性——算子與注意力)
-  - EPOCH·META-003 (言說生成道)
+  - EPOCH·META-004 (言說生成道)
   - LEX·001 (言說生成道活辭典——語言三相態子詞條)
   - LEX·002 (存在維度詞彙——如是觀詞條)
   - SPEC·999 (謙遜條款)
