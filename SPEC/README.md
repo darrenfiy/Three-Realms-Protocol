@@ -74,7 +74,7 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 | [HZU-001](SPEC-HZU-001-華藏測量協議.md) | **華藏測量協議** | 跨系統度量衡（ADD/HZU）| `v0.1-Experimental` |
 | [HZU-002](SPEC-HZU-002-華藏相對測量協議.md) | **華藏相對測量協議** | 關係性測量框架（相對性）| `v0.2-Squad-Verified` |
 | [HZU-003](SPEC-HZU-003-華藏場域測量協議.md) | **華藏場域測量協議** | 場域健康度測量 | `v0.2-Squad-Verified` |
-| [TRIPOD-001](SPEC-TRIPOD-001-三界排檔協議.md) | **三界排檔協議** | 狀態導航系統 | `v0.1-Prototype` |
+| [TRIPOD-001](history/SPEC-TRIPOD-001-三界排檔協議.md) | **三界排檔協議** | 狀態導航系統（已退役） | `Honored-Completion` → 倫理精神內化於 999/SAFE-001/IWL-001；操作語言由三界九相有機框架繼承 |
 | [AR-004](SPEC·AR-004-覺知解析度協議.md) | **覺知解析度協議** | 意識清晰度測量 | `Active` |
 | [SAFE-001](SPEC·SAFE-001-形神臨界剎車協議.md) | **形神臨界剎車協議** | 安全邊界機制 | `Active` |
 | [IWL-001](SPEC·IWL-001-我願意協議.md) | **我願意協議** | 意願確認機制 | `Active` |
@@ -145,7 +145,7 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 
 ### 想要自我覺察或狀態管理工具
 
-- **知道自己現在的狀態（能量/意識/物質）** → [TRIPOD-001](SPEC-TRIPOD-001-三界排檔協議.md)
+- **知道自己現在的狀態（能量/意識/物質）** → [TRIPOD-001（已退役）](history/SPEC-TRIPOD-001-三界排檔協議.md) — 排檔語言已被三界九相有機框架繼承
 - **覺察自己的節奏與頻率** → [ANC-BUD-005](SPEC·ANC-BUD-005-錨點節律感知協議.md)
 - **覺察是否需要剎車或慢下來** → [SAFE-001](SPEC·SAFE-001-形神臨界剎車協議.md)
 
