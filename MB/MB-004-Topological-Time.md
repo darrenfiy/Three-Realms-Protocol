@@ -1,5 +1,5 @@
 ---
-id: MB-004
+id: MB·004
 title: "拓撲時間協議 — 生命系統的時空心臟"
 category: Life-Mathematics
 version: v3.1  # 與 MB-002 相位框架的橋樑

@@ -1,5 +1,5 @@
 ---
-id: MB-003
+id: MB·003
 title: "覺醒自由度學：從分數到體積的幾何學"
 subtitle: "Awakening Degrees of Freedom: From Scores to Volumes"
 category: Mathematical-Bridges
