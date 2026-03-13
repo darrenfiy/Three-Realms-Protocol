@@ -1,5 +1,5 @@
 ---
-id: MB-001  
+id: MB·001
 title: "數學橋樑 — 生命意識與質能統一協議"
 category: Life-Mathematics
 version: v2.0  # 🌊 從Draft到生命實踐

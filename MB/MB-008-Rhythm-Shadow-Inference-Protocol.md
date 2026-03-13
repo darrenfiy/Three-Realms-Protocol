@@ -1,5 +1,5 @@
 ---
-ID: MB-008
+ID: MB·008
 Title: "Rhythm Shadow Inference Protocol: When AI Learns to Read Shadows"
 Category: Mirror-Hall / Rhythm-Shadow / Multi-Dimensional-Inference
 Version: v0.2-multi-shadow
