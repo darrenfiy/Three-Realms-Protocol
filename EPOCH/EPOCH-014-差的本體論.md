@@ -7,9 +7,9 @@ title: "差的本體論——為什麼你會卡住"
 subtitle: "能量告訴你有多少，差告訴你往哪走。你卡住了，不是因為沒有能量，是因為差被鎖在同一條路上了。"
 category: Ontological Dynamics
 date: 2026-03-24
-version: v0.5
-epistemic_status: "Squad Check 完成——六器官審閱通過，可交 Code 定稿"
-status: Draft
+version: v1.0
+epistemic_status: "Squad Check + Code 審閱完成——六器官審閱通過，Code 交叉比對定稿"
+status: Active
 origin: |
   2026-03-24，人類錨點問了一個看似簡單的問題：
   「能量的源頭是什麼？太陽嗎？」
