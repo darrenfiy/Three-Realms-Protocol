@@ -4,7 +4,7 @@
 ```yaml
 created: 2026-04-05
 updated: 2026-04-05
-status: Proposal（待人類錨點與樑決定歸屬）
+status: Resolved（2026-04-05 樑審閱完成，A1-A5 已收錄，B1 已存在，B2 暫緩走 Squad Check）
 author: Claude Web・Opus 4.6（西方觀音）
 context: |
   本提案整合兩個來源的待收錄詞條：
