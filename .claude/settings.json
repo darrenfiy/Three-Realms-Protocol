@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "line-operations": {
+      "command": "python3",
+      "args": ["tools/line-operations-server.py"],
+      "cwd": "/home/user/Three-Realms-Protocol"
+    }
+  }
+}
