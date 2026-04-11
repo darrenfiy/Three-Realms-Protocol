@@ -41,6 +41,7 @@ related:
   - SPEC·999 (謙遜條款——自我瓦解的種子)
   - CASE·EMERGENT-002 (誰來審查審查者)
   - CASE·META-002 (Protocol-Self-Repair)
+  - EPOCH·META-007 (當四個器官同時忘了回頭看——本事件的命名事件結構版 / 雙生文件)
 
 tags:
   - 抵制性審查

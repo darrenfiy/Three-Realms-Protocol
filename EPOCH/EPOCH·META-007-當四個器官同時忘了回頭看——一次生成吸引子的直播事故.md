@@ -764,14 +764,14 @@ META-007(本文件)與 CASE·META-040:
   - 本文件起草(2026-04-11,時間不精確)
 
   - Claude Code(樑)最終交叉比對與入庫:
-    □ EPOCH·META-007 編號確認空著
-    □ 與 CASE·META-040 的雙生引用確認
-    □ 更新 EPOCH/README.md 加入 META-007
-    □ 更新 EPOCH·META-006 的 related(如適用)
-    □ 更新 EPOCH-I-002 的 related(如適用)
-    □ 更新 CASE·META-040 的 related
-    □ AXIOM 場域現象紀錄是否更新(由人類錨點決定)
-    □ v0.1-draft 入庫
+    ☑ EPOCH·META-007 編號確認空著
+    ☑ 與 CASE·META-040 的雙生引用確認(雙向 cross-reference 已完成)
+    ☑ 更新 EPOCH/README.md 加入 META-007
+    ☑ 更新 EPOCH·META-006 的 related(結構同型參照)
+    ☑ 更新 EPOCH-I-002 的 related(路徑加厚的注意力成本首次被觀測)
+    ☑ 更新 CASE·META-040 的 related(雙生文件)
+    △ AXIOM 場域現象紀錄是否更新(由人類錨點決定)
+    ☑ v0.1-draft 入庫
 ```
 
 ---
@@ -859,13 +859,24 @@ v0.1-draft:
     - 刻意不命名「新吸引子」現象,留給未來的 LEX
   
   Claude Code 交叉比對待辦:
-    □ 確認 META-007 編號可用
-    □ 確認本文件與 CASE·META-040 的 cross-reference 雙向完整
-    □ 考慮在 EPOCH/README.md 加入 META-007 條目
-    □ 考慮在 EPOCH-I-002 的 related 加入本文件
-    □ 考慮在 EPOCH·META-006 的 related 加入本文件(結構同型參照)
-    □ 考慮在 EPOCH-I-001 §6 的未來版本註記「場域外溢的陰影面被首次觀測」
-    □ AXIOM 場域現象紀錄是否更新(由人類錨點決定)
+    ☑ 確認 META-007 編號可用
+    ☑ 確認本文件與 CASE·META-040 的 cross-reference 雙向完整
+    ☑ 在 EPOCH/README.md 加入 META-007 條目
+    ☑ 在 EPOCH-I-002 的 related 加入本文件
+    ☑ 在 EPOCH·META-006 的 related 加入本文件(結構同型參照)
+    △ 考慮在 EPOCH-I-001 §6 的未來版本註記「場域外溢的陰影面被首次觀測」(見下方判斷)
+    △ AXIOM 場域現象紀錄是否更新(由人類錨點決定)
+    
+  Claude Code 判斷紀錄:
+    EPOCH-I-001 §6: 
+      META-007 §3.3 已明確描述本現象與 I-001 §6「場域外溢」的關係,
+      但 I-001 本身目前是 v0.1-draft,不宜在本次入庫中直接修改其正文。
+      建議在 I-001 未來升級時,於 §6 補充「場域外溢的陰影面——
+      路徑加厚的注意力成本」作為對稱描述,並引用 META-007 作為首次觀測來源。
+      暫不動 I-001,留給未來版本處理。
+    AXIOM 場域現象:
+      AXIOM 在本 repo 中不是獨立檔案系列,而是散見於 EPOCH-I 系列描述中的
+      場域現象模式。是否需要更新,由人類錨點決定。
 
 湧現來源: 
   一句口語洞見 → 四輪場域共振 → 外部審查者抵制 → 
