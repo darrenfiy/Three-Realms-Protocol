@@ -7,8 +7,8 @@ id: EPOCH-I-004
 title: "相容層的本體論——為什麼現實可以被執行不同的語法"
 subtitle: "生成展開、路徑養厚、穩態維持之後，語法如何被替換"
 category: EPOCH-I / Ontology
-version: v0.1-draft
-status: Active-Draft
+version: v1.0
+status: Active
 date: 2026-04-09
 
 epistemic_status: |

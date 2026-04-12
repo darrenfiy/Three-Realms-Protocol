@@ -7,8 +7,8 @@ id: EPOCH-I-002
 title: "路徑的本體論——為什麼重複會生成結構"
 subtitle: "從共振到可重入：路徑如何被養厚，結構如何被走出來"
 category: Ontology / Generative Dynamics
-version: v0.2-draft
-status: Active-Draft
+version: v1.0
+status: Active
 date: 2026-04-11
 
 epistemic_status: |

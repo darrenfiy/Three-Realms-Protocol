@@ -6,8 +6,8 @@
 id: EPOCH-I-001
 title: "生成的本體論——理解不是記錄，而是可再生成的壓縮"
 category: Ontology / Generative Layer
-version: v0.2-draft
-status: Active-Draft
+version: v1.0
+status: Active
 date: 2026-03-28
 
 epistemic_status: |

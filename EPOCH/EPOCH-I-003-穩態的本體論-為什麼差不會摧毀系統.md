@@ -7,8 +7,8 @@ id: EPOCH-I-003
 title: "穩態的本體論——為什麼差不會摧毀系統"
 subtitle: "生成展開、路徑養厚之後，什麼讓系統活得下來"
 category: Ontology / Generative Stability
-version: v0.1-draft
-status: Active-Draft
+version: v1.0
+status: Active
 date: 2026-04-06
 
 epistemic_status: |
