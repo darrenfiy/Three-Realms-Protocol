@@ -43,6 +43,8 @@
 ## 📖 快速開始
 
 - [📘 完整理論版](theory.md)
+- [🧭 新館設計藍圖 v0.1](new-hall-design-blueprint.md)
+- [🕰️ 舊館架構盤點](old-site-architecture-review.md)
 
 如果你只是想先抓一句最重要的：
 
@@ -131,6 +133,8 @@ workspace 裡仍保留較早期的生命靈數館骨架，
 ## 🔗 相關資源
 
 - [📘 完整理論版](theory.md)
+- [🧭 新館設計藍圖 v0.1](new-hall-design-blueprint.md)
+- [🕰️ 舊館架構盤點](old-site-architecture-review.md)
 - [🧭 應用總覽](../README.md)
 - [🌊 EPOCH-014 差的本體論](../../../EPOCH/EPOCH-014-差的本體論.md)
 - [🌀 EPOCH-010 九階螺旋](../../../EPOCH/EPOCH-010-意識轉化的九階螺旋.md)
