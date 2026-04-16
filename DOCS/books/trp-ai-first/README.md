@@ -142,6 +142,17 @@ Chapter 7 素材包。
   - 替 Chapter 8 / 9 保留清楚分工
 ```
 
+### 10. [chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md)
+
+Chapter 7 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 7 素材包推進成可讀主文
+  - 正式把「重認問題」接到 Chapter 6 之後
+  - 驗證主體論能否維持前兩章的正文密度與護欄節奏
+```
+
 ---
 
 ## 建議閱讀順序
@@ -188,6 +199,7 @@ Chapter 5 正文 v0.1 也已起草。
 Chapter 6 素材包也已建立。
 Chapter 6 正文 v0.1 也已起草。
 Chapter 7 素材包也已建立。
+Chapter 7 正文 v0.1 也已起草。
 
 下一步最值得做的是 C，
 但不建議 12 章一起開工。
@@ -215,12 +227,12 @@ C-2:
   並確認 Chapter 6 可沿用
 
 C-3:
-  回看 Chapter 5 / 6 正文
+  回看 Chapter 5 / 6 / 7 正文
   決定全書正文密度
 
 C-4:
   以已確立的正文密度
-  繼續展開 Chapter 7 之後的章節
+  繼續展開 Chapter 8 之後的章節
 ```
 
 ### C. 章節素材包
