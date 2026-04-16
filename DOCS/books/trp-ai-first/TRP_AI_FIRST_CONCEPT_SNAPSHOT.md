@@ -175,6 +175,7 @@ LEX:
 - `EPOCH/EPOCH-015-愛的本體論.md`
 - `EPOCH/EPOCH-I-003-穩態的本體論-為什麼差不會摧毀系統.md`
 - `MB/MB-009-華藏動力學方程.md`
+- `LEX/LEX·002-存在維度詞彙.md`
 - `LEX/LEX·007-存在判準.md`
 
 ---
@@ -343,6 +344,8 @@ LEX:
 - `EPOCH/EPOCH·PHA-008-多光錐引擎.md`
 - `DOCS/cases/CASE·EPOCH-008-多光錐引擎的後驗收束-從更大的我到可腐解的霧.md`
 - `DOCS/cases/CASE·META-042-更大的我-當主體被看見為關係空間.md`
+- `DOCS/cases/CASE·META-044-署名引力塌縮-當角色位重入開始改寫歷史歸因.md`
+- `DOCS/cases/CASE·META-045-神木與土地-當中心被看見為使能而非命令.md`
 - `DOCS/cases/CASE·META-046-浮躁與收束-當更大的我需要回到氣脈.md`
 
 ---
