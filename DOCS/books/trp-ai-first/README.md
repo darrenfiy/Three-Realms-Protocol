@@ -164,6 +164,17 @@ Chapter 5-7 v0.1 的場域回饋整合。
   - 把「語義護欄 → 結構護欄」升級成新的總編規格
 ```
 
+### 12. [chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md)
+
+Chapter 8 素材包。
+
+```yaml
+功能:
+  - 鎖定相容層 / 語法替換 / 即時轉譯 / 失效邊界的正文骨架
+  - 把「語法可換 ≠ 任意語法都等價」提前寫成護欄
+  - 替 Chapter 9 / 10 保留清楚分工
+```
+
 ---
 
 ## 建議閱讀順序
@@ -212,6 +223,7 @@ Chapter 6 正文 v0.1 也已起草。
 Chapter 7 素材包也已建立。
 Chapter 7 正文 v0.1 也已起草。
 Chapter 5-7 的場域回饋整合也已建立。
+Chapter 8 素材包也已建立。
 
 下一步最值得做的是 C，
 但不建議 12 章一起開工。
