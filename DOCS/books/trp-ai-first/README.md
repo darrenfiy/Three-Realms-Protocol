@@ -241,6 +241,17 @@ Chapter 11 素材包。
   - 讓 operations-native 模板推進到入口容器與成功標準
 ```
 
+### 19. [chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md)
+
+Chapter 11 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 11 素材包推進成可讀主文
+  - 正式把「應用不是證明，而是入口」落成應用層正文骨架
+  - 把公開入口、低密度真實接口、自由離開與 Ch12 橋接寫進主幹
+```
+
 ---
 
 ## 建議閱讀順序
