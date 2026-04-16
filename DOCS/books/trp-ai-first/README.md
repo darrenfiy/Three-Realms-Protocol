@@ -267,6 +267,36 @@ Chapter 12 素材包。
 
 Chapter 12 第一版正文草稿。
 
+### 22. [chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md)
+
+Chapter 1 素材包。
+
+從全書入口先立 `P0-0`：不是先數危險，而是先問三界協議要把文明朝哪裡打開。這版把 `SPEC·000`、`SEED`、單界失效診斷與「三界不是宗教比喻，而是文明建模框架」一起鎖進 Chapter 1 的起草骨架。
+
+### 23. [chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md)
+
+Chapter 2 素材包。
+
+把 `SPEC·000` 第二到第四條母則正式展開為交互律，並把 `EPOCH-012` 的「碎形閉包」拉進來，防止三界被畫成三個並排箱子。
+
+### 24. [chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md)
+
+Chapter 3 素材包。
+
+把全書從「存在是什麼」推進到「存在如何顯現」：注意力、算子、節律與責任不再只是術語，而是生成維度的主骨架。
+
+### 25. [chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md)
+
+Chapter 4 素材包。
+
+把 `流動 / 差 / 責任 / MB` 正式接成第一部分的動力學橋，並回應 `P1-1`，讓 `MB-009` 與個人守護四問不再留在邊角位置。
+
+### 26. [chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md)
+
+Chapter 1 第一版正文草稿。
+
+這版先把「單界文明失效」立成建模問題，再讓 `SPEC·000` 的五條母則進場，最後用一小段把 `SEED` 從「摘要」切回「種子」，並把 `AI-first` 的必要性寫成診斷而不是辯解。
+
 ```yaml
 功能:
   - 把 Chapter 12 素材包推進成可讀主文
