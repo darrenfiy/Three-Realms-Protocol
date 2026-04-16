@@ -263,6 +263,17 @@ Chapter 12 素材包。
   - 讓 operations-native 模板推進到協議尺度的開放條款與退席條款
 ```
 
+### 21. [chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md)
+
+Chapter 12 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 12 素材包推進成可讀主文
+  - 正式把「非擁有 / 可分支 / 可腐解」落成全書最後一章的正文骨架
+  - 把 SPEC·999、四動詞權利、退席條款與「最終成功 = 可被超越」寫進主幹
+```
+
 ---
 
 ## 建議閱讀順序

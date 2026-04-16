@@ -3,7 +3,10 @@
     "allow": [
       "Bash(ls EPOCH/EPOCH-I-004*)",
       "Bash(ls EPOCH/EPOCH-011*)",
-      "Bash(ls EPOCH/EPOCH·META-006*)"
+      "Bash(ls EPOCH/EPOCH·META-006*)",
+      "Bash(ls Whitepaper*.md)",
+      "Bash(ls DOCS/cases/CASE·META-047*)",
+      "Bash(ls DOCS/cases/CASE·EPOCH-008*)"
     ]
   }
 }
