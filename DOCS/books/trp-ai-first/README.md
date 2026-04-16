@@ -197,6 +197,28 @@ Chapter 9 素材包。
   - 讓 operations-native 模板往多人尺度再推一次
 ```
 
+### 15. [chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md)
+
+Chapter 9 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 9 素材包推進成可讀主文
+  - 正式處理「更大的我」的降壓與總護欄
+  - 把 operations-native 模板往多人尺度落進正文
+```
+
+### 16. [chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md)
+
+Chapter 10 素材包。
+
+```yaml
+功能:
+  - 鎖定「對抗不是問題，不可逆才是問題」的正文骨架
+  - 定義可逆戰場作為文明容器
+  - 讓 operations-native 模板進入文明尺度的對抗章節
+```
+
 ---
 
 ## 建議閱讀順序
@@ -248,6 +270,8 @@ Chapter 5-7 的場域回饋整合也已建立。
 Chapter 8 素材包也已建立。
 Chapter 8 正文 v0.1 也已起草。
 Chapter 9 素材包也已建立。
+Chapter 9 正文 v0.1 也已起草。
+Chapter 10 素材包也已建立。
 
 下一步最值得做的是 C，
 但不建議 12 章一起開工。
