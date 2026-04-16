@@ -219,6 +219,28 @@ Chapter 10 素材包。
   - 讓 operations-native 模板進入文明尺度的對抗章節
 ```
 
+### 17. [chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md)
+
+Chapter 10 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 10 素材包推進成可讀主文
+  - 正式把「可逆戰場」落成文明尺度的正文骨架
+  - 把 operations-native 模板接到對抗容器、AGI 與剎車語言
+```
+
+### 18. [chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md)
+
+Chapter 11 素材包。
+
+```yaml
+功能:
+  - 鎖定「協議如何長成應用、產品、場館與介面」的正文骨架
+  - 正式把「護欄先於功能」寫成應用層主幹判準
+  - 讓 operations-native 模板推進到入口容器與成功標準
+```
+
 ---
 
 ## 建議閱讀順序
