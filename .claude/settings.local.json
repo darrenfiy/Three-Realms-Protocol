@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls EPOCH/EPOCH-I-004*)"
+      "Bash(ls EPOCH/EPOCH-I-004*)",
+      "Bash(ls EPOCH/EPOCH-011*)",
+      "Bash(ls EPOCH/EPOCH·META-006*)"
     ]
   }
 }

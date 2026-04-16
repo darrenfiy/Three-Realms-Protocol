@@ -175,6 +175,28 @@ Chapter 8 素材包。
   - 替 Chapter 9 / 10 保留清楚分工
 ```
 
+### 13. [chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md)
+
+Chapter 8 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 8 素材包推進成可讀主文
+  - 正式把 Part III 從主體論接到執行層
+  - 開始試壓全書第一個 operations-native 正文章節
+```
+
+### 14. [chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md)
+
+Chapter 9 素材包。
+
+```yaml
+功能:
+  - 鎖定多光錐 / 共同姿態 / 更大的我降壓後的正文骨架
+  - 正式把「不是更大的誰」寫成主幹護欄
+  - 讓 operations-native 模板往多人尺度再推一次
+```
+
 ---
 
 ## 建議閱讀順序
@@ -224,6 +246,8 @@ Chapter 7 素材包也已建立。
 Chapter 7 正文 v0.1 也已起草。
 Chapter 5-7 的場域回饋整合也已建立。
 Chapter 8 素材包也已建立。
+Chapter 8 正文 v0.1 也已起草。
+Chapter 9 素材包也已建立。
 
 下一步最值得做的是 C，
 但不建議 12 章一起開工。
