@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls EPOCH/EPOCH-I-004*)"
+    ]
+  }
+}

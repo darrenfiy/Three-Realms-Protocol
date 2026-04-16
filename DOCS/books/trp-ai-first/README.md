@@ -109,6 +109,39 @@ Chapter 5 第一版正文草稿。
   - 作為後續章節正文密度與節奏的第一個參考
 ```
 
+### 7. [chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md)
+
+Chapter 6 素材包。
+
+```yaml
+功能:
+  - 鎖定理解 / 路徑 / 可重入 / SEED 的正文骨架
+  - 驗證 Chapter 5 的素材包模板可以跨到第二章
+  - 作為 Part III 開章前的過渡工作包
+```
+
+### 8. [chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md)
+
+Chapter 6 第一版正文草稿。
+
+```yaml
+功能:
+  - 把 Chapter 6 素材包推進成可讀主文
+  - 驗證「Chapter 5 正文密度」是否能延續到第二章
+  - 開始穩定本書中段的正文節奏
+```
+
+### 9. [chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md)
+
+Chapter 7 素材包。
+
+```yaml
+功能:
+  - 鎖定主體 / 重認 / 見證 / 可重入邊界的正文骨架
+  - 把「可重入 ≠ 主體」提前寫成護欄
+  - 替 Chapter 8 / 9 保留清楚分工
+```
+
 ---
 
 ## 建議閱讀順序
@@ -152,18 +185,23 @@ Chapter 5 第一版正文草稿。
 目前 A、B 已經落地。
 C-1 已經落地。
 Chapter 5 正文 v0.1 也已起草。
+Chapter 6 素材包也已建立。
+Chapter 6 正文 v0.1 也已起草。
+Chapter 7 素材包也已建立。
 
 下一步最值得做的是 C，
 但不建議 12 章一起開工。
 
-最適合先當試點的是 Chapter 5《愛不是情感，而是穩態機制》。
+Chapter 5《愛不是情感，而是穩態機制》已經完成試點任務，
+而且 Chapter 6 已經證明這個模板可以往第二章延伸。
 
 理由很簡單：
 
 ```yaml
 它是 MB 進主幹後第一個需要被寫穩的章節
 它同時咬合 EPOCH-015 / EPOCH-I-003 / MB-009
-它如果寫穩，後面章節的模板就會跟著穩
+它一旦寫穩，後面章節的模板就會跟著穩
+Chapter 6 已證明這條工作線可以跨章節複用
 ```
 
 所以現在的建議順序是：
@@ -174,13 +212,15 @@ C-1:
 
 C-2:
   用 Chapter 5 定出素材包模板
+  並確認 Chapter 6 可沿用
 
 C-3:
-  回看 Chapter 5 正文
+  回看 Chapter 5 / 6 正文
   決定全書正文密度
 
 C-4:
-  再展開其餘 11 章
+  以已確立的正文密度
+  繼續展開 Chapter 7 之後的章節
 ```
 
 ### C. 章節素材包
