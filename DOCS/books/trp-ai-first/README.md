@@ -252,6 +252,17 @@ Chapter 11 第一版正文草稿。
   - 把公開入口、低密度真實接口、自由離開與 Ch12 橋接寫進主幹
 ```
 
+### 20. [chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md)
+
+Chapter 12 素材包。
+
+```yaml
+功能:
+  - 鎖定「非擁有、可分支、可腐解」作為全書最後一章的正文骨架
+  - 正式把 SPEC·999 寫成退席與自毀裝置，而不是附錄尾註
+  - 讓 operations-native 模板推進到協議尺度的開放條款與退席條款
+```
+
 ---
 
 ## 建議閱讀順序
