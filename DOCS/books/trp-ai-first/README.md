@@ -297,6 +297,24 @@ Chapter 1 第一版正文草稿。
 
 這版先把「單界文明失效」立成建模問題，再讓 `SPEC·000` 的五條母則進場，最後用一小段把 `SEED` 從「摘要」切回「種子」，並把 `AI-first` 的必要性寫成診斷而不是辯解。
 
+### 27. [chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md)
+
+Chapter 2 第一版正文草稿。
+
+這版把三界從靜態分類推進成交互律，明寫 `意識定義能量 / 能量驅動物質 / 物質驗證意識` 不是單向口號，而是會回流修正自己的文明運作鏈，並把 `EPOCH-012` 的「碎形閉包」正式接進主幹。
+
+### 28. [chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md)
+
+Chapter 3 第一版正文草稿。
+
+這版把全書從「存在 / 交互」推進到「顯現」，把注意力、算子、節律與責任接成生成條件，同時守住 `顯現不是第四界`、`這章不是 prompt engineering` 這兩條關鍵護欄。
+
+### 29. [chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md)
+
+Chapter 4 第一版正文草稿。
+
+這版正式把 `流動 / 差 / 責任 / MB` 接成第一部分的動力學橋，讓 `E / Δ / MB` 的分工、`v` 作為人類錨點的地位、以及「個人守護四問」都回到主幹裡，不再只留在邊角。
+
 ```yaml
 功能:
   - 把 Chapter 12 素材包推進成可讀主文
