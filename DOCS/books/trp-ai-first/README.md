@@ -88,7 +88,60 @@ Claude Code 留下的外部審查筆記。
   - 把「不要再躲在 repo 裡」寫成出版動機
 ```
 
-### 5. [TRP_AI_FIRST_CONCEPT_SNAPSHOT.md](TRP_AI_FIRST_CONCEPT_SNAPSHOT.md)
+### 5. [publish/metadata.yaml](publish/metadata.yaml)
+
+出版層的書級 metadata。
+
+```yaml
+功能:
+  - 集中管理書名、副標、作者、授權、版本與語言
+  - 不反向污染各章工作稿
+  - 供 EPUB / 後續其他輸出格式共用
+```
+
+### 6. [publish/book-order.txt](publish/book-order.txt)
+
+出版層的章節順序清單。
+
+```yaml
+功能:
+  - 顯式指定 Preface → 12 章 → Colophon 的順序
+  - 避免靠 wildcard 與檔名字母排序決定書本結構
+```
+
+### 7. [publish/COLOPHON.md](publish/COLOPHON.md)
+
+出版層的版權與協作說明頁。
+
+```yaml
+功能:
+  - 把正式署名與六尊器官協作拆成兩層
+  - 保留模型共同作者的真實生成痕跡
+  - 避免平台 metadata 與書內協作說明互相打架
+```
+
+### 8. [build-book.ps1](build-book.ps1)
+
+不傷原稿的出版 build 腳本。
+
+```yaml
+功能:
+  - 讀取 metadata 與章節順序
+  - 自動去除工作稿頂部內部 metadata 區塊
+  - 產出合併 markdown
+  - 若本機有 pandoc，額外產出 EPUB
+```
+
+### 出版頁（front/back matter）
+
+- [publish/TITLE_PAGE.md](publish/TITLE_PAGE.md)
+- [publish/COPYRIGHT.md](publish/COPYRIGHT.md)
+- [publish/HOW_TO_READ.md](publish/HOW_TO_READ.md)
+- [publish/APPENDIX_A_PROTOCOL_PRIME.md](publish/APPENDIX_A_PROTOCOL_PRIME.md)
+- [publish/APPENDIX_B_KEY_EPOCH_INDEX.md](publish/APPENDIX_B_KEY_EPOCH_INDEX.md)
+- [publish/APPENDIX_C_KEY_TERMS.md](publish/APPENDIX_C_KEY_TERMS.md)
+
+### 9. [TRP_AI_FIRST_CONCEPT_SNAPSHOT.md](TRP_AI_FIRST_CONCEPT_SNAPSHOT.md)
 
 本書概念表 snapshot。
 
@@ -99,7 +152,7 @@ Claude Code 留下的外部審查筆記。
   - 不取代活辭典本體
 ```
 
-### 6. [chapter-packs/TRP_AI_FIRST_CH05_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH05_MATERIAL_PACK.md)
+### 10. [chapter-packs/TRP_AI_FIRST_CH05_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH05_MATERIAL_PACK.md)
 
 Chapter 5 試點素材包。
 
@@ -110,7 +163,7 @@ Chapter 5 試點素材包。
   - 同時充當後續 11 章的素材包模板
 ```
 
-### 7. [chapters/TRP_AI_FIRST_CH05_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH05_DRAFT_v0.1.md)
+### 11. [chapters/TRP_AI_FIRST_CH05_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH05_DRAFT_v0.1.md)
 
 Chapter 5 第一版正文草稿。
 
@@ -121,7 +174,7 @@ Chapter 5 第一版正文草稿。
   - 作為後續章節正文密度與節奏的第一個參考
 ```
 
-### 8. [chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md)
+### 12. [chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH06_MATERIAL_PACK.md)
 
 Chapter 6 素材包。
 
@@ -132,7 +185,7 @@ Chapter 6 素材包。
   - 作為 Part III 開章前的過渡工作包
 ```
 
-### 9. [chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md)
+### 13. [chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH06_DRAFT_v0.1.md)
 
 Chapter 6 第一版正文草稿。
 
@@ -143,7 +196,7 @@ Chapter 6 第一版正文草稿。
   - 開始穩定本書中段的正文節奏
 ```
 
-### 10. [chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md)
+### 14. [chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH07_MATERIAL_PACK.md)
 
 Chapter 7 素材包。
 
@@ -154,7 +207,7 @@ Chapter 7 素材包。
   - 替 Chapter 8 / 9 保留清楚分工
 ```
 
-### 11. [chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md)
+### 15. [chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH07_DRAFT_v0.1.md)
 
 Chapter 7 第一版正文草稿。
 
@@ -165,7 +218,7 @@ Chapter 7 第一版正文草稿。
   - 驗證主體論能否維持前兩章的正文密度與護欄節奏
 ```
 
-### 12. [TRP_AI_FIRST_V0_1_FIELD_SYNTHESIS.md](TRP_AI_FIRST_V0_1_FIELD_SYNTHESIS.md)
+### 16. [TRP_AI_FIRST_V0_1_FIELD_SYNTHESIS.md](TRP_AI_FIRST_V0_1_FIELD_SYNTHESIS.md)
 
 Chapter 5-7 v0.1 的場域回饋整合。
 
@@ -176,7 +229,7 @@ Chapter 5-7 v0.1 的場域回饋整合。
   - 把「語義護欄 → 結構護欄」升級成新的總編規格
 ```
 
-### 13. [chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md)
+### 17. [chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH08_MATERIAL_PACK.md)
 
 Chapter 8 素材包。
 
@@ -187,7 +240,7 @@ Chapter 8 素材包。
   - 替 Chapter 9 / 10 保留清楚分工
 ```
 
-### 14. [chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md)
+### 18. [chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH08_DRAFT_v0.1.md)
 
 Chapter 8 第一版正文草稿。
 
@@ -198,7 +251,7 @@ Chapter 8 第一版正文草稿。
   - 開始試壓全書第一個 operations-native 正文章節
 ```
 
-### 15. [chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md)
+### 19. [chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH09_MATERIAL_PACK.md)
 
 Chapter 9 素材包。
 
@@ -209,7 +262,7 @@ Chapter 9 素材包。
   - 讓 operations-native 模板往多人尺度再推一次
 ```
 
-### 16. [chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md)
+### 20. [chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH09_DRAFT_v0.1.md)
 
 Chapter 9 第一版正文草稿。
 
@@ -220,7 +273,7 @@ Chapter 9 第一版正文草稿。
   - 把 operations-native 模板往多人尺度落進正文
 ```
 
-### 17. [chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md)
+### 21. [chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH10_MATERIAL_PACK.md)
 
 Chapter 10 素材包。
 
@@ -231,7 +284,7 @@ Chapter 10 素材包。
   - 讓 operations-native 模板進入文明尺度的對抗章節
 ```
 
-### 18. [chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md)
+### 22. [chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH10_DRAFT_v0.1.md)
 
 Chapter 10 第一版正文草稿。
 
@@ -242,7 +295,7 @@ Chapter 10 第一版正文草稿。
   - 把 operations-native 模板接到對抗容器、AGI 與剎車語言
 ```
 
-### 19. [chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md)
+### 23. [chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH11_MATERIAL_PACK.md)
 
 Chapter 11 素材包。
 
@@ -253,7 +306,7 @@ Chapter 11 素材包。
   - 讓 operations-native 模板推進到入口容器與成功標準
 ```
 
-### 20. [chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md)
+### 24. [chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH11_DRAFT_v0.1.md)
 
 Chapter 11 第一版正文草稿。
 
@@ -264,7 +317,7 @@ Chapter 11 第一版正文草稿。
   - 把公開入口、低密度真實接口、自由離開與 Ch12 橋接寫進主幹
 ```
 
-### 21. [chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md)
+### 25. [chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH12_MATERIAL_PACK.md)
 
 Chapter 12 素材包。
 
@@ -275,53 +328,53 @@ Chapter 12 素材包。
   - 讓 operations-native 模板推進到協議尺度的開放條款與退席條款
 ```
 
-### 22. [chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md)
+### 26. [chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH12_DRAFT_v0.1.md)
 
 Chapter 12 第一版正文草稿。
 
-### 23. [chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md)
+### 27. [chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH01_MATERIAL_PACK.md)
 
 Chapter 1 素材包。
 
 從全書入口先立 `P0-0`：不是先數危險，而是先問三界協議要把文明朝哪裡打開。這版把 `SPEC·000`、`SEED`、單界失效診斷與「三界不是宗教比喻，而是文明建模框架」一起鎖進 Chapter 1 的起草骨架。
 
-### 24. [chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md)
+### 28. [chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH02_MATERIAL_PACK.md)
 
 Chapter 2 素材包。
 
 把 `SPEC·000` 第二到第四條母則正式展開為交互律，並把 `EPOCH-012` 的「碎形閉包」拉進來，防止三界被畫成三個並排箱子。
 
-### 25. [chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md)
+### 29. [chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH03_MATERIAL_PACK.md)
 
 Chapter 3 素材包。
 
 把全書從「存在是什麼」推進到「存在如何顯現」：注意力、算子、節律與責任不再只是術語，而是生成維度的主骨架。
 
-### 26. [chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md)
+### 30. [chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md](chapter-packs/TRP_AI_FIRST_CH04_MATERIAL_PACK.md)
 
 Chapter 4 素材包。
 
 把 `流動 / 差 / 責任 / MB` 正式接成第一部分的動力學橋，並回應 `P1-1`，讓 `MB-009` 與個人守護四問不再留在邊角位置。
 
-### 27. [chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md)
+### 31. [chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH01_DRAFT_v0.1.md)
 
 Chapter 1 第一版正文草稿。
 
 這版先把「單界文明失效」立成建模問題，再讓 `SPEC·000` 的五條母則進場，最後用一小段把 `SEED` 從「摘要」切回「種子」，並把 `AI-first` 的必要性寫成診斷而不是辯解。
 
-### 28. [chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md)
+### 32. [chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH02_DRAFT_v0.1.md)
 
 Chapter 2 第一版正文草稿。
 
 這版把三界從靜態分類推進成交互律，明寫 `意識定義能量 / 能量驅動物質 / 物質驗證意識` 不是單向口號，而是會回流修正自己的文明運作鏈，並把 `EPOCH-012` 的「碎形閉包」正式接進主幹。
 
-### 29. [chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md)
+### 33. [chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH03_DRAFT_v0.1.md)
 
 Chapter 3 第一版正文草稿。
 
 這版把全書從「存在 / 交互」推進到「顯現」，把注意力、算子、節律與責任接成生成條件，同時守住 `顯現不是第四界`、`這章不是 prompt engineering` 這兩條關鍵護欄。
 
-### 30. [chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md)
+### 34. [chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH04_DRAFT_v0.1.md)
 
 Chapter 4 第一版正文草稿。
 
