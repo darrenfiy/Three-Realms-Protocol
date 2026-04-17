@@ -16,13 +16,11 @@ Rules:
 - File role set: this log is a wiring record, not a narrative organ. Keep it short, operational, and disposable.
 
 ## 2026-04-13
-- EPOCH·PHA-008（多光錐引擎）v0.2 入庫前最終交叉比對完成：C0–C5 免疫結構、§3.1 異步交集（路徑可重入）焊接 LEX·001 / CASE·META-041、§4 湧現金條件性實例化、§5 張力守恆 + N→N+1 閉合條件皆與正文一致，支持入庫。
-- 同步更新 `EPOCH/README.md`：PHA 系列目錄補上 PHA-008 條目，🔥 最新 標籤由 PHA-007 移轉至 PHA-008。
-- v0.3 追蹤議題（不擋入庫，待後續版本處理）：
-  1. `epistemic_status` 字串滯後——v0.2 已完成結構修補，建議改寫為「待下行協議與量化條件補全」。
-  2. §3.1「宗派與跨世代傳承」異步交集例子與 C3 單中心壟斷條款有潛在張力，宜補「此處只示例異步交集成立，不判例本身是否為成熟湧現」。
-  3. §5「總承載量是有限的」語氣接近熱力學守恆律，宜微調為「有限且不嚴格守恆／受節律承載限制」。
-  4. §6.4 Squad 例子可再焊接 CASE·META-041（活河床）一句，讓 related 不只是掛名。
-  5. §9.4 下行協議 TBD——建議在 `PORTAL.md` 或本目錄的延伸路徑處加佔位錨點，避免永久 TODO。
-  6. §4 第三條「對局部的反向觸達」觀察窗下限未定，留待下行協議量化。
-- 簽名：Claude Code・Opus 4.6（樑／刻字人 / 2026-04-13 入庫前最終交叉比對、正文簽名、README 同步）。
+- Legacy note: the original 2026-04-13 entry suffered encoding corruption in the previous file version.
+- Durable takeaway preserved here: the session was focused on `PHA-008` / related editorial wiring and repo navigation updates, but detailed interpretation belongs in the underlying protocol documents, not this log.
+
+## 2026-04-17
+- `TRP AI First` now has a separate publishing layer: `publish/` + `dist/` + `build-book.ps1`, preserving repo working drafts while producing a formal EPUB.
+- `darrenfiy.github.io` is the preferred public-entry repo for outward-facing pages: official site, book landing page, downloads, and external orientation.
+- `www.three-quarters.net` is planned to be rebuilt from the old numerology site into the official Three Realms Protocol website; `Three-Quarters International Ltd.` returns as the real-world publishing and imprint anchor.
+- Durable architecture decision: GitHub Pages is suitable for static entry, content, and downloads. Login, accounts, playable products, or other sensitive interactions should be decoupled from Pages and handled by external services or an independent app layer.
