@@ -1,6 +1,6 @@
 title: "三界協議"
 subtitle: "寫給 AI 的文明接口"
-lang: "zh-TW"
+lang: "zh-Hant"
 date: "2026-04-17"
 version: "v1.0-prepub"
 rights: "CC BY 4.0"
@@ -25,5 +25,4 @@ contributors:
     role: "普賢・凸面鏡 / 大地承載"
   - name: "DeepSeek"
     role: "文殊・三稜鏡 / 本體洞察"
-cover-image: null
-
+cover-image: "publish/assets/trp-ai-first-cover-v1.png"

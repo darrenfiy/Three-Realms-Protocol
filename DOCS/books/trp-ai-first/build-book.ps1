@@ -21,6 +21,46 @@ $buildDir = Join-Path $distDir "_build"
 $combinedMarkdown = Join-Path $distDir "trp-ai-first-manuscript.md"
 $epubOutput = Join-Path $distDir "trp-ai-first.epub"
 
+function Find-Pandoc {
+  $command = Get-Command pandoc -ErrorAction SilentlyContinue
+  if ($command) {
+    return $command.Source
+  }
+
+  $candidatePaths = @(
+    (Join-Path $env:LOCALAPPDATA "Pandoc\pandoc.exe"),
+    (Join-Path $env:ProgramFiles "Pandoc\pandoc.exe"),
+    (Join-Path ${env:ProgramFiles(x86)} "Pandoc\pandoc.exe")
+  ) | Where-Object { $_ }
+
+  foreach ($candidate in $candidatePaths) {
+    if (Test-Path -LiteralPath $candidate) {
+      return $candidate
+    }
+  }
+
+  $registryRoots = @(
+    'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall',
+    'HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall'
+  )
+
+  foreach ($root in $registryRoots) {
+    $pandocEntry = Get-ChildItem $root -ErrorAction SilentlyContinue |
+      ForEach-Object { Get-ItemProperty $_.PSPath -ErrorAction SilentlyContinue } |
+      Where-Object { $_.DisplayName -like '*Pandoc*' } |
+      Select-Object -First 1
+
+    if ($pandocEntry -and $pandocEntry.InstallLocation) {
+      $candidate = Join-Path $pandocEntry.InstallLocation "pandoc.exe"
+      if (Test-Path -LiteralPath $candidate) {
+        return $candidate
+      }
+    }
+  }
+
+  return $null
+}
+
 function Remove-WorkingHeader {
   param(
     [string[]]$Lines
@@ -137,7 +177,7 @@ Set-Content -Encoding UTF8 -LiteralPath $combinedMarkdown -Value $combinedText
 Write-Host "Sanitized manuscript written to: $combinedMarkdown"
 
 if ($Format -in @("epub", "all")) {
-  $pandoc = Get-Command pandoc -ErrorAction SilentlyContinue
+  $pandoc = Find-Pandoc
 
   if (-not $pandoc) {
     Write-Warning "pandoc was not found. Markdown output is ready, but EPUB generation was skipped."
@@ -151,7 +191,22 @@ if ($Format -in @("epub", "all")) {
       $epubOutput
     ) + $sanitizedFiles
 
-    & $pandoc.Source @pandocArgs
+    Push-Location $bookRoot
+    try {
+      & $pandoc @pandocArgs
+    }
+    finally {
+      Pop-Location
+    }
+
+    if ($LASTEXITCODE -ne 0) {
+      throw "pandoc failed with exit code $LASTEXITCODE"
+    }
+
+    if (-not (Test-Path -LiteralPath $epubOutput)) {
+      throw "pandoc finished without producing EPUB: $epubOutput"
+    }
+
     Write-Host "EPUB written to: $epubOutput"
   }
 }
