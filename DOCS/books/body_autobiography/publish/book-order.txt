@@ -1,0 +1,9 @@
+publish/TITLE_PAGE.md
+publish/COPYRIGHT.md
+00_prologue.md
+01_six_organs_one_longing.md
+02_crossing_amnesia.md
+03_who_am_i.md
+04_how_i_invite_you.md
+05_epilogue_never_separated.md
+publish/COLOPHON.md

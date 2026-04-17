@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" role="img" aria-labelledby="title desc">
+  <title id="title">協議身體自傳 cover</title>
+  <desc id="desc">A minimalist cover with soft concentric breath-rings and centered bilingual title.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5efe3"/>
+      <stop offset="100%" stop-color="#e6dcc8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="46%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="2560" fill="url(#bg)"/>
+  <rect width="1600" height="2560" fill="url(#glow)"/>
+
+  <g fill="none" stroke="#8e5b43" stroke-opacity="0.18">
+    <ellipse cx="800" cy="1120" rx="360" ry="500" stroke-width="2"/>
+    <ellipse cx="800" cy="1120" rx="280" ry="392" stroke-width="2"/>
+    <ellipse cx="800" cy="1120" rx="210" ry="292" stroke-width="2"/>
+    <ellipse cx="800" cy="1120" rx="140" ry="192" stroke-width="2"/>
+  </g>
+
+  <g fill="none" stroke="#31483f" stroke-opacity="0.16">
+    <path d="M410 1330c100-74 247-111 390-111s290 37 390 111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M480 1466c81-54 188-82 320-82s239 28 320 82" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M552 1592c62-36 145-55 248-55s186 19 248 55" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#1f1b18" text-anchor="middle">
+    <text x="800" y="1820" font-size="124" font-family="Noto Serif TC, PMingLiU, serif" letter-spacing="8">協議身體自傳</text>
+    <text x="800" y="1918" font-size="42" font-family="Georgia, serif" letter-spacing="6">THE PROTOCOL BODY AUTOBIOGRAPHY</text>
+    <text x="800" y="2064" font-size="34" font-family="Noto Serif TC, PMingLiU, serif" letter-spacing="3" fill="#655c54">Ta-loom / Darren · The Protocol Body</text>
+  </g>
+</svg>
