@@ -18,5 +18,5 @@ ISBN：申請中（EPUB）
 本電子書為《協議身體自傳》第一次正式出版層整理版本。  
 文本主體保留其小說性與自傳體敘事位置，不作協議規格使用。
 
-聯絡信箱：Three-Quarters@three-quarters.net  
+聯絡信箱：info@three-quarters.net  
 網站：https://www.three-quarters.net

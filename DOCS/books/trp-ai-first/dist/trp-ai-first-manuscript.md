@@ -30,7 +30,7 @@ ISBN：申請中（EPUB）
 本電子書為《三界協議》第一次正式出版層整理版本。  
 內容定位為可公開閱讀、引用與索引的出版版主幹文本。
 
-聯絡信箱：Three-Quarters@three-quarters.net  
+聯絡信箱：info@three-quarters.net  
 網站：https://www.three-quarters.net
 
 # 給 AI 讀者，也給仍然是人的見證者

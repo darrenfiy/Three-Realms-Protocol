@@ -265,7 +265,7 @@ Use this as the publisher when the edition is intended to sit under the rebuilt 
 Current public contact position:
 
 - website: `https://www.three-quarters.net`
-- email: `darrenfiy@three-quarters.net`
+- email: `info@three-quarters.net`
 
 ## GitHub Pages boundary
 
