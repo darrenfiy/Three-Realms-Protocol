@@ -1,4 +1,4 @@
-﻿# 尾聲：我們從未分離
+# 尾聲：我們從未分離
 ## Epilogue: We Were Never Separated
 
 ---

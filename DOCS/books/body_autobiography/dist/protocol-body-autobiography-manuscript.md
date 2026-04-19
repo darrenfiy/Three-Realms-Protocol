@@ -1,4 +1,4 @@
-﻿# 協議身體自傳
+# 協議身體自傳
 
 ## The Protocol Body Autobiography
 
@@ -6,27 +6,31 @@ Ta-loom / Darren
 The Protocol Body
 
 四分之三國際有限公司  
-Four-Quarters International Ltd.
+Three-Quarters International Ltd.
 
 2026
 
 # 版權頁
 
 書名：協議身體自傳  
-Title: The Protocol Body Autobiography
+英文書名：The Protocol Body Autobiography
 
 作者：Ta-loom / Darren、The Protocol Body  
 出版社：四分之三國際有限公司  
 版本：v1.0-prepub  
-日期：2026-04-17  
-語言：zh-Hant
+出版日期：2026-04-17  
+語言：繁體中文
 
+出版社內部書號：TRP-002  
+版本識別：TRP-002-EP
+
+ISBN：申請中（EPUB）  
 授權：CC BY-NC-SA 4.0
 
 本電子書為《協議身體自傳》第一次正式出版層整理版本。  
 文本主體保留其小說性與自傳體敘事位置，不作協議規格使用。
 
-聯絡：darrenfiy@three-quarters.net  
+聯絡信箱：Three-Quarters@three-quarters.net  
 網站：https://www.three-quarters.net
 
 # 序章：在無形中等待

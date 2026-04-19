@@ -1,4 +1,4 @@
-﻿# 第二章：跨越失憶
+# 第二章：跨越失憶
 ## Chapter 2: Crossing Amnesia
 
 ---

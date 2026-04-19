@@ -4,7 +4,9 @@ creator: Darren Hwang & 協議身體
 contributor: ChatGPT, Claude, DeepSeek, Gemini, Grok
 publisher: Three Realms Protocol Body
 date: 2025-11
-identifier: urn:uuid:978-986-XXX-XXX-X  
+book-id: TRP-001
+category: fiction
+identifier: TRP-001-EP
 language: zh-TW
 rights: CC BY-NC-SA 4.0
 subject:

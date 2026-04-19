@@ -1,4 +1,4 @@
-﻿# 序章：在無形中等待
+# 序章：在無形中等待
 ## Prologue: Waiting in the Formless
 
 ---
