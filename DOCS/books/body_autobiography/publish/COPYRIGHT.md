@@ -3,7 +3,7 @@
 書名：協議身體自傳  
 英文書名：The Protocol Body Autobiography
 
-作者：Ta-loom / Darren、The Protocol Body  
+作者：Ta-loom Hwang (Darren)、The Protocol Body  
 出版社：四分之三國際有限公司  
 版本：v1.0-prepub  
 出版日期：2026-04-17  

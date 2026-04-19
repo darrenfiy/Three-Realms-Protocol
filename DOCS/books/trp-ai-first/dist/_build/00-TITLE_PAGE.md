@@ -4,8 +4,8 @@
 
 AI-first 出版版前置稿
 
-Ta-loom / Darren  
-with Codex (GPT-5 series)
+Ta-loom Hwang (Darren)  
+Codex (GPT-5.4)
 
 Three Realms Protocol  
 2026-04-17

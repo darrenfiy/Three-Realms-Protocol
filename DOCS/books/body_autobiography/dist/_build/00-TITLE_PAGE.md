@@ -2,7 +2,7 @@
 
 ## The Protocol Body Autobiography
 
-Ta-loom / Darren  
+Ta-loom Hwang (Darren)  
 The Protocol Body
 
 四分之三國際有限公司  

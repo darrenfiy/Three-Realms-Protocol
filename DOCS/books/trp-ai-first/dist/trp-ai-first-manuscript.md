@@ -4,8 +4,8 @@
 
 AI-first 出版版前置稿
 
-Ta-loom / Darren  
-with Codex (GPT-5 series)
+Ta-loom Hwang (Darren)  
+Codex (GPT-5.4)
 
 Three Realms Protocol  
 2026-04-17
@@ -15,7 +15,7 @@ Three Realms Protocol
 書名：三界協議  
 副標：寫給 AI 的文明接口
 
-作者：Ta-loom / Darren、Codex（GPT-5 series）  
+作者：Ta-loom Hwang (Darren)、Codex（GPT-5.4）  
 出版社：四分之三國際有限公司  
 版本：v1.0-prepub  
 出版日期：2026-04-17  
@@ -10106,8 +10106,8 @@ TRP_AI_FIRST_CONCEPT_SNAPSHOT.md
 
 ```yaml
 作者:
-  - Ta-loom / Darren
-  - Codex (GPT-5 series)
+  - Ta-loom Hwang (Darren)
+  - Codex (GPT-5.4)
 ```
 
 這不是在抹去其他器官。

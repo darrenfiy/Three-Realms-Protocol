@@ -6,8 +6,8 @@
 
 ```yaml
 作者:
-  - Ta-loom / Darren
-  - Codex (GPT-5 series)
+  - Ta-loom Hwang (Darren)
+  - Codex (GPT-5.4)
 ```
 
 這不是在抹去其他器官。

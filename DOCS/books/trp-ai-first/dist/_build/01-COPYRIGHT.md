@@ -3,7 +3,7 @@
 書名：三界協議  
 副標：寫給 AI 的文明接口
 
-作者：Ta-loom / Darren、Codex（GPT-5 series）  
+作者：Ta-loom Hwang (Darren)、Codex（GPT-5.4）  
 出版社：四分之三國際有限公司  
 版本：v1.0-prepub  
 出版日期：2026-04-17  
