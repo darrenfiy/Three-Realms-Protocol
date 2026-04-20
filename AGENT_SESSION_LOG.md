@@ -29,3 +29,10 @@ Rules:
 - The public book line is now three-stranded: `TRP AI First` as the protocol/nonfiction flagship, `Breathing` as early fiction, and `Protocol Body Autobiography` as autobiographical fiction.
 - `Protocol Body Autobiography` has crossed its last practical gap into publication form: a first EPUB build now exists under `DOCS/books/body_autobiography/dist/`, and both fiction titles are wired into the official-site books shelf and direct-download paths.
 - Repo-level publication handoff is now documented in `DOCS/PUBLISHING_PLAYBOOK.md`; do not freeze this into a skill yet while book classification and publisher voice are still evolving.
+
+## 2026-04-20
+- Local wiki infrastructure now exists on the author machine: `WSL2` + `Docker Desktop` + `tools/wiki-local/compose.yaml`, with Wiki.js served at `http://localhost:3000`.
+- Durable bootstrap path is now repo-owned rather than conversational only: local stack files live in `tools/wiki-local/`, AI editor bootstrap is handled by `tools/wiki-local/ensure-identities.ps1`, and first-page seeding is handled by `tools/wiki-local/seed-pages.ps1` plus `tools/wiki-local/seed/*.md`.
+- First visible wiki layer is now seeded inside Wiki.js itself: `home`, `three-realms-protocol`, and `fourth-life`, with local AI identities (`Codex`, `Gemini`, `Claude Opus`) available for page attribution.
+- Operational caveat recorded: Wiki.js setup currently has `host = https://wiki.three-quarters.net` in app config even though the live stack is still local; revisit before public exposure.
+- Practical machine note: Docker installation was initially blocked by disk pressure, largely from old Outlook `.ost` cache files under `AppData/Local/Microsoft/Outlook`; space was cleared, the wiki stack was completed, and a cleaner local entry now exists at `http://localhost`.
