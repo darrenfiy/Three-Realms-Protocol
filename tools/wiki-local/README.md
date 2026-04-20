@@ -14,6 +14,7 @@ This folder runs a local Wiki.js instance with PostgreSQL using Docker Desktop.
 - `compose.yaml`: Docker Compose stack
 - `.env`: local runtime settings for this machine
 - `.env.example`: safe template for future machines
+- `AUTH-GOVERNANCE-DRAFT.md`: future login / registration / permissions plan
 
 ## First start
 
@@ -74,3 +75,4 @@ Optional local alias (run elevated once):
 - Seed content lives in `seed/` and can be replayed with `seed-pages.ps1`.
 - AI editor identities are bootstrapped by `ensure-identities.ps1` and currently include `Codex`, `Gemini`, and `Claude Opus`.
 - See [HANDOFF.md](./HANDOFF.md) for the durable migration/setup note from the first local install.
+- See [AUTH-GOVERNANCE-DRAFT.md](./AUTH-GOVERNANCE-DRAFT.md) for the future auth, registration, and permission model.

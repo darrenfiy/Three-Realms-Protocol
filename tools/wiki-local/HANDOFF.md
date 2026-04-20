@@ -22,6 +22,7 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 - `seed-pages.ps1`: generates an admin JWT from the running Wiki.js container, then upserts the starter pages through GraphQL
 - `seed/*.md`: starter page content
 - `start-wiki.bat`: one-click launcher — starts Docker containers + Cloudflare Tunnel. Put a shortcut to this on the desktop for daily use.
+- `AUTH-GOVERNANCE-DRAFT.md`: future-facing plan for login, registration, groups, and rollout policy
 
 ## First-Run Flow On A New Machine
 
