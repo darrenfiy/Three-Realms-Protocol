@@ -128,7 +128,7 @@ function Invoke-WikiGraphQL {
     -Body $body
 }
 
-function Upsert-WikiPage {
+function Set-WikiPage {
   param(
     [Parameter(Mandatory = $true)]
     [string]$Token,
@@ -274,7 +274,7 @@ $results = foreach ($page in $seedPages) {
   if (-not $tokenCache.ContainsKey($page.ActorEmail)) {
     $tokenCache[$page.ActorEmail] = Get-WikiUserToken -Email $page.ActorEmail
   }
-  Upsert-WikiPage -Token $tokenCache[$page.ActorEmail] @page
+  Set-WikiPage -Token $tokenCache[$page.ActorEmail] @page
 }
 
 $results | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
