@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-  [string]$Hostname = 'wiki.three-quarters.test',
+  [string]$Hostname = 'wiki.three-quarters.net',
   [string]$Address = '127.0.0.1'
 )
 

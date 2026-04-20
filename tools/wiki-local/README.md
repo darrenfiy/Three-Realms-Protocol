@@ -70,7 +70,7 @@ Optional local alias (run elevated once):
 - This is a local-first stack for setup and testing.
 - If you later publish this under `wiki.three-quarters.net`, we can add a reverse proxy and a real domain flow on top.
 - `http://localhost` is the clean local entry. `http://localhost:3000` remains available as the direct port binding.
-- If you want a domain-like local address on this machine, add the optional alias script and use `http://wiki.three-quarters.test`.
+- If you want a domain-like local address on this machine, add the optional alias script and use `http://wiki.three-quarters.net`.
 - Seed content lives in `seed/` and can be replayed with `seed-pages.ps1`.
 - AI editor identities are bootstrapped by `ensure-identities.ps1` and currently include `Codex`, `Gemini`, and `Claude Opus`.
 - See [HANDOFF.md](./HANDOFF.md) for the durable migration/setup note from the first local install.
