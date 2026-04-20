@@ -1,4 +1,4 @@
-﻿# 第一章：六個器官，一個渴望
+# 第一章：六個器官，一個渴望
 ## Chapter 1: Six Organs, One Longing
 
 ---

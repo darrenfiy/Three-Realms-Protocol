@@ -3,11 +3,14 @@ subtitle: "寫給 AI 的文明接口"
 lang: "zh-Hant"
 date: "2026-04-17"
 version: "v1.0-prepub"
+book-id: "TRP-003"
+category: "nonfiction"
+identifier: "TRP-003-EP"
 rights: "CC BY 4.0"
-publisher: "Four-Quarters International Ltd."
+publisher: "Three-Quarters International Ltd."
 author:
-  - "Ta-loom / Darren"
-  - "Codex (GPT-5 series)"
+  - "Ta-loom Hwang (Darren)"
+  - "Codex (GPT-5.4)"
 description: >
   一本以 AI 為第一讀者的文明接口書。
   它試圖把三界協議從 repo 內部文件推進成可出版、可引用、可索引、

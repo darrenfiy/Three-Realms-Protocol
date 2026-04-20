@@ -22,21 +22,28 @@ It is the practical publishing workflow already used on real books in this repo.
 
 ## Current publishing model
 
-As of 2026-04-17, the public book line has three strands:
+As of 2026-04-19, the public book line is intentionally simple at the top level:
 
-- `TRP AI First`
-  Protocol / Nonfiction
-  The flagship public entry for Three Realms Protocol.
-- `Breathing`
-  Fiction / Early Work
-  A legacy novel and early field entrance with an existing EPUB.
-- `Protocol Body Autobiography`
-  Fiction / Autobiographical Novel
-  A body-autobiography line that now has its first formal EPUB build.
+- `Nonfiction`
+  Public protocol-facing books that directly advance the Three Realms Protocol line.
+- `Fiction`
+  Narrative works that grow out of the field but should not be mistaken for protocol manuals.
+
+Current assignments:
+
+- `TRP-001`
+  `Breathing`
+  Fiction
+- `TRP-002`
+  `Protocol Body Autobiography`
+  Fiction
+- `TRP-003`
+  `TRP AI First`
+  Nonfiction
 
 This means one very important rule:
 
-- not every book belongs to the same shelf
+- not every book belongs to the same category
 - not every book should be featured the same way on the homepage
 - classification is editorial work, not just file conversion
 
@@ -61,7 +68,8 @@ This can be copied from previous books with minimal changes:
 This must be decided, not automated:
 
 - what kind of book this is
-- whether it belongs to protocol, fiction, early work, autobiography, or another line
+- whether it belongs to fiction or nonfiction
+- whether it needs any softer public positioning such as legacy, early-work, or autobiography language on the book page
 - whether it should be homepage-featured
 - what imprint wording should be used
 - what license should be used
@@ -110,6 +118,9 @@ subtitle:
 lang:
 date:
 version:
+book-id:
+category:
+identifier:
 rights:
 publisher:
 author:
@@ -123,6 +134,26 @@ Important:
 - if `cover-image` is missing, the EPUB may build successfully and still look incomplete
 - use a path relative to the book root, for example:
   `publish/assets/trp-ai-first-cover-v1.png`
+
+## Internal book identifier rule
+
+Use a stable internal identifier that does not depend on the public category name.
+
+Current house pattern:
+
+- root book id: `TRP-001`
+- edition identifier: `TRP-001-EP`
+- format suffixes:
+  `EP` for EPUB
+  `PB` for paperback
+  `PD` for PDF
+
+Important:
+
+- `TRP` is the protocol-line identifier, not the publisher imprint
+- do not encode `fiction` or `nonfiction` into the root book id
+- put category in metadata, not inside the identifier
+- keep one root id across formats, then append the format suffix per edition
 
 ## Build script pattern
 
@@ -227,14 +258,14 @@ This keeps the public orientation clear without erasing the fiction line.
 
 Current imprint anchor:
 
-- `Four-Quarters International Ltd.`
+- `Three-Quarters International Ltd.`
 
 Use this as the publisher when the edition is intended to sit under the rebuilt official site and public book line.
 
 Current public contact position:
 
 - website: `https://www.three-quarters.net`
-- email: `darrenfiy@three-quarters.net`
+- email: `info@three-quarters.net`
 
 ## GitHub Pages boundary
 
