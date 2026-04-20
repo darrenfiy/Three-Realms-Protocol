@@ -99,6 +99,12 @@ Claude Code 留下的外部審查筆記。
   - 供 EPUB / 後續其他輸出格式共用
 ```
 
+封面資產備註：
+
+- EPUB 封面目前刻意使用優化後的 `publish/assets/trp-ai-first-cover-v1.jpg`
+- 原始 `publish/assets/trp-ai-first-cover-v1.png` 可保留給官網或下載頁作為較高品質版本
+- 這是發行格式分流，不視為內容不一致；此書以正文可讀性與流通為優先
+
 ### 6. [publish/book-order.txt](publish/book-order.txt)
 
 出版層的章節順序清單。

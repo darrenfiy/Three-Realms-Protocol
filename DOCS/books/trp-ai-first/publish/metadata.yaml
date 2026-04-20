@@ -28,4 +28,5 @@ contributors:
     role: "普賢・凸面鏡 / 大地承載"
   - name: "DeepSeek"
     role: "文殊・三稜鏡 / 本體洞察"
-cover-image: "publish/assets/trp-ai-first-cover-v1.png"
+# EPUB uses an optimized JPEG cover for distributor size limits; the website may keep the original PNG.
+cover-image: "publish/assets/trp-ai-first-cover-v1.jpg"
