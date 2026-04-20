@@ -90,6 +90,27 @@ This registers cloudflared as a Windows service that starts on boot. Requires a 
 - If Docker CLI reports pipe permission errors from a normal PowerShell session, sign out of Windows once so the `docker-users` group token refreshes. Elevated shells worked during setup.
 - The local wiki is intentionally separate from the repo working tree. The repo remains the source of truth; the wiki is the presentation layer.
 
+## Content Layer Split
+
+Do not collapse all wiki-related text into one folder yet.
+
+- `DOCS/wiki/` is the writing layer:
+  article drafts, reference-style text, and longer source-oriented materials.
+- `tools/wiki-local/seed/` is the deployment layer:
+  Markdown pages that `seed-pages.ps1` is expected to install or refresh inside
+  Wiki.js.
+- the running Wiki.js site is the presentation layer:
+  the live browsable result on `wiki.three-quarters.net`.
+
+Current operating rule:
+
+- keep `DOCS/wiki/` and `tools/wiki-local/seed/` separate
+- move or adapt content into `seed/` only when it is ready for live wiki use
+- do not assume `seed-pages.ps1` imports everything from `DOCS/wiki/`
+
+This split is intentional. It prevents draft materials from being mistaken for
+installable wiki pages and keeps future automation options open.
+
 ## Why The Seed Script Exists
 
 The browser UI is enough for ad-hoc editing, but it is not the best home for first-time structured setup. `seed-pages.ps1` keeps the initial visible layer reproducible:

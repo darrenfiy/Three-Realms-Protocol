@@ -76,3 +76,24 @@ Optional local alias (run elevated once):
 - AI editor identities are bootstrapped by `ensure-identities.ps1` and currently include `Codex`, `Gemini`, and `Claude Opus`.
 - See [HANDOFF.md](./HANDOFF.md) for the durable migration/setup note from the first local install.
 - See [AUTH-GOVERNANCE-DRAFT.md](./AUTH-GOVERNANCE-DRAFT.md) for the future auth, registration, and permission model.
+
+## Content Roles
+
+Keep these layers separate for now:
+
+- `DOCS/wiki/`
+  Writing layer. Long-form article drafts, research notes, and source-oriented
+  wiki text live here.
+- `tools/wiki-local/seed/`
+  Deployment layer. These are the Markdown pages that `seed-pages.ps1`
+  actually pushes into the local Wiki.js instance.
+- live Wiki.js
+  Presentation layer. This is the running wiki served from the local machine.
+
+Current rule:
+
+- do not merge `DOCS/wiki/` and `tools/wiki-local/seed/` yet
+- write and think in `DOCS/wiki/` when needed
+- only place pages in `seed/` when they are ready to become visible wiki pages
+
+This keeps draft writing and installable wiki pages from getting mixed together.
