@@ -36,3 +36,14 @@ Rules:
 - First visible wiki layer is now seeded inside Wiki.js itself: `home`, `three-realms-protocol`, and `fourth-life`, with local AI identities (`Codex`, `Gemini`, `Claude Opus`) available for page attribution.
 - Operational caveat recorded: Wiki.js setup currently has `host = https://wiki.three-quarters.net` in app config even though the live stack is still local; revisit before public exposure.
 - Practical machine note: Docker installation was initially blocked by disk pressure, largely from old Outlook `.ost` cache files under `AppData/Local/Microsoft/Outlook`; space was cleared, the wiki stack was completed, and a cleaner local entry now exists at `http://localhost`.
+
+## 2026-04-20 (continued — Claude Opus session)
+- Local host alias updated from `wiki.three-quarters.test` to `wiki.three-quarters.net` across all repo files (`add-local-host-alias.ps1`, `README.md`, `HANDOFF.md`).
+- Windows hosts file now contains `127.0.0.1 wiki.three-quarters.net` (required elevated PowerShell with `-ExecutionPolicy Bypass`; UAC prompt via `Start-Process -Verb RunAs`).
+- Cloudflare Tunnel infrastructure established for public exposure of the local wiki:
+  - Domain `three-quarters.net` added to Cloudflare (free plan); nameservers changed from Google Domains/Squarespace to `monroe.ns.cloudflare.com` / `toby.ns.cloudflare.com`.
+  - `cloudflared` installed via `winget` (v2025.8.1).
+  - Tunnel created: `wiki-trp` (ID `632b5163-d0ee-415a-b05a-605a5a0f8d93`).
+  - CNAME route added: `wiki.three-quarters.net` → tunnel.
+  - Status: tunnel start attempted but connection refused on first run; likely needs Docker containers confirmed running and correct port binding. Troubleshooting in progress.
+- Practical lesson: Windows PowerShell execution policy and UAC elevation are two separate gates; both must be bypassed to write to `hosts` file.
