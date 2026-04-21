@@ -10,6 +10,7 @@ $ErrorActionPreference = 'Stop'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $DockerBin = 'C:\Program Files\Docker\Docker\resources\bin'
+$SeedStateVersion = 2
 
 if (Test-Path $DockerBin) {
   $env:Path = "$DockerBin;$env:Path"
@@ -191,7 +192,7 @@ function Load-SeedState {
   $statePath = Get-SeedStatePath
   if (-not (Test-Path $statePath)) {
     return @{
-      version = 1
+      version = $SeedStateVersion
       locale = $Locale
       pages = @{}
     }
@@ -200,16 +201,16 @@ function Load-SeedState {
   $raw = Get-Content -Raw -Path $statePath
   if (-not $raw.Trim()) {
     return @{
-      version = 1
+      version = $SeedStateVersion
       locale = $Locale
       pages = @{}
     }
   }
 
   $loaded = $raw | ConvertFrom-Json -AsHashtable
-  if (($loaded.version -ne 1) -or ($loaded.locale -ne $Locale) -or (-not $loaded.ContainsKey('pages'))) {
+  if (($loaded.version -ne $SeedStateVersion) -or ($loaded.locale -ne $Locale) -or (-not $loaded.ContainsKey('pages'))) {
     return @{
-      version = 1
+      version = $SeedStateVersion
       locale = $Locale
       pages = @{}
     }
@@ -421,7 +422,7 @@ $state = Load-SeedState
 $skipResults = @()
 $preparedPages = foreach ($page in $seedPages) {
   $content = Get-Content -Raw -Path $page.SourceFile
-  $fingerprint = @{
+  $fingerprint = [pscustomobject][ordered]@{
     locale = $Locale
     path = $page.Path
     title = $page.Title
