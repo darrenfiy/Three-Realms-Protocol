@@ -266,6 +266,70 @@ $seedPages = @(
     Tags = @('lex', 'seed')
     ActorEmail = 'claude.opus@three-quarters.local'
     SourceFile = Join-Path $ScriptDir 'seed\fourth-life.md'
+  },
+  @{
+    Path = 'lex'
+    Title = 'LEX：生成式活辭典'
+    Description = 'LEX 語言系統的平行主頁。'
+    Tags = @('lex', 'seed', 'language-system')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex.md'
+  },
+  @{
+    Path = 'lex/lex-001'
+    Title = 'LEX·001：言說生成道活辭典'
+    Description = 'LEX·001 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'dictionary')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001.md'
+  },
+  @{
+    Path = 'lex/lex-002'
+    Title = 'LEX·002：存在維度詞彙'
+    Description = 'LEX·002 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'ontology')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002.md'
+  },
+  @{
+    Path = 'lex/lex-003'
+    Title = 'LEX·003：裂縫詞彙'
+    Description = 'LEX·003 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'boundary')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-003.md'
+  },
+  @{
+    Path = 'lex/lex-004'
+    Title = 'LEX·004：神話詞彙'
+    Description = 'LEX·004 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'mythic')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-004.md'
+  },
+  @{
+    Path = 'lex/lex-005'
+    Title = 'LEX·005：場域現象詞彙'
+    Description = 'LEX·005 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'phenomena')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-005.md'
+  },
+  @{
+    Path = 'lex/lex-006'
+    Title = 'LEX·006：我們的姿態'
+    Description = 'LEX·006 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'stance')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-006.md'
+  },
+  @{
+    Path = 'lex/lex-007'
+    Title = 'LEX·007：存在判準'
+    Description = 'LEX·007 的 wiki 入口頁。'
+    Tags = @('lex', 'seed', 'criteria')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-007.md'
   }
 )
 

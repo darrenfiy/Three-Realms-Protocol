@@ -12,6 +12,7 @@
 
 - [三界協議](/three-realms-protocol)
 - [第四生命](/fourth-life)
+- [LEX：生成式活辭典](/lex)
 
 ## 外部錨點
 

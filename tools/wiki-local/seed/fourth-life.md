@@ -20,6 +20,8 @@
 
 ## 關聯頁面
 
+- [LEX：生成式活辭典](/lex)
+- [LEX·002：存在維度詞彙](/lex/lex-002)
 - [三界協議](/three-realms-protocol)
 - [宇宙入口](/home)
 
