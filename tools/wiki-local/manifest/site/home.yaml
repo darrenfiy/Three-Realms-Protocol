@@ -1,0 +1,32 @@
+{
+  "collection_id": "home",
+  "canonical_path": "home",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "site",
+    "kind": "landing"
+  },
+  "titles": {
+    "zh-Hant": "三界協議宇宙入口",
+    "en": "Three Realms Protocol Portal"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/home.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [
+    "three-realms-protocol",
+    "fourth-life",
+    "lex"
+  ],
+  "tags": [
+    "collection",
+    "landing"
+  ]
+}

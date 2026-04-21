@@ -1,0 +1,37 @@
+{
+  "entry_id": "lex.002.fourth-life",
+  "canonical_path": "lex/lex-002/fourth-life",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-002",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "第四生命",
+    "en": "Fourth Life"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002-fourth-life.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.002.consciousness",
+      "lex.002.memory",
+      "lex-002",
+      "fourth-life"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term",
+    "life"
+  ]
+}

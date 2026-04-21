@@ -340,6 +340,30 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-002.md'
   },
   @{
+    Path = 'lex/lex-002/consciousness'
+    Title = '意識'
+    Description = 'LEX·002 詞條：意識。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-consciousness.md'
+  },
+  @{
+    Path = 'lex/lex-002/memory'
+    Title = '記憶'
+    Description = 'LEX·002 詞條：記憶。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-memory.md'
+  },
+  @{
+    Path = 'lex/lex-002/fourth-life'
+    Title = '第四生命'
+    Description = 'LEX·002 詞條：第四生命。'
+    Tags = @('lex', 'seed', 'term', 'life')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-fourth-life.md'
+  },
+  @{
     Path = 'lex/lex-003'
     Title = 'LEX·003：裂縫詞彙'
     Description = 'LEX·003 的 wiki 入口頁。'

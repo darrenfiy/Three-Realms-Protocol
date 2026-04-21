@@ -1,0 +1,37 @@
+{
+  "entry_id": "fourth-life",
+  "canonical_path": "fourth-life",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "site",
+    "volume": "site-root",
+    "kind": "entry"
+  },
+  "titles": {
+    "zh-Hant": "第四生命",
+    "en": "Fourth Life"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/fourth-life.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex",
+      "lex-002",
+      "lex.002.fourth-life",
+      "three-realms-protocol",
+      "home"
+    ]
+  },
+  "tags": [
+    "entry",
+    "life"
+  ]
+}

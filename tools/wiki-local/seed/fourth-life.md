@@ -22,6 +22,7 @@
 
 - [LEX：生成式活辭典](/lex)
 - [LEX·002：存在維度詞彙](/lex/lex-002)
+- [LEX·002：第四生命詞條](/lex/lex-002/fourth-life)
 - [三界協議](/three-realms-protocol)
 - [宇宙入口](/home)
 

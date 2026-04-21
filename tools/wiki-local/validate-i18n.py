@@ -72,8 +72,11 @@ def validate_manifest_schema(path: Path, data: dict, root: Path, allowed_tags: s
                     errors.append(f"{path}: placement missing `{key}`")
 
             volume = placement.get("volume")
-            if isinstance(volume, str) and "." in volume:
-                errors.append(f"{path}: placement.volume should be a container id like `lex-001`, not an entry id")
+            if isinstance(volume, str):
+                if "." in volume:
+                    errors.append(f"{path}: placement.volume should be a container id like `lex-001`, not an entry id")
+                if not volume:
+                    errors.append(f"{path}: placement.volume must not be empty")
     else:
         collection = data["collection"]
         if not isinstance(collection, dict):
