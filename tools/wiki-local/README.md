@@ -60,6 +60,15 @@ Seed or refresh the starter pages after browser setup:
 .\seed-pages.ps1
 ```
 
+By default, `seed-pages.ps1` now only pushes pages whose source content or
+page metadata changed since the last successful seed for the same locale.
+
+To force a full reseed:
+
+```powershell
+.\seed-pages.ps1 -Force
+```
+
 Optional local alias (run elevated once):
 
 ```powershell

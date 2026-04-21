@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
   [string]$BaseUrl = 'http://localhost',
-  [string]$Locale = 'en'
+  [string]$Locale = 'en',
+  [switch]$Force
 )
 
 Set-StrictMode -Version Latest
@@ -29,78 +30,7 @@ function Invoke-DockerCompose {
 }
 
 function Get-WikiUserToken {
-  param(
-    [Parameter(Mandatory = $true)]
-    [string]$Email
-  )
-
-  $normalizedEmail = $Email.ToLowerInvariant()
-  $emailJson = $normalizedEmail | ConvertTo-Json -Compress
-  $js = @"
-const path = require('path');
-const { nanoid } = require('nanoid');
-const { DateTime } = require('luxon');
-
-(async () => {
-  let WIKI = {
-    IS_DEBUG: false,
-    IS_MASTER: false,
-    ROOTPATH: process.cwd(),
-    INSTANCE_ID: nanoid(10),
-    SERVERPATH: path.join(process.cwd(), 'server'),
-    Error: require('./server/helpers/error'),
-    configSvc: require('./server/core/config'),
-    startedAt: DateTime.utc()
-  };
-
-  global.WIKI = WIKI;
-
-  WIKI.configSvc.init();
-  WIKI.logger = require('./server/core/logger').init('SCRIPT');
-  WIKI.models = require('./server/core/db').init();
-
-  await WIKI.models.onReady;
-  await WIKI.configSvc.loadFromDb();
-  await WIKI.configSvc.applyFlags();
-
-  const user = await WIKI.models.users.query().findOne({ email: $emailJson });
-  if (!user) {
-    throw new Error('User not found for token generation: ' + $emailJson);
-  }
-
-  const out = await WIKI.models.users.refreshToken(user);
-  console.log('TOKEN=' + out.token);
-
-  await WIKI.models.knex.destroy();
-  process.exit(0);
-})().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
-"@
-
-  $encoded = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($js))
-  $output = Invoke-DockerCompose -Args @(
-    'exec',
-    '-T',
-    '-w',
-    '/wiki',
-    'wiki',
-    'node',
-    '-e',
-    "eval(Buffer.from('$encoded','base64').toString())"
-  ) 2>&1
-
-  $tokenLine = $output |
-    ForEach-Object { "$_" } |
-    Where-Object { $_ -like 'TOKEN=*' } |
-    Select-Object -Last 1
-
-  if (-not $tokenLine) {
-    throw "Failed to generate a token from the local Wiki.js container for $normalizedEmail."
-  }
-
-  return $tokenLine.Substring(6)
+  throw 'Get-WikiUserToken is no longer used. Tokens are now fetched through ensure-identities.ps1 in one pass.'
 }
 
 function Invoke-WikiGraphQL {
@@ -149,10 +79,8 @@ function Set-WikiPage {
     [string]$ActorEmail,
 
     [Parameter(Mandatory = $true)]
-    [string]$SourceFile
+    [string]$Content
   )
-
-  $content = Get-Content -Raw -Path $SourceFile
 
   $lookupQuery = @'
 query($path:String!, $locale:String!) {
@@ -187,7 +115,7 @@ mutation($id:Int!, $content:String!, $description:String!, $editor:String!, $isP
 
     $updated = Invoke-WikiGraphQL -Token $Token -Query $updateQuery -Variables @{
       id = [int]$existing.id
-      content = $content
+      content = $Content
       description = $Description
       editor = 'markdown'
       isPublished = $true
@@ -219,7 +147,7 @@ mutation($content:String!, $description:String!, $editor:String!, $isPublished:B
 '@
 
   $created = Invoke-WikiGraphQL -Token $Token -Query $createQuery -Variables @{
-    content = $content
+    content = $Content
     description = $Description
     editor = 'markdown'
     isPublished = $true
@@ -239,8 +167,68 @@ mutation($content:String!, $description:String!, $editor:String!, $isPublished:B
   }
 }
 
+function Get-ContentHash {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$Value
+  )
+
+  $sha = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    $bytes = [Text.Encoding]::UTF8.GetBytes($Value)
+    $hashBytes = $sha.ComputeHash($bytes)
+    return ([BitConverter]::ToString($hashBytes) -replace '-', '').ToLowerInvariant()
+  } finally {
+    $sha.Dispose()
+  }
+}
+
+function Get-SeedStatePath {
+  return Join-Path $ScriptDir ".seed-state.$Locale.json"
+}
+
+function Load-SeedState {
+  $statePath = Get-SeedStatePath
+  if (-not (Test-Path $statePath)) {
+    return @{
+      version = 1
+      locale = $Locale
+      pages = @{}
+    }
+  }
+
+  $raw = Get-Content -Raw -Path $statePath
+  if (-not $raw.Trim()) {
+    return @{
+      version = 1
+      locale = $Locale
+      pages = @{}
+    }
+  }
+
+  $loaded = $raw | ConvertFrom-Json -AsHashtable
+  if (($loaded.version -ne 1) -or ($loaded.locale -ne $Locale) -or (-not $loaded.ContainsKey('pages'))) {
+    return @{
+      version = 1
+      locale = $Locale
+      pages = @{}
+    }
+  }
+
+  return $loaded
+}
+
+function Save-SeedState {
+  param(
+    [Parameter(Mandatory = $true)]
+    [hashtable]$State
+  )
+
+  $statePath = Get-SeedStatePath
+  $State | ConvertTo-Json -Depth 20 | Set-Content -Path $statePath -Encoding UTF8
+}
+
 $identityScript = Join-Path $ScriptDir 'ensure-identities.ps1'
-& $identityScript
 
 $seedPages = @(
   @{
@@ -429,15 +417,90 @@ $seedPages = @(
   }
 )
 
-$tokenCache = @{}
-$results = foreach ($page in $seedPages) {
-  if (-not $tokenCache.ContainsKey($page.ActorEmail)) {
-    $tokenCache[$page.ActorEmail] = Get-WikiUserToken -Email $page.ActorEmail
+$state = Load-SeedState
+$skipResults = @()
+$preparedPages = foreach ($page in $seedPages) {
+  $content = Get-Content -Raw -Path $page.SourceFile
+  $fingerprint = @{
+    locale = $Locale
+    path = $page.Path
+    title = $page.Title
+    description = $page.Description
+    tags = $page.Tags
+    actorEmail = $page.ActorEmail
+    content = $content
+  } | ConvertTo-Json -Depth 20 -Compress
+
+  $hash = Get-ContentHash -Value $fingerprint
+  $stateKey = "$Locale|$($page.Path)"
+  $cached = $state.pages[$stateKey]
+
+  [pscustomobject]@{
+    Path = $page.Path
+    Title = $page.Title
+    Description = $page.Description
+    Tags = $page.Tags
+    ActorEmail = $page.ActorEmail
+    SourceFile = $page.SourceFile
+    Content = $content
+    StateKey = $stateKey
+    Hash = $hash
+    Changed = $Force.IsPresent -or (-not $cached) -or ($cached.hash -ne $hash)
   }
-  Set-WikiPage -Token $tokenCache[$page.ActorEmail] @page
 }
 
-$results | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
+$changedPages = @($preparedPages | Where-Object { $_.Changed })
+$unchangedPages = @($preparedPages | Where-Object { -not $_.Changed })
+
+foreach ($page in $unchangedPages) {
+  $skipResults += [pscustomobject]@{
+    Action = 'skipped'
+    Id = $null
+    Path = $page.Path
+    Title = $page.Title
+    ActorEmail = $page.ActorEmail
+  }
+}
+
+if (-not $changedPages) {
+  $skipResults | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
+  Write-Host ''
+  Write-Host "No page changes detected for locale $Locale. Skipped Docker and GraphQL work."
+  return
+}
+
+$identityResults = & $identityScript -IncludeTokens -PassThru
+$tokenCache = @{}
+foreach ($identity in $identityResults) {
+  $tokenCache[$identity.Email] = $identity.Token
+}
+
+$results = foreach ($page in $changedPages) {
+  if (-not $tokenCache.ContainsKey($page.ActorEmail)) {
+    throw "No token returned for actor $($page.ActorEmail)."
+  }
+
+  $result = Set-WikiPage `
+    -Token $tokenCache[$page.ActorEmail] `
+    -Path $page.Path `
+    -Title $page.Title `
+    -Description $page.Description `
+    -Tags $page.Tags `
+    -ActorEmail $page.ActorEmail `
+    -Content $page.Content
+
+  $state.pages[$page.StateKey] = @{
+    hash = $page.Hash
+    syncedAt = (Get-Date).ToString('o')
+  }
+
+  $result
+}
+
+Save-SeedState -State $state
+
+@($skipResults + $results) | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
 
 Write-Host ''
 Write-Host "Seed complete. Open $BaseUrl to view the wiki."
+Write-Host "Changed pages: $($changedPages.Count). Skipped pages: $($unchangedPages.Count)."

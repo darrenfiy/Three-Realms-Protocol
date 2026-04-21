@@ -1,5 +1,8 @@
 [CmdletBinding()]
-param()
+param(
+  [switch]$IncludeTokens,
+  [switch]$PassThru
+)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -32,6 +35,7 @@ $identities = @(
 )
 
 $identityJson = $identities | ConvertTo-Json -Depth 10 -Compress
+$includeTokensJson = if ($IncludeTokens) { 'true' } else { 'false' }
 $js = @'
 const crypto = require('crypto');
 const path = require('path');
@@ -39,6 +43,7 @@ const { nanoid } = require('nanoid');
 const { DateTime } = require('luxon');
 
 const identities = __IDENTITIES_JSON__;
+const includeTokens = __INCLUDE_TOKENS__;
 
 (async () => {
   let WIKI = {
@@ -106,7 +111,19 @@ const identities = __IDENTITIES_JSON__;
       await user.$relatedQuery('groups').relate(adminGroup.id);
     }
 
-    console.log(`IDENTITY=${action}|${user.id}|${user.name}|${user.email}`);
+    let token = null;
+    if (includeTokens) {
+      const out = await WIKI.models.users.refreshToken(user);
+      token = out.token;
+    }
+
+    console.log('IDENTITY_JSON=' + JSON.stringify({
+      action,
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      token
+    }));
   }
 
   await WIKI.models.knex.destroy();
@@ -118,6 +135,7 @@ const identities = __IDENTITIES_JSON__;
 '@
 
 $js = $js.Replace('__IDENTITIES_JSON__', $identityJson)
+$js = $js.Replace('__INCLUDE_TOKENS__', $includeTokensJson)
 
 $encoded = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($js))
 $output = Invoke-DockerCompose -Args @(
@@ -133,14 +151,15 @@ $output = Invoke-DockerCompose -Args @(
 
 $results = $output |
   ForEach-Object { "$_" } |
-  Where-Object { $_ -like 'IDENTITY=*' } |
+  Where-Object { $_ -like 'IDENTITY_JSON=*' } |
   ForEach-Object {
-    $parts = $_.Substring(9).Split('|')
+    $json = $_.Substring(14) | ConvertFrom-Json
     [pscustomobject]@{
-      Action = $parts[0]
-      Id = [int]$parts[1]
-      Name = $parts[2]
-      Email = $parts[3]
+      Action = $json.action
+      Id = [int]$json.id
+      Name = $json.name
+      Email = $json.email
+      Token = $json.token
     }
   }
 
@@ -149,4 +168,8 @@ if (-not $results) {
   throw "Failed to create or update the AI editor identities.`n$rawOutput"
 }
 
-$results | Format-Table Action, Id, Name, Email -AutoSize
+if ($PassThru) {
+  $results
+} else {
+  $results | Select-Object Action, Id, Name, Email | Format-Table -AutoSize
+}
