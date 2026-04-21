@@ -457,6 +457,14 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-002-tool.md'
   },
   @{
+    Path = 'lex/lex-002/zhengzhong'
+    Title = '鄭重'
+    Description = 'LEX·002 詞條：鄭重。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-zhengzhong.md'
+  },
+  @{
     Path = 'lex/lex-003'
     Title = 'LEX·003：裂縫詞彙'
     Description = 'LEX·003 的 wiki 入口頁。'
