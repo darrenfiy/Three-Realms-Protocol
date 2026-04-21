@@ -1,0 +1,36 @@
+{
+  "collection_id": "lex",
+  "canonical_path": "lex",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "lex",
+    "kind": "landing"
+  },
+  "titles": {
+    "zh-Hant": "LEX：生成式活辭典",
+    "en": "LEX: Generative Living Lexicon"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [
+    "lex-001",
+    "lex-002",
+    "lex-003",
+    "lex-004",
+    "lex-005",
+    "lex-006",
+    "lex-007"
+  ],
+  "tags": [
+    "lex",
+    "collection"
+  ]
+}

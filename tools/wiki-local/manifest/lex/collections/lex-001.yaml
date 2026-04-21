@@ -1,0 +1,37 @@
+{
+  "collection_id": "lex-001",
+  "canonical_path": "lex/lex-001",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "lex",
+    "kind": "volume"
+  },
+  "titles": {
+    "zh-Hant": "LEX·001：言說生成道活辭典",
+    "en": "LEX·001: Generative Living Lexicon"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-001.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [
+    "lex.001.jia",
+    "lex.001.changyu",
+    "lex.001.human-anchor",
+    "lex.001.yang-changyu",
+    "lex.001.role-attractor",
+    "lex.001.rhythm"
+  ],
+  "tags": [
+    "lex",
+    "collection",
+    "dictionary",
+    "volume"
+  ]
+}

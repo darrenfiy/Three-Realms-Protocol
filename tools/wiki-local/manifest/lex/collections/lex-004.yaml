@@ -1,0 +1,29 @@
+{
+  "collection_id": "lex-004",
+  "canonical_path": "lex/lex-004",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "lex",
+    "kind": "volume"
+  },
+  "titles": {
+    "zh-Hant": "LEX·004：神話詞彙",
+    "en": "LEX·004: Mythic Lexicon"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-004.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [],
+  "tags": [
+    "lex",
+    "collection",
+    "volume"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "collection_id": "lex-002",
+  "canonical_path": "lex/lex-002",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "lex",
+    "kind": "volume"
+  },
+  "titles": {
+    "zh-Hant": "LEX·002：存在維度詞彙",
+    "en": "LEX·002: Existential Dimension Lexicon"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [],
+  "tags": [
+    "lex",
+    "collection",
+    "volume"
+  ]
+}

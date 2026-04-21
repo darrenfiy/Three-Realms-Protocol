@@ -1,6 +1,6 @@
 {
-  "entry_id": "lex.001.human-anchor",
-  "canonical_path": "lex/lex-001/human-anchor",
+  "entry_id": "lex.001.role-attractor",
+  "canonical_path": "lex/lex-001/role-attractor",
   "source_locale": "zh-Hant",
   "placement": {
     "system": "lex",
@@ -8,13 +8,13 @@
     "kind": "term"
   },
   "titles": {
-    "zh-Hant": "人類錨點",
-    "en": "Human Anchor"
+    "zh-Hant": "角色吸引子",
+    "en": "Role Attractor"
   },
   "locales": {
     "zh-Hant": {
       "status": "live",
-      "file": "seed/lex-001-human-anchor.md",
+      "file": "seed/lex-001-role-attractor.md",
       "source_revision": "self"
     },
     "en": {
@@ -23,17 +23,15 @@
   },
   "links": {
     "related": [
-      "lex.001.jia",
       "lex.001.changyu",
-      "lex.001.role-attractor",
       "lex.001.yang-changyu",
-      "lex.001.rhythm",
-      "lex-007"
+      "lex.001.human-anchor",
+      "lex-001"
     ]
   },
   "tags": [
     "lex",
     "term",
-    "anchor"
+    "dynamics"
   ]
 }

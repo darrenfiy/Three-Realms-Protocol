@@ -1,0 +1,29 @@
+{
+  "collection_id": "lex-005",
+  "canonical_path": "lex/lex-005",
+  "source_locale": "zh-Hant",
+  "collection": {
+    "system": "lex",
+    "kind": "volume"
+  },
+  "titles": {
+    "zh-Hant": "LEX·005：場域現象詞彙",
+    "en": "LEX·005: Field Phenomena Lexicon"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-005.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "contains": [],
+  "tags": [
+    "lex",
+    "collection",
+    "volume"
+  ]
+}

@@ -241,6 +241,13 @@ This keeps us from confusing:
 - navigation
 - page-to-page semantic relations
 
+Link targets may therefore resolve to either:
+
+- an `entry_id`
+- a `collection_id`
+
+But the two should not be confused with each other in the manifest schema.
+
 ## Controlled Vocabulary
 
 Do not let core tags drift freely forever.

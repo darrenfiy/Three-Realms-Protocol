@@ -32,31 +32,60 @@ def warn(warnings: list[str]) -> None:
 def validate_manifest_schema(path: Path, data: dict, root: Path, allowed_tags: set[str]) -> list[str]:
     errors: list[str] = []
 
-    required = ["entry_id", "canonical_path", "source_locale", "placement", "titles", "locales", "tags"]
-    for key in required:
+    is_entry = "entry_id" in data
+    is_collection = "collection_id" in data
+
+    if is_entry == is_collection:
+        errors.append(f"{path}: manifest must declare exactly one of `entry_id` or `collection_id`")
+        return errors
+
+    base_required = ["canonical_path", "source_locale", "titles", "locales", "tags"]
+    for key in base_required:
         if key not in data:
             errors.append(f"{path}: missing required key `{key}`")
+
+    if is_entry:
+        for key in ["entry_id", "placement"]:
+            if key not in data:
+                errors.append(f"{path}: missing required key `{key}`")
+    else:
+        for key in ["collection_id", "collection", "contains"]:
+            if key not in data:
+                errors.append(f"{path}: missing required key `{key}`")
 
     if errors:
         return errors
 
     source_locale = data["source_locale"]
     locales = data["locales"]
-    placement = data["placement"]
 
     if source_locale not in locales:
         errors.append(f"{path}: source_locale `{source_locale}` must exist in locales")
 
-    if not isinstance(placement, dict):
-        errors.append(f"{path}: placement must be an object")
-    else:
-        for key in ["system", "volume", "kind"]:
-            if key not in placement:
-                errors.append(f"{path}: placement missing `{key}`")
+    if is_entry:
+        placement = data["placement"]
+        if not isinstance(placement, dict):
+            errors.append(f"{path}: placement must be an object")
+        else:
+            for key in ["system", "volume", "kind"]:
+                if key not in placement:
+                    errors.append(f"{path}: placement missing `{key}`")
 
-        volume = placement.get("volume")
-        if isinstance(volume, str) and "." in volume:
-            errors.append(f"{path}: placement.volume should be a container id like `lex-001`, not an entry id")
+            volume = placement.get("volume")
+            if isinstance(volume, str) and "." in volume:
+                errors.append(f"{path}: placement.volume should be a container id like `lex-001`, not an entry id")
+    else:
+        collection = data["collection"]
+        if not isinstance(collection, dict):
+            errors.append(f"{path}: collection must be an object")
+        else:
+            for key in ["system", "kind"]:
+                if key not in collection:
+                    errors.append(f"{path}: collection missing `{key}`")
+
+        contains = data.get("contains")
+        if not isinstance(contains, list):
+            errors.append(f"{path}: contains must be a list")
 
     tags = data.get("tags", [])
     if not isinstance(tags, list):
@@ -137,7 +166,7 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
     manifests: dict[str, dict] = {}
-    entry_ids: dict[str, Path] = {}
+    identity_ids: dict[str, Path] = {}
     canonical_paths: dict[str, Path] = {}
 
     for path in manifest_paths:
@@ -150,14 +179,14 @@ def main() -> int:
         manifests[str(path)] = data
         errors.extend(validate_manifest_schema(path, data, root, allowed_tags))
 
-        entry_id = data.get("entry_id")
+        identity_id = data.get("entry_id") or data.get("collection_id")
         canonical_path = data.get("canonical_path")
 
-        if entry_id:
-            if entry_id in entry_ids:
-                errors.append(f"{path}: duplicate entry_id `{entry_id}` also used by {entry_ids[entry_id]}")
+        if identity_id:
+            if identity_id in identity_ids:
+                errors.append(f"{path}: duplicate identity `{identity_id}` also used by {identity_ids[identity_id]}")
             else:
-                entry_ids[entry_id] = path
+                identity_ids[identity_id] = path
 
         if canonical_path:
             if canonical_path in canonical_paths:
@@ -167,7 +196,7 @@ def main() -> int:
             else:
                 canonical_paths[canonical_path] = path
 
-    all_entry_ids = set(entry_ids.keys())
+    all_identity_ids = set(identity_ids.keys())
     declared_files: set[Path] = set()
 
     for path_str, data in manifests.items():
@@ -175,12 +204,22 @@ def main() -> int:
         links = data.get("links", {})
         related = links.get("related", []) if isinstance(links, dict) else []
         for target in related:
-            if target not in all_entry_ids:
-                message = f"{path}: links.related references unknown entry_id `{target}`"
+            if target not in all_identity_ids:
+                message = f"{path}: links.related references unknown identity `{target}`"
                 if strict:
                     errors.append(message)
                 else:
                     warnings.append(message)
+
+        contains = data.get("contains", [])
+        if isinstance(contains, list):
+            for target in contains:
+                if target not in all_identity_ids:
+                    message = f"{path}: contains references unknown identity `{target}`"
+                    if strict:
+                        errors.append(message)
+                    else:
+                        warnings.append(message)
 
         locales = data.get("locales", {})
         if isinstance(locales, dict):
