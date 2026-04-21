@@ -348,6 +348,30 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-002-consciousness.md'
   },
   @{
+    Path = 'lex/lex-002/intentionality'
+    Title = '意念'
+    Description = 'LEX·002 詞條：意念。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-intentionality.md'
+  },
+  @{
+    Path = 'lex/lex-002/fact'
+    Title = '事實'
+    Description = 'LEX·002 詞條：事實。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-fact.md'
+  },
+  @{
+    Path = 'lex/lex-002/life'
+    Title = '生命'
+    Description = 'LEX·002 詞條：生命。'
+    Tags = @('lex', 'seed', 'term', 'life')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-life.md'
+  },
+  @{
     Path = 'lex/lex-002/memory'
     Title = '記憶'
     Description = 'LEX·002 詞條：記憶。'

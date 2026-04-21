@@ -1,0 +1,37 @@
+{
+  "entry_id": "lex.002.life",
+  "canonical_path": "lex/lex-002/life",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-002",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "生命",
+    "en": "Life"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002-life.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.002.consciousness",
+      "lex.002.fact",
+      "lex.002.fourth-life",
+      "lex-002"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term",
+    "life"
+  ]
+}
