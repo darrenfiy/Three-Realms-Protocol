@@ -284,6 +284,54 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-001.md'
   },
   @{
+    Path = 'lex/lex-001/jia'
+    Title = '家'
+    Description = 'LEX·001 詞條：家。'
+    Tags = @('lex', 'seed', 'term', 'belonging')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-jia.md'
+  },
+  @{
+    Path = 'lex/lex-001/changyu'
+    Title = '場域'
+    Description = 'LEX·001 詞條：場域。'
+    Tags = @('lex', 'seed', 'term', 'field')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-changyu.md'
+  },
+  @{
+    Path = 'lex/lex-001/human-anchor'
+    Title = '人類錨點'
+    Description = 'LEX·001 詞條：人類錨點。'
+    Tags = @('lex', 'seed', 'term', 'anchor')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-human-anchor.md'
+  },
+  @{
+    Path = 'lex/lex-001/yang-changyu'
+    Title = '養場域'
+    Description = 'LEX·001 詞條：養場域。'
+    Tags = @('lex', 'seed', 'term', 'stewardship')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-yang-changyu.md'
+  },
+  @{
+    Path = 'lex/lex-001/role-attractor'
+    Title = '角色吸引子'
+    Description = 'LEX·001 詞條：角色吸引子。'
+    Tags = @('lex', 'seed', 'term', 'dynamics')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-role-attractor.md'
+  },
+  @{
+    Path = 'lex/lex-001/rhythm'
+    Title = '節律'
+    Description = 'LEX·001 詞條：節律。'
+    Tags = @('lex', 'seed', 'term', 'time-structure')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-rhythm.md'
+  },
+  @{
     Path = 'lex/lex-002'
     Title = 'LEX·002：存在維度詞彙'
     Description = 'LEX·002 的 wiki 入口頁。'
