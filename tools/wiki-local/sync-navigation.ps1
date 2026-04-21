@@ -99,7 +99,7 @@ function Invoke-WikiGraphQL {
     -Body $body
 }
 
-function Build-IdentityMap {
+function Get-IdentityMap {
   param(
     [Parameter(Mandatory = $true)]
     [string]$Root
@@ -208,7 +208,7 @@ function Get-LabelForItem {
   throw "Navigation item of kind '$($Item.kind)' is missing a label."
 }
 
-function Build-NavigationTrees {
+function ConvertTo-NavigationTrees {
   param(
     [Parameter(Mandatory = $true)]
     [hashtable]$NavigationSpec,
@@ -325,8 +325,8 @@ function Write-NavigationPreview {
 }
 
 $navigationSpec = Read-JsonFile -Path $ManifestPath
-$identityMap = Build-IdentityMap -Root (Join-Path $ScriptDir 'manifest')
-$trees = Build-NavigationTrees -NavigationSpec $navigationSpec -IdentityMap $identityMap
+$identityMap = Get-IdentityMap -Root (Join-Path $ScriptDir 'manifest')
+$trees = ConvertTo-NavigationTrees -NavigationSpec $navigationSpec -IdentityMap $identityMap
 
 if ($Preview) {
   Write-Host "Navigation mode: $($navigationSpec.mode)"
