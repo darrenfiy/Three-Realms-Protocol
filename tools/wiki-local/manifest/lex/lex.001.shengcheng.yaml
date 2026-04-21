@@ -1,0 +1,37 @@
+{
+  "entry_id": "lex.001.shengcheng",
+  "canonical_path": "lex/lex-001/shengcheng",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-001",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "生成",
+    "en": "Generation"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-001-shengcheng.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.001.xianhua",
+      "lex.001.yongxian",
+      "lex.001.changyu",
+      "lex.001.rhythm"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term",
+    "dynamics"
+  ]
+}

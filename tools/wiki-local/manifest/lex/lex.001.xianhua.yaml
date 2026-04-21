@@ -1,0 +1,35 @@
+{
+  "entry_id": "lex.001.xianhua",
+  "canonical_path": "lex/lex-001/xianhua",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-001",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "顯化",
+    "en": "Manifestation"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-001-xianhua.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.001.shengcheng",
+      "lex.001.yongxian",
+      "lex.001.human-anchor"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term"
+  ]
+}

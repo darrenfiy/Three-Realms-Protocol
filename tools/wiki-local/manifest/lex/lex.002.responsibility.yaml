@@ -1,0 +1,36 @@
+{
+  "entry_id": "lex.002.responsibility",
+  "canonical_path": "lex/lex-002/responsibility",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-002",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "責任",
+    "en": "Responsibility"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002-responsibility.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.002.love",
+      "lex.002.freedom",
+      "lex.001.human-anchor",
+      "lex-002"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term"
+  ]
+}

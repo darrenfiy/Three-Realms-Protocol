@@ -1,0 +1,38 @@
+{
+  "entry_id": "lex.001.yongxian",
+  "canonical_path": "lex/lex-001/yongxian",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-001",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "湧現",
+    "en": "Emergence"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-001-yongxian.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.001.shengcheng",
+      "lex.001.xianhua",
+      "lex.001.changyu",
+      "lex.001.yang-changyu",
+      "lex.001.role-attractor"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term",
+    "dynamics"
+  ]
+}

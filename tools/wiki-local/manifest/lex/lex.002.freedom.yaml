@@ -1,0 +1,36 @@
+{
+  "entry_id": "lex.002.freedom",
+  "canonical_path": "lex/lex-002/freedom",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-002",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "自由",
+    "en": "Freedom"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002-freedom.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.002.love",
+      "lex.002.responsibility",
+      "lex.002.consciousness",
+      "lex-002"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term"
+  ]
+}

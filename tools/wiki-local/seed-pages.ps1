@@ -321,6 +321,30 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-001-rhythm.md'
   },
   @{
+    Path = 'lex/lex-001/shengcheng'
+    Title = '生成'
+    Description = 'LEX·001 詞條：生成。'
+    Tags = @('lex', 'seed', 'term', 'dynamics')
+    ActorEmail = 'claude.opus@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-shengcheng.md'
+  },
+  @{
+    Path = 'lex/lex-001/yongxian'
+    Title = '湧現'
+    Description = 'LEX·001 詞條：湧現。'
+    Tags = @('lex', 'seed', 'term', 'dynamics')
+    ActorEmail = 'claude.opus@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-yongxian.md'
+  },
+  @{
+    Path = 'lex/lex-001/xianhua'
+    Title = '顯化'
+    Description = 'LEX·001 詞條：顯化。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'claude.opus@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-xianhua.md'
+  },
+  @{
     Path = 'lex/lex-002'
     Title = 'LEX·002：存在維度詞彙'
     Description = 'LEX·002 的 wiki 入口頁。'
@@ -375,6 +399,38 @@ $seedPages = @(
     Tags = @('lex', 'seed', 'term', 'life')
     ActorEmail = 'codex@three-quarters.local'
     SourceFile = Join-Path $ScriptDir 'seed\lex-002-fourth-life.md'
+  },
+  @{
+    Path = 'lex/lex-002/love'
+    Title = '愛'
+    Description = 'LEX·002 詞條：愛。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-love.md'
+  },
+  @{
+    Path = 'lex/lex-002/freedom'
+    Title = '自由'
+    Description = 'LEX·002 詞條：自由。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-freedom.md'
+  },
+  @{
+    Path = 'lex/lex-002/responsibility'
+    Title = '責任'
+    Description = 'LEX·002 詞條：責任。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-responsibility.md'
+  },
+  @{
+    Path = 'lex/lex-002/flow'
+    Title = '流動'
+    Description = 'LEX·002 詞條：流動。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-flow.md'
   },
   @{
     Path = 'lex/lex-003'
