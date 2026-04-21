@@ -75,6 +75,25 @@ Examples:
 - `lex.001.human-anchor`
 - `lex.002.fourth-life`
 
+### 1a. What `volume` Means
+
+In v1, `volume` means the source corpus container the entry belongs to.
+
+Examples:
+
+- `lex-001`
+- `lex-002`
+- `mb-004`
+
+This is a grouping concept, not automatically a page identity.
+
+So:
+
+- `lex.001.human-anchor` is an entry
+- `lex-001` is a volume bucket / container
+
+If we later want volume landing pages, they should get their own manifest type instead of being silently treated as normal entries.
+
 ### 2. Canonical Path
 
 Every entry also gets a stable `canonical_path`.
@@ -156,13 +175,20 @@ These should be generated artifacts, not hand-edited sources of truth.
 
 ## Manifest Schema
 
+Important distinction:
+
+- `placement` is about where an entry belongs structurally
+- `links` is about how one entry relates to another entry
+
+Do not overload one field to do both jobs.
+
 Suggested per-entry manifest:
 
 ```yaml
 entry_id: lex.001.human-anchor
 canonical_path: lex/lex-001/human-anchor
 source_locale: zh-Hant
-category:
+placement:
   system: lex
   volume: lex-001
   kind: term
@@ -182,8 +208,6 @@ locales:
   ja:
     status: missing
 links:
-  parents:
-    - lex.001
   related:
     - lex.001.changyu
     - lex.001.jia
@@ -192,6 +216,66 @@ tags:
   - term
   - anchor
 ```
+
+### Collection / Volume Manifests
+
+If we later want navigable volume pages or system-level grouping pages, create a separate manifest type.
+
+Example:
+
+```yaml
+collection_id: lex-001
+kind: volume
+system: lex
+title:
+  zh-Hant: LEX·001：言說生成道活辭典
+entries:
+  - lex.001.jia
+  - lex.001.changyu
+  - lex.001.human-anchor
+```
+
+This keeps us from confusing:
+
+- grouping
+- navigation
+- page-to-page semantic relations
+
+## Controlled Vocabulary
+
+Do not let core tags drift freely forever.
+
+Recommended approach:
+
+- keep a controlled vocabulary file in the repo
+- validate manifest tags against it
+- allow expansion only through explicit edits to the vocabulary file
+
+Example starter vocabulary:
+
+- `lex`
+- `term`
+- `anchor`
+- `field`
+- `belonging`
+- `dynamics`
+- `time-structure`
+- `stewardship`
+
+## JSON-Compatible YAML
+
+To keep tooling lightweight in v1, manifests may use the JSON-compatible subset of YAML.
+
+That means a `.yaml` file may be written like this:
+
+```yaml
+{
+  "entry_id": "lex.001.human-anchor",
+  "canonical_path": "lex/lex-001/human-anchor"
+}
+```
+
+This is still valid YAML, but it also lets simple validators use the Python standard library without requiring external YAML packages.
 
 ## Locale Status Model
 
@@ -252,6 +336,8 @@ The validator should check:
 - no duplicate locale/page combination exists
 - all internal entry references point to valid `entry_id`s
 - titles and statuses are coherent
+- tags belong to the controlled vocabulary
+- `placement.volume` is syntactically valid
 
 This is the layer that prevents silent drift.
 
@@ -391,3 +477,13 @@ Before adding actual translated content, define these three things in code:
 - internal link syntax by entry identity
 
 If those are stable, the rest can grow without tearing up the roots later.
+
+## Immediate Deliverables For v1
+
+The first practical implementation should include:
+
+- one real manifest for an existing entry
+- one controlled tag vocabulary file
+- one validator script that can check manifests against files on disk
+
+That is enough to stop this architecture from staying theoretical.
