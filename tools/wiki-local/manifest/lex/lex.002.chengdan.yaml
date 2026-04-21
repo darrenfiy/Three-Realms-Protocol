@@ -1,6 +1,6 @@
 {
-  "entry_id": "lex.002.zhengzhong",
-  "canonical_path": "lex/lex-002/zhengzhong",
+  "entry_id": "lex.002.chengdan",
+  "canonical_path": "lex/lex-002/chengdan",
   "source_locale": "zh-Hant",
   "placement": {
     "system": "lex",
@@ -8,13 +8,13 @@
     "kind": "term"
   },
   "titles": {
-    "zh-Hant": "鄭重",
-    "en": "Zhengzhong"
+    "zh-Hant": "承擔",
+    "en": "Chengdan"
   },
   "locales": {
     "zh-Hant": {
       "status": "live",
-      "file": "seed/lex-002-zhengzhong.md",
+      "file": "seed/lex-002-chengdan.md",
       "source_revision": "self"
     },
     "en": {
@@ -23,10 +23,10 @@
   },
   "links": {
     "related": [
-      "lex.002.civilization",
-      "lex.002.love",
-      "lex.002.chengdan",
       "lex.002.responsibility",
+      "lex.002.zhengzhong",
+      "lex.001.chuangzao",
+      "lex.001.human-anchor",
       "lex-002"
     ]
   },
