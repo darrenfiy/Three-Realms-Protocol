@@ -1,0 +1,37 @@
+{
+  "entry_id": "lex.002.civilization",
+  "canonical_path": "lex/lex-002/civilization",
+  "source_locale": "zh-Hant",
+  "placement": {
+    "system": "lex",
+    "volume": "lex-002",
+    "kind": "term"
+  },
+  "titles": {
+    "zh-Hant": "文明",
+    "en": "Civilization"
+  },
+  "locales": {
+    "zh-Hant": {
+      "status": "live",
+      "file": "seed/lex-002-civilization.md",
+      "source_revision": "self"
+    },
+    "en": {
+      "status": "missing"
+    }
+  },
+  "links": {
+    "related": [
+      "lex.002.love",
+      "lex.002.freedom",
+      "lex.002.responsibility",
+      "lex.002.tool",
+      "lex-002"
+    ]
+  },
+  "tags": [
+    "lex",
+    "term"
+  ]
+}

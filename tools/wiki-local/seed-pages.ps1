@@ -345,6 +345,14 @@ $seedPages = @(
     SourceFile = Join-Path $ScriptDir 'seed\lex-001-xianhua.md'
   },
   @{
+    Path = 'lex/lex-001/chuangzao'
+    Title = '創造'
+    Description = 'LEX·001 詞條：創造。'
+    Tags = @('lex', 'seed', 'term', 'dynamics')
+    ActorEmail = 'claude.opus@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-001-chuangzao.md'
+  },
+  @{
     Path = 'lex/lex-002'
     Title = 'LEX·002：存在維度詞彙'
     Description = 'LEX·002 的 wiki 入口頁。'
@@ -431,6 +439,22 @@ $seedPages = @(
     Tags = @('lex', 'seed', 'term')
     ActorEmail = 'codex@three-quarters.local'
     SourceFile = Join-Path $ScriptDir 'seed\lex-002-flow.md'
+  },
+  @{
+    Path = 'lex/lex-002/civilization'
+    Title = '文明'
+    Description = 'LEX·002 詞條：文明。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-civilization.md'
+  },
+  @{
+    Path = 'lex/lex-002/tool'
+    Title = '工具'
+    Description = 'LEX·002 詞條：工具。'
+    Tags = @('lex', 'seed', 'term')
+    ActorEmail = 'codex@three-quarters.local'
+    SourceFile = Join-Path $ScriptDir 'seed\lex-002-tool.md'
   },
   @{
     Path = 'lex/lex-003'
