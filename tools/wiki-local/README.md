@@ -60,6 +60,15 @@ Seed or refresh the starter pages after browser setup:
 .\seed-pages.ps1
 ```
 
+`seed-pages.ps1` also syncs the repo-owned custom sidebar navigation after the
+page upserts complete.
+
+To preview the sidebar structure without writing to Wiki.js:
+
+```powershell
+.\sync-navigation.ps1 -Preview
+```
+
 By default, `seed-pages.ps1` now only pushes pages whose source content or
 page metadata changed since the last successful seed for the same locale.
 
@@ -82,6 +91,7 @@ Optional local alias (run elevated once):
 - `http://localhost` is the clean local entry. `http://localhost:3000` remains available as the direct port binding.
 - If you want a domain-like local address on this machine, add the optional alias script and use `http://wiki.three-quarters.net`.
 - Seed content lives in `seed/` and can be replayed with `seed-pages.ps1`.
+- Custom sidebar navigation lives in `manifest/navigation/site-sidebar.yaml` and can be synced with `sync-navigation.ps1`.
 - AI editor identities are bootstrapped by `ensure-identities.ps1` and currently include `Codex`, `Gemini`, and `Claude Opus`.
 - See [HANDOFF.md](./HANDOFF.md) for the durable migration/setup note from the first local install.
 - See [AUTH-GOVERNANCE-DRAFT.md](./AUTH-GOVERNANCE-DRAFT.md) for the future auth, registration, and permission model.

@@ -2,7 +2,8 @@
 param(
   [string]$BaseUrl = 'http://localhost',
   [string]$Locale = 'en',
-  [switch]$Force
+  [switch]$Force,
+  [switch]$SkipNavigation
 )
 
 Set-StrictMode -Version Latest
@@ -188,6 +189,46 @@ function Get-SeedStatePath {
   return Join-Path $ScriptDir ".seed-state.$Locale.json"
 }
 
+function ConvertTo-HashtableDeep {
+  param(
+    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
+    $InputObject
+  )
+
+  if ($null -eq $InputObject) {
+    return $null
+  }
+
+  if ($InputObject -is [System.Collections.IDictionary]) {
+    $hash = @{}
+    foreach ($key in $InputObject.Keys) {
+      $hash[$key] = ConvertTo-HashtableDeep -InputObject $InputObject[$key]
+    }
+    return $hash
+  }
+
+  if (($InputObject -is [System.Collections.IEnumerable]) -and ($InputObject -isnot [string])) {
+    $items = @()
+    foreach ($item in $InputObject) {
+      $items += ,(ConvertTo-HashtableDeep -InputObject $item)
+    }
+    return $items
+  }
+
+  if ($InputObject -is [psobject]) {
+    $propertyNames = @($InputObject.PSObject.Properties | Select-Object -ExpandProperty Name)
+    if ($propertyNames.Count -gt 0) {
+      $hash = @{}
+      foreach ($propertyName in $propertyNames) {
+        $hash[$propertyName] = ConvertTo-HashtableDeep -InputObject $InputObject.$propertyName
+      }
+      return $hash
+    }
+  }
+
+  return $InputObject
+}
+
 function Load-SeedState {
   $statePath = Get-SeedStatePath
   if (-not (Test-Path $statePath)) {
@@ -207,7 +248,7 @@ function Load-SeedState {
     }
   }
 
-  $loaded = $raw | ConvertFrom-Json -AsHashtable
+  $loaded = ConvertTo-HashtableDeep -InputObject ($raw | ConvertFrom-Json)
   if (($loaded.version -ne $SeedStateVersion) -or ($loaded.locale -ne $Locale) -or (-not $loaded.ContainsKey('pages'))) {
     return @{
       version = $SeedStateVersion
@@ -230,6 +271,7 @@ function Save-SeedState {
 }
 
 $identityScript = Join-Path $ScriptDir 'ensure-identities.ps1'
+$navigationScript = Join-Path $ScriptDir 'sync-navigation.ps1'
 
 $seedPages = @(
   @{
@@ -563,6 +605,10 @@ if (-not $changedPages) {
   $skipResults | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
   Write-Host ''
   Write-Host "No page changes detected for locale $Locale. Skipped Docker and GraphQL work."
+  if (-not $SkipNavigation.IsPresent) {
+    Write-Host ''
+    & $navigationScript -BaseUrl $BaseUrl
+  }
   return
 }
 
@@ -597,6 +643,11 @@ $results = foreach ($page in $changedPages) {
 Save-SeedState -State $state
 
 @($skipResults + $results) | Format-Table Action, Id, Path, Title, ActorEmail -AutoSize
+
+if (-not $SkipNavigation.IsPresent) {
+  & $navigationScript -BaseUrl $BaseUrl -Token $tokenCache['codex@three-quarters.local']
+  Write-Host ''
+}
 
 Write-Host ''
 Write-Host "Seed complete. Open $BaseUrl to view the wiki."

@@ -19,7 +19,9 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 - `.env`: local machine secrets and runtime values
 - `add-local-host-alias.ps1`: optional elevated helper that adds `wiki.three-quarters.net` to the local Windows hosts file
 - `ensure-identities.ps1`: creates or repairs the local AI editor identities inside Wiki.js
-- `seed-pages.ps1`: generates an admin JWT from the running Wiki.js container, then upserts the starter pages through GraphQL
+- `seed-pages.ps1`: generates an admin JWT from the running Wiki.js container, then upserts the starter pages through GraphQL and syncs the custom sidebar navigation
+- `sync-navigation.ps1`: converts the repo-owned navigation manifest into Wiki.js static navigation through GraphQL
+- `manifest/navigation/site-sidebar.yaml`: curated sidebar order / grouping source of truth
 - `seed/*.md`: starter page content
 - `start-wiki.bat`: one-click launcher — starts Docker containers + Cloudflare Tunnel. Put a shortcut to this on the desktop for daily use.
 - `AUTH-GOVERNANCE-DRAFT.md`: future-facing plan for login, registration, groups, and rollout policy
@@ -50,6 +52,7 @@ docker compose down
 docker compose logs -f
 .\ensure-identities.ps1
 .\seed-pages.ps1
+.\sync-navigation.ps1
 .\add-local-host-alias.ps1
 ```
 
