@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 tools/wiki-local/.env
 tools/wiki-local/.seed-state.*.json
+
+# Windows Explorer metadata
+desktop.ini
+Thumbs.db
