@@ -94,6 +94,14 @@ This is now configured on the author machine.
 
 The manual launcher still works as a fallback when the service is unavailable on another machine.
 
+## Maintenance Rhythm
+
+- Shared auth dependency note:
+  `Three-Quarters-International/IDENTITY/providers/authentik/.env` pins
+  `AUTHENTIK_IMAGE_TAG`.
+- In the first week of each month, check whether Authentik has a newer stable
+  release before rebuilding, migrating, or deliberately changing that pin.
+
 ## Durable Caveats
 
 - Wiki.js app config has `host = https://wiki.three-quarters.net`, which now matches the real public URL.
