@@ -22,6 +22,7 @@ function Invoke-DockerCompose {
 
   Push-Location $ScriptDir
   try {
+    $local:ErrorActionPreference = 'Continue'
     & docker compose @Args
   } finally {
     Pop-Location

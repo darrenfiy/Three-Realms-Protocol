@@ -253,7 +253,7 @@ function ConvertTo-NavigationTrees {
       }
 
       $resolved = [ordered]@{
-        id = '{0}-{1:D3}' -f $locale, $index
+        id = [System.Guid]::NewGuid().ToString()
         kind = $kind
       }
 
@@ -261,8 +261,10 @@ function ConvertTo-NavigationTrees {
         $resolved.label = Get-LabelForItem -Item $item -Locale ([string]$locale) -LabelResolution $labelResolution -Identity $identity
       }
 
-      if ($item.ContainsKey('icon') -and $item.icon) {
-        $resolved.icon = [string]$item.icon
+      $resolved.icon = if ($item.ContainsKey('icon') -and $item.icon) {
+        [string]$item.icon
+      } else {
+        ''
       }
 
       if ($kind -eq 'link') {
@@ -284,8 +286,12 @@ function ConvertTo-NavigationTrees {
         }
       }
 
-      if ($item.ContainsKey('visibilityMode') -and $item.visibilityMode) {
-        $resolved.visibilityMode = [string]$item.visibilityMode
+      if ($kind -ne 'divider') {
+        $resolved.visibilityMode = if ($item.ContainsKey('visibilityMode') -and $item.visibilityMode) {
+          [string]$item.visibilityMode
+        } else {
+          'all'
+        }
       }
 
       if ($item.ContainsKey('visibilityGroups') -and $item.visibilityGroups) {

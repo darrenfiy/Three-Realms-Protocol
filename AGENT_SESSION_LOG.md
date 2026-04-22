@@ -85,3 +85,15 @@ Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver
 - Public failure mode captured concretely: on `2026-04-22 13:38:26 UTC`, Cloudflare returned `Error 1033` for `wiki.three-quarters.net` even though the local wiki and auth stacks were healthy. Root cause was a stale Windows `Cloudflared` service config, not a dead Wiki.js container.
 - `tools/wiki-local/start-wiki.bat` now delegates tunnel handling to `Three-Quarters-International/IDENTITY/providers/authentik/ensure-public-tunnel.ps1`, which checks whether the Windows service config is actually tunnel-aware before trusting it.
 - If the service config is stale, startup now launches a user-mode shared tunnel from the canonical user config instead of pretending the Windows service is sufficient. That keeps the public wiki/auth path recoverable without requiring immediate service reinstallation.
+
+## 2026-04-22 (Claude Sonnet session · wiki-local Static Navigation 修復)
+- `sync-navigation.ps1` 有三個潛伏 bug 導致 STATIC mode sidebar 完全空白：(1) item ID 使用非 UUID 格式，Wiki.js admin UI 及前端皆不接受；(2) `visibilityMode` 未設定時為 null，Wiki.js 不顯示；(3) `icon` 為 null 時 Vue 元件執行 `null.match()` 拋出 TypeError 導致整個列表不渲染。三項皆已修復，STATIC mode 現在正常顯示 sidebar。
+- `ensure-identities.ps1` 的 `Invoke-DockerCompose` function 在 PowerShell 5.1 下會因 Docker stderr 警告觸發 `NativeCommandError`，已在 try block 內加 `$local:ErrorActionPreference = 'Continue'` 修復；sync 腳本不再需要手動傳 token。
+- 診斷過程確認：navigation 資料流為 `site-sidebar.yaml` → GraphQL mutation → `navigation` table (key='site') → `getTree()` → base64 嵌入 HTML → Vue 前端渲染；MIXED mode 預設走 browse（自動頁面樹）因而不碰 custom items，是為何舊行為不受 icon bug 影響的原因。
+- 待解問題兩項：(A) sidebar 中文標籤亂碼，根因在 sync pipeline 的 encoding 尚未確認；(B) 多數詞條連結點下去出現 Not Found，因 `seed-pages.ps1` 尚未完整執行，缺少 lex-001 部分詞條及全部 lex-002 詞條。
+
+屬名：
+
+```
+Claude Cowork・Sonnet 4.6（navigation sync 三項 bug 修復、ensure-identities PS5.1 相容性修復）
+```
