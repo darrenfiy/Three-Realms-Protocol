@@ -60,3 +60,11 @@ Rules:
 ```
 Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver、stale detection 起草）
 ```
+
+## 2026-04-22 (Codex session · wiki shared login first wire-up)
+- Wiki.js now has a second enabled authentication strategy: `fourthlife` (`Generic OpenID Connect / OAuth2`), displayed as `Fourth Life`, with callback path pattern confirmed as `/login/<strategyKey>/callback` rather than the earlier generic `/login/callback` assumption.
+- Shared auth and wiki are now wired together at the configuration level: Authentik app `three-quarters-wiki` uses redirect URIs that match Wiki.js exactly, and Wiki.js points to the local Authentik endpoints on `http://localhost:9000` for authorization, token, userinfo, issuer, and logout.
+- A new Wiki.js group `Members` now exists with `read:pages`, `read:assets`, `read:comments`, and `write:comments`; new `Fourth Life` sign-ins are auto-enrolled into that group, so signed-in accounts can comment without granting editor/admin powers.
+- Runtime verification is positive on the critical path: Wiki.js logs show `Authentication Strategy Fourth Life: [ OK ]`, GraphQL `authentication.activeStrategies(enabledOnly: true)` returns both `local` and `fourthlife`, and `http://localhost/login/fourthlife` now redirects to Authentik with the expected client ID and callback URI.
+- Root-cause follow-up: browser login was succeeding but the Authentik provider had zero allowed OIDC scopes, so authorize requests were reduced to an empty scope set and wiki could not receive usable identity claims. Default `openid`, `email`, and `profile` mappings are now attached to `Three-Quarters Wiki OIDC`; the earlier `Failed to fetch user profile` path was a provider-scope defect, not a user or password error.
+- Current caveat: this first wire-up is machine-local on the IdP side (`localhost:9000`). It is enough to prove the architecture and local login flow, but a later pass must promote the auth endpoints to the planned public login domain before this becomes a true cross-device shared account surface.
