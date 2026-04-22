@@ -36,7 +36,7 @@ def validate_manifest_schema(path: Path, data: dict, root: Path, allowed_tags: s
     is_collection = "collection_id" in data
 
     if is_entry == is_collection:
-        errors.append(f"{path}: manifest must declare exactly one of `entry_id` or `collection_id`")
+        errors.append(f"{path}: entry/collection manifest must declare exactly one of `entry_id` or `collection_id`")
         return errors
 
     base_required = ["canonical_path", "source_locale", "titles", "locales", "tags"]
@@ -137,6 +137,85 @@ def validate_manifest_schema(path: Path, data: dict, root: Path, allowed_tags: s
     return errors
 
 
+VALID_NAVIGATION_ITEM_KINDS = {"header", "link", "divider"}
+
+
+def validate_navigation_schema(
+    path: Path,
+    data: dict,
+    all_identity_ids: set[str],
+) -> list[str]:
+    """Validate a navigation manifest.
+
+    Navigation manifests are the third manifest shape, alongside entry and
+    collection manifests. They describe curated sidebar / menu structures
+    that are synced into Wiki.js by ``sync-navigation.ps1``. They do not
+    declare locale files on their own — they compose existing entries and
+    collections by ``ref``.
+    """
+    errors: list[str] = []
+
+    required = ["navigation_id", "mode", "label_resolution", "target_locales", "items"]
+    for key in required:
+        if key not in data:
+            errors.append(f"{path}: navigation manifest missing required key `{key}`")
+
+    if errors:
+        return errors
+
+    target_locales = data["target_locales"]
+    if not isinstance(target_locales, list) or not target_locales:
+        errors.append(f"{path}: target_locales must be a non-empty list")
+        target_locales_set: set[str] = set()
+    else:
+        target_locales_set = {loc for loc in target_locales if isinstance(loc, str)}
+
+    items = data["items"]
+    if not isinstance(items, list):
+        errors.append(f"{path}: items must be a list")
+        return errors
+
+    for index, item in enumerate(items):
+        if not isinstance(item, dict):
+            errors.append(f"{path}: items[{index}] must be an object")
+            continue
+
+        kind = item.get("kind")
+        if kind not in VALID_NAVIGATION_ITEM_KINDS:
+            allowed = sorted(VALID_NAVIGATION_ITEM_KINDS)
+            errors.append(f"{path}: items[{index}] has invalid kind `{kind}` (must be one of {allowed})")
+            continue
+
+        if kind == "divider":
+            continue
+
+        labels = item.get("labels")
+        if labels is not None and not isinstance(labels, dict):
+            errors.append(f"{path}: items[{index}] labels must be an object")
+            labels = None
+
+        if kind == "header":
+            if not labels:
+                errors.append(f"{path}: items[{index}] kind `header` must declare non-empty labels")
+        elif kind == "link":
+            ref = item.get("ref")
+            if not isinstance(ref, str) or not ref:
+                errors.append(f"{path}: items[{index}] kind `link` must declare `ref` as a non-empty string")
+            elif ref not in all_identity_ids:
+                errors.append(
+                    f"{path}: items[{index}] ref `{ref}` does not resolve to a known entry_id or collection_id"
+                )
+
+        if isinstance(labels, dict) and target_locales_set:
+            for locale_key in labels.keys():
+                if locale_key not in target_locales_set:
+                    errors.append(
+                        f"{path}: items[{index}] labels locale `{locale_key}` is not in target_locales"
+                    )
+
+    return errors
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent
     manifest_root = root / "manifest"
@@ -169,9 +248,15 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
     manifests: dict[str, dict] = {}
+    manifest_kinds: dict[str, str] = {}
     identity_ids: dict[str, Path] = {}
     canonical_paths: dict[str, Path] = {}
+    navigation_ids: dict[str, Path] = {}
 
+    # Pass 1: load all manifests and classify them by shape.
+    # Entry/collection manifests get full schema validation now.
+    # Navigation manifests defer until pass 2, because their link refs must
+    # be cross-checked against the complete identity set.
     for path in manifest_paths:
         try:
             data = load_json_yaml(path)
@@ -179,7 +264,34 @@ def main() -> int:
             errors.append(str(exc))
             continue
 
+        has_entry = "entry_id" in data
+        has_collection = "collection_id" in data
+        has_navigation = "navigation_id" in data
+        type_count = sum([has_entry, has_collection, has_navigation])
+
+        if type_count != 1:
+            errors.append(
+                f"{path}: manifest must declare exactly one of "
+                f"`entry_id`, `collection_id`, or `navigation_id`"
+            )
+            continue
+
         manifests[str(path)] = data
+
+        if has_navigation:
+            manifest_kinds[str(path)] = "navigation"
+            nav_id = data["navigation_id"]
+            if not isinstance(nav_id, str) or not nav_id:
+                errors.append(f"{path}: navigation_id must be a non-empty string")
+            elif nav_id in navigation_ids:
+                errors.append(
+                    f"{path}: duplicate navigation_id `{nav_id}` also used by {navigation_ids[nav_id]}"
+                )
+            else:
+                navigation_ids[nav_id] = path
+            continue
+
+        manifest_kinds[str(path)] = "entry" if has_entry else "collection"
         errors.extend(validate_manifest_schema(path, data, root, allowed_tags))
 
         identity_id = data.get("entry_id") or data.get("collection_id")
@@ -200,9 +312,18 @@ def main() -> int:
                 canonical_paths[canonical_path] = path
 
     all_identity_ids = set(identity_ids.keys())
+
+    # Pass 2: navigation manifests (need all_identity_ids for ref cross-check).
+    for path_str, data in manifests.items():
+        if manifest_kinds.get(path_str) != "navigation":
+            continue
+        errors.extend(validate_navigation_schema(Path(path_str), data, all_identity_ids))
+
     declared_files: set[Path] = set()
 
     for path_str, data in manifests.items():
+        if manifest_kinds.get(path_str) not in {"entry", "collection"}:
+            continue
         path = Path(path_str)
         links = data.get("links", {})
         related = links.get("related", []) if isinstance(links, dict) else []

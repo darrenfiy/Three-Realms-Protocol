@@ -47,3 +47,16 @@ Rules:
   - CNAME route added: `wiki.three-quarters.net` → tunnel.
   - Status: tunnel start attempted but connection refused on first run; likely needs Docker containers confirmed running and correct port binding. Troubleshooting in progress.
 - Practical lesson: Windows PowerShell execution policy and UAC elevation are two separate gates; both must be bypassed to write to `hosts` file.
+
+## 2026-04-22 (Claude Opus session · wiki-local 驗證層補完)
+- `tools/wiki-local/validate-i18n.py` 新增第三種 manifest 形狀辨識 `navigation_id`，並加入對應的 `validate_navigation_schema`；`manifest/navigation/site-sidebar.yaml` 不再被誤報，`items[].ref` 現在會被 cross-check 回 entry/collection 識別符。progressive 與 strict 兩模式都乾淨通過 36 份 manifest。
+- 新增 `tools/wiki-local/resolve-links.py`：v1 內部連結解析器，實作 `[[entry:ID]]` 與 `[[entry:ID|display]]` 語法；回退順序依 `I18N-ARCHITECTURE.md` 規則（requested locale → source locale → unresolved warning）；URL shape 刻意不帶 locale 前綴，多語言正式上線再動一處即可。
+- 新增 `tools/wiki-local/detect-stale.py`：Phase 3 的骨架實作。用 SHA-256 content hash 比對 `source_revision`，回報四種情況：`stale`、`missing-revision`、`status-outdated`、`source-missing`；`--apply` 會把失效的 `status` 改寫為 `stale`，但不動 `source_revision`（保留譯者當初的翻譯依據）。
+- 三支腳本皆 stdlib-only、無外部依賴，已用合成 fixture 跑過 happy path 與四個 edge case（未解連結、draft/stale 軟狀態、hash mismatch、status-outdated、missing-revision）。
+- 目前 corpus 上 `detect-stale.py` 零 finding（所有非 source locale 都還是 `missing`），這正是預期——基礎結構就位，等第一批實際翻譯進來時會自動開始發揮作用。
+
+屬名：
+
+```
+Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver、stale detection 起草）
+```

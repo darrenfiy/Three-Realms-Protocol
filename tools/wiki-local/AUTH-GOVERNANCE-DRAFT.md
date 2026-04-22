@@ -13,6 +13,9 @@ should be designed for `wiki.three-quarters.net` when the project is ready.
 - The repo remains the source of truth; the wiki is the presentation layer.
 - This stack does not yet document a production mail setup for account recovery
   or verification flows.
+- A shared company-side identity layer is now being scaffolded in
+  `Three-Quarters-International/IDENTITY/`; the wiki should plug into that
+  layer rather than become its own long-term auth island.
 
 These constraints matter because public self-registration creates operational
 work immediately: password resets, verification emails, spam prevention,
@@ -58,9 +61,11 @@ Prerequisites:
 
 Recommended auth model:
 
-- prefer `Google` or `GitHub` login first
+- prefer the company-managed OIDC provider first
 - keep one local admin account as break-glass recovery access
 - do not enable open self-registration yet
+- if upstream social login is used, connect it behind the shared provider rather
+  than directly inside Wiki.js
 
 Recommended groups:
 
@@ -120,13 +125,16 @@ If self-registration is enabled later:
 
 Recommended order for this project:
 
-1. `Google` or `GitHub` login for trusted collaborators
+1. company-managed OIDC login from `auth.three-quarters.net`
 2. one local admin account for emergency recovery
-3. local self-registration only after the platform is operationally ready
+3. optional upstream `Google` or `GitHub` login behind the shared provider
+4. local self-registration only after the platform is operationally ready
 
 Why:
 
-- social login reduces password handling burden
+- one shared IdP keeps website, wiki, and future apps on the same account layer
+- upstream social login can still reduce password handling burden without
+  fragmenting identity
 - identity is easier to review
 - recovery is simpler than managing many local passwords
 
@@ -172,7 +180,8 @@ the contributor base actually grows.
 - decide whether the wiki stays on the author machine or moves to a real host
 - make the tunnel or server startup persistent
 - configure SMTP and send a successful test email
-- choose the first auth provider (`Google` or `GitHub`)
+- stand up the shared IdP from `Three-Quarters-International/IDENTITY/`
+- create a wiki OIDC client inside the shared IdP
 - create groups and verify permission boundaries
 - enable 2FA for admins
 - define a request-access process on the main website
@@ -187,7 +196,7 @@ The recommended near-term policy is:
 - public wiki stays readable without login
 - no public signup yet
 - collaborator accounts are invite-only
-- first real login rollout should use `Google` or `GitHub`
+- first real login rollout should use the shared company IdP
 - admins use 2FA
 
 This gives the project a calm default: easy to read, hard to abuse, and light

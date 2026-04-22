@@ -84,6 +84,23 @@ Optional local alias (run elevated once):
 .\add-local-host-alias.ps1
 ```
 
+## Validation tools
+
+Pure-Python scripts; no extra dependencies beyond the standard library.
+
+```powershell
+python validate-i18n.py           # schema + cross-reference checks
+python validate-i18n.py --strict  # treat orphan refs and orphan seed files as errors
+python detect-stale.py            # report stale / missing-revision / status-outdated locales
+python detect-stale.py --apply    # also auto-mark stale locales in their manifests
+python resolve-links.py --locale zh-Hant     # resolve [[entry:ID]] tokens to markdown links, print to stdout
+python resolve-links.py --locale en --write seed/.resolved/en/   # mirror resolved files into a locale-specific tree
+```
+
+- `validate-i18n.py` recognises three manifest shapes: `entry`, `collection`, and `navigation` (`manifest/navigation/*.yaml`).
+- `detect-stale.py` compares the SHA-256 content hash of each source-locale file against the `source_revision` recorded by every non-source locale. The string `"self"` is reserved for the source-locale entry.
+- `resolve-links.py` implements the `[[entry:ID]]` / `[[entry:ID|display]]` internal link syntax from `I18N-ARCHITECTURE.md`. URLs emitted in v1 have no locale prefix; change `_build_url` in one place when multi-locale publishing rolls out.
+
 ## Notes
 
 - This is a local-first stack for setup and testing.
