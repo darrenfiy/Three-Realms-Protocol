@@ -5,6 +5,7 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 ## What Exists Now
 
 - Wiki.js runs on the author's local machine through Docker Desktop, exposed to the public internet via Cloudflare Tunnel.
+- Cloudflare Tunnel now runs as a Windows service instead of a foreground terminal process.
 - The local stack lives in [`tools/wiki-local/`](./).
 - **Public URL**: `https://wiki.three-quarters.net` (HTTPS via Cloudflare, zero-cost).
 - **Local URLs**: `http://localhost` and `http://localhost:3000` (still work for local access).
@@ -23,7 +24,7 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 - `sync-navigation.ps1`: converts the repo-owned navigation manifest into Wiki.js static navigation through GraphQL
 - `manifest/navigation/site-sidebar.yaml`: curated sidebar order / grouping source of truth
 - `seed/*.md`: starter page content
-- `start-wiki.bat`: one-click launcher — starts Docker containers + Cloudflare Tunnel. Put a shortcut to this on the desktop for daily use.
+- `start-wiki.bat`: one-click launcher — starts Docker containers. If the Cloudflared Windows service exists, public routing is automatic; otherwise it falls back to a manual tunnel.
 - `AUTH-GOVERNANCE-DRAFT.md`: future-facing plan for login, registration, groups, and rollout policy
 
 ## First-Run Flow On A New Machine
@@ -40,7 +41,7 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 10. Authenticate: `cloudflared tunnel login` (authorize `three-quarters.net` in browser).
 11. Create tunnel: `cloudflared tunnel create wiki-trp`
 12. Route DNS: `cloudflared tunnel route dns wiki-trp wiki.three-quarters.net`
-13. Start tunnel: double-click `start-wiki.bat` or run `cloudflared tunnel --url http://localhost:80 run wiki-trp`
+13. Start tunnel: either rely on the Windows service, or double-click `start-wiki.bat` / run `cloudflared tunnel --url http://localhost:80 run wiki-trp` as a manual fallback.
 
 ## Commands
 
@@ -75,15 +76,23 @@ The wiki is exposed to the public internet via Cloudflare Tunnel, so the author'
 cloudflared tunnel --url http://localhost:80 run wiki-trp
 ```
 
-The tunnel process must remain running. If the machine reboots or the terminal closes, the public URL goes offline. To run it as a persistent Windows service, see the "Running as a service" section below.
+If the Windows service is active, tunnel routing survives terminal closures and starts automatically on boot. Manual `cloudflared tunnel --url ...` runs are now only a fallback mode.
 
-### Running as a service (optional, not yet configured)
+### Running as a service
 
 ```powershell
 cloudflared service install
 ```
 
-This registers cloudflared as a Windows service that starts on boot. Requires a config file at `C:\Users\Administrator\.cloudflared\config.yml`.
+This is now configured on the author machine.
+
+- Service name: `Cloudflared`
+- Start type: `Automatic`
+- Config file: `C:\Users\Administrator\.cloudflared\config.yml`
+- Current service-backed tunnel: `wiki-trp`
+- Ingress also covers: `https://auth.three-quarters.net`
+
+The manual launcher still works as a fallback when the service is unavailable on another machine.
 
 ## Durable Caveats
 
