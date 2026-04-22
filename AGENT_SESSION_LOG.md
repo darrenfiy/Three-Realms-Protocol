@@ -75,3 +75,13 @@ Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver
 - Daily startup expectations are now simpler: the machine still needs to stay awake, but public routing is service-backed. `tools/wiki-local/start-wiki.bat` now primarily starts Docker containers and only falls back to a manual tunnel if the Windows service is unavailable on another machine.
 - `wiki.three-quarters.net` now rides through the service-backed `wiki-trp` tunnel config rather than relying on a hand-launched `cloudflared tunnel --url ... run wiki-trp` session. This reduces the chance of accidental downtime caused by closing a tunnel console window.
 - Durable architecture stance remains unchanged: do not rush this wiki stack onto Cloud Run yet. The current shape is still a local-first `Wiki.js + Postgres + shared auth` system, and any later cloud move should treat app hosting, database hosting, and identity hosting as separate concerns rather than one blunt migration.
+
+## 2026-04-22 (Codex session · wiki startup made login-aware)
+- Runtime verification on the author machine now shows both local stacks healthy at the same time: Wiki.js answers on `http://localhost` / `http://localhost:3000`, Authentik answers on `http://localhost:9000`, and the `fourthlife` login route still redirects to the shared OIDC client.
+- `tools/wiki-local/start-wiki.bat` no longer only wakes the wiki containers. It now starts the shared Authentik stack first, then the wiki stack, so a simple Docker restart is less likely to leave the site visible but the login path half-dead.
+- The launcher now prints both local and public URLs, making the intended fallback clearer: if `https://wiki.three-quarters.net` is acting strange on this machine, `http://localhost` is the fastest way to confirm the wiki process itself is alive before debugging tunnel or browser HTTPS behavior.
+
+## 2026-04-22 (Codex session · Cloudflare 1033 workaround wired into startup)
+- Public failure mode captured concretely: on `2026-04-22 13:38:26 UTC`, Cloudflare returned `Error 1033` for `wiki.three-quarters.net` even though the local wiki and auth stacks were healthy. Root cause was a stale Windows `Cloudflared` service config, not a dead Wiki.js container.
+- `tools/wiki-local/start-wiki.bat` now delegates tunnel handling to `Three-Quarters-International/IDENTITY/providers/authentik/ensure-public-tunnel.ps1`, which checks whether the Windows service config is actually tunnel-aware before trusting it.
+- If the service config is stale, startup now launches a user-mode shared tunnel from the canonical user config instead of pretending the Windows service is sufficient. That keeps the public wiki/auth path recoverable without requiring immediate service reinstallation.

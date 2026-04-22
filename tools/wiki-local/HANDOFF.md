@@ -24,7 +24,7 @@ This note captures the durable parts of the `2026-04-20` wiki setup so a future 
 - `sync-navigation.ps1`: converts the repo-owned navigation manifest into Wiki.js static navigation through GraphQL
 - `manifest/navigation/site-sidebar.yaml`: curated sidebar order / grouping source of truth
 - `seed/*.md`: starter page content
-- `start-wiki.bat`: one-click launcher — starts Docker containers. If the Cloudflared Windows service exists, public routing is automatic; otherwise it falls back to a manual tunnel.
+- `start-wiki.bat`: one-click launcher — starts the shared Authentik stack first, then the wiki containers. If the Cloudflared Windows service exists, public routing is automatic; otherwise it falls back to a manual tunnel.
 - `AUTH-GOVERNANCE-DRAFT.md`: future-facing plan for login, registration, groups, and rollout policy
 
 ## First-Run Flow On A New Machine
@@ -91,6 +91,10 @@ This is now configured on the author machine.
 - Config file: `C:\Users\Administrator\.cloudflared\config.yml`
 - Current service-backed tunnel: `wiki-trp`
 - Ingress also covers: `https://auth.three-quarters.net`
+- If the Windows service still carries a stale install-directory config,
+  `start-wiki.bat` now falls back to
+  `Three-Quarters-International/IDENTITY/providers/authentik/ensure-public-tunnel.ps1`,
+  which launches a user-mode shared tunnel instead.
 
 The manual launcher still works as a fallback when the service is unavailable on another machine.
 

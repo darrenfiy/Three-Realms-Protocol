@@ -14,6 +14,7 @@ This folder runs a local Wiki.js instance with PostgreSQL using Docker Desktop.
 - `compose.yaml`: Docker Compose stack
 - `.env`: local runtime settings for this machine
 - `.env.example`: safe template for future machines
+- `start-wiki.bat`: local launcher that starts shared auth first, then the wiki stack
 - `AUTH-GOVERNANCE-DRAFT.md`: future login / registration / permissions plan
 
 ## First start
@@ -39,6 +40,7 @@ Start or update:
 
 ```powershell
 docker compose up -d
+.\start-wiki.bat
 ```
 
 Stop:
@@ -106,6 +108,7 @@ python resolve-links.py --locale en --write seed/.resolved/en/   # mirror resolv
 - This is a local-first stack for setup and testing.
 - If you later publish this under `wiki.three-quarters.net`, we can add a reverse proxy and a real domain flow on top.
 - `http://localhost` is the clean local entry. `http://localhost:3000` remains available as the direct port binding.
+- `start-wiki.bat` is the safer day-to-day launcher now; it wakes the shared Authentik stack before the wiki containers so login is less likely to come back half-alive after Docker restarts.
 - If you want a domain-like local address on this machine, add the optional alias script and use `http://wiki.three-quarters.net`.
 - Seed content lives in `seed/` and can be replayed with `seed-pages.ps1`.
 - Custom sidebar navigation lives in `manifest/navigation/site-sidebar.yaml` and can be synced with `sync-navigation.ps1`.
