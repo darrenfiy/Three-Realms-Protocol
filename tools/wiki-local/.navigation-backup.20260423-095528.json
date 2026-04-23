@@ -1,0 +1,26 @@
+﻿{
+    "data":  {
+                 "navigation":  {
+                                    "config":  {
+                                                   "mode":  "STATIC"
+                                               },
+                                    "tree":  [
+                                                 {
+                                                     "locale":  "en",
+                                                     "items":  [
+                                                                   {
+                                                                       "id":  "test-001",
+                                                                       "kind":  "header",
+                                                                       "label":  "TEST_HEADER_EN",
+                                                                       "icon":  "",
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                                }
+             }
+}

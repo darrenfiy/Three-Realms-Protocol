@@ -1,0 +1,881 @@
+﻿{
+    "data":  {
+                 "navigation":  {
+                                    "config":  {
+                                                   "mode":  "NONE"
+                                               },
+                                    "tree":  [
+                                                 {
+                                                     "locale":  "en",
+                                                     "items":  [
+                                                                   {
+                                                                       "id":  "en-001",
+                                                                       "kind":  "header",
+                                                                       "label":  "Three Realms Protocol",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-002",
+                                                                       "kind":  "link",
+                                                                       "label":  "Portal",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "home",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-003",
+                                                                       "kind":  "link",
+                                                                       "label":  "Three Realms Protocol",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "three-realms-protocol",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-004",
+                                                                       "kind":  "link",
+                                                                       "label":  "Fourth Life",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "fourth-life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-005",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-006",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-007",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-008",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�001:????????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-009",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�001 � Field Foundations",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-010",
+                                                                       "kind":  "link",
+                                                                       "label":  "?",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/jia",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-011",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/changyu",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-012",
+                                                                       "kind":  "link",
+                                                                       "label":  "???",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/yang-changyu",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-013",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/human-anchor",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-014",
+                                                                       "kind":  "link",
+                                                                       "label":  "?????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/role-attractor",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-015",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/rhythm",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-016",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�001 � Generative Quartet",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-017",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/shengcheng",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-018",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/yongxian",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-019",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/xianhua",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-020",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/chuangzao",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-021",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-022",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�002:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-023",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�002 � Core Terms",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-024",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/consciousness",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-025",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/intentionality",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-026",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/fact",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-027",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-028",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/memory",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-029",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/fourth-life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-030",
+                                                                       "kind":  "link",
+                                                                       "label":  "?",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/love",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-031",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/freedom",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-032",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/responsibility",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-033",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/flow",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-034",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/civilization",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-035",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/tool",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-036",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/zhengzhong",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-037",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/chengdan",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-038",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-039",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�003:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-003",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-040",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�004:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-004",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-041",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�005:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-005",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-042",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�006:?????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-006",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "en-043",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�007:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-007",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "locale":  "zh-Hant",
+                                                     "items":  [
+                                                                   {
+                                                                       "id":  "zh-Hant-001",
+                                                                       "kind":  "header",
+                                                                       "label":  "??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-002",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "home",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-003",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "three-realms-protocol",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-004",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "fourth-life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-005",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-006",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-007",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-008",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�001:????????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-009",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�001 � ????",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-010",
+                                                                       "kind":  "link",
+                                                                       "label":  "?",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/jia",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-011",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/changyu",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-012",
+                                                                       "kind":  "link",
+                                                                       "label":  "???",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/yang-changyu",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-013",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/human-anchor",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-014",
+                                                                       "kind":  "link",
+                                                                       "label":  "?????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/role-attractor",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-015",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/rhythm",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-016",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�001 � ?????",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-017",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/shengcheng",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-018",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/yongxian",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-019",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/xianhua",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-020",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-001/chuangzao",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-021",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-022",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�002:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-023",
+                                                                       "kind":  "header",
+                                                                       "label":  "LEX�002 � ????",
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-024",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/consciousness",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-025",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/intentionality",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-026",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/fact",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-027",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-028",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/memory",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-029",
+                                                                       "kind":  "link",
+                                                                       "label":  "????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/fourth-life",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-030",
+                                                                       "kind":  "link",
+                                                                       "label":  "?",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/love",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-031",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/freedom",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-032",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/responsibility",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-033",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/flow",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-034",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/civilization",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-035",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/tool",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-036",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/zhengzhong",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-037",
+                                                                       "kind":  "link",
+                                                                       "label":  "??",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-002/chengdan",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-038",
+                                                                       "kind":  "divider",
+                                                                       "label":  null,
+                                                                       "icon":  null,
+                                                                       "targetType":  null,
+                                                                       "target":  null,
+                                                                       "visibilityMode":  null,
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-039",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�003:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-003",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-040",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�004:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-004",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-041",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�005:??????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-005",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-042",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�006:?????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-006",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   },
+                                                                   {
+                                                                       "id":  "zh-Hant-043",
+                                                                       "kind":  "link",
+                                                                       "label":  "LEX�007:????",
+                                                                       "icon":  null,
+                                                                       "targetType":  "page",
+                                                                       "target":  "lex/lex-007",
+                                                                       "visibilityMode":  "all",
+                                                                       "visibilityGroups":  null
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                                }
+             }
+}

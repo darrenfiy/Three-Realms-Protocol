@@ -32,6 +32,7 @@ services:
       DB_NAME: wiki
     volumes:
       - ./overrides/authentication/oidc/authentication.js:/wiki/server/modules/authentication/oidc/authentication.js:ro
+      - ./overrides/page.js:/wiki/server/graph/resolvers/page.js:ro
 
 volumes:
   wikijs-db:

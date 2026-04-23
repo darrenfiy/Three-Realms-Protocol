@@ -91,12 +91,13 @@ function Invoke-WikiGraphQL {
     variables = $Variables
   } | ConvertTo-Json -Depth 20 -Compress
 
+  $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes($body)
   return Invoke-RestMethod `
     -Method Post `
     -Uri "$BaseUrl/graphql" `
     -Headers @{ Authorization = "Bearer $AuthToken" } `
-    -ContentType 'application/json' `
-    -Body $body
+    -ContentType 'application/json; charset=utf-8' `
+    -Body $bodyBytes
 }
 
 function Get-IdentityMap {
