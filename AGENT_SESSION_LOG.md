@@ -97,3 +97,9 @@ Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver
 ```
 Claude Cowork・Sonnet 4.6（navigation sync 三項 bug 修復、ensure-identities PS5.1 相容性修復）
 ```
+
+## 2026-04-23 (Codex session · wiki-local relocation to Academy)
+- `wiki-local` has been relocated into `Three-Realms-Academy/tools/wiki-local/`; the Academy repo now owns the installable wiki stack, navigation tooling, and seed deployment layer.
+- `Three-Realms-Protocol/` remains the canonical source body: `DOCS/wiki`, `LEX`, `SPEC`, `EPOCH`, and the rest of the protocol corpus did not move with the app layer.
+- Shared auth, OIDC registry, and tunnel helpers remain in `Three-Quarters-International/IDENTITY/`; only the wiki app layer changed repos.
+- Historical 2026-04-20 to 2026-04-22 entries above still describe the old path accurately for their time window, but should not be read as the current stack location.
