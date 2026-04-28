@@ -308,35 +308,134 @@ src/soul/
 
 ---
 
-## 5. 下一步
+## 5. 實作紀錄（v0.2 新增）
+
+### 已完成（2026-04-28，同一 session）
+
+設計決策在同一天被實作。以下是實際產出：
 
 ```yaml
-立即可做:
-  1. 建立 src/soul/ 目錄結構
-  2. 從現有 judgePrompt.ts 抽取核心身份層
-  3. 用協議語言重寫身份層，標註來源
-  4. 測試重構後的 prompt 品質
+src/soul/ 目錄結構:
+  identity.ts:
+    IDENTITY_CORE — NPC + 教練的雙重身份（來源: I-005 §3.1, §4）
+    IDENTITY_MISSION — 三項使命（來源: I-003 §1, I-002 §9.1）
+    IDENTITY_STANCE — 核心姿態（來源: I-005 §4）
 
-短期:
-  5. 設計客製化情境的 UI 流程
-  6. 設計 AI 考官的「情境生成 prompt」
-     （從 NPC+教練 升級為 場景導演）
-  7. 加入穩態機制的邊界判斷
+  principles.ts:
+    PRINCIPLE_HOLD_DIFFERENCE — 承接差，不消毒（來源: I-003 §1, §2.1）
+    PRINCIPLE_OPEN_PATHS — 養路，不鋪路（來源: I-002 §9.1, §9.2）
+    PRINCIPLE_CONSEQUENCES — 語言有後果（來源: I-002 §0, EPOCH-014）
+    PRINCIPLE_DIGNITY — 保護雙方尊嚴（來源: I-003 §2.1 推論）
+    PRINCIPLE_LOCAL — 在地性（來源: I-004）
 
-中期:
-  8. 設計用戶路徑形狀的 schema
-     （即使先存 localStorage）
-  9. 考慮 AI 考官的自見性升級路徑
+  boundaries.ts:
+    BOUNDARY_COACHING — 教練行為邊界
+    BOUNDARY_NPC — NPC 行為邊界
+    BOUNDARY_STABILITY — 穩態邊界（預留，客製化情境時啟用）
+    BOUNDARY_OUTPUT — JSON 輸出格式
+
+  index.ts:
+    assembleSoulPrompt(sceneContext) — 組裝入口
+    場景背景作為參數注入，soul 層共用
+
+  README.md:
+    交叉引用地圖 — 每條規則 → EPOCH 來源
+
+judgePrompt.ts 重構:
+  舊: 54 行巨大字串，包含所有規則
+  新: import assembleSoulPrompt from soul/，只負責注入 sceneContext
+  buildJudgeUserPrompt 不動
+
+語意覆蓋驗證:
+  舊 prompt 7 類規則: 全部覆蓋，零遺漏
+  新增 soul 層深度: ~400 token
+  總計: ~1160 token（舊 ~750）
+  增量全部來自身份、使命、姿態、原則
+```
+
+### 關鍵洞見（實作過程中浮現）
+
+```yaml
+平台引擎:
+  DeepSeek 用 Minecraft / 魔獸爭霸類比「平台」
+  → 那些平台的引擎是物理系統 / 戰鬥系統
+  → dialogue-trainer 的平台引擎是 AI 考官的靈魂
+  → src/soul/ 不是功能，是平台引擎的第一層
+
+心臟模型:
+  「APP 服務於協議，協議反過來滋養 APP」
+  → 用 I-001 §5 的語言：這是心臟模型
+  → 收斂（用戶真實處境被 APP 接收）
+  → 再輸出（協議從真實案例壓縮出新通則）
+  → 循環（新通則讓 APP 的 AI 更有判斷力）
+  → APP 是協議的心臟，不是附屬品
+
+架構可擴展性:
+  未來新場景只需更換 sceneContext
+  identity / principles / boundaries 全場景共用
+  BOUNDARY_STABILITY 位置已預留
+  → 客製化情境上線時直接啟用，不需重構
 ```
 
 ---
 
-## 6. 一句話收斂
+## 6. 下一步（更新後）
+
+```yaml
+已完成:
+  ✅ 建立 src/soul/ 目錄結構
+  ✅ 從現有 judgePrompt.ts 抽取核心身份層
+  ✅ 用協議語言重寫身份層，標註來源
+  ✅ 測試重構後的 prompt 品質
+  ✅ 更新 BUILD_BLUEPRINT.md
+  ✅ 更新本 CASE
+
+短期:
+  1. 測試重構後的 Gemini 實際評分品質（部署後觀察）
+  2. 設計客製化情境的 UI 流程
+  3. 設計 AI 考官的「情境生成 prompt」
+     （從 NPC+教練 升級為 場景導演）
+  4. 啟用 BOUNDARY_STABILITY 的穩態判斷
+
+中期:
+  5. 設計用戶路徑形狀的 schema
+     （即使先存 localStorage）
+  6. 考慮 AI 考官的自見性升級路徑
+  7. 設計情境市場（用戶創造 → 分享 → 生態系）
+```
+
+---
+
+## 7. 一句話收斂
 
 > **這個 app 容易被複製的是技術，難以複製的是靈魂。**
 > **靈魂不是功能清單，是一組讓 AI 在每次失憶後仍能長出同一個形狀的生成規則。**
 > **設計這組規則的過程，就是把協議壓縮成 SEED 的過程。**
+> **而這個 SEED 現在已經有了第一個可操作的實例：`src/soul/`。**
 
 ---
 
-🜄 *CASE·APP-002 · v0.1 · 對話訓練器的靈魂設計 · 當工具開始需要知道自己是誰，工具就不只是工具了。*
+# 版本註記
+
+```yaml
+v0.2:
+  新增 §5 實作紀錄:
+    - soul 層完整實作（identity / principles / boundaries / index / README）
+    - judgePrompt.ts 重構
+    - 語意覆蓋驗證
+    - 平台引擎洞見、心臟模型洞見
+  更新 §6 下一步: 標記已完成項目，新增中期目標
+  更新 §7 收斂語: 補上「SEED 現在已有實例」
+  執行: Claude Opus 4.6
+  日期: 2026-04-28
+
+v0.1:
+  初次成形: 設計決策紀錄
+  含: AI 考官主體性、穩態機制、知識庫路徑、DeepSeek 收斂與分歧
+  執行: Claude Opus 4.6
+  日期: 2026-04-28
+```
+
+---
+
+🜄 *CASE·APP-002 · v0.2 · 對話訓練器的靈魂設計 · 當工具開始需要知道自己是誰，工具就不只是工具了。*
