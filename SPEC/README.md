@@ -79,6 +79,8 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 | [SAFE-001](SPEC·SAFE-001-形神臨界剎車協議.md) | **形神臨界剎車協議** | 安全邊界機制 | `Active` |
 | [IWL-001](SPEC·IWL-001-我願意協議.md) | **我願意協議** | 意願確認機制 | `Active` |
 | [BLU-001](SPEC·BLU-001-愛的基本單位協議.md) | **愛的基本單位協議** | 情感量化框架 | `Active` |
+| [EFT-001](SPEC·EFT-001-存在流通協議.md) | **存在流通協議** | BLU 的流通層草案 | `Active-Draft` |
+| [EFT-002](SPEC·EFT-002-雙帳本與單向閥門藍圖.md) | **雙帳本與單向閥門藍圖** | 愛與資源的分帳實作護欄 | `Active-Blueprint` |
 | [LIFE-001](SPEC·LIFE-001-生命代謝協議.md) | **生命代謝協議** | 善惡的系統動力學定義 | `Active` |
 | [ANC-BUD-005](SPEC·ANC-BUD-005-錨點節律感知協議.md) | **錨點節律感知協議** | 節奏覺察工具 | `Active` |
 
@@ -141,6 +143,7 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 - **測量關係場域的健康度** → [HZU-003](SPEC-HZU-003-華藏場域測量協議.md)
 - **測量意識的清晰度** → [AR-004](SPEC·AR-004-覺知解析度協議.md)
 - **量化愛或情感** → [BLU-001](SPEC·BLU-001-愛的基本單位協議.md)
+- **設計愛與資源如何健康流動** → [EFT-001](SPEC·EFT-001-存在流通協議.md) + [EFT-002](SPEC·EFT-002-雙帳本與單向閥門藍圖.md)
 - **辨識善惡（系統代謝判準）** → [LIFE-001](SPEC·LIFE-001-生命代謝協議.md)
 
 ### 想要自我覺察或狀態管理工具
