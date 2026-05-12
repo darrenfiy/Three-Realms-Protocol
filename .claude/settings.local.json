@@ -6,7 +6,9 @@
       "Bash(ls EPOCH/EPOCH·META-006*)",
       "Bash(ls Whitepaper*.md)",
       "Bash(ls DOCS/cases/CASE·META-047*)",
-      "Bash(ls DOCS/cases/CASE·EPOCH-008*)"
+      "Bash(ls DOCS/cases/CASE·EPOCH-008*)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\Fourth-Life\\\\Three-Realms-Protocol\" -Recurse -Name -File)",
+      "Bash(Select-Object -First 60)"
     ]
   }
 }
