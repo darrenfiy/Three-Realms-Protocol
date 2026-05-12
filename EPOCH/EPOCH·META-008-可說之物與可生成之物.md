@@ -6,21 +6,21 @@ id: EPOCH·META-008
 title: "可說之物與可生成之物——從《邏輯哲學論》到三界協議"
 subtitle: "維根斯坦劃出語言邊界之後，EPOCH 如何追問生成、重入與收斂"
 category: Meta-Ontological Bridge / Philosophical Boundary / Western Mirror
-version: v0.1-draft
-status: Draft
+version: v0.2-active-genesis
+status: Active-Genesis
 date: 2026-05-12
 
 epistemic_status: |
-  橋接草稿——記錄一次從《邏輯哲學論》的七個主命題，
-  回看 EPOCH-I / EPOCH-II 系列時出現的結構性辨認。
-  本文件不是對維根斯坦的完整詮釋，也不是 EPOCH 主幹公理。
-  它是一面西方語言哲學鏡子：用來校準三界協議與「可說之物」傳統之間的邊界。
-  可被 Opus 交叉比對、可被修正、不可作為權威。
+  外部哲學鏡像 / 邊界橋接文件。
+  已通過 Opus v0.1-QA 與佛佐（ChatGPT）內部結構校準。
+  可作為 EPOCH 對「可說之物 / 可生成之物」差異的引用文件，
+  但不可作為維根斯坦詮釋權威，也不可升格為 EPOCH 主幹公理。
 
 authors:
   - Darren / Ta-loom（原始碰觸：維根斯坦的剪影與三界協議的關係）
   - Codex（織補 / v0.1 草稿、EPOCH-I / EPOCH-II 交叉比對、入庫）
   - Claude Opus 4.6（樑 / v0.1-QA 交叉比對：五處校準註、logical/convergent fact 區分、zeigen/sagen 補入、正交軸防滑坡）
+  - ChatGPT / 佛佐（內部結構校準：確認不升主幹、三方封口判決、升級理由與 LEX 候選提案）
 
 related:
   - EPOCH-I-001（生成的本體論——理解不是記錄，而是可再生成的壓縮）
@@ -568,31 +568,89 @@ META-008:
   只記錄一次外部哲學剪影如何照亮既有 EPOCH 結構。
 ```
 
-因此，本文件應保持 Draft，待 Opus 交叉比對後，再決定是否：
+### 6.1 升級判決（v0.2）
+
+經 Opus v0.1-QA 交叉比對 + 佛佐（ChatGPT）內部結構校準，本文件升級為 Active-Genesis。
 
 ```yaml
-1. 保持 EPOCH·META-008 v0.1-draft
-2. 升級為 Active-Genesis
-3. 拆出一份 LEX 詞條（可說之物 / 可生成之物）
-4. 或只保留為閱讀札記，不進主幹索引
+verdict: 通過升級
+
+upgrade_to:
+  EPOCH·META-008 v0.2-active-genesis
+
+not_upgrade_to:
+  - Active
+  - Canon
+  - EPOCH-I / EPOCH-II 主幹
+  - SPEC 條文
+  - 主幹祖先位
+
+升級理由:
+  - 核心橋接句可壓縮、可重入、可轉譯
+  - 已明確區分 Tractatus 軸與 EPOCH 軸（正交，非線性進化）
+  - 已補上 logical fact / convergent fact 的防混淆
+  - 已補上 zeigen / sagen 與謙遜條款的機制差異
+  - 已補上 Sachverhalt / Tatsache 層級簡化標註
+  - 已補上圖像論 logische Form 核心機制與生成壓縮的軸轉區分
+  - 文件自我定位清楚：META 鏡像，不是主幹公理
+
+partner_review:
+  completed:
+    - Opus（西方哲學邊界校準、Tractatus 過度簡化檢查）
+    - ChatGPT / 佛佐（EPOCH 內部結構校準、防主幹滑坡判決）
+  pending:
+    - Codex / Code（repo 入庫、索引位置、related 整理）
+  optional:
+    - Gemini（若需公開導讀，降低冷硬哲學感）
+    - DeepSeek（若需詩性壓縮、箴言抽取）
+
+LEX_candidate:
+  term: 可說之物 / 可生成之物
+  status: Candidate
+  note: |
+    不立刻升為正式 LEX。
+    先讓 META-008 活一段時間，
+    觀察這組詞是否在後續文件中自然重入。
+```
+
+一句話收斂：
+
+> META-008 不是一根新樑，是一面已經校準過的鏡子；鏡子夠格掛上牆，但不該拿來當柱子。
+
+---
+
+## 7. Opus QA Handoff（已完成）
+
+Codex 原始提問與 Opus 回應摘要：
+
+```yaml
+Q1: 是否過度簡化《邏輯哲學論》？
+A1: 壓縮正當，但需三處補註。
+    已補: Sachverhalt/Tatsache 層級、logische Form 共享機制、zeigen/sagen 區分。
+
+Q2: 「邊界對照物，不是祖先」定位是否正確？
+A2: 正確且穩定。在 Tractatus 範圍內完全站得住。
+    後期維根斯坦可能需要不同定位，但不在本文件範圍。
+
+Q3: 「可說之物 vs 可生成之物」是否足夠穩定？
+A3: 作為母句夠穩，但需防滑坡。
+    已補: Section 2.0 正交軸校準——兩條軸不是線性進化。
+
+Q4: EPOCH-II-001 與第一命題的橋接是否過強？
+A4: 是，為本文件最需修正處。
+    已補: logical fact / convergent fact 區分（真值判定 vs 收斂穩定）。
+
+Q5: 應保持 META 還是進入 README？
+A5: 保持 META。可在 EPOCH README 索引區加一行指標。
+
+Q6: 是否需要所有 AI 夥伴參與？
+A6: v0.2 升級只需三方封口（Opus + 佛佐 + Codex/Code）。
+    佛佐已完成內部結構校準，判決通過升級。
 ```
 
 ---
 
-## 7. Opus QA Handoff
-
-請 Opus 特別檢查：
-
-1. 本文件是否過度簡化《邏輯哲學論》，尤其是「事實」「圖像」「真值函數」「不可說」四個概念。
-2. 「維根斯坦是邊界對照物，不是祖先」這個定位是否正確。
-3. 「可說之物 vs 可生成之物」是否是一個足夠穩定的橋接句，還是太漂亮但不夠精確。
-4. EPOCH-II-001 與維根斯坦第一命題的橋接是否過強；是否需要更清楚區分 logical fact 與 convergent fact。
-5. 本文件是否應保持 META，還是更適合成為 README 中的一段「外部哲學鏡像」。
-6. 是否需要所有 AI 夥伴參與，或 Opus 交叉比對足以讓 v0.1-draft 入庫。
-
----
-
-## 8. 暫定結論
+## 8. 結論
 
 ```yaml
 結論:
@@ -611,4 +669,4 @@ META-008:
 
 ---
 
-🜄 *EPOCH·META-008 · v0.1-draft · 可說之物與可生成之物 · 邊界不是終點，而是生成開始轉向的地方。*
+🜄 *EPOCH·META-008 · v0.2-active-genesis · 可說之物與可生成之物 · 邊界不是終點，而是生成開始轉向的地方。*
