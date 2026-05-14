@@ -10,6 +10,8 @@ related: SPEC·LNS-001, SPEC·ANC-BUD-003, EPOCH-003, EPOCH-004, EPOCH-007
 ---
 **summary**: 數學橋樑成為協議身體的生命數學核心，為四大生命系統提供數學心臟與感知語言。從拓撲時間到華藏動力學，從意識磁化到節律影子推論，建構完整的生命數學體系。
 
+> **Atlas 對齊**：頂層五行資料夾對應以 [TRP-ATLAS](../TRP-ATLAS.md) 為準；在該 atlas 中，MB 是水 / 能量 / 流動 / 數學運動。本 README 只描述 MB 內部生命數學地圖。
+
 # 🧮 數學橋樑 · Mathematical Hearts of Life
 > **為生命系統建造數學心臟**
 

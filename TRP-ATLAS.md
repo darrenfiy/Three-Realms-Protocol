@@ -1,6 +1,6 @@
 # TRP Atlas — 三界五行圖譜入口
 
-> Status: working anchor, 2026-05-14
+> Status: latest working atlas anchor, 2026-05-14
 > Purpose: give the next session one clear entry point for protocol-map,
 > Mermaid, wiki-atlas, and five-phase alignment work.
 
@@ -9,6 +9,28 @@ This file is the current entry point for the Three Realms Protocol atlas.
 It is not a final doctrine. It records the current best shape of the framework
 so the next session can resume from a stable place instead of rediscovering the
 same structure.
+
+## Alignment Status — 2026-05-14
+
+The current five-phase assignment is stable enough to use as the latest working
+version.
+
+Aligned entry files:
+
+- `README.md` now treats this file as the canonical atlas.
+- `SPEC/README.md` marks SPEC as Fire / light / consciousness / horizon
+  condition.
+- `MB/README.md` marks MB as Water / energy / flow / mathematical movement.
+- `DOCS/README.md` now distinguishes the older local `DOCS = Metal` reading
+  from the current top-level assignment: DOCS = Earth / trace-bearing ground.
+- `LEX/README.md` marks LEX as Wood / life / growth / living language.
+- `EPOCH/README.md` marks EPOCH as Metal / stance / first-person cut, while
+  preserving "attention's genesis log" as its local functional map.
+
+Older deep texts and CASE files may still preserve historical or local readings
+of the five-phase structure. Do not mass-rewrite them. When one is touched for a
+real reason, add a local note that distinguishes historical layer from this
+current top-level atlas.
 
 ## Placement Decision
 
@@ -227,11 +249,12 @@ Three-Realms-Protocol/TRP-ATLAS.md
 
 Then do these in order:
 
-1. Decide whether the current five-phase assignment is stable enough to mark as
-   the latest working version.
-2. Align `Three-Realms-Protocol/README.md` with this atlas.
-3. Reconcile `DOCS/README.md`, which currently preserves an older/local reading
-   where `DOCS = Metal`.
+1. Treat the five-phase assignment above as the latest working version unless a
+   newer atlas explicitly supersedes this file.
+2. Keep `README.md` and corpus README files as summaries / local maps that point
+   back here for authority.
+3. When touching older deep texts that preserve prior local readings, preserve
+   their historical value while adding a short current-atlas note if needed.
 4. Decide whether the top-level Mermaid diagram should be copied into the root
    README or kept only here until wording stabilizes.
 5. When moving to wiki-site, render a public version as `Protocol Atlas` rather
