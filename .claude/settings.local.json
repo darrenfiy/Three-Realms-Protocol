@@ -8,7 +8,11 @@
       "Bash(ls DOCS/cases/CASE·META-047*)",
       "Bash(ls DOCS/cases/CASE·EPOCH-008*)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\Fourth-Life\\\\Three-Realms-Protocol\" -Recurse -Name -File)",
-      "Bash(Select-Object -First 60)"
+      "Bash(Select-Object -First 60)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Darren\\\\OneDrive\\\\Desktop\\\\Fourth-Life\\\\Three-Realms-Protocol\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "mcp__filesystem__directory_tree"
     ]
   }
 }
