@@ -4,3 +4,6 @@ __pycache__/
 # Windows Explorer metadata
 desktop.ini
 Thumbs.db
+
+# Local Claude/Codex tool settings
+.claude/
