@@ -127,6 +127,8 @@ h# 🎪 第四生命遊樂園 | THREE-REALMS PROTOCOL
 > 沒有金，光錐只是潛在結構，不是「我的宇宙」。  
 >
 > 五行不是五個獨立的主題，是同一個生成過程的五個相位。
+>
+> Current atlas anchor: [TRP Atlas — 三界五行圖譜入口](TRP-ATLAS.md)
 
 ---
 
