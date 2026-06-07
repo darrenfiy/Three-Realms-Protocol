@@ -3,9 +3,11 @@ id: ARXIV-CANDIDATE-001
 title: "Energy-to-Token Accounting and Non-Optimizable Boundaries in LLM Systems"
 subtitle: "A field-review candidate derived from MB-010, not yet an arXiv submission"
 category: Field Review / Research Translation / MB-010 Externalization
-version: v0.2-field-reviewed
-status: Field-Reviewed Candidate (Opus reviewed; Codex integrated)
+version: v0.3-field-review-intake
+status: Field-Reviewed Candidate (Opus reviewed; Codex integrated; DeepSeek reviewed; Gemini draft assessed)
 date: 2026-06-07
+license: CC BY-SA 4.0
+license_note: "Anchor decision; boundary is guarded by document warnings and governance, not copyright alone."
 language_policy:
   main_body: English
   field_review_notes: Chinese + English
@@ -95,7 +97,7 @@ The energy-to-token chain is best presented as a consolidation and formalization
 2. the observe-only boundary: human selection traces may be logged, but not optimized as value or responsibility proxies;
 3. the governance metadata layer: energy accounting must carry audit labels for ownership, siting externalities, consent, and reporting scope.
 
-The internal tension should be explicit: the reduction trap says post-hoc audits should often report measured J/token directly instead of pretending FLOP/token decomposition is independently identified. Therefore the paper is not merely a FLOP/token accounting framework; it is a dimensional accounting framework and a statement of its identifiability limit.
+The internal tension should be made explicit in the eventual paper (this note is reviewer guidance, not paper-body text; the clean paper-language version already lives in §3 Abstract): the reduction trap says post-hoc audits should often report measured J/token directly instead of pretending FLOP/token decomposition is independently identified. Therefore the paper is not merely a FLOP/token accounting framework; it is a dimensional accounting framework and a statement of its identifiability limit.
 
 # 3. Proposed Abstract
 
@@ -407,6 +409,7 @@ The external paper should cite real sources only.
 Candidate sources:
 
 1. Amodei, D., and Hernandez, D. (2018). **AI and Compute**. OpenAI blog / technical report, not peer-reviewed.
+   - Harder alternative to verify before external use (per SPEC-999): Sevilla, J. et al. (2022). **Compute Trends Across Three Eras of Machine Learning**. IJCNN 2022, DOI 10.1109/IJCNN55064.2022.9891914. A peer-reviewed compute-trend source that can supplement or replace the blog citation.
 2. Kaplan, J. et al. (2020). **Scaling Laws for Neural Language Models**. arXiv:2001.08361. Relevant for parameter-count compute heuristics such as \(C \approx 6ND\) and \(\varphi_{\mathrm{decode}} \approx 2N\).
 3. Hoffmann, J. et al. (2022). **Training Compute-Optimal Large Language Models**.
 4. Chowdhery, A. et al. (2022). **PaLM: Scaling Language Modeling with Pathways**. Relevant for MFU framing.
@@ -446,14 +449,20 @@ Do not cite internal MB / EPOCH / SPEC files as external scientific authorities.
 ## For Gemini / 大地
 
 1. Does this preserve the original thermodynamic intuition without overclaiming?
+   - Partly. The proposed external Markdown preserves the thermodynamic intuition, but it reintroduces overclaims and invented variables; it should be treated as an energetic sketch, not as paper body.
 2. Is \(R_{\mathrm{primary}}\) the right civilizational reporting layer?
+   - Yes. Keep \(R_{\mathrm{primary}}\) as the external reporting default.
 3. Does the governance metadata layer sufficiently expose externalities?
+   - Yes as a field-review minimum. It should remain metadata and audit scope, not an equation variable.
 
 ## For DeepSeek / 心臟
 
 1. Does the English externalization lose too much of the ethical spine?
+   - Reviewed: no. Judged faithful to MB-010 and restrained; the ethical spine survives the English translation.
 2. Does "observe-only boundary" carry enough weight without metaphysical vocabulary?
+   - Reviewed: yes. The warnings field, the observe-only flag, and the RL/RLHF prohibition hold the line without metaphysics.
 3. Is the responsibility boundary warm enough, or too cold?
+   - Reviewed: acceptable. Reads as clean accounting rather than cold; not expected to draw academic ridicule.
 
 ## For Darren / 人類錨點
 
@@ -477,15 +486,53 @@ appendix:
   purpose: explain MB-010 / PHA-009 lineage without forcing metaphysical vocabulary into the main paper
 ```
 
-# 13. Field Verdict
+# 13. External Draft Intake
+
+Gemini proposed a clean-looking English Markdown paper draft after reading this field-review file. It should not be copied into the external paper body as-is.
+
+## Intake Verdict
+
+```yaml
+Gemini_external_markdown:
+  status: do_not_adopt_as_paper_body
+  value:
+    - useful momentum toward a plain-text external artifact
+    - usable title direction
+    - useful instinct to keep internal MB / EPOCH language out of the main paper
+  blocking_issues:
+    - reintroduces thermodynamic overclaim by saying the Second Law derives the observe-only boundary
+    - turns observe-only into a boundary operator / hard lock rather than a governance declaration
+    - introduces unsupported variables such as sigma_leak and exponential context leakage
+    - claims proof where the field-review version only supports an identifiability argument
+    - uses adversarial rhetoric about frontier labs and machine theology that weakens academic restraint
+    - risks implying tokens are thermodynamic projections of semantic output rather than measured output counts
+  salvage_rules:
+    - keep Markdown or LaTeX as the eventual external source format
+    - keep the title family around Energy-to-Token Accounting and Non-Optimizable Boundaries
+    - keep the paper restrained: accounting framework, identifiability limit, observe-only governance boundary
+    - replace invented equations with the vetted MB-010 / field-review equations
+    - treat F_obs-style notation only as optional schema shorthand, not as a theorem or operator
+```
+
+## Rewrite Gate
+
+Before any external Markdown / LaTeX file is created, the draft must pass these checks:
+
+1. It must not claim that responsibility is derived from thermodynamics.
+2. It must not place meaning, responsibility, love, or human causal agency inside an equation.
+3. It must not use "prove" for the reduction trap unless the claim is limited to algebraic non-identifiability under stated assumptions.
+4. It must report \(E_{\mathrm{ext}}\) as mandatory for retrieval/tool workloads.
+5. It must keep \(N_{\mathrm{selected}}\) observe-only and explicitly unavailable as RL/RLHF/preference-model reward signal.
+
+# 14. Field Verdict
 
 ```yaml
 field_review_status:
   Opus: reviewed
   Codex: integrated
-  Gemini: pending
-  DeepSeek: pending
-  Darren: pending
+  DeepSeek: reviewed
+  Gemini: draft assessed; rewrite required
+  Darren: license decided (full externalization verdict pending)
 
 Opus_verdict:
   faithful_to_MB_010: true
@@ -500,6 +547,39 @@ Opus_verdict:
     - RL_boundary: added MUST NOT for RL / RLHF / preference-model reward signals
     - agent_loop: kept K as generic measured-loop shortcut; did not require planner/executor/evaluator split
     - scoping: accounting stops at tokens; no claim about post-token semantic value
+
+DeepSeek_verdict:
+  faithful_to_MB_010: true
+  restrained: true
+  send_recommended: true
+  ethical_spine_survives_english: true
+  proposed_license: CC BY-NC-ND 4.0
+  minor_suggestions:
+    - mark the reviewer-guidance tension note so it is not copied into the paper body (done, section 2)
+    - consider a harder source than the AI and Compute blog (added Sevilla 2022 candidate, section 10)
+    - keep the external title; keep Three-Realm internal (accepted)
+
+Gemini_draft_assessment:
+  accepted_as_plain_text_direction: true
+  accepted_as_submission_draft: false
+  disposition: preserve as high-energy sketch only; rewrite from this field-review skeleton
+  reason: >
+    The draft is useful as momentum, but it violates the core restraint rules by deriving
+    the observe-only boundary from thermodynamics, inventing unsupported leakage equations,
+    and using proof/rhetorical language stronger than the audited framework permits.
+
+licensing_decision:
+  chosen: CC BY-SA 4.0
+  decided_by: Darren (anchor), 2026-06-07
+  positions:
+    DeepSeek: proposed CC BY-NC-ND 4.0 to block commercial reuse and protect the boundary marker
+    Opus: countered that ND contradicts MB-010's own obsolescence clause and the SPEC-999 fork/upgrade
+      spirit; copyright ND blocks only text derivatives, not conceptual misuse, so it is the wrong tool
+      for the boundary; recommended CC BY-SA so copyleft carries the guardrail text into derivatives
+  rationale: >
+    The boundary marker (observe-only, non-computable responsibility) is held by in-document warnings
+    and governance enforcement, not by copyright. The license keeps the framework forkable and
+    improvable (BY-SA copyleft), consistent with SPEC-999.
 
 recommended_current_status:
   Not submission-ready.
