@@ -9,10 +9,10 @@ zenodo_doi: 10.5281/zenodo.20580526
 zenodo_record: https://zenodo.org/records/20580526
 zenodo_doi_url: https://doi.org/10.5281/zenodo.20580526
 related:
-  - DOCS/academic/ARXIV-CANDIDATE-001-position-paper.md
-  - DOCS/academic/ARXIV-CANDIDATE-001-field-review.md
-  - DOCS/academic/energy_to_token_accounting_position_paper.tex
-  - DOCS/academic/energy_to_token_accounting_position_paper.pdf
+  - position-paper.md
+  - field-review.md
+  - energy_to_token_accounting_position_paper.tex
+  - energy_to_token_accounting_position_paper.pdf
 ---
 
 # Zenodo Record Sheet: Energy-to-Token Accounting
@@ -23,8 +23,8 @@ arXiv endorsement in parallel. Depositing on Zenodo does not block a later arXiv
 
 ## Upload Files
 
-- Required: `DOCS/academic/energy_to_token_accounting_position_paper.pdf`
-- Recommended companion source: `DOCS/academic/energy_to_token_accounting_position_paper.tex`
+- Required: `energy_to_token_accounting_position_paper.pdf`
+- Recommended companion source: `energy_to_token_accounting_position_paper.tex`
 
 The PDF was built from the LaTeX source. The same `.tex` file can later be used
 for arXiv, so the Zenodo deposit and arXiv source stay aligned.

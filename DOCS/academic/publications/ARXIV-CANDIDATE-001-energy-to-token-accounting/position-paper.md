@@ -6,13 +6,13 @@ version: v0.5-latex-source
 status: Draft / Pre-submission candidate; not yet arXiv-ready
 date: 2026-06-07
 arxiv_target: "primary cs.CY; cross-list cs.LG"
-arxiv_note: "Anchor chose direct arXiv submission. First-time cs.* submission may require endorsement; verify before upload. Select CC BY-SA 4.0 in the arXiv license menu. LaTeX source generated at DOCS/academic/energy_to_token_accounting_position_paper.tex; PDF built at DOCS/academic/energy_to_token_accounting_position_paper.pdf."
+arxiv_note: "Anchor chose direct arXiv submission. First-time cs.* submission may require endorsement; verify before upload. Select CC BY-SA 4.0 in the arXiv license menu. LaTeX source generated at energy_to_token_accounting_position_paper.tex; PDF built at energy_to_token_accounting_position_paper.pdf."
 zenodo_doi: 10.5281/zenodo.20580526
 zenodo_record: https://zenodo.org/records/20580526
 zenodo_doi_url: https://doi.org/10.5281/zenodo.20580526
 license: CC BY-SA 4.0
 license_note: "BY-SA governs text/figures; the framework name is not licensed (see Reuse and Naming). Guardrail retention is a community/naming convention, not a license term, consistent with the observe-only boundary's non-self-enforcing nature."
-source_review: DOCS/academic/ARXIV-CANDIDATE-001-field-review.md
+source_review: field-review.md
 authors:
   - Ta-Loom Hwang
 author_note: "AI systems are not listed as authors. Protocol Body Collective contributions are disclosed in Acknowledgements and AI Assistance Disclosure."
