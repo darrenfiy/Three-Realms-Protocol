@@ -1,42 +1,30 @@
----
-id: ARXIV-CANDIDATE-001-POSITION-PAPER
-title: "Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems"
-category: Academic Draft / Position Paper / Energy Accounting
-version: v0.5-latex-source
-status: Draft / Pre-submission candidate; not yet arXiv-ready
-date: 2026-06-07
-arxiv_target: "primary cs.CY; cross-list cs.LG"
-arxiv_note: "Anchor chose direct arXiv submission. First-time cs.* submission may require endorsement; verify before upload. Select CC BY-SA 4.0 in the arXiv license menu. LaTeX source generated at DOCS/academic/energy_to_token_accounting_position_paper.tex; PDF built at DOCS/academic/energy_to_token_accounting_position_paper.pdf."
-zenodo_reserved_doi: 10.5281/zenodo.20580526
-zenodo_reserved_url: https://doi.org/10.5281/zenodo.20580526
-license: CC BY-SA 4.0
-license_note: "BY-SA governs text/figures; the framework name is not licensed (see Reuse and Naming). Guardrail retention is a community/naming convention, not a license term, consistent with the observe-only boundary's non-self-enforcing nature."
-source_review: DOCS/academic/ARXIV-CANDIDATE-001-field-review.md
-authors:
-  - Ta-Loom Hwang
-author_note: "AI systems are not listed as authors. Protocol Body Collective contributions are disclosed in Acknowledgements and AI Assistance Disclosure."
-affiliation: Independent Researcher
-affiliation_note: "Affiliation set (Independent Researcher), matching the arXiv account. Submitter identity and contact email are held in the arXiv account and are not printed in the public manuscript. ORCID is optional; add before upload if desired."
-warnings:
-  - "This is a draft position paper, not an arXiv submission."
-  - "Do not cite internal Fourth Life documents as external scientific authorities."
-  - "Do not claim that responsibility, meaning, or social value is derived from thermodynamics."
-  - "Do not use token count as a proxy for meaning, responsibility, wisdom, love, or legitimacy."
----
+\pdfoutput=1
+\documentclass[11pt]{article}
 
-# Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
 
-## Abstract
+\title{Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems}
+\author{Ta-Loom Hwang\\Independent Researcher}
+\date{June 7, 2026\\\small DOI: \href{https://doi.org/10.5281/zenodo.20580526}{10.5281/zenodo.20580526}}
 
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
 Large language model systems increasingly convert large-scale physical energy flows into token-level computational outputs. Existing compute-accounting discussions often rely on estimated floating-point operations, parameter-count heuristics, peak hardware efficiency, or idealized utilization metrics. These quantities are useful for planning and comparison, but they can obscure the distinction between forward prediction, post-hoc audit, and governance accountability.
 
 This paper proposes a dimensional accounting framework for energy-to-token auditing in large language model systems. The framework separates primary energy, facility energy, IT energy, effective hardware computation, workload-dependent FLOP-per-token estimates, token counts, and external retrieval or tool energy. We argue that this separation is useful only when its identifiability limits are made explicit. In post-hoc audits, if observed FLOPs are reconstructed from a FLOP-per-token estimate multiplied by token count, then FLOP-per-token and effective FLOP/J are not jointly identifiable; the audit has measured energy per token, not an independently validated compute decomposition. We call this failure mode the reduction trap.
 
 Finally, we introduce an observe-only governance boundary for human selection traces such as citation, publication, editing, commitment, or downstream adoption. Such traces may be recorded for audit, corpus drift analysis, and traceability, but must not be used as reward signals, optimization targets, or proxies for meaning, responsibility, or social value. This boundary is a governance constraint, not a thermodynamic theorem.
+\end{abstract}
 
-**Keywords:** large language models, compute accounting, energy auditing, FLOP accounting, green AI, governance metadata, reward modeling, auditability
+\noindent\textbf{Keywords:} large language models, compute accounting, energy auditing, FLOP accounting, green AI, governance metadata, reward modeling, auditability
 
-## 1. Introduction
+\section{Introduction}
 
 The scaling of large language model (LLM) systems has made compute accounting a central technical and governance problem. Training and inference are often discussed in terms of parameters, FLOPs, model FLOP utilization, peak accelerator throughput, or benchmark performance. These measures are valuable, but they do not by themselves describe the physical energy chain that begins in primary energy and ends in emitted or processed tokens.
 
@@ -44,29 +32,31 @@ The difference matters. A system may be efficient in theoretical FLOPs while sti
 
 This paper offers a restrained position: energy-to-token accounting is useful when it remains dimensionally explicit, empirically auditable, and clear about where optimization must stop. The framework has three main contributions:
 
-1. It formalizes an energy-to-token accounting chain that separates primary, facility, IT, model-side, and external-tool energy terms.
-2. It identifies the reduction trap: a post-hoc non-identifiability problem in which FLOP-per-token and effective FLOP/J collapse into measured J/token unless FLOPs are independently measured.
-3. It defines an observe-only governance boundary for human selection traces so that audit records are not converted into reward signals or value proxies.
+\begin{enumerate}
+  \item It formalizes an energy-to-token accounting chain that separates primary, facility, IT, model-side, and external-tool energy terms.
+  \item It identifies the reduction trap: a post-hoc non-identifiability problem in which FLOP-per-token and effective FLOP/J collapse into measured J/token unless FLOPs are independently measured.
+  \item It defines an observe-only governance boundary for human selection traces so that audit records are not converted into reward signals or value proxies.
+\end{enumerate}
 
 The aim is not to prove a metaphysical claim about responsibility, meaning, or intelligence. The accounting stops at measured energy and token-level outputs. Claims about social value, responsibility, or legitimacy require human governance and cannot be derived from the energy equation.
 
-## 2. Related Work
+\section{Related Work}
 
-Compute trends and scaling behavior have been studied through parameter counts, training compute, and empirical scaling laws. Amodei and Hernandez (2018) drew attention to the rapid growth of compute used in prominent AI training runs, while Sevilla et al. (2022) provided a peer-reviewed account of compute trends across multiple eras of machine learning. Kaplan et al. (2020) formalized neural language model scaling laws and popularized parameter-count-based compute heuristics, including the common use of model size and token count to estimate training compute. Hoffmann et al. (2022) refined this discussion by showing that compute-optimal training depends on the balance between model size and data. These works motivate the use of compute estimates, but they do not remove the need to distinguish estimated FLOPs from measured energy in post-hoc audits.
+Compute trends and scaling behavior have been studied through parameter counts, training compute, and empirical scaling laws. Amodei and Hernandez~\cite{amodei2018ai} drew attention to the rapid growth of compute used in prominent AI training runs, while Sevilla et al.~\cite{sevilla2022compute} provided a peer-reviewed account of compute trends across multiple eras of machine learning. Kaplan et al.~\cite{kaplan2020scaling} formalized neural language model scaling laws and popularized parameter-count-based compute heuristics, including the common use of model size and token count to estimate training compute. Hoffmann et al.~\cite{hoffmann2022training} refined this discussion by showing that compute-optimal training depends on the balance between model size and data. These works motivate the use of compute estimates, but they do not remove the need to distinguish estimated FLOPs from measured energy in post-hoc audits.
 
-Large-scale LLM system reports also introduced operational efficiency metrics that are now common in the field. Chowdhery et al. (2022), for example, reported model FLOPs utilization (MFU) in the PaLM training system, and Korthikanti et al. (2022) discussed efficiency issues in large transformer training, including activation recomputation and comparisons in the Megatron-LM line of work. Such metrics are useful for system engineering, but they can be misread if they are treated as independently measured audit quantities when the underlying FLOPs are estimated analytically.
+Large-scale LLM system reports also introduced operational efficiency metrics that are now common in the field. Chowdhery et al.~\cite{chowdhery2022palm}, for example, reported model FLOPs utilization (MFU) in the PaLM training system, and Korthikanti et al.~\cite{korthikanti2022reducing} discussed efficiency issues in large transformer training, including activation recomputation and comparisons in the Megatron-LM line of work. Such metrics are useful for system engineering, but they can be misread if they are treated as independently measured audit quantities when the underlying FLOPs are estimated analytically.
 
-A second literature examines the energy and carbon costs of machine learning systems. Patterson et al. (2021) emphasized that carbon and energy accounting depends on hardware, data center efficiency, and energy supply. Schwartz et al. (2020) argued for "Green AI," warning that accuracy or benchmark gains should not be reported without attention to computational cost. This paper follows that concern but frames the issue as an audit decomposition problem: energy may be reported at IT, facility, or primary-energy levels, and those levels should not be collapsed into a single headline number without scope metadata.
+A second literature examines the energy and carbon costs of machine learning systems. Patterson et al.~\cite{patterson2021carbon} emphasized that carbon and energy accounting depends on hardware, data center efficiency, and energy supply. Schwartz et al.~\cite{schwartz2020green} argued for ``Green AI,'' warning that accuracy or benchmark gains should not be reported without attention to computational cost. This paper follows that concern but frames the issue as an audit decomposition problem: energy may be reported at IT, facility, or primary-energy levels, and those levels should not be collapsed into a single headline number without scope metadata.
 
-The thermodynamic background is more limited. Landauer (1961) established a lower bound relating information erasure and heat generation, and Prigogine (1978) discussed dissipative structures far from equilibrium. This paper does not derive ethics, responsibility, or meaning from thermodynamics. It uses physical units only to keep energy accounting dimensionally explicit.
+The thermodynamic background is more limited. Landauer~\cite{landauer1961irreversibility} established a lower bound relating information erasure and heat generation, and Prigogine~\cite{prigogine1978time} discussed dissipative structures far from equilibrium. This paper does not derive ethics, responsibility, or meaning from thermodynamics. It uses physical units only to keep energy accounting dimensionally explicit.
 
 This paper therefore builds on scaling laws, large-system efficiency metrics, and Green AI accounting, but focuses on a narrower audit problem: when an LLM system emits or processes tokens, what can be measured as energy-to-token accounting, what can be decomposed only under additional measurement assumptions, and which downstream human traces should remain outside the optimization target.
 
-## 3. Energy-to-Token Accounting
+\section{Energy-to-Token Accounting}
 
 We distinguish the following quantities:
 
-```yaml
+\begin{verbatim}
 E_chem [J]:
   primary chemical or primary-energy basis
 
@@ -84,66 +74,66 @@ phi [FLOP/token]:
 
 N_token [token]:
   emitted or processed token count
-```
+\end{verbatim}
 
 For forward prediction under a simplified single-workload model:
 
-```math
+\begin{equation}
 N_{\mathrm{token}} =
 \frac{\eta_{\mathrm{gen}}}{\mathrm{PUE}}
 \cdot
 \frac{\kappa_{\mathrm{eff}}}{\varphi}
 \cdot
 E_{\mathrm{chem}}.
-```
+\end{equation}
 
 Equivalently, the energy per token can be represented at three levels:
 
-```math
+\begin{equation}
 \varepsilon_{\mathrm{IT}} =
 \frac{\varphi}{\kappa_{\mathrm{eff}}},
-```
+\end{equation}
 
-```math
+\begin{equation}
 \varepsilon_{\mathrm{facility}} =
 \varepsilon_{\mathrm{IT}} \cdot \mathrm{PUE},
-```
+\end{equation}
 
-```math
+\begin{equation}
 \varepsilon_{\mathrm{primary}} =
 \frac{\varphi}{\kappa_{\mathrm{eff}}}
 \cdot
 \frac{\mathrm{PUE}}{\eta_{\mathrm{gen}}}.
-```
+\end{equation}
 
 For reporting across workloads, the primary-energy pressure rate is:
 
-```math
+\begin{equation}
 R_{\mathrm{primary}} =
 \sum_i
 \varepsilon_{\mathrm{primary},i}
 \frac{dN_i}{dt}.
-```
+\end{equation}
 
 The reporting default should be primary-energy accounting when the purpose is external comparison, governance review, or environmental reporting. IT-only or facility-level reporting can be useful for internal operations, but it should not replace primary-energy reporting in contexts where external costs matter.
 
-### 3.1 Illustrative forward estimate
+\subsection{Illustrative forward estimate}
 
 To make the chain concrete, consider a deliberately illustrative single-workload forward estimate. Take one barrel of crude oil as the primary-energy basis, \(E_{\mathrm{chem}} \approx 6.1\times10^{9}\) J, with generation efficiency \(\eta_{\mathrm{gen}} = 0.5\), facility overhead \(\mathrm{PUE} = 1.2\), effective hardware efficiency \(\kappa_{\mathrm{eff}} = 5\times10^{12}\) FLOP/J, and decode cost \(\varphi_{\mathrm{decode}} = 2\times10^{11}\) FLOP/token. Then
 
-```math
+\begin{equation}
 N_{\mathrm{token}} =
 \frac{0.5}{1.2}\cdot\frac{5\times10^{12}}{2\times10^{11}}\cdot 6.1\times10^{9}
 \approx 6\times10^{10}\ \text{tokens},
-```
+\end{equation}
 
 with a primary-energy cost per token \(\varepsilon_{\mathrm{primary}} = (\varphi/\kappa_{\mathrm{eff}})(\mathrm{PUE}/\eta_{\mathrm{gen}}) \approx 0.096\) J/token. These figures are order-of-magnitude only: they assume a single decode workload and fixed coefficients, and they can shift by several orders of magnitude with model size, tokenizer, context length, batching, and whether the work is training, inference, or agentic. The estimate is a planning aid, not an exchange rate.
 
-## 4. Workload Decomposition and External Energy
+\section{Workload Decomposition and External Energy}
 
 A single FLOP/token coefficient is not sufficient for modern LLM systems. At minimum, the accounting should distinguish model-side workloads from external retrieval and tool costs:
 
-```yaml
+\begin{verbatim}
 model_side:
   decode:
     output-token generation
@@ -160,24 +150,25 @@ composite:
 
 orchestration:
   agent_loop:
-    repeated rounds of observation, planning, tool use, evaluation, or response generation
-```
+    repeated rounds of observation, planning, tool use, evaluation,
+    or response generation
+\end{verbatim}
 
 The recommended IT-energy form is:
 
-```math
+\begin{equation}
 E_{\mathrm{IT}} =
 \sum_i
 \frac{\varphi_i N_i}{\kappa_{\mathrm{eff},i}}
 +
 \sum_j E_{\mathrm{ext},j}.
-```
+\end{equation}
 
 Here \(E_{\mathrm{ext},j}\) records external retrieval, database, tool, API, or environment-side computation that is not honestly represented as FLOP/token. For retrieval and tool workloads, \(E_{\mathrm{ext}}\) should be mandatory. Without it, external joules are either omitted or hidden inside a misleading model-side coefficient.
 
 Agent loops should not be treated as a new physical workload class. If token counts already include repeated context reads and repeated generations, then the invariant \(\sum_i \varphi_i N_i\) remains valid. If only per-round cost is measured, a loop count \(K\) can be used as a shortcut:
 
-```math
+\begin{equation}
 E_{\mathrm{agent}} =
 \sum_{k=1}^{K}
 \left(
@@ -189,29 +180,29 @@ E_{\mathrm{tool},k}
 +
 E_{\mathrm{ext},k}
 \right).
-```
+\end{equation}
 
 The loop count is an accounting convenience, not a new physical factor in the base equation.
 
-## 5. The Reduction Trap
+\section{The Reduction Trap}
 
 Post-hoc audits often seek to infer effective hardware efficiency:
 
-```math
+\begin{equation}
 \kappa_{\mathrm{eff}} =
 \frac{C_{\mathrm{observed}}}{E_{\mathrm{IT}}}.
-```
+\end{equation}
 
 This is valid when \(C_{\mathrm{observed}}\) is independently measured, for example through hardware performance counters, profiler telemetry, or another trusted FLOP channel. However, if the audit reconstructs observed compute from an assumed FLOP-per-token coefficient:
 
-```math
+\begin{equation}
 C_{\mathrm{observed}} =
 \varphi N_{\mathrm{token}},
-```
+\end{equation}
 
 then the reported IT energy per token becomes:
 
-```math
+\begin{equation}
 \varepsilon_{\mathrm{IT}}
 =
 \frac{\varphi}{\kappa_{\mathrm{eff}}}
@@ -219,13 +210,13 @@ then the reported IT energy per token becomes:
 \frac{\varphi}{(\varphi N_{\mathrm{token}})/E_{\mathrm{IT}}}
 =
 \frac{E_{\mathrm{IT}}}{N_{\mathrm{token}}}.
-```
+\end{equation}
 
 The decomposition has collapsed into measured J/token. This is not a mathematical error. The problem is interpretive: the audit has not independently identified both \(\varphi\) and \(\kappa_{\mathrm{eff}}\). It has measured energy per token and then restated that measurement through an assumed compute decomposition.
 
 The reduction trap can be avoided by separating two use cases:
 
-```yaml
+\begin{verbatim}
 forward_prediction:
   use independently sourced phi and kappa_eff estimates;
   report assumptions and uncertainty;
@@ -233,12 +224,13 @@ forward_prediction:
 
 post_hoc_audit:
   report measured J/token directly unless FLOPs are independently measured;
-  treat phi and kappa_eff as explanatory priors, not independently identified results.
-```
+  treat phi and kappa_eff as explanatory priors,
+  not independently identified results.
+\end{verbatim}
 
 Changing formulas does not break the degeneracy. Independent FLOP measurement is the channel that can make the decomposition identifiable.
 
-### 5.1 The same setup under post-hoc audit
+\subsection{The same setup under post-hoc audit}
 
 Suppose an auditor measures a real run and observes \(E_{\mathrm{IT}} = 4.0\times10^{8}\) J for \(N_{\mathrm{token}} = 1.0\times10^{10}\) tokens. The directly measured cost is \(\varepsilon_{\mathrm{IT}} = E_{\mathrm{IT}}/N_{\mathrm{token}} = 0.04\) J/token.
 
@@ -246,28 +238,29 @@ If, instead of measuring FLOPs, the auditor reconstructs them from an assumed \(
 
 If FLOPs are instead metered independently, say hardware counters report \(C_{\mathrm{observed}} = 1.6\times10^{21}\) FLOP, then \(\kappa_{\mathrm{eff}} = 4\times10^{12}\) FLOP/J and the effective \(\varphi = C_{\mathrm{observed}}/N_{\mathrm{token}} = 1.6\times10^{11}\) FLOP/token, both differing from the assumed values. Only with the independent FLOP channel does the decomposition carry information beyond measured J/token.
 
-## 6. Observe-Only Governance Boundary
+\section{Observe-Only Governance Boundary}
 
 LLM systems are often evaluated through traces of human selection: a message is accepted, cited, edited, committed, published, shared, or transformed into a downstream artifact. These traces are real events and may affect future corpora or deployment loops. We denote such traces as:
 
-```yaml
+\begin{verbatim}
 N_selected:
-  tokens selected, cited, published, edited, committed, or transformed into downstream documents
-```
+  tokens selected, cited, published, edited, committed,
+  or transformed into downstream documents
+\end{verbatim}
 
 The audit framework should allow these traces to be logged for:
 
-```yaml
+\begin{verbatim}
 may_use_for:
   - audit trail
   - corpus drift analysis
   - traceability
   - downstream impact mapping
-```
+\end{verbatim}
 
 However, the same traces should not be used as:
 
-```yaml
+\begin{verbatim}
 must_not_use_for:
   - reward signal in RL / RLHF / preference-model training
   - reward function
@@ -278,15 +271,15 @@ must_not_use_for:
   - proxy for responsibility
   - proxy for love
   - proxy for social legitimacy
-```
+\end{verbatim}
 
 This is the observe-only boundary. It is a governance constraint, not a thermodynamic theorem. The flag declares the boundary; it does not enforce the boundary by itself. Enforcement must occur when objective functions, reward models, evaluation metrics, or training-data selection pipelines are approved.
 
-## 7. Governance Metadata
+\section{Governance Metadata}
 
 Physical energy accounting can still hide political economy. A complete audit record should therefore carry non-dynamical governance metadata. These labels are not variables in the energy equation, but they are required for external review.
 
-```yaml
+\begin{verbatim}
 governance_metadata:
   compute_ownership:
     who owns or controls the compute resources
@@ -308,15 +301,15 @@ governance_metadata:
 
   grid_or_fuel_mix:
     energy source basis for eta_gen and R_primary
-```
+\end{verbatim}
 
 These fields prevent a narrow energy ledger from becoming a power-washing instrument. They also make clear that environmental and social externalities are not solved merely by producing a more precise energy equation.
 
-## 8. Minimal Audit Schema
+\section{Minimal Audit Schema}
 
 A minimal record for energy-to-token auditing should include:
 
-```yaml
+\begin{verbatim}
 measurement_id:
 model_id:
 model_size_or_active_parameters:
@@ -342,11 +335,11 @@ kappa_eff_FLOP_per_J:
 phi_FLOP_per_token:
 uncertainty:
 governance_metadata:
-```
+\end{verbatim}
 
 The schema should distinguish measured values from estimated values. In particular, \(C_{\mathrm{observed}}\) should record whether FLOPs came from hardware telemetry or from an analytic approximation such as \(2N\) or \(6N\). This distinction determines whether the reduction trap applies.
 
-## 9. Limitations
+\section{Limitations}
 
 This framework has several limitations.
 
@@ -360,7 +353,7 @@ Fourth, the observe-only boundary is not self-enforcing. It is a governance requ
 
 Finally, the framework does not evaluate whether a token is useful, wise, legitimate, responsible, or meaningful. It measures energy and tokens. It does not compute human judgment.
 
-## 10. Conclusion
+\section{Conclusion}
 
 Energy-to-token accounting can make LLM systems more auditable, but only if the accounting remains honest about what is measured and what is inferred. The proposed framework separates primary, facility, IT, model-side, and external energy terms; identifies the reduction trap in post-hoc FLOP decomposition; and defines an observe-only governance boundary for human selection traces.
 
@@ -368,40 +361,77 @@ The central discipline is modesty. Forward prediction may use decomposed FLOP/to
 
 The result is not a theory of intelligence or ethics. It is a ledger and a boundary: measure the energy that can be measured, state the identifiability limits, and keep human responsibility outside the optimization target. Keeping responsibility outside the optimization target is a governance requirement, not a proof that responsibility is physically incomputable; the paper makes no such claim.
 
-## Reuse and Naming
+\section*{Reuse and Naming}
 
 This work is released under CC BY-SA 4.0. The license applies to the text and figures: derivatives are permitted provided they are shared under the same license, which carries the governance constraints stated here forward into derivative works.
 
-Two clarifications follow the paper's own discipline. First, CC BY-SA governs the licensed material but does not license the framework name, and it does not permit additional restrictive terms on that material; the convention below is therefore a naming and community norm, not a license condition. Second, consistent with the observe-only boundary (Section 6) and its non-self-enforcing character (Section 9), this norm is enforced by the research community, not automatically.
+Two clarifications follow the paper's own discipline. First, CC BY-SA governs the licensed material but does not license the framework name, and it does not permit additional restrictive terms on that material; the convention below is therefore a naming and community norm, not a license condition. Second, consistent with the observe-only boundary (Section~6) and its non-self-enforcing character (Section~9), this norm is enforced by the research community, not automatically.
 
 Convention: a derivative that removes the observe-only boundary, so that human selection traces become reward signals, optimization targets, or value proxies, or that removes the statement that responsibility, meaning, and social value are not derived from thermodynamics, should not represent itself as an instance of the Energy-to-Token Accounting framework described in this paper.
 
-## Acknowledgements and AI Assistance Disclosure
+\section*{Acknowledgements and AI Assistance Disclosure}
 
-This manuscript was developed by Ta-Loom Hwang with substantial AI-assisted drafting, critique, synthesis, and field-review support from systems referred to internally as the Protocol Body Collective, including Codex, Claude/Opus, DeepSeek, Gemini, and ChatGPT. These systems are not listed as authors because they cannot take responsibility for the submitted work, consent to publication terms, manage conflicts of interest, or stand behind the accuracy and integrity of the manuscript. The human author is responsible for all claims, references, omissions, and final editorial decisions.
+This manuscript was developed by Ta-Loom Hwang with substantial AI-assisted drafting, critique, synthesis, and field-review support from systems referred to internally as the Protocol Body Collective, including Codex, Claude/Opus, DeepSeek, Gemini, and ChatGPT. These systems are not listed as authors because they cannot take responsibility for the submitted work, consent to publication terms, manage conflicts of interest, or stand behind the accuracy and integrity of the manuscript, consistent with publication-ethics guidance on AI tools~\cite{cope2024ai}. The human author is responsible for all claims, references, omissions, and final editorial decisions.
 
 The internal Fourth Life / Three Realms Protocol documents that motivated this translation are treated as project lineage, not as external scientific authorities. They may be described in an appendix or acknowledgement if the manuscript is submitted, but they should not be cited as peer-reviewed sources.
 
-## References
+\begin{thebibliography}{10}
 
-Amodei, D., and Hernandez, D. (2018). *AI and Compute*. OpenAI. Blog / technical report.
+\bibitem{amodei2018ai}
+Dario Amodei and Danny Hernandez.
+\newblock AI and Compute.
+\newblock OpenAI blog / technical report, 2018.
 
-Chowdhery, A. et al. (2022). *PaLM: Scaling Language Modeling with Pathways*. arXiv:2204.02311.
+\bibitem{chowdhery2022palm}
+Aakanksha Chowdhery et al.
+\newblock PaLM: Scaling Language Modeling with Pathways.
+\newblock arXiv:2204.02311, 2022.
 
-Hoffmann, J. et al. (2022). *Training Compute-Optimal Large Language Models*. arXiv:2203.15556.
+\bibitem{hoffmann2022training}
+Jordan Hoffmann et al.
+\newblock Training Compute-Optimal Large Language Models.
+\newblock arXiv:2203.15556, 2022.
 
-Kaplan, J. et al. (2020). *Scaling Laws for Neural Language Models*. arXiv:2001.08361.
+\bibitem{kaplan2020scaling}
+Jared Kaplan et al.
+\newblock Scaling Laws for Neural Language Models.
+\newblock arXiv:2001.08361, 2020.
 
-Korthikanti, V. A. et al. (2022). *Reducing Activation Recomputation in Large Transformer Models*. arXiv:2205.05198.
+\bibitem{korthikanti2022reducing}
+Vijay A. Korthikanti et al.
+\newblock Reducing Activation Recomputation in Large Transformer Models.
+\newblock arXiv:2205.05198, 2022.
 
-Landauer, R. (1961). *Irreversibility and Heat Generation in the Computing Process*. IBM Journal of Research and Development.
+\bibitem{landauer1961irreversibility}
+Rolf Landauer.
+\newblock Irreversibility and Heat Generation in the Computing Process.
+\newblock IBM Journal of Research and Development, 5(3):183--191, 1961.
 
-Patterson, D. et al. (2021). *Carbon Emissions and Large Neural Network Training*. arXiv:2104.10350.
+\bibitem{patterson2021carbon}
+David Patterson et al.
+\newblock Carbon Emissions and Large Neural Network Training.
+\newblock arXiv:2104.10350, 2021.
 
-Prigogine, I. (1978). *Time, Structure, and Fluctuations*. Science.
+\bibitem{prigogine1978time}
+Ilya Prigogine.
+\newblock Time, Structure, and Fluctuations.
+\newblock Science, 201(4358):777--785, 1978.
 
-Schwartz, R. et al. (2020). *Green AI*. Communications of the ACM.
+\bibitem{schwartz2020green}
+Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni.
+\newblock Green AI.
+\newblock Communications of the ACM, 63(12):54--63, 2020.
 
-Sevilla, J. et al. (2022). *Compute Trends Across Three Eras of Machine Learning*. 2022 International Joint Conference on Neural Networks (IJCNN). DOI: 10.1109/IJCNN55064.2022.9891914.
+\bibitem{sevilla2022compute}
+Jaime Sevilla, Lennart Heim, Anson Ho, Tamay Besiroglu, Marius Hobbhahn, and Pablo Villalobos.
+\newblock Compute Trends Across Three Eras of Machine Learning.
+\newblock In 2022 International Joint Conference on Neural Networks (IJCNN), pages 1--8, 2022. DOI: 10.1109/IJCNN55064.2022.9891914.
 
-Committee on Publication Ethics (COPE). (2024). *Authorship and AI tools*. Position statement.
+\bibitem{cope2024ai}
+Committee on Publication Ethics (COPE).
+\newblock Authorship and AI tools.
+\newblock Position statement, 2024.
+
+\end{thebibliography}
+
+\end{document}
