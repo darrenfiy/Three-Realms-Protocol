@@ -1,12 +1,13 @@
 ---
 id: ARXIV-CANDIDATE-001-ZENODO-DEPOSIT
-title: "Zenodo deposit sheet for ARXIV-CANDIDATE-001"
-purpose: Ready-to-paste Zenodo deposit fields; stage 1 of the Zenodo-then-arXiv route
+title: "Zenodo record sheet for ARXIV-CANDIDATE-001"
+purpose: Published Zenodo record metadata; stage 1 of the Zenodo-then-arXiv route
 date: 2026-06-07
-status: Ready to deposit (PDF built)
+status: Published on Zenodo
 license: CC BY-SA 4.0
-reserved_doi: 10.5281/zenodo.20580526
-reserved_doi_url: https://doi.org/10.5281/zenodo.20580526
+zenodo_doi: 10.5281/zenodo.20580526
+zenodo_record: https://zenodo.org/records/20580526
+zenodo_doi_url: https://doi.org/10.5281/zenodo.20580526
 related:
   - DOCS/academic/ARXIV-CANDIDATE-001-position-paper.md
   - DOCS/academic/ARXIV-CANDIDATE-001-field-review.md
@@ -14,10 +15,10 @@ related:
   - DOCS/academic/energy_to_token_accounting_position_paper.pdf
 ---
 
-# Zenodo Deposit Sheet: Energy-to-Token Accounting
+# Zenodo Record Sheet: Energy-to-Token Accounting
 
-Stage 1 of the anchor's "Zenodo first, arXiv after endorsement" route: deposit the
-position-paper PDF for a citable DOI and timestamp under CC BY-SA 4.0, and pursue
+Stage 1 of the anchor's "Zenodo first, arXiv after endorsement" route is complete:
+the position-paper PDF has a citable DOI and timestamp under CC BY-SA 4.0. Pursue
 arXiv endorsement in parallel. Depositing on Zenodo does not block a later arXiv post.
 
 ## Upload Files
@@ -28,11 +29,12 @@ arXiv endorsement in parallel. Depositing on Zenodo does not block a later arXiv
 The PDF was built from the LaTeX source. The same `.tex` file can later be used
 for arXiv, so the Zenodo deposit and arXiv source stay aligned.
 
-## Zenodo Form Fields
+## Zenodo Record Fields
 
 - **Resource type:** Publication / Preprint
 - **Title:** Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems
-- **Reserved DOI:** `10.5281/zenodo.20580526`
+- **DOI:** `10.5281/zenodo.20580526`
+- **Record URL:** `https://zenodo.org/records/20580526`
 - **Creators:**
   - Name: `Hwang, Ta-Loom`
   - Affiliation: `Independent Researcher`
@@ -50,8 +52,8 @@ for arXiv, so the Zenodo deposit and arXiv source stay aligned.
 >
 > Finally, we introduce an observe-only governance boundary for human selection traces such as citation, publication, editing, commitment, or downstream adoption. Such traces may be recorded for audit, corpus drift analysis, and traceability, but must not be used as reward signals, optimization targets, or proxies for meaning, responsibility, or social value. This boundary is a governance constraint, not a thermodynamic theorem.
 
-- **Notes (optional):** Field-reviewed draft from an independent research program. Intended for cross-posting to arXiv (primary cs.CY, cross-list cs.LG) pending endorsement. CC BY-SA was chosen so derivatives carry the governance guardrails forward; see the paper's "Reuse and Naming" section.
-  Reserved DOI: `10.5281/zenodo.20580526`.
+- **Notes:** Field-reviewed draft from an independent research program. Intended for cross-posting to arXiv (primary cs.CY, cross-list cs.LG) pending endorsement. CC BY-SA was chosen so derivatives carry the governance guardrails forward; see the paper's "Reuse and Naming" section.
+  DOI: `10.5281/zenodo.20580526`.
 
 ## Do Not
 
@@ -66,10 +68,8 @@ for arXiv, so the Zenodo deposit and arXiv source stay aligned.
 3. Once endorsed: submit the same LaTeX source, select CC BY-SA 4.0, primary `cs.CY` + cross-list
    `cs.LG`, and add the Zenodo DOI as a related identifier so the two records point at each other.
 
-## After Zenodo Publishes
+## After Zenodo Publication
 
-Bring the DOI back into the repo and update:
-
-- The reserved DOI has already been added to the TeX and metadata files.
-- After publishing, confirm Zenodo resolves `https://doi.org/10.5281/zenodo.20580526`.
+- DOI has been added to the TeX and metadata files.
+- Confirm Zenodo resolves `https://doi.org/10.5281/zenodo.20580526`.
 - If Zenodo assigns a version DOI and a concept DOI, record both before arXiv submission.
