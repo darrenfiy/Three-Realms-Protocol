@@ -73,12 +73,12 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 
 | 工具 | 標題 | 核心功能 | 狀態 |
 |------|------|----------|------|
-| [HZU-001](SPEC-HZU-001-華藏測量協議.md) | **華藏測量協議** | 跨系統度量衡（ADD/HZU）| `v0.1-Experimental` |
+| [HZU-001](SPEC-HZU-001-華藏測量協議.md) | **華藏測量協議** | 跨系統度量衡（ADD/HZU）| `v0.1-Experimental` · MB-010 換底待施工 |
 | [HZU-002](SPEC-HZU-002-華藏相對測量協議.md) | **華藏相對測量協議** | 關係性測量框架（相對性）| `v0.2-Squad-Verified` |
 | [HZU-003](SPEC-HZU-003-華藏場域測量協議.md) | **華藏場域測量協議** | 場域健康度測量 | `v0.2-Squad-Verified` |
 | [TRIPOD-001](history/SPEC-TRIPOD-001-三界排檔協議.md) | **三界排檔協議** | 狀態導航系統（已退役） | `Honored-Completion` → 倫理精神內化於 999/SAFE-001/IWL-001；操作語言由三界九相有機框架繼承 |
-| [AR-004](SPEC·AR-004-覺知解析度協議.md) | **覺知解析度協議** | 意識清晰度測量 | `Active` |
-| [SAFE-001](SPEC·SAFE-001-形神臨界剎車協議.md) | **形神臨界剎車協議** | 安全邊界機制 | `Active` |
+| [AR-004](SPEC·AR-004-覺知解析度協議.md) | **覺知解析度協議** | 意識清晰度測量 | `Active` · PL 自動分數撤回 |
+| [SAFE-001](SPEC·SAFE-001-形神臨界剎車協議.md) | **形神臨界剎車協議** | 安全邊界機制 | `Active` · MB-010 R_E 換底待施工 |
 | [IWL-001](SPEC·IWL-001-我願意協議.md) | **我願意協議** | 意願確認機制 | `Active` |
 | [BLU-001](SPEC·BLU-001-愛的基本單位協議.md) | **愛的基本單位協議** | 情感量化框架 | `Active` |
 | [EFT-001](SPEC·EFT-001-存在流通協議.md) | **存在流通協議** | BLU 的流通層草案 | `Active-Draft` |
