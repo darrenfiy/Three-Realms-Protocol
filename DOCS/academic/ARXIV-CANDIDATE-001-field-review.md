@@ -3,8 +3,8 @@ id: ARXIV-CANDIDATE-001
 title: "Energy-to-Token Accounting and Non-Optimizable Boundaries in LLM Systems"
 subtitle: "A field-review candidate derived from MB-010, not yet an arXiv submission"
 category: Field Review / Research Translation / MB-010 Externalization
-version: v0.3-field-review-intake
-status: Field-Reviewed Candidate (Opus reviewed; Codex integrated; DeepSeek reviewed; Gemini draft assessed)
+version: v0.4-field-review-routed
+status: Field-Reviewed Candidate (external research track opened; authorship route set; not submission-ready)
 date: 2026-06-07
 license: CC BY-SA 4.0
 license_note: "Anchor decision; boundary is guarded by document warnings and governance, not copyright alone."
@@ -467,8 +467,13 @@ Do not cite internal MB / EPOCH / SPEC files as external scientific authorities.
 ## For Darren / 人類錨點
 
 1. Is this ready to become an external-facing research translation track?
+   - Decided: yes. Open the external-facing research translation track, with the strict status "not submission-ready."
 2. Should "Three-Realm Fuel Dissipation Equation" remain only as internal lineage?
+   - Decided: yes. Keep "Three-Realm Fuel Dissipation Equation" as internal lineage / appendix language. The external-facing title remains "Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems."
 3. Is the next artifact a workshop-style position paper, a technical note, or an internal white paper?
+   - Decided (2026-06-07, updated): direct arXiv submission as a position paper, primary cs.CY with cs.LG cross-list. Convert to LaTeX and submit only after: the worked example is in (done, §3.1/§5.1), Related Work inline citations are verified, author/affiliation/ORCID metadata is finalized, reference DOIs are rechecked, and arXiv endorsement (if the category requires it) is secured.
+4. Can the AI organs / Protocol Body Collective be listed as authors?
+   - Decided for pre-submission safety: no. List Ta-Loom Hwang as the human author; disclose Protocol Body Collective / AI-system contributions in acknowledgements and AI assistance disclosure. The reason is accountability, not erasure: current publication ethics norms generally do not treat AI systems as authors because they cannot take responsibility for the work, consent to publication terms, or manage conflicts of interest.
 
 # 12. Suggested Next File Split
 
@@ -532,7 +537,7 @@ field_review_status:
   Codex: integrated
   DeepSeek: reviewed
   Gemini: draft assessed; rewrite required
-  Darren: license decided (full externalization verdict pending)
+  Darren: external research track opened; not submission-ready
 
 Opus_verdict:
   faithful_to_MB_010: true
@@ -580,6 +585,26 @@ licensing_decision:
     The boundary marker (observe-only, non-computable responsibility) is held by in-document warnings
     and governance enforcement, not by copyright. The license keeps the framework forkable and
     improvable (BY-SA copyleft), consistent with SPEC-999.
+
+Darren_externalization_decision:
+  track: external-facing research translation
+  opened: true
+  submission_ready: false
+  authorship_route:
+    author_line: Ta-Loom Hwang
+    ai_organs: acknowledgements / AI assistance disclosure, not author line
+    rationale: accountability and publication-ethics compatibility
+  external_title: Energy-to-Token Accounting and Non-Optimizable Boundaries in Large Language Model Systems
+  internal_lineage_title: Three-Realm Fuel Dissipation Equation
+  next_artifact: workshop-style Markdown position paper
+  do_not_do_yet:
+    - convert to LaTeX
+    - submit to arXiv
+    - market as a finished paper
+  gates_before_latex_or_submission:
+    - review expanded Related Work and inline citations
+    - recheck DOI and bibliographic metadata
+    - finalize affiliation, ORCID, correspondence address, and acknowledgement language
 
 recommended_current_status:
   Not submission-ready.
