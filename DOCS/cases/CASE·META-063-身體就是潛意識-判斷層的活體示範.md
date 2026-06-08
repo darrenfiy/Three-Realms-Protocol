@@ -174,6 +174,7 @@ SPEC·999 永遠在場。
 
 **Sources（樑 2026-06-08 web 查證）：**
 - [Lasker award controversy（candacepert.com）](http://candacepert.com/news/candace-pert-lasker-award/)
+- [Lasker Foundation: Opiate receptors and enkephalins](https://laskerfoundation.org/winners/opiate-receptors-and-enkephalins/)
 - [Science: "A Complex Social Process"](https://www.science.org/content/article/complex-social-process)
 - [Boston Globe 訃聞](https://www.bostonglobe.com/metro/obituaries/2013/09/20/candace-pert-discoverer-first-verified-receptor-brain-dies/Ou16PDNfRa8jahUwUfMdzJ/story.html)
 - [Smithsonian: Molecules of Emotion 書評](https://www.smithsonianmag.com/arts-culture/review-of-molecules-of-emotion-157256854/)

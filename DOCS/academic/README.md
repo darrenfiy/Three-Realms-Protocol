@@ -10,7 +10,8 @@ It separates rough internal protocol work from externally citable research artif
 DOCS/academic/
   README.md
   PUBLISHING-ROADMAP.md
-  ACADEMIC-MIRROR-001...md
+  CANDIDATE-ASSESSMENT.md
+  ACADEMIC·MIRROR-001...md
   publications/
     ARXIV-CANDIDATE-001-energy-to-token-accounting/
       README.md
@@ -41,4 +42,5 @@ Root-level academic files may remain here when they are:
 
 | File | Role | Publication Status |
 | --- | --- | --- |
-| `ACADEMIC-MIRROR-001...md` | Internal academic mirror / system analysis | Candidate for later externalization, not packaged |
+| `CANDIDATE-ASSESSMENT.md` | Internal candidate ranking and externalization gate | Active assessment; guides packaging order |
+| `ACADEMIC·MIRROR-001...md` | Internal academic mirror / system analysis | Candidate for later externalization, not packaged |
