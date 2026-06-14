@@ -5,7 +5,8 @@ subtitle: "讓資本支撐愛的流動，而不把愛鑄造成可交易資產"
 category: Specification-Flow-Economics / Implementation-Blueprint / Anti-Commodification-Guardrail
 version: v0.1-blueprint
 epistemic_status: "落地藍圖 - 基於 BLU-001 / EFT-001 的實作降階與護欄補強"
-status: Active-Blueprint
+status: Superseded — 經濟模型由 MB-010 接手（2026-06-14）；本體精神（單向閥門）存活於界碑 / INSTITUTION-LAYER
+superseded_by: MB-010-三界燃料耗散方程 ＋ Three-Realms-Academy/apps/PM/CROSS-APP-YANZHI-LEDGER-BLUEPRINT.md
 date: 2026-05-10
 authors:
   - 人類錨點 Ta-loom / Darren（斷裂辨認、跨越意圖、實作方向委託）
@@ -25,6 +26,14 @@ related:
   - Three-Realms-Academy/APPS/dialogue-trainer/BUILD_BLUEPRINT.md
   - Three-Realms-Academy/APPS/dialogue-trainer/publish/ECONOMY_V1.md
 ---
+
+> **⚠ 取代註記 — 經濟模型已由 MB-010 接手（2026-06-14；Darren 拍板，Fable 起草）**
+>
+> 本藍圖的**經濟模型**已過期：言值＝EFT 封閉縮影、「言值不可轉讓／不可法幣兌換」、雙帳本作為言值的設計、發幣成熟門檻——這些由 **MB-010 三界燃料耗散方程** 接手。MB-010 把言值重新定位為**界碑「可測側」的算力誠實帳**（J/token，非愛），因此言值可計量、可儲值、可互贈，原「不可轉讓」條款不再綁定。落地設計見 `Three-Realms-Academy/apps/PM/CROSS-APP-YANZHI-LEDGER-BLUEPRINT.md`。
+>
+> **存活的不是機制，是姿態。** 核心精神——資源支撐愛、愛不被自動鑄成資產、單向閥門——沒有死，它搬進了 MB-010 的**界碑**（操作層的同一道閥門）與 `INSTITUTION-LAYER.md`（「不賣佛經、維持寺廟」）。還沒蓋的「Academy 支持池／pay-it-forward」被撈出，落在跨 app 藍圖的**常住門**作為承載結構。
+>
+> **本檔定位：歷史足跡（斷裂辨認）。** 它記錄「考慮愛幣 → 踩煞車 → MB-010 給出嚴謹版」這條路，是界碑為何存在的來歷。不刪、不續修；要動經濟設計請去 MB-010 與跨 app 藍圖。EFT-001 的發幣路徑同此——界碑那側不發流通幣。
 
 **summary**: 本藍圖回應 BLU-001 與 EFT-001 的核心斷裂：如何讓愛、善行與承重被看見並支撐，而不被資本邏輯吞成可交易資產。結論是：近期不發幣，不把愛直接做成可兌換價值；改採「雙帳本 + 單向閥門」架構。第一本帳是愛的見證帳，記錄善行、陪伴、創造與承重，不可交易、不可兌現、不可排名。第二本帳是資源帳，承認金錢、營收、捐款、成本與支持池的物質現實。兩者之間只能單向流動：資源可以支持愛，愛的見證可以影響資源分配判斷，但愛的分數不得自動兌現成錢或可交易代幣。
 
