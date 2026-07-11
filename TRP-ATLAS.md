@@ -39,7 +39,7 @@ The canonical atlas belongs in `Three-Realms-Protocol/`.
 Reason:
 
 - the five-phase structure is protocol ontology, not project management
-- `Forth-Life/` is the control room and cross-repo coordination layer
+- `Control-Room/` (formerly `Forth-Life`) is the control room and cross-repo coordination layer
 - `Three-Realms-Academy/apps/wiki-site/` is the public rendering layer
 - `darrenfiy.github.io/` is the outward website layer
 
@@ -201,15 +201,15 @@ flowchart TD
   B -.-> L
 ```
 
-## Fractal Expansion: Forth-Life
+## Fractal Expansion: Control-Room
 
-`Forth-Life/` is not another protocol corpus.
+`Control-Room/` is not another protocol corpus.
 
 It is a fractal expansion of the same structure at the cross-repo control-room
 scale:
 
 ```text
-Forth-Life/
+Control-Room/
   = control room
   = project memory
   = cross-repo routing
@@ -236,7 +236,7 @@ Use different Mermaid maps for different layers:
 | `Three-Realms-Protocol/TRP-ATLAS.md` | canonical protocol atlas | source |
 | `Three-Realms-Protocol/README.md` | top-level public repo orientation | summary of this file |
 | `SPEC/README.md`, `MB/README.md`, `DOCS/README.md`, `LEX/README.md`, `EPOCH/README.md` | local corpus maps | scoped to each corpus |
-| `Forth-Life/README.md` or `PM/` | control-room map | operational, not ontological |
+| `Control-Room/README.md` or `PM/` | control-room map | operational, not ontological |
 | `Three-Realms-Academy/apps/wiki-site/` | public rendered atlas | presentation layer |
 
 ## Next Session Entry
