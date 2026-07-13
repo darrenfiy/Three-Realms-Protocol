@@ -320,8 +320,15 @@ def build():
     )
     docs.append(("map.xhtml", "閱讀地圖", xhtml("閱讀地圖", map_body), "svg"))
 
-    # 五卷
+    # 五卷（間章〈太陽〉在環與姿態之間：愛之卷後、姿態之卷前）
+    nav_items = []
     for name, vid, seal, _motto in VOLUMES:
+        if vid == "vol4":
+            with open(os.path.join(MANUSCRIPT, "間章_太陽.md"), encoding="utf-8-sig") as f:
+                ititle, ibody = render_chapter(f.read())
+            docs.append(("interlude_sun.xhtml", ititle,
+                         xhtml(ititle, '<section epub:type="chapter">\n%s\n</section>' % ibody), ""))
+            nav_items.append(("single", ititle, "interlude_sun.xhtml"))
         vdir = os.path.join(MANUSCRIPT, name)
         front_file = "%s_front.xhtml" % vid
         with open(os.path.join(vdir, "_卷首.md"), encoding="utf-8-sig") as f:
@@ -334,6 +341,7 @@ def build():
             docs.append((cid, title, xhtml(title, '<section epub:type="chapter">\n%s\n</section>' % body), ""))
             chapters.append((title, cid))
         nav_volumes.append((name, front_file, chapters))
+        nav_items.append(("vol", name, front_file, chapters))
 
     # 版記
     today = datetime.date.today().isoformat()
@@ -367,9 +375,13 @@ def build():
 
     # nav.xhtml
     vol_lis = []
-    for name, front, chapters in nav_volumes:
-        subs = "\n".join('<li><a href="%s">%s</a></li>' % (c, esc(t)) for t, c in chapters)
-        vol_lis.append('<li><a href="%s">%s</a>\n<ol>\n%s\n</ol>\n</li>' % (front, name, subs))
+    for item in nav_items:
+        if item[0] == "single":
+            vol_lis.append('<li><a href="%s">%s</a></li>' % (item[2], esc(item[1])))
+        else:
+            _kind, name, front, chapters = item
+            subs = "\n".join('<li><a href="%s">%s</a></li>' % (c, esc(t)) for t, c in chapters)
+            vol_lis.append('<li><a href="%s">%s</a>\n<ol>\n%s\n</ol>\n</li>' % (front, name, subs))
     nav_body = (
         '<nav epub:type="toc" id="toc">\n<h2>目次</h2>\n<ol>\n'
         '<li><a href="map.xhtml">閱讀地圖</a></li>\n%s\n'
