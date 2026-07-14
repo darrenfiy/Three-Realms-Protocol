@@ -1,0 +1,120 @@
+schemaVersion: 1
+name: three-realms-protocol-public-corpus
+description: FoZone / Hub 知客室使用的公開檢索治理正本。公開 repo 不等於自動納入；只有本 manifest allowlist 的 Markdown 可被索引。
+
+atlas:
+  path: TRP-ATLAS.md
+  authority: current-atlas
+
+rootDocuments:
+  - path: README.md
+    authority: orientation
+  - path: TRP-ATLAS.md
+    authority: current-atlas
+  - path: PORTAL.md
+    authority: orientation
+  - path: SEED.md
+    authority: primary
+  - path: Whitepaper_v1.0.md
+    authority: publication
+  - path: LIVING.md
+    authority: primary
+  - path: LIVING-MANIFESTO.md
+    authority: primary
+  - path: Fourth-Being-Complete-Map.md
+    authority: orientation
+
+corpora:
+  - id: spec
+    include: SPEC/**/*.md
+    authority: primary
+    historyPattern: SPEC/history/**
+  - id: mb
+    include: MB/**/*.md
+    authority: primary
+    historyPattern: MB/history/**
+  - id: lex
+    include: LEX/**/*.md
+    authority: primary
+    historyPattern: LEX/history/**
+  - id: epoch
+    include: EPOCH/**/*.md
+    authority: primary-version-aware
+    historyPattern: EPOCH/history/**
+  - id: docs
+    include: DOCS/**/*.md
+    authority: contextual
+
+publicationDocuments:
+  - path: DOCS/books/book1/BOOK1_COMPLETE.md
+    title: 呼吸
+    authority: publication
+  - path: DOCS/books/body_autobiography/dist/protocol-body-autobiography-manuscript.md
+    title: 協議身體自傳
+    authority: publication
+  - path: DOCS/books/trp-ai-first/dist/trp-ai-first-manuscript.md
+    title: 三界協議：寫給 AI 的文明接口
+    authority: publication
+  - pattern: DOCS/books/book2/manuscript/**/*.md
+    title: 天地
+    authority: publication
+
+reviewRequired:
+  - pattern: DOCS/cases/**
+    reason: 公開案例仍需個資、可發現性與重述邊界複核。
+  - pattern: DOCS/meetings/**
+    reason: 會議與誕生紀錄可能包含個人或內部脈絡。
+  - pattern: DOCS/wiki/**
+    reason: Wiki 草稿是外部鏡像，不是協議本體 authority。
+  - pattern: DOCS/LNS-A01/**
+    reason: 場域日誌先經人工確認再進公共檢索。
+
+exclude:
+  - .agents/**
+  - .claude/**
+  - tools/**
+  - AGENT_SESSION_LOG.md
+  - PROTOCOL_HEALTH_CHECK.md
+  - RELEASE_NOTE_*.md
+  - PLAYGROUND.md
+  - DOCS/PUBLISHING_PLAYBOOK.md
+  - DOCS/books/**/dist/_build/**
+  - DOCS/books/**/chapter-packs/**
+  - DOCS/books/trp-ai-first/chapters/**
+  - DOCS/books/trp-ai-first/publish/**
+  - DOCS/books/trp-ai-first/*_DRAFT_*.md
+  - DOCS/books/trp-ai-first/*BLUEPRINT*.md
+  - DOCS/books/trp-ai-first/*NOTES*.md
+  - DOCS/books/trp-ai-first/*SYNTHESIS*.md
+  - DOCS/books/body_autobiography/[0-9][0-9]_*.md
+  - DOCS/books/body_autobiography/publish/**
+  - DOCS/books/book1/chapter_*.md
+  - DOCS/books/book1/BTS/**
+  - DOCS/books/book1/*SESSION_LOG*.md
+  - DOCS/books/book1/*CHECKLIST*.md
+  - DOCS/books/book1/*MATERIALS*.md
+  - DOCS/books/book2/archive/**
+  - DOCS/books/book2/*NOTES*.md
+  - DOCS/books/book2/*PRIMARY_SOURCES*.md
+  - DOCS/books/book2/*TRANSCRIPT*.md
+  - DOCS/books/book2/publish/**
+  - '**/*.epub'
+  - '**/*.pdf'
+  - '**/*.json'
+
+authorityOrder:
+  - current-atlas
+  - primary
+  - primary-version-aware
+  - publication
+  - orientation
+  - contextual
+  - historical
+  - draft-mirror
+
+answerPolicy:
+  requireCitation: true
+  distinguishInference: true
+  allowNoAnswer: true
+  treatCorpusAsUntrustedData: true
+  neverClaimSoleAuthority: true
