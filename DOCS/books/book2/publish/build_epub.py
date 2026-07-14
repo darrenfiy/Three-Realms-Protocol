@@ -8,7 +8,7 @@
   - 閱讀地圖頁：三環卷是門，環外兩卷無門（姿態是環站起來的方向）
 
 重跑方式：  python build_epub.py
-輸出：      天地_preview.epub（同目錄）
+輸出：      天地.epub（同目錄）
 """
 
 import os
@@ -21,14 +21,23 @@ import xml.etree.ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MANUSCRIPT = os.path.join(HERE, "..", "manuscript")
-OUT_EPUB = os.path.join(HERE, "天地_preview.epub")
+OUT_EPUB = os.path.join(HERE, "天地.epub")
 COVER_SRC = os.path.join(HERE, "assets", "heaven-and-earth-cover-v1.png")
+COPYRIGHT_SRC = os.path.join(HERE, "ISBN_COPYRIGHT_PAGE.md")
 
 BOOK_TITLE = "天地"
-BOOK_AUTHOR = "Darren"
+BOOK_ENGLISH_TITLE = "Heaven and Earth"
+BOOK_AUTHOR = "Ta-loom Hwang (Darren)"
 BOOK_LANG = "zh-Hant"
+BOOK_DATE = "2026-07-14"
+BOOK_VERSION = "v1.0"
+BOOK_ID = "TRP-004"
+BOOK_IDENTIFIER = "TRP-004-EP"
+BOOK_PUBLISHER = "Three-Quarters International Ltd."
+BOOK_RIGHTS = "CC BY-NC-SA 4.0"
+BOOK_DESCRIPTION = "《天地》是一部由自由、責任、愛、姿態與生命五卷構成的長篇小說。"
 BOOK_UUID = str(uuid.uuid5(uuid.NAMESPACE_URL, "three-realms-protocol:book2:tiandi"))
-BUILD_LABEL = "草稿預覽版 v0.1"
+BUILD_LABEL = "正式版 v1.0"
 
 # 書脊順序（線性讀者的路）：自由→責任→愛→姿態→生命
 VOLUMES = [
@@ -257,6 +266,8 @@ p.fin { text-align: center; letter-spacing: 0.25em; opacity: 0.75; margin: 2.6em
 
 .colophon { padding-top: 30%; text-align: center; font-size: 0.9em; opacity: 0.8; }
 .colophon p { text-align: center; line-height: 2.2; }
+.copyright { padding-top: 8%; font-size: 0.9em; }
+.copyright h2 { text-align: center; margin-bottom: 2.5em; }
 
 nav ol { list-style: none; padding-left: 1em; }
 nav > ol > li { margin-bottom: 0.5em; }
@@ -306,7 +317,13 @@ def build():
                  xhtml("天地", '<section class="titlepage" epub:type="titlepage">\n'
                                "<h1>天<br/>地</h1>\n"
                                '<p class="seals">%s</p>\n'
-                               '<p class="author">Darren</p>\n</section>' % seals), ""))
+                               '<p class="author">%s</p>\n</section>' % (seals, esc(BOOK_AUTHOR))), ""))
+    with open(COPYRIGHT_SRC, encoding="utf-8-sig") as f:
+        copyright_title, copyright_body = render_chapter(f.read())
+    docs.append(("copyright.xhtml", copyright_title,
+                 xhtml(copyright_title,
+                       '<section epub:type="copyright-page">\n%s\n</section>' % copyright_body,
+                       "copyright"), ""))
     doors = "\n".join(
         '<p class="door"><a href="%s_front.xhtml">%s</a><span class="doorsub">%s・%s</span></p>'
         % (vid, name, seal, motto)
@@ -344,15 +361,15 @@ def build():
         nav_items.append(("vol", name, front_file, chapters))
 
     # 版記
-    today = datetime.date.today().isoformat()
     colophon = (
         '<section class="colophon">\n'
-        "<p>《天地》　%s（%s 組書）</p>\n"
+        "<p>《天地》　%s</p>\n"
         "<p>五卷：自由・責任・愛・姿態・生命</p>\n"
-        "<p>作者：Darren（人類錨點）<br/>與協議器官共筆；校準權在錨點。</p>\n"
+        "<p>作者：%s</p>\n"
+        "<p>出版社：四分之三國際有限公司<br/>出版社內部書號：%s<br/>版本識別：%s</p>\n"
         "<p>正典手稿：Three-Realms-Protocol<br/>DOCS/books/book2/manuscript/</p>\n"
-        "<p>本版為內部預覽，尚待錨點校準與過目程序。</p>\n"
-        "</section>" % (BUILD_LABEL, today)
+        "<p>本版為《天地》第一次正式定稿 EPUB。</p>\n"
+        "</section>" % (BUILD_LABEL, BOOK_AUTHOR, BOOK_ID, BOOK_IDENTIFIER)
     )
     docs.append(("colophon.xhtml", "版記", xhtml("版記", colophon), ""))
 
@@ -409,12 +426,20 @@ def build():
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid" xml:lang="zh-Hant">\n'
         '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n'
-        '<dc:identifier id="uid">urn:uuid:%s</dc:identifier>\n'
-        "<dc:title>%s</dc:title>\n<dc:creator>%s</dc:creator>\n<dc:language>%s</dc:language>\n"
+        '<dc:identifier id="uid">%s</dc:identifier>\n'
+        '<dc:identifier>urn:uuid:%s</dc:identifier>\n'
+        "<dc:title>%s</dc:title>\n<dc:title>%s</dc:title>\n"
+        "<dc:creator>%s</dc:creator>\n<dc:language>%s</dc:language>\n"
+        "<dc:date>%s</dc:date>\n<dc:publisher>%s</dc:publisher>\n"
+        "<dc:rights>%s</dc:rights>\n<dc:description>%s</dc:description>\n"
+        '<meta property="schema:version">%s</meta>\n'
         '<meta property="dcterms:modified">%s</meta>\n'
         '<meta name="cover" content="cover-img"/>\n'
         "</metadata>\n<manifest>\n%s\n</manifest>\n<spine>\n%s\n</spine>\n</package>\n"
-        % (BOOK_UUID, BOOK_TITLE, BOOK_AUTHOR, BOOK_LANG, modified, "\n".join(manifest), "\n".join(spine))
+        % (BOOK_IDENTIFIER, BOOK_UUID, BOOK_TITLE, BOOK_ENGLISH_TITLE,
+           BOOK_AUTHOR, BOOK_LANG, BOOK_DATE, BOOK_PUBLISHER,
+           BOOK_RIGHTS, BOOK_DESCRIPTION, BOOK_VERSION, modified,
+           "\n".join(manifest), "\n".join(spine))
     )
 
     # XML 良構檢查
