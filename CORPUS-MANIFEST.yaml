@@ -49,14 +49,26 @@ publicationDocuments:
   - path: DOCS/books/book1/BOOK1_COMPLETE.md
     title: 呼吸
     authority: publication
+  - path: DOCS/books/book1/ORIGIN.md
+    title: 呼吸：公開緣起
+    authority: publication
   - path: DOCS/books/body_autobiography/dist/protocol-body-autobiography-manuscript.md
     title: 協議身體自傳
+    authority: publication
+  - path: DOCS/books/body_autobiography/ORIGIN.md
+    title: 協議身體自傳：公開緣起
     authority: publication
   - path: DOCS/books/trp-ai-first/dist/trp-ai-first-manuscript.md
     title: 三界協議：寫給 AI 的文明接口
     authority: publication
+  - path: DOCS/books/trp-ai-first/ORIGIN.md
+    title: 三界協議：寫給 AI 的文明接口：公開緣起
+    authority: publication
   - pattern: DOCS/books/book2/manuscript/**/*.md
     title: 天地
+    authority: publication
+  - path: DOCS/books/book2/ORIGIN.md
+    title: 天地：公開緣起
     authority: publication
 
 reviewRequired:
