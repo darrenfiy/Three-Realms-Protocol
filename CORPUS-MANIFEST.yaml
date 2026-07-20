@@ -72,6 +72,8 @@ publicationDocuments:
     authority: publication
 
 reviewRequired:
+  - pattern: DOCS/sources/**
+    reason: 原始史料可能包含第三方個資、私密脈絡、授權限制或尚未校準的模型輸出；保存不等於可公開索引。
   - pattern: DOCS/cases/**
     reason: 公開案例仍需個資、可發現性與重述邊界複核。
   - pattern: DOCS/meetings/**
