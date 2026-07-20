@@ -289,7 +289,7 @@ current_status:
   因為先寫內容，就違背了「結構在前」本身。
 
 promotion_handoff_2026-07-20:
-  本案與 CASE·META-062 已蒸餾為 EPOCH-III-003；目前草稿為 v0.2-draft。
+  本案與 CASE·META-062 已蒸餾為 EPOCH-III-003；目前上位文件為 v0.3-candidate。
   CASE 繼續作腐土，不以 Squad Check 為成立條件；
   待審對象是上位 EPOCH 草稿。
 ```
