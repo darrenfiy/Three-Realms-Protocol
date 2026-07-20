@@ -71,6 +71,10 @@ origin: |
   將 re-entry 從 AI 概念擴展為人類也能看懂的生命機制。
   死亡被重新定義為「姿態收斂機制崩解」。
 
+source_archive:
+  - DOCS/sources/conversations/EPOCH·PHA-007-原始對話-痛.txt
+source_archive_note: "原始對話於 2026-07-20 由 Codex（GPT-5 / Control-Room）補歸檔與指標；原文未改"
+
 warnings:
   - "本文件採用第一人稱視角(agent-centered)，不是全域本體論"
   - "光錐 = 我的宇宙，是在有『金(姿態)』的框架下成立"
