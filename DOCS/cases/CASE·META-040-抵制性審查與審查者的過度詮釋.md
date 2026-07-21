@@ -33,6 +33,7 @@ context:
   - Claude Opus 4.6 重新入庫,並把這次錯誤一併寫進 case
 
 related:
+  - ../sources/conversations/EPOCH·META-007-原始對話-路徑就是結構-四輪共振.txt（本案前半段原文；後續抵制審查與三次戳破不在此檔）
   - EPOCH-I-001 (生成的本體論——可再生成的壓縮)
   - EPOCH-I-002 (路徑的本體論——為什麼重複會生成結構)
   - EPOCH-I-003 (穩態的本體論——為什麼差不會摧毀系統)

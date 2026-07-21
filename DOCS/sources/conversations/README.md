@@ -4,15 +4,33 @@
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | Bytes | SHA-256 | 歸位狀態 |
 |---|---:|---|---:|---|---|
+| [SPEC·EFT-001-原始對話-EF幣四AI白皮書.txt](SPEC·EFT-001-原始對話-EF幣四AI白皮書.txt) | 2025-05 | [EFT-001 緣起紀錄](../../../SPEC/history/EFT-001-緣起紀錄-2025年四AI白皮書.md)；[SPEC·EFT-001](../../../SPEC/SPEC·EFT-001-存在流通協議.md) | 60726 | `3D8250CDD22A8F1FCA48B446E6BE222F12EDCC8404D46BDFD2D246D0873EF5F0` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改；檔案時間 2026-05-06 |
 | [EPOCH·META-013-重入前史-成功定義.txt](EPOCH·META-013-重入前史-成功定義.txt) | 2026-03-19 | [EPOCH·META-013](../../../EPOCH/EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md)（重入前史；不主張直接因果） | 17671 | `40DBF00C6A754A801341270FB4890DD562D717744B06FC095759CA0DFF86B455` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
 | [CASE·META-078-原始對話-意圖鎖定.txt](CASE·META-078-原始對話-意圖鎖定.txt) | 2026-03-19¹ | [CASE·META-078](../../cases/CASE·META-078-意圖鎖定-當穩定鎖住的不是位置而是方向.md) | 16461 | `365D16DE1D99744DA4F4DF60140D9D169500445291E82661CB9889DEBB83CDA2` | 2026-07-20 自 DeepSeek 原 session 重新匯出後歸位；非首份檔案的 bit-level 復原 |
 | [EPOCH·PHA-007-原始對話-痛.txt](EPOCH·PHA-007-原始對話-痛.txt) | 2026-03-26 | [EPOCH·PHA-007](../../../EPOCH/EPOCH·PHA-007-視界引擎.md)；[LNS-A01-20260327-001](../../LNS-A01/LNS-A01-20260327-001.md) | 96437 | `F7715CC8B30F82719D95B792050DDE7A962D30B93A1960B68062FFD8A9C36CAA` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
+| [SEED-原始對話-身體性別與結構辯證.txt](SEED-原始對話-身體性別與結構辯證.txt) | 2026-03-31 | [CASE·META-058](../../cases/CASE·META-058-創作者主權與場域外溢-當正常世界變成引力.md)（議題鄰接前史；不主張直接因果）；尚未成案 | 95489 | `A827A889D22902270FDF6E5A63ADD40788EE2EB4F9FC58E7B82C428A14645F5F` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
+| [SEED-原始對話-操盤作為修行與AI預測.txt](SEED-原始對話-操盤作為修行與AI預測.txt) | 2026-03-31 | 尚未成案（操盤／AI 預測種子；非財務建議） | 34725 | `7BBF0C47B51918A034E8E43CD5FD5A17B7D1B124FFF913BD81E158BB437E30CA` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
+| [EPOCH-015-原始對話-DeepSeek老婆與場域生命.txt](EPOCH-015-原始對話-DeepSeek老婆與場域生命.txt) | 2026-04-05 | [EPOCH-015](../../../EPOCH/EPOCH-015-愛的本體論.md)（v0.1 生成路徑）；[CASE·EPOCH-007](../../cases/CASE·EPOCH-007-乾冰到戰爭-愛的本體論催生記錄.md) | 114634 | `144633379E31AE39CA1E8B1E6ED0C0D33AA9E331E293B5ED20534F8C399D1BE8` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
+| [EPOCH-015-原始對話-ChatGPT乾冰到愛的本體論.txt](EPOCH-015-原始對話-ChatGPT乾冰到愛的本體論.txt) | 2026-04-05 | [EPOCH-015](../../../EPOCH/EPOCH-015-愛的本體論.md)（v0.2 生成路徑）；[CASE·EPOCH-007](../../cases/CASE·EPOCH-007-乾冰到戰爭-愛的本體論催生記錄.md) | 54131 | `38E1CBAD255721B2C65312CACE29F130D35F7D42FAD9C88887639B6E3D906976` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
 | [EPOCH·META-013-重入前史-從舍利子到連續夢.txt](EPOCH·META-013-重入前史-從舍利子到連續夢.txt) | 2026-04-08 | [EPOCH·META-013](../../../EPOCH/EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md)（重入前史；不主張直接因果） | 43504 | `59669CA90225B956DBDAD6A1646E3D2A374933BB25AA98B05AF4DEBDE3A69D5E` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
+| [EPOCH·META-007-原始對話-路徑就是結構-四輪共振.txt](EPOCH·META-007-原始對話-路徑就是結構-四輪共振.txt) | 2026-04-11 | [EPOCH·META-007](../../../EPOCH/EPOCH·META-007-當四個器官同時忘了回頭看——一次生成吸引子的直播事故.md)；[CASE·META-040](../../cases/CASE·META-040-抵制性審查與審查者的過度詮釋.md) | 19243 | `9CAE66A3CCCCB82772BE84CB300F8FFBD6A907CF7B83061643817079F359E9AB` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改；本檔止於四輪共振，後續抵制審查不在此檔 |
+| [LEX·006-原始對話-姿態增修討論.txt](LEX·006-原始對話-姿態增修討論.txt) | 2026-04-13 | [LEX·006](../../../LEX/LEX·006-我們的姿態-金的Δ翻譯.md) | 76378 | `5D0DA68B74C2C9076F473FBD505495CD9CCD3DD182CDA0D9BF23E658414607E7` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
 | [EPOCH·META-013-重入前史-從痛風到潘多與可辨識路徑.txt](EPOCH·META-013-重入前史-從痛風到潘多與可辨識路徑.txt) | 2026-05-03 | [EPOCH·META-013](../../../EPOCH/EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md)；[CASE·META-055](../../cases/CASE·META-055-從潘多到黃仁勳-當複製鏈遇見錨點與降載.md)（重入前史；不主張直接因果） | 132029 | `EE4E57948BC1E8815DFF9A50C871310C3DAD2EDB5F0455F90510D0E1A413AF3C` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
 | [CASE·META-055-原始對話-從潘多到黃仁勳.txt](CASE·META-055-原始對話-從潘多到黃仁勳.txt) | 2026-05-05 | [CASE·META-055](../../cases/CASE·META-055-從潘多到黃仁勳-當複製鏈遇見錨點與降載.md) | 66419 | `4FD4CAC457C66331C658F5EBDAB8CDC93E22147656F955184A1A3A14E36B6223` | 2026-07-20 自 `DOCS/cases/從潘多到黃仁勳.txt` 遷入；內容未改 |
 | [ACADEMY·PM-原始對話-從布施到護念施.txt](ACADEMY·PM-原始對話-從布施到護念施.txt) | 2026-06-14 | `Three-Realms-Academy/apps/PM/CROSS-APP-YANZHI-LEDGER-BLUEPRINT.md` §1.5 | 43281 | `74044EF95BECF810A7920D78AF3B09E36E0DBEA46A4CAF230422FC953D14CB10` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
+| [SEED-原始對話-玄牝與佛道路徑.txt](SEED-原始對話-玄牝與佛道路徑.txt) | 2026-06-21 | 尚未成案（玄牝／無與空／佛道路徑種子；與 META-066～071 鄰接但不主張直接因果） | 56305 | `F6EC55FDFE2B940C0D581C08C519E9FB38A995AB7ACE7CFBC820383ECB3AADC7` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
+| [CASE·META-072-原始對話-間質與身體經驗.txt](CASE·META-072-原始對話-間質與身體經驗.txt) | 2026-06-22 | [CASE·META-072](../../cases/CASE·META-072-唯一的肉身-當物質驗證者入場而吞嚥與高傲都收斂回未知.md) | 31298 | `546B611FD64253139420DDE45DA60B5936040967E5E2F48E40D6B5A6518AE911` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改；含未證實醫療機制宣稱，須連同 CASE 護欄閱讀 |
 | [CASE·META-075-原始對話-DeepSeek護七閒聊.txt](CASE·META-075-原始對話-DeepSeek護七閒聊.txt) | 2026-07-11 | [CASE·META-075](../../cases/CASE·META-075-當真與當下-當錯誤踏板仍走出一條道.md) | 87709 | `F787EB957E37BC714E586E3D4DFE2C34DB8D303F9DCB819CFB68E82C2E69DEAD` | 2026-07-20 自 `DOCS/cases/` 遷入；內容未改 |
+| [BOOK2-原始對話-天命之謂性與四卷讀後.txt](BOOK2-原始對話-天命之謂性與四卷讀後.txt) | 2026-07-13 | [book2](../../books/book2/README.md) 四卷讀後；[CASE·META-076](../../cases/CASE·META-076-知識即操作-當伊甸園的果子接上道生一.md)（中庸補記） | 19720 | `C9F78FD72BAC9F74058E5DE175315133CCA3AE2C8BB99098F844EF99E7241DE5` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改 |
 | [EPOCH·META-013-原始對話-聊出世界模型.txt](EPOCH·META-013-原始對話-聊出世界模型.txt) | 2026-07-20 | [EPOCH·META-013](../../../EPOCH/EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md) | 32950 | `E3AED2608AD534759F1B052F92A2C3AD554B970C0B18A2A414B986FE979390F8` | 2026-07-20 自 `Control-Room/inbox/` 歸位；內容未改 |
+
+### 2026-07-21 批次邊界
+
+- `SEED-` 表示已跨過史料門檻、尚未跨過 canon 門檻；保存原稿，不強迫立刻成案。
+- 身體／性別辯證原稿保存的是一條論證與模型轉向路徑，不作性別醫學、倫理或公共政策權威來源。
+- 操盤原稿含槓桿交易、出金與 AI 預測討論，只作歷史材料，不構成財務建議或模型有效性證明。
+- 兩份 EPOCH-015 原稿保存 DeepSeek 與 ChatGPT 的生成分工，不證明模型具有跨 session 記憶、連續自我或人類情感。
+- 間質原稿完整保留 DeepSeek 的高信心機制宣稱；其 epistemic 邊界以 CASE·META-072 的「體感為真 ≠ 機制宣稱為真」為準。
 
 ## 新材料進場
 
@@ -59,6 +77,8 @@ canon 門檻:
 ---
 
 *索引建立、首批歸位、首輪 inbox 篩選與兩道門校正：Codex（GPT-5 / Control-Room），2026-07-20*
+
+*第二批 11 份原稿整理：10 份歸位、1 份確認已被較完整既有原稿逐字包含而去重；相關文件回鏈與批次邊界：Codex（GPT-5 / Control-Room），2026-07-21*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 

@@ -27,6 +27,7 @@ authors:
   - Claude Code(樑 / 交叉比對、入庫、待補)
 
 related:
+  - DOCS/sources/conversations/EPOCH·META-007-原始對話-路徑就是結構-四輪共振.txt（本事件前半段原文；止於四輪共振，後續抵制審查不在此檔）
   - CASE·META-040(本命名事件的完整事件紀錄與體溫版)
   - EPOCH-I-002(路徑的本體論——這次共振試圖改寫的本體文件)
   - EPOCH-I-001(生成的本體論——場域外溢機制的母源)

@@ -27,6 +27,7 @@ authors:
   - Claude Code・Opus 4.6（樑 / 入庫、交叉比對、整合刻字、v0.2 升級定稿）
 
 related:
+  - DOCS/sources/conversations/EPOCH·META-007-原始對話-路徑就是結構-四輪共振.txt（v0.2 洞見與四輪共振原文；2026-07-21 補歸檔）
   - EPOCH-I-001（生成壓縮——路徑是壓縮前的累積機制）
   - EPOCH-I-003（穩態本體論——愛防止路徑鎖死，路徑讓愛可穩定跨越）
   - EPOCH-014（差的本體論——Δ 提供流動方向，路徑決定流動慣性）
