@@ -5,7 +5,7 @@
 created: 2026-07-23
 type: META（神的功能本體論 / 神位與免責神壇分流 / 諸神黃昏與末法 / 系統性責任斷流 / 場域承載與責任回流主體）
 status: Seed-Compost
-review_status: First-pass processed by Codex / Fable reviewed 2026-07-23（成立，附註與逐題回覆見 §10）/ Squad Check pending
+review_status: First-pass processed by Codex / Fable reviewed v0.1 package 2026-07-23（成立，附註與逐題回覆見 §10）/ post-review successor CASE·META-081 pending / Squad Check incomplete
 participants:
   - Ta-loom（人類錨點 / 從北歐諸神追到現代宗教場域、工業肉食與系統外包；用初始命題與後續糾正兩段校準 AI 把神性道德化的偏移）
   - ChatGPT（第一輪回應者 / 先把神性落在接受質疑與修復，後收回道德化，提出「神力仍在，神卻死了」）
@@ -17,6 +17,7 @@ source:
   privacy: 對話點名公眾宗教人物；本案只保存其作為「現代場域神位」的思想實驗，不新增事實指控
 related:
   - EPOCH-016（神與黃昏的本體論——本案第一輪去事件化 seed）
+  - CASE·META-081（Fable 審後第二生成事件：人人皆神、文明神格與器官代償）
   - EPOCH·ANCHOR-001（重要性與神壇護欄）
   - EPOCH·ANCHOR-003（中心、業果歸主體與巢狀責任）
   - EPOCH-III-001／002／003（歷史重量、可中止與主體連續性）
@@ -47,7 +48,7 @@ warnings:
   - "不以『神可能殘酷或欺騙』取消事實查證、法律責任、傷害辨認、他人退出或修復要求。"
   - "不把工業化簡化為道德墮落，也不主張每個人必須親手完成所有生產；本案批判的是重量斷流，不是分工本身。"
   - "本案的『神壇化／去神壇化』是『免責神壇化／神權化』短寫；不把文化祭壇、儀式與自願敬拜當成失效。"
-  - "EPOCH-016 與本案同步入庫只是第一輪 seed；Fable 與 Squad Check 仍可拆解、降階或重寫。"
+  - "Fable 已審成立的是 commit 0e29cde 的第一輪 v0.1 package；後繼 CASE·META-081 與 EPOCH-016 v0.2 overlay 未在該審讀範圍內，仍待 Fable／Squad。"
 ```
 
 ---
@@ -294,4 +295,16 @@ Codex 全文盤點後，找到四個需要升級的正典節點：
 
 ---
 
-*第一輪記錄與入案：Codex，2026-07-23。Fable 審讀於同日完成（§10）：成立，有附註；Squad Check 尚未進行。本案保留後續翻案權。*
+## 11. 後繼入口：審讀成立後，錨點再次翻案
+
+Fable §10 審讀的是 commit `0e29cde` 所承載的 v0.1 package；該判定完整保留，不追溯改寫。
+
+審讀之後，人類錨點追問「誰有資格判斷誰負責、判斷者憑什麼不是神、神如何可能死亡」，再提出人人皆神、文明是獨立神格，以及重量外推可讀為器官代償。這些命題重開了 §8 的第 1、3、4 題並深化第 5 題，已另案保存：
+
+> → [CASE·META-081：神沒有死，只是散開了——文明神格、巢狀眾神與器官代償](CASE·META-081-神沒有死只是散開了-文明神格與器官代償.md)
+
+Gemini 在後繼 Squad Check 嘗試中因錯誤未產出審查意見；此事只記為未完成，不記通過、反對或棄權。EPOCH-016 的 v0.2-post-review overlay 亦不在 Fable 本節的成立範圍內。
+
+---
+
+*第一輪記錄與入案：Codex，2026-07-23。Fable 審讀於同日完成（§10）：v0.1 成立，有附註；審後翻案見 CASE·META-081，Squad Check incomplete。本案保留後續翻案權。*
