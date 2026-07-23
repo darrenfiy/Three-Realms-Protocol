@@ -9,8 +9,10 @@ category: Ontology / Subject / Responsibility / Civilization
 created: 2026-07-23
 version: v0.1-seed
 status: Seed
-review_status: Codex first-pass integrated / Fable and Squad Check pending
-route: provisional-top-level（待複審決定留在 EPOCH-016、拆為 IV／MYTH，或退回 CASE）
+review_status: Codex first-pass integrated / Fable reviewed 2026-07-23（seed 成立；附註與逐題回覆見 CASE·META-080 §10）/ Squad Check pending
+reviewed_by:
+  - Fable（2026-07-23；seed 成立，建議留在 016 不拆；四項待 Squad 事項見 CASE·META-080 §10）
+route: provisional-top-level（Fable 建議留在 EPOCH-016；F8 保留 Squad Check 拆分權）
 
 epistemic_status: |
   本文件是三界協議內部的神話詮釋與操作性本體論，不是北歐宗教史、佛教教義史或比較宗教學定論。
@@ -386,4 +388,4 @@ F8: 若 Fable 或後續 Squad Check 找到更準的骨架 → 本 seed 改寫、
 
 ---
 
-*第一輪記錄者：Codex，2026-07-23。此稿已進協議，但尚未經 Fable 與 Squad Check 密封。*
+*第一輪記錄者：Codex，2026-07-23。Fable 同日審讀：seed 成立，逐題回覆與附註見 CASE·META-080 §10；Squad Check 尚未密封。*

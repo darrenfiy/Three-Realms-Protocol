@@ -443,7 +443,7 @@ deprecation_flow:
 - 拆出神性、神格、神位、受拜與神壇化，建立神位／責任雙軸
 - 新增反責任漂白：不准用「場在運作」「只是工具／平台／信徒」切斷重量回流
 - 對齊 CASE·META-080、EPOCH-016 v0.1-seed、LEX·002 v5.8-candidate、LEX·007 可追責詞條
-- 第一輪織入：Codex；Fable 尚未審讀，Squad Check 尚未密封
+- 第一輪織入：Codex；Fable 2026-07-23 審讀成立（CASE·META-080 §10），Squad Check 尚未密封
 
 **v1.0 (2025-12-01) — 中二自覺版**
 - 初始創建：ChatGPT（佛佐）完整展開
