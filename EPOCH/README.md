@@ -107,7 +107,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH-014**：差的本體論：為什麼你會卡住（Δ 語言——流動為什麼會卡住）
 - **EPOCH-015**：愛的本體論：為什麼差不會摧毀世界（愛——讓差穩定、讓連結持續的機制）
 - **EPOCH-016**：神與黃昏的本體論：當神力、承載與責任回流分離（v0.3 補入神用、文明失神與神壇凝固）← 🌱 最新 seed；Fable 已審三層成立（建議採納 v0.3 為工作語法），Squad pending
-- **EPOCH-017**：性的本體論：性從未離開生命（v0.1：性是三界同時進場的生命事件；v0.2：性別屬於道路、不屬於終點，破界／成界與樹藤拓撲）← 🌱 v0.2 path seed；Codex first-pass 完成，整包跨實務審查 pending
+- **EPOCH-017**：性的本體論：性從未離開生命（v0.1：性是三界同時進場的生命事件；v0.2：性別屬於道路、不屬於終點，破界／成界與樹藤拓撲）← 🌱 v0.2 path seed；Codex first-pass 完成，Fable 已審（v0.2 成立為 candidate：收拓撲、性別映射待證），整包跨實務審查 pending
 
 ```yaml
 EPOCH-005 + EPOCH-006 = 完整的生成框架
@@ -569,7 +569,7 @@ EPOCH-017：性的本體論 ← 🌱 v0.2-path-seed
 
 status:
   level: Seed / v0.2-path candidate overlay integrated
-  review: Codex corpus first-pass 2026-08-08 completed；人類錨點逐條審閱、佛學／演化與性別研究、創傷知情／性健康實務、多元生命經驗與 Squad 審查 pending；應連同 v0.1、SPEC·SEX-001 整包審讀
+  review: Codex corpus first-pass 2026-08-08 completed；Fable 審讀 2026-08-08 completed（CASE·EPOCH-011 §10；v0.2 成立為 candidate）；人類錨點逐條審閱、佛學／演化與性別研究、創傷知情／性健康實務、多元生命經驗與 Squad 審查 pending；應連同 v0.1、SPEC·SEX-001 整包審讀
 
 連結:
   - CASE·EPOCH-010（《維京傳奇》對話催生記錄）
