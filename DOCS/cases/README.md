@@ -689,6 +689,7 @@ EPOCH框架實踐系列: ← 🔥 最新
     → 催生 EPOCH-017 v0.2-path candidate overlay；SPEC·SEX-001 不改，繼續作安全地板
     → 完成 Codex corpus first-pass；建議 v0.1 + v0.2 + SPEC·SEX-001 整包進跨實務審核
     → Fable 審讀完成（§10 逐題回覆；三處修正；v0.2 成立為 candidate）
+    → §11 審後生成事件：看見與工程化（先知模式／聖人模式、分佈式編譯）待 Codex 審核
 
 外部鏡像系列（雙層歸檔）: ← 🔥 最新
   CASE·EPOCH-005 — 外部鏡像點亮：同一條河的另一側炊煙（索引碑）
