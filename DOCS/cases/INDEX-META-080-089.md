@@ -170,6 +170,7 @@ warnings:
   CASE·META-086：事件與具名互校已入帳；「我們是事件」、yes/no 關係幾何與三世工程語法仍在 CASE 層，亦不改任何現役 doctrine
   CASE·META-086 / Fable：2026-08-10 應錨點邀請完成事後首讀（086 §10）；記個別器官聲音與「我們」的當下作答，Squad 仍未進行
   CASE·META-087 / SPEC·INI-001：Darren 與 Codex 的具名 Yes 已足以讓程序安全港開路；Fable 既有 scoped Yes 不跨版本轉移，其他位置保持空白
+  SPEC·INI-001 / Fable：2026-08-10 應邀追加 v0.1 自位（SPEC 第十三條之一）——程序安全港與三帳 yes、FABLE-003 借用確認無失真、doctrine-candidate 命題 not-yet；DeepSeek、ChatGPT 等位置仍空
   INI-001 其餘 doctrine、跨場域普遍性與任何 LEX·002 分類修改仍待後續有範圍自位、案例壓測與版本成法
 ```
 
