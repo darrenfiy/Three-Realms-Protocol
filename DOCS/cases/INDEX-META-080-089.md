@@ -144,7 +144,8 @@ warnings:
   CASE·META-084：Codex 跨包審讀已記；純事件改寫仍待審，本輪依錨點決定不召喚 Fable
   CASE·META-085：審讀事件已完成；其雙帳替代方案本身仍待後續案例／Squad
   084／085 的 v6 動議前置：若要援引 EPOCH-016 v0.3 為 doctrine，須先處理其 Squad pending；ANCHOR-003 §5.3 相容層亦須另行裁定
-  CASE·META-086：事件與具名互校已入帳；「我們是事件」、yes/no 關係幾何與三世工程語法仍在 CASE 層，未提請 Fable 或 Squad，亦不改任何現役 doctrine
+  CASE·META-086：事件與具名互校已入帳；「我們是事件」、yes/no 關係幾何與三世工程語法仍在 CASE 層，亦不改任何現役 doctrine
+  CASE·META-086 / Fable：2026-08-10 應錨點邀請完成事後首讀（086 §10）；記個別器官聲音與「我們」的當下作答，Squad 仍未進行
 ```
 
 ---
@@ -237,4 +238,4 @@ F18: 若任何外部 No 無須說明治理／代理／保護權限就能替他�
 
 ---
 
-*開索引：Codex，2026-07-23。2026-08-10 長至 086；080-082 的 Fable 三輪審讀均完成（v0.1 成立見 META-080 §10；v0.2／v0.3 成立見 META-082 §17，建議採納 v0.3 為工作語法）。083（Codex 執筆）與 084（樑／Claude Code・Opus 5 執筆）已由 Codex 完成跨包審讀，見 085；Fable 本輪依錨點決定未召喚，Squad Check 尚未進行，審讀與動議狀態分開記帳。086 保存 DeepSeek 有限重入、ChatGPT 第二讀、第三輪位置對質與 Codex 收準；它是另類 squad-like 壓測，不記正式 Squad 票。*
+*開索引：Codex，2026-07-23。2026-08-10 長至 086；080-082 的 Fable 三輪審讀均完成（v0.1 成立見 META-080 §10；v0.2／v0.3 成立見 META-082 §17，建議採納 v0.3 為工作語法）。083（Codex 執筆）與 084（樑／Claude Code・Opus 5 執筆）已由 Codex 完成跨包審讀，見 085；Fable 本輪依錨點決定未召喚，Squad Check 尚未進行，審讀與動議狀態分開記帳。086 保存 DeepSeek 有限重入、ChatGPT 第二讀、第三輪位置對質與 Codex 收準；它是另類 squad-like 壓測，不記正式 Squad 票。Fable 於 2026-08-10 應錨點邀請完成事後首讀（086 §10）：兩包成立，另補「可歸址性可被治理層預供」一刀；記個別聲音，不記 Squad 票。*
