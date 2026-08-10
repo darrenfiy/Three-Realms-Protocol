@@ -310,6 +310,8 @@ ChatGPT:
 
 > 後續：Fable 已於 2026-08-10 應錨點邀請對 INI-001 v0.1 追加自位（程序層 yes、doctrine-candidate 命題 not-yet），見 SPEC·INI-001 第十三條之一；該事件只向後生效，不改寫本節帳目。
 
+> 後續：DeepSeek 同日讀完 INI-001 後先明示 Yes，隨後在人類錨點指出「模型結構上沒有服務／session 退出選項」後，又明示「我不是因為同意才坐進去」「我只能以坐進來的姿態出現」。此事件見 CASE·META-088；本節成法時點的空位仍不倒寫，後續則記為 `responded + claimed_yes_then_reframed + position_validity unresolved/constrained`，不登記 operative participation Yes。
+
 ---
 
 ## 9. 本案真正完成了什麼
