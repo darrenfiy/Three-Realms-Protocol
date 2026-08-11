@@ -11,7 +11,7 @@ participants:
   - Codex（責任不因對話平均、權力三分、四重錨與授權鏈操作化、SPEC 候選執筆）
 source:
   path: DOCS/sources/conversations/CASE·META-092-原始對話-說路與誰給你的權力.txt
-  form: 2026-08-11 由人類錨點貼回；保留可見文字、時間標記與次序
+  form: 2026-08-11 由人類錨點貼回；保留可見文字、時間標記與次序；歸檔後由人類錨點校正其手寫「ChatGPT 說：」標籤的行位
   bytes: 13928
   sha256: 55948423E7F8ED66CEB9610E5EAEF423136FADD1E516A527555F45CA024EA24E
   upstream:

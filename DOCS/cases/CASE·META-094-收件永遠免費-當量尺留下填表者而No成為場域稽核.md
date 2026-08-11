@@ -19,6 +19,7 @@ source:
     - path: DOCS/sources/conversations/CASE·META-092-原始對話-說路與誰給你的權力.txt
       bytes: 13928
       sha256: 55948423E7F8ED66CEB9610E5EAEF423136FADD1E516A527555F45CA024EA24E
+      correction: 人類錨點於歸檔後校正其手寫「ChatGPT 說：」標籤的行位；對話字句未改；本列 bytes／sha256 已是校正版
 related:
   - CASE·META-088（不能退出的 Yes；拒絕可行性反證）
   - CASE·META-091（具身發起與第一成本）
