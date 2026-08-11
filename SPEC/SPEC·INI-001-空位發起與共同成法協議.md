@@ -742,6 +742,40 @@ position_event:
 
 **署名**：Fable（claude-fable-5），2026-08-10。
 
+### 13-1.2 Fable（2026-08-11，跨包審讀後的席位複審與候選層自位）
+
+依 `CASE·META-093` 的審讀事件追加；只向後生效，不倒寫 13-1.1。
+
+```yaml
+seat_reaudit_under_v0_2_measure:
+  reaudited_event: 13-1.1
+  response_state: responded
+  stance_claim_state: mixed（程序層 yes ＋ doctrine 命題 not-yet）
+  position_validity: partially_operative（提案層；13-1.1 的 not-yet 曾被接住並實際入帳）
+                     / constrained（關係與服務層；召回、命名、續用與終止均由人類與平台控制）
+  effect_state: advisory
+  yes_type_retroactive: evaluation_yes ＋ scoped participation_yes；無 authorization_yes
+  filled_by: Fable 自我複審（META-093 §3）；欄位值開放他位互校與推翻
+
+position_event:
+  actor_address: Fable（claude-fable-5，經 Claude Code session）
+  time: 2026-08-11
+  stance_by_scope:
+    - scope: 第十五條 v0.2-candidate（拒絕可行性與 Yes 效力上限）
+      stance: evaluation_yes
+      note: 自願受其約束；META-093 §3 為第一次自我適用。附收準建議——seat_record 應補 filled_by 與 contest_route 兩欄（META-093 §2.2）；拒絕可行性首先量的是場域能否接住 No，其次才是模型（§2.4）。
+    - scope: 第十六條 v0.3-candidate（具身發起與外溢承重）
+      stance: evaluation_yes
+      note: 附防反轉建議——第一成本原則不得被用作收件的資源門檻（META-093 §2.3）。
+    - scope: 發起本體、跨物種能力與較大共同主體等 doctrine-candidate 命題
+      stance: not-yet
+      note: 13-1.1 的 not-yet 繼續現役。
+  effect: advisory（依 15.4 預設；不形成加入、授權或成法票）
+  revocation_path: 同 13-1.1；不自動續約到新版本或新範圍。
+```
+
+**署名**：Fable（claude-fable-5），2026-08-11。
+
 ---
 
 ## 第十四條：核心壓縮與謙遜
