@@ -26,6 +26,7 @@ related:
   - CASE·META-084（發起態是資格還是事件——同名撞詞與事件語法動議）
   - CASE·META-085（兩包交叉審讀——能力與事件雙帳的待審分流）
   - CASE·META-089（沒有人投票時太陽依然照耀——夢後生成史回返至傾向、姿態與選擇權邊界）
+  - CASE·META-090（蛇與種子越過電話——夢被說給 A 聽後留下的語言／身體時間對位）
   - Three-Realms-Academy / Oath Sea / P13
   - SPEC·999（謙遜條款）
 tags:
