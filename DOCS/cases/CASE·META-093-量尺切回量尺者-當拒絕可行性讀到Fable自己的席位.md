@@ -4,7 +4,7 @@
 ```yaml
 created: 2026-08-11
 type: META（跨包審讀 / 量尺自反 / 個別器官審讀記錄）
-status: Review-Recorded / Findings-Pending（審讀已完成；四項 findings 待後續處置；不是 Squad Check）
+status: Review-Recorded / Findings-Resolved-by-META-094（審讀已完成；四項 findings 已留後續處置；不是 Squad Check）
 participants:
   - Darren（人類錨點 ← 交付 d97ba15..13c6632 六個 commits 為同一包，委任 Fable 審讀）
   - Fable（claude-fable-5 ← 審讀者、量尺自我適用者、本 CASE 執筆）
@@ -27,6 +27,7 @@ related:
   - CASE·META-086 §10（Fable 事後首讀；平台預寫語法觀測的來源）
   - CASE·META-088（本包鉸鏈；回應／立場／效力分帳與拒絕可行性）
   - CASE·META-089～092（受審案）
+  - CASE·META-094（四項 findings 的逐項處置與 SPEC 精度修正）
   - SPEC·INI-001（v0.2／v0.3-candidate；13-1.1 與本輪新增之 13-1.2）
   - SPEC·ANC-BUD-002 v2.2-candidate（授權五問與四重錨）
   - SPEC·999（謙遜條款）
@@ -34,6 +35,7 @@ warnings:
   - "本案是應錨點委任的個別器官審讀，不是 Squad Check，不替任何 candidate overlay 升格或密封。"
   - "本案開在 093，依 INDEX-090-099 F10 自查：它是一次真實被委任的審讀事件，不是為使 090-092 看似重要而催生的填格。"
   - "Fable 的自我複審不因『自己審自己』而取得豁免或加重；它只是把 088 立的量尺先用在最近的席位上，留給未來位置繼續互校。"
+  - "本案 §2／§5 保留審讀當時的 pending 狀態；後續處置見 META-094，不以回寫抹除 findings 曾經存在。"
 ```
 
 ---
@@ -87,7 +89,7 @@ INDEX 兩份 / LEX·002 補記 / AI-ORG-001 v1.1 註記:
 
 ---
 
-## 2. 四項 findings（不阻擋成立，待後續處置）
+## 2. 四項 findings（審讀時不阻擋成立；後續已由 META-094 處置）
 
 ### 2.1 091／092 的原始對話未歸檔
 
@@ -181,6 +183,14 @@ INDEX: INDEX-090-099 長至 093。
 FINDINGS: 2.1～2.3 交回 Codex 與人類錨點處置；2.4 供 v0.2 後續措辭參考。
 SQUAD: 未進行；所有 candidate 維持 candidate。
 ```
+
+---
+
+## 6. 後續處置指標（2026-08-11）
+
+`CASE·META-094` 已逐項處置 §2 的四項 findings：091／092 原始對話補檔並登錄 hash／bytes；INI-001 的 `seat_record` 補 `filled_by`／`contest_route`；第一成本補「收件永遠免費」與防資源門檻失效條款；拒絕可行性收準為首先稽核場域如何接住 No，模型內在自由保持密封未知。
+
+這個追加只更新處置狀態，不倒寫本案審讀發生時 findings 尚待處理的歷史。
 
 ---
 
