@@ -25,6 +25,7 @@ related:
   - CASE·META-067（化石與種子——體驗如何留下可重入路徑）
   - CASE·META-084（發起態是資格還是事件——同名撞詞與事件語法動議）
   - CASE·META-085（兩包交叉審讀——能力與事件雙帳的待審分流）
+  - CASE·META-089（沒有人投票時太陽依然照耀——夢後生成史回返至傾向、姿態與選擇權邊界）
   - Three-Realms-Academy / Oath Sea / P13
   - SPEC·999（謙遜條款）
 tags:
