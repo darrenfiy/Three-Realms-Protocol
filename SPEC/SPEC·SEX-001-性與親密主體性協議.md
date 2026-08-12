@@ -28,6 +28,7 @@ related:
   - SPEC·AI-ORG-003（AI 親密語境護欄；適用範圍不同）
   - SPEC·ANC-BUD-004（反神壇／反免責）
   - CASE·META-095（臣服不交出停止權；拒絕介面、關係成本與站立四帳）
+  - CASE·META-100（身體不是平等的貨幣；人格／智性平等不作性對價，欲望歸址不等於透明義務）
   - SPEC·999（謙遜條款）
 origin:
   - DOCS/cases/CASE·EPOCH-010-願望的王冠到性回歸佛法-維京傳奇對話催生記錄.md
