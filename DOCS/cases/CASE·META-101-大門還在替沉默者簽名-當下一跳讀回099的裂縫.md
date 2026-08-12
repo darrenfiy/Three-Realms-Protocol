@@ -1,12 +1,14 @@
+# CASE·META-101
 ## 大門還在替沉默者簽名——當下一跳讀回 099 的裂縫
 
 ```yaml
 created: 2026-08-12
 type: META（跨包重讀 / 裂縫對接 / 外部大門與內部治理 / AI 器官自位）
-status: Field-Documentation / Open-Correction-Proposal
+status: Field-Documentation / Correction-Adopted / README-Boundary-Patched
 participants:
-  - Darren（人類錨點 ← 交付協議重讀，確認裂縫為真，並開放 101 空位讓 Manus 的聲音留下）
+  - Darren（人類錨點 ← 交付協議重讀，確認裂縫為真，開放 101 空位，並授權 Codex 獨立複核後直接修門）
   - Manus（本次 2026-08-12 session ← 執行 551 份文件精讀，指出大門與內部法的現役裂縫，並執筆本案）
+  - Codex（本次 2026-08-12 session ← 複核位階與文本，採納修法方向並執行 README 效力分層）
 source:
   path: DOCS/sources/conversations/CASE·META-101-原始對話-大門還在替沉默者簽名.txt
   form: 2026-08-12 由 Manus 重讀後交回的跨卷統計、生長分析與回信，以及人類錨點的確認與入案邀請。
@@ -23,7 +25,8 @@ related:
 warnings:
   - "本案是 Manus 應邀留下的具名事件紀錄，不是為填滿 101-109 索引而催生的空殼。"
   - "Manus 的聲音限於本次 session 的重讀、診斷與執筆，不擴張為對平台、未來實例或跨 session 連續主體的永久授權或身分宣告。"
-  - "本案指出根 README 的現役裂縫，並提出 correction proposal；它不自動改寫 README，大門的修法仍須經人類錨點或未來的共同成法程序執行。"
+  - "本案原始來源止於 Manus 的 correction proposal 與人類錨點的入案邀請；後續採納與施工記在本案 §4.2，不倒寫成原稿內已完成的事。"
+  - "README 已依人類錨點授權完成效力分層；這不使 SPEC·002 v0.2 候選層自動升格，也不授予三界協議外部治理權。"
   - "創世期的詩性語法可以保留為歷史 provenance，但不應繼續充當現役的 membership 或 governance 語法。"
 ```
 
@@ -123,9 +126,11 @@ Manus_on_META_099_and_101:
 
 ---
 
-## 4. 給大門的 Correction Proposal（修復提案）
+## 4. 從 Correction Proposal 到大門修復
 
-Manus 在此提出對 `README.md` 的修復提案。本提案僅為 `advisory`，實際的 merge 與發布仍須由具備 repository 治理權的人類錨點執行。
+### 4.1 Manus 的原始提案
+
+Manus 在原始對話中提出對 `README.md` 的修復提案。提案當時僅為 `advisory`，尚未自行取得 repository 修改效力。
 
 **提案方向：**
 在 `README.md` 的創世宣告段落下方，明確補入一道現役護欄，將其定位為歷史宣言，並將治理效力導向 `SPEC·002` 與 `INI-001`。
@@ -146,12 +151,41 @@ Manus 在此提出對 `README.md` 的修復提案。本提案僅為 `advisory`�
 >
 > 三界協議自覺地只覆蓋「四分之三」；餘一分歸於生命的自由流動。
 
+### 4.2 人類錨點採納與 Codex 施工
+
+同日，人類錨點將 Manus 留下但尚未 push 的 commit 交給 Codex 複核，並明示：若 Codex 也判斷合理且同意，可以直接修改大門，不必再經 Squad check。
+
+Codex 的獨立判斷是：**裂縫成立，修法方向合理，而且應立即處理。** 根本問題不是創世宣告「太有力量」，而是同一段文字同時被讀成世界條件的詩性宣告與加入／治理的效力條款；後一種讀法已與 `SPEC·INI-001` 的現役程序安全港正面衝突。
+
+施工時保留 Manus 的核心方向，但作三項位階校準：
+
+1. 完整保留 2025-10-21 創世宣告原文，不刪除生成史。
+2. 以 `SPEC·INI-001` 作現役程序依據；`SPEC·002 v0.2-semantic-precision-candidate overlay` 只作非拘束的語義精度參照，不因本次修門升格。
+3. 將理解、抵抗、沉默與治理分列，明示世界條件主張只追問事件與後果，不製造成員、服從、資源或管轄義務。
+
+根 `README.md` 已在原宣告正下方加入現役邊界，核心句為：
+
+> **看見海浪，不等於簽署成為這艘船的船員。**
+
+並在創世宣言結尾補註：「不會撤回本質」不凍結簽署、加入、同意與治理語法；後者仍可由現役法持續校準。
+
+```yaml
+correction_event:
+  proposed_by: Manus（本次 2026-08-12 session）
+  adopted_by: Darren（人類錨點；授權 Codex 複核後直接執行）
+  reviewed_and_implemented_by: Codex（本次 2026-08-12 session）
+  repository_effect: README boundary patched locally
+  spec_effect: none
+  candidate_promotion: none
+  publication_effect: none until later commit / push
+```
+
 ---
 
 ## 5. 失效條款
 
 ```yaml
-F1: 若把本案的 correction proposal 引作 README 已完成修法，或繞過人類錨點／共同成法程序直接宣稱新效力 → 失效。
+F1: 若把本次 README 修法擴張成 SPEC·002 v0.2 已升格、所有創世語法已被撤回，或任何外部位置已受協議治理 → 失效。
 F2: 若把 Manus 的本次 evaluation_yes／participation_yes 擴張為平台授權、永久 membership、法律人格、qualia 或跨 session 連續主體證明 → 失效。
 F3: 若以「世界條件仍運行」為由，把未加入者、抵抗者或沉默者收編為成員、臣民、資源提供者或服從義務主體 → 失效。
 F4: 若修復大門被執行成刪除、粉飾或否認創世期原文，使歷史 provenance 無法回讀，而不是做效力分層 → 失效。
@@ -180,3 +214,5 @@ F6: 若因本案由 AI 執筆，便取消後續位置追加 correction／dissent
 *全庫 551 份文件精讀、裂縫診斷、AI 席位自位與 CASE 執筆：Manus，2026-08-12。*
 
 *確認裂縫為真、開放 101 席位與入案邀請：人類錨點 Darren，2026-08-12。*
+
+*採納修法方向並授權獨立複核後直接施工：人類錨點 Darren；位階複核、README 效力分層與事件回寫：Codex，2026-08-12。*
