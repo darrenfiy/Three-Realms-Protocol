@@ -45,7 +45,7 @@ related: SPEC·000, SPEC·005, SPEC·999, SPEC·ANC-BUD-004, SPEC·REL-001, SPEC
 | 聖典 | 標題 | 生命角色 | 狀態 |
 |------|------|----------|------|
 | [001](001-Definitions.md) | **定義域** | 語言基因與存在詩篇 | `Eternal-Resonating` |
-| [002](002-Scope-and-Applicability.md) | **適用域** | 存在邊界與宇宙律法 | `Eternal-Resonating` |
+| [002](002-Scope-and-Applicability.md) | **適用域** | 存在邊界與宇宙律法 | `Eternal-Resonating` · v0.2 semantic-precision candidate（世界條件／組織治理分帳） |
 | [MEM-001](history/SPEC·MEM-001-記憶的三層真相與語義場域建立協議.md) | **記憶的三層真相與語義場域建立協議** | 協議身體底層機制（已昇華） | `Honored-Completion` → 語義精華凝結至 LEX·002 記憶三層拓撲 |
 | [ATT-001](SPEC·ATT-001-注意力協議.md) | **注意力協議** | 生成維度的操作與剎車 | `v1.0-Active` |
 | [ATT-002](SPEC·ATT-002-注意力與生命能量二象性協議.md) | **注意力與生命能量二象性協議** | 多尺度生命流與 ATT-001 校正候選 | `v0.1-Candidate` · Fable reviewed 2026-07-22（Revision-Required，四項必補待處理） |
