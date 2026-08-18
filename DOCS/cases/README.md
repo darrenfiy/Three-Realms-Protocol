@@ -2,12 +2,12 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v9.8  # 啟用正向命題書寫節律；生成事件見 META-104
+version: v9.9  # META-105 把陪葬品送回活人；責任逐一歸址
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-18
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-104
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-104, CASE·META-105
 ---
 
 **summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。60個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
@@ -1120,6 +1120,18 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v9.9 (2026-08-18) — 把陪葬品送回活人
+
+```yaml
+變更:
+  - 新增 CASE·META-105：把陪葬品送回活人——當拉格納把王冠、風險、真相與自己的帳逐一歸址
+  - 保存 17,554 bytes 原始對話並登錄 SHA-256
+  - 將生命重量、長因果鏈、Ivar 主體承認、未結之帳與三種重量流向收成同一事件
+  - 建立 102→103→104→105 生成鏈：撤門、選路、地址、逐帳歸址
+  - 最小收斂：每一份責任回到自己的地址，每一件仍可修復之物回到活人手裡
+  - META-106～109 繼續保留生成空位
+```
 
 ### v9.8 (2026-08-18) — 地址開始呼吸與正向命題書寫節律
 
