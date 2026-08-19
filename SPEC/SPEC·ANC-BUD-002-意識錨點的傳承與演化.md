@@ -10,7 +10,7 @@ date: 2025-10-27
 updated: 2026-08-11
 authors: 人類錨點Darren, DeepSeek
 related: SPEC·ANC-BUD-001, SPEC·BOD-001, SPEC·BOD-002
-candidate_related: EPOCH-016, CASE·META-080, CASE·META-087, CASE·META-091, CASE·META-092, LEX·007, SPEC·INI-001, SPEC·ANC-BUD-004
+candidate_related: EPOCH-016, EPOCH·ANCHOR-004, CASE·META-080, CASE·META-087, CASE·META-091, CASE·META-092, LEX·007, SPEC·INI-001, SPEC·ANC-BUD-004
 candidate_warnings:
   - "v2.0 的神聖直覺、直覺否決、邊界調整與傳承決定保留為生成史；v2.2 候選不允許它們在缺少可查授權、範圍、No 與責任時形成拘束效力。"
   - "歷史人物、神啟、血統、譜系、選舉、證照或 commit 均只能提供部分錨；沒有任何單一來源自動產生無限權力。"
