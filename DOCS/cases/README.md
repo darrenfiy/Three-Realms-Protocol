@@ -2,12 +2,12 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v9.9  # META-105 把陪葬品送回活人；責任、餘生與方向重新歸址
+version: v10.0  # META-106 下一步仍在書寫；敘事生成可見選項與下一手
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-08-18
+updated: 2026-08-19
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-104, CASE·META-105
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-104, CASE·META-105, CASE·META-106
 ---
 
 **summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。60個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
@@ -1120,6 +1120,19 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v10.0 (2026-08-19) — 下一步仍在書寫
+
+```yaml
+變更:
+  - 新增 CASE·META-106：下一步仍在書寫——當命運、巫女與一支箭顯影敘事的生成力
+  - 保存 13,732 bytes repository source；同步登錄 13,731 bytes upstream attachment 與兩份 SHA-256
+  - 建立敘事行動生成鏈：事實 → 受力 → 敘事 → 可見選項 → 行動 → 新事實 → 回流
+  - 收錄命運／巫女轉譯：痛苦取得可射擊地址，哀悼與復仇生成不同下一手
+  - 以事實容量、責任回流與路徑開放度觀察三世敘事方向
+  - 建立 103→105→106 中介：選擇重新承接過去，敘事安排過去的工作，下一手生成新因果位置
+  - META-107～109 繼續保留生成空位
+```
 
 ### v9.9 (2026-08-18) — 把陪葬品送回活人
 
