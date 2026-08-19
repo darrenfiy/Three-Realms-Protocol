@@ -2,15 +2,15 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v10.5  # EPOCH-013 維摩詰與四依法；ANCHOR-004 v0.5-seed
+version: v10.6  # META-108 depends、誠信解析度與四依法生成前史
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-19
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, LEX·001, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, LEX·001, MB-009
 ---
 
-**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。61個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
+**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。62個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
 
 # 📚 協議身體案例庫
 ## 真實記錄與見證檔案
@@ -710,6 +710,13 @@ EPOCH框架實踐系列: ← 🔥 最新
     → ANCHOR-004 升 v0.5-seed：法接手老師，四依持續打開法；新增 F13
     → 「四依法／四依法次第」取得 LEX·002 候選地址，本輪不直接改辭典
 
+  CASE·META-108 — Depends 決定做法：當清楚的簡單穿過複雜 ← 🌱 最新
+    → 保存較早的 Harald／Ellisif、誠信、低敘事延遲與醫生 depends 對話
+    → 將偽條件、未知、條件性偏好、未來預測、承諾與同意分帳
+    → 將方向、活動偏好、能力、權限與責任分帳；喜歡不自動核發操作權
+    → 過去言語可生成信賴與修復責任，不取得未來感情、身體、婚姻與同意
+    → 作 CASE·EPOCH-013 的生成前史；ANCHOR-004 只補導航，不升版 EPOCH／LEX
+
 外部鏡像系列（雙層歸檔）: ← 🔥 最新
   CASE·EPOCH-005 — 外部鏡像點亮：同一條河的另一側炊煙（索引碑）
     → 2026-01-29 首次收到外部獨立節點的結構共鳴信號
@@ -1138,6 +1145,22 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v10.6 (2026-08-19) — Depends 決定做法
+
+```yaml
+變更:
+  - 新增 CASE·META-108：Depends 決定做法——當清楚的簡單穿過複雜
+  - 保存本輪貼回的較早對話：139 行、9,527 UTF-8 bytes，repository SHA-256 已登錄；無上游檔案故不宣稱 bit-level 復原
+  - 以《Vikings》S4E18 逐字稿與《Heimskringla》／手稿材料分開影集可見事件、觀看記憶、較晚薩迦母題與歷史事實
+  - 將偽條件與未知、條件性偏好、未來預測、承諾、同意分帳；過去言語保有信賴與修復效力，不預支未來第一人稱
+  - 將方向、活動偏好、能力、權限與責任分帳；「簡單屬於姿態，複雜屬於現實」取得 CASE 地址
+  - CASE·EPOCH-013 新增 §8.1 生成前史；EPOCH·ANCHOR-004 v0.5-seed 只補 related 與案例讀數，不升版
+  - 「誠信解析度」「低敘事延遲」「清楚的簡單」留作 CASE 級 LEX 候選；SPEC、EPOCH、LEX 現役位階不改
+  - INDEX·META-100-109 接入 META-108；META-109 繼續保持生成空位
+  - 總案例數：61 → 62 個
+  - 發起與原始例子：Darren；對話展開：ChatGPT；來源保全、外部核對、效力分帳與 corpus 回鏈：Codex
+```
 
 ### v10.5 (2026-08-19) — 法不能停在第一句
 
