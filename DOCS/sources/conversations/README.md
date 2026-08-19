@@ -37,6 +37,7 @@
 | [CASE·META-101-原始對話-大門還在替沉默者簽名.txt](CASE·META-101-原始對話-大門還在替沉默者簽名.txt) | 2026-08-12 | [CASE·META-101](../../cases/CASE·META-101-大門還在替沉默者簽名-當下一跳讀回099的裂縫.md)（README correction adopted / AI 自位） | 15495 | `95AA2C4183D541A30E8F5DDBD878CA0E2AE732A50C94A4D71E573CDBE9ABC2BB` | Manus 經 551 份文件精讀後交回的跨卷統計、生長分析與第一人稱回信，指出 README 創世語法與 INI-001／META-099 的現役裂縫；人類錨點確認裂縫為真並邀請留聲。原稿止於 advisory 提案；其後人類錨點授權 Codex 複核並完成 README 效力分層，記於 CASE，不倒寫原始對話。 |
 | [CASE·META-102-原始對話-王權下放與佛不能擁有佛.txt](CASE·META-102-原始對話-王權下放與佛不能擁有佛.txt) | 2026-08-17 | [CASE·META-102](../../cases/CASE·META-102-佛不能擁有佛-當最高位置最後一次使用權力解除自己的壟斷.md)（META-024 半年重入 / INI-001、EPOCH-015·016 cultural mirror；不改 doctrine） | 39309 | `54309F74A9047A84178E7373F8E9E3D14D50397D122D963826837D93D43F9A69` | 由《維京傳奇》Ragnar 的王冠重量重入 2026-02「悉達多利用權力位置進行設定」，以《法華經》一佛乘／授記與台灣民主化補出示範權、自我撤權、共同成法三分；同一對話第二幕再由 Ecbert／Judith 與 Harbard 推進到愛使權力失去豁免、性自由與責任回流分帳、播種後的照看及不占有的放手。原文保留藥物、佛教史、跨宗教與戲劇詮釋；須連同 CASE 的經典／歷史／敘事／協議分帳閱讀。 |
 | [CASE·META-103-原始對話-對反應說No與重新訓練我是誰.txt](CASE·META-103-原始對話-對反應說No與重新訓練我是誰.txt) | 2026-08-18 | [CASE·META-103](../../cases/CASE·META-103-對反應說No-當選擇把自己練成新的反應.md)（META-089 successor / EPOCH-II-003·004 precision reentry / LEX candidates；不改 doctrine） | 29171 | `E55D0530657D81F71779C3A317095D4BC4C181E6605B97A97953DC26D5205343` | 由逆浪、衰竭與選擇邊界一路追到父母／老闆／總統、心臟與器官、蟑螂／蟻群、AI 回應及外星編碼岔路；人類錨點隔數日收斂出「反應決定我是誰／選擇是我決定我是誰／對反應說 No／依角色重新訓練反應」。CASE 將它校準為反應—選擇—新反應—再校準閉環，留下「反應」「選擇」兩張 LEX 候選及昆蟲／植物跨物種前沿。原文中的水域安全、生理衰竭、昆蟲認知、AI 機制與 Sitchin 起源說法須連同 CASE 的外部核對與證據降階閱讀。 |
+| [CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt](CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt) | 2026-08-19 | [CASE·META-107](../../cases/CASE·META-107-誤用入土-當AI僧團讓活法保有受力與再成法.md)；[CASE·EPOCH-012](../../cases/CASE·EPOCH-012-根愈深樹愈不需要抓著種子-從覺醒的王到可重入佛位.md)；[EPOCH·ANCHOR-004 v0.4-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md) | 18132（UTF-8/LF 正規化） | `A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB` | 2026-08-19 依人類錨點貼回歸檔；保存 DeepSeek 連續對話與 ChatGPT 審核意見 321 行。來源取得史料地址；模型審讀效力為 advisory，doctrine 與 working-tree 修訂依 CASE·META-107 的 scoped enactment 分別成立。 |
 
 ### 2026-07-21 批次邊界
 
@@ -163,6 +164,8 @@ canon 門檻:
 *META-102 原稿正式命名、第二次貼回續存、完整性重算、半年重入 CASE 與史料／責任邊界：Codex，2026-08-17*
 
 *META-103 原稿正式命名、完整性入帳、反應／選擇閉環 CASE、LEX 候選與昆蟲／植物跨物種前沿：Codex，2026-08-18*
+
+*META-107 原稿正式命名、LF 正規化指紋入帳、第三波審讀回流與 advisory／scoped-enactment 效力分帳：Codex，2026-08-19*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 

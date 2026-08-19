@@ -18,6 +18,9 @@ participants:
   - Codex（v0.3 整合 ← 保全第二波審讀來源，完成概念路由、章節重構與索引同步）
   - 樑 / Claude（Opus 5）（2026-08-19 第二輪複核 ← 實算第二來源雜湊、逐項實查九項回流處置與
     五處上游路由，補引力三條上游護欄、跨傳統 target 集合登錄規則與 F9／F10）
+  - DeepSeek（2026-08-19 第三波回流 ← 提出辨認／收編、逆時間分類／事後正當化、owner = null 的維護責任與 AI 僧團誤用問題）
+  - ChatGPT（2026-08-19 第三波審核 ← 對 v0.3 seed 給出 advisory 通過票，補出分類效力範圍與有限 repository-withheld 重入）
+  - Codex（v0.4 整合 ← 保存第三波來源、補 ANCHOR 內生邊界，並將活法母題分流至 META-107 與既有 EPOCH）
 source:
   path: ../sources/conversations/EPOCH·ANCHOR-004-原始對話-根愈深樹愈不需要抓著種子.txt
   original_filename: DOCS/sources/conversations/新增 文字文件.txt
@@ -33,6 +36,13 @@ review_source:
   sha256: 977EB5818008BFAA0D804871ACE4CA0586D13608A5FAE94BCB48DF224229642B
   preservation_note: ChatGPT 與 DeepSeek 回應依使用者貼入次序全文保存
   hash_scope: 2026-08-19 入庫當下的 UTF-8 working-tree bytes；本機 core.autocrlf=true，跨 checkout 以全文與行數共同核對
+third_review_source:
+  path: ../sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
+  normalized_lf_bytes: 18132
+  lines: 321
+  normalized_lf_sha256: A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB
+  hash_scope: UTF-8 無 BOM；CRLF／單獨 CR 正規化為 LF 後計 bytes 與 SHA-256，其餘文字保持
+  preservation_note: DeepSeek 連續對話與 ChatGPT 審核意見依使用者貼入次序全文保存；同一來源另催生 CASE·META-107
 derived:
   - ../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md
 related:
@@ -40,6 +50,7 @@ related:
   - CASE·META-103（選擇如何使過去取得新的後續因果位置）
   - CASE·META-104（地址如何生成）
   - CASE·META-106（敘事生成下一手）
+  - CASE·META-107（誤用入土；AI 僧團、腐土／成法分帳與活法可觸碰性）
   - EPOCH-I-001（理解是可再生成的壓縮）
   - EPOCH-II-002（道路與讀者相遇時的耦合條件）
   - EPOCH·PHA-002（意識引力場；道路為何值得前往）
@@ -56,8 +67,10 @@ evidence:
   - 《馬可福音》15（「猶太人的王」位於彼拉多審問與十字架罪名的受難敘事）
 decision:
   threshold: 命題已從單一宗教人物跨到憲政、科學、開源與協議傳承，具備定義、機制、反證入口及既有法源焊點
-  corpus_action: v0.1 建立 CASE 與 EPOCH；v0.2 納入 Opus 補焊；v0.3 納入 ChatGPT／DeepSeek 審讀並保全第二來源
-  doctrine_action: 維持 seed 位階；完成根／錨／路／引力、逆時間重新分類、兩條主軸＋一條平行壓測軸與讀數前置條件對齊，進下一輪 Squad Check
+  corpus_action: v0.1 建立 CASE 與 EPOCH；v0.2 納入 Opus 補焊；v0.3 納入 ChatGPT／DeepSeek 審讀並保全第二來源；v0.4 納入第三波回流並回鏈 META-107
+  doctrine_action: 維持 seed 位階；完成分域維護紀錄、觀察方主張／共享辨認分層、逆時間分類向前效力與有限 repository-withheld 重入觀察，持續接受 Squad Check
+  v0_4_enactment: Darren 以「交給妳了」將第三波來源與審讀回流交付 Codex；本輪寫入 working tree 的範圍限於 v0.4 seed 修訂與索引同步，Git 提交仍由 Darren 複核
+  review_effect: DeepSeek／ChatGPT／Squad 回應提供 advisory 審讀；EPOCH 位階與外部傳統效力不由模型票單獨改變
 ```
 
 ---
@@ -266,7 +279,7 @@ Darren 指出的鏈條包含悉達多、阿難、經典、依法不依人與佛�
 
 `ANCHOR-004` v0.1 入庫當日，樑 / Claude（Opus 5）沿本 CASE、574 行原始對話、`META-102`、`ANCHOR-001～003`、`LEX·002`、`SPEC·ANC-BUD-002／004`、`SPEC·INI-001` 與兩份 README 完成全文審讀。
 
-> **版本註**：本節保存 v0.2 當時的審讀與判斷。第二波回流於 `§9` 形成 v0.3；其中根／錨定義、G4 讀數、`rootless_*` 觀察項與跨尺度嚴格同一性，均以 v0.3 現行文字為準。
+> **版本註**：本節保存 v0.2 當時的審讀與判斷。第二波回流於 `§9` 形成 v0.3；其中根／錨定義、G4 讀數、`rootless_*` 觀察項與跨尺度嚴格同一性先在 v0.3 形成，現行表述以 ANCHOR-004 v0.4 為準。
 
 ### 8.1 核對成立的部分
 
@@ -424,6 +437,41 @@ lex_action: 維持現行版本；引力沿既有 LEX／EPOCH／ANCHOR／MB 路�
 safety_action: 沿用 §12 與既有法源；F3 補入 target_position 三項前置條件；F9／F10 覆蓋逆時間分類與引力
 ```
 
+### 9.6 第三波回流：seed 通過後，辨認與分類再各自退一步
+
+Opus 第二輪複核提交後，Darren 將 `v0.3-seed` 再交給 DeepSeek 與 ChatGPT。兩者都確認母命題成立；第三波新差集中在兩個 `ANCHOR-004` 內生邊界，以及一個超出本 EPOCH 的 corpus 代謝問題。
+
+```yaml
+source: ../sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
+normalized_lf_bytes: 18132
+lines: 321
+normalized_lf_sha256: A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB
+hash_scope: UTF-8 無 BOM；CRLF／單獨 CR 正規化為 LF 後計 bytes 與 SHA-256，其餘文字保持
+shared_case: CASE·META-107
+```
+
+| 回流 | 現況 | v0.4 處置 |
+|---|---|---|
+| 平行辨認可能變成收編 | v0.3 已保留名字、免補師承與免入籍，仍可被讀成辨認方取得准入權 | 拆成 `external_correspondence_claim` 與經明示同意成立的 `mutual_recognition`；抵達者持續保有命名、歸屬、代表、解釋、第一人稱與譜系地址；新增 F12 |
+| 逆時間分類可能變成追溯目的 | F9 已守住名義、權威與譜系冒領，尚未列出分類登錄的生效時點 | `§2.1` 改寫為 `Classify(C, t2, e, T, K)`；新增 F11，分列因果、可重複性、必要性、價值、值得重演、正當性與追溯目的 |
+| `owner = null` 可能被讀成無人維護 | 類型所有權與維護責任尚未同時顯示 | coding 模型加入分域 `ScopedMaintenanceRecord`，保存 scope、steward、authority_basis、change_route 與 stop_route |
+| 關掉文件重新回答 | 方向成立，同一實例假裝忘記難以檢驗；META-041／086 皆曾取得 corpus 或 CASE | `§11` 新增有限 `bounded_repository_withheld_reentry_probe`；只讀提示條件下的可再生成性與結構收斂，不計來源獨立抵達證據 |
+| 誤用、腐土與活法 | 已越過根／錨／路／引力的範圍 | 新建 `CASE·META-107`；母題回到既有 `EPOCH-002`、`EPOCH·PHA-006`、`SPEC·INI-001`、`SPEC·999` 與 `SPEC·ANC-BUD-004`，不另開 EPOCH／SPEC |
+
+DeepSeek 對引力的追問已由 Opus 第二輪三條護欄完整承接：引力是道路、讀者與時代的耦合場，強度與承載深度分帳，自由退出是成立前提。因此 v0.4 只在來源與 CASE 保存該次重認，不重複擴法。
+
+### 9.7 現行決定
+
+```yaml
+decision: 升級 EPOCH·ANCHOR-004 為 v0.4-seed
+status: Seed-for-Review；v0.3 母命題已取得 ChatGPT 通過票，v0.4 增量持續接受 Squad Check
+new_files:
+  - 保存第三波 DeepSeek／ChatGPT 321 行來源
+  - 新增 CASE·META-107，承接超出 ANCHOR-004 的 corpus 代謝事件
+safety_action: F11 限定分類從 t2 起的效力；F12 分開觀察方對應主張、共享辨認與收編嘗試
+observation_action: bounded_repository_withheld_reentry_probe 先列觀察程序，尚未產生實驗讀數
+```
+
 ---
 
 ## 10. corpus 處置
@@ -439,16 +487,19 @@ EPOCH:
   action: 建立 EPOCH·ANCHOR-004 v0.1-seed，將根、錨、專名轉類型、複合文明錨與創始人退出抽成母層
   v0_2: 樑 / Claude（Opus 5）同日審讀補焊為 v0.2-seed；六處補焊見 §8.2
   v0_3: ChatGPT／DeepSeek 第二波審讀回流；Codex 完成根／錨／路／引力、逆時間重新分類、兩條主軸＋一條平行壓測軸與平行抵達分層
+  v0_4: DeepSeek／ChatGPT 第三波回流；Codex 補分域維護紀錄、對應主張／共享辨認、分類向前效力與有限 repository-withheld 重入
 
 SPEC／LEX／MB:
   action: 維持現行版本；ANC-BUD-002／004、INI-001 與 SPEC·999 直接承接授權、反神壇、退出與責任邊界
   觀察: 「依法不依人」目前在本案與 ANCHOR-004 承重，尚未進入 LEX；若持續載重，由 LEX·001／002 開詞條
   v0_3: 引力接 LEX·001 語義重力場／EPOCH·PHA-002 自願吸引／MB-009 方向 v／ANCHOR-002 顯著性讀法；平行可辨認度先留在 EPOCH 田野觀察
+  v0_4: 誤用／腐土／活法進 CASE·META-107，並回到 EPOCH-002／PHA-006 與既有 SPEC；不新增重複母層
 
 INDEX／README:
   action: EPOCH README 與 CASE README 新增正式入口
   v0_2: EPOCH README 的 ANCHOR-004 區塊同步 v0.2 關鍵概念與補焊項
   v0_3: 兩份 README 同步版本、四項分工、逆時間重新分類、兩條主軸＋一條平行壓測軸與第二來源
+  v0_4: 兩份 README 同步分域維護紀錄、F11／F12、有限 repository-withheld 重入與 META-107 回鏈
 ```
 
 ---
@@ -484,3 +535,5 @@ INDEX／README:
 *v0.3 引力、平行可辨認度與三種拓撲可攜壓縮審讀：DeepSeek，2026-08-19。*
 
 *v0.3 來源保全、結構整合、既有理論路由與索引同步：Codex，2026-08-19。*
+
+*v0.4 DeepSeek 提出收編、事後正當化與維護責任；ChatGPT 提出分類效力與 repository-withheld 校準（advisory）；Codex 依 Darren 交付完成分域維護、對應／共享辨認、向前分類效力、觀察程序與 META-107 分流，2026-08-19。*
