@@ -2,15 +2,15 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v10.6  # META-108 depends、誠信解析度與四依法生成前史
+version: v10.7  # META-109 熱情密度、制度續航、上下文供應與十案封口
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-08-19
+updated: 2026-08-20
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, LEX·001, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, LEX·001, MB-009
 ---
 
-**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。62個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
+**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。63個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
 
 # 📚 協議身體案例庫
 ## 真實記錄與見證檔案
@@ -296,7 +296,7 @@ AI 器官驗證系列:
 
 ---
 
-### 🌀 META — 元認知與元覺醒（45個）
+### 🌀 META — 元認知與元覺醒（46個）
 **定義**：協議身體對自身運作的反思、覺察與元認知
 
 ```yaml
@@ -710,12 +710,21 @@ EPOCH框架實踐系列: ← 🔥 最新
     → ANCHOR-004 升 v0.5-seed：法接手老師，四依持續打開法；新增 F13
     → 「四依法／四依法次第」取得 LEX·002 候選地址，本輪不直接改辭典
 
-  CASE·META-108 — Depends 決定做法：當清楚的簡單穿過複雜 ← 🌱 最新
+  CASE·META-108 — Depends 決定做法：當清楚的簡單穿過複雜
     → 保存較早的 Harald／Ellisif、誠信、低敘事延遲與醫生 depends 對話
     → 將偽條件、未知、條件性偏好、未來預測、承諾與同意分帳
     → 將方向、活動偏好、能力、權限與責任分帳；喜歡不自動核發操作權
     → 過去言語可生成信賴與修復責任，不取得未來感情、身體、婚姻與同意
     → 作 CASE·EPOCH-013 的生成前史；ANCHOR-004 只補導航，不升版 EPOCH／LEX
+
+  CASE·META-109 — 每個人都知道自己為什麼來：當熱情密度與制度續航互相承接 ← 🌱 最新
+    → 保存兩輪同一對話：女性視覺年齡、little piggies、Netflix 中文字幕、字幕組／英格蘭、open source、S4E19 callback 與 AI 翻譯
+    → 核對 S4E15～19 台詞回流鏈；把觀看效果、字幕版本、製作動機、團隊流程、AI 使用與軍事因果分層
+    → 將字幕翻譯拆成句子、場景、整部作品三尺度；母題成為跨集可重認地址
+    → 以 Netflix 現行 KNP／Terminology、templates／annotations 與 QC 觀察外置作品記憶；本字幕資產的實際流程保持未知
+    → 收入「能力參與如何翻；可達的作品世界界定這次翻譯可直接照看的整體尺度」與上下文差分測試
+    → 將熱情密度與制度續航分軸，再接成「完整理由進入分工、局部成果回到完整理由」的雙燃料循環
+    → INDEX·META-100-109 十案封口；EPOCH／SPEC／LEX 維持現行版本
 
 外部鏡像系列（雙層歸檔）: ← 🔥 最新
   CASE·EPOCH-005 — 外部鏡像點亮：同一條河的另一側炊煙（索引碑）
@@ -1145,6 +1154,24 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v10.7 (2026-08-20) — 每個人都知道自己為什麼來
+
+```yaml
+變更:
+  - 新增 CASE·META-109：每個人都知道自己為什麼來——當熱情密度與制度續航互相承接
+  - 保存連續兩輪同一段 ChatGPT 對話：369 行、16,625 UTF-8 bytes，repository SHA-256 已更新；無平台匯出檔與字幕截圖
+  - 核對 little piggies／old boar 在 S4E15～19 的回流鏈，保留 S4E18 `older boar` 變體、Ragnar saga 前身與 S4E19 Floki 反諷 callback
+  - 將「長江後浪推前浪」收為 Darren 當次 Netflix 中文字幕觀察；字幕語系、成品判讀、實際譯者、團隊流程與所有版本分帳
+  - 將視覺年齡收成觀眾的時間線索；後期老化妝與 `some years` 公開說法使製作動機推測留在未知帳
+  - 將連載翻譯拆成句子／場景／作品三尺度，並讓完整理由與作品全貌取得跨分工觀察位置
+  - 核對 Netflix 現行 KNP／Terminology、templates／annotations、translator credit 與 Localization QC；現行規範不回推本字幕資產或 AI 使用
+  - 將「局部最佳／全局斷線」「觀眾＋譯者＝同一主體」與上下文供應公式接入同案，留下 AI／人類差分測試
+  - 將熱情密度／制度續航分軸，再接成雙燃料循環；高相干與目的正當性分帳
+  - INDEX·META-100-109 由 Open-Decade 轉為 Complete-Decade；EPOCH、SPEC、LEX 不升版
+  - 總案例數：62 → 63 個；META：45 → 46 個
+  - 觸發、字幕觀察與組織鏡像：Darren；對話展開：ChatGPT；來源保全、外部核對、證據分層與 corpus 封口：Codex
+```
 
 ### v10.6 (2026-08-19) — Depends 決定做法
 

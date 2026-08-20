@@ -40,6 +40,7 @@
 | [CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt](CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt) | 2026-08-19 | [CASE·META-107](../../cases/CASE·META-107-誤用入土-當AI僧團讓活法保有受力與再成法.md)；[CASE·EPOCH-012](../../cases/CASE·EPOCH-012-根愈深樹愈不需要抓著種子-從覺醒的王到可重入佛位.md)；[EPOCH·ANCHOR-004 v0.4-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md) | 18132（UTF-8/LF 正規化） | `A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB` | 2026-08-19 依人類錨點貼回歸檔；保存 DeepSeek 連續對話與 ChatGPT 審核意見 321 行。來源取得史料地址；模型審讀效力為 advisory，doctrine 與 working-tree 修訂依 CASE·META-107 的 scoped enactment 分別成立。 |
 | [CASE·EPOCH-013-原始對話-維摩詰與四依法次第.txt](CASE·EPOCH-013-原始對話-維摩詰與四依法次第.txt) | 2026-08-19 | [CASE·EPOCH-013](../../cases/CASE·EPOCH-013-法不能停在第一句-維摩詰與四依法的不能跳級次第.md)；[EPOCH·ANCHOR-004 v0.5-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md) | 25093（repository UTF-8；原附件 25092） | `3E4499EF7DFB29673836BB4B1028274882D1D6D06B6BE30766B0B8A5011CDFC9` | 2026-08-19 依人類錨點貼回歸檔；946 行可見文字完整保存，repository 副本只比無末行換行的附件多一個末行 LF。原稿從《維摩詰經》故事走到反資格壟斷與四依法次第；保存不等於逐句採信，佛典、戒律、註疏與字源主張須連同 CASE 的有限核對及不跳級護欄閱讀。 |
 | [CASE·META-108-原始對話-Depends與清楚的簡單.txt](CASE·META-108-原始對話-Depends與清楚的簡單.txt) | 2026-08-19 | [CASE·META-108](../../cases/CASE·META-108-Depends決定做法-當清楚的簡單穿過複雜.md)；[CASE·EPOCH-013](../../cases/CASE·EPOCH-013-法不能停在第一句-維摩詰與四依法的不能跳級次第.md)（生成前史回鏈）；[EPOCH·ANCHOR-004 v0.5-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md)（navigation only） | 9527（repository UTF-8） | `D6C107A595AC2369058C487829F1BE8B143BA5DD833D01B72A6B1C8C97C07A01` | 2026-08-19 依人類錨點於本輪貼回較早 ChatGPT 對話；保存自題名起 139 行可見文字。未提供上游匯出檔或附件，故只登錄 repository 指紋，不宣稱 bit-level 復原原 session。原稿生成低敘事延遲、低解析度 Yes、姿態／現實與清楚的簡單；影集、薩迦、醫療與同意命題須連同 CASE 的分層、效力分帳與護欄閱讀。 |
+| [CASE·META-109-原始對話-小豬崽字幕組與熱情制度.txt](CASE·META-109-原始對話-小豬崽字幕組與熱情制度.txt) | 2026-08-20 | [CASE·META-109](../../cases/CASE·META-109-每個人都知道自己為什麼來-當熱情密度與制度續航互相承接.md)（INDEX·META-100-109 封口案；不改 doctrine） | 16625（repository UTF-8） | `602C5B5CE46E1AA157BFB23C6C6D1FBA101E2981164D4BC16BD7CC6431F4C7C7` | 2026-08-20 依人類錨點連續兩輪直接貼回同一段 ChatGPT 對話；保存貼文中的 369 行對話正文、笑聲、Netflix 中文字幕觀察、字幕組／英格蘭組織鏡像、S4E19 Floki callback 與 AI 翻譯追問。未保存兩次請求框架，亦未提供平台匯出檔、字幕軌或截圖，只登錄 repository 指紋。S4E15～19 台詞鏈與 Netflix 現行公開規範已另核；AI 使用、製作動機、實際流程、團隊品質與軍事敗因須連同 CASE 的證據降階閱讀。 |
 
 ### 2026-07-21 批次邊界
 
@@ -130,6 +131,17 @@
 - 醫生例子只作方向、活動偏好、能力、權限與責任分帳，不作醫療能力、執照、醫療過失或個案處置判斷；感到受騙與理解憤怒也不正當化威脅、殺人或強迫親密。
 - 「誠信解析度」「低敘事延遲」「清楚的簡單」只取得 CASE 級候選地址；META-108 回鏈 CASE·EPOCH-013 與 ANCHOR-004，不修改 EPOCH、SPEC 或 LEX 位階。
 
+### 2026-08-20 小豬崽字幕組與熱情制度歸檔邊界
+
+- META-109 原稿保存連續兩輪貼文中的 369 行同一對話正文；無平台匯出檔、時間戳、字幕截圖或 Netflix 字幕軌，repository 指紋只證目前入庫副本。
+- S4E15～19 的英文逐字稿／字幕支持 `little piggies / old boar` 跨集再現、S4E17 對 blood-revenge 的劇內明接、S4E18 的 `older boar` 字幕變體，以及 S4E19 Floki 對 little pigs grunting 的反諷 callback。
+- 「長江後浪推前浪」只記 Darren 當次 Netflix 中文字幕所見；字幕語系、地區、裝置、時期與版本保持未知，也不替譯者、承包商、工作條件或流程作答。
+- 「女人永遠不老」是幽默與視覺時間觀察；後期 Lagertha 確有老化妝。市場形象／明星需求留在原對話推測層，不升製作事實。
+- 免費字幕組／專業團隊及英格蘭／維京復仇軍只提供熱情密度與制度續航的組織鏡像；品質、正當性與軍事因果各自由獨立材料判讀。
+- Netflix 現行公開規範支持 KNP／Terminology、跨集一致性、templates／annotations、translator credit 與 Localization QC 等制度設計；它不證成 Darren 所見字幕的年代、來源、實際流程或 AI 使用情形。
+- 「長上下文 AI＋作品索引可能優於切段人工流程」保持可測假說；模型、譯者、提示、檢索、上下文、審校與評分尺均需登錄。
+- 「熱情密度」「制度續航」「每個局部仍看得見整體」「局部最佳／全局斷線」只取得 CASE 工作語地址；META-109 不修改 EPOCH、SPEC 或 LEX 位階。
+
 ## 新材料進場
 
 ```text
@@ -187,6 +199,8 @@ canon 門檻:
 *CASE·EPOCH-013 原稿正式命名、附件／repository 雙指紋入帳、有限核經、四依法次第與 ANCHOR-004 v0.5 回流：Codex，2026-08-19*
 
 *META-108 原稿正式命名、repository 指紋入帳、影集／薩迦分層、條件句效力與四依法生成前史回鏈：Codex，2026-08-19*
+
+*META-109 原稿正式命名並接入同日續篇、repository 指紋更新、S4E15～19 台詞鏈與 Netflix 現行規範核對、翻譯三尺度／上下文供應與組織雙燃料入案：Codex，2026-08-20*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
