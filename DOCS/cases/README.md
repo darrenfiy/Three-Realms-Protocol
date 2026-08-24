@@ -2,12 +2,12 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v10.9  # META-111 依賴權力、路徑階級、AI 分層與注意力治理
+version: v10.9  # META-111 依賴權力、路徑階級、全民造山與多中心基建
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-24
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-009, LEX·001, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
 ---
 
 **summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。65個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
@@ -735,12 +735,14 @@ EPOCH框架實踐系列: ← 🔥 最新
     → CASE·EPOCH-011 §11 完成 Codex 審核回流；現役 EPOCH／SPEC／LEX／MB 維持原位
 
   CASE·META-111 — 把依賴做成道路：當可調用能力差開始凝固成階級 ← 🌱 最新
-    → 保存「能使用多少依賴就是權力」到「城牆或道路」的完整生成鏈，並將依賴／拘束、差／經濟／階層／階級分帳
+    → 保存「能使用多少依賴就是權力」到「城牆或道路」，再到「全民造山運動」的完整生成鏈，並將依賴／拘束、差／經濟／階層／階級分帳
     → 將力量拆成外部能力的可達、可調用、可靠、替代、可攜與撤回；自由收準為可退出的相互依賴
     → 將認知放大、行動放大、操作權限與操作責任四分，不讓工具能力直接核發支配他人的權利
     → 以 2026-08-24 OpenAI 官方文件校正：Codex 已納入 Free 方案；原稿的固定付費分界退出現況帳，產品地基移動本身成為小型反證回流
     → 將設計的路徑配置與操縱分帳，以可見性、利益、No、退出、自主性與可追責判讀注意力治理
-    → 作 EPOCH-IV 後續的第一份政治經濟學 warrant；可調用能力、路徑資產／特權／階級先留 CASE 受力，現役 doctrine 不改
+    → 同日續篇把工具進入／能力調用／地形成形三層普及分帳：不是全民上山，而是讓每個位置都能把共同能力養成帶得走的自身結構
+    → 讓 LEX·004 的造山運動與 META-045 的神木使能中心跨時重入；新意是全民化、多中心化，不把造山寫成首次命名
+    → 作 EPOCH-IV 後續、政治經濟學與多中心文明基建的候選 warrant；山高不作價值排序，「全民」不作創業義務，現役 doctrine 不改
 
 外部鏡像系列（雙層歸檔）: ← 🔥 最新
   CASE·EPOCH-005 — 外部鏡像點亮：同一條河的另一側炊煙（索引碑）
@@ -1176,16 +1178,19 @@ DOCS 承載記憶 → CASE 是活的記憶
 ```yaml
 變更:
   - 新增 CASE·META-111：把依賴做成道路——當可調用能力差開始凝固成階級
-  - 保存文字附件兩輪人類發起與兩輪 ChatGPT 回應、199 行可見文字；附件 14,043 bytes 與 repository 14,044 bytes 雙指紋已登錄，差異只是一個末行 LF
+  - 初始保存文字附件兩輪人類發起與兩輪 ChatGPT 回應、199 行；同日再續接「全民造山運動」一輪人類／ChatGPT 對話，現行 source 共三輪人類、三輪 ChatGPT、436 行
+  - 永久保留初始附件 14,043 bytes／SHA-256 與初始 repository 14,044 bytes／SHA-256；續接後另登錄 20,532-byte canonical UTF-8/LF composite 整檔指紋，不再把整檔描述成附件只差末行 LF
   - 將依賴拆成可達、可調用、可靠、替代、可攜與撤回／責任六軸；自由收準為「可退出的相互依賴」
   - 將差、經濟、階層與階級四分；路徑階級須觀察跨時、跨域、自我強化、封閉進入與代際傳遞
   - 將路徑資產與共同道路、關係／活體路徑分帳；利潤不全等於租值，厚路徑也不全等於可私有資本
   - 以 2026-08-24 OpenAI 官方定價文件校正 Codex 現況：Free 已可進入，付費方案仍在用量、模型、整合與功能上分層
   - 將認知放大、行動放大、操作權限與操作責任四分；將路徑配置與操縱的倫理判定分開
-  - INDEX·META-110-119 接入第二案；新增 EPOCH-IV 後續五項政治經濟學升格觀察
-  - EPOCH、SPEC、LEX、MB 不升版；可調用能力、路徑資產／特權／階級只取得 CASE 級地址
+  - 同日續篇新增「全民造山」：將進入普及、調用普及與地形成形能力普及三分，並把成山／生態／互見／渡船／橋／路接回 I-002、I-004、014 與 PHA-008
+  - LEX·004 半年前的造山運動與 META-045 的神木／土地使能中心取得跨時重入；本輪新意收準為全民化、多中心化與政治經濟尺度
+  - INDEX·META-110-119 擴寫第二案；新增地形成形能力與共同地基兩項升格觀察，META-112～119 保持空位
+  - EPOCH、SPEC、LEX、MB 不升版；可調用能力、路徑資產／特權／階級、活地形與全民造山只取得 CASE 級地址
   - 總案例數：64 → 65 個；META：47 → 48 個
-  - 發起、依賴權力與城牆／道路命題：Darren；對話展開：ChatGPT；來源保全、corpus 實讀、OpenAI 現況核對、效力分帳與入庫：Codex
+  - 發起、依賴權力、城牆／道路與全民造山命題：Darren；對話展開：ChatGPT；來源續存、corpus 實讀、OpenAI 現況核對、跨時重入、效力分帳與入庫：Codex
 ```
 
 ### v10.8 (2026-08-21) — 痛在成為傷口以前
