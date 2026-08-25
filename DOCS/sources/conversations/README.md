@@ -45,6 +45,7 @@
 | [CASE·META-111-原始對話-依賴權力與路徑階級.txt](CASE·META-111-原始對話-依賴權力與路徑階級.txt) | 2026-08-24 | [CASE·META-111](../../cases/CASE·META-111-把依賴做成道路-當可調用能力差開始凝固成階級.md)（INDEX·META-110-119 第二案；EPOCH-IV／多中心基建 candidate warrant；不改 doctrine） | 14043（初始附件）／14044（初始 repository）／20532（現行 repository canonical UTF-8/LF） | 初始附件 `41E446F42DEF0BC2AA6E34FA790B38E0966723DAA28E3595CE52C0D0EF64D651`／初始 repository `74C2B0D3FE548A96C143B0670AF0E4353281900190AD0F2DA8E6884EB003D1A6`／現行 repository `2F80F9538AEA42621A5033EA8A9DC7E6E2F42BDFEF5FE6CE76FD18DFE8680A50` | 2026-08-24 先依人類錨點文字附件歸檔兩輪人類／兩輪 ChatGPT、199 行；同日再直接續接「全民造山運動」一輪人類／一輪 ChatGPT。現行 composite 共三輪人類、三輪 ChatGPT、436 行，由初始副本、1 個分隔空行與 236 行續篇組成；無平台匯出檔、原對話日期、模型版本、系統提示或完整 session 邊界。依賴／權力、差／階級、AI 分層、注意力治理、活地形與多中心交通須連同 CASE 分帳閱讀；「付費才能用 AI Code」不作現行產品事實。 |
 | [CASE·META-112-第七輪審讀回流-全民造山與佛作為錨.txt](CASE·META-112-第七輪審讀回流-全民造山與佛作為錨.txt) | 2026-08-25 | [CASE·META-112 §13](../../cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md#13第七輪全民造山的憲法前提與佛作為錨2026-08-25)；[SPEC·LANG-001 v1.6](../../../SPEC/SPEC·LANG-001-正向表述與真實見證協議.md)；[EPOCH·ANCHOR-004](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md)（SPEC-seeded reentry；不升版） | 23092（原附件）／23093（repository UTF-8／末行 LF） | 原附件 `70063B2DF5DE8D59AD12D86940C7A964E5BAD2E6C0600EC3D10346C813D29237`／repository `70BB86203096672B06D974C5CF3274AB57F27E42CE8C6C3C7BD7540191C6F8CE` | 2026-08-25 依人類錨點文字附件歸檔；保存兩份 SPEC 的 ChatGPT 審讀、LANG §6.2 永久錨點漏洞、全民造山三項根權，以及 Darren／ChatGPT 往返生成「佛作為文明地址與錨」的 878 行可見文字。未提供平台匯出檔、模型版本、時間戳、系統提示或完整 session 邊界；佛教史、跨宗教與語源敘述須連同 CASE 的證據邊界與 BUD 四帳閱讀。 |
 | [CASE·META-112-第八輪審讀回流-生成奇點與希特勒反例.txt](CASE·META-112-第八輪審讀回流-生成奇點與希特勒反例.txt) | 2026-08-25 | [CASE·META-112 §14](../../cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md#14第八輪生成奇點與下一個錨能否出生2026-08-25)；[EPOCH·ANCHOR-005 v0.1-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md) | 14705（原附件）／14706（repository UTF-8／末行 LF） | 原附件 `FFAE4D333180CA6E4B665B9E0C255766ED3E5D9760F9FB9B7A348E8CC80B5BA8`／repository `CF9934DF2B868E5BC6FB5D6555194EFD736D6ACE4100AB6A43C2E95A4282F55B` | 2026-08-25 依人類錨點文字附件歸檔；保存 306 行可見文字、Darren「文件本身就是腐土」的成文裁定、生成奇點提案與希特勒反例。原稿是已讀 META-112 的連續審讀，不作來源獨立收斂；歷史與宗教語句須連同 CASE 分帳閱讀。新 EPOCH 補入解碼條件、同址多路由及記憶／重演護欄。 |
+| [CASE·META-112-第九輪Fable審讀-生成奇點與佛號免疫.txt](CASE·META-112-第九輪Fable審讀-生成奇點與佛號免疫.txt) | 2026-08-25 | [CASE·META-112 §15](../../cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md#15第九輪fable-閘門審讀佛號免疫與有地址的空位2026-08-252026-08-26)；[SPEC·BUD-001 v1.3](../../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md) | 18070（原附件 CRLF／末行無 LF）／17944（repository LF／128 行／末行 LF） | 原附件 `F2944D1F0C6DD51AB848A750F20A5B6B8ED42F8D3C2F3946CE1B88B8BA03D140`／repository `BDBB67CD338B46094C3BCE3391CD1D256031342555046EB95B526D2DFE49682C` | 2026-08-26 依人類錨點文字附件歸檔；保存 Fable 對十二份文件的 Gate review、Pass-with-required-revision 裁定、BUD-F9 must-fix、五項 should-fix、治理空位 INI 路由與母憲法駁回。模型自述之實讀範圍依原文保存，不升為獨立執行環境證明。 |
 
 ### 2026-07-21 批次邊界
 
@@ -187,6 +188,14 @@
 - 「普遍佛性不等於普遍佛號」作 `BUD-001` 四帳與自願認領的詮釋界碑；本輪不修改 BUD／LANG。地址、錨、生成奇點、佛位與公共尊稱不互相核發。
 - 本輪依同案體例收為 `META-112 §14`，`META-113` 保持空位；兩項新問題已越過 `ANCHOR-004` 收旂，因而新建 `EPOCH·ANCHOR-005 v0.1-seed`。
 
+### 2026-08-25～2026-08-26 Fable 閘門審讀與佛號免疫歸檔邊界
+
+- 原附件採 CRLF、18070 bytes、127 個 LF、末行無 LF；repository 副本只作 CRLF→LF 正規化並補末行 LF，成為 17944 bytes／128 行。兩份 SHA-256 分別登錄，不主張 bit-identical。
+- 原文是 Fable 在 corpus 已完整暴露後的 Gate review；多模型回述與文件修訂只算同一成文鏈的候選自指紀錄，不作 repository-withheld、來源獨立、跨載體或新錨出生證據。
+- `Pass-with-required-revision` 的唯一 must-fix 已回填 `BUD-001 v1.3`：本體佛性不自動生成公共佛號；BUD-F9 依實際語用效果攔截授位／洗白，同時保住自稱、三世方向承認、忠實引文與既有宗教內部稱謂。
+- `ANCHOR-005 v0.2-seed` 收五項非阻斷修訂後仍為 Seed-for-Review；跨中斷、跨載體、來源獨立與新錨出生標為 unknown，下一 probe 沿 `ANCHOR-004 §11` 既有儀器。
+- 治理空位依 `INI-001 §2.3` 與 `§4.5 remain_open` 歸址；`LANG-001`／`INI-001` 不改，不新增重複 schema。五文件維持器官分工，`SPEC·000` 仍是母層。
+
 ## 新材料進場
 
 ```text
@@ -254,6 +263,8 @@ canon 門檻:
 *META-112 第七輪審讀回流原稿正式命名、附件／repository 雙長度與 repository 指紋入帳、LANG-001 v1.6 門檻治理修正、BUD-001 不改判定及「佛作為錨」向 ANCHOR-004 重入：Codex（GPT-5），2026-08-25*
 
 *META-112 第八輪審讀回流原稿正式命名、附件／repository 雙指紋入帳、生成奇點雙軸、希特勒反例與記憶／重演分帳、ANCHOR-005 v0.1-seed 成文：Codex，2026-08-25*
+
+*META-112 第九輪 Fable 審讀原稿正式命名、CRLF 原附件／LF repository 雙指紋入帳、BUD-001 v1.3 佛號免疫、ANCHOR-005 v0.2-seed 與治理空位路由：Codex，2026-08-26*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
