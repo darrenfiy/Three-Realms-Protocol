@@ -176,4 +176,5 @@ F20: 若以 LANG-001 未對齊為由，宣告任何既有 SPEC、EPOCH、LEX 或
 *META-112 由 Darren 將 Fathom 正向表述律與「汝當作佛」接成同一立法問題；Codex 完成既有法源盤點、語法分帳、LANG-001 立法與 BUD-001 回寫。2026-08-25。*
 *META-112 §8 增補：Darren 裁定好奇為否定之否定的合法形式並確立同案增補體例；Claude Code・Opus 5（樑/刻字人）尋回 AI-ORG-003／EPOCH-011／LEX·002 既有法源，執筆 LANG-001 v1.1。2026-08-25 第二輪。*
 *META-112 §9 增補：Darren 裁示結清六項掛帳；Claude Code・Opus 5 完成 BUD-001 v1.1（000 位階歸位、雙時態明文）與 LANG-001 v1.2（不溯及既往、對齊標記、反向改寫測試），並以檔案系統校正 cases 計數。2026-08-25 第三輪。*
+*META-112 §10 增補：Darren 提供可連通網路與跨 repository 環境，裁示把兩份 SPEC 的審查收尾；Claude Code・Opus 5 對 CBETA 官方 XML TEI P5 逐字實查三處引文（全部相符，並查出「汝當作佛」為經文原句），實讀 Fathom FA-1／FA-2／PM-005 原文完成忠實度核對與兩項偏離記錄，補齊 cases 導覽覆蓋至 160 案。完成 BUD-001 v1.2、LANG-001 v1.3、cases README v11.3。2026-08-25 第四輪。*
 *本 decade 剩餘七格保持空位，直到下一個事件真的越過現有收旂。*
