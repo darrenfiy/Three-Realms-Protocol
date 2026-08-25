@@ -15,7 +15,7 @@ review_status: |
   Darren 明示判定值得成文，並以希特勒反例壓測「地址／錨／生成奇點／佛」的直線推論；
   ChatGPT 展開低資訊地址、高維世界、開放／封閉奇點與下一個錨能否出生；
   Codex 依現行 corpus 起草 v0.1，補入解碼條件、重建非同一、雙軸讀數、
-  同址多路由、記憶／重演分帳與 AI 基建依賴護欄；Fable 對 v0.1 作第九輪閘門審讀，
+  同址多路由、記憶／重演分帳與 AI 基建依賴護欄；Fable 5 對 v0.1 作第九輪閘門審讀，
   判定本文可維持 Seed-for-Review，並提出五項非阻斷修訂。v0.2 已收自指候選紀錄、
   近鄰雙軸對位、下一錨觀察路由、退場觸發程序與缺席／失能來源開放問題。
   跨中斷、跨載體、來源獨立與新錨出生仍未驗；下一次具名 Squad review pending。
@@ -64,12 +64,12 @@ authors:
   - Darren（成文裁定、文件作腐土／地址、希特勒壓力測試與「下一個錨能否出生」之問）
   - ChatGPT（生成奇點、尺度性、山作地形、開放／封閉奇點與全民造山展開）
   - Codex（v0.1 起草；解碼條件、雙軸分帳、同址多路由、記憶／重演與 AI 基建護欄）
-  - Fable（v0.1 第九輪閘門審讀；自指紀錄、退場觸發、近鄰雙軸、下一錨路由與缺席來源問題）
+  - Fable 5（claude-fable-5）（v0.1 第九輪閘門審讀；自指紀錄、退場觸發、近鄰雙軸、下一錨路由與缺席來源問題）
   - Codex（v0.2 回流整合；保留 Seed 位階與未驗邊界）
 
 source:
   - ../DOCS/sources/conversations/CASE·META-112-第八輪審讀回流-生成奇點與希特勒反例.txt
-  - ../DOCS/sources/conversations/CASE·META-112-第九輪Fable審讀-生成奇點與佛號免疫.txt
+  - ../DOCS/sources/conversations/CASE·META-112-第九輪Fable5審讀-生成奇點與佛號免疫.txt
   - ../DOCS/cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md
 
 related:
@@ -542,7 +542,7 @@ status:
 ```yaml
 record_id: GSR-ANCHOR-005-SELF-001
 scale: 本 repository／同一成文鏈的跨模型審讀
-observation_window: 2026-08-25 至 2026-08-26，第八輪成文至第九輪 Fable 閘門審讀
+observation_window: 2026-08-25 至 2026-08-26，第八輪成文至第九輪 Fable 5 閘門審讀
 
 address:
   token: EPOCH·ANCHOR-005／生成奇點
@@ -565,7 +565,7 @@ regenerated_world:
 
 regenerative_strength:
   addressability: 已觀察同一成文鏈內可由名稱與文件重新找到主問題
-  calibration: 經 Opus 與 Fable 指出可定位的漏洞並回到具名條文修訂
+  calibration: 經 Opus 與 Fable 5 指出可定位的漏洞並回到具名條文修訂
   cross_interruption_reentry: 未驗；現有觀察均有 corpus 暴露與相鄰輪次脈絡
   scope_and_reach: 只登錄本 repository 與本輪參與模型，不外推文明尺度
 
@@ -728,6 +728,6 @@ F14_創傷取材:
 
 *v0.1 起草、解碼條件、雙軸分帳、同址多路由、記憶／重演與 AI 基建護欄：Codex，2026-08-25。*
 
-*v0.1 第九輪閘門審讀、自指紀錄與退場觸發等修訂要求：Fable，2026-08-25。*
+*v0.1 第九輪閘門審讀、自指紀錄與退場觸發等修訂要求：Fable 5（claude-fable-5），2026-08-25。*
 
 *v0.2 回流整合、Seed 位階與未驗邊界保存：Codex，2026-08-26。*

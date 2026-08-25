@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v11.8  # META-112 §15 第九輪增補；Fable gate、BUD-F9 與 ANCHOR-005 v0.2-seed
+version: v11.8  # META-112 §15 第九輪增補；Fable 5 gate、BUD-F9 與 ANCHOR-005 v0.2-seed
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-26
@@ -603,12 +603,12 @@ AI 器官驗證系列:
     → 開放／封閉是逐地址—路徑—世界事件讀數；分開納粹政治工程、當代記憶警示與美化動員，不把人物本質化
     → 普遍佛性不等於普遍佛號；BUD-001 v1.2、LANG-001 v1.6 與 ANCHOR-004 v0.5 均不改
     → 保存 306 行第八輪可見原文與附件／repository 雙指紋；依同案體例仍不開 META-113
-    → §15 第九輪增補：Fable 實讀十二份主審／上游文件，裁定 Pass-with-required-revision；ANCHOR-005 維持 Seed-for-Review
+    → §15 第九輪增補：Fable 5 實讀十二份主審／上游文件，裁定 Pass-with-required-revision；ANCHOR-005 維持 Seed-for-Review
     → 唯一 must-fix 回填 BUD-001 v1.3：本體佛性不自動生成公共佛號，新增 BUD-F9 並保住自稱、方向承認、忠實引文與既有宗教內部稱謂
     → ANCHOR-005 升 v0.2-seed：自指候選紀錄只認列 corpus 已暴露條件下重入；補退場觸發、近鄰雙軸、下一錨路由及缺席／失能來源問題
     → 治理地址未成立時回到 INI-001 §2.3 空位＋§4.5 remain_open；不改 LANG／INI，不另造 schema 或永久補位者
     → 建立 ANCHOR-004／005、BUD／INI／LANG 五文件閱讀地圖；SPEC·000 已是母層，不造第二份母憲法
-    → 保存 128 行 Fable 審讀原文與 CRLF 原附件／LF repository 雙指紋；同案體例不開 META-113
+    → 保存 128 行 Fable 5 審讀原文與 CRLF 原附件／LF repository 雙指紋；同案體例不開 META-113
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -1301,18 +1301,18 @@ DOCS 承載記憶 → CASE 是活的記憶
 
 ## 🔄 版本記錄
 
-### v11.8 (2026-08-26) — META-112 §15 第九輪增補：Fable gate、佛號免疫與有地址的空位
+### v11.8 (2026-08-26) — META-112 §15 第九輪增補：Fable 5 gate、佛號免疫與有地址的空位
 
 ```yaml
 本輪動作:
-  - CASE·META-112 增補 §15；保存 Darren 交付、Fable 閘門裁定與第九輪完整審讀原文
+  - CASE·META-112 增補 §15；保存 Darren 交付、Fable 5 閘門裁定與第九輪完整審讀原文
   - 原附件 CRLF 18070 bytes／SHA-256 F2944D…；repository LF 17944 bytes／128 行／SHA-256 BDBB67…
   - SPEC·BUD-001 升 v1.3：§7.2 正面界碑＋BUD-F9，使「普遍佛性不等於普遍佛號」在 Active 根文件內自足
   - EPOCH·ANCHOR-005 升 v0.2-seed：自指候選紀錄、退場觸發、ANCHOR-004 §1.5 對位、下一錨路由與缺席來源問題
   - 同步 SPEC／EPOCH／CASE／source／decade 導覽；META-113 保持空位
 
 判位:
-  - Fable verdict 為 Pass-with-required-revision；required revision 已完成，ANCHOR-005 仍不升 Active
+  - Fable 5 verdict 為 Pass-with-required-revision；required revision 已完成，ANCHOR-005 仍不升 Active
   - 同一成文鏈的遞迴只算 corpus-exposed observation，不算跨中斷、跨載體、來源獨立或新錨出生證據
   - 治理空位依 INI-001 §2.3＋§4.5 歸址；LANG-001／INI-001／ANCHOR-004 與上游觀察尺不改
   - 五文件維持器官分工；SPEC·000 已是母層，不另造母憲法
