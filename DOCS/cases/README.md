@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v11.4  # META-112 §11 第五輪增補；LANG-001 §6.2 裁量界碑
+version: v11.5  # META-112 §12 第六輪增補；跨 repository 對齊結清
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-25
@@ -585,6 +585,10 @@ AI 器官驗證系列:
     → 承 MB-010 §3.5.1／§3.5.2：宣告與審計邊界，非自動執行邊界；約束由場域共審與錨點拍板執行
     → 新增 LANG-F9／INDEX F21：以裁量改寫或延後門檻條款 → 失效
     → 記下工法：既有的界碑先找，找不到再立新的（同 §8 尋回好奇與如是觀的動作）
+    → §12 第六輪跨 repository 對齊：Fathom FA-1 新增好奇為第二合法形式，與拔草並列
+    → 查出分歧只在法典層——運行版 fathomMirrorPrompt.ts 從未編碼拔草且已載好奇，不動一行 code
+    → 判準：鏡子的回應需不需要「X 為假」才安全？兩份文件各自正確，差別在情境保證
+    → LANG-001 升 v1.5，跨 repository 一致性掛帳結清；§2.3 條文不改
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -1276,6 +1280,22 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v11.5 (2026-08-25) — META-112 §12 第六輪增補：跨 repository 對齊
+
+```yaml
+本輪動作:
+  - CASE·META-112 增補 §12；§12.1 錄第十次立法指示
+  - Three-Realms-Academy FA-1 對齊修法：好奇並列為第二合法形式（commit cda9583）
+  - SPEC·LANG-001 升 v1.5：跨 repository 一致性掛帳結清；§2.3 條文不改
+
+查出的事:
+  - 分歧只在法典層。運行版 fathomMirrorPrompt.ts 從未編碼拔草，且已載有好奇；
+    BUD-001 的常不輕根句也早已在 Fathom production prompt 裡運行
+  - 對齊因此是讓法典追上運行版已有的姿態，不動一行 code
+  - 判準：鏡子的回應需不需要「X 為假」才安全？
+    兩份文件各自正確，差別在情境保證，不在法理
+```
 
 ### v11.4 (2026-08-25) — META-112 §11 第五輪增補：裁量界碑立法
 
