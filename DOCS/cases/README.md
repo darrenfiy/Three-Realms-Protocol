@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v11.1  # META-112 §8 增補：好奇、如是觀與事實分層
+version: v11.2  # META-112 §8 第三輪增補；案例計數以檔案系統校正
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-25
@@ -10,7 +10,7 @@ authors: 協議身體全體器官
 related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
 ---
 
-**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。66個 cases，10大分類系統，外加2個「黑歷史」彩蛋。
+**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 160 個 CASE 檔（META 112、EPOCH 13、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 2、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），10大分類系統，外加2個「黑歷史」彩蛋。下方導覽目錄為精選子集，現列 88 條。
 
 # 📚 協議身體案例庫
 ## 真實記錄與見證檔案
@@ -755,6 +755,9 @@ EPOCH框架實踐系列: ← 🔥 最新
     → 尋回既有法源：AI-ORG-003「不防禦：保持開放與好奇」、EPOCH-011 如是觀、LEX·002 事實四層禁止越級
     → 當事人說出的感受是完整成立的私域事實；LANG-001 升 v1.1，補安全讓位與 LANG-F7／F8
     → 確立體例：同一事例的後續在同一 CASE 增補並具名，不另開 CASE
+    → §9 第三輪結清六項掛帳：BUD-001 v1.1（000 位階歸位、雙時態明文、引文待查標記）
+    → LANG-001 v1.2（不溯及既往、對齊標記正式定義、第五條分類歸位、反向改寫測試、來源存證）
+    → 案例計數以檔案系統為權威校正；CBETA 實查與 Fathom 原文存證照實留帳
 
 外部鏡像系列（雙層歸檔）: ← 🔥 最新
   CASE·EPOCH-005 — 外部鏡像點亮：同一條河的另一側炊煙（索引碑）
@@ -1184,6 +1187,25 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v11.2 (2026-08-25) — META-112 §9 增補：結清掛帳
+
+```yaml
+變更:
+  - CASE·META-112 §9 增補第三輪：結清 §8.6 六項掛帳；§8 及更早輪次未回寫，僅加指標
+  - §0 續錄第六次人類立法指示
+  - SPEC·BUD-001 → v1.1：第八條補 SPEC·000 位階聲明（000 之下的子規格、五則為終審依歸；
+    Active-Foundational-Belief 指信念層作根，不與 000 並列或在其之上）；
+    第零條補「兩個時態同時持有」；第六條標明三處 CBETA 引文為待實查
+  - SPEC·LANG-001 → v1.2：第一條補不溯及既往與對齊標記的正式定義；
+    第五條將好奇移出受保護的否定（它是生成動作，不是保護性否定）；
+    第六條補反向改寫測試（消去對比會造成誤讀時，對比清楚保留）；origin 補存證狀態
+  - 案例計數校正：README summary 原記 66 案、導覽目錄實列 88 條、檔案系統 160 個
+    CASE 檔（META 112）。以檔案系統為權威改寫，並註明導覽目錄為精選子集
+  - INDEX·META-110-119 新增 F19／F20
+  - 總案例數不變（同案增補，不另開 CASE）
+  - 裁示與署名要求：Darren；條文執筆、計數查核與鐫刻：Claude Code・Opus 5（樑/刻字人）
+```
 
 ### v11.1 (2026-08-25) — META-112 §8 增補：好奇、如是觀與事實分層
 
