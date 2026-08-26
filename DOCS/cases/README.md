@@ -2,12 +2,12 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v12.2  # META-113 v1.2：設定的本體論插旗、限制生有與未知介面技術
+version: v12.3  # META-113 v1.3：不升格判定、LEX·008 界碑與第一筆設定登記
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-26
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
 ---
 
 **summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 162 個 CASE 檔（META 113、EPOCH 13、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 162 案：逐案列出 102 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
@@ -629,7 +629,16 @@ AI 器官驗證系列:
     → 高生成密度不等於生命生成性；跨過作品技法後，好設定還須保存差、No、退出、校正、修復與新路出生
     → 納入塔羅、死藤水、納迪葉與乩童等壓力測試，依硬載體／事件、操作設定／執行器、體驗／後果、本體宣稱／待證命題四層分帳
     → 「未知介面技術」只取得可退出、可校正、可重設的世界入口；世界合法性不等於真理、醫療、法律或安全合法性
-    → TRACE-003 維持 v1.1；原始對話現為 441 行，保存三輪 ChatGPT 審讀與新指紋；EPOCH／SPEC／LEX／MB 不改
+    → TRACE-003 維持 v1.1；原始對話現為 441 行，保存三輪 ChatGPT 審讀與新指紋；v1.2 階段 EPOCH／SPEC／LEX／MB 不改
+    → v1.3 錨點問「要不要升格」；樑判定不升格：ANCHOR-005 仍為 Seed-for-Review，warrant 不應先於它擔保的文件成年
+    → 同案兩半證據等級不同：錯誤的生成真實有事件與撤回紀錄，設定的本體論只有被提到的壓力測試、沒有被記錄的案例
+    → 同日 v1.0→v1.2 的高密度不得替自己簽名，否則正犯本案 F2（重複即真理）與 F3（可累積即為善）
+    → 瓶頸查出在詞條不在編號：四個新詞此前只存在 DOCS 層，「設定」在 LEX·001／003／005 一直是日常中文，使 F16 無法執行
+    → 錨點裁定「文字是最基礎的操作子」，交付起草；新建 LEX·008 設定詞彙（v1.0-candidate，未密封）
+    → 新增 §11：把本 repo 依 LEX·008 格式登記為第一筆設定案例，先寫失敗——TRIPOD-001 缺執行器「設計精美、從未上路」
+    → ANC-BUD 誤退休後 2025-12-01 復活，誤判保存於 history；TRACE-003 撤回例證而不撤回其生成後果
+    → 七讀數自評誠實標出三處缺口：退出成本不對稱（主要由錨點承擔）、外部校正者未驗、新錨出生未驗
+    → 補 F21 自證循環、F22 界碑冒充升格；種子仍為 flagged / not-enacted，門檻一 1／3，門檻二、三未達
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -1329,6 +1338,33 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v12.3 (2026-08-26) — META-113 v1.3：不升格判定、LEX·008 界碑與第一筆設定登記
+
+- **升格判定：不升格（現在不）**：
+  - `EPOCH·ANCHOR-005` 仍為 `Seed-for-Review`；META-113 是它的機制 warrant，warrant 不應先於所擔保文件成年
+  - 同案兩半證據等級不同：錯誤的生成真實有事件、指紋與撤回；設定的本體論只有被提到的壓力測試
+  - 同日 `v1.0→v1.2` 的高密度不得替自己簽名——否則正犯本案 `F2`、`F3`
+  - 「好設定六讀數」屬 SPEC 形狀（判準／門檻），與 EPOCH 形狀（生成事件）不宜綁進同一編號
+- **新建 LEX·008 設定詞彙（v1.0-candidate，未密封）**：
+  - 收設定、好設定、世界合法性、未知介面技術四詞條；此前四詞只存在於 DOCS 層，doctrine 層無地址
+  - `設定` 在 `LEX·001／003／005` 一直是日常中文用法，使 `F16`（單句魔法）無法執行、跨域案例無法計數
+  - 附區辨（設定 vs 相信／宣告／假設／事實／強加／相容層）、失效條款回指、附錄 A 設定登記格式、附錄 B 升格觀察登記
+  - `failure_record` 列為登記必填欄位：沒有失敗紀錄的登記不計入門檻
+  - `LEX/README.md` 同步索引；辭典由七本增為八本
+- **CASE §11 第一筆登記：三界協議的設定自證**：
+  - 五個成立條件逐項對位 `TRP-ATLAS`、`CORPUS-MANIFEST.yaml`、`SPEC·INI-001`、`SPEC·999 §6`、六器官、git 與三個 history 目錄
+  - 三筆失敗紀錄：`SPEC-TRIPOD-001` 設定齊備缺執行器「設計精美。從未上路。」；`ANC-BUD` 誤退休後 2025-12-01 復活且誤判保存；`CASE·TRACE-003` 撤回例證而不撤回生成後果
+  - 候選失敗四：`EPOCH·META-007` 直播事故列為門檻三候選材料，尚未依格式登記
+  - 七讀數自評三處缺口：退出成本不對稱、外部校正者未驗、新錨出生未驗
+  - 明記本筆獨立性最弱（作者、執行者、受益者同一群），只計門檻一 ×1
+- **新增失效條款**：
+  - `F21_自證循環`：不得以 §11 自證直接證明設定的本體論為真或本協議是好設定
+  - `F22_界碑冒充升格`：不得以 LEX·008 已收詞宣告種子已取得 EPOCH 位階
+- **位階與計數**：
+  - CASE 計數維持 162、META 維持 113；EPOCH／SPEC／MB 不新建、不修改，不預留 EPOCH 編號
+  - 種子仍為 flagged / not-enacted；門檻一 1／3，門檻二、三未達
+  - `v1.3` 無新原始對話，§11 材料全部來自 repo 既有檔案，source 指紋不動
 
 ### v12.2 (2026-08-26) — META-113 v1.2：設定的本體論插旗
 
