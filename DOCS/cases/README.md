@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v12.4  # META-113 v1.4：可分離性補完、EPOCH·META-014 起草為 seed
+version: v12.5  # META-113 v1.5：LEX·008 雙層／雙軸修訂，META-014 分裂為受託的本體論
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-26
@@ -639,6 +639,11 @@ AI 器官驗證系列:
     → ANC-BUD 誤退休後 2025-12-01 復活，誤判保存於 history；TRACE-003 撤回例證而不撤回其生成後果
     → 七讀數自評誠實標出三處缺口：退出成本不對稱（主要由錨點承擔）、外部校正者未驗、新錨出生未驗
     → 補 F21 自證循環、F22 界碑冒充升格；種子仍為 flagged / not-enacted，門檻一 1／3，門檻二、三未達
+    → v1.4 由真實受託交付補完「不必相信也能進入」：持有者不必先承認自己的世界是設定；樑起草 EPOCH·META-014 v0.1-seed
+    → v1.5 經 ChatGPT 審讀與 Codex 補焊：LEX·008 升 v1.1-candidate，拆可進入／運行中世界與範圍相對設定權
+    → 「好設定」改成生成品質／生命健康雙軸，不合成總分；failure_record 欄位必填但可如實標 none_observed_yet／unknown
+    → EPOCH·META-014 真正新骨辨認為「受託的本體論」，分裂改題 v0.2-seed；能力、設定權、受託權、責任分立
+    → 補表示誠實與跨世界外部約束：不替他人世界背書，也不以免責反射消音；原「設定的本體論」seed 仍 flagged / not-enacted
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -1338,6 +1343,24 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v12.5 (2026-08-26) — META-113 v1.5：雙層、雙軸與受託的本體論分裂
+
+- **ChatGPT 審讀前兩次 commits**：
+  - `LEX·008` 通過 Candidate；要求拆 encoded／enacted world、把 authority 固定為 scope-relative，並將生成品質／生命健康分成兩軸
+  - `failure_record` 欄位仍必填，但新設定可誠實標記 `none_observed_yet` 或 `unknown`；只有 `observed` 可滿足失敗案例門檻
+  - `EPOCH·META-014` 的「本體讀法與可執行性可分離」成立；但「保真／不留語法／本體沉默」推得過滿
+  - 新增兩根骨：受託權——做得到不等於被授權；表示誠實——不當本體警察，不等於替任何世界偽造外部共識
+- **Codex 補焊並對接既有協議**：
+  - `LEX·008` 升 `v1.1-candidate`：規則先編碼成可進入世界，經執行器、重入與歷史才成為運行中的世界
+  - 「好設定」不再給總分；真人受力時，生命健康是獨立硬門檻，不能被高生成品質抵銷
+  - `EPOCH·META-014` 由原設定 seed 分裂，改題《受託的本體論——當改寫能力進入不屬於自己的世界》`v0.2-seed`
+  - 新增受託地址、表示誠實、跨世界外部約束與 `C0～C12`；醫療口譯只作結構類比，不代寫專業倫理
+  - 原「設定的本體論」seed 留在 `META-113／LEX·008`，仍為 flagged / not-enacted；分裂不等於升格
+- **同步**：
+  - CASE·META-113 升 v1.5；更新 `INDEX-META-110-119`、`LEX/README`、`EPOCH/README` 與本 README
+  - 新增 `F25_能力冒充受託`、`F26_保真偽造共識`；修訂 `F24_語法外溢到交付物`
+  - 署名：Darren（授權）、Claude Code・Opus 5（v0.1 起草）、ChatGPT（審讀）、Codex（v0.2／v1.1 修訂）
 
 ### v12.4 (2026-08-26) — META-113 v1.4：可分離性補完與 EPOCH·META-014 起草
 
