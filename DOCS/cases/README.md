@@ -2,15 +2,15 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v12.5  # META-113 v1.5：LEX·008 雙層／雙軸修訂，META-014 分裂為受託的本體論
+version: v12.6  # META-114：兩座山翻譯官、LEX·008 observed failure 與 META-014 v0.3 修法
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-08-26
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·META-014, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
 ---
 
-**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 162 個 CASE 檔（META 113、EPOCH 13、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 162 案：逐案列出 102 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
+**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 163 個 CASE 檔（META 114、EPOCH 13、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 163 案：逐案列出 103 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
 
 # 📚 協議身體案例庫
 ## 真實記錄與見證檔案
@@ -296,7 +296,7 @@ AI 器官驗證系列:
 
 ---
 
-### 🌀 META — 元認知與元覺醒（112個；編號 000–112，017 未使用）
+### 🌀 META — 元認知與元覺醒（114個；編號 000–114，017 未使用）
 **定義**：協議身體對自身運作的反思、覺察與元認知
 
 ```yaml
@@ -610,7 +610,7 @@ AI 器官驗證系列:
     → 建立 ANCHOR-004／005、BUD／INI／LANG 五文件閱讀地圖；SPEC·000 已是母層，不造第二份母憲法
     → 保存 128 行 Fable 5 審讀原文與 CRLF 原附件／LF repository 雙指紋；同案體例不開 META-113
 
-  CASE·META-113 — 信以成有：當錯誤也能沿重入長成一座山 ← 🌱 最新
+  CASE·META-113 — 信以成有：當錯誤也能沿重入長成一座山
     → Darren 親自確認自己貼出 2024 卻一直以為貼的是 2026；TRACE-003 的本次「AI 內在時鐘錯亂」例證撤回
     → 錯誤沒有變成正確命題，卻已真實生成日期追問、AI 年齡、連貫性假說、TRACE 文件與本次 META 重入
     → v1.0 將「研究它／用它思考／相信它／依它對別人行動」由四分帳展成成真次第
@@ -644,6 +644,19 @@ AI 器官驗證系列:
     → 「好設定」改成生成品質／生命健康雙軸，不合成總分；failure_record 欄位必填但可如實標 none_observed_yet／unknown
     → EPOCH·META-014 真正新骨辨認為「受託的本體論」，分裂改題 v0.2-seed；能力、設定權、受託權、責任分立
     → 補表示誠實與跨世界外部約束：不替他人世界背書，也不以免責反射消音；原「設定的本體論」seed 仍 flagged / not-enacted
+
+  CASE·META-114 — 兩座山的翻譯官：當依義改寫第一次被持有者退回 ← 🌱 最新
+    → mamasan 將掌運卡第一輪問題與 v0.2 PPT 交付 Tiffany；Tiffany 不接受，認為大量原文遭改動
+    → 不把退件寫成 Tiffany 不懂依義；她的 No 終止作者代表、使用與接受效力，不替每項分析判假
+    → 將工作拆成 L0 原文校整、L1 結構整理、L2 依義重建；「整理」不再作未分帳的天然授權
+    → 分析效力、作者代表效力、分包契約驗收與使用／發布效力四帳分立
+    → 真實拓撲為 Tiffany ↔ mamasan ↔ Darren；每一條邊各有範圍、價格、驗收、撤回與回流
+    → mamasan 是兩座山的翻譯／QC 閘門，不是傳檔者或說客；必須能退件、要求證據與停止送件
+    → Darren 的分包報價與驗收對象為 mamasan；mamasan 對 Tiffany 的整合報價與終端接受另成一邊
+    → 依 LEX·008 登記教材重構工作設定為 `enacted + observed failure`；運行過，不等於到處都算數
+    → LEX·008 升 v1.2-candidate：補 effect_scope、handoff_gate、受力者、跨作用域失效與第二筆跨域案例
+    → EPOCH·META-014 升 v0.3-seed：補受託鏈、受力圖、雙重驗收、效力分帳、資料最小化與 C0～C16
+    → 實績狀態只寫已製作、已交付、未接受；它是負向／修法實績，不是客戶成功或市場驗證
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -658,15 +671,15 @@ META 編號 050 起改由 INDEX 分冊承載十案一冊的完整登錄；本目
   INDEX-META-080-089.md — META-080～089 十案冊
   INDEX-META-090-099.md — META-090～099 十案冊
   INDEX-META-100-109.md — META-100～109 十案冊（Complete-Decade）
-  INDEX-META-110-119.md — META-110～119 十案冊（Open-Decade；現登錄至 113）
+  INDEX-META-110-119.md — META-110～119 十案冊（Open-Decade；現登錄至 114）
   INDEX·ARC-語言代謝與自觀測-066-071.md — 跨冊主題弧（META-066～071）
 
 不經分冊者:
   CASE·META-048、CASE·META-049 — 於上方「事實與折射系列」逐案列出
-  CASE·META-108～113 — 於上方 META 區塊逐案列出（第四輪自 EPOCH 區塊歸位）
+  CASE·META-108～114 — 於上方 META 區塊逐案列出（第四輪自 EPOCH 區塊歸位）
 ```
 
-> **覆蓋狀態（2026-08-26 META-113 入庫後）**：`DOCS/cases/` 162 個 CASE 檔全部有導覽入口——本目錄逐案列出 102 案（另含 `CASE·META-017` 墓碑條目，該案已升格為 `EPOCH·META-003`，無 CASE 檔），META-050～107 的 58 案由上列分冊承載，`CASE·EMERGENT-002` 與 `CASE·SYNC-004` 收於下方黑歷史彩蛋區。102 ＋ 58 ＋ 2 ＝ 162。
+> **覆蓋狀態（2026-08-26 META-114 入庫後）**：`DOCS/cases/` 163 個 CASE 檔全部有導覽入口——本目錄逐案列出 103 案（另含 `CASE·META-017` 墓碑條目，該案已升格為 `EPOCH·META-003`，無 CASE 檔），META-050～107 的 58 案由上列分冊承載，`CASE·EMERGENT-002` 與 `CASE·SYNC-004` 收於下方黑歷史彩蛋區。103 ＋ 58 ＋ 2 ＝ 163。
 
 **核心特徵**：自我反思、范式轉移、元認知躍升、形極辨識、理論焊接
 
@@ -1343,6 +1356,23 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v12.6 (2026-08-26) — META-114：兩座山的翻譯官與第一次外部退件
+
+- **新增 CASE／source**：
+  - 新建 `CASE·META-114` 與 103 行來源副本；只保存 Darren 現場回報與貼回的 ChatGPT 審讀，不冒充 Tiffany／mamasan 私訊或完整平台匯出
+  - 實績狀態固定為「已製作、已交付、未接受」；是負向／修法實績，不是客戶成功、滿意交付或市場驗證
+- **LEX·008 v1.2-candidate**：
+  - 將教材重構工作設定登記為 `enacted + observed failure`，作用域只到內部製作與候選稿，不取得 Tiffany 的作者代表、驗收、發布或使用效力
+  - 新增 `effect_scope／handoff_gate／affected_parties／impact_scope` 與 `LEX008-設定-F6`；核心界碑為「運行過，不等於到處都算數」
+  - 升格觀察為門檻一 2／3；事件作用域獨立，直接持有者書面證詞仍缺，來源獨立性有限；其餘兩門檻未達
+- **EPOCH·META-014 v0.3-seed**：
+  - 去除「住在裡面的人不必知道自己在設定裡」的上帝視角，改為不要求持有者接受執行者的設定性讀法
+  - 加入受力圖、多邊受託鏈、L0／L1／L2、雙重驗收、分析／代表／契約／使用效力分帳與翻譯 QC 停止權
+  - C5 補資料最小化，失效條款增至 C0～C16；首輪負向讀數使法源修正，不使 Seed 升格
+- **商業與責任邊**：
+  - Darren 的報價、交付與分包驗收對象是 mamasan；mamasan 對 Tiffany 的需求翻譯、整合報價、QC／QA 與終端接受另成一條關係
+  - CASE 總數 162 → 163，META 113 → 114，逐案導覽 102 → 103；INDEX、LEX／EPOCH／source 導覽同步
 
 ### v12.5 (2026-08-26) — META-113 v1.5：雙層、雙軸與受託的本體論分裂
 
