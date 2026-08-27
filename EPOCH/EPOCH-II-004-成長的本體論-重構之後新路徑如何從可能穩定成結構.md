@@ -43,7 +43,7 @@ related:
   - EPOCH-II-003（重構的本體論——既有鎖定如何被拆開）
   - EPOCH-II-005（選擇與淘汰的本體論——形成後哪些路徑留下）
   - EPOCH·PHA-008（多光錐引擎——集體尺度的上行湧現）
-  - EPOCH·META-015（設定的本體論生成史／Absorbed-before-Enactment——有效骨架回流本文件與 LEX·008）
+  - [EPOCH·META-015 v0.2-provenance](history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)（永久退休的設定本體論生成史／Absorbed-before-Enactment——有效骨架回流本文件與 LEX·008）
   - LEX·002（存在維度詞彙——結構與流動）
   - LEX·008（設定操作、作用域、權限、地址、版本與雙軸判讀）
   - SPEC·LANG-001（直接說 Y、真實見證與集中邊界）
@@ -535,7 +535,7 @@ v0.3-seed:
   狀態: Seed-for-Review / Not-Enacted
   來源:
     - CASE·META-113 第八部重入
-    - EPOCH·META-015 的有效骨架
+    - EPOCH·META-015 退休 lineage 的有效骨架
     - I-002 的局部路徑養厚
     - I-005 的可再生成、可重認形狀判準
 

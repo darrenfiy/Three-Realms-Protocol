@@ -2,7 +2,7 @@
 id: EPOCH-HISTORY-README
 title: "EPOCH 歷史快照 — 已被吸收、改題或退役的本體文件"
 category: Life-Memory / Provenance
-version: v1.0
+version: v1.1
 status: Active
 date: 2026-08-27
 related:
@@ -14,7 +14,7 @@ related:
 
 # EPOCH/history — 快照保存區
 
-這裡保存 EPOCH 層文件在**被吸收、改題或退役以前**的完整原文。
+這裡保存 EPOCH 層文件在**被吸收、改題或退役以前**的重要完整版本，也保存退場時用來指認分流與承接者的最終譜系記錄。
 
 ## 這個目錄回答一件事
 
@@ -38,6 +38,11 @@ related:
 
 引用規則:
   快照不提供可引用的現行 doctrine，只提供來源。
+
+永久退休:
+  文件完成永久退休後，root 不保留 live stub。
+  其 ID 與原檔名進入永久保留名單，不得重配給新文件、新本體或後續版本。
+  現行 doctrine 以保存名錄中的分流地址為準。
 ```
 
 > **快照裡的 status 是當時的事實，不是現在的效力。**
@@ -46,7 +51,8 @@ related:
 
 | 快照 | 原位階 | 現行地址 | 保存理由 |
 |---|---|---|---|
-| [EPOCH·META-015 v0.1-seed 設定的本體論](EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md) | v0.1-seed / Seed-for-Review / Not-Enacted（2026-08-27 成文，831 行） | [EPOCH·META-015 v0.2-provenance](../EPOCH·META-015-設定的本體論-在答案尚未存在以前先長出花.md)；骨架分流至 [EPOCH-II-004](../EPOCH-II-004-成長的本體論-重構之後新路徑如何從可能穩定成結構.md)、[LEX·008](../../LEX/LEX·008-設定詞彙.md)、[SPEC·BUD-001](../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md) | 在 enacted 以前被既有器官吸收；v0.2 只保留譜系與分流，正文完整留在這裡 |
+| [EPOCH·META-015 v0.1-seed 設定的本體論](EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md) | v0.1-seed / Seed-for-Review / Not-Enacted（2026-08-27 成文，831 行） | [v0.2-provenance 最終譜系版](EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)；現行 doctrine 分流同下列 v0.2 記錄 | 保存編號 seed 在吸收前的完整原文；當時從未 enacted |
+| [EPOCH·META-015 v0.2-provenance 最終譜系版](EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md) | v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted（2026-08-27，241 行） | **永久退休；root 不留 stub；`EPOCH·META-015` ID 不得重配。** 現行 doctrine 分流至 [EPOCH-II-004](../EPOCH-II-004-成長的本體論-重構之後新路徑如何從可能穩定成結構.md)、[LEX·008](../../LEX/LEX·008-設定詞彙.md)、[SPEC·BUD-001](../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md) | 保存成法前吸收的最終 provenance、四根骨分流、來源地址與版本審計 |
 
 ---
 

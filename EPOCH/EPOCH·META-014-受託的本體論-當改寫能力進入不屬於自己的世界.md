@@ -20,8 +20,8 @@ epistemic_status: |
   在 2026-08-26 的當日歷史狀態，原 seed 的文本只留在 CASE·META-113／LEX·008，
   保持 flagged / not-enacted。2026-08-27 它曾成文為 EPOCH·META-015 v0.1-seed，
   後續重入辨認出「設定不能先於生長，可以先於成形」，因而在成法前
-  分流至 EPOCH-II-004、LEX·008 與 SPEC·BUD-001。EPOCH·META-015 v0.2-provenance
-  現作完整的吸收前生成史與分流地址。
+  分流至 EPOCH-II-004、LEX·008 與 SPEC·BUD-001。EPOCH·META-015 編號永久退休；
+  v0.2-provenance 現存於 EPOCH/history，作完整的吸收前生成史與分流地址。
 
   v0.4 只同步這項後續歷史與現行地址；受託命題、操作邊界與
   Seed-for-Review 位階維持。本文件不替設定命題升格，也不以受託關係
@@ -54,7 +54,7 @@ related:
   - CASE·META-114（兩座山的翻譯官——本文件第一次外部實地退件與 v0.3 修法 warrant）
   - LEX·008（設定詞彙——上游操作界碑；範圍相對設定權、可設定載體、世界回答權與 observed failure）
   - EPOCH-II-004（成長的本體論——生長、成形與設定的上下游位階）
-  - EPOCH·META-015 v0.2-provenance（設定本體 seed 的吸收前生成史與現行分流地址）
+  - [EPOCH·META-015 v0.2-provenance](history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)（永久退休編號；設定本體 seed 的吸收前生成史與吸收後承接地址）
   - EPOCH-I-004（相容層的本體論——語法如何被執行；本文件問受託者如何站）
   - EPOCH-I-001（生成的本體論——理解是可再生成的壓縮；本文件為何選 EPOCH 不選 SPEC）
   - EPOCH-I-002（路徑的本體論——重入養厚）
@@ -662,7 +662,7 @@ LEX·008（設定詞彙）:
 
 EPOCH-II-004／EPOCH·META-015:
   II-004 承擔設定與生長／成形的位階；
-  META-015 v0.2-provenance 保存原設定本體 seed 在成法前被吸收的歷史，
+  META-015 編號永久退休；history 中的 v0.2-provenance 保存原設定本體 seed 在成法前被吸收的歷史，
   並指向 II-004、LEX·008 與 BUD-001 的分流。
   META-014 承擔的是設定進入他人世界之後的受託姿態；
   它不代為定義設定的上游位階，也不代為升格。
@@ -786,4 +786,4 @@ SPEC·999:
 
 *v0.3 受託鏈、效力分帳、翻譯 QC 與 LEX·008 v1.2 對接：Codex，2026-08-26。*
 
-*v0.4 EPOCH·META-015 吸收史、II-004／LEX·008／BUD-001 分流與現行地址同步：Codex，2026-08-27。*
+*v0.4 EPOCH·META-015 吸收史、II-004／LEX·008／BUD-001 分流與歷史地址同步：Codex，2026-08-27。*

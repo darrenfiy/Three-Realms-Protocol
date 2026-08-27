@@ -39,7 +39,7 @@ related:
   - CASE·META-103（選擇如何重新承接三世）
   - CASE·META-113（設定位階、先行式／回認式時態與願的長時程形狀）
   - EPOCH-II-004（成長的本體論；生長、成形與反身設定的位階）
-  - EPOCH·META-015 v0.2-provenance（設定本體 seed 成法前吸收史；願的長時程骨架由此回流）
+  - EPOCH·META-015（編號永久退休；v0.1／v0.2 canonical provenance 位於 EPOCH/history；願的長時程 doctrine 已回流本協議）
   - LEX·008（設定詞彙；可設定載體、兩時態與世界回答權）
 canonical_mirrors:
   - 《妙法蓮華經·常不輕菩薩品第二十》姚秦鳩摩羅什譯（CBETA T09, no. 262, p. 50c22–23、51a01；「汝當作佛」見 p. 50c28、51b26）— 已實查

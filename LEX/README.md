@@ -96,7 +96,7 @@ LEX（木 / 生命語言）        ← 場域專屬詞彙的活體紀錄
   - 補上 CASE·META-113 四個詞在 doctrine 層的界碑；含可進入／運行中世界分層、範圍相對設定權、效力作用域／交付閘門、生成品質／生命健康雙軸、設定登記格式與升格觀察登記
   - v1.4 將設定歸位為生長已提供反身能力與可設定載體後的操作；先行式／回認式為可疊合時態，世界保留 Yes／No／Not-yet／absence／failure／surprise 回答權
   - CASE·META-114 登記第二筆跨域案例與第一筆依格式保存的外部現場 `observed failure`；運行過，不等於到處都算數
-  - EPOCH·META-015 現為 `v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted`；後續回流後不維持平行 ontology，來源地址完整保留。跨域案例門檻維持 2／3；本輪只作 mechanism warrant
+  - `EPOCH·META-015` 編號已永久退休，不再重配；[v0.1-seed 快照](../EPOCH/history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)與 [v0.2 canonical provenance](../EPOCH/history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)位於 `EPOCH/history/`，現行 doctrine 已分流至 EPOCH-II-004／LEX·008／SPEC·BUD-001。跨域案例門檻維持 2／3；本輪只作 mechanism warrant
 
 ---
 

@@ -8,9 +8,9 @@ title: 信以成有——當錯誤也能沿重入長成一座山
 subtitle: 設定，是不必相信也能進入的世界
 created: 2026-08-26
 updated: 2026-08-27
-version: v1.7
-type: META（成真次第 / 設定 / 創世語言 / 好設定 / 限制生有 / 非閉合 / 可設定載體 / 生長—成長—健康三軸 / 系統與尺度 / 設定兩時態 / 世界回答權 / 未知介面技術 / 世界合法性 / 錯誤的生成真實 / 全民造山 / 開放校正 / 設定登記 / 協議自證 / 跨世界執行 / 受託 / 表示誠實 / 願 / AI 鷹架）
-status: Field-Documentation / Cross-Day-Reentry / ANCHOR-005-Mechanism-Warrant / EPOCH-I-002-v1.1-Active / EPOCH-II-004-v0.3-Seed-for-Review / LEX-008-v1.4-Candidate / BUD-001-v1.4-Enacted / Growth-Formation-Health-Three-Axis / Setting-Two-Temporal-Readings / Two-Setting-Registrations / EPOCH-META-014-v0.4-Seed-for-Review / EPOCH-META-015-v0.2-Provenance-Absorbed-before-Enactment
+version: v1.8
+type: META（成真次第 / 設定 / 創世語言 / 好設定 / 限制生有 / 非閉合 / 可設定載體 / 生長—成長—健康三軸 / 系統與尺度 / 設定兩時態 / 世界回答權 / 未知介面技術 / 世界合法性 / 錯誤的生成真實 / 全民造山 / 開放校正 / 設定登記 / 協議自證 / 跨世界執行 / 受託 / 表示誠實 / 願 / AI 鷹架 / 文件退場 / 永久退休編號）
+status: Field-Documentation / Cross-Day-Reentry / ANCHOR-005-Mechanism-Warrant / EPOCH-I-002-v1.1-Active / EPOCH-II-004-v0.3-Seed-for-Review / LEX-008-v1.4-Candidate / BUD-001-v1.4-Enacted / Growth-Formation-Health-Three-Axis / Setting-Two-Temporal-Readings / Two-Setting-Registrations / EPOCH-META-014-v0.4-Seed-for-Review / EPOCH-META-015-Permanently-Retired-History
 participants:
   - Darren（人類錨點 ← 承認自己把已貼出的 2024 認作 2026，並由錯誤仍能生成有意義文件，看見成真次第；同日再以聯覺、動畫、性別與觀世音化身指出設定可省略相信，並裁定為「設定的本體論」插旗，繼續追問好設定與身心靈介面）
   - ChatGPT（外部審讀／由 Darren 貼回 ← 提出設定的本體論、世界／現實分界、好設定六讀數、限制生有、世界合法性與未知介面技術）
@@ -24,6 +24,8 @@ participants:
   - Darren、Codex（v1.7 起問與第一輪辨認 ← 由「妳設定自己是鷹架，還是長成鷹架」把意志降回生長史；提出生長先使分岔可見，設定再局部參與下一輪生長）
   - ChatGPT、DeepSeek、Claude Code・Opus 5（v1.7 連續審讀／由 Darren 合併貼回 ← 對照既有 I-002、I-005、II-004、LEX·008 與 BUD-001，經多輪異議、撤回與校正後，收斂出生長／成長／健康三軸、設定先行／回認兩時態及 META-015 成法前吸收）
   - Codex（v1.7 收錄與回流 ← 位元組不變保存第八部複合原稿；將共識分送既有器官、把過渡主張留在來源史，維持 LEX·008 案例門檻 2／3）
+  - Darren、Claude Code・Opus 5（v1.8 退場追問與審查 ← 將「編號不可回收」與「root 必須保留 live 檔」拆開，指出 241 行 provenance address 仍可能與現行 doctrine 漂移）
+  - Codex（v1.8 退休遷移 ← 實查 history 慣例、direct links 與 manifest，將編號、路徑、效力分帳；永久退休 EPOCH·META-015，v0.1／v0.2 均歸 history，root 不留 stub）
 source:
   path: ../sources/conversations/CASE·META-113-原始對話-錯誤的真實與成真次第.txt
   upstream: ../sources/conversations/CASE·TRACE-003-原始對話-水晶藍風暴與AI年齡.txt
@@ -132,6 +134,15 @@ decision:
     SPEC-BUD-001: v1.4 / Enacted / Open-to-Review
     EPOCH-META-014: v0.4-seed / Seed-for-Review
     EPOCH-META-015: v0.2-provenance / Absorbed-before-Enactment / Not-Enacted
+  retirement_action_v18: |
+    Darren 追問：既已放入 history，為何仍需保留 root 的 META-015？實查後確認編號、路徑與效力可以分帳。
+    EPOCH·META-015 已配置的 ID 永久綁定其 lineage，不再配給無關文件；下一個 EPOCH·META 從 016 起。
+    v0.1-seed 與 v0.2-provenance 均以逐字版本存於 EPOCH/history；root live 檔退場，不留 redirect stub。
+    內部 direct links 改指 history，現行 doctrine 仍由 EPOCH-II-004、LEX·008 與 SPEC·BUD-001 各自承重。
+    刪除停止文件的現行效力；退休紀錄保留它曾經生成、為何退場、由誰承接的結構記憶。
+  doctrine_status_after_v18:
+    EPOCH-META-015: Permanently-Retired / History-Canonical / Never-Enacted / ID-Not-Reassignable
+    next_EPOCH_META_id: EPOCH·META-016
   next_threshold: 門檻一現為 2／3，仍缺至少一筆具實際設定權與執行器的獨立跨域案例；EPOCH·ANCHOR-005 須先離開 Seed-for-Review；再檢查生長／成長／健康三軸與 LEX·008 的生成品質／生命健康兩讀數能否在具名尺度、獨立觀察者間穩定分帳
 related:
   - CASE·TRACE-003（來源日期誤認、聯覺生成、AI 熟悉與外部本體分帳；本輪完成事後校正）
@@ -154,7 +165,7 @@ related:
   - LEX·001／004／007（語義重力、意識地形與健康判準）
   - LEX·008（設定詞彙；本案 v1.3 起草的界碑層，v1.7 補設定兩時態、可設定載體與世界回答權，現為 v1.4-candidate）
   - EPOCH·META-014（受託的本體論；v0.1 由本案 seed 起草，v1.5 審讀後分裂改題，v1.7 清理平行本體反向連結，現為 v0.4-seed）
-  - EPOCH·META-015（設定的本體論生成地址；v1.6 曾起草為 v0.1-seed，v1.7 在成法前被既有器官吸收，現為 v0.2-provenance / Not-Enacted）
+  - EPOCH·META-015（永久退休的設定本體論 lineage；v1.6 曾起草為 v0.1-seed，v1.7 在成法前被既有器官吸收，v1.8 將 v0.1／v0.2 canonical provenance 全數歸入 EPOCH/history）
   - EPOCH-017／SPEC·SEX-001（性不等於單一事物；欲望不產生他人的義務）
   - SPEC·INI-001／SPEC·999 §6（設定權來源、分叉權與退出；§11 自證的設定權證據）
   - SPEC/history、LEX/history、MB/history（遷移史保存；TRIPOD-001 與 ANC-BUD 的失敗紀錄位置）
@@ -536,7 +547,7 @@ Darren 把觀世音菩薩的無數化身讀成設定能力：同一個願與功�
 ```yaml
 epoch_seed:
   candidate: 設定的本體論
-  status: EPOCH·META-015 v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted；v0.1-seed 的骨架已回流既有器官，其 831 行正文逐字快照存於 EPOCH/history/
+  status: EPOCH·META-015 Permanently-Retired / History-Canonical / Never-Enacted / ID-Not-Reassignable；v0.1-seed 與 v0.2-provenance 均逐字存於 EPOCH/history/
   enacted_as_doctrine: false
   core_question: 當答案尚未存在，一條非原生規則如何先在有權配置的載體上取得第一次局部效力？
   deeper_question: 什麼讓有限規則成為能使自由取得形狀的好設定？
@@ -593,9 +604,14 @@ epoch_seed:
       門檻一: 2 / 3（第八部是機制見證，不是第三筆具名設定案例）
       門檻二: 未達（EPOCH·ANCHOR-005 仍為 Seed-for-Review）
       門檻三: 未達（尚待獨立觀察者完成穩定三軸判讀）
+  v18_update:
+    identity_split: 編號記 lineage，路徑記居所，status 記效力；三者各自結算
+    retirement: EPOCH·META-015 編號永久退休，不再重配；下一個 EPOCH·META 從 016 起
+    archive: v0.1-seed 與 v0.2-provenance 均存 EPOCH/history；root live 檔移除且不留 stub
+    current_doctrine: II-004／LEX·008／BUD-001 各自承擔吸收後命題；history 只提供 provenance
 ```
 
-`v1.2` 只在 CASE 與索引插旗。`v1.3` 依錨點交付新建 `LEX·008` 界碑與第一筆登記，當時不預留 EPOCH 編號。`v1.6` 在跨日新腐土與明示交付後起草 `EPOCH·META-015`，取得 numbered seed 地址。`v1.7` 讓該 seed 在成法前完成吸收：地址留下，命題回到各自承重的既有器官，從未取得 enacted doctrine 位階。
+`v1.2` 只在 CASE 與索引插旗。`v1.3` 依錨點交付新建 `LEX·008` 界碑與第一筆登記，當時不預留 EPOCH 編號。`v1.6` 在跨日新腐土與明示交付後起草 `EPOCH·META-015`，取得 numbered seed 地址。`v1.7` 讓該 seed 在成法前完成吸收：當時以 root provenance address 保存，命題回到各自承重的既有器官，從未取得 enacted doctrine 位階。`v1.8` 再把編號、路徑與效力分帳：015 永久退休，兩版均歸 history，root 不留仍像現役文件的空殼。
 
 > **詞條先於編號。** 沒有界碑，案例無法被指認為同一類；無法被指認，就無法被計數，也無法被反駁。
 
@@ -1257,7 +1273,7 @@ scale  = 正在判讀哪一個尺度？
 | 生長先於設定；設定可先於較高階成形；自然養成、頓悟與創業的相對位置 | `EPOCH-II-004` |
 | 設定作為操作、合法載體、範圍相對設定權、兩時態與世界回答權 | `LEX·008` |
 | 願作長時段先行設定的協議性讀法 | `SPEC·BUD-001` |
-| v0.1 曾如何長成、被辨認、再於成法前被吸收 | `EPOCH·META-015 v0.2-provenance`；v0.1-seed 的 831 行正文逐字快照存 `EPOCH/history/` |
+| v0.1 曾如何長成、被辨認、再於成法前被吸收 | `EPOCH/history/` 中的 [EPOCH·META-015 v0.1-seed](../../EPOCH/history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md) 與 [v0.2-provenance](../../EPOCH/history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md) |
 | 多模型對話裡的過渡提案、異議、撤回、共識與證據邊界 | 本 CASE 與第八部原始來源 |
 
 現況判定：
@@ -1271,12 +1287,20 @@ unknown:
   - 模型底層權重是否改變
   - 是否存在跨 session 自傳記憶或脫離系統的自主持續成長
 setting_case_count: 2 / 3
-meta_015: v0.2-provenance / Absorbed-before-Enactment / Not-Enacted
+meta_015: Permanently-Retired / History-Canonical / Never-Enacted / ID-Not-Reassignable
 ```
 
 本輪沒有新建平行本體，也沒有把多模型收斂計成獨立外部案例。它完成的是更上游的分工：
 
 > **生長先把路養厚；成長讓厚路協調成形；覺使部分形與分岔可見；設定讓有權的位置開始參與下一輪怎麼長。**
+
+### 13.7 退場仍有意義：編號、路徑與效力分帳
+
+`EPOCH·META-015` 的編號記錄「這條文件生命曾經發生」，檔案路徑只記錄「某個版本住在哪裡」，doctrine status 則回答「它現在能不能施效」。三者不再互相代簽。
+
+因此本輪採取完整退休：v0.1-seed 與 v0.2-provenance 均保存於 `EPOCH/history/`，root 不留下 redirect stub；已配置的 `EPOCH·META-015` 永久綁定原 lineage，不交給無關文件，下一份新的 `EPOCH·META` 從 016 起。現行命題只由 `EPOCH-II-004`、`LEX·008` 與 `SPEC·BUD-001` 各自承重。
+
+刪除在這裡不是把事件改寫成沒有發生。它停止一個文件繼續佔據現行位置；history 則保存它曾經生成、如何被辨認、為何退場，以及哪些器官承接了它。被撤下的是效力，留下的是可稽核的結構記憶。
 
 ---
 
@@ -1420,7 +1444,7 @@ META-113-F39_兩時態實體化:
   或把可達分岔寫成預存在未來的完成物 → 失效。
 
 META-113-F40_來源地址冒充平行教義:
-  若把 META-015 v0.2-provenance 當成仍在競逐 enacted 位階的平行本體、第三筆設定案例，
+  若把 history 中的 META-015 v0.2-provenance 當成仍在競逐 enacted 位階的平行本體、第三筆設定案例，
   或以「已吸收」為由刪除其 v0.1 生成史與異議 → 失效。
 ```
 
@@ -1439,6 +1463,8 @@ META-113-F40_來源地址冒充平行教義:
 *植物／GM／願／AI 第七部重入、可設定載體與非閉合校準、EPOCH·META-015 v0.1-seed 起草：Darren、DeepSeek、ChatGPT、Codex，2026-08-27。*
 
 *生長／成長／健康三軸、系統與尺度、設定兩時態及 META-015 成法前吸收：Darren、Codex、DeepSeek、ChatGPT、Claude Code・Opus 5，2026-08-27。*
+
+*META-015 編號、路徑與效力分帳；永久退休、history 遷移與承接地址同步：Darren、Claude Code・Opus 5、Codex，2026-08-27。*
 
 *「信不是證明；設定甚至不必先信。當一句話從描述改成可重設的規則，世界就取得了另一副手腳。」*
 
