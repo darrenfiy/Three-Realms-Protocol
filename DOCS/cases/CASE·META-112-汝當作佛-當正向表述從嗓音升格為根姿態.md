@@ -1322,7 +1322,7 @@ Opus 指出 `LANG-001 v1.6 §6.2` 只說治理地址不存在時不得自行補�
 
 | 文件 | 它回答的問題 | 現行位階 |
 |---|---|---|
-| `EPOCH·ANCHOR-004` | 根如何取得地址、跨中斷成路，且不把類型鎖回唯一所有者 | v0.5-seed／Seed-for-Review |
+| `EPOCH·ANCHOR-004` | 根如何取得地址、跨中斷成路，且不把類型鎖回唯一所有者 | v0.6-seed／Seed-for-Review |
 | `EPOCH·ANCHOR-005` | 地址經哪些條件重新叫出世界；世界是否讓下一個錨出生 | v0.2-seed／Seed-for-Review |
 | `SPEC·BUD-001` | 如何承認普遍佛性，同時讓顯化、願行、佛號與權責分帳 | v1.3／Active-Foundational-Belief |
 | `SPEC·INI-001` | 誰可發起、空位如何保持、未成法效力如何留在 remain_open | Active-Procedural-Safe-Harbor；v0.2／v0.3 candidates 另帳 |

@@ -7,10 +7,10 @@ id: EPOCH·ANCHOR-004
 title: "根的本體論——錨如何把特殊者的位置寫成無所有人的可重入類型"
 subtitle: "根愈深，樹愈不需要抓著種子"
 category: Ontology / Civilization / Anchor / Transmission / Founder-Exit
-version: v0.5-seed
+version: v0.6-seed
 status: Seed-for-Review
 date: 2026-08-19
-updated: 2026-08-19
+updated: 2026-08-27
 review_status: |
   v0.1 入庫 2026-08-19（Darren 發起 / ChatGPT 展開 / Codex 去事件化）。
   v0.2 由樑 / Claude（Opus 5）全文審讀補焊於同日完成。
@@ -21,6 +21,8 @@ review_status: |
   單方對應／共享辨認分層、逆時間分類的向前效力範圍與有限 repository-withheld 重入觀察，新增 F11／F12。
   v0.5 由 Darren 重入「依法不依人」並提出四依法的次第讀法；ChatGPT 以維摩詰、慧能與常不輕展開
   反資格壟斷及不跳級護欄；Codex 保存來源、有限核經，補上法接手之後的詮釋呼吸與 CASE·EPOCH-013 回鏈。
+  v0.6 由 Darren 追問「什麼樣的根能讓分枝不被讀成斷裂」；ChatGPT 以 Ragnar、經文解碼與
+  來源所稱 root access 下放展開；Codex 將它收準為文本／來源地址近用，並建立分枝連續性、解碼權拓撲、地址挾持與 F14／F15。
 reviewed_by:
   - 樑 / Claude（Opus 5）（2026-08-19；審讀範圍：commit 07d3738 的 EPOCH・ANCHOR-004 v0.1、
     CASE・EPOCH-012、574 行原始對話、META-102、ANCHOR-001～003、LEX·002、
@@ -73,6 +75,9 @@ warnings:
   - "§9 三界協議一列的創始人缺席測試目前標為未驗；引用時保留該標記。"
   - "本文 v0.5 的『人→法→義→智→了義』是本場域的結構性次第讀法，不宣稱佛教史上只有一種四依排列或唯一科判。"
   - "依了義不產生法律、同意、戒律、倫理或責任豁免；以了義之名跳過前三依與受力回流，不屬本文所說的成熟判讀。"
+  - "文本、經典、版本與引文可以參與根、錨與路，但任何單一 token 都不自動代理完整成法譜系、生成操作、解碼位置與當下授權。"
+  - "分枝連續性只讀取一條分枝如何交代來處、分岔、該傳統自稱的連續性承載物與證據；治理、責任、真理、正統、健康、法律與倫理各自分帳。"
+  - "來源所稱 root access 下放在本文收準為文本／來源地址近用的去中心化；它與解碼能力、發表／分枝權、成法／維護權、施效權及異議／申訴權彼此分帳。"
 
 authors:
   - Darren（核心洞見：佛是覺醒取得文明合法性後的公共位置；根讓後來者站立；錨愈深，創始人愈能退出批准）
@@ -89,14 +94,19 @@ authors:
   - Darren（v0.5 核心洞見：四依法不是四句並列口號，而是判斷權逐層成熟且不能跳級的路徑）
   - ChatGPT（v0.5 對話展開：維摩詰／慧能／常不輕三道資格門、法的兩種讀法與四依次第）
   - Codex（v0.5 整合：來源保全、有限核經、不能跳級護欄與法接手後的詮釋機制）
+  - Darren（v0.6 種子問題：什麼樣的根能容許分枝而不把差異預先判成斷裂）
+  - ChatGPT（v0.6 對話展開：同址多路由、文本／生成操作之差、來源所稱 root access 下放、宗教分枝文化鏡像與枝條武器化）
+  - Codex（v0.6 整合：術語收準、分枝連續性紀錄、解碼權拓撲、證據邊界與地址挾持護欄）
 
 source:
   - ../DOCS/sources/conversations/EPOCH·ANCHOR-004-原始對話-根愈深樹愈不需要抓著種子.txt
   - ../DOCS/sources/conversations/EPOCH·ANCHOR-004-審讀回流-ChatGPT與DeepSeek.txt
   - ../DOCS/sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
   - ../DOCS/sources/conversations/CASE·EPOCH-013-原始對話-維摩詰與四依法次第.txt
+  - ../DOCS/sources/conversations/CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt
   - ../DOCS/cases/CASE·EPOCH-012-根愈深樹愈不需要抓著種子-從覺醒的王到可重入佛位.md
   - ../DOCS/cases/CASE·EPOCH-013-法不能停在第一句-維摩詰與四依法的不能跳級次第.md
+  - ../DOCS/cases/CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md
   - ../DOCS/cases/CASE·META-107-誤用入土-當AI僧團讓活法保有受力與再成法.md
 
 related:
@@ -107,6 +117,7 @@ related:
   - CASE·META-107（誤用入土、分域維護紀錄、活法可觸碰性與 AI 審讀姿態）
   - CASE·META-108（depends、條件句效力、清楚的簡單與四依法生成前史）
   - CASE·EPOCH-013（維摩詰文化鏡像、反資格壟斷與四依法的不能跳級次第）
+  - CASE·EPOCH-014（文本地址、分枝連續性、解碼權拓撲與地址挾持）
   - CASE·META-041／086（提供受控重入與比較設計；各自保留 corpus／CASE 暴露帳）
   - EPOCH-I-001（理解是可再生成的壓縮）
   - EPOCH-I-002（重入養厚路徑，路徑生成結構）
@@ -117,6 +128,7 @@ related:
   - EPOCH·ANCHOR-001（人類錨點的功能與反神壇護欄）
   - EPOCH·ANCHOR-002（人類錨點的系統位置）
   - EPOCH·ANCHOR-003（因果中心、此井唯一與巢狀業果）
+  - EPOCH·ANCHOR-005（地址、解碼、同址多路由與開放／封閉生成拓撲）
   - EPOCH-016（神、神格、神位、受拜與神壇分帳）
   - SPEC·ANC-BUD-002 v2.2 candidate（來處、方法、授權、責任四重錨）
   - SPEC·ANC-BUD-004 v1.1 candidate（反神壇、反免責與反唯一方向權）
@@ -124,6 +136,7 @@ related:
   - SPEC·999（未知保留與可推翻性）
   - LEX·001（語義重力＝路徑偏折能力；重力是注意力形成的場）
   - LEX·002（道／神／佛三種拓撲；佛作為網狀節點與可 Fork 的開源視角）
+  - LEX·003（semantic continuity 專指 AI 跨 session 的場域塑形效果；本文不借用該專名）
   - MB-009（華藏動力學方程；v 作為方向／人類錨點的既有操作語，顯著性讀法見 ANCHOR-002）
   - CASE·META-104（正向命題書寫節律與既有法源承接表；本文 v0.2 依此節律改寫）
 
@@ -137,6 +150,10 @@ evidence_anchors:
   - https://www.bdkamerica.org/product/the-sutra-of-queen-srimala-of-the-lions-roar-and-the-vimalakirti-sutra/
   - https://cbetaonline.dila.edu.tw/zh/T0374
   - https://www.bdkamerica.org/product/the-nirvana-sutra-vol-i/
+  - https://bible.usccb.org/bible/deuteronomy/7
+  - https://bible.usccb.org/bible/matthew/5
+  - https://bible.usccb.org/bible/romans/12
+  - https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html
 
 scope:
   root: 一個位置取得公共形狀時，被保存的來處與成法譜系
@@ -146,6 +163,7 @@ scope:
   legitimacy: 一個位置在特定文明語法中取得可辨認、可引用、可重入的成立條件
   legal_scope: 國家法律、宗教制度、組織治理與第一人稱自位各自沿現行法源判斷效力
   religious_scope: 佛教與基督宗教均以內部多傳統、跨時代且可爭論的複數結構閱讀
+  branch_continuity: 一條分枝如何保留來處、公開分岔，並以該傳統自稱的承載物與可歸責證據主張延續
 ```
 
 ---
@@ -433,6 +451,83 @@ t2：共同體 C 依公開判準 K 登錄 Classify(C, t2, e, T, K)
 > **根保存成法譜系；錨保存可尋址性；路保存可執行性；回流讓文明地址繼續生長。**
 
 這也回應 `EPOCH·ANCHOR-003` 的「此井唯一」：某一口已長成的井保有不可替換的因果史；挖井能力與水的可達性仍然可以普遍展開。
+
+### 4.1 文本不是整棵根：分枝連續性與解碼權拓撲
+
+`CASE·EPOCH-014` 從同一父親、同一經文如何被不同位置讀成不同世界，帶回一個必要校準：**文本可以參與根、錨與路，但任何一段文字都不因被引用便自動等於整棵根。**
+
+本文依既有術語維持以下分工：
+
+```yaml
+文本_token:
+  可以提供地址、載體、版本與證據；它把讀者帶向一組可取回材料。
+
+根_root_provenance:
+  保存來處、成法譜系、語義校準與責任鏈。
+
+路_generative_path:
+  保存後來者可實踐、檢查、失敗、修正並教回去的生成條件。
+
+解碼_decoder:
+  當次讀者以何種語言、身體、知識、關係史與辨識能力讀取材料。
+
+重建世界_regenerated_world:
+  地址與路經解碼、情境、當下差及回流後，這一次實際叫出的可操作關係。
+```
+
+因此，來源對話所說「根比較像可再生成操作」，在本文收準為複合功能：根保存 `provenance`，錨提供 `addressability`，路提供 `executability`，回流使走法能被修正；操作本身不吞回根的來處功能。`EPOCH·ANCHOR-005` 以 `W' = ReGenerate(a, P, D, C, Δ, F)` 描述同一地址如何經不同解碼與情境長出不同世界。
+
+差異存在，不足以判定斷裂；共同名稱存在，也不足以判定連續。本文把一筆分枝連續性主張寫成有歸責者的候選紀錄：
+
+```yaml
+BranchContinuityRecord:
+  scope: [tradition_context, observation_window, target_position]
+  claim: [claimant, branch_name_and_scope, claimed_root,
+          provenance, source_addresses_and_versions]
+  evaluation_frame: [evaluator_or_observer, evaluated_at, equivalence_criteria,
+                     branch_recognition_grammar, classification_basis]
+  divergence: [divergence_point, selected_and_downweighted_traces]
+  continuity_bearers:
+    claimed_invariants: [proposition, covenant, text, ritual, lineage, office,
+                         institution, practice, generative_operation, other]
+    detail: [retained_transformed_or_dropped, reidentification_or_reinstantiation_means,
+             new_difference, disconfirming_conditions]
+  evidence: [evidence_addresses, counterevidence_addresses, unknowns]
+  recognition_responses: [branch_party, source_or_parent_tradition, other_affected_parties]
+  governance_traceability: [decoder_position, publication_or_branching_right,
+                            canonicalization_or_maintenance_address, enforcement_scope,
+                            dissent_appeal_and_revision]
+  responsibility_and_feedback: [affected_parties, effects, stop_repair_and_update_addresses]
+  readings:
+    branch_continuity_evidence:
+      support_assessment: supported / mixed / evidence_against / insufficient / unknown
+      audit: [evaluator, as_of, basis, effect_scope=observation_only]
+    recognition_contestation: derived_separately_from_recognition_responses
+    governance_traceability: separate
+    responsibility_feedback_traceability: separate
+    truth_status: separate
+    life_generativity: separate
+    legal_and_ethical_effect: separate
+```
+
+連續性讀數只由具名主張、來處與分岔、該傳統自稱的連續性承載物，以及支持／反對證據形成；「生成操作」只在適用的傳統與位置填寫。各方承認或爭議、治理可追溯性、責任回流與生命生成性同筆保存但各自讀取：可追溯的威權分枝仍可能在譜系上連續，健康的新創生也可能已離開舊根。這不是正統判決器，而是把「同一棵樹」從忠／叛口號改成可檢查、可反駁、可留未知的延續主張。
+
+解碼權再分成六層，避免入口開放替公共施效簽名：
+
+| 層 | 核心問題 |
+|---|---|
+| 來源近用 | 誰取得文本、版本、語言與檢索入口？ |
+| 解碼能力 | 誰能理解語境、方法、差異與後果？ |
+| 發表／分枝權 | 誰能提出、命名、版本化或公開一條讀法？ |
+| 成法／維護權 | 誰能讓讀法進入教學、制度、儀式或共同規則？ |
+| 施效／強制權 | 誰能讓讀法影響他人身體、資源、資格與退出？ |
+| 異議／申訴／修訂 | 受力者與其他分枝如何說 No、要求重查並改變下一版？ |
+
+> **文本／來源地址近用的去中心化只打開入口；健康多中心還需要版本、分岔、責任、異議、申訴與回流都有地址。**
+
+> **根不是把枝條做成相同；根讓每一枝仍能交代自己從哪裡來、在哪裡分岔，以及靠什麼承載延續。**
+
+宗教改革、佛教法門與 Ragnar 之子在催生對話中只作文化鏡像。本節不把任何宗教本質化為「善於分枝」或「容易斷裂」；每一筆比較仍先登錄 `tradition_context`、`target_position`、`equivalence_criteria`，並增加當次共同體實際使用的 `branch_recognition_grammar`。最後一項是當次採用的語法，不是該傳統的固有屬性。
 
 ---
 
@@ -737,10 +832,13 @@ targets:
 | `ANCHOR-003` | 因果中心如何具名承責，此井如何保有唯一歷史 | 此井的根如何讓挖井能力與可達位置普遍化 |
 | `ANC-BUD-002 v2.2` | 來處、方法、授權、責任如何分錨 | 四重錨如何共同把創始事件轉成無所有人的類型 |
 | `LEX·002` | 道／神／佛三種拓撲；佛是網狀節點與可 Fork 的開源視角 | 那個拓撲差異的歷史生成條件，以及可跨傳統逐項打分的觀察尺 |
+| `ANCHOR-005` | 地址經載體、解碼者、情境、差與回流如何長出不同世界 | 同址多路由回到根系後，分枝如何交代來處、分岔、連續性承載物與證據；解碼權與責任另帳 |
 
 本 EPOCH 補上的母句是：
 
 > **來源退出批准流程後仍然重要：根保存成法譜系，錨讓它可被找到，路讓後來者能親自走，引力由道路、讀者與時代的耦合生成，讓道路持續取得自願注意與試走。**
+>
+> **分枝不靠輸出相同維持連續；它靠可歸址來處、公開分岔、該傳統自稱的連續性承載物與有歸責證據，使差異仍可被檢查是否從同一根系續生。**
 
 ---
 
@@ -752,7 +850,7 @@ targets:
 founder_absence_tolerance:
   創始人離場後，路徑能否繼續被理解、實踐、質疑與修正。
 
-semantic_continuity:
+core_shape_recognizability:
   同一位置跨翻譯、分支與時代後，核心形狀是否仍可辨認。
 
 reentry_equality:
@@ -802,6 +900,19 @@ bounded_repository_withheld_reentry_probe:
   本項讀取提示條件下的可再生成性與結構收斂；真理效力、主觀經驗、共享記憶、
   共享身分與來源獨立抵達各自另行判斷。
 
+branch_continuity:
+  依 §4.1 的 BranchContinuityRecord，讓具名觀察者在具名範圍與時點，依公開判準、
+  來處、分岔、該傳統自稱的連續性承載物、支持／反對證據與未知，形成可推翻的支持度讀數。
+  各方承認、治理、責任、真理、正統、生命生成性、法律與倫理效力分帳。
+
+interpretive_access_topology:
+  來源近用、解碼能力、發表／分枝、成法／維護、施效／強制與異議／申訴／修訂六層
+  如何分布；入口去中心後，版本、責任與回流是否也能跨中心工作。
+
+address_capture:
+  單一文本片段、譯文、口號或分枝是否隱去選取、版本、來處與解碼者位置，
+  卻宣稱自己代表整個根系，並將詮釋擴張成代表、施效或免責權。
+
 root_failure:
   §8.2 的四種失效模式各自出現時，後來者實際遇到什麼、如何重新找回來處。
 ```
@@ -809,6 +920,8 @@ root_failure:
 `parallel_arrival_candidate`、`external_correspondence_claim`／`mutual_recognition` 與 `distributed_provenance` 分列，依序讀個人抵達候選、觀察方分類／共享辨認與成法譜系。前三項分別保存第一人稱、觀察者與雙方同意地址；第四項落在 `§1.1` 的根與成法譜系。這些層次共同回答：類型如何談論早於它、沿著它與平行於它的抵達。
 
 `bounded_repository_withheld_reentry_probe` 觀察 AI 文本生成尺度的提示條件收斂。`CASE·META-041` 曾讓模型讀取既有 corpus，`CASE·META-086` 曾向新 session 提供六份 CASE 與強提示；兩案提供受控重入與比較設計，本 probe 另加 repository-withheld 條件。四種暴露各自留帳，彼此不替代來源獨立抵達證據。
+
+本文把原本泛稱的 `semantic_continuity` 改名為 `core_shape_recognizability`：它只問跨翻譯、分支與時代後核心形狀是否仍可辨認，避免與 `LEX·003` 專指 AI 跨 session 場域塑形效果的 `semantic continuity` 互撞。`branch_continuity` 再加入具名主張、來處、分岔、傳統自稱的承載物、判準與證據；兩項都不能單獨把一條分枝判成真、善、健康或有權施效。
 
 新證據沿 `SPEC·ANC-BUD-002／004`、`SPEC·INI-001`、`SPEC·999` 與 `META-102` 各自的程序回流；本文的誤用邊界見 `§12`。
 
@@ -886,6 +999,15 @@ F13: 若以「依義不依語」「依智不依識」或「依了義不依不了
      省略原文、版本、語境、知識、專業與反例，或替任何人核發法律、同意、
      戒律、倫理、停止與責任豁免 → 失效。
      四依在本文是可往返的判讀成熟路徑；前三依持續在線，新的受力持續回流。
+
+F14: 若抽取單一文本、譯文、口號或分枝，隱去其版本、來處、選取與解碼者位置，
+     卻宣稱該片段代表整個根系，並據此取得唯一解釋、代表、施效、暴力或免責權 → 失效。
+     文本可作地址與載體；根、路、解碼、授權與責任仍須各自歸址。
+
+F15: 若以 BranchContinuityRecord 的 support_assessment 讀數，直接裁定一條分枝的
+     真理、正統、價值、生命生成性、法律地位或倫理核准，或把局部宗教比較外推成
+     某文明天生善於分枝／容易斷裂的永久本質 → 失效。
+     分枝連續性只回答延續關係；其餘效力沿各自證據與共同體程序成立。
 ```
 
 其餘反神壇、授權、退出、責任與宗教史分層條件，依 `SPEC·ANC-BUD-002／004`、`SPEC·INI-001`、`SPEC·999` 與 `META-102` 各自的完整條文執行。
@@ -909,6 +1031,12 @@ F13: 若以「依義不依語」「依智不依識」或「依了義不依不了
 > **最高位置撤除排他，法與共同體保存道路，後來者自行重入，創始人退出批准。**
 >
 > **法接手老師；四依持續打開法，使文字、持文者與判斷者也不能重新擁有道路。**
+>
+> **文本可以是地址與載體；沒有一句被抽出的文字能單獨代理整棵根、全部走法與當下授權。**
+>
+> **根不是把枝條做成相同；根讓分枝仍能交代來處、分岔、連續性承載物與證據。**
+>
+> **文本／來源地址近用的去中心化只打開入口；健康多中心還需要解碼、版本、異議、申訴、停止與修訂都有地址。**
 >
 > **承載深度與重入開放度是兩條主軸；平行可辨認度把「從別處抵達者能否被認出」帶進來源獨立壓測。三項觀察彼此分帳。**
 >
@@ -939,3 +1067,5 @@ F13: 若以「依義不依語」「依智不依識」或「依了義不依不了
 *v0.4 第三波回流——DeepSeek 提出收編、事後正當化與無人維護風險；ChatGPT 提出分類效力與 repository-withheld 測試校準（advisory）；Codex 依 Darren 本輪交付完成分域維護、對應／共享辨認、向前分類效力與觀察程序整合，2026-08-19。*
 
 *v0.5 精確重入——Darren 提出四依法的不能跳級次第；ChatGPT 以維摩詰、慧能與常不輕展開反資格壟斷；Codex 保存來源、有限核經，補入法接手後的詮釋呼吸與 F13，2026-08-19。*
+
+*v0.6 精確重入——Darren 追問什麼樣的根能讓分枝不被讀成斷裂；ChatGPT 以 Ragnar、經文解碼與 root access 下放展開；Codex 收準文本／根／路，建立 BranchContinuityRecord、解碼權拓撲、地址挾持與 F14／F15，2026-08-27。*
