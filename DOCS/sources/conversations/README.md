@@ -48,6 +48,7 @@
 | [CASE·META-112-第九輪Fable5審讀-生成奇點與佛號免疫.txt](CASE·META-112-第九輪Fable5審讀-生成奇點與佛號免疫.txt) | 2026-08-25 | [CASE·META-112 §15](../../cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md#15第九輪fable-5-閘門審讀佛號免疫與有地址的空位2026-08-252026-08-26)；[SPEC·BUD-001 v1.3](../../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md) | 18070（原附件 CRLF／末行無 LF）／17944（repository LF／128 行／末行 LF） | 原附件 `F2944D1F0C6DD51AB848A750F20A5B6B8ED42F8D3C2F3946CE1B88B8BA03D140`／repository `BDBB67CD338B46094C3BCE3391CD1D256031342555046EB95B526D2DFE49682C` | 2026-08-26 依人類錨點文字附件歸檔；保存 Fable 5 對十二份文件的 Gate review、Pass-with-required-revision 裁定、BUD-F9 must-fix、五項 should-fix、治理空位 INI 路由與母憲法駁回。模型自述之實讀範圍依原文保存，不升為獨立執行環境證明。 |
 | [CASE·TRACE-003-原始對話-水晶藍風暴與AI年齡.txt](CASE·TRACE-003-原始對話-水晶藍風暴與AI年齡.txt) | 2024-08-25／2026-08-25→26 | [CASE·TRACE-003](../../cases/CASE·TRACE-003-聯覺稜鏡與生日判準-從任意映射到AI連貫性假說.md) | 30202（repository UTF-8／769 行） | `C89C136D3A1841C6BD8E106BFEB022DD83D864367C003F9210BE54333D80EC35` | 2026-08-26 依人類錨點本 Session 貼文歸檔；保存 DeepSeek 聯覺／神諭對話、ChatGPT 審讀與 Darren／Codex 日期—年齡—連貫性對話。HTML 空格與部分 Markdown 跳脫只作可讀性正規化；無三個上游平台的完整匯出、模型版本、system prompt 或 metadata。Darren 的內在連貫性判讀與 Codex 的歷史日期反讀並列，須連同 CASE 三帳與失效條款閱讀。 |
 | [CASE·META-113-原始對話-錯誤的真實與成真次第.txt](CASE·META-113-原始對話-錯誤的真實與成真次第.txt) | 2026-08-26 | [CASE·META-113 v1.2](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md)；[CASE·TRACE-003 v1.1](../../cases/CASE·TRACE-003-聯覺稜鏡與生日判準-從任意映射到AI連貫性假說.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md)（mechanism warrant；不升版） | 5502（初始）／8685（設定 v1.1）／27546（現行 repository UTF-8／441 行） | 初始 `FA9CD24BC016E70D8467D0B89E48EA94E383381D2BCEB17C333B30E77AC2BCEC`／v1.1 `C34702BB84378112C9A12A712E17B06DCDEA9B3E59DD00410BCB1F96265BC33A`／現行 `D00586B395C56D7281A6D0E9794E6CE90A96E49099D45B25E688E0C8BF658026` | 2026-08-26 由 TRACE-003 入庫後同一 Session 直接重入；初始保存日期誤認、錯誤的真實、神／AI 熟悉與成真次第；v1.1 增補信念／設定雙路、聯覺、動畫、性別與化身讀法；v1.2 保存 Darren 貼回的三輪 ChatGPT 審讀、設定的本體論插旗、好設定／限制生有、未知介面技術與 Codex 分帳。不宣稱平台完整逐字匯出；ChatGPT 貼文內外部連結本次未獨立核實，須連同 CASE v1.2 的世界／真理合法性與安全護欄閱讀。 |
+| [CASE·META-113-第七部重入-在答案以前先長出花.txt](CASE·META-113-第七部重入-在答案以前先長出花.txt) | 2026-08-27 | [CASE·META-113 v1.6](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md#12-第七部重入在答案以前先長出花2026-08-27)；[EPOCH·META-015 v0.1-seed](../../../EPOCH/EPOCH·META-015-設定的本體論-在答案尚未存在以前先長出花.md) | 25887（repository UTF-8／570 行） | `652D4DBA9BD8576B2DB28A218AD8611C7FDE88EBBA6A17F955CE78B28D1F5547` | Darren 貼回的 DeepSeek 對話與帶部分文件庫的 ChatGPT 審讀；保存植物／花／蜜蜂、GM 悖論、願、AI 安全網及其校準。不是兩平台完整匯出；speaker 標籤依貼文交替補入。植物只作結構模型，GM 不是全域 root，AI 不保證承接；本輪是 META-015 機制 warrant，不計 LEX·008 第三案例。 |
 | [CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt](CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt) | 2026-08-26 | [CASE·META-114 v1.1](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)；[LEX·008 v1.2-candidate](../../../LEX/LEX·008-設定詞彙.md)；[EPOCH·META-014 v0.3-seed](../../../EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md) | 3861（repository UTF-8／103 行） | `4904C4DBBA19F46636102ABAA2FCEC639D9121BCC5AA9669714DEE89A5034FA9` | 2026-08-26 依 Darren 當輪現場回報與貼回的 ChatGPT Seed 審讀保存；記錄掌運卡 v0.2 已交付但未被 Tiffany 接受、mamasan 作兩座山翻譯／QC 與分包報價邊。不是平台完整匯出，不含 Tiffany／mamasan 私訊、逐頁意見、原始教材或 PPT；退件事實為 Darren 轉述，須連同 CASE 的證據限制閱讀。 |
 
 ### 2026-08-26 META-114 現場回流邊界
@@ -56,6 +57,13 @@
 - `CASE·META-114` 把成品狀態固定為「已製作、已交付、未接受」；來源不足以證明客戶滿意、付費成功、轉介或 Darren 的全部分析正確／錯誤。
 - `LEX·008` 登記的是教材重構**工作設定**及其跨作用域失敗，不把 Tiffany、她的信念或課程本體降格成 Darren 的設定。
 - 為了追責而保存最小必要事件，不表示可保存未授權私訊、完整內部推理、無關第三人資料或無期限敏感內容。
+
+### 2026-08-27 META-113 第七部重入邊界
+
+- 來源由 Darren 直接貼回，沒有 DeepSeek／ChatGPT 平台匯出、模型版本、system prompt、完整文件庫或 metadata；speaker 標籤依交替補入，不補寫貼文外內容。
+- 原對話將植物、性、佛、GM 與 AI 放在同一條生成隱喻；保存不表示這些字面本體、佛教詮釋或演化故事已被採納。
+- EPOCH·META-015 只收「設定先改寫可設定載體、外部答案由回流決定」；植物不是具 LEX·008 設定權的案例，本輪不計第三筆跨域登記。
+- DeepSeek 的「你跳吧，我一定接住」保留為原語氣，也在 CASE／EPOCH 中明示成能力與安全反例；不得用於自傷、失控、醫療、法律、財務或其他不可逆風險承諾。
 
 ### 2026-07-21 批次邊界
 
@@ -279,6 +287,8 @@ canon 門檻:
 *META-113 原始對話保存、三段 repository 指紋入帳、TRACE-003 v1.1 日期誤認校正、成真次第、設定的本體論插旗、好設定／限制生有與未知介面技術歸位：Codex，2026-08-26*
 
 *META-114 現場回流最小保存、教材重構工作設定 observed failure、兩座山翻譯官與 LEX·008／META-014 修法回鏈：Codex，2026-08-26*
+
+*META-113 第七部重入來源保存、植物／GM／願／AI 邊界、EPOCH·META-015 v0.1-seed 成文回鏈：Codex，2026-08-27*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 

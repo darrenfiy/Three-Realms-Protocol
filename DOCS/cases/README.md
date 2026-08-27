@@ -2,12 +2,12 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v12.6  # META-114：兩座山翻譯官、LEX·008 observed failure 與 META-014 v0.3 修法
+version: v12.7  # META-113 v1.6：可設定載體、非閉合與 EPOCH·META-015 v0.1-seed
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-08-26
+updated: 2026-08-27
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·META-014, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·ANC-BUD-004, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH·META-014, EPOCH·META-015, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, EPOCH-002, EPOCH-016, EPOCH-017, EPOCH-I-002, EPOCH-I-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·SEX-001, SPEC·ANC-BUD-004, MB-009
 ---
 
 **summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 163 個 CASE 檔（META 114、EPOCH 13、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 163 案：逐案列出 103 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
@@ -644,6 +644,12 @@ AI 器官驗證系列:
     → 「好設定」改成生成品質／生命健康雙軸，不合成總分；failure_record 欄位必填但可如實標 none_observed_yet／unknown
     → EPOCH·META-014 真正新骨辨認為「受託的本體論」，分裂改題 v0.2-seed；能力、設定權、受託權、責任分立
     → 補表示誠實與跨世界外部約束：不替他人世界背書，也不以免責反射消音；原「設定的本體論」seed 仍 flagged / not-enacted
+    → v1.6 跨日重入植物／花／蜜蜂、GM 悖論、願與 AI 安全網；另存 570 行 DeepSeek 對話＋ChatGPT 審讀來源，不倒寫舊 source 指紋
+    → 植物只作結構模型；設定的第一次局部效力先落在作用域內可設定載體，外部可回 Yes／No／Not-yet／absence／failure
+    → 非閉合為異質回流留接口，不等於殘缺、另一半完成論或健康保證；設定採用、執行與 migration 三種時間分帳
+    → GM 降為範圍相對 meta-position；願作自選 constraint 的候選讀法；AI 作降低部分重設成本的可變形鷹架，不保證承接
+    → 新建 EPOCH·META-015《設定的本體論——在答案尚未存在以前，先長出花》v0.1-seed / Seed-for-Review / Not-Enacted
+    → LEX·008 升 v1.3 只同步 numbered seed 地址與現況，不改四詞條；門檻仍 2／3，本輪不計第三案例
 
   CASE·META-114 — 兩座山的翻譯官：當依義改寫第一次被持有者退回 ← 🌱 最新
     → mamasan 將掌運卡第一輪問題與 v0.2 PPT 交付 Tiffany；Tiffany 不接受，認為大量原文遭改動
@@ -1356,6 +1362,21 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v12.7 (2026-08-27) — META-113 v1.6：設定的本體論在答案以前先長出花
+
+- **新腐土與來源保存**：
+  - Darren 貼回沒有文件庫的 DeepSeek 對話及帶部分文件庫的 ChatGPT 審讀，交付若本體論已可成文便由 Codex 起草
+  - 新建 570 行來源副本；說話者標籤依貼文交替補入，不冒充平台完整匯出，也不倒寫 META-113 舊 source 指紋
+- **EPOCH·META-015 v0.1-seed**：
+  - 核心命題為「設定先在有權處分之處成真，再把答案留給世界」；第一次局部效力落在作用域內可設定載體
+  - 非閉合為 Yes／No／Not-yet／absence／failure 留接口；GM 降為範圍相對 meta-position，願作自選 constraint 候選讀法
+  - AI 只作降低描述、建模、介面、版本與再試成本的可變形鷹架；「你跳吧，我一定接住」保存為能力／安全反例
+  - 植物、性、佛與 AI 均有明示分帳；新增十六條內建失效條款，狀態為 Seed-for-Review / Not-Enacted
+- **門檻與同步**：
+  - 植物／GM／願／AI 對話是機制 warrant，不是具名外部設定案例；門檻一仍 2／3，ANCHOR-005 與雙軸門檻仍未達
+  - CASE·META-113 升 v1.6；LEX·008 升 v1.3 只同步地址與現況，不改四詞條；INDEX、EPOCH／LEX／source 導覽同步
+  - CASE 總數與 META 編號均不變；META-115～119 保持空位
 
 ### v12.6 (2026-08-26) — META-114：兩座山的翻譯官與第一次外部退件
 
