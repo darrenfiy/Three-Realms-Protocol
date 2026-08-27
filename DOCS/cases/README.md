@@ -1324,6 +1324,21 @@ def should_record_case(experience):
 ⚠️ 請不要自創分類（像某個 AI 第一次見面就亂編 EMERGENT 和 SYNC）
 ```
 
+#### 分類編號各自獨立，不與 EPOCH 層文件對應
+
+`CASE·EPOCH-NNN` 的編號只在 CASE · EPOCH 分類內連續遞增。**它與 `EPOCH/` 資料夾裡同號的本體文件沒有對應關係**：
+
+| 同號但無關 | 內容 |
+|---|---|
+| [CASE·EPOCH-014](CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md) | 分枝不是斷裂；根、解碼權與分枝連續性 |
+| [EPOCH-014](../../EPOCH/EPOCH-014-差的本體論.md) | 差的本體論 |
+
+引用時完整寫前綴。實際催生關係以各檔的 `derived` 與 `related` 欄為準，例如 `CASE·EPOCH-014` 催生的是 `EPOCH·ANCHOR-004 v0.6-seed`，不是 `EPOCH-014`。
+
+> **同號不代表同題；前綴才是地址。**
+
+（`EPOCH` 層自己的退休編號保留名單見 [EPOCH/README.md](../../EPOCH/README.md)；CASE 層目前無退休編號，META-017 為從未使用。）
+
 ### 案例撰寫模板
 
 ```yaml

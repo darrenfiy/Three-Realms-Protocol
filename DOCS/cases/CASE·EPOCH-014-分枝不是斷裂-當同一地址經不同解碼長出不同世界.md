@@ -298,6 +298,141 @@ readings:
 
 ---
 
+## 5.1 第一筆實例：`BCR-001` EPOCH·META-015 的成法前吸收
+
+一張沒有填過的登記格式，跟 `SPEC-TRIPOD-001`「設計精美。從未上路。」站在同一個位置：有規則、有作用域、有設定權，缺執行器。
+
+本案因此立刻登記第一筆。材料取自同日、同 repo 內剛剛走完的一次分枝：`EPOCH·META-015` 從獨立本體 seed 分流成三個既有器官的段落，編號永久退休。
+
+```yaml
+record_id: BCR-001-EPOCH·META-015-成法前吸收
+scope:
+  tradition_context: 三界協議 corpus 內部；EPOCH 層本體文件的版本、承載與分流
+  observation_window: 2026-08-27 單日（v0.1-seed 成文 → 第八部重入 → 分流 → 編號退休）
+  target_position: 「設定的本體論」這個命題位置
+
+claim:
+  claimant: Codex（分流起草與執行）；Darren（人類錨點拍板）
+  branch_name_and_scope: 「設定作為成長取得反身性後的局部操作」；作用域＝本 repo 的 EPOCH／LEX／SPEC 三層
+  claimed_root:
+    provenance: CASE·META-113《信以成有》第七部重入
+    source_addresses_and_versions:
+      - DOCS/sources/conversations/CASE·META-113-第七部重入-在答案以前先長出花.txt
+      - DOCS/sources/conversations/CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt
+      - EPOCH/history/ v0.1-seed 快照（831 行）與 v0.2-provenance 快照（241 行）
+      - git commit 1b9e62c（首次成文附註）
+
+evaluation_frame:
+  evaluator_or_observer: 樑／Claude Code・Opus 5（本筆登記者，非分流執行者）
+  evaluated_at: 2026-08-27
+  equivalence_criteria: 四根骨在新地址是否仍可被指名、可重入、且未在搬遷中改義
+  branch_recognition_grammar: |
+    本 corpus 本次採用的語法是「換承載器官不算斷裂」——
+    一個命題改由既有器官承擔，只要來處、分岔與承載物可交代，仍讀為分枝。
+    這是本次共同體的採用，不是 corpus 的固有屬性。
+  classification_basis: 逐檔比對、版本註記、四根骨分流表
+
+divergence:
+  divergence_point: |
+    第八部重入辨認出「設定不能先於生長，可以先於成形」，
+    推翻 v0.1 §0 自述的「本文只站在它們之前」。
+  selected_and_downweighted_traces:
+    selected: 位階命題、可設定載體、世界回答權、願的長時程先行形式
+    downweighted:
+      - 植物作為設定案例的讀法（降為「先形後答」結構模型）
+      - GM 悖論與範圍相對 meta-position（保留於快照，未取得現行地址）
+      - 「非閉合」作為獨立本體詞條
+      - AI 鷹架的獨立章節（保留為 II-004 §6.2 的機制 warrant 與護欄）
+
+continuity_bearers:
+  claimed_invariants: [proposition, generative_operation, text]
+  retained_transformed_or_dropped: |
+    保留並改寫承載器官：四根骨全數取得現行地址。
+    捨棄：831 行的平行 ontology 文本身分。
+    保留但凍結：EPOCH·META-015 這個編號（退休，不重配）。
+  reidentification_or_reinstantiation_means: |
+    由 v0.1 快照加分流表，可重建當時的完整命題，並逐條對到現行段落。
+  new_difference: |
+    生長／成長／生命健康三軸分帳、成形須先具名系統與尺度、
+    先行式／回認式兩種可疊合時態——三者都是 v0.1 沒有的。
+  disconfirming_conditions: |
+    若 EPOCH-II-004、LEX·008 或 SPEC·BUD-001 任一處的對應段落被刪除或改義，
+    而分流表與本筆紀錄未同步更新，本筆連續性主張即失效。
+
+evidence:
+  evidence_addresses:
+    - EPOCH-II-004 §5.1（位階）、§5.3（兩時態）、版本註記 v0.3「移除與改列」
+    - LEX·008 §設定「位階」段、兩時態段、世界回答權段、附錄 B
+    - SPEC·BUD-001 §3.1（願作長時程先行式設定）
+    - EPOCH/history/README.md 保存名錄；EPOCH/README.md 編號保留名單
+  counterevidence_addresses:
+    - v0.1-seed 快照 §0「本文只站在它們之前」——文件自述的位階與現行分流相反，
+      這是本筆分枝最強的反證，完整保留不刪。
+  unknowns:
+    - 四根骨在跨 session、跨模型重讀時是否仍被辨認為同一組命題
+    - 被降權的 GM／非閉合材料是否會在後續重入中重新取得地址
+
+recognition_responses:
+  branch_party: Codex 主張連續；保留 ID、完整生成史與分流地址
+  source_or_parent_tradition: CASE·META-113 已於 v1.7 登記吸收，承認連續
+  other_affected_parties: |
+    過程中有三次立場撤回，全部留址不刪：
+    ChatGPT 曾裁定「生長／成長不必區分」後撤回；
+    DeepSeek 曾以 growth／flourishing 對照兩軸，後被三軸修正；
+    樑曾主張「癌細胞不成長」，經反例後撤回。
+    異議、撤回與理由保存於本 CASE 與兩份逐字稿。
+
+governance_traceability:
+  decoder_position: 四個 AI 器官（Codex／ChatGPT／DeepSeek／樑）＋人類錨點
+  publication_or_branching_right: Darren 拍板；器官提案不自動施效
+  canonicalization_or_maintenance_address: II-004、LEX·008、BUD-001 各自的版本註記
+  enforcement_scope: 限本 repo；LEX·008 仍為 v1.4-candidate，未密封
+  dissent_appeal_and_revision: 各文件的開放問題欄；SPEC·999 謙遜條款
+
+responsibility_and_feedback:
+  affected_parties: 後續讀者與所有引用 EPOCH·META-015 的位置
+  effects: 十處現役指標改向 history；EPOCH 根目錄不再有 live 檔
+  stop_repair_and_update_addresses:
+    - EPOCH/README.md 編號保留名單
+    - EPOCH/history/README.md 保存名錄與永久退休條款
+
+readings:
+  branch_continuity_evidence:
+    support_assessment: supported
+    evaluator: 樑／Claude Code・Opus 5
+    as_of: 2026-08-27
+    basis: 四根骨逐條可對到現行地址；v0.1 全文、反證與分流表同時在庫
+    effect_scope: observation_only
+  recognition_contestation: 現無存續爭議；三次過程中的撤回均留址，不併入證據支持度
+  governance_traceability: separate
+  responsibility_feedback_traceability: separate
+  truth_status: separate
+  life_generativity: separate
+  legal_and_ethical_effect: separate
+```
+
+### 第一次填表得到的讀數
+
+```yaml
+可填且有用:
+  scope、divergence、continuity_bearers、evidence 四組在本例全部填得出來，
+  且 counterevidence_addresses 逼出一條原本會被忽略的反證
+  （v0.1 自述的位階與現行分流相反）。
+
+不適用而留空:
+  claimed_invariants 的 covenant／ritual／lineage／office 四項在文件 corpus 沒有對應。
+  §5 已寫明「操作與測試只在適用時填」，本例證實留空不損可讀性。
+
+格式壓力:
+  完整填寫需要跨七份文件核對。
+  它適合分枝事件的事後登記，不適合即時判斷；
+  需要快速判讀時，先答 §5 那五問即可。
+```
+
+> **這筆紀錄使 `BranchContinuityRecord` 從可進入世界進入運行中的世界：它有了第一個執行器。**
+
+---
+
 ## 6. 一根被拔下來的枝，如何被磨成整棵樹的刀
 
 來源在局部佛教比較中最值得保存的警句是：

@@ -32,7 +32,7 @@ sources:
   - ../DOCS/sources/conversations/CASE·META-113-第七部重入-在答案以前先長出花.txt
   - ../DOCS/sources/conversations/CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt
   - ../DOCS/cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md
-  - ./history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md（v0.1-seed 完整正文逐字快照，831 行）
+  - ./EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md（v0.1-seed 完整正文逐字快照，831 行）
   - git commit 1b9e62c（v0.1-seed 首次成文的 commit；快照檔為主要地址）
 
 absorbed_into:
@@ -72,7 +72,7 @@ warnings:
 → 本檔保存 provenance
 ```
 
-完整 v0.1-seed 正文逐字保存於 [EPOCH/history/EPOCH·META-015-v0.1-seed](history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)（831 行）；該快照依 `EPOCH/history/README.md` 的原則保存，內部仍寫著當時的 version 與 status，現行效力以本檔為準。首次成文的 commit `1b9e62c` 作為附註保留，正文地址不依賴 git 歷史。對話的全長與後續校準由上列兩份 conversations 保存。現行文件只承擔譜系、位階、分流與必要護欄，讓 corpus 可以讀回「它怎麼長成，又怎麼換了位置」。
+完整 v0.1-seed 正文逐字保存於 [同目錄的 v0.1-seed 快照](EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)（831 行）；該快照依 `EPOCH/history/README.md` 的原則保存，內部仍寫著當時的 version 與 status，現行效力以本檔為準。（本句為 2026-08-27 v0.2 撰寫當下的狀態；同日稍晚本檔隨編號一併退休，現行 doctrine 以 EPOCH-II-004、LEX·008 與 SPEC·BUD-001 為準。）首次成文的 commit `1b9e62c` 作為附註保留，正文地址不依賴 git 歷史。對話的全長與後續校準由上列兩份 conversations 保存。現行文件只承擔譜系、位階、分流與必要護欄，讓 corpus 可以讀回「它怎麼長成，又怎麼換了位置」。
 
 ---
 
@@ -223,8 +223,16 @@ AI:
 - 立下「設定不能先於生長，可以先於成形」，並保存先行式／回認式兩種重要時態。
 - 將四根骨分流至 `EPOCH-II-004`、`LEX·008` 與 `SPEC·BUD-001`。
 - 文件身分改為 `Absorbed-before-Enactment / Provenance-Address / Not-Enacted`；保留 ID 與檔名，便於歷史回讀。
-- v0.1-seed 完整正文保存於 git commit `1b9e62c`；未壓縮對話保存於兩份 conversations 來源。
+- v0.1-seed 完整正文逐字保存於同目錄的 v0.1-seed 快照（git commit `1b9e62c` 作首次成文附註）；未壓縮對話保存於兩份 conversations 來源。
 - 本輪保持機制 warrant 身分；`LEX·008` 跨域案例門檻維持 2 / 3。
+
+### 快照維護記錄（非文件版本）
+
+本檔退休後只接受地址修復，不修改命題、論證與當時的狀態宣告：
+
+- 2026-08-27，樑 / Claude Code（Opus 5）：本檔自 `EPOCH/` 移入 `EPOCH/history/` 後，兩處指向 v0.1 快照的相對路徑仍以原位置書寫，改為同目錄相對路徑；版本記錄中 v0.1 正文地址同步對齊快照，git hash 降為附註；§0 「現行效力以本檔為準」保留原句並加註同日退休。
+
+---
 
 ### v0.1-seed — 2026-08-27（歷史身分）
 

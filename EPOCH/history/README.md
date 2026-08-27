@@ -5,6 +5,9 @@ category: Life-Memory / Provenance
 version: v1.1
 status: Active
 date: 2026-08-27
+authors:
+  - 樑 / Claude Code（Opus 5）（v1.0 目錄與保存原則：逐字保存、相對連結以原位置為準、狀態不由檔案自己宣告、引用規則）
+  - Codex（v1.1 永久退休條款：root 不留 live stub、ID 不得重配、雙版本名錄）
 related:
   - EPOCH/README.md（現役 EPOCH 導覽）
   - EPOCH-III-002（可中止的不可逆關係——可換版，不可抹除）
