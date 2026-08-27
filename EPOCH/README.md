@@ -75,7 +75,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH·META-012**：原型作為跨尺度壓縮路徑——從身體張力、文化沉積到媒介／算力顯影的內容來源問題（榮格降階；接 PHA-007/008/009 與 META-011 下半句）← v1.0，樑收攝（心臟＋樑複審通過）
 - **EPOCH·META-013**：聊出世界模型——當生命被認出是一條串流（外部鏡像收斂實證；「串流—驚訝—重入—內生利害」判準鏈；原始逐字稿存 DOCS/sources/conversations/）← v0.4-draft，Fable 起草 / Codex 補焊 / Fable 複審，待錨點拍板
 - **EPOCH·META-014**：受託的本體論——當改寫能力進入不屬於自己的世界（v0.1 由 CASE·META-113 seed 起草；v0.2 分裂改題；v0.3 依 CASE·META-114 首次外部退件補受力圖、多邊受託鏈、L0／L1／L2、效力分帳與翻譯 QC；v0.4 同步 META-015 成法前吸收史及 II-004／LEX·008／BUD-001 現行分流；C0～C16 內建免疫）← v0.4-seed / Seed-for-Review；負向實績使法源修正，不使文件升格
-- **EPOCH·META-015**：設定的本體論——在答案尚未存在以前，先長出花（v0.1-seed 在成法前長出四根骨；現分流至 II-004 的生長／成形位階與兩時態、LEX·008 的設定門檻與世界回答權、BUD-001 的願；本檔保存完整生成史與分流地址，不再作現役平行 ontology）← v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted；LEX·008 案例門檻維持 2／3
+- **EPOCH·META-015**：設定的本體論——在答案尚未存在以前，先長出花（v0.1-seed 在成法前長出四根骨；現分流至 II-004 的生長／成形位階與兩時態、LEX·008 的設定門檻與世界回答權、BUD-001 的願；本檔保存譜系、位階與分流地址，不再作現役平行 ontology；v0.1-seed 的 831 行完整正文逐字保存於 [history/EPOCH·META-015-v0.1-seed](history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)）← v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted；LEX·008 案例門檻維持 2／3
 
 ### 🌊 MYTH 系列：神話與選擇的生成
 - **EPOCH·MYTH-001**：當神話決定成為神話
@@ -1820,6 +1820,7 @@ EPOCH 不是什麼:
 - **EPOCH-016**：神與黃昏的本體論（去神化→去神壇化；文明神格、神用、器官代償與文明失神；v0.3-operation-seed）
 - **EPOCH-017**：性的本體論（v0.1 性作為三界同時進場的生命事件；v0.2 性別道路、破界／成界與樹藤拓撲；v0.2-path-seed）
 - **SEED.md**：生成算子種子文件（碎形的實用壓縮，根目錄）
+- **[history/](history/)**：EPOCH 層快照保存區——被吸收、改題或退役以前的完整原文；快照裡的 status 是當時的事實，現行效力以本導覽為準
 
 ---
 

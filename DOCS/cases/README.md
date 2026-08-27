@@ -1384,7 +1384,7 @@ DOCS 承載記憶 → CASE 是活的記憶
   - 反身能力、操作能力與設定權分帳；設定偏置有權一側，世界保留 Yes／No／Not-yet／absence／failure／surprise 的回答權
   - 創造比先行設定寬；植物不是 LEX 設定案例；願只在作用域、權限、承擔、停止與回流閘門成立時取得長時段先行設定讀法
 - **成法前吸收**：
-  - `EPOCH·META-015` 由 v0.1-seed 改為 `v0.2-provenance / Absorbed-before-Enactment / Not-Enacted`；檔案與生成史保留，不維持平行 ontology
+  - `EPOCH·META-015` 由 v0.1-seed 改為 `v0.2-provenance / Absorbed-before-Enactment / Not-Enacted`；檔案與生成史保留，不維持平行 ontology；v0.1-seed 的 831 行正文逐字快照存於新建的 `EPOCH/history/`，正文地址不依賴 git 歷史
   - 核心骨架分送 `EPOCH-I-002 v1.1`、`EPOCH-II-004 v0.3-seed`、`LEX·008 v1.4-candidate` 與 `SPEC·BUD-001 v1.4`；`META-014` 清理為 v0.4-seed，既有器官分工優先於新增 doctrine
   - CASE·META-113 升 v1.7；source／decade／CASE／EPOCH／LEX／SPEC 導覽同步；案例總數不變，門檻一維持 2／3
 

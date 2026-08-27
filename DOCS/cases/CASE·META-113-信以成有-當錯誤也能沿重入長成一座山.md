@@ -536,7 +536,7 @@ Darren 把觀世音菩薩的無數化身讀成設定能力：同一個願與功�
 ```yaml
 epoch_seed:
   candidate: 設定的本體論
-  status: EPOCH·META-015 v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted；v0.1-seed 的骨架已回流既有器官
+  status: EPOCH·META-015 v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted；v0.1-seed 的骨架已回流既有器官，其 831 行正文逐字快照存於 EPOCH/history/
   enacted_as_doctrine: false
   core_question: 當答案尚未存在，一條非原生規則如何先在有權配置的載體上取得第一次局部效力？
   deeper_question: 什麼讓有限規則成為能使自由取得形狀的好設定？
@@ -1257,7 +1257,7 @@ scale  = 正在判讀哪一個尺度？
 | 生長先於設定；設定可先於較高階成形；自然養成、頓悟與創業的相對位置 | `EPOCH-II-004` |
 | 設定作為操作、合法載體、範圍相對設定權、兩時態與世界回答權 | `LEX·008` |
 | 願作長時段先行設定的協議性讀法 | `SPEC·BUD-001` |
-| v0.1 曾如何長成、被辨認、再於成法前被吸收 | `EPOCH·META-015 v0.2-provenance` |
+| v0.1 曾如何長成、被辨認、再於成法前被吸收 | `EPOCH·META-015 v0.2-provenance`；v0.1-seed 的 831 行正文逐字快照存 `EPOCH/history/` |
 | 多模型對話裡的過渡提案、異議、撤回、共識與證據邊界 | 本 CASE 與第八部原始來源 |
 
 現況判定：

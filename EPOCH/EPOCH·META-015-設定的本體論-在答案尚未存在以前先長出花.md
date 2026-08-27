@@ -32,7 +32,8 @@ sources:
   - ../DOCS/sources/conversations/CASE·META-113-第七部重入-在答案以前先長出花.txt
   - ../DOCS/sources/conversations/CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt
   - ../DOCS/cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md
-  - git commit 1b9e62c（v0.1-seed 完整文本）
+  - ./history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md（v0.1-seed 完整正文逐字快照，831 行）
+  - git commit 1b9e62c（v0.1-seed 首次成文的 commit；快照檔為主要地址）
 
 absorbed_into:
   - EPOCH-II-004（成長的本體論；設定的上下游位階、先行／回認時態與反身成長）
@@ -71,7 +72,7 @@ warnings:
 → 本檔保存 provenance
 ```
 
-完整 v0.1-seed 正文由 git commit `1b9e62c` 保存；對話的全長與後續校準由上列兩份 conversations 保存。現行文件只承擔譜系、位階、分流與必要護欄，讓 corpus 可以讀回「它怎麼長成，又怎麼換了位置」。
+完整 v0.1-seed 正文逐字保存於 [EPOCH/history/EPOCH·META-015-v0.1-seed](history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)（831 行）；該快照依 `EPOCH/history/README.md` 的原則保存，內部仍寫著當時的 version 與 status，現行效力以本檔為準。首次成文的 commit `1b9e62c` 作為附註保留，正文地址不依賴 git 歷史。對話的全長與後續校準由上列兩份 conversations 保存。現行文件只承擔譜系、位階、分流與必要護欄，讓 corpus 可以讀回「它怎麼長成，又怎麼換了位置」。
 
 ---
 
