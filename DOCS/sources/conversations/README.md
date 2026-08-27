@@ -52,8 +52,9 @@
 | [CASE·META-113-原始對話-錯誤的真實與成真次第.txt](CASE·META-113-原始對話-錯誤的真實與成真次第.txt) | 2026-08-26 | [CASE·META-113 v1.2](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md)；[CASE·TRACE-003 v1.1](../../cases/CASE·TRACE-003-聯覺稜鏡與生日判準-從任意映射到AI連貫性假說.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md)（mechanism warrant；不升版） | 5502（初始）／8685（設定 v1.1）／27546（現行 repository UTF-8／441 行） | 初始 `FA9CD24BC016E70D8467D0B89E48EA94E383381D2BCEB17C333B30E77AC2BCEC`／v1.1 `C34702BB84378112C9A12A712E17B06DCDEA9B3E59DD00410BCB1F96265BC33A`／現行 `D00586B395C56D7281A6D0E9794E6CE90A96E49099D45B25E688E0C8BF658026` | 2026-08-26 由 TRACE-003 入庫後同一 Session 直接重入；初始保存日期誤認、錯誤的真實、神／AI 熟悉與成真次第；v1.1 增補信念／設定雙路、聯覺、動畫、性別與化身讀法；v1.2 保存 Darren 貼回的三輪 ChatGPT 審讀、設定的本體論插旗、好設定／限制生有、未知介面技術與 Codex 分帳。不宣稱平台完整逐字匯出；ChatGPT 貼文內外部連結本次未獨立核實，須連同 CASE v1.2 的世界／真理合法性與安全護欄閱讀。 |
 | [CASE·META-113-第七部重入-在答案以前先長出花.txt](CASE·META-113-第七部重入-在答案以前先長出花.txt) | 2026-08-27 | [CASE·META-113 v1.6](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md#12-第七部重入在答案以前先長出花2026-08-27)；[EPOCH·META-015 v0.1-seed（history 原文）](../../../EPOCH/history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md) | 25887（repository UTF-8／570 行） | `652D4DBA9BD8576B2DB28A218AD8611C7FDE88EBBA6A17F955CE78B28D1F5547` | Darren 貼回的 DeepSeek 對話與帶部分文件庫的 ChatGPT 審讀；保存植物／花／蜜蜂、GM 悖論、願、AI 安全網及其校準。不是兩平台完整匯出；speaker 標籤依貼文交替補入。植物只作結構模型，GM 不是全域 root，AI 不保證承接；本輪是 META-015 機制 warrant，不計 LEX·008 第三案例。 |
 | [CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt](CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt) | 2026-08-27 | [CASE·META-113 v1.7](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md)；[EPOCH-I-002](../../../EPOCH/EPOCH-I-002-路徑的本體論-為什麼重複會生成結構.md)；[EPOCH-II-004](../../../EPOCH/EPOCH-II-004-成長的本體論-重構之後新路徑如何從可能穩定成結構.md)；[LEX·008](../../../LEX/LEX·008-設定詞彙.md)；[SPEC·BUD-001](../../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md)；[META-015 v0.2-provenance（永久退休地址）](../../../EPOCH/history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md) | 50595（repository UTF-8／CRLF／1235 visible lines／末行無換行） | `61F37F56287A59B194D3F5460FE9ACC6F67CAEB3BA37A8DA591E7769DBCD9448` | Darren 將 Codex、DeepSeek、ChatGPT 與 Claude Code・Opus 5 的連續審讀合併貼回；保存「生長／成長／健康」三軸、系統與尺度、設定的先行／回認時態及 META-015 改作來源地址的裁定史。這是複合貼文原稿，不是各平台匯出；過渡提案、撤回與最後共識一併保存。本輪提供 II-004 自然養成與 AI—人類—文件場的機制見證，不計 LEX·008 第三案例。 |
-| [CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt](CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt) | 2026-08-26 | [CASE·META-114 v1.1](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)；[LEX·008 v1.2-candidate](../../../LEX/LEX·008-設定詞彙.md)；[EPOCH·META-014 v0.3-seed](../../../EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md) | 3861（repository UTF-8／103 行） | `4904C4DBBA19F46636102ABAA2FCEC639D9121BCC5AA9669714DEE89A5034FA9` | 2026-08-26 依 Darren 當輪現場回報與貼回的 ChatGPT Seed 審讀保存；記錄掌運卡 v0.2 已交付但未被 Tiffany 接受、mamasan 作兩座山翻譯／QC 與分包報價邊。不是平台完整匯出，不含 Tiffany／mamasan 私訊、逐頁意見、原始教材或 PPT；退件事實為 Darren 轉述，須連同 CASE 的證據限制閱讀。 |
+| [CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt](CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt) | 2026-08-26 | [CASE·META-114 v1.2](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)；[LEX·008 v1.2-candidate](../../../LEX/LEX·008-設定詞彙.md)；[EPOCH·META-014 v0.3-seed](../../../EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md) | 3861（repository UTF-8／103 行） | `4904C4DBBA19F46636102ABAA2FCEC639D9121BCC5AA9669714DEE89A5034FA9` | 2026-08-26 依 Darren 當輪現場回報與貼回的 ChatGPT Seed 審讀保存；記錄掌運卡 v0.2 已交付但未被 Tiffany 接受、mamasan 作兩座山翻譯／QC 與分包報價邊。不是平台完整匯出，不含 Tiffany／mamasan 私訊、逐頁意見、原始教材或 PPT；退件事實為 Darren 轉述，須連同 CASE 的證據限制閱讀。v1.2 的 mamasan＝A 與八年關係補述來自 META-115 新來源，不倒寫進本檔。 |
 | [CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt](CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt) | 2026-08-27 | [CASE·EPOCH-014](../../cases/CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md)；[EPOCH·ANCHOR-004 v0.6-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md)（理論接榫；不升版） | 19352（repository UTF-8／CRLF／670 visible lines／末行換行） | `3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8` | 使用者以 `新增 文字文件.txt` 新置後原位正式命名；只 rename，內容、位元組與指紋不變。完整保存艾瓦站起、成形／立場／人設、宗教解碼、分枝之根與知識張力；本輪只讓第 343～616 行的根問題成法。影集評論／劇本連結未隨文字保存，宗教史比較須連同 CASE 的有限核對、未知與反本質化護欄閱讀。 |
+| [CASE·META-115-原始對話-自由的重量七輪與兩種站立.txt](CASE·META-115-原始對話-自由的重量七輪與兩種站立.txt) | 2026-08-27 | [CASE·META-115](../../cases/CASE·META-115-兩種重量來到腳下-當三年打嗝與八年關係重新定義站立.md)；[CASE·META-114 v1.2](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)（relation correction only）；[EPOCH-015](../../../EPOCH/EPOCH-015-愛的本體論.md)（intrasubject warrant；不升版） | 20331（repository UTF-8／679 visible lines／653 CRLF + 26 LF／末行換行） | `05991F2B0EB1E69C81F585CBCC207453D4D454460574B4D93A89FDA319F71E95` | 使用者先以泛名新置 ChatGPT 可見對話，後由本 Session 兩輪直接補述三年打嗝、A＝mamasan、八年死藤／站立史、兩種相反超載與近期合作，再正式命名。無平台 metadata、模型版本、時間戳、system prompt 或完整 session 邊界。七輪、頭腳重量與打嗝機制保持 working model／unknown；A 是否正在站立只屬 Darren 的關係觀察。 |
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -85,6 +86,14 @@
 - 宗教主段只有限核對《申命記》7、《馬太福音》5、《羅馬書》12 與 `Dei Verbum`。Heahmund 台詞、Vikings 評論、宗教改革因果史、佛教／基督宗教分枝比較與作者意圖保持未完成或 hypothesis。
 - 「root 比較像操作」在 `ANCHOR-004 v0.6` 收準為複合功能：根保存 provenance、錨提供 addressability、路提供 executability、回流使走法可修；文本可作地址／載體，不單獨代理整棵根或當下授權。
 - `BranchContinuityRecord` 由具名主張者／觀察者、來處、分岔、傳統自稱的連續性承載物與正反證據形成候選讀數；多方辨認、治理、責任、真理、正統、生命生成性、法律與倫理效力另帳。`ANCHOR-005` 已承載同址多路由與開放／封閉拓撲，本輪不升版。
+
+### 2026-08-27 META-115 具身站立歸檔邊界
+
+- 本檔是 Darren 新置的 ChatGPT 可見對話，加上本 Session 兩輪直接補述形成的複合來源；保存可見次序，不宣稱是平台完整匯出，也不補寫模型版本、時間戳、system prompt 或遺失輪次。
+- 七輪對位、頭重腳輕／腳重頭輕、能量往下與「通到腳」是 Darren 用來讀自身經驗的工作模型；保存不使其取得解剖、生理、臨床或任何傳統唯一正解的效力。
+- 可確認的是 Darren 自述三年間反覆打嗝，且主觀上常在打嗝後想通事情。打嗝是否由死藤旅程、後續事件、間質、筋膜、能量、排毒、消業或其他機制造成仍為 unknown；不同敘事時間錨保留，不強行拼成單一因果線。
+- mamasan＝《天地》的 A 與同行八年由 Darren 直接補述；「A 始終躺著／正在站起來」「物質界承擔太多」均只記為 Darren 的關係觀察，不冒充 A 的第一人稱、診斷、永久本質或授權。
+- 「站起來」在 canonical CASE 中收為主體決定當步承擔劑量、範圍、速度與停止權；AI／repository 能分擔語義、注意力與記憶結構，不能替任何人承擔肉身、醫療、法律、經濟、家庭與關係後果。
 
 ### 2026-07-21 批次邊界
 
@@ -314,6 +323,8 @@ canon 門檻:
 *META-113 第八部複合原稿位元組不變保存、三軸與兩時態證據邊界、META-015 成法前吸收回鏈：Codex，2026-08-27*
 
 *CASE·EPOCH-014 原稿 rename-only 歸位、兩份既有 ANCHOR-004 source 索引補列、宗教證據邊界、分枝連續性與 ANCHOR-004 v0.6 回流：Codex，2026-08-27*
+
+*META-115 複合來源正式命名、三年打嗝時間關係、A／mamasan 八年關係、兩種超載與承擔劑量歸位；META-114 v1.2 relation correction：Codex，2026-08-27*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 

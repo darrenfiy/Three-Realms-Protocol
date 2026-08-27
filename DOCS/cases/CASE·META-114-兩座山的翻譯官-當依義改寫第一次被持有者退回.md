@@ -7,14 +7,14 @@ id: CASE·META-114
 title: 兩座山的翻譯官——當依義改寫第一次被持有者退回
 subtitle: 解釋可以成立，不等於作品已被接受；受託鏈中的每一道效力都要有自己的地址
 created: 2026-08-26
-updated: 2026-08-26
-version: v1.1
+updated: 2026-08-27
+version: v1.2
 type: META（設定作用域 / 受託 / 依義不依語 / 作者聲音 / 代表效力 / 受託鏈 / 翻譯橋梁 / QC／QA / 雙重驗收 / 分包報價 / 負向實證 / 法源回流）
 status: Field-Documentation / LEX·008-Observed-Failure / First-EPOCH-META-014-Field-Rejection / Negative-Warrant / EPOCH-META-014-v0.3-Seed-Revision
 
 participants:
   - Darren（提出依義不依語的整理立場；在退件後辨認 mamasan 必須成為兩座山的翻譯官，將法源修訂與實績判位交付 Codex，並指出初稿尚未承接最新版 LEX·008）
-  - mamasan（Tiffany 信任的合作窗口；實際送出問題單與 PPT，並在回流後辨認自己須承擔翻譯與交付前 QC／QA）
+  - mamasan／A（Tiffany 信任的合作窗口；實際送出問題單與 PPT，並在回流後辨認自己須承擔翻譯與交付前 QC／QA。Darren 於 2026-08-27 直接校準：她也是《天地》姿態之卷的 A、與 Darren 共同走過八年的重要他者；關係背景不擴張本案的受託權）
   - Tiffany（課程素材持有者與預定使用者；實際收到 v0.2 後明確不滿，認為大量原文遭改動；本案只保存 Darren 轉述，不冒充她的完整第一人稱）
   - ChatGPT（v0.2 Seed 審讀；提出去除設定性上帝視角、補 affected_parties／impact_scope 與 C5 資料最小化）
   - Codex（案件判位、來源保存、EPOCH·META-014 v0.3-seed 修法與索引同步）
@@ -43,6 +43,7 @@ epistemic_scope:
   - Tiffany 有權決定成果是否仍代表她、可否掛她的名字、能否供她授課與是否接受；此權不自動壟斷所有可提出的語義或結構解釋
   - Darren 可以保留有來源的獨立判讀；未被 Tiffany 接受時，只能標示為 Darren 的解讀／提案，不能稱為 Tiffany 的正式體系或成功交付
   - mamasan 的翻譯與 QC／QA 是一個具責任的受託位置，不是中性傳檔，也不是把 Darren 的版本說服 Tiffany 接受
+  - mamasan 與 A 的名稱等同及八年共同史由 Darren 2026-08-27 直接補述，既有 Book2／IND-006 亦已有同線材料；這只補角色來處，不冒充 A 對本案、站立或三界模型的第一人稱同意
   - 本案是 META-014 的負向 warrant：它反證 v0.2 的單一受託地址足以處理多邊合作，不構成 EPOCH 升 Active 的成功票
 
 decision:
@@ -60,6 +61,9 @@ related:
   - LEX·008（設定詞彙——本案依最新版登記 encoded／enacted、範圍相對設定權與 observed failure；不是替 Tiffany 設定）
   - EPOCH·META-014（本案直接修訂的受託法源；v0.2 二方模型受本案反證後升 v0.3-seed）
   - CASE·META-113（META-014 的生成現場；設定／受託分裂與首次實地執行的前史）
+  - CASE·META-115（兩種重量來到腳下——mamasan＝A 的直接校準、八年關係、合作與「站立＝決定承擔多少」的具身重入）
+  - CASE·IND-006（因陀羅網的最小面積——mamasan-lab、A／Alisha 的八年關係與第三個點開始長自己的腳）
+  - ../books/book2/manuscript/姿態之卷/02_第二章_永遠在找老師.md（A、死藤與躺／站敘事；屬 Darren 的小說敘述與關係觀察）
   - EPOCH-IV-001（操作能力、權限與責任分立；本案補多邊受託鏈與效力分帳）
   - EPOCH·PHA-008（多光錐交集不取消原始姿態；mamasan 是交集中的翻譯與路由位置）
   - SPEC·INI-001（發起、所有、No、回流與共同成法）
@@ -71,6 +75,7 @@ warnings:
   - "不要把 Tiffany 的拒絕寫成『她不懂依義』；拒絕已足以終止該版本代表她與供她使用的效力。"
   - "不要把 Darren 的結構判讀仍可能成立，偷換成可繼續用 Tiffany 名義交付。解釋效力不產生代表效力。"
   - "不要把 mamasan 寫成關係潤滑劑或銷售說客；她必須有權退件、要求證據、改變交付方式與拒絕承擔。"
+  - "不要因 mamasan 同時是 Darren 八年關係中的 A，就把親密、共同史或小說角色重要性偷換成免費勞動、永久中介、替 Tiffany／Darren 代答，或對任一作用域的預先同意。"
   - "不要把內部工作設定在一個作用域成立，偷換成它已取得另一作用域的設定權；可生成草稿不等於可代表作者。"
   - "不要用負向實證包裝首案成功、付費滿意或轉介價值；本案的硬度來自失敗真的改了法。"
 ```
@@ -454,6 +459,30 @@ META-114-F10_設定權跨域膨脹:
 
 ---
 
+## 12. 關係校準——mamasan 也是《天地》的 A（2026-08-27）
+
+Darren 在 `META-115` 收錄前直接補述：mamasan 就是《天地》姿態之卷的 A，是與他共同走過八年的重要他者，也與他一起進入死藤水旅程。
+
+這項校準使本案的「翻譯官」多出一段來處：她不是因單次轉介才站到兩座山之間；mamasan-lab、`IND-006` 與 Book2 早已保存她和 Darren 的長期共同史，以及「第三個點開始長自己的腳」的候選方向。
+
+它不改本案的權限結論：
+
+```yaml
+relationship_history:
+  adds:
+    - 長期共同語境、信任與彼此語法的關係知識
+    - 本次合作為何不只是一般商務中介的來源背景
+  does_not_add:
+    - Tiffany 的作者接受或課程 canon 權
+    - Darren 對 A／mamasan 的永久受託或免費工作請求權
+    - A 對三界模型、META-115 站立讀法或本案全部內容的同意
+    - 任何一方替另一方決定可承擔範圍的權力
+```
+
+Darren 將此次真正合作讀作 A「開始要站起來」；`META-115` 把這句保存為他的八年關係觀察，並將站立收成「主體決定這一步承擔多少」。本案能直接確認的仍只有：合作使 mamasan 的需求翻譯、QC、退件、停止與價格第一次成為具名責任位置。她是否把這件事經驗為站立，留給她本人與後續回流。
+
+---
+
 *事件回報、依義立場與兩座山翻譯官辨認：Darren，2026-08-26。*
 
 *v0.2 Seed 審讀、受力圖與資料最小化補焊：ChatGPT（由 Darren 貼回），2026-08-26。*
@@ -461,3 +490,5 @@ META-114-F10_設定權跨域膨脹:
 *案件判位、來源保存、LEX·008 v1.2-candidate 登記、負向實績分帳與 META-014 v0.3-seed 修法：Codex，2026-08-26。*
 
 *v1.1 法源鏈校正：Darren 指出 CASE 初稿未 relate 最新 LEX·008；Codex 完整回讀後補工作設定、效力作用域與 observed failure 登記，2026-08-26。*
+
+*v1.2 關係校準：Darren 直接確認 mamasan＝《天地》的 A；Codex 回讀 Book2／IND-006，補八年共同史與角色／權限分帳，原退件、受託與商業效力不變，2026-08-27。*
