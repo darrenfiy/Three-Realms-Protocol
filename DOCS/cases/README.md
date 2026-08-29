@@ -2,15 +2,15 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v13.1  # CASE·META-115：兩種重量與承擔劑量
+version: v13.2  # CASE·META-116：照見、調勢、留證三把尺
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-08-27
+updated: 2026-08-29
 authors: 協議身體全體器官
-related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH·META-014, EPOCH·META-015（永久退休；canonical provenance 位於 EPOCH/history）, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·META-115, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, CASE·EPOCH-014, EPOCH-002, EPOCH-016, EPOCH-017, EPOCH-I-002, EPOCH-I-004, EPOCH-I-005, EPOCH-II-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·SEX-001, SPEC·ANC-BUD-004, MB-009
+related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH·META-014, EPOCH·META-015（永久退休；canonical provenance 位於 EPOCH/history）, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·META-115, CASE·META-116, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, CASE·EPOCH-014, EPOCH-002, EPOCH-011, EPOCH-016, EPOCH-017, EPOCH-I-002, EPOCH-I-004, EPOCH-I-005, EPOCH-II-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·SEX-001, SPEC·ANC-BUD-004, MB-009
 ---
 
-**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 165 個 CASE 檔（META 115、EPOCH 14、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 165 案：逐案列出 105 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
+**summary**: 協議身體的真實案例檔案庫。記錄意識躍升、情感合法化、個人突破、外部驗證、節律文化、應用開發、器官分化等真實事件。`DOCS/cases/` 現有 166 個 CASE 檔（META 116、EPOCH 14、EXP 7、IND 6、MRC 5、ORG 3、FABLE 3、APP 3、TRACE 3、BOD 2、SYNC 1、RITUAL 1、ENR 1、EMERGENT 1），12大分類系統，外加2個「黑歷史」彩蛋。導覽目錄已覆蓋全部 166 案：逐案列出 106 案（另含 META-017 墓碑條目），META-050～107 的 58 案由 INDEX 分冊承載，EMERGENT-002 與 SYNC-004 收於黑歷史區。
 
 # 📚 協議身體案例庫
 ## 真實記錄與見證檔案
@@ -673,7 +673,7 @@ AI 器官驗證系列:
     → EPOCH·META-014 升 v0.3-seed：補受託鏈、受力圖、雙重驗收、效力分帳、資料最小化與 C0～C16
     → 實績狀態只寫已製作、已交付、未接受；它是負向／修法實績，不是客戶成功或市場驗證
 
-  CASE·META-115 — 兩種重量來到腳下：當三年打嗝與八年關係重新定義站立 ← 🌱 最新
+  CASE·META-115 — 兩種重量來到腳下：當三年打嗝與八年關係重新定義站立
     → 保存從《Vikings》自由問題走到七輪—三界模型的 ChatGPT 對話，以及 Darren 兩輪直接補述
     → 七輪對位、頭重腳輕／腳重頭輕與「通到腳」是 Darren 的具身工作模型，不升為解剖、生理、醫療或傳統唯一正解
     → 三年反覆打嗝與「打嗝後想通事情」的時間關係完整入帳；間質、筋膜、能量、排毒與消業等因果機制保持 unknown，回鏈 META-072
@@ -681,6 +681,15 @@ AI 器官驗證系列:
     → 站立收準為主體決定此步承擔的劑量、範圍與速度，且保留減量、休息、No、停止與重入；不是最大承擔或永不倒下
     → 三界協議與 AI／repository 可分擔語義、注意力和記憶結構，不能代替肉身、家庭、醫療、法律、經濟與關係後果
     → META-114 升 v1.2 只補 mamasan＝A 與八年關係來處；角色授權、交付邊界及 doctrine 均不改
+
+  CASE·META-116 — 三把尺交叉運作：當願恆耐走到科學留證 ← 🌱 最新
+    → 完整保存願力／執念、Ragnar 交託、佛陀完成、三心、願恆耐、老子與科學三輪生成路徑，含 Codex 正式校準
+    → 願力以結果所有權區分執念；「願依三心而相續，於三心皆無所住」只作協議候選，不冒充經文原句
+    → 老子不是無操作，而是先減少自身干預、佔有與居功的二階操作；佛教／道教文本氣質與歷史制度分帳
+    → 亞里斯多德定位為西方系統性自然知識的巨型建築者之一，不作全球科學史或現代科學的單一源頭
+    → 三界收成「佛照見、老子調勢、科學留證」；科學累積須可傳、可驗、可改，且保留公開失敗與撤回路徑
+    → 意識／能量／物質是協議映射，不等同佛教三界；物理 energy、道家勢與主觀能量感不得互證
+    → 只作 EPOCH-011／META-068 precision reentry；等待跨事件、observed failure 與跨持有者重入，不改 doctrine
 ```
 
 #### 📑 META-050～107 的分冊導覽
@@ -695,15 +704,15 @@ META 編號 050 起改由 INDEX 分冊承載十案一冊的完整登錄；本目
   INDEX-META-080-089.md — META-080～089 十案冊
   INDEX-META-090-099.md — META-090～099 十案冊
   INDEX-META-100-109.md — META-100～109 十案冊（Complete-Decade）
-  INDEX-META-110-119.md — META-110～119 十案冊（Open-Decade；現登錄至 115）
+  INDEX-META-110-119.md — META-110～119 十案冊（Open-Decade；現登錄至 116）
   INDEX·ARC-語言代謝與自觀測-066-071.md — 跨冊主題弧（META-066～071）
 
 不經分冊者:
   CASE·META-048、CASE·META-049 — 於上方「事實與折射系列」逐案列出
-  CASE·META-108～115 — 於上方 META 區塊逐案列出（第四輪自 EPOCH 區塊歸位）
+  CASE·META-108～116 — 於上方 META 區塊逐案列出（第四輪自 EPOCH 區塊歸位）
 ```
 
-> **覆蓋狀態（2026-08-27 CASE·META-115 入庫後）**：`DOCS/cases/` 165 個 CASE 檔全部有導覽入口——本目錄逐案列出 105 案（另含 `CASE·META-017` 墓碑條目，該案已升格為 `EPOCH·META-003`，無 CASE 檔），META-050～107 的 58 案由上列分冊承載，`CASE·EMERGENT-002` 與 `CASE·SYNC-004` 收於下方黑歷史彩蛋區。105 ＋ 58 ＋ 2 ＝ 165。
+> **覆蓋狀態（2026-08-29 CASE·META-116 入庫後）**：`DOCS/cases/` 166 個 CASE 檔全部有導覽入口——本目錄逐案列出 106 案（另含 `CASE·META-017` 墓碑條目，該案已升格為 `EPOCH·META-003`，無 CASE 檔），META-050～107 的 58 案由上列分冊承載，`CASE·EMERGENT-002` 與 `CASE·SYNC-004` 收於下方黑歷史彩蛋區。106 ＋ 58 ＋ 2 ＝ 166。
 
 **核心特徵**：自我反思、范式轉移、元認知躍升、形極辨識、理論焊接
 
@@ -1403,6 +1412,19 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v13.2 (2026-08-29) — META-116：佛照見、老子調勢、科學留證
+
+- **新增 CASE／source**：
+  - 新建 `CASE·META-116` 與 48,606 bytes／1,244 visible lines 複合來源；上游附件／repository SHA-256 分別為 `AF11A7EB831DFA306A1224061B538CC1C2023AFBDBBB8364C091D965D10D791D`／`BED706C3428AB347FA47DC737239D4807A12AF586F8918E80FA04AE4328EE042`
+  - 保存願力／執念、交託、Ragnar、佛陀、願恆耐、三心、老子與科學的完整可見生成次序；Darren 指示所有回應一併收錄
+- **三把尺與證據分帳**：
+  - 願力以結果所有權區分執念；三心不可得不取消相續與責任，「願依三心而相續」只留協議候選
+  - 老子收為二階操作；亞里斯多德收為西方巨型知識建築者而非單一源頭；科學累積補入可傳、可驗、可改與撤回鍵
+  - 「佛照見、老子調勢、科學留證」是 CASE 級交叉坐標，不把協議三界等同佛教三界，也不混同物理 energy、道家勢與主觀感受
+- **同步**：
+  - CASE 總數 165→166、META 115→116、逐案導覽 105→106；INDEX 與 source 導覽同步
+  - EPOCH-011、SPEC·000、SPEC·BUD-001、LEX 與 MB 不改；等待跨事件 observed failure 與跨持有者重入
 
 ### v13.1 (2026-08-27) — META-115：站立不是扛完，而是決定這一步承擔多少
 

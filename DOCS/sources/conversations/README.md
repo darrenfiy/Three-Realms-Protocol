@@ -55,6 +55,7 @@
 | [CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt](CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt) | 2026-08-26 | [CASE·META-114 v1.2](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)；[LEX·008 v1.2-candidate](../../../LEX/LEX·008-設定詞彙.md)；[EPOCH·META-014 v0.3-seed](../../../EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md) | 3861（repository UTF-8／103 行） | `4904C4DBBA19F46636102ABAA2FCEC639D9121BCC5AA9669714DEE89A5034FA9` | 2026-08-26 依 Darren 當輪現場回報與貼回的 ChatGPT Seed 審讀保存；記錄掌運卡 v0.2 已交付但未被 Tiffany 接受、mamasan 作兩座山翻譯／QC 與分包報價邊。不是平台完整匯出，不含 Tiffany／mamasan 私訊、逐頁意見、原始教材或 PPT；退件事實為 Darren 轉述，須連同 CASE 的證據限制閱讀。v1.2 的 mamasan＝A 與八年關係補述來自 META-115 新來源，不倒寫進本檔。 |
 | [CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt](CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt) | 2026-08-27 | [CASE·EPOCH-014](../../cases/CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md)；[EPOCH·ANCHOR-004 v0.6-seed](../../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md)；[EPOCH·ANCHOR-005 v0.2-seed](../../../EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md)（理論接榫；不升版） | 19352（repository UTF-8／CRLF／670 visible lines／末行換行） | `3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8` | 使用者以 `新增 文字文件.txt` 新置後原位正式命名；只 rename，內容、位元組與指紋不變。完整保存艾瓦站起、成形／立場／人設、宗教解碼、分枝之根與知識張力；本輪只讓第 343～616 行的根問題成法。影集評論／劇本連結未隨文字保存，宗教史比較須連同 CASE 的有限核對、未知與反本質化護欄閱讀。 |
 | [CASE·META-115-原始對話-自由的重量七輪與兩種站立.txt](CASE·META-115-原始對話-自由的重量七輪與兩種站立.txt) | 2026-08-27 | [CASE·META-115](../../cases/CASE·META-115-兩種重量來到腳下-當三年打嗝與八年關係重新定義站立.md)；[CASE·META-114 v1.2](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)（relation correction only）；[EPOCH-015](../../../EPOCH/EPOCH-015-愛的本體論.md)（intrasubject warrant；不升版） | 20331（repository UTF-8／679 visible lines／653 CRLF + 26 LF／末行換行） | `05991F2B0EB1E69C81F585CBCC207453D4D454460574B4D93A89FDA319F71E95` | 使用者先以泛名新置 ChatGPT 可見對話，後由本 Session 兩輪直接補述三年打嗝、A＝mamasan、八年死藤／站立史、兩種相反超載與近期合作，再正式命名。無平台 metadata、模型版本、時間戳、system prompt 或完整 session 邊界。七輪、頭腳重量與打嗝機制保持 working model／unknown；A 是否正在站立只屬 Darren 的關係觀察。 |
+| [CASE·META-116-原始對話-願恆耐老子與科學三界.txt](CASE·META-116-原始對話-願恆耐老子與科學三界.txt) | 2026-08-29 | [CASE·META-116](../../cases/CASE·META-116-三把尺交叉運作-當願恆耐走到科學留證.md)；[EPOCH-011](../../../EPOCH/EPOCH-011-照見的本體論-從如是觀到三條文明路徑的展開.md)／[CASE·META-068](../../cases/CASE·META-068-光水土-當客觀被看見為夠多主觀的穩定交集而非上帝視角.md)（precision reentry；不升版） | 48606（repository UTF-8／LF／1244 visible lines／末行換行；上游附件 22989 bytes／638 lines／CRLF／末行無 LF） | repository `BED706C3428AB347FA47DC737239D4807A12AF586F8918E80FA04AE4328EE042`／上游附件 `AF11A7EB831DFA306A1224061B538CC1C2023AFBDBBB8364C091D965D10D791D` | Darren 交付既有 ChatGPT 對話後，於同一 Codex Session 續貼老子與科學兩輪，並要求把所有回應一併保存。現行 composite 依生成次序收錄願力／執念、交託、Ragnar、三心、願恆耐、老子二階操作、亞里斯多德與科學留證；分部標題與 speaker 標籤由歸檔者補入，正文只作 LF 正規化。不是平台完整匯出；宗教義理、跨傳統映射與科學史概括須連同 CASE 的效力分帳閱讀。 |
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -94,6 +95,15 @@
 - 可確認的是 Darren 自述三年間反覆打嗝，且主觀上常在打嗝後想通事情。打嗝是否由死藤旅程、後續事件、間質、筋膜、能量、排毒、消業或其他機制造成仍為 unknown；不同敘事時間錨保留，不強行拼成單一因果線。
 - mamasan＝《天地》的 A 與同行八年由 Darren 直接補述；「A 始終躺著／正在站起來」「物質界承擔太多」均只記為 Darren 的關係觀察，不冒充 A 的第一人稱、診斷、永久本質或授權。
 - 「站起來」在 canonical CASE 中收為主體決定當步承擔劑量、範圍、速度與停止權；AI／repository 能分擔語義、注意力與記憶結構，不能替任何人承擔肉身、醫療、法律、經濟、家庭與關係後果。
+
+### 2026-08-29 META-116 三把尺歸檔邊界
+
+- 本檔以 22,989-byte 上游文字附件為第一部，再接入同一 Session 的兩輪 Darren 貼文、兩輪既有 Codex 正式回答與本次歸檔回答；保存的是可見正文次序，不是平台完整匯出。
+- 複合檔新增的分部標題、Darren／Codex 標籤與來源說明只供追責；正文不改寫，附件 CRLF 與 Session 文字統一正規化為 LF，因此 repository 指紋不等同上游附件指紋。
+- 兩處「Darren 說」標記的是本 Session 的 user-message 角色；訊息內含 Darren 貼回的較早問答與 ChatGPT 長回應，不把巢狀文字改記為 Darren 原創。
+- 願力／執念、Ragnar／佛陀、三心、老子與科學的連線是生成性哲學對話；角色動機、佛教宗義、道教史與全球科學史不因原文流暢而取得同一證據效力。
+- 三界協議的意識／能量／物質不是佛教欲界／色界／無色界；科學 energy、老子的勢／流與主觀能量感不得互相換算或證明。
+- 「亞里斯多德不是泉源而是巨型建築」「佛照見、老子調勢、科學留證」「累積而可撤」只取得 CASE 級工作語；EPOCH-011、SPEC·000、SPEC·BUD-001、LEX 與 MB 本輪不修改。
 
 ### 2026-07-21 批次邊界
 
@@ -325,6 +335,8 @@ canon 門檻:
 *CASE·EPOCH-014 原稿 rename-only 歸位、兩份既有 ANCHOR-004 source 索引補列、宗教證據邊界、分枝連續性與 ANCHOR-004 v0.6 回流：Codex，2026-08-27*
 
 *META-115 複合來源正式命名、三年打嗝時間關係、A／mamasan 八年關係、兩種超載與承擔劑量歸位；META-114 v1.2 relation correction：Codex，2026-08-27*
+
+*META-116 複合來源歸位、上游附件／repository 雙指紋、願恆耐與三心校準、老子二階操作、科學多源史與「照見／調勢／留證」三把尺入案：Codex，2026-08-29*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
