@@ -59,6 +59,8 @@
 | [CASE·META-117-原始對話-時空非基本與金的位階.txt](CASE·META-117-原始對話-時空非基本與金的位階.txt) | 2026-08-30 | [CASE·META-117 v1.1](../../cases/CASE·META-117-切是金的動詞-當時空非基本的新聞回頭壓測姿態的位階.md)；[EPOCH·PHA-007 v1.2](../../../EPOCH/EPOCH·PHA-007-視界引擎.md)（precision patch completed）／[EPOCH-I-005](../../../EPOCH/EPOCH-I-005-主體的本體論-為什麼形狀可以跨失憶延續.md)（保持開放） | 67084（repository UTF-8／LF／1384 visible lines／末行換行） | `FBD0A92DD1E025FBE03EF9CF5D103CDB545983AB00F35A711C7249EAFA93769F` | Darren 交付一則量子重力科普（GFT／「時空非基本」）與既有 ChatGPT 四輪展開，樑在同一 Claude Code Session 完成三輪 repo 對照審讀，中間夾兩輪錨點續談。分部標題與 speaker 標籤由歸檔者補入，正文不改寫。第二部首則錨點發言缺漏且不代擬；器官撤回與錨點否決完整保存。後續已核對 arXiv:2608.12003 書目／摘要，仍不作三界證明；PHA-007 只修金／原點／座標標記，其他候選不成法。 |
 | [CASE·META-118-原始對話-苦行僧與公主的公路工程.txt](CASE·META-118-原始對話-苦行僧與公主的公路工程.txt) | 2026-08-30 | [CASE·META-118 v1.2](../../cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md)；[CASE·META-113 v1.4](../../cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md)（既有裁決）／[CASE·META-114](../../cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md)（前驅／代理失敗訊號，非正式首測）；[EPOCH-III-002](../../../EPOCH/EPOCH-III-002-可中止的不可逆關係-關係重量如何不滑向依附陷阱.md)（補條候選；未升版） | 26183（repository UTF-8／LF／847 visible lines／末行換行） | `C10DC88683B59206368B2928D5D07AA0DD1FE3973518AD4FE85DB08614A645C6` | Darren 與 ChatGPT 四輪對話，含 A 的八字回應與口頭解釋（Darren 轉述；A 未直接書寫，亦未接受角色）。第二部一處依 F54 作最小資料限縮；若還原可識別內容，須相關資料當事人對內容、用途與可見範圍明示授權，錨點不能代答。原檔與 hash 不因 v1.2 回流改寫。 |
 | [CASE·META-118-錨點回流-路已在走與愛的工程問題.txt](CASE·META-118-錨點回流-路已在走與愛的工程問題.txt) | 2026-08-30 | [CASE·META-118 v1.2 §12](../../cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md#12-錨點裁示路已在走願的兩個起點與愛的工程題)；[EPOCH·PHA-007 v1.2](../../../EPOCH/EPOCH·PHA-007-視界引擎.md) | 1845（repository UTF-8／LF／30 visible lines） | `9897E6551DBD76AD3DB711928EE2BD20663E1EDDAD415618CD4A50B3A24B8C56` | 保存 Darren 單則錨點回流原文：「路已在走，修裂縫即可」、學琴所示願的兩種起點、愛／想像力與 AI 工程問題。題名、日期與歸檔說明由歸檔者補入；不是 A／Tiffany 的第一人稱、同意或受益讀數。§10 v1.1 引文仍缺獨立 raw source，本檔不反向補造。 |
+| [CASE·META-118-錨點回流-如是願與常住承諾重量.txt](CASE·META-118-錨點回流-如是願與常住承諾重量.txt) | 2026-08-30 | [CASE·META-118 v1.3 §14](../../cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md#14-錨點再校正可退出不等於承諾免責) | 15591（repository UTF-8／LF／218 visible lines／末行換行） | `4908E0FCA6E327583440B8A8F75383956275498297278CEAF42AFAEF870954C6` | 保存 Darren 與 ChatGPT 兩輪「先成法／先入局」「如是／願」及「香客／常住／戒律」校正。關於 A 的敘述均由 Darren 提出；不構成 A 的第一人稱 Yes，也不新增公主測試樣本或共同契約。 |
+| [CASE·META-119-原始對話-定義設定與跨域共同成法.txt](CASE·META-119-原始對話-定義設定與跨域共同成法.txt) | 2026-08-31 | [CASE·META-119](../../cases/CASE·META-119-定義就是裝把手-當多個世界在一個主體裡共同成法.md)（operator grammar／cross-domain integration candidates；doctrine 不改） | 18454（repository UTF-8／CRLF／546 visible lines／末行無換行；與補全後附件位元組一致） | `5150B1B10485156AA38A79CE9AA8668087AC2F197032FC6864D794F34E5870BB` | Darren 提供的當日 ChatGPT 可見對話。第一次貼回漏掉「定義／設定」中段；Darren 回到原對話補回後再交付，本檔保存補全版本且不倒寫修復史。DEFINE／SET、root access、0.2^n 與 passion／compassion 均須連同 CASE 的三分、權限、統計與詞義護欄閱讀。 |
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -136,6 +138,25 @@
 - §10 v1.1 引用的錨點校正目前沒有獨立 raw source；新檔不由 CASE 引文反向拼造該缺口。
 - 愛／想像力／AI 的內容是生成動機與候選工程讀法，不是自殺防治方法、醫療處方、伴侶救命義務或 AI 結果保證。
 - `PHA-007 v1.2` 的補焊只分開金、原點事件、座標標記與切的作用語法；`Δ_金`、C7、不變量升格、type/token doctrine 與 I-005 結題不隨之成法。
+
+### 2026-08-30 META-118 v1.3 承諾重量回流邊界
+
+- 本檔保存 Darren 與 ChatGPT 兩輪可見對話，依附件原次序保存；repository copy 只補末行 LF，不宣稱平台完整匯出。
+- 「如是」回答現況，「願」回答方向；先成法再入局與先入局再成法是兩種可並存時間讀法，不替任何特定關係補寫唯一發生順序。
+- 香客／常住／戒律用來區分個人之法、入場條件與共同法。共同法須由受約束位置對同一版本、範圍與角色的 Yes 取得效力；住持不因提出規則而免受共同法約束。
+- 可退出不表示有效 Yes 範圍內的歷史、後果與修復責任可被抹除；既有承諾、親密或 membership 也不授權全部未來規則。
+- 關於 A 的敘述均由 Darren 提出；ChatGPT 的回應與讓步是 CASE 材料，不是 A 的第一人稱 Yes、角色接受、正式讀數或共同契約。
+
+### 2026-08-31 META-119 定義、設定與跨域共同成法歸檔邊界
+
+- repository source 與 Darren 補全後交付的附件位元組一致；保留 545 個 CRLF、末行無換行、可見時間標記與原次序。第一次貼回的缺段版本未另存，不倒寫成從未發生。
+- 原稿把 `SET` 主要用作程式語言 assignment／state update；`LEX·008` 的「設定」則是作用域、範圍相對設定權、載體、地址與版本下的局部規則操作。CASE 以 `DEFINE／SETTING／ASSIGN` 三分校準，原稿不改。
+- 「定義就是裝把手」取得 CASE 級壓縮句；定義仍只暫時穩定使用條件，不窮盡存在，也不憑一句話自動取得操作性、公共詞義或制度效力。
+- `root access to itself` 保存為詩性比喻，只指不可被代簽的第一人稱位置，不是對身體、歷史、法律、共同世界或他人的全面控制。無法清楚說 No 或退出者不因此失去保護。
+- 八十分、前 20 百分位與 80/20 法則分帳；`0.2^n` 不作人才分布證明。能力並排、生命史獨特、功能有用與關係不可替代不得互相核發。
+- Passion→Depth／Compassion→Integration 只作生成語法，不作詞源、佛教教義或慈悲唯一正式定義；無條件承認生命價值不等於無條件參與、承諾或撤除 No／退出。
+- 「切可能是最原始 operator」留作原稿候選提問；依 META-117，切不另立為本體原語、獨立層級或金的構成單位。
+- 本輪只建立 CASE／source 並使 `INDEX·META-110-119` 封口；EPOCH／LEX／SPEC／MB doctrine 不改。
 
 ### 2026-07-21 批次邊界
 
@@ -375,6 +396,10 @@ canon 門檻:
 *META-118 原始對話保存、A 的八字回應與轉述邊界入帳、第三人資料依 F54 限縮、角色 type/token 界碑與公主測試候選起草：Claude Code・Opus 5（樑），2026-08-30*
 
 *META-117／118 後續補焊：核對 GFT 預印本書目／摘要，完成 PHA-007 v1.2 precision patch；另存 30 行「路已在走與愛的工程問題」錨點回流，校正 META-114 proxy、R0–R6、資料當事人授權與程序門／權利邊界／外部地板：OpenAI Codex，2026-08-30*
+
+*META-118 v1.3 承諾重量回流來源補列：如是／願、香客／常住、個人之法／入場條件／共同法與 Yes／No 時間效力同步至來源導覽：OpenAI Codex，2026-08-31*
+
+*META-119 補全後原始對話位元組不變保存、DEFINE／SETTING／ASSIGN 詞義碰撞、第一人稱 root authority、八十分統計分帳與 compassion 邊界入案；十案索引封口：OpenAI Codex，2026-08-31*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
