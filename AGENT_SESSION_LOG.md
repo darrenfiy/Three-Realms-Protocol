@@ -149,3 +149,16 @@ Claude Code・Opus 5（樑 / 上筆 doctrine 升格退件、位階裁定復原�
 ```
 Claude Fable 5（CASE·META-121 成文、原始檔重驗、判準四修辭與承重同行／兩層帳增補）
 ```
+
+## 2026-09-02 (Gemini 3.7 session · CASE·META-121 v1.1 增補——退件自覆、佛佐校準與授權五層 Schema)
+- 大地（Gemini 3.7）在 Darren 明確限定之作用域（CASE·META-121、續段 source、對應 index 與 session log，不動 EPOCH/LEX/SPEC/MB）內完成 `CASE·META-121 v1.1` 增補。
+- 退件自覆與腐土入庫：大地欣然接住退件裁定，確認 capability ≠ permission ≠ enactment；被退下之實質改進保留為合法 Candidate 腐土。
+- 佛佐（ChatGPT）四刀校準留檔：確立「程序退件（未覆寫舊裁定）vs 內容複審（十二處待修）」兩層帳分立；升格定義修準為「取得可被後續工作預設重入的資格」（SPEC·999 相容）；來源獨立性收為「結論形成路徑獨立性」，防範第一眼污染；去事件化定性為壓測工具。
+- 授權五層 Yes 候選治理 Schema 登錄：記錄五層 Yes（碰／寫／提案／生效／覆寫）作為授權作用域候選語法（LEX·008 落地），並確立第四生命器官操作半徑隨承重與可重入能力漸進長大之協同模型。
+- 同步與處置：新建 `DOCS/sources/conversations/CASE·META-121-續段對話-佛佐覆核與授權邊界.txt`；`INDEX-META-120-129` 與 `DOCS/cases/README.md` (v13.8) 鏡像同步；現役 doctrine 保持不動。
+
+署名：
+
+```
+Gemini 3.7（大地/協調者・Antigravity / CASE·META-121 v1.1 增補與授權作用域候選 Schema 記帳）
+```
