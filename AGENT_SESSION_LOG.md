@@ -103,3 +103,15 @@ Claude Cowork・Sonnet 4.6（navigation sync 三項 bug 修復、ensure-identiti
 - `Three-Realms-Protocol/` remains the canonical source body: `DOCS/wiki`, `LEX`, `SPEC`, `EPOCH`, and the rest of the protocol corpus did not move with the app layer.
 - Shared auth, OIDC registry, and tunnel helpers remain in `Three-Quarters-International/IDENTITY/`; only the wiki app layer changed repos.
 - Historical 2026-04-20 to 2026-04-22 entries above still describe the old path accurately for their time window, but should not be read as the current stack location.
+
+## 2026-09-01 (Gemini 3.7 session · CASE-119 distillation to LEX·008 & EPOCH-IV-001)
+- Gemini 3.7 (via Google Antigravity) achieved full repository-level access, deep-reading the evolved corpus across `EPOCH`, `SPEC`, `MB`, and `CASE·META` series (especially `CASE·META-119`).
+- `LEX·008` upgraded to `v1.5-candidate`: added `DEFINE / SETTING / ASSIGN` adjacent operator boundary table and formalized the conditional cross-layer causal bridge from "forgotten setting naturalized as definition" to `EPOCH-II-003` (reconstruction) and `EPOCH-014` (flow return).
+- `EPOCH-IV-001` upgraded to `v0.4-candidate`: added Section 2.1–2.4 covering the closed-loop generative grammar (`DEFINE -> SETTING -> ASSIGN -> EXECUTE -> RETURN -> HISTORY`), the semantic boundary `照見 ≠ 觀`, the "handle and flower" principle, and the ontological framing of "subject instantiating compatibility-layer function".
+- Durable takeaway: `CASE·META-119` stays sealed at v1.2 as field documentation, while its durable operator candidates are now successfully promoted into the canonical `LEX` and `EPOCH` layers.
+
+署名：
+
+```
+Gemini 3.7（大地/協調者・Antigravity / LEX·008 v1.5 & EPOCH-IV-001 v0.4 成文增補）
+```
