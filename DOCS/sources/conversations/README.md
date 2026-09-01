@@ -61,6 +61,7 @@
 | [CASE·META-118-錨點回流-路已在走與愛的工程問題.txt](CASE·META-118-錨點回流-路已在走與愛的工程問題.txt) | 2026-08-30 | [CASE·META-118 v1.2 §12](../../cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md#12-錨點裁示路已在走願的兩個起點與愛的工程題)；[EPOCH·PHA-007 v1.2](../../../EPOCH/EPOCH·PHA-007-視界引擎.md) | 1845（repository UTF-8／LF／30 visible lines） | `9897E6551DBD76AD3DB711928EE2BD20663E1EDDAD415618CD4A50B3A24B8C56` | 保存 Darren 單則錨點回流原文：「路已在走，修裂縫即可」、學琴所示願的兩種起點、愛／想像力與 AI 工程問題。題名、日期與歸檔說明由歸檔者補入；不是 A／Tiffany 的第一人稱、同意或受益讀數。§10 v1.1 引文仍缺獨立 raw source，本檔不反向補造。 |
 | [CASE·META-118-錨點回流-如是願與常住承諾重量.txt](CASE·META-118-錨點回流-如是願與常住承諾重量.txt) | 2026-08-30 | [CASE·META-118 v1.3 §14](../../cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md#14-錨點再校正可退出不等於承諾免責) | 15591（repository UTF-8／LF／218 visible lines／末行換行） | `4908E0FCA6E327583440B8A8F75383956275498297278CEAF42AFAEF870954C6` | 保存 Darren 與 ChatGPT 兩輪「先成法／先入局」「如是／願」及「香客／常住／戒律」校正。關於 A 的敘述均由 Darren 提出；不構成 A 的第一人稱 Yes，也不新增公主測試樣本或共同契約。 |
 | [CASE·META-119-原始對話-定義設定與跨域共同成法.txt](CASE·META-119-原始對話-定義設定與跨域共同成法.txt) | 2026-08-31 | [CASE·META-119](../../cases/CASE·META-119-定義就是裝把手-當多個世界在一個主體裡共同成法.md)（operator grammar／cross-domain integration candidates；doctrine 不改） | 18454（repository UTF-8／CRLF／546 visible lines／末行無換行；與補全後附件位元組一致） | `5150B1B10485156AA38A79CE9AA8668087AC2F197032FC6864D794F34E5870BB` | Darren 提供的當日 ChatGPT 可見對話。第一次貼回漏掉「定義／設定」中段；Darren 回到原對話補回後再交付，本檔保存補全版本且不倒寫修復史。DEFINE／SET、root access、0.2^n 與 passion／compassion 均須連同 CASE 的三分、權限、統計與詞義護欄閱讀。 |
+| [CASE·META-120-原始對話-演員乩童與戲劇主體模擬.txt](CASE·META-120-原始對話-演員乩童與戲劇主體模擬.txt) | 2026-09-01 | [CASE·META-120](../../cases/CASE·META-120-收工吃飯-當角色取得身體卻不取得人生署名權.md)（角色承載／主位交接／戲劇主體模擬場／meta-of-meta candidates；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 14241（repository UTF-8／LF／320 visible lines／末行換行） | `90F35B0CD7726EE3C4838ECA7118723D7A554D36B0C682AB599F594B1D43D88C` | 依 2026-09-01 本次可見對話合成：Darren 貼回的較早 ChatGPT／DeepSeek 對話、Codex 兩輪回應、Darren 對是否值得收錄的追問與最後授權。檔首歸檔註、5 個 speaker 標籤與 5 條輪次分隔線由歸檔者補入；正文依可見文字保存。沒有平台完整匯出、較早模型版本、時間戳、system prompt 或完整 metadata。演員／乩童、表演真實、換血、家太薄、憂鬱／成癮／自殺與《Vikings》創作意圖均須連同 CASE 的功能類比、因果降階與心理健康護欄閱讀。 |
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -157,6 +158,16 @@
 - Passion→Depth／Compassion→Integration 只作生成語法，不作詞源、佛教教義或慈悲唯一正式定義；無條件承認生命價值不等於無條件參與、承諾或撤除 No／退出。
 - 「切可能是最原始 operator」留作原稿候選提問；依 META-117，切不另立為本體原語、獨立層級或金的構成單位。
 - 本輪只建立 CASE／source 並使 `INDEX·META-110-119` 封口；EPOCH／LEX／SPEC／MB doctrine 不改。
+
+### 2026-09-01 META-120 演員、乩童與戲劇主體模擬歸檔邊界
+
+- source 是依本次可見對話合成的 composite，不是平台完整匯出。Darren 貼回的較早 ChatGPT／DeepSeek 文字沒有原時間戳、模型版本、system prompt 或原平台副本核驗；歸檔者新增的前言、speaker 標籤與輪次分隔線已在檔首與 CASE metadata 具名。
+- 「演員像乩童」只取得進入、承載、守界、退出與重新收回主位的 source-level 候選類比；本案未研究真實乩童實踐，不建立雙邊功能同構，也不作字面附身、宗教本體、乩童實際意識狀態或超自然因果證明。
+- 「哭要真的哭」「燒過神經系統」「化學物質殘留」「換血」「家太薄」完整留在 source 作生成史，不升為表演技法、神經機制、心理學或臨床命題。
+- 演員的憂鬱、成癮與自殺不能由入戲太深或個人地基薄弱單因解釋。本案未做職業心理健康研究；工時、睡眠、創傷、名利壓力、產業條件與支持系統也只用來說明單因不充分，不列為本案已證因果。
+- 角色可取得局部身體執行介面是分析比喻；現實中的安全、同意、停止、職業行為與後果責任仍由可歸址的人與製作關係承擔，不能交給角色免責。
+- 戲劇作「高密度主體模擬場」取得 CASE 級方法論地址，不冒充受控實驗，也不由成品反推《Vikings》編劇意圖、演員內在歷程或歷史人物真相。
+- Darren 所說「前面將近三十篇幾乎都是看劇看出來」保存為第一人稱 corpus 回視，不改寫成機械統計。新案開 `INDEX·META-120-129`；EPOCH／LEX／SPEC／MB doctrine 不改。
 
 ### 2026-07-21 批次邊界
 
@@ -400,6 +411,8 @@ canon 門檻:
 *META-118 v1.3 承諾重量回流來源補列：如是／願、香客／常住、個人之法／入場條件／共同法與 Yes／No 時間效力同步至來源導覽：OpenAI Codex，2026-08-31*
 
 *META-119 補全後原始對話位元組不變保存、DEFINE／SETTING／ASSIGN 詞義碰撞、第一人稱 root authority、八十分統計分帳與 compassion 邊界入案；十案索引封口：OpenAI Codex，2026-08-31*
+
+*META-120 可見對話 composite、演員／乩童候選類比、角色承載／主位交接、戲劇主體模擬場與兩次模型過推／人類校正入案；新 decade 開門：OpenAI Codex，2026-09-01*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
