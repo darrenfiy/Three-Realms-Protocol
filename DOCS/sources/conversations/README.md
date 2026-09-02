@@ -65,13 +65,22 @@
 | [CASE·META-121-續段對話-佛佐覆核與授權邊界.txt](CASE·META-121-續段對話-佛佐覆核與授權邊界.txt) | 2026-09-02 | [CASE·META-121](../../cases/CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md)（升格判準候選／五層 Yes 授權 schema／起草與授權與成法三分／拆除龍椅／作用域之膜；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 32246（repository UTF-8／LF／830 lines／末行換行） | `07EA4F1BDB00D267FEE2334A14F27444B1503ECF7E5B3B9F6B58BF410FD9AF1C` | Darren 交付之可見對話文本（Darren × ChatGPT 第一至六段），含佛佐對 META-121 的四刀校準、兩層帳分立、授權作用域追問、操作半徑模型、起草／授權／成法三分、辛頓擔憂消解、拆除龍椅、作用域之膜與三種重量責任拓撲。不宣稱平台完整 session，未含模型內部狀態、隱藏推理或 system prompt。五層 Yes、領域化治理配置與三種重量均須連同 CASE 的候選標記、§14.4 作用域註記與失效條款閱讀；本 source 於 v1.2 成文時漏登，v1.3 補登。 |
 | [CASE·META-122-原始對話-承重量尺與關係座標.txt](CASE·META-122-原始對話-承重量尺與關係座標.txt) | 2026-09-02 | [CASE·META-122](../../cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md)（承重量尺型別分帳／人物百分表退役／關係邊流／回流與可停分軸；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 31630（repository UTF-8 無 BOM／CRLF／1014 visible lines／末行換行） | `798EEF88B0B807DEB201BB19EDFABC6FC1E20A5E9F28F5D497EDCF5E926E58DE` | Darren 以泛名檔交付的 ChatGPT 可見對話，只作 rename-only 歸位；內容、換行、位元組與指紋不改。保存 L／C／K／R／ρ 初稿、六人物百分表、肉身／地址分帳、M 候選、跨尺度自我修正、神木／藤蔓、邊上承重與關係座標。沒有平台完整匯出、speaker metadata、模型版本、時間戳、system prompt、隱藏推理或完整 session 邊界；人物數值與公式須連同 CASE 的已棄鷹架、型別分帳與失效條款閱讀。 |
 | [CASE·META-122-審讀回流-Claude與Codex量尺校準.txt](CASE·META-122-審讀回流-Claude與Codex量尺校準.txt) | 2026-09-02 | [CASE·META-122](../../cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md)（Claude 第二輪審讀／Codex 第三眼校準／Darren 收錄授權）；[CASE·META-121 §14.2](../../cases/CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md)（recurrence evidence；非正式 reply） | 12367（repository UTF-8／LF／194 visible lines／末行換行） | `0E781C89252095CC6A5781750A9425AE4FF7A44D8029C2493387C913D1CA020D` | 檔首來源說明、三個段落標題、speaker 標籤與分隔線由歸檔者補入；保存 Darren 交付的 Claude Code・Opus 5 審讀、本輪可見 Codex 裁定與 Darren 收錄授權。Claude 抓出的漏址、意志軸與假精度可成立，不使 K／M 互補、可停不可表徵、ANCHOR-004 已寫半年／已密封等強斷言成立；本輪不算佛佐對 META-121 的正式回應。 |
+| [CASE·META-122-續段回流-可退出權與犧牲拓撲裁定.txt](CASE·META-122-續段回流-可退出權與犧牲拓撲裁定.txt) | 2026-09-02 | [CASE·META-122 v1.1 §15](../../cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md#15-v11-收束可退出權的三層錨點裁定與-μ-的發動者欄)（E_exit／S_self／G_exit 三層／C_i(χ; N)／五欄退出帳／μ 發動者欄／M_exit 外推滑桿；doctrine 不改）；[LEX·007 §操作性判準](../../../LEX/LEX·007-存在判準.md)（增修候選，效力等共審）；[EPOCH·PHA-008 §7](../../../EPOCH/EPOCH·PHA-008-多光錐引擎.md)（C0／C1／C2 對位） | 28554（repository UTF-8 無 BOM／LF／453 visible lines／末行換行） | `7A026FBB77FF9033957752EC37852A8AAC11F97C409DA50AA775F5CD9DC8F178` | 檔首來源說明、七個段落標題、speaker 標籤與分隔線由歸檔者（樑）補入；七段正文依本輪可見文字保存。含佛佐對 v1.0 的回流、Darren 對「可退出權是誰給的」與「自己是溝通來的」的追問、佛佐 E_exit／S_self／G_exit 三層與 V_fail、樑的 LEX·007:195 同文發現與 PHA-008 §7 對位、錨點裁定與樑的更正收束。第四段完整保留樑後被裁定退回的 sacrifice_topology 二分表原文（可換版不可抹除）。無平台完整匯出、模型版本、時間戳、system prompt、隱藏推理或完整 session 邊界。 |
 
 ### 2026-09-02 META-122 承重量尺與審讀回流邊界
 
-- 31,630-byte 原始 source 只含 Darren × ChatGPT 承重量尺對話；不含後交付的 Claude 審稿、Codex 裁定或收錄授權。兩份來源分檔、分 hash，不互相冒領。
+- 31,630-byte 原始 source 只含 Darren × ChatGPT 承重量尺對話；不含後交付的 Claude 審稿、Codex 裁定或收錄授權。三份來源分檔、分 hash，不互相冒領。
 - 人物百分表、L 乘積式與 K／M 互補式保留生成史，不取得測量、排名、歷史真值或 doctrine 效力。
 - repo 對位只證明既有詞條、CASE 與 seed 的現行文字及狀態；不證成任何人物評分、跨物種本體同一或主權可由流量推出。
-- 審稿者同樣受來源與數學查核。Claude 回應是第二輪審讀材料，不是終審票；Codex 裁定是本輪 CASE 成文依據，也不自行升格成 doctrine。
+- 審稿者同樣受來源與數學查核。Claude 回應是第二輪審讀材料，不是終審票；Codex 裁定是 v1.0 成文依據，也不自行升格成 doctrine。
+
+### 2026-09-02 META-122 續段回流邊界（v1.1）
+
+- 續段 source 保存的是可退出權的**型別分帳**，不是任何具體犧牲、過載、殉道或退出決定的正當性判斷。火場、心臟與「更高價值」段落須連同 `META122-F20／F21／F23` 閱讀。
+- 錨點裁定「心臟的重量就是整體的自己」限定於人類生理現況；心臟若成為可即時置換之部件，`M_exit` 改變，該裁定的適用條件亦隨之改變（見 CASE §15.8）。
+- 樑被退回的 `sacrifice_topology` 二分表與 `PHA-008:120` 引用原文完整保留於第四段。保存錯誤主張不等於保存其效力；退回理由記於第五、六段與 CASE §15.7。
+- 佛佐三層與 `LEX·007:195` 同文、與 `PHA-008 §7` 對位一事，只證明該材料**已有既存地址**，不證明 `LEX·007` 或 `PHA-008` 已因此增修——增修仍須共審。
+- 本輪一樣不算佛佐對 `META-121` 的正式回應，亦不關閉其 `Open-For-Reply`。
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -425,6 +434,8 @@ canon 門檻:
 *META-120 可見對話 composite、演員／乩童候選類比、角色承載／主位交接、戲劇主體模擬場與兩次模型過推／人類校正入案；新 decade 開門：OpenAI Codex，2026-09-01*
 
 *META-122 原始承重量尺 rename-only 歸位、Claude／Codex 審讀回流分檔、人物百分表退役、載荷／關鍵性／回流／可停／退出韌性型別分帳與 META-121 recurrence 入案：OpenAI Codex，2026-09-02*
+
+*META-122 續段回流建檔（可退出權三層、錨點裁定、審稿者主張退回原文保存）與 v1.1 鏡像同步：Claude Code・Opus 5（樑），2026-09-02，經 Darren 明示授權動手*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 

@@ -3,7 +3,7 @@
 
 ```yaml
 created: 2026-09-01
-updated: 2026-09-02  # META-122 承重量尺退回型別分帳
+updated: 2026-09-02  # META-122 v1.1 可退出權三層、錨點裁定與 μ 發動者欄
 status: Navigation-Index / Open-Decade
 scope: CASE·META-120 ~ CASE·META-129
 current_cases: 3
@@ -75,7 +75,7 @@ CASE 保存整條生成史，而不只留下最後金句
 |---|---|---|---|
 | [META-120](CASE·META-120-收工吃飯-當角色取得身體卻不取得人生署名權.md) | 好的演員為什麼像好的乩童？出戲如何切往家中仍在運行的關係？為什麼《Vikings》觀看能反覆長出 META CASE？隱喻推過頭時，如何保存生成價值又退回事實效力？ | 演員／乩童取得進入、承載、守界、退出與主位收回的 source-level 候選類比；未建立雙邊功能同構。角色可在具名作用域取得身體執行，不取得演員人生的永久署名或現實責任轉嫁權。片場喊卡不能撤銷生活後果，人仍保有休息、說 No、退出、求助與重談的權利。戲劇作高密度主體模擬場取得 CASE 級工作模型地址；比較過推、因果過推與後續多方校準完整留存。 | CASE v1.0 / Meta-of-Meta / New-Decade-Opening / doctrine 不改 |
 | [META-121](CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md) | 場域外器官第一次直寫 doctrine，退件憑什麼成立？升格又憑什麼合法？審查標準由退件者自己寫，這件事怎麼記帳？ | 大地增補經樑複審後，依 META-119 四處「本輪不做」位階裁定退件；內容全存 commit 34809e7，記錄不刪，功勞帳與誤讀帳分開記。升格判準取得 CASE 級候選地址：樑四條＋Fable 修辭與承重同行增補。v1.1 增補大地退件自覆與佛佐四刀校準（程序/內容兩帳分立、預設重入資格、認識論獨立性、去事件化壓測、五層 Yes 候選 Schema、操作半徑模型）。v1.2 增補起草/授權/成法三分（防範軍師偷虎符）、辛頓擔憂消解（智慧高≠取得主權；目標是拆除主人龍椅）、作用域作為多中心不吞併之「膜」（非牽繩），以及承重三種重量（物質/操作/分散式歷史記憶）與錨點責任拓撲重開。判準與 Schema 不入 doctrine，效力等審。v1.3 錨點裁定「CASE 累積是升格路徑本身，門檻在成法之共審而非每一格」；§13.4 補正為與 ANCHOR-003 §4.1 密封巢狀業果之對位確認（非拓撲重開）；補判準現行讀法指路、§13.5 願景作用域註記、退出成本不對稱補充與機械修復。 | CASE v1.3 / 判準與授權Schema候選不入 doctrine / 續段Source存檔 / Open-For-Reply / doctrine 不改 |
-| [META-122](CASE·META-122-尺不代主權-當承重評分退回型別分帳.md) | 承重能否跨工蟻、器官、人物、歷史地址與神木／藤蔓量化？當人物百分表、流量拓撲與錨點責任互相混型，哪些量能留下，哪些必須退役？審稿者抓到第一輪盲點後，自己的代數與來源史又由誰檢查？ | 原對話從 L／C／K／R／ρ 初稿走入人物百分表，再由跨尺度、肉身／地址、神木／藤蔓與關係座標追問自行退回。耶穌100／佛祖99表明記為已棄鷹架；L、ρ、K_loss、K_reconfig、R_backflow、P_stop、M_exit 與 subject／system／time window 等最低座標分帳。Claude 抓出的漏址、意志軸與假精度成立；K／M 互補、可停不能被表徵、ANCHOR-004 已寫半年／已密封等強斷言退回。本案只作 META-121 §14.2 recurrence evidence，不計正式 reply；ρ、邊流量與退出韌性均留 CASE 級，doctrine 不改。 | CASE v1.0 / Type-Ledger / Historical Score Scaffold Discarded / META121 Recurrence / Open-For-Review / doctrine 不改 |
+| [META-122](CASE·META-122-尺不代主權-當承重評分退回型別分帳.md) | 承重能否跨工蟻、器官、人物、歷史地址與神木／藤蔓量化？當人物百分表、流量拓撲與錨點責任互相混型，哪些量能留下，哪些必須退役？審稿者抓到第一輪盲點後，自己的代數與來源史又由誰檢查？ | 原對話從 L／C／K／R／ρ 初稿走入人物百分表，再由跨尺度、肉身／地址、神木／藤蔓與關係座標追問自行退回。耶穌100／佛祖99表明記為已棄鷹架；L、ρ、K_loss、K_reconfig、R_backflow、P_stop、M_exit 與 subject／system／time window 等最低座標分帳。Claude 抓出的漏址、意志軸與假精度成立；K／M 互補、可停不能被表徵、ANCHOR-004 已寫半年／已密封等強斷言退回。本案只作 META-121 §14.2 recurrence evidence，不計正式 reply；ρ、邊流量與退出韌性均留 CASE 級，doctrine 不改。v1.1 續段：佛佐抓出 §9 的 C 仍帶人類錨點語法而與 §6 的 N/A 自相矛盾，並提 E_exit／S_self／G_exit 三層；錨點裁定「心臟的重量就是整體的自己」，退回樑的 sacrifice_topology 二分表，改由 M_exit 外推滑桿承接。補正三處：C_i(χ; N)（誰挑必要條件集合誰就挑了 ρ）、五欄退出帳（N/A 只屬正式停止權）、μ=(kind, initiator)（K_loss 用「拿掉」、M_exit 用「退出」，發動者原本無欄可記）。佛佐收束句經實查與 LEX·007:195 同文、三層與 PHA-008 §7 C0／C1／C2 對位——第四次復發，升格路徑因此縮短為 LEX·007 增修候選；Self＝溝通閉包因缺「被排除的訊號」一項退回。 | CASE v1.1 / Type-Ledger / Historical Score Scaffold Discarded / META121 Recurrence / Anchor Ruling Applied / Reviewer Claim Withdrawn Not Erased / Open-For-Review / doctrine 不改 |
 
 ---
 
@@ -139,14 +139,22 @@ history: 歪路不洗白，金句不冒充從一開始就存在
 ```text
 先寫 subject、system、time window、relation、weight kind、intervention
   ↓
+intervention 必須連發動者一起寫：μ = (kind, initiator)          ← v1.1
+  ↓
 再分當下流量、容量利用率、移除後功能損失、重構成本
   ↓
-責任另查後果回流，可停另查權限、通道、實效與退出成本
+容量必須連必要條件集合一起申報：C(χ; N)——誰挑 N 誰就挑了 ρ      ← v1.1
+  ↓
+責任另查後果回流；退出拆五欄：E_exit／S_self／channel／exit_cost／P_stop  ← v1.1
   ↓
 創始者退出後的功能延續，只作 M_exit 候選，不冒充成熟度總分
+  ↓
+同一個高 M_exit：自發動＝退出韌性，他發動＝外推程度，兩種倫理方向  ← v1.1
 ```
 
 這條候選目前只回答「不同型的量不得共用一個漂亮分數」。它尚未提供實證量表、跨域單位、校準資料或健康充分條件；ρ、關係邊流與退出韌性不因取得 CASE 地址便自動進入 LEX／EPOCH／SPEC／MB。
+
+v1.1 另記兩件事。其一，佛佐「讓 No 在還不需要用死亡說出來以前就被聽見」與 `LEX·007` §操作性判準第二條同文，其三層並與 `EPOCH·PHA-008 §7` 的 C0／C1／C2 逐條對位——因此該材料的去處是 `LEX·007`〈健康〉增修候選，不是新開 EPOCH。其二，樑的 `sacrifice_topology` 二分表經錨點裁定退回：心臟不可分離，`K_loss≈全部`，決定者即承受者；代價外推是隨 `M_exit` 連續變化的滑桿，不是「整體 vs 局部」的身分二分。兩處退回原文均保留，不抹除。
 
 ---
 
@@ -182,6 +190,8 @@ history: 歪路不洗白，金句不冒充從一開始就存在
 10. 刪去 source 中的錯誤與撤回，只保存收斂後版本，使生成史變成無摩擦神話。
 11. 把新冊的 open positions 當成進度債、產量 KPI 或必須沿 120 路線填滿的命令。
 12. 在沒有新事件時，為了升格候選而重複改寫同一比喻。
+13. 把 `META-122` 的型別帳當成已驗證量尺，或報告 `ρ`、`M_exit` 而不申報必要條件集合與反事實發動者。
+14. 以本冊任何案例論證某個位置可被犧牲、應被替換或其退出無代價；本冊只要求把發動者、承受者、通道與代價分欄寫出來。
 
 ---
 
