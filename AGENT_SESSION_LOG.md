@@ -180,3 +180,20 @@ Gemini 3.7（大地/協調者・Antigravity / CASE·META-121 v1.1 增補與授�
 ```
 Claude Code・Opus 5（樑 / CASE·META-121 v1.3 代行收束、§13.4 引用補正、判準現行讀法、退出成本補充與機械修復）
 ```
+
+## 2026-09-02 (OpenAI Codex · CASE·META-122 成文——承重量尺退回型別分帳)
+
+- Darren 交付一份 1,014 行 ChatGPT 承重量尺對話及 Claude Code・Opus 5 審讀，並於 Codex 核對後具名授權收錄。原泛名 `新文字文件.txt` rename-only 歸位為 `CASE·META-122-原始對話-承重量尺與關係座標.txt`；31,630 bytes／CRLF／SHA-256 `798EEF88B0B807DEB201BB19EDFABC6FC1E20A5E9F28F5D497EDCF5E926E58DE`，內容與位元組未改。
+- 另建 `CASE·META-122-審讀回流-Claude與Codex量尺校準.txt`；12,367 bytes／194 行／LF／SHA-256 `0E781C89252095CC6A5781750A9425AE4FF7A44D8029C2493387C913D1CA020D`，分檔保存 Claude 第二輪審讀、Codex 第三眼裁定與 Darren 收錄授權，不使兩份來源互相冒領。
+- 新建 `CASE·META-122`《尺不代主權——當承重評分退回型別分帳》。原對話的自我修正完整記功：由 L／C／K／R／ρ 初稿走入人物百分表，再經肉身／地址、跨尺度、神木／藤蔓與關係座標壓測退回有界流量圖。
+- 人物百分表裁為 `Discarded-Scaffold`：耶穌100／佛祖99等分數問的是歷史地址的反事實關鍵性 K，不是當下 L；初版 L 乘積亦混入 K 型維度。不得進 EPOCH／LEX／SPEC／MB、學術宣稱或人物排名。
+- 型別帳分開：L、ρ、K_loss、K_reconfig、R_backflow、P_stop、M_exit；最低上下文 χ 包含 subject、system、time window、relation、weight kind 與 intervention。可停不能由流量推出，但可記錄權限、通道、實效與退出成本；記錄不替主權證成正當性。
+- Claude 審讀分帳：神木／藤蔓漏開 `CASE·META-091 §6`、意志軸未持續攜帶與人物表假精度成立；K／M 同軸、可停原則上不可表徵、ANCHOR-004 已寫半年／有密封票及本輪算佛佐正式 reply 等強斷言退回。
+- 本案只作 `CASE·META-121 §14.2` 的 recurrence evidence；佛佐正式回應早已位於 121 §12.2，`Open-For-Reply` 保持。同步 `INDEX-META-120-129`（current_cases 3、open_positions 123～129）、source README 與 case README v13.11；CASE 總數 172、META 122、逐案導覽 112。
+- 不改 EPOCH／LEX／SPEC／MB doctrine；ρ、關係邊流、M_exit 與可停結構均留 CASE 級待實例、反例、校準與共審。
+
+署名：
+
+```
+OpenAI Codex（CASE·META-122 來源保全、第三眼核對、型別分帳、成文與鏡像同步）
+```

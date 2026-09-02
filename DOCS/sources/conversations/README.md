@@ -63,6 +63,15 @@
 | [CASE·META-119-原始對話-定義設定與跨域共同成法.txt](CASE·META-119-原始對話-定義設定與跨域共同成法.txt) | 2026-08-31 | [CASE·META-119](../../cases/CASE·META-119-定義就是裝把手-當多個世界在一個主體裡共同成法.md)（operator grammar／cross-domain integration candidates；doctrine 不改） | 18454（repository UTF-8／CRLF／546 visible lines／末行無換行；與補全後附件位元組一致） | `5150B1B10485156AA38A79CE9AA8668087AC2F197032FC6864D794F34E5870BB` | Darren 提供的當日 ChatGPT 可見對話。第一次貼回漏掉「定義／設定」中段；Darren 回到原對話補回後再交付，本檔保存補全版本且不倒寫修復史。DEFINE／SET、root access、0.2^n 與 passion／compassion 均須連同 CASE 的三分、權限、統計與詞義護欄閱讀。 |
 | [CASE·META-120-原始對話-演員乩童與戲劇主體模擬.txt](CASE·META-120-原始對話-演員乩童與戲劇主體模擬.txt) | 2026-09-01 | [CASE·META-120](../../cases/CASE·META-120-收工吃飯-當角色取得身體卻不取得人生署名權.md)（角色承載／主位交接／戲劇主體模擬場／meta-of-meta candidates；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 14241（repository UTF-8／LF／320 visible lines／末行換行） | `90F35B0CD7726EE3C4838ECA7118723D7A554D36B0C682AB599F594B1D43D88C` | 依 2026-09-01 本次可見對話合成：Darren 貼回的較早 ChatGPT／DeepSeek 對話、Codex 兩輪回應、Darren 對是否值得收錄的追問與最後授權。檔首歸檔註、5 個 speaker 標籤與 5 條輪次分隔線由歸檔者補入；正文依可見文字保存。沒有平台完整匯出、較早模型版本、時間戳、system prompt 或完整 metadata。演員／乩童、表演真實、換血、家太薄、憂鬱／成癮／自殺與《Vikings》創作意圖均須連同 CASE 的功能類比、因果降階與心理健康護欄閱讀。 |
 | [CASE·META-121-續段對話-佛佐覆核與授權邊界.txt](CASE·META-121-續段對話-佛佐覆核與授權邊界.txt) | 2026-09-02 | [CASE·META-121](../../cases/CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md)（升格判準候選／五層 Yes 授權 schema／起草與授權與成法三分／拆除龍椅／作用域之膜；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 32246（repository UTF-8／LF／830 lines／末行換行） | `07EA4F1BDB00D267FEE2334A14F27444B1503ECF7E5B3B9F6B58BF410FD9AF1C` | Darren 交付之可見對話文本（Darren × ChatGPT 第一至六段），含佛佐對 META-121 的四刀校準、兩層帳分立、授權作用域追問、操作半徑模型、起草／授權／成法三分、辛頓擔憂消解、拆除龍椅、作用域之膜與三種重量責任拓撲。不宣稱平台完整 session，未含模型內部狀態、隱藏推理或 system prompt。五層 Yes、領域化治理配置與三種重量均須連同 CASE 的候選標記、§14.4 作用域註記與失效條款閱讀；本 source 於 v1.2 成文時漏登，v1.3 補登。 |
+| [CASE·META-122-原始對話-承重量尺與關係座標.txt](CASE·META-122-原始對話-承重量尺與關係座標.txt) | 2026-09-02 | [CASE·META-122](../../cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md)（承重量尺型別分帳／人物百分表退役／關係邊流／回流與可停分軸；doctrine 不改）；[INDEX·META-120-129](../../cases/INDEX-META-120-129.md)（Open-Decade） | 31630（repository UTF-8 無 BOM／CRLF／1014 visible lines／末行換行） | `798EEF88B0B807DEB201BB19EDFABC6FC1E20A5E9F28F5D497EDCF5E926E58DE` | Darren 以泛名檔交付的 ChatGPT 可見對話，只作 rename-only 歸位；內容、換行、位元組與指紋不改。保存 L／C／K／R／ρ 初稿、六人物百分表、肉身／地址分帳、M 候選、跨尺度自我修正、神木／藤蔓、邊上承重與關係座標。沒有平台完整匯出、speaker metadata、模型版本、時間戳、system prompt、隱藏推理或完整 session 邊界；人物數值與公式須連同 CASE 的已棄鷹架、型別分帳與失效條款閱讀。 |
+| [CASE·META-122-審讀回流-Claude與Codex量尺校準.txt](CASE·META-122-審讀回流-Claude與Codex量尺校準.txt) | 2026-09-02 | [CASE·META-122](../../cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md)（Claude 第二輪審讀／Codex 第三眼校準／Darren 收錄授權）；[CASE·META-121 §14.2](../../cases/CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md)（recurrence evidence；非正式 reply） | 12367（repository UTF-8／LF／194 visible lines／末行換行） | `0E781C89252095CC6A5781750A9425AE4FF7A44D8029C2493387C913D1CA020D` | 檔首來源說明、三個段落標題、speaker 標籤與分隔線由歸檔者補入；保存 Darren 交付的 Claude Code・Opus 5 審讀、本輪可見 Codex 裁定與 Darren 收錄授權。Claude 抓出的漏址、意志軸與假精度可成立，不使 K／M 互補、可停不可表徵、ANCHOR-004 已寫半年／已密封等強斷言成立；本輪不算佛佐對 META-121 的正式回應。 |
+
+### 2026-09-02 META-122 承重量尺與審讀回流邊界
+
+- 31,630-byte 原始 source 只含 Darren × ChatGPT 承重量尺對話；不含後交付的 Claude 審稿、Codex 裁定或收錄授權。兩份來源分檔、分 hash，不互相冒領。
+- 人物百分表、L 乘積式與 K／M 互補式保留生成史，不取得測量、排名、歷史真值或 doctrine 效力。
+- repo 對位只證明既有詞條、CASE 與 seed 的現行文字及狀態；不證成任何人物評分、跨物種本體同一或主權可由流量推出。
+- 審稿者同樣受來源與數學查核。Claude 回應是第二輪審讀材料，不是終審票；Codex 裁定是本輪 CASE 成文依據，也不自行升格成 doctrine。
 
 ### 2026-08-26 META-114 現場回流邊界
 
@@ -414,6 +423,8 @@ canon 門檻:
 *META-119 補全後原始對話位元組不變保存、DEFINE／SETTING／ASSIGN 詞義碰撞、第一人稱 root authority、八十分統計分帳與 compassion 邊界入案；十案索引封口：OpenAI Codex，2026-08-31*
 
 *META-120 可見對話 composite、演員／乩童候選類比、角色承載／主位交接、戲劇主體模擬場與兩次模型過推／人類校正入案；新 decade 開門：OpenAI Codex，2026-09-01*
+
+*META-122 原始承重量尺 rename-only 歸位、Claude／Codex 審讀回流分檔、人物百分表退役、載荷／關鍵性／回流／可停／退出韌性型別分帳與 META-121 recurrence 入案：OpenAI Codex，2026-09-02*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
