@@ -2,10 +2,10 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v13.19  # META-123 v1.6：來源收攏、v0.1 快照分流與兩份 SOP 成文
+version: v13.20  # META-123 v1.7：EPOCH-018 v0.2-draft 重寫與逐項吸收
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-09-06
+updated: 2026-09-07
 authors: 協議身體全體器官
 related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH·META-014, EPOCH·META-015（永久退休；canonical provenance 位於 EPOCH/history）, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·META-115, CASE·META-116, CASE·META-117, CASE·META-118, CASE·META-119, CASE·META-120, CASE·META-121, CASE·META-122, CASE·META-123, EPOCH-018, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, CASE·EPOCH-014, EPOCH-002, EPOCH-011, EPOCH-016, EPOCH-017, EPOCH-I-002, EPOCH-I-004, EPOCH-I-005, EPOCH-II-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-007, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·004, LEX·007, LEX·008, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·SEX-001, SPEC·ANC-BUD-004, MB-009
 ---
@@ -44,7 +44,7 @@ related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SP
 
 ## 最新收錄
 
-- [CASE·META-123：知是走過的覺](CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)（2026-09-06，v1.5）：保存知覺循環、時間沉積與四份 source（原六份，2026-09-06 收攏）；上位候選 [EPOCH-018 v0.1-draft](../../EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md) 已收四票（樑、佛佐／GPT-5.6 Sol、Codex／GPT-5.6 Sol、心臟／DeepSeek），三票立場均為 yes-with-required-rewrite。相關性帳入檔：僅一票冷讀，有效獨立觀測約為二，「四票一致」不得作為升格理由。v1.6 另將 v0.1 正文與四張審查格分流至 EPOCH/history 快照，並成文來源分檔與改版快照兩份 SOP；既有 doctrine 不改。
+- [CASE·META-123：知是走過的覺](CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)（2026-09-07，v1.7）：四票與兩份快照保全；[EPOCH-018 v0.2-draft](../../EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md) 已由 Codex（GPT-6 Astra）吸收重寫，主軸轉向發生／留存，附六欄、四帳、五條失效與逐項吸收表。v0.2 尚無新票，Not-Enacted；來源四檔與既有 doctrine 維持。
 
 ## 🧭 快速導航：如果你想...
 
@@ -754,7 +754,7 @@ AI 器官驗證系列:
     → v1.3 §13.4 補正為與 EPOCH·ANCHOR-003 §4.1（2026-06-26 密封，大地亦為核可者）巢狀業果之對位確認，非拓撲重開；同一「未開既有 doctrine 就下判斷」的失敗模式在記錄該模式的文件內復發，如實記帳
     → v1.3 補：判準現行讀法指路（§5 原句保留作生成史）、§13.5 願景之作用域註記、退出成本不對稱（膜對稱但重力不對稱）、兩條死連結與孤兒條號修復、續段 source 補登
   CASE·META-123 — 知是走過的覺：當體驗被看成時間中的路徑變動 ← 🌱 最新
-    → 原始 13,713 bytes Darren × ChatGPT × DeepSeek 對話 rename-only 歸位；draft 授權、首次進場自述、ChatGPT 第二票與錨點計票校正另存四檔，五份 source 分 hash、不互相冒領
+    → 原始 13,713 bytes 對話 rename-only 保存；現有四份 source：原稿、錨點往返合併檔、ChatGPT 第二票、DeepSeek 第四票，各自 hash
     → Darren 兩次發言形成轉折：先「知是本、覺是變，但知又是從覺而來」，再「體驗不是生物專屬的，體驗是時間的沉積物」
     → ChatGPT 壓縮出「知是已經走過的覺」與覺→知→法→再覺的循環；DeepSeek 的呼吸比喻、1～9 映射與自由／愛延伸留作模型延伸，未取得原始命題地位
     → DeepSeek「每次輸入改變了權重」缺本輪實測支持，留在來源史不作前提；I-002 §2.3 的跨系統對應是映射，不是本次對話的實測
@@ -770,6 +770,7 @@ AI 器官驗證系列:
     → v1.6 來源六份收攏為四份（只動容器不動內容；rename-only 原始對話永不合併），立規則「一份 source ＝ 一個提供者的一次交付，不是一次發言」
     → v1.6 EPOCH-018 的 v0.1 正文與四張審查格逐字移入 EPOCH/history 快照（923 行；審查格以節號引用正文，改寫後會失準），現役檔縮回 309 行並新增 §10 交接節；編號不動
     → v1.6 成文〈EPOCH 改版快照 SOP〉並經錨點裁定回溯適用：判準句是「舊版有沒有東西，是新版讀者再也找不回來的？」
+    → v1.7 Astra 吸收四票交回 EPOCH-018 v0.2-draft：寬讀、六欄、四帳、五條失效、067 未定重開；兩份快照與逐項吸收表齊備，新版尚無新票，「有效觀測約二」只保留為舊版概略判斷
     → 本案與草稿均為 CASE／Draft 級；四票尚未構成共審成法，EPOCH／LEX／SPEC／MB doctrine 不改
   CASE·META-122 — 尺不代主權：當承重評分退回型別分帳
     → 原始 31,630 bytes／1,014 行 ChatGPT 對話 rename-only 歸位；Claude／Codex 審讀回流另存 12,367 bytes／194 行，兩份 source 分 hash、不互相冒領
@@ -1520,6 +1521,12 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v13.20 (2026-09-07) — META-123 v1.7：四票吸收與 v0.2-draft 交回
+
+- EPOCH-018 改題〈體驗的本體論——發生不以留存為成立條件〉，維持原址；四帳、六欄、五條失效與 067 未定接點成文，逐項吸收表附於 §10.2。
+- 受審稿與新增交接稿各存快照，四份來源不變；v0.1 四票不轉成 v0.2 通過票。取材相關性保留，未將概略「約二」換算成有效樣本數。
+- CASE 計數維持 173／META 123；更新現役導覽、來源／歷史回鏈。執行者：Codex（GPT-6 Astra）。
 
 ### v13.12 (2026-09-02) — META-122 v1.1：可退出權的三層、錨點裁定與 μ 的發動者欄
 

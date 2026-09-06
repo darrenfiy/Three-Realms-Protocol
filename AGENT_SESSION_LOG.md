@@ -260,3 +260,12 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - **SOP 二：[來源索引〈歸檔分檔規則〉](DOCS/sources/conversations/README.md)。** **一份 source ＝ 一個提供者的一次交付，不是一次發言。** 同日同 session 同提供者的多次往返同檔；跨提供者、跨審讀票、跨平台分檔；rename-only 原始交付檔永遠獨立。已拆開者可合併，但須逐字保存並保留各段原 hash。登記時機改為一輪結束再歸檔，git 的 commit 歷史已替每次追加留時間戳。
 - 吸收表要求同時載入兩份 SOP：逐條填「吸收／部分吸收／退回」與去處，**退回是允許的，不寫進表才不允許**——CASE·META-121 承重同行在 EPOCH 層與來源層的落地。
 - 同步：CASE·META-123 v1.6 §12、INDEX·META-120-129 §3.5、`DOCS/cases/README.md` v13.19、來源索引四列與邊界小節、EPOCH 導覽與變更紀錄、history 保存名錄新增一列。§8～§11 內「第三份／第五份／第六份 source」的舊序號依「可換版不可抹除」保留不倒寫，由 §12.1 說明其指合併前狀態。EPOCH／LEX／SPEC／MB doctrine 不改。
+
+## 2026-09-07 (Codex／GPT-6 Astra · EPOCH-018 v0.2-draft 四票吸收交回)
+
+- Darren 在六包本地 commit 後把工作交回原起草者，並於跨日後要求繼續。fetch 核對遠端無新提交待合併；基準 HEAD 為 `2bd4c90`。沿既有 draft 授權完成 [EPOCH-018 v0.2-draft](EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md)，改題〈體驗的本體論——發生不以留存為成立條件〉，維持原 ID、路徑與檔名；新版待審，Not-Enacted。
+- 吸收四票與第一票補記：寬讀、發生／留存、六欄歸址、四帳非階梯、發生／後驗證成、記憶可重建／結構可重入、五條失效與知成法／共同成法分帳已進正文。實讀 META-067 §3 與 I-005／EPOCH-009，明記這是工作詞義分流，沒有新證據解決既有主體形狀未定項。§10.2 有逐項吸收表，§10.3 留下一輪必查項；本輪不作第五票。
+- 原受審 v0.1 快照 SHA-256 `A5720D21…` 不變；另按 SOP 完整保存後增交接節所在的 [v0.1-draft-handoff](EPOCH/history/EPOCH-018-v0.1-draft-handoff-體驗的本體論-知與覺如何在時間中互相生成.md)，SHA-256 `BE8B8D7851640C9581C04A7383BF8213E62C7D040074C8F36FA8F638C1A90C6A`。四份來源未改，不為單次交接另開第五份 source。CASE 升 v1.7；同步現役／history／來源／decade 導覽及 case README v13.20。
+- 一項部分吸收：保留四票及取材相關性，但不將第一票補記的「有效獨立觀測約為二」作統計估算；原說法留在歷史，新版無相關程度資料可算有效樣本數。舊四票均審 v0.1，不是 v0.2 的通過票。驗收：四來源與兩快照指紋、47 個 CASE／draft 連結、59 個增改連結、圍欄及 git diff --check 通過；CASE 總數維持 173。
+
+署名：Codex（GPT-6 Astra）。
