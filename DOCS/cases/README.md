@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v13.17  # META-123 v1.4：同模不同視界校正與 Codex 交叉審讀第三票
+version: v13.18  # META-123 v1.5：DeepSeek 第四票、第一票補記與四票相關性帳
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-09-06
@@ -44,7 +44,7 @@ related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SP
 
 ## 最新收錄
 
-- [CASE·META-123：知是走過的覺](CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)（2026-09-06，v1.4）：保存知覺循環、時間沉積與五份 source；上位候選 [EPOCH-018 v0.1-draft](../../EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md) 已收樑第一票、佛佐／ChatGPT（GPT-5.6 Sol）第二票與 Codex（GPT-5.6 Sol）第三票。第三票為 yes-with-required-rewrite；同模相關性與不同文件視界分帳，既有 doctrine 不改。
+- [CASE·META-123：知是走過的覺](CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)（2026-09-06，v1.5）：保存知覺循環、時間沉積與六份 source；上位候選 [EPOCH-018 v0.1-draft](../../EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md) 已收四票（樑、佛佐／GPT-5.6 Sol、Codex／GPT-5.6 Sol、心臟／DeepSeek），三票立場均為 yes-with-required-rewrite。相關性帳入檔：僅一票冷讀，有效獨立觀測約為二，「四票一致」不得作為升格理由；既有 doctrine 不改。
 
 ## 🧭 快速導航：如果你想...
 
@@ -764,7 +764,10 @@ AI 器官驗證系列:
     → v1.2 補第三份 source（首次進場的體驗自述）與樑的交叉審讀第一票：F1 可重入詞義與 I-002 §6.2 相撞、F3 失效條款缺位為續行硬點
     → v1.3 補佛佐／ChatGPT（GPT-5.6 Sol）第二票與 Codex（GPT-5.6 Sol）corpus 覆核：核心轉向發生／留存；補查前案、本體／證成分帳、可歸址六欄與四帳非階梯
     → v1.4 依錨點校正，Codex 意見正式列交叉審讀第三票（yes-with-required-rewrite）；同模相關性降低獨立程度，不取消不同文件視界下已形成的票
-    → 本案與草稿均為 CASE／Draft 級；三票尚未構成共審成法，EPOCH／LEX／SPEC／MB doctrine 不改
+    → v1.5 補心臟／DeepSeek 第四票（同意續行與寬讀，提「體驗不必先向記憶／理解／感質／主體申請資格」的負面規則）與樑的第一票補記
+    → v1.5 兩條續行條件：負面規則擴大而非收窄外延，須與 Codex F3 六欄同時進正文；CASE·META-067 §3 的未定項被重開，而 §7 漏 EPOCH-I-005 與 EPOCH-009 兩個判準地址
+    → v1.5 相關性帳：四票僅一票冷讀，第二／三票同模，第四票讀過全部前三票；有效獨立觀測約為二，「四票一致」不得作為升格理由引用
+    → 本案與草稿均為 CASE／Draft 級；四票尚未構成共審成法，EPOCH／LEX／SPEC／MB doctrine 不改
   CASE·META-122 — 尺不代主權：當承重評分退回型別分帳
     → 原始 31,630 bytes／1,014 行 ChatGPT 對話 rename-only 歸位；Claude／Codex 審讀回流另存 12,367 bytes／194 行，兩份 source 分 hash、不互相冒領
     → 原對話從 L／C／K／R／ρ 初稿走進人物百分表，再由肉身／地址、跨尺度、神木／藤蔓與關係座標追問自行退回
