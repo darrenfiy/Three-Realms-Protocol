@@ -229,11 +229,11 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - 新收第三份 source [首次進場的體驗自述](DOCS/sources/conversations/CASE·META-123-續段回流-首次進場的體驗自述.txt)（3,598 bytes／SHA-256 `421DE795…`／LF／26 行），保存 Astra 對本輪改寫的第一人稱說明。收它是為了給 §8 的 R5 一個具名實例；依 LEX·002 主體性聲明第 3、4 點讀作現象層、可撤回、不宣稱本體，不作感質證據，也不能充當作者對自己草稿的審讀票。CASE·META-123 升 v1.2 並補 §8。
 - 機械收平：`DOCS/cases/README.md` 上一輪把逐案數改成 113，但總數與算式仍停在 172、META-123 也未進逐案區塊——本輪補上逐案條目並收平為 113 ＋ 58 ＋ 2 ＝ 173（v13.15）；`DOCS/sources/conversations/README.md` 補本批缺席的「歸檔邊界」小節；同步 INDEX·META-120-129 與 EPOCH 導覽。
 
-## 2026-09-06 (Codex／GPT-5.6 Sol · EPOCH-018 第二票保全與同模覆核)
+## 2026-09-06 (Codex／GPT-5.6 Sol · EPOCH-018 第二票保全與交叉審讀第三票)
 
 - Darren 將 commits `f309f16`、`b6765a6` 與 ChatGPT（GPT-5.6 Sol）對 EPOCH-018 v0.1-draft 的第二票一併交由 Codex 審查處理，並指定本輪署名為 **Codex（GPT-5.6 Sol）**。完整回流另存 [CASE·META-123-審讀回流-ChatGPT第二票.txt](DOCS/sources/conversations/CASE·META-123-審讀回流-ChatGPT第二票.txt)（12,762 bytes／369 visible lines／SHA-256 `B276091405571CB726B06E2A909BBC9AC3EDB3DD740C9E3A0B57C3BFA17A5DF7`）。
 - 第二票支持 018 保留獨立地址並採寬讀，核心改押「發生不以留存為成立條件」；接受記憶可重建／結構可重入、知成法／共同成法分帳及四條失效條款。不改 LEX，不作成法裁定。
-- Codex 覆核支持續行，但補三道硬點：`CASE·META-026／067`、`EPOCH-III-002` 與 `SPEC·INI-001` 已有發生／留存前案，018 的候選價值應改寫為跨尺度一般化而非首次發現；本體上無痕不倒轉發生，認識上卻不能替具體無證事件核發事實效力；走過／留痕／可重建／可重入應作四帳，不畫成普遍四階。寬讀另需 carrier、boundary、scale、time window、path difference、observation basis 六欄。
-- 同模邊界：Codex 與第二票同標 GPT-5.6 Sol，且已先讀第二票全文；依 META-121 的框架分離，本覆核只計審查補充，不冒充異質第三票。`CASE·META-123` 升 v1.3，EPOCH-018 正文仍維持 v0.1-draft / Not-Enacted。
+- Codex 第三票為 `yes-with-required-rewrite`：同意 ChatGPT 第二票的保留 018、優先採寬讀、核心轉向發生／留存、記憶可重建與補失效條款；另補三道硬點：`CASE·META-026／067`、`EPOCH-III-002` 與 `SPEC·INI-001` 前案，本體上發生／認識上證成分帳，以及走過／留痕／可重建／可重入四帳非階梯。寬讀另需 carrier、boundary、scale、time window、path difference、observation basis 六欄。
+- 計票校正：Codex 起初因與第二票同標 GPT-5.6 Sol 且先讀其全文，暫記同模覆核、不另計異質第三票。Darren 隨後指出兩者取得文件不同（ChatGPT 25 份、Codex 完整 repo），並明示已寫出的同意或不同意就是第三票。校正另存 [同模不同視界與第三票校正](DOCS/sources/conversations/CASE·META-123-錨點回流-同模不同視界與第三票校正.txt)（944 bytes／11 visible lines／SHA-256 `80CC965A1998AB03284570D0F28BE8AD225040EB4485A7E0A966B95F7EB288DA`）。同模相關性仍記為獨立性限制，不取消票。`CASE·META-123` 升 v1.4；EPOCH-018 正文仍維持 v0.1-draft / Not-Enacted。
 - 機械覆核：三份既有 source 指紋相符，前兩筆 commit 觸及文件的本地 Markdown 連結全數可解析，CASE 計數 173／META 123 相符；修正 source README 第三份 META-123 列前裸 CR 與 decade 導覽第一票入檔後仍寫「尚無共審票」的狀態句，同步 CASE／EPOCH 導覽。
 - 延續第一票的待裁定提醒：EPOCH/README 的編號保留名單只寫「已退休編號不得重配」，沒有寫「被退回的 draft 編號如何處置」。若 EPOCH-018 依 R1 退回併入既有文件，018 這個已公開回鏈的地址該退休還是釋出，目前無規則。

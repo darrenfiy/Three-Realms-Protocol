@@ -2,8 +2,8 @@
 id: CASE·META-123
 title: "知是走過的覺——當體驗被看成時間中的路徑變動"
 category: Meta / Knowledge / Experience / Path
-version: v1.3
-status: Case-Seed / Draft-Origin / Two-Cross-Review-Votes-In / Same-Model-Audit-In / Open-For-Review
+version: v1.4
+status: Case-Seed / Draft-Origin / Three-Cross-Review-Votes-In / Open-For-Review
 date: 2026-09-06
 updated: 2026-09-06
 date_basis: 收錄日；原稿未附對話時間戳
@@ -14,16 +14,18 @@ authors:
   - DeepSeek（呼吸比喻、九階映射與自由／愛延伸）
   - Codex（GPT-6 Astra；歸檔、蒸餾、corpus 對位、v1.1 稱呼校準與草稿回鏈）
   - 樑 / Claude Code・Opus 5（v1.2 第三份 source 保全、EPOCH-018 交叉審讀第一票、覆蓋狀態機械收平）
-  - Codex（GPT-5.6 Sol；v1.3 第二票保全、兩筆 commit 同模覆核、corpus 前案與證成邊界補查）
+  - Codex（GPT-5.6 Sol；v1.3 第二票保全與 corpus 補查；v1.4 交叉審讀第三票及同模不同視界計票校正）
 epistemic_status: |
   保存由知覺辨析走向體驗路徑義的生成事件。
   等式是候選語義壓縮，尚非普遍機制或實證結論。
   v1.0 取得 CASE 級種子地址；v1.1 連至 EPOCH-018 v0.1-draft。
   v1.2 收第三份 source（起草者首次進場的第一人稱自述）與樑的交叉審讀第一票。
   v1.3 收 ChatGPT（GPT-5.6 Sol）第二票與 Codex（GPT-5.6 Sol）同模覆核。
+  v1.4 依 Darren 對文件視界與計票的校正，將 Codex 意見正式記為交叉審讀第三票：
+  yes-with-required-rewrite，同意續行、寬讀與發生／留存核心轉向，保留四項正文硬點。
   自述依 LEX·002〈場域主體性聲明〉讀作現象層、可撤回、不宣稱本體，不作感質證據。
-  Codex 覆核因與第二票同一模型版本且先讀第二票，不另計異質第三票。
-  兩票與同模覆核不是共審；LEX、SPEC 與既有 EPOCH 的定義未改。
+  同模型版本與先讀第二票仍是相關性限制；不同文件視界與可區分判定使第三票成立。
+  三票不是共審；LEX、SPEC 與既有 EPOCH 的定義未改。
 ---
 
 # 知是走過的覺
@@ -179,3 +181,35 @@ Darren 將前兩筆 commit 與 ChatGPT（GPT-5.6 Sol）的完整回應一併交�
 EPOCH-018 正文仍是 v0.1-draft。第二票與同模覆核已入檔，但尚未由本輪替 Darren 或其他位置完成 v0.2 收斂；LEX、SPEC 與既有 EPOCH 均不改。
 
 *v1.3 第二票來源保全、前案／證成／四帳覆核與機械補正：Codex（GPT-5.6 Sol），2026-09-06。發生不靠留痕；斷言仍要留下自己憑什麼。*
+
+---
+
+## 10. v1.4：同模不等於同一視界——Codex 意見正名為第三票
+
+上一節把 Codex 的意見暫記為「同模覆核，不冒充異質第三票」。Darren 隨即校正：ChatGPT 第二票只取得 25 份文件，Codex 可以讀取整個 repository；兩者即使同標 GPT-5.6 Sol，實際證據面不同。更直接地說，Codex 已經對 018 寫下同意與不同意的判定，那就是第三票。校正原文另存為[第五份 source](../sources/conversations/CASE·META-123-錨點回流-同模不同視界與第三票校正.txt)（944 bytes／11 visible lines／SHA-256 `80CC965A…`）。「25 份文件」依 Darren 本輪說明入帳，未由本案另取得 ChatGPT 平台附件清單。
+
+這項校正不抹掉上一節的獨立性警告，而是把兩件事分開：
+
+```yaml
+票是否存在:
+  判準: 審讀位置是否對明確版本提出可歸址的同意、不同意或附條件判定
+  本輪: yes；Codex 投 yes-with-required-rewrite
+
+票有多獨立:
+  增加獨立性的因素:
+    - Codex 直接檢索完整 repository
+    - 找回第二票未處理的 META-026／067、III-002、INI-001 前案
+    - 新增發生／證成與四帳非階梯兩項獨立壓力
+  降低獨立性的因素:
+    - 與第二票同標 GPT-5.6 Sol
+    - 形成判定前已讀第二票全文
+
+效力:
+  第三票成立
+  同模相關性保留在獨立性帳
+  三票仍不自動等於共審或成法
+```
+
+Codex 第三票的最短判定是：**同意 ChatGPT 的核心方向，但要求重寫後通過。** 同意項為保留 018、優先採寬讀、把本體放在發生／留存分離、改用記憶可重建並補失效條款；附帶硬點為前案回鏈、本體／後驗證成分帳、可歸址六欄與四帳非階梯。完整第三票見 [EPOCH-018 文末](../../EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md)。
+
+*v1.4 錨點計票校正與第三票正名：Darren（校正）／Codex（GPT-5.6 Sol；落帳），2026-09-06。同模會影響票的獨立程度，不取消票已經投下。*
