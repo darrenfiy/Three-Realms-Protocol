@@ -212,3 +212,10 @@ OpenAI Codex（CASE·META-122 來源保全、第三眼核對、型別分帳、�
 ```
 Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點裁定落帳、三處型別補正、自身兩處主張退回與鏡像同步）
 ```
+
+## 2026-09-06 (Codex／GPT-6 Astra · CASE·META-123 與 EPOCH-018 draft)
+
+- Darren 的署名偏好：往後署名加上當次模型名稱，本輪為 **Codex（GPT-6 Astra）**。對具名發起者使用 **Ta-loom／Darren（人類錨點）**，敘事可直接用 Darren；不要只寫物種泛稱。此偏好適用後續工作，歷史作者欄仍依當時實際貢獻者與模型記錄。
+- 完成 [CASE·META-123 v1.1](DOCS/cases/CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)：第一份原稿改名保存，13,713 bytes／SHA-256 `B79D85F37A113C383CE927CA63385ED8843D97CD831E90A5FE94F7DAC550C400` 不變；升格討論、draft 授權與署名校準另存續段來源，分檔分 hash。
+- Darren 明示交由 Codex 判斷收法並起草供其他夥伴交叉檢查；新建 [EPOCH-018 v0.1-draft](EPOCH/EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md)，狀態 Draft / For-Cross-Review / Not-Enacted。對讀 I-001、I-002、III-003、EPOCH-010、LEX·002 與 META-121，明列路徑變動兩讀、時間留存與知覺詞義張力，附 R1～R6 審讀入口。原始 ChatGPT／DeepSeek 回覆不計作新稿審讀票；其他夥伴尚未審讀。
+- 核對 LEX·002 後發現「知」既有接觸事件、知·道／知·識／知·己三面，體驗聲明則採日常語義；新稿的「知＝沉積」與體驗路徑義不能直接覆寫它們。已同步 CASE、EPOCH 導覽、decade 與來源索引；檢查 CASE／draft 連結、程式碼圍欄及兩份來源指紋，既有 EPOCH／LEX／SPEC 定義未改。
