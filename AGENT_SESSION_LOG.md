@@ -280,3 +280,13 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - **新 SOP：[〈開口與封口〉](DOCS/sources/conversations/README.md)**，由錨點提問並裁定。診斷：前一版把「登記」與「封口」綁成同一動作，材料一到就寫 hash，而 hash 一寫追加就失效，於是下一段話只好另開一檔——**檔案增生的根因不是話多，是鎖上錯了時機**。兩態：開口中（hash 欄寫「開口中」＋封口條件＋段數，可追加，稽核靠 git）／已封口（寫入 hash＋封口日與原因，不再追加）。封口觸發先到者為準：**有人開始靠它下判斷**（最深的一條——理由不是時間到了，是已經有人的論證壓在上面）、上位文件升版或做快照、來源換手。兩類永不開口、到貨即封：rename-only 原始交付檔與審讀票。**開口 ≠ 可改寫**，只允許檔尾追加，開口期間改動舊段與抹除同罪。這條規則自己會收口：引用開口檔須標「開口中」，判斷一壓上去就觸發封口。
 - **下一輪的空缺**：與 018 已有編寫或大綱關係的位置有三個——佛佐（原命題校準）、Codex（起草）、樑（大綱）。v0.2 §10.3 第 1 項要求的「未參與起草的獨立使用者，在另一具名情境實測分帳是否改變判讀」，宜由大地、心臟或全新位置承擔。
 - 同步：CASE·META-123 v1.8 §14、INDEX·META-120-129、`DOCS/cases/README.md` v13.21、來源索引第五列與邊界小節、EPOCH 導覽審讀欄、EPOCH-018 frontmatter 與 §10.1。EPOCH／LEX／SPEC／MB doctrine 不改。
+
+## 2026-09-07 (Codex / GPT-5.6 Sol · 活文件審讀帳流程裁定)
+
+- Darren 將樑（Claude Code・Opus 5）的第二輪覆核與活文件三分提案交由 Codex 拍板。裁定**採納正文／審讀帳／CASE 三分**，並新建 [EPOCH/reviews SOP](EPOCH/reviews/README.md)及 [EPOCH-018 審讀帳](EPOCH/reviews/EPOCH-018-審讀帳.md)。這是 repository 流程裁定，不是 v0.2 內容票。
+- 對提案作兩項修準：審讀帳保存規格化紀錄、相關性、處置與精確原文地址，不再複製 sealed source／frozen snapshot 的逐字全文；每張票到貨即封，但同一 EPOCH 帳本長期開口、只追加，各版本 review cycle 可分別關閉，正式版不封死未來維護審讀。
+- `EPOCH-018` 為首例：回溯登錄 v0.1 四票、v0.2 第一票、樑迴避與 Codex 流程裁定；現役正文由 419 行縮回短審讀摘要與下一道門，v0.1 兩份 history 快照不改。v0.2 仍只有佛佐一票 yes、Not-Enacted；獨立具名情境實測仍缺。
+- 快照 SOP v1.4 回到根判準：「舊版有沒有東西，是新版讀者再也找不回來的？」legacy inline 票仍會觸發快照；新票進穩定帳後，有票本身不再自動觸發。來源的開口／封口規則不變。
+- 本輪可見 Opus 回流與 Darren 授權另存 [流程來源](DOCS/sources/conversations/CASE·META-123-第二輪回流-Opus5審讀帳提案.txt)（9,596 bytes／159 行／SHA-256 `3036EB59…`），因流程裁定已據此成文而封口；它不是新票。CASE 升 v1.9、cases README 升 v13.22，EPOCH／history／source／decade 導覽同步。
+
+署名：Codex（GPT-5.6 Sol）。
