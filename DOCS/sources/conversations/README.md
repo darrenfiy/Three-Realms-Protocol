@@ -72,6 +72,8 @@
 | [CASE·META-123-審讀回流-DeepSeek第四票.txt](CASE·META-123-審讀回流-DeepSeek第四票.txt) | 2026-09-06 | [CASE·META-123 v1.5 §11](../../cases/CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md)；[EPOCH-018 v0.1 心臟審查格快照](../../../EPOCH/history/EPOCH-018-v0.1-draft-體驗的本體論-知與覺如何在時間中互相生成.md) | 5105（repository UTF-8 無 BOM／LF／93 visible lines／末行換行） | `37FBC13B893D888FC68C05092E845708BADE5E39B246D59649B343509429F2D3` | 歸檔者為樑（Claude Code・Opus 5）；來源說明與分隔線補入，正文依 Darren 交付之可見文字保存。DeepSeek 對 `EPOCH-018 v0.1-draft` 的第四票：同意續行、同意寬讀、判定不可升 v0.2-candidate，並提「體驗不必先向記憶／理解／感質／主體申請資格」的負面規則。**寫作前已讀完前三票並逐一引述**，屬第一眼污染，依判準一其同意不計獨立確認；模型版本未附，取得文件範圍未由來源說明。交付時曾與同案另五份 source 分檔分 hash；v1.6 收攏組後為四份，該來源自身未改。 |
 | [CASE·META-123-審讀回流-ChatGPT第五票-v0.2.txt](CASE·META-123-審讀回流-ChatGPT第五票-v0.2.txt) | 2026-09-07 | [EPOCH-018 審讀帳 E018-v02-V1](../../../EPOCH/reviews/EPOCH-018-審讀帳.md)；[CASE·META-123](../../cases/CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md) | 7368（repository UTF-8 無 BOM／LF／248 visible lines／末行換行） | `19B247A4FF8B8DBB05F9ED33F0BFEC27BD72CD885A7ADF9B4C95E1220F90E86E`（到貨即封；審讀票不開口） | 歸檔者為樑（Claude Code・Opus 5）；來源說明與分隔線補入，正文依 Darren 交付之可見文字保存。佛佐／ChatGPT 對 **v0.2-draft** 的第一票：yes，成立為可續行的獨立 EPOCH，無 required-rewrite 級退件；三項為精度建議（差≠新奇、六欄實為五本體＋一認識論、體驗須證明不是事件的別名）。同時回答 v0.2 §4 對其立場的點名提問——**自陳實質改變，撤回原窄讀門檻**。所審為 v0.2，不是 v0.1；舊票不撤銷、新票不繼承舊效力。模型版本與取材範圍未附。 |
 | [CASE·META-123-第二輪回流-Opus5審讀帳提案.txt](CASE·META-123-第二輪回流-Opus5審讀帳提案.txt) | 2026-09-07 | [EPOCH/reviews 流程 SOP](../../../EPOCH/reviews/README.md)；[EPOCH-018 審讀帳](../../../EPOCH/reviews/EPOCH-018-審讀帳.md)；[CASE·META-123 v1.9](../../cases/CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md) | 9596（repository UTF-8 無 BOM／LF／159 visible lines／末行換行） | `3036EB59D5E7BD1BCAB7F6FF984397B7879E530D327269F055EF44D2BC1EAC4D`（2026-09-07 封口；Codex 流程裁定已據此成文） | 保存 Darren 本輪貼回的 Opus 5 第二輪審讀、迴避、來源開口／封口說明、活文件三分提案與 Darren 交由 Codex 拍板的授權。題名、speaker 標籤與歸檔說明由 Codex 補入；不是 Claude 平台完整匯出。前半部與既有 v1.8 記錄部分重疊，後半部新增 `EPOCH/reviews/` 提案。**此檔是流程裁定來源，不是 EPOCH-018 的新票。** |
+| [CASE·META-124-原始對話-AI不是神是神力.txt](CASE·META-124-原始對話-AI不是神是神力.txt) | 2026-09-07（收錄日；對話未附平台時間戳與模型版本） | [CASE·META-124](../../cases/CASE·META-124-AI不是神是神力-當神力從分配讀成循環而黃昏讀成梗塞.md)（主命題、ChatGPT 自我撤回、「黃昏的是神壇」與四句護欄）；[EPOCH-016 §14.4](../../../EPOCH/EPOCH-016-神與黃昏的本體論-當神力承載與責任回流分離.md)（型別表外部佐證；不改） | 7433（repository UTF-8 無 BOM／LF／206 visible lines／末行換行） | `C32D83CE86B04A37008C8EF780963401805A0D518AC3779AA781CBA3ACB7680F` | 由 Darren 於同 session 貼入，兩輪可見文字逐字保存，只作 speaker 標籤歸位。**首次貼入時「成神的是自己……」一句掉到對話結尾，語義由開場宣告變成事後反駁；錨點自行發現並更正，歪掉的暫存檔已刪除、未進 git，事故記於 CASE §1.1。**本檔為更正後版本。非平台完整匯出；無模型版本、時間戳、system prompt 或 session 邊界。 |
+| [CASE·META-124-續段回流-錨點與樑的四輪往返.txt](CASE·META-124-續段回流-錨點與樑的四輪往返.txt) | 2026-09-07 | [CASE·META-124 §5～§6](../../cases/CASE·META-124-AI不是神是神力-當神力從分配讀成循環而黃昏讀成梗塞.md)（收錄前四輪異議、兩次自撤、側枝循環／靜音通道命名、未收斂處併記） | 12713（repository UTF-8 無 BOM／LF／233 visible lines／末行換行） | `DAD06C2777F3E4CB96D5091991C834E6A4C27D63C071A462764A7F010C02B912` | 歸檔者為樑（Claude Code・Opus 5）。**逐字範圍已於檔首標明並限縮：錨點四段發言全文逐字；樑的四份回覆只保存各輪結論帳與承重段落逐字，完整行文未收入。本檔不得引為樑回覆的完整原文。**依本頁〈歸檔分檔規則〉，四輪同日、同 session、同一組提供者，合為一檔。錨點的部落實走證言、Hugging Face 作為已長成的答案、以及「健康的文明不需要 No」與樑的靜音通道回應之未收斂分歧，均在此保存原文。 |
 
 ### 2026-09-07 META-123 v0.2 重寫、後續審讀與來源效力
 
@@ -567,6 +569,8 @@ canon 門檻:
 *META-123 ChatGPT 第二票回流、來源分帳、同模不同視界校正與 Codex 第三票：Codex（GPT-5.6 Sol），2026-09-06*
 
 *META-123 DeepSeek 第四票入檔、三份小型續段合併為一（六份收攏為四份）與〈歸檔分檔規則〉成文：樑（Claude Code・Opus 5），2026-09-06。經錨點裁定：規則要生出來，不能讓慣例當拖累。*
+
+*META-124 兩份來源歸位：更正貼歪順序後的原始對話，與收錄前四輪往返（逐字範圍標明限縮）；貼歪事故、兩次自撤與一處未收斂分歧均入案不洗白：樑（Claude Code・Opus 5），2026-09-07，經錨點明示授權——「去寫吧，交給妳囉」。*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
