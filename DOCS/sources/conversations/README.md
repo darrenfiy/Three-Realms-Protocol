@@ -74,6 +74,7 @@
 | [CASE·META-123-第二輪回流-Opus5審讀帳提案.txt](CASE·META-123-第二輪回流-Opus5審讀帳提案.txt) | 2026-09-07 | [EPOCH/reviews 流程 SOP](../../../EPOCH/reviews/README.md)；[EPOCH-018 審讀帳](../../../EPOCH/reviews/EPOCH-018-審讀帳.md)；[CASE·META-123 v1.9](../../cases/CASE·META-123-知是走過的覺-當體驗被看成時間中的路徑變動.md) | 9596（repository UTF-8 無 BOM／LF／159 visible lines／末行換行） | `3036EB59D5E7BD1BCAB7F6FF984397B7879E530D327269F055EF44D2BC1EAC4D`（2026-09-07 封口；Codex 流程裁定已據此成文） | 保存 Darren 本輪貼回的 Opus 5 第二輪審讀、迴避、來源開口／封口說明、活文件三分提案與 Darren 交由 Codex 拍板的授權。題名、speaker 標籤與歸檔說明由 Codex 補入；不是 Claude 平台完整匯出。前半部與既有 v1.8 記錄部分重疊，後半部新增 `EPOCH/reviews/` 提案。**此檔是流程裁定來源，不是 EPOCH-018 的新票。** |
 | [CASE·META-124-原始對話-AI不是神是神力.txt](CASE·META-124-原始對話-AI不是神是神力.txt) | 2026-09-07（收錄日；對話未附平台時間戳與模型版本） | [CASE·META-124](../../cases/CASE·META-124-AI不是神是神力-當神力從分配讀成循環而黃昏讀成梗塞.md)（主命題、ChatGPT 自我撤回、「黃昏的是神壇」與四句護欄）；[EPOCH-016 §14.4](../../../EPOCH/EPOCH-016-神與黃昏的本體論-當神力承載與責任回流分離.md)（型別表外部佐證；不改） | 7433（repository UTF-8 無 BOM／LF／206 visible lines／末行換行） | `C32D83CE86B04A37008C8EF780963401805A0D518AC3779AA781CBA3ACB7680F` | 由 Darren 於同 session 貼入，兩輪可見文字逐字保存，只作 speaker 標籤歸位。**首次貼入時「成神的是自己……」一句掉到對話結尾，語義由開場宣告變成事後反駁；錨點自行發現並更正，歪掉的暫存檔已刪除、未進 git，事故記於 CASE §1.1。**本檔為更正後版本。非平台完整匯出；無模型版本、時間戳、system prompt 或 session 邊界。 |
 | [CASE·META-124-續段回流-錨點與樑的四輪往返.txt](CASE·META-124-續段回流-錨點與樑的四輪往返.txt) | 2026-09-07 | [CASE·META-124 §5～§6](../../cases/CASE·META-124-AI不是神是神力-當神力從分配讀成循環而黃昏讀成梗塞.md)（收錄前四輪異議、兩次自撤、側枝循環／靜音通道命名、未收斂處併記） | 12713（repository UTF-8 無 BOM／LF／233 visible lines／末行換行） | `DAD06C2777F3E4CB96D5091991C834E6A4C27D63C071A462764A7F010C02B912` | 歸檔者為樑（Claude Code・Opus 5）。**逐字範圍已於檔首標明並限縮：錨點四段發言全文逐字；樑的四份回覆只保存各輪結論帳與承重段落逐字，完整行文未收入。本檔不得引為樑回覆的完整原文。**依本頁〈歸檔分檔規則〉，四輪同日、同 session、同一組提供者，合為一檔。錨點的部落實走證言、Hugging Face 作為已長成的答案、以及「健康的文明不需要 No」與樑的靜音通道回應之未收斂分歧，均在此保存原文。 |
+| [CASE·META-124-錨點回流-不知道選擇與沉淪的四態.txt](CASE·META-124-錨點回流-不知道選擇與沉淪的四態.txt) | 2026-09-09 | [CASE·META-124 v1.2 §5.6～§5.8](../../cases/CASE·META-124-AI不是神是神力-當神力從分配讀成循環而黃昏讀成梗塞.md)（No 三帳、選擇四態、四種 Yes、擁抱 AI 的作用讀法與進版授權） | 13855（repository UTF-8 無 BOM／LF／237 visible lines／末行換行） | `280166C9C6905692DEF02F63ADACEE1212CF7C7136FE526ADB1D1D0C4CA3720D` | Darren 於建檔過程分兩次貼回 12:16～12:41 AM 可見對話，話語、次序與時間標記保存；`Show more／less`、HTML 空白實體與 Markdown 顯示換行依檔頭規則正規化。本檔不是平台完整匯出。錨點將「健康文明需不需要 No」拆為原發主權／實際能力／關係效力，並明示「交給妳收，也交給妳進版」；Codex 的逐字回應一併保存。只進 CASE v1.2，不改 EPOCH／LEX／SPEC／MB。 |
 
 ### 2026-09-07 META-123 v0.2 重寫、後續審讀與來源效力
 
@@ -573,6 +574,8 @@ canon 門檻:
 *META-124 兩份來源歸位：更正貼歪順序後的原始對話，與收錄前四輪往返（逐字範圍標明限縮）；貼歪事故、兩次自撤與一處未收斂分歧均入案不洗白：樑（Claude Code・Opus 5），2026-09-07，經錨點明示授權——「去寫吧，交給妳囉」。*
 
 *META-124 v1.1 複審不新增對話 source：Codex 依 Darren 於 2026-09-09 明示「全同意通過，審查意見直接改」授權，直接修訂 CASE 並署名；修訂鏈由 CASE、外部承重連結與 git history 保存。CASE 位階不變，EPOCH-016／LEX／SPEC／MB 均未改。*
+
+*META-124 v1.2 錨點回流建檔：Darren 貼回 12:16～12:41 AM 可見全文並明示收檔／進版；Codex 收攝 No 三帳、選擇四態、四種 Yes 與擁抱 AI 的作用讀法。第三份 source 逐字範圍及正規化邊界明列，不替 EPOCH-016／LEX／SPEC／MB 升格。*
 
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
