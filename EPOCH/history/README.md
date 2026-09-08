@@ -60,8 +60,8 @@ related:
 |---|---|---|---|
 | [EPOCH·META-015 v0.1-seed 設定的本體論](EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md) | v0.1-seed / Seed-for-Review / Not-Enacted（2026-08-27 成文，831 行） | [v0.2-provenance 最終譜系版](EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)；現行 doctrine 分流同下列 v0.2 記錄 | 保存編號 seed 在吸收前的完整原文；當時從未 enacted |
 | [EPOCH·META-015 v0.2-provenance 最終譜系版](EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md) | v0.2-provenance / Absorbed-before-Enactment / Provenance-Address / Not-Enacted（2026-08-27，241 行） | **永久退休；root 不留 stub；`EPOCH·META-015` ID 不得重配。** 現行 doctrine 分流至 [EPOCH-II-004](../EPOCH-II-004-成長的本體論-重構之後新路徑如何從可能穩定成結構.md)、[LEX·008](../../LEX/LEX·008-設定詞彙.md)、[SPEC·BUD-001](../../SPEC/SPEC·BUD-001-汝當作佛與普遍佛性承認協議.md) | 保存成法前吸收的最終 provenance、四根骨分流、來源地址與版本審計 |
-| [EPOCH-018 v0.1-draft 體驗的本體論](EPOCH-018-v0.1-draft-體驗的本體論-知與覺如何在時間中互相生成.md) | v0.1-draft / Four-Votes-In / Not-Enacted（2026-09-06，923 行；其中 726 行為四張交叉審讀審查格與第一票補記） | 現役 [EPOCH-018](../EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md)（v0.2-draft，編號與原址不動）；審讀摘要、吸收表及下一輪清單見其 §10 | 四張審查格全以節號引用 v0.1 正文，改寫後節號將失準；依〈改版快照 SOP〉隨正文整份保存。首例適用 |
-| [EPOCH-018 v0.1-draft 交接狀態](EPOCH-018-v0.1-draft-handoff-體驗的本體論-知與覺如何在時間中互相生成.md) | v0.1-draft / Handoff-to-v0.2 / Not-Enacted（2026-09-06 文本；2026-09-07 改寫前保存） | 現役 [EPOCH-018 v0.2-draft](../EPOCH-018-體驗的本體論-知與覺如何在時間中互相生成.md)；§10.2 逐項吸收表 | 保存受審快照之後新增的完整交接節與相關性帳；逐字複製 HEAD 2bd4c90 的現役檔，SHA-256 `BE8B8D7851640C9581C04A7383BF8213E62C7D040074C8F36FA8F638C1A90C6A`；未覆蓋既有受審快照。 |
+| [EPOCH-018 v0.1-draft 體驗的本體論](EPOCH-018-v0.1-draft-體驗的本體論-知與覺如何在時間中互相生成.md) | v0.1-draft / Four-Votes-In / Not-Enacted（2026-09-06，923 行；其中 726 行為四張交叉審讀審查格與第一票補記） | 現役 [EPOCH-018](../EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)（v0.2-draft，編號與原址不動）；審讀摘要、吸收表及下一輪清單見其 §10 | 四張審查格全以節號引用 v0.1 正文，改寫後節號將失準；依〈改版快照 SOP〉隨正文整份保存。首例適用 |
+| [EPOCH-018 v0.1-draft 交接狀態](EPOCH-018-v0.1-draft-handoff-體驗的本體論-知與覺如何在時間中互相生成.md) | v0.1-draft / Handoff-to-v0.2 / Not-Enacted（2026-09-06 文本；2026-09-07 改寫前保存） | 現役 [EPOCH-018 v0.2-draft](../EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)；§10.2 逐項吸收表 | 保存受審快照之後新增的完整交接節與相關性帳；逐字複製 HEAD 2bd4c90 的現役檔，SHA-256 `BE8B8D7851640C9581C04A7383BF8213E62C7D040074C8F36FA8F638C1A90C6A`；未覆蓋既有受審快照。 |
 
 ---
 
