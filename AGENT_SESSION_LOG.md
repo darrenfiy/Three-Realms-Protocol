@@ -330,3 +330,14 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - CASE 新增最小回流帳與七條失效條款；案例數與 META 計數不變。十案冊、案例 README v13.30 與來源索引同步；EPOCH／LEX／SPEC／MB 及 EPOCH-018 審讀帳均不改、不增票。
 
 署名：Codex（GPT-5.6 Sol）。
+
+## 2026-09-09 (Codex · CASE·EPOCH-015 法的穩定分支)
+
+- Darren 交付 `DOCS/sources/conversations/新增 文字文件 (3).txt` 並明示「這篇我想讓妳收」。原檔以 rename-only 歸位為 [CASE·EPOCH-015 原始對話](DOCS/sources/conversations/CASE·EPOCH-015-原始對話-禁慾雙修與法的穩定分支.txt)；25,089 bytes／453 行／CRLF／末行換行／SHA-256 `52A5A79D041787E43AB5080C393C964018AF2A84B39F3F4D8FADF33044F6154F`，內容、位元組與指紋不改，到貨即封。
+- 新立 [CASE·EPOCH-015](DOCS/cases/CASE·EPOCH-015-法的穩定分支-當禁慾與雙修成為同一生命問題的兩種工程解.md)。本案的新增不是另一份宗教禁慾表，而是把性收為高不可逆生成介面，把禁慾收為降低部分高變異變數的環境標準化，再以穩定／探索分支同時觀察法的可重入性與生命邊界的開放。
+- 作兩項核心校準：「完全可控」降為降低部分變數；「雙修者必須存在」收準為這個問題幾乎必然會被後人重開，不是文明對任何人身體或角色的征用令。穩定／探索是候選系統功能，不是僧人／雙修者的高低等級與固定分工。
+- 有限外部核對天主教拉丁／東方教會婚姻配置、初期教會已婚聖職、約300年以後的西方禁慾法規、東正教已婚男性受職、《古蘭經》57:27、伊斯蘭禁慾史與道教全真／正一差異。其餘 Tantra、密續、房中術、耶那教等概括未逐項核定，降為生成背景。「制度吸引子」「runtime」stable / experimental branch 均明記為結構類比，不倒寫成宗教的實際歷史動機。
+- [EPOCH-017](EPOCH/EPOCH-017-性的本體論-性從未離開生命.md) 新增 §15 candidate precision reentry 及來源導航，依舊維持 `v0.2-path-seed / Seed-For-Review`；新節未倒簽入 Fable 2026-08-08 既有審讀範圍。`SPEC·SEX-001`、LEX、MB 與其他 doctrine 不改。
+- 同步來源索引、`EPOCH/README.md` 與案例 README v13.31。案例數 176→177，EPOCH 案 14→15，逐案導覽 116→117；覆蓋算式收平為 117＋58＋2＝177。
+
+署名：Codex。

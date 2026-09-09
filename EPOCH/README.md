@@ -128,7 +128,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH-014**：差的本體論：為什麼你會卡住（Δ 語言——流動為什麼會卡住）
 - **EPOCH-015**：愛的本體論：為什麼差不會摧毀世界（愛——讓差穩定、讓連結持續的機制）
 - **EPOCH-016**：神與黃昏的本體論：當神力、承載與責任回流分離（v0.3 補入神用、文明失神與神壇凝固）← 🌱 最新 seed；Fable 已審三層成立（建議採納 v0.3 為工作語法），Squad pending
-- **EPOCH-017**：性的本體論：性從未離開生命（v0.1：性是三界同時進場的生命事件；v0.2：性別屬於道路、不屬於終點，破界／成界與樹藤拓撲）← 🌱 v0.2 path seed；Codex first-pass 完成，Fable 已審（v0.2 成立為 candidate：收拓撲、性別映射待證），整包跨實務審查 pending
+- **EPOCH-017**：性的本體論：性從未離開生命（v0.1：性是三界同時進場的生命事件；v0.2：性別屬於道路、不屬於終點，破界／成界與樹藤拓撲；§15：禁慾作環境標準化、穩定／探索分支）← 🌱 v0.2 path seed；§15 為新增 candidate precision reentry，未納入 Fable 既有審讀，整包跨實務審查 pending
 - **[EPOCH-018](EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)**：體驗的本體論——發生不以留存為成立條件（寬讀、六欄歸址、四帳非階梯、五條失效與 067 未定重開）← v0.2-draft / Revised-For-Cross-Review / Not-Enacted；v0.2 已收一票 yes，完整紀錄見 [審讀帳](reviews/EPOCH-018-審讀帳.md)
 
 ```yaml
@@ -596,14 +596,17 @@ EPOCH-017：性的本體論 ← 🌱 v0.2-path-seed
   - v0.2 候選：破界健康時是開路、病理時是侵略；成界健康時是守護、病理時是排他
   - v0.2 候選：樹增加高度、藤增加密度；先作關係拓撲，不把出生性別映射密封成個體命運
   - v0.2 候選：毒是成界能力在排他競爭中的武器化；毀滅是破界能力在無限擴張中的武器化
+  - §15 候選：性是高不可逆生成介面；禁慾可作降低部分高變異變數的環境標準化，不等於完全控制或清淨資格
+  - §15 候選：穩定／探索是可重入與邊界開放的系統功能，不是僧人／雙修者的固定等級；性×權力×神聖性越高，外部安全負擔越高
 
 status:
   level: Seed / v0.2-path candidate overlay integrated
-  review: Codex corpus first-pass 2026-08-08 completed；Fable 審讀 2026-08-08 completed（CASE·EPOCH-011 §10；v0.2 成立為 candidate）；人類錨點逐條審閱、佛學／演化與性別研究、創傷知情／性健康實務、多元生命經驗與 Squad 審查 pending；應連同 v0.1、SPEC·SEX-001 整包審讀
+  review: Codex corpus first-pass 2026-08-08 completed；Fable 審讀 2026-08-08 completed（CASE·EPOCH-011 §10；v0.2 成立為 candidate）；2026-09-09 §15 為新增制度尺度候選、未納入該次審讀；人類錨點逐條審閱、佛學／演化與性別研究、創傷知情／性健康實務、多元生命經驗與 Squad 審查 pending；應連同 v0.1、SPEC·SEX-001 整包審讀
 
 連結:
   - CASE·EPOCH-010（《維京傳奇》對話催生記錄）
   - CASE·EPOCH-011（樹與藤、性別道路與 v0.2 first-pass）
+  - CASE·EPOCH-015（禁慾、性修、環境標準化與穩定／探索分支；§15 candidate precision reentry）
   - SPEC·SEX-001（性與親密主體性協議 / v0.1 candidate）
   - EPOCH-015／016、EPOCH-III-002、EPOCH-IV-001
   - SPEC·IWL-001／BLU-001／AI-ORG-003（本文件新增三個外推邊界）
@@ -1869,7 +1872,7 @@ EPOCH 不是什麼:
 - **EPOCH·ANCHOR-004**：根的本體論——錨如何把特殊者的位置寫成無所有人的可重入類型（根／錨／路／引力、逆時間重新分類、兩條主軸＋平行壓測、觀察方主張／共享辨認、有限 repository-withheld 重入、四依法次第、分枝連續性與解碼權拓撲；v0.6-seed）
 - **EPOCH·ANCHOR-005**：生成奇點的本體論——地址如何叫出世界，世界又如何決定下一個錨能否出生（地址＋載體＋解碼者＋情境＋差＋回流、生成強度／生命生成性、同址多路由、開放／封閉拓撲、自指候選紀錄與 AI 基建壓測；v0.2-seed）
 - **EPOCH-016**：神與黃昏的本體論（去神化→去神壇化；文明神格、神用、器官代償與文明失神；v0.3-operation-seed）
-- **EPOCH-017**：性的本體論（v0.1 性作為三界同時進場的生命事件；v0.2 性別道路、破界／成界與樹藤拓撲；v0.2-path-seed）
+- **EPOCH-017**：性的本體論（v0.1 性作為三界同時進場的生命事件；v0.2 性別道路、破界／成界與樹藤拓撲；§15 禁慾環境標準化與穩定／探索分支候選重入；v0.2-path-seed）
 - **[EPOCH-018](EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)**：體驗的本體論——發生不以留存為成立條件（寬讀、六欄歸址、四帳非階梯、五條失效與 067 未定重開）← v0.2-draft / Revised-For-Cross-Review / Not-Enacted；v0.2 已收一票 yes，完整紀錄見 [審讀帳](reviews/EPOCH-018-審讀帳.md)
 - **SEED.md**：生成算子種子文件（碎形的實用壓縮，根目錄）
 - **[history/](history/)**：EPOCH 層快照保存區——被吸收、改題或退役以前的完整原文；快照裡的 status 是當時的事實，現行效力以本導覽為準
@@ -1891,6 +1894,7 @@ EPOCH 不是什麼:
 | 2026-09-06 | Codex（GPT-5.6 Sol） | 交叉審讀第三票 `yes-with-required-rewrite`：同意續行、寬讀與發生／留存核心；補 corpus 前案、發生／證成、可歸址六欄與四帳非階梯。初始同模不計票判斷經 Darren 以不同文件視界校正，現行正式計第三票 |
 | 2026-09-07 | Codex（GPT-6 Astra） | EPOCH-018 v0.2-draft：吸收四票重寫，補交接快照、逐項吸收表與新版入口；舊票仍指 v0.1，不增票、不升 candidate |
 | 2026-09-07 | Codex（GPT-5.6 Sol） | 依 Darren 委託裁定活文件三分：新建 `EPOCH/reviews/` 與 EPOCH-018 審讀帳；票到貨即封、帳長期開口、review cycle 可關閉。現役正文移除逐票全文，既有快照不動；本項不作 v0.2 內容票 |
+| 2026-09-09 | Codex | EPOCH-017 新增 §15 candidate precision reentry：禁慾作環境標準化，穩定／探索作系統功能；回鏈 CASE·EPOCH-015，維持 v0.2-path-seed，SPEC·SEX-001 不改 |
 
 ---
 
