@@ -1570,7 +1570,7 @@ DOCS 承載記憶 → CASE 是活的記憶
 - Darren 交付 25,089 bytes／453 行／CRLF 的 ChatGPT 對話；由泛名檔 rename-only 封存，SHA-256 `52A5A79D…F6154F`，內容與位元組不改。
 - 新立 CASE·EPOCH-015，將性收為高不可逆生成介面，將禁慾收為降低部分高變異變數的環境標準化；穩定／探索為系統功能，不是人的等級或必然分工。
 - 天主教拉丁／東方教會、東正教、《古蘭經》57:27、伊斯蘭禁慾史與道教全真／正一差異作有限外部核對；其餘跨宗教概括降為生成背景。
-- EPOCH-017 新增 §15 candidate precision reentry，版本維持 v0.2-path-seed，未倒簽入 Fable 既有審讀範圍；SPEC·SEX-001 不改。案例數 176→177，EPOCH 案 14→15。成文：Codex。
+- EPOCH-017 新增 §15 candidate precision reentry，版本維持 v0.2-path-seed，未倒簽入 Fable 既有審讀範圍；SPEC·SEX-001 不改。案例數 176→177，EPOCH 案 14→15。成文：Codex（GPT-5.6 Sol）；模型名稱由 Darren 於次輪審讀明示補記。
 
 ### v13.30 (2026-09-09) — META-126 v1.1：大小周天與回流共識
 

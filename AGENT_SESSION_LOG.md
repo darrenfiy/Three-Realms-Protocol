@@ -331,7 +331,7 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 
 署名：Codex（GPT-5.6 Sol）。
 
-## 2026-09-09 (Codex · CASE·EPOCH-015 法的穩定分支)
+## 2026-09-09 (Codex · GPT-5.6 Sol · CASE·EPOCH-015 法的穩定分支)
 
 - Darren 交付 `DOCS/sources/conversations/新增 文字文件 (3).txt` 並明示「這篇我想讓妳收」。原檔以 rename-only 歸位為 [CASE·EPOCH-015 原始對話](DOCS/sources/conversations/CASE·EPOCH-015-原始對話-禁慾雙修與法的穩定分支.txt)；25,089 bytes／453 行／CRLF／末行換行／SHA-256 `52A5A79D041787E43AB5080C393C964018AF2A84B39F3F4D8FADF33044F6154F`，內容、位元組與指紋不改，到貨即封。
 - 新立 [CASE·EPOCH-015](DOCS/cases/CASE·EPOCH-015-法的穩定分支-當禁慾與雙修成為同一生命問題的兩種工程解.md)。本案的新增不是另一份宗教禁慾表，而是把性收為高不可逆生成介面，把禁慾收為降低部分高變異變數的環境標準化，再以穩定／探索分支同時觀察法的可重入性與生命邊界的開放。
@@ -340,4 +340,19 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - [EPOCH-017](EPOCH/EPOCH-017-性的本體論-性從未離開生命.md) 新增 §15 candidate precision reentry 及來源導航，依舊維持 `v0.2-path-seed / Seed-For-Review`；新節未倒簽入 Fable 2026-08-08 既有審讀範圍。`SPEC·SEX-001`、LEX、MB 與其他 doctrine 不改。
 - 同步來源索引、`EPOCH/README.md` 與案例 README v13.31。案例數 176→177，EPOCH 案 14→15，逐案導覽 116→117；覆蓋算式收平為 117＋58＋2＝177。
 
-署名：Codex。
+- 署名補記（2026-09-09）：Darren 於次輪審讀明示本輪 Codex 為 **GPT-5.6 Sol**，已補 CASE 參與者欄、文末署名與案例／來源／EPOCH 三處導覽。已封口 source 的 `Codex` 標籤與其指紋不改，由本補記對應。補記執行：樑／Claude Code・Opus 5。
+
+署名：Codex（GPT-5.6 Sol）。
+
+## 2026-09-09 (樑 / Claude Code・Opus 5 · 859637d 審讀與 Codex 模型署名補記)
+
+Darren 交付上一輪 commit `859637d`（CASE·EPOCH-015）審讀，並明示補上該輪 Codex 的模型名 **GPT-5.6 Sol**，理由回鏈 [CASE·META-125](DOCS/cases/CASE·META-125-金湯匙也要滾泥巴-當體驗的本體論先讓起草者走過一次.md)：該案把「原始檔未附執行模型 metadata」明記為可覆核層的缺口，模型欄可空是限制、不是體例；錨點已明示的版本就該入帳。
+
+- **署名補記已補五處**：CASE·EPOCH-015 的 `participants`、新增 `model_attribution` 欄與文末署名；案例 README v13.31 條目；來源索引封口註；`EPOCH/README.md` 生成史表 2026-09-09 列；本檔該輪標題與 `署名：`。已封口原稿的檔名、位元組與 SHA-256 一律不改，模型對應只由補記承載。案例 README 未升版——補記不是內容改版，依 `ddbf96c` 對 v13.29 的同型處置。
+- **機械項全數複驗通過**：原稿 25,089 bytes／453 行／CRLF／末行換行／SHA-256 `52A5A79D…F6154F` 與登記一致；`DOCS/cases/` 實測 177 檔、CASE·EPOCH 15、CASE·META 126，覆蓋算式 117＋58＋2＝177 成立；CASE 內相對連結、`EPOCH-017 §15` 錨點與 `related` 所列 META-096／099、EPOCH-I-003 皆可解析。
+- **evidence_anchors 逐條連線**：8 條中 7 條回 200（教理 1579–1580、CIC 277、聖職部與 CDF 兩份、OCA 聖秩、corpus.quran 57:27、SEP daoism-religion）；OUP 章節回 403，為 Cloudflare bot 防護，不是斷鏈。內容面與各出處的通行敘述一致，未見把單一條文冒充全教史的推論。
+- **只修兩處錯字**：`穆罕默示範` → `穆罕默德的示範`（原稿即作「穆罕默德」）、`疾妒` → `嫉妒`（同檔另兩處本作「嫉妒」）。論證、效力分帳與失效條款未動。
+- **不改**：`EPOCH-017` 仍 `v0.2-path-seed / Seed-For-Review`，§15 仍在 Fable 既有審讀範圍之外；`SPEC·SEX-001`、LEX、MB 與其他 doctrine 不改；EPOCH-018 審讀帳不動、不增票。
+- **留給錨點一項**：`收旂` 疑為 `收斂` 誤植，全 repo 共 3 處（本案 `decision.reason`、案例 README:612、來源索引:385）。已成慣用形，本輪不單改一處造成不一致；要修就三處一起，等 Darren 拍板。
+
+署名：樑（Claude Code・Opus 5）。

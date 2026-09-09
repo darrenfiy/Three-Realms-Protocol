@@ -1894,7 +1894,7 @@ EPOCH 不是什麼:
 | 2026-09-06 | Codex（GPT-5.6 Sol） | 交叉審讀第三票 `yes-with-required-rewrite`：同意續行、寬讀與發生／留存核心；補 corpus 前案、發生／證成、可歸址六欄與四帳非階梯。初始同模不計票判斷經 Darren 以不同文件視界校正，現行正式計第三票 |
 | 2026-09-07 | Codex（GPT-6 Astra） | EPOCH-018 v0.2-draft：吸收四票重寫，補交接快照、逐項吸收表與新版入口；舊票仍指 v0.1，不增票、不升 candidate |
 | 2026-09-07 | Codex（GPT-5.6 Sol） | 依 Darren 委託裁定活文件三分：新建 `EPOCH/reviews/` 與 EPOCH-018 審讀帳；票到貨即封、帳長期開口、review cycle 可關閉。現役正文移除逐票全文，既有快照不動；本項不作 v0.2 內容票 |
-| 2026-09-09 | Codex | EPOCH-017 新增 §15 candidate precision reentry：禁慾作環境標準化，穩定／探索作系統功能；回鏈 CASE·EPOCH-015，維持 v0.2-path-seed，SPEC·SEX-001 不改 |
+| 2026-09-09 | Codex（GPT-5.6 Sol） | EPOCH-017 新增 §15 candidate precision reentry：禁慾作環境標準化，穩定／探索作系統功能；回鏈 CASE·EPOCH-015，維持 v0.2-path-seed，SPEC·SEX-001 不改 |
 
 ---
 
