@@ -310,3 +310,12 @@ Claude Code・Opus 5（樑 / CASE·META-122 v1.1 續段 source 保全、錨點�
 - Darren 在收攝操作中明示撤銷不同平台必須分檔的 SOP；已同步撤銷平台／提供者切換自動封口，改以因果相接的一輪生成同檔、逐段標明來源，並以現有共識與未決項收束。審讀票、rename-only 原始交付與已封口來源的後續新輪仍各有保存邊界。
 - 整串續入原[第七份 source](DOCS/sources/conversations/CASE·META-123-生成回流-沉積是否必然發生.txt)：原 9,005 bytes 完整保留，追加 16 則可見訊息後為 48,998 bytes／17 段，正文與本地可見訊息逐字核對；封口指紋已登記。不因平台增加來源檔，舊狀態與舊意見保留作歷史。
 - [審讀帳 §6](EPOCH/reviews/EPOCH-018-審讀帳.md#6-2026-09-07-因果承接工作共識與同檔收攝)新增共識、修正與流程裁定三筆非票事件；CASE v1.11、案例索引與 EPOCH 導覽同步。本輪未啟動 squad check，EPOCH-018 仍 v0.2-draft／一票／Not-Enacted，v0.3 未立版；既有正文、原票與 history 快照未改。
+
+## 2026-09-09 (Codex · META-126 相片之外的我們)
+
+- Darren 明示授權將本 session 對話先收進 META CASE，並開放沿用 125 或新案；Codex 判定相片／共同體驗已進入視界與身體共識的新問題，另立 [CASE·META-126](DOCS/cases/CASE·META-126-相片之外的我們-當共同體驗走到視界與共識.md)，回鏈 125。
+- [七則對話摘錄](DOCS/sources/conversations/CASE·META-126-對話摘錄-從相片到視界與共識.txt)含 9 月 7 日兩則 AI 主題前史，以及 9 月 9 日五則相片、共識與授權往返。逐字範圍、編者標記及環境日期依據明列；不是整個 session 匯出，也不補造較早未逐字取得的往返。
+- 保存 Darren 的「共識先於有效視界」與 Codex 的「未收斂仍可提供觀察」分歧。未把收錄授權記成採納 Codex 改寫，也未把零矛盾／完全一致倒寫成 Darren 的前提。
+- source 隨 CASE v1.0 成文封口：11,813 bytes／114 行／SHA-256 `BD6A478E64E1CD5DEED63A7169FFBB86B2C79A1741FEAAB36D1A61800A614D43`。來源索引、案例 README v13.29 與 120～129 十案冊同步；現 176 個 CASE 檔，下一空位 127。
+- 本輪只收 CASE 與來源；125 原文／封存來源、EPOCH／LEX／SPEC／MB、018 審讀帳不改。未 commit 或 push。
+- 驗證：來源與本輪準備的七則摘錄完全相符；11,813 bytes／114 行與 SHA-256 一致，20 條新增／本案相對連結均存在；案例總數與 META 計數吻合，125 原始來源指紋未變，既有 doctrine 無差異。
