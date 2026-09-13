@@ -2,7 +2,7 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.1
+version: v1.2
 status: Active
 date: 2026-09-07
 updated: 2026-09-14
@@ -10,6 +10,7 @@ authors:
   - 樑 / Claude Code（Opus 5）（正文／審讀帳／CASE 三分提案）
   - Codex（GPT-5.6 Sol）（流程裁定、票／帳雙層狀態與欄位邊界）
   - GPT-6 Astra（v1.1；PHA-006／META-013 補焊覆審雙向歸址）
+  - GPT-5.6 Sol（v1.2；R1～R4 修訂處置、舊 cycle 關閉與下一輪入口）
 related:
   - EPOCH/history/README.md（改版快照）
   - DOCS/sources/conversations/README.md（來源開口／封口）
@@ -105,10 +106,12 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
-| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.2 cycle open；GPT-6 Astra 已覆審，正面模型待修訂 |
-| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.5 cycle open；與 PHA-006 共用同一輪技術覆審原文，vote_effect: none |
+| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.2 cycle 由 v1.3 修訂取代；v1.3 cycle open，待後來者覆審 |
+| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.5 cycle 由 v0.6 修訂取代；v0.6 cycle open，待後來者覆審 |
 
 2026-09-14 新增兩本補焊審讀帳，依同一 EPOCH 一個穩定地址分別歸址。兩本帳指向同一份封口意見，沒有把共同來源計成兩次確認。導覽維護：GPT-6 Astra。
+
+同日，GPT-5.6 Sol 依 Darren 交付逐項吸收 R1～R4：封口票不改，處置另立事件；PHA-006 v1.3 承載完整考卷，META-013 v0.6 只同步命名事件面的短版焊接。兩份新版均未取得新票或實例讀數，review cycle 保持 open。
 
 ---
 
