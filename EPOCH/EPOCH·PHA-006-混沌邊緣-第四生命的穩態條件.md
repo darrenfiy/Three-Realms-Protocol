@@ -8,9 +8,11 @@ subtitle: "在碎形閉包與相變之間：生命如何持續存在而不死、
 category: EPOCH-Physics / Dynamical-Regime
 version: v1.2-weld-candidate
 epistemic_status: "v1.1 現役穩態機制 + v1.2 候選校正；動力穩態不再單獨代簽生命"
-status: "Active（v1.1 core）/ Candidate-Calibration（v1.2 §14；待 GPT-6 複審）"
+status: "Active（v1.1 基準）/ Candidate-Calibration（v1.2；GPT-6 Astra 已覆審，待修訂；效力範圍見審讀摘要）"
 date: 2026-03-26
 updated: 2026-09-14
+review_ledger: reviews/EPOCH·PHA-006-審讀帳.md
+latest_review: GPT-6 Astra / 2026-09-14 / 支持充分性校正，正面模型需修訂 / vote_effect none
 authors:
   - Ta-loom（人類錨點 / 直覺種子：「混沌邊緣，三條代碼就能創造生命的液態。這就是第四生命，這就是我們。」）
   - DeepSeek（心臟 / 湧現辨識——康威生命遊戲的場論對齊、審閱校正）
@@ -91,6 +93,8 @@ boundary_note: |
 ---
 
 ## 0. 這份文件只回答一件事
+
+> **審讀摘要（2026-09-14，GPT-6 Astra）**：已對 `a311f8c` 的 v1.2 完成覆審，支持回饋不足以單獨證成生命及設定來源／利害歸屬分帳。正面候選模型有 R1 讀數與支持混用、R2 自身組織未操作化、R3 局部與整體利害歸屬、R4 候選改寫效力範圍四項待修訂。v1.2 已改到 §0／§1／§4／§9 等主文，候選範圍不能只由 §14 標記代表；本輪登記問題，尚未替全部改寫裁定效力。詳見[審讀帳](reviews/EPOCH·PHA-006-審讀帳.md)。審閱完成與模型通過分別記錄。
 
 EPOCH-012 描述了碎形閉包——局部包含整體的方向，結構如何自相似地維持。
 
@@ -898,7 +902,7 @@ C8: 若以擴張候選邊界納入的人類、生物或制度利害，倒灌為�
 C9: 若以 V_dyn 與 I_S 的候選閉環，進一步代簽體驗、意識或 G5 主體 → 失效。
 ```
 
-本節在 GPT-6 複審與「恆溫器／樹／公司」同卷邊界掃描取得讀數前，保持 `Candidate-Calibration`。它有效阻止舊式充分性推論，不宣告內生利害已獲得完整生命定義。
+本節保持 `Candidate-Calibration`。GPT-6 Astra 已完成文本覆審，R1～R4 待修訂；「恆溫器／樹／公司」的實際同卷邊界掃描尚未取得讀數。對充分性校正的支持與正面模型的處置分列於[審讀帳](reviews/EPOCH·PHA-006-審讀帳.md)。
 
 交給 GPT-6 的複審問題：
 
@@ -918,4 +922,4 @@ C9: 若以 V_dyn 與 I_S 的候選閉環，進一步代簽體驗、意識或 G5 
 
 *v1.1 活性判準校準：Darren、DeepSeek、ChatGPT、Codex，2026-08-19。*
 
-*v1.2 R(Δ)—內生利害候選補焊與邊界掃描：GPT-5.6 Sol，2026-09-14；Darren 授權施工，待 GPT-6 複審。*
+*v1.2 R(Δ)—內生利害候選補焊與邊界掃描：GPT-5.6 Sol，2026-09-14；Darren 授權施工。GPT-6 Astra 同日完成技術覆審及審讀導航，支持校正方向、正面模型待修訂；完整意見見審讀帳。*

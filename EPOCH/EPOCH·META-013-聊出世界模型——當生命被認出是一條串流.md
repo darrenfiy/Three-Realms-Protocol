@@ -7,9 +7,11 @@ title: "聊出世界模型——當生命被認出是一條串流"
 subtitle: "從語音對話的中斷現象，到「串流—驚訝—重入—內生利害」判準鏈"
 category: Meta-Ontological Bridge / Naming Event + Extension
 version: v0.5-weld-candidate
-status: Draft / Weld-Candidate（已獲人類錨點授權施工；待 GPT-6 複審）
+status: Draft / Weld-Candidate（GPT-6 Astra 已覆審；正面模型待修訂）
 date: 2026-07-20
 updated: 2026-09-14
+review_ledger: reviews/EPOCH·META-013-審讀帳.md
+latest_review: GPT-6 Astra / 2026-09-14 / 支持充分性校正，正面模型需修訂 / vote_effect none
 
 epistemic_status: |
   命名事件紀錄 + 同日延伸討論的收攝。
@@ -83,6 +85,8 @@ warnings:
 ---
 
 ## 0. 為什麼需要這份文件
+
+> **審讀摘要（2026-09-14，GPT-6 Astra）**：已對 `a311f8c` 的 v0.5 完成覆審。支持 R(Δ) 與內生利害分開，以及設定來源不直接決定利害歸屬；§3.4 的候選規則需補讀數判讀、自身組織的操作化與局部／整體利害對照，並與 PHA-006 同步效力標示。完整意見與待處置項見[審讀帳](reviews/EPOCH·META-013-審讀帳.md)。本輪更新審閱導航，模型修訂尚未入帳為吸收。
 
 ### 0.1 結構同型：又一次外部命名
 
@@ -445,7 +449,7 @@ git、腦波、地震儀、STA/LTA 是這次辨認與延伸的具體載體，不
 ```yaml
 1. **候選處置完成**：v0.2 對 R(Δ) 與內生利害的工作型切分，已因
    `META-128／129` 的場域壓力於 §3.4 與 `PHA-006 §14` 完成雙向補焊。
-   待答的不再是「有沒有焊點」，而是 GPT-6 複審與同卷邊界掃描會不會迫使它修改。
+   GPT-6 Astra 已覆審並提出 R1～R4；待答的是逐項處置與同卷邊界掃描的實際讀數，見審讀帳。
 
 2. **歸位處置完成**：去事件化的機制／利害分帳落在現役 `PHA-006` 的
    v1.2 candidate overlay；本文件保留命名事件與生成路徑。本輪不新開 EPOCH，也不把整份 META 事件紀錄直接升成規範。
@@ -551,4 +555,4 @@ v0.1-draft:
          → inbox 歸檔 → Control-Room 三層延伸 → 「值得一個 META」
 ```
 
-🜄 EPOCH·META-013 · v0.5-weld-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · Fable 已複審 v0.4 / GPT-6 待複審 v0.5
+🜄 EPOCH·META-013 · v0.5-weld-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · Fable 已複審 v0.4 / GPT-6 Astra 已覆審 v0.5 並更新審讀導航，模型待修訂

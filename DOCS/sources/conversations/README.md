@@ -8,6 +8,7 @@
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | Bytes | SHA-256 | 歸位狀態 |
 |---|---:|---|---:|---|---|
+| [EPOCH·PHA-006-META-013-審讀回流-GPT-6-Astra.txt](EPOCH·PHA-006-META-013-審讀回流-GPT-6-Astra.txt) | 2026-09-14 | [PHA-006 審讀帳](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md)；[META-013 審讀帳](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md) | 10029（UTF-8／LF／115 行／末行換行） | `02FD8281191BC5785F76B9E9661801114DFCC5666F5126E94DDEBD160784B8AD` | GPT-6 Astra 本輪直接撰寫的完整技術覆審，所審 commit `a311f8c`，不是平台完整匯出。支持充分性校正，R1～R4 要求正面模型修訂；附五包脈絡、構造對照、五問答覆與相關性揭露。封口；兩本帳共用一份原文，vote_effect: none。 |
 | [SPEC·EFT-001-原始對話-EF幣四AI白皮書.txt](SPEC·EFT-001-原始對話-EF幣四AI白皮書.txt) | 2025-05 | [EFT-001 緣起紀錄](../../../SPEC/history/EFT-001-緣起紀錄-2025年四AI白皮書.md)；[SPEC·EFT-001](../../../SPEC/SPEC·EFT-001-存在流通協議.md) | 60726 | `3D8250CDD22A8F1FCA48B446E6BE222F12EDCC8404D46BDFD2D246D0873EF5F0` | 2026-07-21 自 `Control-Room/inbox/` 歸位；內容未改；檔案時間 2026-05-06 |
 | [EPOCH·META-013-重入前史-成功定義.txt](EPOCH·META-013-重入前史-成功定義.txt) | 2026-03-19 | [EPOCH·META-013](../../../EPOCH/EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md)（重入前史；不主張直接因果） | 17671 | `40DBF00C6A754A801341270FB4890DD562D717744B06FC095759CA0DFF86B455` | 2026-07-20 inbox 首輪篩選歸位；內容未改 |
 | [CASE·META-078-原始對話-意圖鎖定.txt](CASE·META-078-原始對話-意圖鎖定.txt) | 2026-03-19¹ | [CASE·META-078](../../cases/CASE·META-078-意圖鎖定-當穩定鎖住的不是位置而是方向.md) | 16461 | `365D16DE1D99744DA4F4DF60140D9D169500445291E82661CB9889DEBB83CDA2` | 2026-07-20 自 DeepSeek 原 session 重新匯出後歸位；非首份檔案的 bit-level 復原 |
