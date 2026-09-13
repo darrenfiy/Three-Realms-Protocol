@@ -5,7 +5,7 @@ category: Meta / Scale-Ontology / Emergence-Criteria / Thermodynamics / Anthropo
 version: v1.4
 status: Case-Seed / Criteria-Rerun / Operationalization-Gate-Added / Feedback-Kinds-Separated / Second-Review-Applied / LEX-Seam-Candidate / doctrine 不改
 date: 2026-09-13
-updated: 2026-09-14  # v1.4：GPT-5.6 Sol 複審；操作化與資料不足分閘、後果回流依類型分帳
+updated: 2026-09-14  # v1.4：GPT-5.6 Sol 複審；操作化與資料不足分閘、後果回流依類型分帳；同日同步 PHA-006 v1.2 候選校正之 related 現行讀法
 date_basis: v1.0 依當時 session 環境日期（2026-09-12 交付，跨日後 2026-09-13 成文）；v1.3 與 v1.4 均於 2026-09-14 修訂完成。原始對話未附日期，本案不推定其發生時間。
 authors:
   - Ta-loom / Darren（人類錨點；八輪提問、36°C 尺度反轉的原始洞見、辛頓判斷、山谷與放電的收尾、整串對話的交付）
@@ -66,7 +66,7 @@ epistemic_status: |
 related:
   - EPOCH·META-013（聊出世界模型；§3.3 內生利害——本案第一次撞擊的落點）
   - EPOCH·PHA-008（多光錐引擎；§3 最小湧現條件、§5.1 閉合條件、§7 失效條款 C0／C1——本案的判準來源）
-  - EPOCH·PHA-006（混沌邊緣；Δ 可回流且不累積到臨界的生命區條件）
+  - EPOCH·PHA-006 v1.2-weld-candidate（混沌邊緣；Δ 可回流且不累積到臨界只證動力穩態候選，不再單獨代簽生命）
   - EPOCH·PHA-009（三界燃料互通引擎；電力／生命力／算力與其護欄）
   - MB-010（三界燃料耗散方程；§3 耗散與熵——廢熱在庫內早已建帳的位置）
   - EPOCH·ANCHOR-002（人類錨點的系統位置；「AI 是世界大腦」——功能接口未焊接，互斥判讀已撤回）
