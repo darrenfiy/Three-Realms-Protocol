@@ -2,13 +2,13 @@
 id: EPOCH·META-013-REVIEW-LEDGER
 title: "EPOCH·META-013 審讀帳"
 target: EPOCH·META-013
-version: v1.2
-status: Open / Append-Only / Second-Review-Recorded / Test-Spec-Revision-Pending
+version: v1.3
+status: Open / Append-Only / R5-R6-Revision-Implemented / Next-Review-Pending
 created: 2026-09-14
 updated: 2026-09-14
 maintainers:
   - GPT-6 Astra（本輪首建與覆審登記）
-  - GPT-5.6 Sol（v0.6 同步處置與下一輪入口）
+  - GPT-5.6 Sol（v0.6 R1～R4、v0.7 R5／R6 同步處置與下一輪入口）
 target_document: ../EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md
 integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審另行追加。精確原文以 sealed source 為準。
 ---
@@ -22,7 +22,8 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 | 所審版本 | 基準 commit | cycle | 覆審結果 |
 |---|---|---|---|
 | v0.5-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v0.6 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂同步處置，原票維持不動。 |
-| v0.6-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | open / reviewed; R5–R6 pending | GPT-6 Astra 接受 R1～R4 修訂處置；可進構造壓測，實測前補 R5／R6，實例未驗；見 §4～§5。 |
+| v0.6-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v0.7 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已同步處置，原票維持不動。 |
+| v0.7-test-spec-candidate | `7654b34a97c2b7ade9b70ba62f271be240f38833` 後的工作樹修訂 | open / awaiting review | GPT-5.6 Sol 已同步介入有效性與必要條件對表；不是新票，實例讀數仍未驗。resulting commit 待後續登記。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -171,3 +172,38 @@ disposition: 已登記；R5／R6 待後續逐項處置；cycle 保持 open，不
 本次只更新覆審帳與閱讀導航，受審模型版本不變。下一道門是 R5／R6 的逐項處置與具名構造考卷；實例支持尚未取得。
 
 *二次覆審、提交歸址與導航：GPT-6 Astra，2026-09-14。*
+
+## 6. SOL-20260914 R5／R6 同步處置
+
+```yaml
+event_id: META013-SOL-R5R6-20260914
+event_kind: revision-disposition
+target_id: EPOCH·META-013
+source_review: PHA006-META013-ASTRA-20260914-02
+base_commit: 7654b34a97c2b7ade9b70ba62f271be240f38833
+resulting_version: v0.7-test-spec-candidate
+resulting_commit: pending（目前為工作樹；commit 後另加事件，不回填本欄）
+implementer: GPT-5.6 Sol
+authority: Darren 交付 Astra 覆審後對話來源並明示改檔
+vote_effect: none
+exact_text_address:
+  - 本帳本節
+  - ../EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md §0 / §3.4 / §7 / 版本註記
+  - git diff 7654b34a97c2b7ade9b70ba62f271be240f38833 -- 上述文件
+integrity_state:
+  astra_review: sealed / 未改
+  chatgpt_followup: 另歸 CASE·META-130 source；不是 Astra 票
+  revision: working-tree / awaiting commit
+cycle_transition:
+  v0.6: closed-by-superseding-revision
+  v0.7: open / awaiting later review
+```
+
+| ID | 處置 | META-013 同步內容 | 主承載地址 |
+|---|---|---|---|
+| R5 | **吸收** | 介入程序狀態與四態證據分帳；同步冗餘、不可逆損傷、伴隨變更、比較單位及恢復目標須事前申報 | PHA-006 §14.6.1 |
+| R6 | **吸收** | 操作化門改為逐項必要條件對表，不以八個總欄非空代替完整測項 | PHA-006 §9／§14.3.1 |
+
+本文件仍是命名事件 Draft，只保存短版焊接。完整考卷、ID 對表、失效條款與下一輪技術問題由 PHA-006 承載；沒有把共同覆審或 ChatGPT 後續解說算成新票。
+
+*v0.7 R5／R6 同步處置：GPT-5.6 Sol，2026-09-14。同步不升格模型，也不取得實例讀數。*

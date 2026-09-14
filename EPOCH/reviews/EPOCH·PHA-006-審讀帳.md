@@ -2,13 +2,13 @@
 id: EPOCH·PHA-006-REVIEW-LEDGER
 title: "EPOCH·PHA-006 審讀帳"
 target: EPOCH·PHA-006
-version: v1.2
-status: Open / Append-Only / Second-Review-Recorded / Test-Spec-Revision-Pending
+version: v1.3
+status: Open / Append-Only / R5-R6-Revision-Implemented / Next-Review-Pending
 created: 2026-09-14
 updated: 2026-09-14
 maintainers:
   - GPT-6 Astra（本輪首建與覆審登記）
-  - GPT-5.6 Sol（v1.3 修訂處置與下一輪入口）
+  - GPT-5.6 Sol（v1.3 R1～R4、v1.4 R5／R6 修訂處置與下一輪入口）
 target_document: ../EPOCH·PHA-006-混沌邊緣-第四生命的穩態條件.md
 integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審另行追加。精確原文以 sealed source 為準。
 ---
@@ -22,7 +22,8 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 | 所審版本 | 基準 commit | cycle | 覆審結果 |
 |---|---|---|---|
 | v1.2-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v1.3 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂逐項處置，原票維持不動。 |
-| v1.3-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | open / reviewed; R5–R6 pending | GPT-6 Astra 接受 R1～R4 修訂處置；可進構造壓測，實測前補 R5／R6，實例未驗；見 §4～§5。 |
+| v1.3-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v1.4 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已逐項處置，原票維持不動。 |
+| v1.4-test-spec-candidate | `7654b34a97c2b7ade9b70ba62f271be240f38833` 後的工作樹修訂 | open / awaiting review | GPT-5.6 Sol 已補介入有效性與必要條件對表；不是新票，實例讀數仍未驗。resulting commit 待後續登記。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -185,3 +186,50 @@ disposition: 已登記；R5／R6 待後續逐項處置；cycle 保持 open，不
 本次只更新覆審帳與閱讀導航，受審模型版本不變。下一道門是 R5／R6 的逐項處置與具名構造考卷；實例支持尚未取得。
 
 *二次覆審、提交歸址與導航：GPT-6 Astra，2026-09-14。*
+
+## 6. SOL-20260914 R5／R6 修訂處置
+
+```yaml
+event_id: PHA006-SOL-R5R6-20260914
+event_kind: revision-disposition
+target_id: EPOCH·PHA-006
+source_review: PHA006-META013-ASTRA-20260914-02
+base_commit: 7654b34a97c2b7ade9b70ba62f271be240f38833
+resulting_version: v1.4-test-spec-candidate
+resulting_commit: pending（目前為工作樹；commit 後另加事件，不回填本欄）
+implementer: GPT-5.6 Sol
+authority: Darren 交付 Astra 覆審後對話來源並明示「交給妳改檔了」
+vote_effect: none
+exact_text_address:
+  - 本帳本節
+  - ../EPOCH·PHA-006-混沌邊緣-第四生命的穩態條件.md §0 / §9 / §14.2～§14.7
+  - git diff 7654b34a97c2b7ade9b70ba62f271be240f38833 -- 上述文件
+integrity_state:
+  astra_review: sealed / 未改
+  chatgpt_followup: 另歸 CASE·META-130 source；不是 Astra 票
+  revision: working-tree / awaiting commit
+cycle_transition:
+  v1.3: closed-by-superseding-revision
+  v1.4: open / awaiting later review
+```
+
+| ID | 處置 | 實際修改 | 尚未取得 |
+|---|---|---|---|
+| R5 | **吸收** | 介入申報加入目標路徑集、時長、有效性、冗餘、伴隨變更、比較單位、恢復目標與證據地址；程序 `valid / invalid / indeterminate` 與四態證據分帳；不可逆損傷可用事前指定的可比試次 | 尚無實際介入；格式能否擋住新的混雜待覆審 |
+| R6 | **吸收** | §9 與 §14.3 統一 V01～V11／P01～P03／I01～I04；每列均須填指標、容許範圍、預測／對照及證據地址；八個總欄非空不算通過操作化門 | 尚無具名考生完成全表 |
+
+### 6.1 起草者的明示選擇
+
+本版不要求每條冗餘支路都單獨必要，也不要求不可逆受損的同一個體復原。可使用配對個體或可比試次，但比較單位、冗餘預測及恢復目標須事前申報。介入未命中或混雜不可辨時，原始觀察保留，因果主張記 `insufficient`；介入有效且結果與預測衝突時，仍須留下 `counterevidence`。
+
+### 6.2 下一輪覆審入口
+
+下一位審讀者可直接攻擊：
+
+1. V01～V11 是否真的對齊 §9，還是把概念詞拆成了假精確測項；
+2. 程序狀態與生命證據四態是否仍有偷渡；
+3. 冗餘／不可逆例外是否過寬，讓模型可無限逃避反證；
+4. 比較單位允許可比試次後，哪些條件才算真正可比；
+5. P03／I03 已容許自然中斷、準實驗或可比觀察；這些替代設計的因果強度與混雜限制是否寫得足以阻止越界推論？
+
+*R5／R6 修訂處置與 v1.4 下一輪入口：GPT-5.6 Sol，2026-09-14。沒有執行裝置、植物、組織、Gaia 或錨點缺席實驗；吸收規格不等於模型通過。*
