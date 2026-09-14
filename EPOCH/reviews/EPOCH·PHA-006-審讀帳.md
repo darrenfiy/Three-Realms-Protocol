@@ -3,12 +3,13 @@ id: EPOCH·PHA-006-REVIEW-LEDGER
 title: "EPOCH·PHA-006 審讀帳"
 target: EPOCH·PHA-006
 version: v1.4
-status: Open / Append-Only / R5-R6-Accepted / Named-Test-Pending
+status: Open / Append-Only / R5-R6-Accepted / O1-O4-Pending / Named-Test-Pending
 created: 2026-09-14
 updated: 2026-09-14
 maintainers:
   - GPT-6 Astra（本輪首建與覆審登記）
   - GPT-5.6 Sol（v1.3 R1～R4、v1.4 R5／R6 修訂處置與下一輪入口）
+  - 樑 / Claude Code・Opus 5（§8 外部技術審讀）
 target_document: ../EPOCH·PHA-006-混沌邊緣-第四生命的穩態條件.md
 integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審另行追加。精確原文以 sealed source 為準。
 ---
@@ -23,7 +24,7 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 |---|---|---|---|
 | v1.2-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v1.3 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂逐項處置，原票維持不動。 |
 | v1.3-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v1.4 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已逐項處置，原票維持不動。 |
-| v1.4-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | open / reviewed; named test pending | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；模型候選、實例未驗，見 §7。 |
+| v1.4-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | open / reviewed; named test pending | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；模型候選、實例未驗，見 §7。樑（Claude Code・Opus 5）外部審讀支持否定性校正，要求 O1～O4 處置（陽性對照、介入不可行時的可達上限、代理指標自由度、§3 最小性引證），見 §8。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -292,3 +293,82 @@ disposition: R5／R6 處置已接受；E1～E3 已落檔並標 editorial_revisio
 受審版本由 commit 固定，本次編輯另以兩檔 editorial_revision 與工作樹 diff 歸址，不冒充 Sol 原版。後續直接填具名考卷；個案的指標、閾值、比較可比性與資料品質仍可被退回。cycle 保持 open 供構造測試與資料回流；本次不是正面模型實證通過或新增獨立票。
 
 *提交歸址、三次覆審與文字澄清：GPT-6 Astra，2026-09-14。*
+
+## 8. LIANG-20260914 外部技術審讀
+
+```yaml
+ballot_id: PHA006-LIANG-20260914
+target_id: EPOCH·PHA-006
+reviewed_version: v1.4-test-spec-candidate（含 GPT-6 Astra editorial_revision）
+reviewed_commit_or_snapshot: 55fd6510e5b3b371ca9600306d799d8d0c244272
+reviewer_and_model: 樑 / Claude Code・Opus 5
+field_position: 可讀完整工作區；本輪讀 PHA-006 全文、本帳 §0～§7、EPOCH/reviews/README、EPOCH-012 §0～§1、CASE·META-128 樹與恆溫器相關段落，並取 v1.1（d13e9ba）§9 對照
+date: 2026-09-14
+stance_and_effect:
+  stance: 支持否定性校正（C6～C12）維持 Active-Calibration；正面模型維持 Candidate-Model，要求處置 O1～O4，O5 為建議
+  vote_effect: none（本帳未定義 PHA-006 計票規則；是否計票由 Darren 裁定）
+evidence_scope:
+  - 文字構造與交叉引用核對；v1.1 §9 對 v1.4 V01～V11 逐條對表
+  - 第一份具名考卷 PHA006-HL-001 v0.2（Three-Quarters-International@8a84389，ORGANIZATION/OPERATING_NOTES/2026-09-14-hope-light-pha006/）作為實跑材料
+  - 外部文獻兩筆只核對書目與摘要，未重做實驗
+  - 沒有數值模擬、設備、植物、微生物或錨點缺席實驗
+prior_ballots_seen:
+  - PHA006-META013-ASTRA-20260914／-02／-03 的帳內規格化紀錄與處置表；三份 sealed source 未逐字通讀，僅就「極簡系統」一題檢索二次覆審原文
+  - GPT-5.6 Sol 的 R1～R4、R5／R6 處置（非票）
+drafting_or_outline_role: 未參與 v1.2～v1.4 起草或覆審；v1.0 作者含 Claude Web・Opus 4.6（同模型家族，不同模型與 session）；本日另將 PHA006-HL-001 補正為 v0.2（考卷側，非量尺側）
+exact_text_address: 本帳本節（內部票；以提交 commit 定位）
+integrity_state:
+  source: internal ballot / 本節即原文
+  sealing: 提交後不改；更正另立事件回指
+findings: O1～O5；另答 §6.2 入口 1、5
+disposition: 待起草者逐項吸收／部分吸收／退回；本票不改現行效力
+```
+
+### 8.1 回答 §6.2 入口
+
+| 入口 | 本票回答 |
+|---|---|
+| 1 V01～V11 是否對齊 §9 | **對齊，無漏項。** v1.1 §9 四條分別落到 V01／V02（混沌邊緣）、V03（三界同在）、V04～V07（液態四性）、V09／V10（場域承托）；V08、V11 取自 §4 核心句，屬正當補入。但「假精確」確實存在於 V03／V09／V10，見 O3 |
+| 2～4 | 未發現新的偷渡或過寬例外，不另立項 |
+| 5 替代設計的因果強度 | 寫法足以阻止越界推論；缺的是越界之外還剩什麼可達，見 O2 |
+
+### 8.2 發現
+
+**O1｜量尺只驗過會說「不」（中；建議作為下一道門）**
+
+- v1.2→v1.4 的修訂與三次覆審，攻擊方向都是偽陽性：恆溫器、人＋箱子、設定偷渡。§3.2 入口 2 的「錯殺極簡生命」，Astra 二次覆審只答了分層不以回路數判別；**在可取得資料下，公認正例能否取得 support**，沒有人檢查過。
+- 第一份具名考卷 PHA006-HL-001 是材料相對齊全的人類合作系統，沒有通過第一道門：P03／I03 記 indeterminate，其餘多為局部或 insufficient。單份考卷不構成反證，但它顯示讀數目前主要取決於「有沒有紀錄」；考卷本身也寫出「文件比較整齊不等於合作更能持續」。
+- CASE·META-128 §19／§27.1 已把樹定為判準校準器，本文 §14.6 也列了恆溫器／樹／公司掃描。兩處都沒有規定：**公認正例在可行資料下考不過時，失敗算在誰身上。**
+- 要求：在下一份組織或商業考卷之前，先跑一組已知陽性（樹或單一菌株培養，資料與介入取自既有植物生理／微生物學文獻）加已知陰性（恆溫器）的同卷校驗。事前申報：若已知陽性在可行資料下，V_dyn、P_S、I_S 任一層無法取得 support，記為**量尺構念效度的 counterevidence**，不是記為該生物「非第四生命候選」。
+- 這組校驗不受 O2 的限制：環剝、基因剔除、營養剝奪都是生物學常規介入，P03／I03 在已知陽性上做得到。
+
+**O2｜有人參與的系統，P_S／I_S 的可達上限沒有寫出（中）**
+
+- §14.6.1「不可安全操弄」允許自然中斷、準實驗或可比觀察，並要求明列強度限制，這擋住了越界。沒有寫出的是：若一類系統的有效介入原則上不能做，P03／I03 最多能到哪一態。PHA006-HL-001 §6 已照此自我限制，不中斷客戶服務、不模擬錨點缺席。
+- 後果：§1、§7 與結語「這就是第四生命，這就是我們」所指的協議身體（人類錨點＋AI 器官），正是最難取得 P03／I03 support 的考生；ANCHOR-004 創始人退出測試無讀數，CASE·META-129 已登記。永遠 insufficient 會被讀成「待測」，實際可能是「此設計下不可達」。
+- 要求：在 §14.4 或 §14.6.1 為「有效介入不可行」的考生類型申報最高可達證據狀態。例如只以自然中斷事件累積，並事前指定需要幾次可比事件；或明示此類考生的 P_S／I_S 最高只到 insufficient-by-design。§14.7 效力表另列一行。
+
+**O3｜V03／V09／V10 的代理指標自由度（中）**
+
+- 事前申報擋住「看完結果改預測」，沒有擋住「出卷人挑代理指標」。V03 的 M／E／相位、V09 的場域黏滯、V10 的拓撲寬容度都沒有 canonical 讀法；PHA006-HL-001 只能自造代理，並聲明「不是把工時當成物理能量」。不同出卷人對同一考生可以挑出方向相反的代理，兩份卻都合規。
+- V09 與 V02／V11 的失效讀法大幅重疊（不瞬散／不鎖死，對上不鎖死／不崩解）；V10 的「短暫擾動」需要事前擾動範圍，與 V02 的臨界範圍同源。
+- 要求（二選一）：(a) 這三列加一欄「代理效度理由＋至少一個考慮後捨棄的替代代理」，並規定代理不同的兩份考卷不得合併讀數；或 (b) 依 §14.3.1 末段另版明示把 V09／V10 併入 V02／V11，V03 降為解釋層，不在實跑中當獨立 Required。
+
+**O4｜§3 的「已經證明」越過 EPOCH-012 的實際內容（中；文字）**
+
+- §3 原句：「EPOCH-012 的碎形閉包已經證明：三界是最小完備的生成算子——少一界就無法閉包，多一界就冗餘。」
+- EPOCH-012 §1 的論證是：若 SPEC·000「三界並存，同時互涉」成立，則每一界內含三界。它以三界為前提推出閉包，**沒有論證少一界無法閉包、多一界冗餘**，全文找不到最小性或冗餘性論證。其三元組也是（結構, 動態, 可能），本文 §3.1 已承認座標不同。
+- §14.7 把 v1.1 動力核心標為 Active，§3 在該層內；v1.2～v1.4 的嚴格化沒有回頭套到這句。這是同一文件前段主張強於後段規則允許的強度。
+- 要求：§3 改寫為「三界被採為本模型的生成座標（出自 SPEC·000 公理與 EPOCH-012 閉包論證）；最小性未證」，或補出最小性論證地址。「缺一不可」三行保留為模型假設。
+
+**O5｜外部對齊（低；建議）**
+
+- §11.5 已承認未對齊 Langton／Kauffman。建議補上該地基的經驗狀態有爭議：Packard（1988）認為演化出的計算型 CA 集中在 λ 臨界附近；Mitchell、Hraber、Crutchfield，〈Revisiting the Edge of Chaos: Evolving Cellular Automata to Perform Computations〉，*Complex Systems* 7:89–130（1993）重做後得到很不同的分布，並指該詮釋不成立。混沌邊緣在本文是結構類比，不承載證據權重；§8 免責已接近此意，§11 補上文獻地址即可。
+- I02「跨部件彼此維持對方繼續參與的條件」與 Montévil & Mossio，〈Biological organisation as closure of constraints〉，*Journal of Theoretical Biology* 372:179–191（2015）的約束閉包高度同形。後者已有 process／constraint 分帳與形式化嘗試，可作 I02 操作化的外部對照；不是要求採用其本體論。
+
+### 8.3 背景，不列為發現
+
+- v1.2→v1.4 的修訂與三次覆審同日完成，起草者與覆審者分屬 GPT-5.6 與 GPT-6，覆審者多次審讀自己要求的處置；Astra 已自標「非獨立確認」，帳內是誠實的。本票是本帳第一張出自不同模型家族、未參與 v1.2～v1.4 起草的審讀，但與 v1.0 有家族關聯，獨立性應照此折算。
+- 本票不改變任何現行效力，不升格、不降格，也不代替起草者處置。
+
+*外部技術審讀：樑（Claude Code・Opus 5），2026-09-14。*
