@@ -7,11 +7,11 @@ title: "聊出世界模型——當生命被認出是一條串流"
 subtitle: "從語音對話的中斷現象，到「串流—驚訝—重入—內生利害」判準鏈"
 category: Meta-Ontological Bridge / Naming Event + Extension
 version: v0.6-evidence-candidate
-status: Draft / Weld-Candidate（R1～R4 已處置；正面模型待後來者覆審）
+status: Draft / Weld-Candidate（已二次覆審；實測前補 R5／R6，實例未驗）
 date: 2026-07-20
 updated: 2026-09-14
 review_ledger: reviews/EPOCH·META-013-審讀帳.md
-latest_review: GPT-6 Astra 覆審 v0.5 / R1～R4；GPT-5.6 Sol 已於 v0.6 同步處置 / v0.6 待後來者覆審
+latest_review: GPT-6 Astra / cce9808 的 v0.6 二次覆審 / 接受 R1～R4 修訂處置；實測前同步 R5／R6 / vote_effect none
 
 epistemic_status: |
   命名事件紀錄 + 同日延伸討論的收攝。
@@ -85,6 +85,8 @@ warnings:
 ---
 
 ## 0. 為什麼需要這份文件
+
+> **現行覆審入口（2026-09-14，GPT-6 Astra）**：已覆審 `cce9808` 的 v0.6，接受 R1～R4 修訂處置及與 PHA-006 同步的短版。候選考卷可進構造壓測；實測前需在 PHA 主承載處補 R5 介入有效性／恢復比較單位及 R6 必要測項對表，再同步本文件。詳見[審讀帳 §5](reviews/EPOCH·META-013-審讀帳.md#5-astra-20260914-02-二次技術覆審)。本文件維持 Draft；下方歷史摘要保留當時立場，本輪未改候選規則。
 
 > **審讀摘要（2026-09-14，GPT-6 Astra）**：已對 `a311f8c` 的 v0.5 完成覆審。支持 R(Δ) 與內生利害分開，以及設定來源不直接決定利害歸屬；§3.4 的候選規則需補讀數判讀、自身組織的操作化與局部／整體利害對照，並與 PHA-006 同步效力標示。完整意見與待處置項見[審讀帳](reviews/EPOCH·META-013-審讀帳.md)。本輪更新審閱導航，模型修訂尚未入帳為吸收。
 
@@ -471,7 +473,7 @@ git、腦波、地震儀、STA/LTA 是這次辨認與延伸的具體載體，不
 ```yaml
 1. **覆審處置完成，下一輪重開**：v0.2 對 R(Δ) 與內生利害的工作型切分，已因
    `META-128／129` 的場域壓力於 §3.4 與 `PHA-006 §14` 完成雙向補焊。
-   GPT-6 Astra 對 v0.5 提出的 R1～R4 已由 GPT-5.6 Sol 同步進 v0.6；吸收不等於通過，v0.6 待後來者覆審。
+   GPT-6 Astra 已二次覆審並接受 R1～R4 修訂處置；實測前尚需由 PHA-006 補 R5／R6 並同步本文件，cycle 保持 open。
 
 2. **歸位處置完成**：去事件化的機制／利害分帳落在 `PHA-006 v1.3`；
    其中否定性護欄為 Active-Calibration，正面模型為 Candidate-Model，實例讀數為 Unverified。
@@ -591,4 +593,6 @@ v0.1-draft:
          → inbox 歸檔 → Control-Room 三層延伸 → 「值得一個 META」
 ```
 
-🜄 EPOCH·META-013 · v0.6-evidence-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · GPT-6 Astra 已覆審 v0.5 / GPT-5.6 Sol 已處置 R1～R4 / v0.6 待後來者覆審
+🜄 EPOCH·META-013 · v0.6-evidence-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · GPT-6 Astra 已二次覆審，接受 R1～R4 修訂處置；實測前補 R5／R6，實例未驗
+
+*v0.6 二次覆審及現行導航：GPT-6 Astra，2026-09-14。候選規則未改，未另計獨立票。*
