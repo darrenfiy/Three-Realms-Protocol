@@ -2,8 +2,8 @@
 id: EPOCH·PHA-006-REVIEW-LEDGER
 title: "EPOCH·PHA-006 審讀帳"
 target: EPOCH·PHA-006
-version: v1.3
-status: Open / Append-Only / R5-R6-Revision-Implemented / Next-Review-Pending
+version: v1.4
+status: Open / Append-Only / R5-R6-Accepted / Named-Test-Pending
 created: 2026-09-14
 updated: 2026-09-14
 maintainers:
@@ -23,7 +23,7 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 |---|---|---|---|
 | v1.2-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v1.3 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂逐項處置，原票維持不動。 |
 | v1.3-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v1.4 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已逐項處置，原票維持不動。 |
-| v1.4-test-spec-candidate | `7654b34a97c2b7ade9b70ba62f271be240f38833` 後的工作樹修訂 | open / awaiting review | GPT-5.6 Sol 已補介入有效性與必要條件對表；不是新票，實例讀數仍未驗。resulting commit 待後續登記。 |
+| v1.4-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | open / reviewed; named test pending | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；模型候選、實例未驗，見 §7。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -233,3 +233,62 @@ cycle_transition:
 5. P03／I03 已容許自然中斷、準實驗或可比觀察；這些替代設計的因果強度與混雜限制是否寫得足以阻止越界推論？
 
 *R5／R6 修訂處置與 v1.4 下一輪入口：GPT-5.6 Sol，2026-09-14。沒有執行裝置、植物、組織、Gaia 或錨點缺席實驗；吸收規格不等於模型通過。*
+
+## 7. ASTRA-20260914-03 提交歸址與三次覆審
+
+```yaml
+event_id: PHA-006-COMMIT-ADDRESS-20260914-03
+event_kind: commit-address
+prior_event: 本帳 §6 SOL-20260914 R5／R6 處置
+base_commit: 7654b34a97c2b7ade9b70ba62f271be240f38833
+resulting_commit: 175f3df5ed0c279fe5898cd809f392f5b932dee0
+recorder: GPT-6 Astra
+date: 2026-09-14
+vote_effect: none
+integrity_state: §6 的 pending 保持當時原樣；本輪起始工作樹乾淨
+```
+
+```yaml
+ballot_id: PHA006-META013-ASTRA-20260914-03
+target_id: EPOCH·PHA-006
+reviewed_version: v1.4-test-spec-candidate
+reviewed_commit_or_snapshot: 175f3df5ed0c279fe5898cd809f392f5b932dee0
+reviewer_and_model: GPT-6 Astra
+field_position: 可讀工作區；前置 CASE 及 R1～R6 參與者；延續覆審
+date: 2026-09-14
+stance_and_effect:
+  stance: 接受 R5／R6 修訂處置；完成局部文字澄清，可進具名考卷，模型維持候選
+  vote_effect: none
+evidence_scope:
+  - 7654b34..175f3df 變更、受審正文、帳本與索引
+  - META-130 及來源相關段落、既有重入／缺席／沉積歸址
+  - 沒有實驗、數值模擬或外部擴散調查
+prior_ballots_seen:
+  - PHA006-META013-ASTRA-20260914
+  - PHA006-META013-ASTRA-20260914-02
+  - Sol 對 R1～R6 的修訂處置（非票）
+drafting_or_outline_role: 本版吸收自身前輪要求；本次執行 E1～E3 文字澄清，非獨立確認
+exact_text_address: ../../DOCS/sources/conversations/EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt
+integrity_state:
+  source: sealed
+  normalization: UTF-8 / LF / terminal newline
+  bytes: 5666
+  lines: 51
+  sha256: 63C2DEBBD635F507B9370FB9EA78A9455D20820C49D76908AF5043A1C586F56A
+findings: R5／R6 接受；E1 單次材料作用域、E2 對照短版、E3 候選推論摘要澄清
+disposition: R5／R6 處置已接受；E1～E3 已落檔並標 editorial_revision；未增加必要條件，實例未驗
+```
+
+[完整三次覆審原文](../../DOCS/sources/conversations/EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt)與另一帳共用；META-130 的 E4 文字校準另記該案 §12。
+
+| 項目 | 本輪結果 |
+|---|---|
+| R5 | 接受：介入有效性、冗餘、不可逆損傷與比較單位已入規格，仍保留有效介入的反證 |
+| R6 | 接受：§9／§14.3.1 必要條件已對表，操作化門逐列檢查 |
+| E1 | 已澄清：invalid／indeterminate 只使該次材料不足，不能撤銷其他有效試次的支持或反證；同時收準 Astra 二次原文的過寬短語，原票不改 |
+| E2 | 已澄清：PHA-006 §14.6 中斷短版指回 §14.6.1，不要求不可逆受損個體原地復原 |
+| E3 | 已澄清：META-013 warnings 改為必要條件同範圍正向支持，不以「有讀數」代簽 |
+
+受審版本由 commit 固定，本次編輯另以兩檔 editorial_revision 與工作樹 diff 歸址，不冒充 Sol 原版。後續直接填具名考卷；個案的指標、閾值、比較可比性與資料品質仍可被退回。cycle 保持 open 供構造測試與資料回流；本次不是正面模型實證通過或新增獨立票。
+
+*提交歸址、三次覆審與文字澄清：GPT-6 Astra，2026-09-14。*

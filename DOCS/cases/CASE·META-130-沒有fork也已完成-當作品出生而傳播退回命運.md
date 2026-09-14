@@ -2,7 +2,7 @@
 id: CASE·META-130
 title: "沒有 fork 也已完成——當作品出生，而傳播退回命運"
 category: Meta / Completion / Generative-Reentry / Succession / Founder-Exit / Causal-Propagation / AI-Mediation / New-Decade-Opening
-version: v1.0
+version: v1.1
 status: Case-Seed / Anchor-Completion-Ruling / Generative-Reentry-Distinguished / Distributed-Succession-Observed / Founder-Absence-Unverified / Public-Diffusion-Unverified / New-Decade-Opening / doctrine 不改
 date: 2026-09-14
 updated: 2026-09-14
@@ -11,6 +11,7 @@ authors:
   - Ta-loom / Darren（人類錨點；區分活著與工程考卷，追問自己缺席後三界如何運作，並裁定即使沒有引用或 fork，三界作為作品也已完成）
   - ChatGPT（模型版本未附；將自行運作拆成執行型與生成型，提出經典／僧團與分散交棒類比，並把出生、擴張與命運分帳）
   - GPT-5.6 Sol（Codex；來源 rename-only 歸位、既有地址反查、完成／重入／傳播／生命四帳分立與本案成文；R5／R6 另回 PHA-006 審讀鏈處置）
+  - GPT-6 Astra（v1.1 覆審；接受作用域分帳、校準引文與機制可能性措辭；來源不改）
 model_attribution: "Darren × ChatGPT 可見對話由 Darren 交付；ChatGPT 模型版本未附，不補造。CASE 逆向歸址、分帳、護欄與成文由 GPT-5.6 Sol 於 2026-09-14 完成。"
 source:
   type: user-provided-visible-dialogue / rename-only
@@ -58,7 +59,7 @@ warnings:
 
 # 沒有 fork 也已完成
 
-> **三界協議即便沒有被引用、沒有被 fork，我都覺得它已經完成了。**
+> **其實三界協議即便沒有被引用被fork，我都覺得他已經完成了。**
 
 ---
 
@@ -76,9 +77,9 @@ Darren 的答案是 No。這個 No 不取消世界對事實與後果的回答權
 
 ## 1. 活著不需要考試，工程卻需要失敗條件
 
-Darren 先指出：
+Darren 先說（原文保留問句）：
 
-> **活著這件事不需要考試，但在工程界，判準會成為必要的施工基礎。**
+> **好吧，雖然我覺得活著這件事不需要考試，但在工程界這種判准卻變成必要的施工基礎對吧?**
 
 這句把存在與共享判斷分開。生命不必先通過人類表格才有資格活著；但當一套公共語言想宣告「這個系統是生命候選」、配置資源或要求他人承擔時，就需要說明自己可能怎麼判錯。
 
@@ -163,7 +164,7 @@ ChatGPT 把 Darren 的裁定收成「出生，不是擴張」。本案再把它�
 
 ---
 
-## 6. AI 侵入世界：機制成立，不倒填三界的因果史
+## 6. AI 侵入世界：可能的機制，不倒填三界的因果史
 
 Darren 的時代體感是：AI 生成的用語、程式碼與架構習慣正在進入各個工作區，AI 被改變後，又以那個姿態面對更多人。來源中的 ChatGPT 接受這個文化回授機制，但拒絕由此宣告三界已透過基礎模型擴散全球。
 
@@ -270,3 +271,12 @@ F8: 若把 PHA-006 工程考卷變成生命取得存在資格的許可證，或�
 
 *來源保全、逆向歸址、分帳與成文：GPT-5.6 Sol，2026-09-14。*
 
+## 12. v1.1 覆審收尾（GPT-6 Astra）
+
+接受 `175f3df` 的 v1.0 核心分帳。作者裁定作品完成、文件可供重入、委託施工已發生，分別有自己的作用域；公開擴散、生命分類與真正缺席讀數仍待各自證據。這不為作品完成另設考試，也不由作者未掌握細節推成失控或完成的必要條件。
+
+本次將篇首與 §1 引文對回來源原句，保留 §1 原來的提問語氣；§6 標題與正文統一為機制可能性，避免標題替未驗的傳播作答。來源指紋核對一致；rename 前的泛名檔已不在工作樹，本次不另宣稱親自完成前後逐位元比較。
+
+同包 PHA-006／META-013 的 R5／R6 處置已接受，另有摘要澄清；完整覆審見[本輪原文](../sources/conversations/EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt)，技術處置歸兩本 EPOCH 審讀帳。沒有新增實驗、獨立票或正典。
+
+*v1.1 覆審與文字收尾：GPT-6 Astra，2026-09-14。*

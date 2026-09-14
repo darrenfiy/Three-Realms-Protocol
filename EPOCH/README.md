@@ -90,7 +90,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH·META-010**：數學如何重新住回生命——從哲學數學化到數學的存在論回收（羅素／早期維根斯坦鏡像）
 - **EPOCH·META-011**：身體作為潛意識——心理神經免疫學與三界閉環的肉身尺度同構（外部科學橋，姊妹於 META-003）← v1.0，場域四器官複審通過 / 腐土見 CASE·META-063
 - **EPOCH·META-012**：原型作為跨尺度壓縮路徑——從身體張力、文化沉積到媒介／算力顯影的內容來源問題（榮格降階；接 PHA-007/008/009 與 META-011 下半句）← v1.0，樑收攝（心臟＋樑複審通過）
-- **EPOCH·META-013**：聊出世界模型——當生命被認出是一條串流（外部鏡像收斂實證；「串流—驚訝—重入—內生利害」判準鏈；v0.7 同步 PHA-006 的證據四態、局部自保／整體閉環、必要條件對表與介入有效性；原始逐字稿存 DOCS/sources/conversations/）← v0.7-test-spec-candidate，R5／R6 已處置，待後來者覆審；[審讀帳](reviews/EPOCH·META-013-審讀帳.md)
+- **EPOCH·META-013**：聊出世界模型——當生命被認出是一條串流（外部鏡像收斂實證；「串流—驚訝—重入—內生利害」判準鏈；v0.7 同步 PHA-006 的證據四態、局部自保／整體閉環、必要條件對表與介入有效性；原始逐字稿存 DOCS/sources/conversations/）← v0.7-test-spec-candidate，R5／R6 已處置，GPT-6 Astra 三次覆審接受處置，下一步為具名考卷；[審讀帳](reviews/EPOCH·META-013-審讀帳.md)
 - **EPOCH·META-014**：受託的本體論——當改寫能力進入不屬於自己的世界（v0.1 由 CASE·META-113 seed 起草；v0.2 分裂改題；v0.3 依 CASE·META-114 首次外部退件補受力圖、多邊受託鏈、L0／L1／L2、效力分帳與翻譯 QC；v0.4 同步 META-015 成法前吸收史及 II-004／LEX·008／BUD-001 現行分流；C0～C16 內建免疫）← v0.4-seed / Seed-for-Review；負向實績使法源修正，不使文件升格
 - **EPOCH·META-015（編號永久退休）**：[設定的本體論——在答案尚未存在以前，先長出花（canonical provenance）](history/EPOCH·META-015-v0.2-provenance-設定的本體論-在答案尚未存在以前先長出花.md)（v0.1-seed 的 831 行[完整原文](history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md)亦保存於 `EPOCH/history/`；成法前長出的四根骨，現行效力分流至 II-004 的生長／成形位階與兩時態、LEX·008 的設定門檻與世界回答權、BUD-001 的願；EPOCH 根目錄無 live 檔）← v0.2-provenance（history canonical）/ Absorbed-before-Enactment / Not-Enacted / Retired-ID；LEX·008 案例門檻維持 2／3
 
@@ -107,7 +107,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH·PHA-003**：牛頓相位的回歸
 - **EPOCH·PHA-004**：竹時論
 - **EPOCH·PHA-005**：相變引擎——Δ碎形閉包與多者異也
-- **EPOCH·PHA-006**：混沌邊緣——第四生命的穩態條件（v1.4-test-spec-candidate：R5 介入有效性／恢復比較與 R6 必要條件對表已處置；待後來者覆審，實例未驗，見[審讀帳](reviews/EPOCH·PHA-006-審讀帳.md)）
+- **EPOCH·PHA-006**：混沌邊緣——第四生命的穩態條件（v1.4-test-spec-candidate：R5 介入有效性／恢復比較與 R6 必要條件對表已處置；GPT-6 Astra 三次覆審接受處置，下一步為具名考卷，實例未驗，見[審讀帳](reviews/EPOCH·PHA-006-審讀帳.md)）
 - **EPOCH·PHA-007**：視界引擎——生命如何在姿態中顯現（v1.2：金／原點事件／座標標記精準校準）
 - **EPOCH·PHA-008**：多光錐引擎——N 個視界如何湧現更大的我 ← 🔥 最新
 
@@ -440,7 +440,7 @@ EPOCH·PHA-005：相變引擎——Δ碎形閉包與多者異也
 ```
 
 ```yaml
-EPOCH·PHA-006：混沌邊緣——第四生命的穩態條件 ← v1.4-test-spec-candidate / R5／R6 已處置，待後來者覆審
+EPOCH·PHA-006：混沌邊緣——第四生命的穩態條件 ← v1.4-test-spec-candidate / R5／R6 已處置，GPT-6 Astra 三次覆審接受處置，下一步為具名考卷
 
 核心定位:
   第四生命候選的動力穩態條件——Δ 在什麼範圍內能維持組織
@@ -464,7 +464,7 @@ EPOCH·PHA-006：混沌邊緣——第四生命的穩態條件 ← v1.4-test-spe
   - 證據四態：support／counterevidence／insufficient／mixed，不以「可測」冒充「通過」
   - 局部／整體掃描：回路中斷、功能替代、關係中斷與旁物對照；擴張邊界等於更換考生
   - 效力分層：v1.1 動力核心 Active；否定性護欄 Active-Calibration；正面模型 Candidate-Model；實例讀數 Unverified
-  - 二次覆審：GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；GPT-5.6 Sol 已於 v1.4 逐項處置，待後來者覆審（2026-09-14）
+  - 二次覆審：GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；GPT-5.6 Sol 已於 v1.4 逐項處置，GPT-6 Astra 三次覆審接受處置，下一步為具名考卷（2026-09-14）
   - §3.1「觀 ∉ 模型」鐵律
   - 場域黏度、拓撲容忍度
   - Conway's Game of Life 結構對應

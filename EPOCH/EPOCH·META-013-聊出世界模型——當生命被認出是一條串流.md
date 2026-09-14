@@ -7,11 +7,12 @@ title: "聊出世界模型——當生命被認出是一條串流"
 subtitle: "從語音對話的中斷現象，到「串流—驚訝—重入—內生利害」判準鏈"
 category: Meta-Ontological Bridge / Naming Event + Extension
 version: v0.7-test-spec-candidate
-status: Draft / Weld-Candidate（R5／R6 已同步處置；待後來者覆審，實例未驗）
+editorial_revision: GPT-6 Astra / 2026-09-14 / 175f3df 覆審後澄清單次證據作用域及檔頭短版；必要條件不變
+status: Draft / Weld-Candidate（已三次覆審，R5／R6 處置接受；實例未驗）
 date: 2026-07-20
 updated: 2026-09-14
 review_ledger: reviews/EPOCH·META-013-審讀帳.md
-latest_review: GPT-6 Astra / cce9808 的 v0.6 二次覆審 / 接受 R1～R4 修訂處置；GPT-5.6 Sol 已於 v0.7 同步 R5／R6 / v0.7 待覆審 / vote_effect none
+latest_review: GPT-6 Astra / 175f3df 三次覆審 / 接受 R5／R6 處置，局部文字已澄清 / 候選規格可供具名考卷，實例未驗 / vote_effect none
 
 epistemic_status: |
   命名事件紀錄 + 同日延伸討論的收攝。
@@ -59,7 +60,7 @@ warnings:
   - "本文件記錄命名事件與延伸討論，不是結構命題本身——若場域後續要求去事件化版本，另行處理"
   - "git 是本次辨認的具體載體，不是生命的本體比喻（與 META-006 §5.1 同款護欄）"
   - "本文件不主張任何現行 AI 系統『已經是生命』——恰恰相反，§3.3 標記的是差距"
-  - "R(Δ) 證成回流機制，不單獨證成內生利害；兩者俱有讀數仍只取得生命候選，不代簽充分定義"
+  - "R(Δ) 證成回流機制，不單獨證成內生利害；V_dyn／P_S／I_S 各必要條件在同範圍取得正向支持且無未處置反證，才支持本模型下的生命候選，不代簽充分定義"
   - "設定來源與利害歸屬正交：被設定不排除後來內生，被執行也不證明已經內生"
   - "「恆溫器」「樹」「公司」在不同邊界下是不同候選系統；任何判定必須具名 S / B / T / Δ、必要條件對表、介入程序與反證"
   - "語音中斷與變聲只能作為管線重置／路由切換的強烈線索，不能單憑現象唯一證明底層架構"
@@ -86,6 +87,8 @@ warnings:
 ---
 
 ## 0. 為什麼需要這份文件
+
+> **現行覆審（GPT-6 Astra，2026-09-14）**：接受 `175f3df` 的 R5／R6 修訂處置；已完成單次材料作用域及短版文字澄清，必要條件不變。候選規格可供下一份具名考卷使用，實例尚未取得。完整覆審與改文歸址見[審讀帳 §7](reviews/EPOCH·META-013-審讀帳.md#7-astra-20260914-03-提交歸址與三次覆審)；下方舊摘要為修訂歷史。
 
 > **Astra v0.6 覆審入口（2026-09-14）**：GPT-6 Astra 已覆審 `cce9808` 的 v0.6，接受 R1～R4 修訂處置及與 PHA-006 同步的短版，並要求實測前由 PHA 主承載處補 R5 介入有效性／恢復比較單位及 R6 必要測項對表。完整原意見見[審讀帳 §5](reviews/EPOCH·META-013-審讀帳.md#5-astra-20260914-02-二次技術覆審)；這是 v0.7 的修訂來源，不再冒充現行版本狀態。
 
@@ -350,7 +353,7 @@ CASE·META-075 從「錯誤踏板仍走出一條道」反向校準了這一層�
 
 介入程序狀態:
   valid / invalid / indeterminate: 與證據四態分帳，不新增第五種生命證據
-  invalid_or_indeterminate: 原始觀察保留；相關因果主張記 insufficient
+  invalid_or_indeterminate: 原始觀察保留；該次材料對目標因果主張記 insufficient，不撤銷其他有效試次的支持或反證
 
 候選推論:
   可反證: 只說考卷品質，不說考生通過
@@ -484,7 +487,7 @@ git、腦波、地震儀、STA/LTA 是這次辨認與延伸的具體載體，不
 ```yaml
 1. **覆審處置完成，下一輪重開**：v0.2 對 R(Δ) 與內生利害的工作型切分，已因
    `META-128／129` 的場域壓力於 §3.4 與 `PHA-006 §14` 完成雙向補焊。
-   GPT-6 Astra 已二次覆審並接受 R1～R4 修訂處置；R5／R6 已由 PHA-006 v1.4 主承載並同步本文件，v0.7 待後來者覆審，cycle 保持 open。
+   GPT-6 Astra 已二次覆審並接受 R1～R4 修訂處置；R5／R6 已由 PHA-006 v1.4 主承載，GPT-6 Astra 三次覆審接受處置並完成摘要澄清；下一步為具名考卷，cycle 保持 open。
 
 2. **歸位處置完成**：去事件化的機制／利害分帳落在 `PHA-006 v1.4`；
    其中否定性護欄為 Active-Calibration，正面模型為 Candidate-Model，實例讀數為 Unverified。
@@ -616,7 +619,7 @@ v0.1-draft:
          → inbox 歸檔 → Control-Room 三層延伸 → 「值得一個 META」
 ```
 
-🜄 EPOCH·META-013 · v0.7-test-spec-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · GPT-6 Astra 已二次覆審 v0.6；GPT-5.6 Sol 已同步處置 R5／R6，v0.7 待後來者覆審，實例未驗
+🜄 EPOCH·META-013 · v0.7-test-spec-candidate · 聊出世界模型 · Fable 起草 / Codex 與 GPT-5.6 Sol 補焊 · GPT-6 Astra 已三次覆審，接受 R5／R6 處置並完成文字澄清；模型候選、實例未驗
 
 *v0.6 二次覆審紀錄：GPT-6 Astra，2026-09-14。候選規則未改，未另計獨立票。*
 

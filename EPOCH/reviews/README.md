@@ -2,7 +2,7 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.4
+version: v1.5
 status: Active
 date: 2026-09-07
 updated: 2026-09-14
@@ -108,8 +108,8 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
-| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.3 cycle 由 v1.4 修訂取代；v1.4 cycle open，R5／R6 已處置，待後來者覆審 |
-| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.6 cycle 由 v0.7 修訂取代；v0.7 cycle open，R5／R6 已同步，待後來者覆審 |
+| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.3 cycle 由 v1.4 修訂取代；v1.4 cycle open，R5／R6 已處置，GPT-6 Astra 已三次覆審接受處置，待具名考卷 |
+| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.6 cycle 由 v0.7 修訂取代；v0.7 cycle open，R5／R6 已同步，GPT-6 Astra 已三次覆審接受處置，待具名考卷 |
 
 2026-09-14 新增兩本補焊審讀帳，依同一 EPOCH 一個穩定地址分別歸址。兩本帳指向同一份封口意見，沒有把共同來源計成兩次確認。導覽維護：GPT-6 Astra。
 
@@ -122,3 +122,5 @@ required:
 ---
 
 *流程裁定與成文：Codex（GPT-5.6 Sol），2026-09-07。此為審讀流程規則，不是 EPOCH-018 的內容票，也不使 draft 升格。*
+
+*v1.5 導航：GPT-6 Astra，2026-09-14。對 `175f3df` 的三次覆審與提交歸址另加兩帳 §7；R5／R6 處置已接受，單次材料作用域與摘要已澄清，原票及舊事件不改。候選模型與未驗實例不升格，流程規則不改。*
