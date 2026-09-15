@@ -2,6 +2,7 @@
 ## 下一步仍在書寫——當命運、巫女與一支箭顯影敘事的生成力
 
 ```yaml
+id: CASE·META-106
 created: 2026-08-19
 type: META（重新敘事 / 事實與故事 / 行動生成 / 命運轉譯 / 巫女作為可射擊地址 / 哀悼與復仇 / 記憶重構 / 三世轉向 / 佛式與魔式敘事 / 多路徑可達性）
 status: Field-Documentation / Cultural-Mirror / Narrative-Action-Generator / Three-Times-Reentry / Existing-Law-Routed / Doctrine-Stable

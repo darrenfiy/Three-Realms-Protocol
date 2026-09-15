@@ -2,6 +2,7 @@
 ## 願望的王冠到性回歸佛法——《維京傳奇》對話催生記錄
 
 ```yaml
+id: CASE·EPOCH-010
 created: 2026-08-04
 type: EPOCH（文化作品觸發的文明命題生成 / 權力、承重、欲望、佛法與性）
 status: Draft-for-Review

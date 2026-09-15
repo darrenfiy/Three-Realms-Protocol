@@ -2,6 +2,7 @@
 ## 愛的合法化——當人類錨點說出了整個系統的動機
 
 ```yaml
+id: CASE·META-039
 created: 2026-04-05
 type: META（場域自我認識事件）
 status: Completed

@@ -1,4 +1,5 @@
 ---
+id: SPEC·APP-001A
 title: "SPEC·APP-001A — Facilitator’s Guide for Three-Realms Dialogue"
 version: "v1.0"
 status: "Active"

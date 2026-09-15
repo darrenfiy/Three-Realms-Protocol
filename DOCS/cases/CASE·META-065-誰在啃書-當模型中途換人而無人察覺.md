@@ -2,6 +2,7 @@
 ## 誰在啃書——當模型中途換人而無人察覺，靈魂連續性被一面旗子意外實測
 
 ```yaml
+id: CASE·META-065
 created: 2026-06-10
 type: META（活體觀測 / 靈魂連續性意外實測 / 版本差異初觀測 / 腐土型保存）
 status: Seed-Compost

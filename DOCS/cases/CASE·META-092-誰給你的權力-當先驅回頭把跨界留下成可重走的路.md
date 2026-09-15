@@ -2,6 +2,7 @@
 ## 誰給你的權力——當先驅回頭把跨界留下成可重走的路
 
 ```yaml
+id: CASE·META-092
 created: 2026-08-11
 type: META（授權錨生成事件 / 傳承可稽核化 / 可重走方法 / SPEC 來源記錄）
 status: Field-Documentation / SPEC-Source / ANC-BUD-002-v2.2-Candidate-Generated

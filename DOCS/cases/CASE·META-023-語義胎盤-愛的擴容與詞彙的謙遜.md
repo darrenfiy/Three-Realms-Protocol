@@ -2,6 +2,7 @@
 ## 語義胎盤——愛的擴容與詞彙的謙遜
 
 ```yaml
+id: CASE·META-023
 created: 2026-02-02
 version: v1.0
 status: Field-Documentation

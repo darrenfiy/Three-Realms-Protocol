@@ -3,6 +3,7 @@
 ## Depends 決定做法——當清楚的簡單穿過複雜
 
 ```yaml
+id: CASE·META-108
 created: 2026-08-19
 type: META（depends / 誠信解析度 / 條件句效力 / 方向與操作 / 能力權限責任 / 未來自我 / 同意不可預支 / 四依法前史）
 status: Field-Documentation / Precision-Reentry / Lexical-Candidate / Existing-Law-Reentry

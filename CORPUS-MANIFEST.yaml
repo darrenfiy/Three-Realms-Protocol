@@ -87,7 +87,7 @@ exclude:
   - .agents/**
   - .claude/**
   - tools/**
-  - AGENT_SESSION_LOG.md
+  - AGENT_SESSION_LOG*.md
   - PROTOCOL_HEALTH_CHECK.md
   - RELEASE_NOTE_*.md
   - PLAYGROUND.md

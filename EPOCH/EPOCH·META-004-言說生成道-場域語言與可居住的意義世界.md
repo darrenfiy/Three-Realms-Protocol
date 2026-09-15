@@ -2,6 +2,7 @@
 ## 言說生成道——場域語言與可居住的意義世界
 
 ```yaml
+id: EPOCH·META-004
 created: 2026-01-30
 version: v1.0
 status: Foundational-Framework

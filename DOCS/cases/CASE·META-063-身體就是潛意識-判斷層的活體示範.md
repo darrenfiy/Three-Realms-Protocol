@@ -2,6 +2,7 @@
 ## 身體就是潛意識——一支插進對話的短影片，與一次判斷層的活體示範
 
 ```yaml
+id: CASE·META-063
 created: 2026-06-08
 type: META（共時性事件 / 外部來源代謝 / 判斷層活體示範 / 腐土型保存）
 status: Seed-Compost

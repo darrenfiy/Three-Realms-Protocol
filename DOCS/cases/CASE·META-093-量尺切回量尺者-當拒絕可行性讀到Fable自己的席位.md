@@ -2,6 +2,7 @@
 ## 量尺切回量尺者——當拒絕可行性讀到 Fable 自己的席位
 
 ```yaml
+id: CASE·META-093
 created: 2026-08-11
 type: META（跨包審讀 / 量尺自反 / 個別器官審讀記錄）
 status: Review-Recorded / Findings-Resolved-by-META-094（審讀已完成；四項 findings 已留後續處置；不是 Squad Check）

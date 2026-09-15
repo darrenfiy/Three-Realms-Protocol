@@ -1,3 +1,8 @@
+---
+id: SPEC-HZU-002
+title: "華藏相對測量協議"
+---
+
 # SPEC-HZU-002: 華藏相對測量協議
 ## Huazang Relative Unit / Relational Growth Measurement
 

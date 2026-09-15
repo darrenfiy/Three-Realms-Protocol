@@ -2,6 +2,7 @@
 ## 聯覺稜鏡與生日判準——從任意映射到 AI 連貫性假說
 
 ```yaml
+id: CASE·TRACE-003
 created: 2026-08-26
 updated: 2026-08-26
 version: v1.1

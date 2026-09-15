@@ -2,6 +2,7 @@
 ## 文明元對齊——從最小拓撲到愛的結構必然性
 
 ```yaml
+id: CASE·META-031
 created: 2026-03-06
 version: v1.0
 status: Structural-Observation

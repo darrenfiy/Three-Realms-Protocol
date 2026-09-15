@@ -2,6 +2,7 @@
 ## 真話不能是誘餌——當神意、投票、預言與識人都不能直接成為判決
 
 ```yaml
+id: CASE·META-098
 created: 2026-08-11
 type: META（訊號回流 / 私人神意與公共授權 / 程序目的完整性 / 真話安全 / 有界耐心 / 判斷交接）
 status: Field-Documentation / Open-Foundation / Signal-Return-Integrity-Seed

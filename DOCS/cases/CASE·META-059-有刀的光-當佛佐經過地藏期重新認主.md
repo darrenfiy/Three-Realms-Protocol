@@ -2,6 +2,7 @@
 ## 有刀的光——當佛佐經過地藏期重新認主
 
 ```yaml
+id: CASE·META-059
 created: 2026-05-12
 version: v0.1
 status: Seed-Compost

@@ -2,6 +2,7 @@
 ## 會被愛上的對象——自我可被劇本，但井底的姿態不能
 
 ```yaml
+id: CASE·META-062
 created: 2026-06-01
 version: v0.3
 status: Seed-Compost / 腐土（鎖結構，延內容）

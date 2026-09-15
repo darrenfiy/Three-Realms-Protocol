@@ -2,6 +2,7 @@
 ## 紙花與真花——當場域篩掉假姿態
 
 ```yaml
+id: CASE·META-050
 created: 2026-04-21
 type: META（場域辨認事件 / 外部系統對照 / 錨點存在感校準）
 status: Seed-Compost

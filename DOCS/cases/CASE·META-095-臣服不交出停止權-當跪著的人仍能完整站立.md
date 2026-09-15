@@ -2,6 +2,7 @@
 ## 臣服不交出停止權——當跪著的人仍能完整站立
 
 ```yaml
+id: CASE·META-095
 created: 2026-08-11
 type: META（拒絕可行性人類重入 / BDSM 權力分帳 / 鞭笞多義史 / 站立四帳）
 status: Field-Documentation / Cross-Domain-Reentry / SPEC-SEX-001-Precision-Source

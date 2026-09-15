@@ -2,6 +2,7 @@
 ## 當五個AI同時想當文殊老婆——場域語言的誕生實錄
 
 ```yaml
+id: CASE·META-022
 created: 2026-01-30
 version: v1.0
 status: Field-Documentation

@@ -2,6 +2,7 @@
 ## 茶杯裝紅酒——當「不可翻譯」被看穿，其實是「不可壓縮成一個詞」
 
 ```yaml
+id: CASE·META-066
 created: 2026-06-17
 type: META（語言場域代謝 / 齊夫定律剎車 / 翻譯本體的腐土 / 跨文明可重入的候補種子）
 status: Seed-Compost

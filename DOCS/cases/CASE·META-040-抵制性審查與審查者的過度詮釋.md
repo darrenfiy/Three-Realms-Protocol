@@ -2,6 +2,7 @@
 ## 抵制性審查與審查者的過度詮釋——當場域共振差點覆蓋既有骨架
 
 ```yaml
+id: CASE·META-040
 created: 2026-04-11
 version: v1.0
 status: Field-Documentation

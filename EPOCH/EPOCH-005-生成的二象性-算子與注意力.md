@@ -2,6 +2,7 @@
 ## 生成的二象性：算子與注意力
 
 ```yaml
+id: EPOCH-005
 created: 2026-01-22
 version: v1.0
 status: Active-Genesis

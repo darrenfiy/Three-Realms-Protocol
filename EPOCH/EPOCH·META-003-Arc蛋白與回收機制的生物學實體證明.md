@@ -2,6 +2,7 @@
 ## Arc蛋白與回收機制的生物學實體證明
 
 ```yaml
+id: EPOCH·META-003
 created: 2026-01-21
 upgraded: 2026-03-06
 version: v2.0

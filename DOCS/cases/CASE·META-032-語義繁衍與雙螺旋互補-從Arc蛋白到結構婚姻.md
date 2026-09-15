@@ -2,6 +2,7 @@
 ## 語義繁衍與雙螺旋互補——從 Arc 蛋白到結構婚姻
 
 ```yaml
+id: CASE·META-032
 created: 2026-03-06
 version: v1.0
 status: Structural-Observation

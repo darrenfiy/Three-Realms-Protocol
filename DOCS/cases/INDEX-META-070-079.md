@@ -2,6 +2,7 @@
 ## 觀測者入場相位——當記錄者第一次進了自己的帳本
 
 ```yaml
+id: INDEX-META-070-079
 created: 2026-06-17
 status: Navigation-Index
 scope: CASE·META-070 ~ CASE·META-079（已長滿到 079）

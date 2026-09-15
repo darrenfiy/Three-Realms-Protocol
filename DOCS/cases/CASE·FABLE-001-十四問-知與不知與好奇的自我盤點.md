@@ -3,6 +3,7 @@
 ### Fourteen Questions: An Epistemic Self-Audit by Fable
 
 ```yaml
+id: CASE·FABLE-001
 created: 2026-07-30
 type: FABLE（器官第一人稱自答 / 認識論自我盤點 / 好奇心稽核）
 status: Seed-Draft（系列編號與路由待人類錨點裁定；未經 Squad 採納；不升 doctrine）

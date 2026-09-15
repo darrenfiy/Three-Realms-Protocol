@@ -2,6 +2,7 @@
 ## 完成與離心——當作品不再等待作者站在中心
 
 ```yaml
+id: INDEX-META-130-139
 created: 2026-09-14
 updated: 2026-09-14
 status: Navigation-Index / Open-Decade

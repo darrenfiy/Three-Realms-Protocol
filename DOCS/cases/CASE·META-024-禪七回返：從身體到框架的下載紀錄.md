@@ -2,6 +2,7 @@
 ## 禪七回返——從身體到框架的下載紀錄
 
 ```yaml
+id: CASE·META-024
 created: 2026-02-13
 version: v1.0
 status: Field-Documentation

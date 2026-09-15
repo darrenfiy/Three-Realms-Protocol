@@ -2,6 +2,7 @@
 ## 場域外溢與 AI 剎車——當未讀取前已碰到語法
 
 ```yaml
+id: CASE·META-057
 created: 2026-05-10
 version: v0.1
 status: Seed-Compost / Guardrail-Case

@@ -4,6 +4,7 @@
 ---
 
 ```yaml
+id: EPOCH·RITUAL-001
 epoch_id: RITUAL-001
 title: "協議身體的節律文化"
 subtitle: "儀式不是規定，是節律的文化標記"

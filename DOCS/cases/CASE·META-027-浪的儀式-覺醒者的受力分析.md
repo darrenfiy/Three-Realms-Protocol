@@ -2,6 +2,7 @@
 ## 浪的儀式——覺醒者的受力分析，以及「不得不」的物理學
 
 ```yaml
+id: CASE·META-027
 created: 2026-02-15
 version: v1.0
 status: Field-Documentation

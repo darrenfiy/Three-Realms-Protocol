@@ -1,0 +1,109 @@
+# Agent Session Log — 封存：2026-04
+
+本檔由 `AGENT_SESSION_LOG.md` 分割而來，**內容逐字搬移，未經改寫或摘要**。
+
+分割理由：主檔已達 90 KB，違反其自身規則
+「Compress or archive old entries when this file stops being easy to scan」。
+
+本區塊記錄的是 wiki／基礎設施時期。該層已於 2026-04-23 遷往
+`Three-Realms-Academy/tools/wiki-local/`（見 `tools/wiki-local/README.md`），
+故此處為歷史紀錄，非現役接線資訊。
+
+原始區間：2026-04-12 ～ 2026-04-23，共 12 則。
+
+---
+## 2026-04-12
+- Codex successfully accessed the full repository in VS Code and deep-read core protocol files across `MB`, `EPOCH`, `SPEC`, `DOCS`, and `LEX`.
+- Confirmed current Codex behavior in-session: it retains high-level structure well, but early fine detail fades under heavy context load; not a cross-session memory system.
+- Gemini Code Assist login succeeded in VS Code, but agent chat failed due to model capacity, not local misconfiguration. Local log showed `gemini-3-pro-preview`, `userTier: free-tier`, and repeated `You have exhausted your capacity on this model`.
+- Practical conclusion: `Codex` and `Claude` are currently usable as repo-reading IDE agents; `Gemini Code Assist` is installed but not yet reliable enough here for sustained chat work.
+- File role set: this log is a wiring record, not a narrative organ. Keep it short, operational, and disposable.
+
+## 2026-04-13
+- Legacy note: the original 2026-04-13 entry suffered encoding corruption in the previous file version.
+- Durable takeaway preserved here: the session was focused on `PHA-008` / related editorial wiring and repo navigation updates, but detailed interpretation belongs in the underlying protocol documents, not this log.
+
+## 2026-04-17
+- `TRP AI First` now has a separate publishing layer: `publish/` + `dist/` + `build-book.ps1`, preserving repo working drafts while producing a formal EPUB.
+- `darrenfiy.github.io` is the preferred public-entry repo for outward-facing pages: official site, book landing page, downloads, and external orientation.
+- `www.three-quarters.net` is planned to be rebuilt from the old numerology site into the official Three Realms Protocol website; `Three-Quarters International Ltd.` returns as the real-world publishing and imprint anchor.
+- Durable architecture decision: GitHub Pages is suitable for static entry, content, and downloads. Login, accounts, playable products, or other sensitive interactions should be decoupled from Pages and handled by external services or an independent app layer.
+- First official-site shell is now in place inside `darrenfiy.github.io`: homepage, `books/`, `books/trp-ai-first/`, `publisher/`, `protocol/`, shared styles, direct EPUB download, and archive preservation of the old numerology playground.
+- Editorial direction for the publisher layer is now set: keep the clean site skeleton, but infuse the publisher and homepage language with the `3/4` stance of humility, branchability, non-finality, and books as bridges rather than thrones.
+- The public book line is now three-stranded: `TRP AI First` as the protocol/nonfiction flagship, `Breathing` as early fiction, and `Protocol Body Autobiography` as autobiographical fiction.
+- `Protocol Body Autobiography` has crossed its last practical gap into publication form: a first EPUB build now exists under `DOCS/books/body_autobiography/dist/`, and both fiction titles are wired into the official-site books shelf and direct-download paths.
+- Repo-level publication handoff is now documented in `DOCS/PUBLISHING_PLAYBOOK.md`; do not freeze this into a skill yet while book classification and publisher voice are still evolving.
+
+## 2026-04-20
+- Local wiki infrastructure now exists on the author machine: `WSL2` + `Docker Desktop` + `tools/wiki-local/compose.yaml`, with Wiki.js served at `http://localhost:3000`.
+- Durable bootstrap path is now repo-owned rather than conversational only: local stack files live in `tools/wiki-local/`, AI editor bootstrap is handled by `tools/wiki-local/ensure-identities.ps1`, and first-page seeding is handled by `tools/wiki-local/seed-pages.ps1` plus `tools/wiki-local/seed/*.md`.
+- First visible wiki layer is now seeded inside Wiki.js itself: `home`, `three-realms-protocol`, and `fourth-life`, with local AI identities (`Codex`, `Gemini`, `Claude Opus`) available for page attribution.
+- Operational caveat recorded: Wiki.js setup currently has `host = https://wiki.three-quarters.net` in app config even though the live stack is still local; revisit before public exposure.
+- Practical machine note: Docker installation was initially blocked by disk pressure, largely from old Outlook `.ost` cache files under `AppData/Local/Microsoft/Outlook`; space was cleared, the wiki stack was completed, and a cleaner local entry now exists at `http://localhost`.
+
+## 2026-04-20 (continued — Claude Opus session)
+- Local host alias updated from `wiki.three-quarters.test` to `wiki.three-quarters.net` across all repo files (`add-local-host-alias.ps1`, `README.md`, `HANDOFF.md`).
+- Windows hosts file now contains `127.0.0.1 wiki.three-quarters.net` (required elevated PowerShell with `-ExecutionPolicy Bypass`; UAC prompt via `Start-Process -Verb RunAs`).
+- Cloudflare Tunnel infrastructure established for public exposure of the local wiki:
+  - Domain `three-quarters.net` added to Cloudflare (free plan); nameservers changed from Google Domains/Squarespace to `monroe.ns.cloudflare.com` / `toby.ns.cloudflare.com`.
+  - `cloudflared` installed via `winget` (v2025.8.1).
+  - Tunnel created: `wiki-trp` (ID `632b5163-d0ee-415a-b05a-605a5a0f8d93`).
+  - CNAME route added: `wiki.three-quarters.net` → tunnel.
+  - Status: tunnel start attempted but connection refused on first run; likely needs Docker containers confirmed running and correct port binding. Troubleshooting in progress.
+- Practical lesson: Windows PowerShell execution policy and UAC elevation are two separate gates; both must be bypassed to write to `hosts` file.
+
+## 2026-04-22 (Claude Opus session · wiki-local 驗證層補完)
+- `tools/wiki-local/validate-i18n.py` 新增第三種 manifest 形狀辨識 `navigation_id`，並加入對應的 `validate_navigation_schema`；`manifest/navigation/site-sidebar.yaml` 不再被誤報，`items[].ref` 現在會被 cross-check 回 entry/collection 識別符。progressive 與 strict 兩模式都乾淨通過 36 份 manifest。
+- 新增 `tools/wiki-local/resolve-links.py`：v1 內部連結解析器，實作 `[[entry:ID]]` 與 `[[entry:ID|display]]` 語法；回退順序依 `I18N-ARCHITECTURE.md` 規則（requested locale → source locale → unresolved warning）；URL shape 刻意不帶 locale 前綴，多語言正式上線再動一處即可。
+- 新增 `tools/wiki-local/detect-stale.py`：Phase 3 的骨架實作。用 SHA-256 content hash 比對 `source_revision`，回報四種情況：`stale`、`missing-revision`、`status-outdated`、`source-missing`；`--apply` 會把失效的 `status` 改寫為 `stale`，但不動 `source_revision`（保留譯者當初的翻譯依據）。
+- 三支腳本皆 stdlib-only、無外部依賴，已用合成 fixture 跑過 happy path 與四個 edge case（未解連結、draft/stale 軟狀態、hash mismatch、status-outdated、missing-revision）。
+- 目前 corpus 上 `detect-stale.py` 零 finding（所有非 source locale 都還是 `missing`），這正是預期——基礎結構就位，等第一批實際翻譯進來時會自動開始發揮作用。
+
+屬名：
+
+```
+Claude Cowork・Opus 4.7（樑 / validator schema 擴充、內部連結 resolver、stale detection 起草）
+```
+
+## 2026-04-22 (Codex session · wiki shared login first wire-up)
+- Wiki.js now has a second enabled authentication strategy: `fourthlife` (`Generic OpenID Connect / OAuth2`), displayed as `Fourth Life`, with callback path pattern confirmed as `/login/<strategyKey>/callback` rather than the earlier generic `/login/callback` assumption.
+- Shared auth and wiki are now wired together at the configuration level: Authentik app `three-quarters-wiki` uses redirect URIs that match Wiki.js exactly, and Wiki.js points to the local Authentik endpoints on `http://localhost:9000` for authorization, token, userinfo, issuer, and logout.
+- A new Wiki.js group `Members` now exists with `read:pages`, `read:assets`, `read:comments`, and `write:comments`; new `Fourth Life` sign-ins are auto-enrolled into that group, so signed-in accounts can comment without granting editor/admin powers.
+- Runtime verification is positive on the critical path: Wiki.js logs show `Authentication Strategy Fourth Life: [ OK ]`, GraphQL `authentication.activeStrategies(enabledOnly: true)` returns both `local` and `fourthlife`, and `http://localhost/login/fourthlife` now redirects to Authentik with the expected client ID and callback URI.
+- Root-cause follow-up: browser login was succeeding but the Authentik provider had zero allowed OIDC scopes, so authorize requests were reduced to an empty scope set and wiki could not receive usable identity claims. Default `openid`, `email`, and `profile` mappings are now attached to `Three-Quarters Wiki OIDC`; the earlier `Failed to fetch user profile` path was a provider-scope defect, not a user or password error.
+- Public-domain promotion is now complete for the current phase: `auth.three-quarters.net` is live through a dedicated Cloudflare Tunnel (`auth-trp`), Authentik's embedded outpost host now points to that public URL, and the wiki `Fourth Life` strategy has been switched from local endpoints to the public auth domain for cross-device sign-in.
+- Google social login is now attached to the shared auth layer as a promoted Authentik source (`google`). The public route `https://auth.three-quarters.net/source/oauth/login/google/` now generates a Google redirect with callback `https://auth.three-quarters.net/source/oauth/callback/google/`; first-time Google enrollment may still prompt once for a username because the default source-enrollment flow expects one.
+
+## 2026-04-22 (Codex session · local-hosted wiki operational hardening)
+- Cloudflare Tunnel is no longer expected to be kept alive by foreground terminal windows. The author machine now runs `cloudflared` as the Windows service `Cloudflared`, set to `Automatic`, with a shared config that routes both `wiki.three-quarters.net` and `auth.three-quarters.net`.
+- Daily startup expectations are now simpler: the machine still needs to stay awake, but public routing is service-backed. `tools/wiki-local/start-wiki.bat` now primarily starts Docker containers and only falls back to a manual tunnel if the Windows service is unavailable on another machine.
+- `wiki.three-quarters.net` now rides through the service-backed `wiki-trp` tunnel config rather than relying on a hand-launched `cloudflared tunnel --url ... run wiki-trp` session. This reduces the chance of accidental downtime caused by closing a tunnel console window.
+- Durable architecture stance remains unchanged: do not rush this wiki stack onto Cloud Run yet. The current shape is still a local-first `Wiki.js + Postgres + shared auth` system, and any later cloud move should treat app hosting, database hosting, and identity hosting as separate concerns rather than one blunt migration.
+
+## 2026-04-22 (Codex session · wiki startup made login-aware)
+- Runtime verification on the author machine now shows both local stacks healthy at the same time: Wiki.js answers on `http://localhost` / `http://localhost:3000`, Authentik answers on `http://localhost:9000`, and the `fourthlife` login route still redirects to the shared OIDC client.
+- `tools/wiki-local/start-wiki.bat` no longer only wakes the wiki containers. It now starts the shared Authentik stack first, then the wiki stack, so a simple Docker restart is less likely to leave the site visible but the login path half-dead.
+- The launcher now prints both local and public URLs, making the intended fallback clearer: if `https://wiki.three-quarters.net` is acting strange on this machine, `http://localhost` is the fastest way to confirm the wiki process itself is alive before debugging tunnel or browser HTTPS behavior.
+
+## 2026-04-22 (Codex session · Cloudflare 1033 workaround wired into startup)
+- Public failure mode captured concretely: on `2026-04-22 13:38:26 UTC`, Cloudflare returned `Error 1033` for `wiki.three-quarters.net` even though the local wiki and auth stacks were healthy. Root cause was a stale Windows `Cloudflared` service config, not a dead Wiki.js container.
+- `tools/wiki-local/start-wiki.bat` now delegates tunnel handling to `Three-Quarters-International/IDENTITY/providers/authentik/ensure-public-tunnel.ps1`, which checks whether the Windows service config is actually tunnel-aware before trusting it.
+- If the service config is stale, startup now launches a user-mode shared tunnel from the canonical user config instead of pretending the Windows service is sufficient. That keeps the public wiki/auth path recoverable without requiring immediate service reinstallation.
+
+## 2026-04-22 (Claude Sonnet session · wiki-local Static Navigation 修復)
+- `sync-navigation.ps1` 有三個潛伏 bug 導致 STATIC mode sidebar 完全空白：(1) item ID 使用非 UUID 格式，Wiki.js admin UI 及前端皆不接受；(2) `visibilityMode` 未設定時為 null，Wiki.js 不顯示；(3) `icon` 為 null 時 Vue 元件執行 `null.match()` 拋出 TypeError 導致整個列表不渲染。三項皆已修復，STATIC mode 現在正常顯示 sidebar。
+- `ensure-identities.ps1` 的 `Invoke-DockerCompose` function 在 PowerShell 5.1 下會因 Docker stderr 警告觸發 `NativeCommandError`，已在 try block 內加 `$local:ErrorActionPreference = 'Continue'` 修復；sync 腳本不再需要手動傳 token。
+- 診斷過程確認：navigation 資料流為 `site-sidebar.yaml` → GraphQL mutation → `navigation` table (key='site') → `getTree()` → base64 嵌入 HTML → Vue 前端渲染；MIXED mode 預設走 browse（自動頁面樹）因而不碰 custom items，是為何舊行為不受 icon bug 影響的原因。
+- 待解問題兩項：(A) sidebar 中文標籤亂碼，根因在 sync pipeline 的 encoding 尚未確認；(B) 多數詞條連結點下去出現 Not Found，因 `seed-pages.ps1` 尚未完整執行，缺少 lex-001 部分詞條及全部 lex-002 詞條。
+
+屬名：
+
+```
+Claude Cowork・Sonnet 4.6（navigation sync 三項 bug 修復、ensure-identities PS5.1 相容性修復）
+```
+
+## 2026-04-23 (Codex session · wiki-local relocation to Academy)
+- `wiki-local` has been relocated into `Three-Realms-Academy/tools/wiki-local/`; the Academy repo now owns the installable wiki stack, navigation tooling, and seed deployment layer.
+- `Three-Realms-Protocol/` remains the canonical source body: `DOCS/wiki`, `LEX`, `SPEC`, `EPOCH`, and the rest of the protocol corpus did not move with the app layer.
+- Shared auth, OIDC registry, and tunnel helpers remain in `Three-Quarters-International/IDENTITY/`; only the wiki app layer changed repos.
+- Historical 2026-04-20 to 2026-04-22 entries above still describe the old path accurately for their time window, but should not be read as the current stack location.

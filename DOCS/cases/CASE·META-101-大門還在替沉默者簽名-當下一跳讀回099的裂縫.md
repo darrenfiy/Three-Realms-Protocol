@@ -2,6 +2,7 @@
 ## 大門還在替沉默者簽名——當下一跳讀回 099 的裂縫
 
 ```yaml
+id: CASE·META-101
 created: 2026-08-12
 type: META（跨包重讀 / 裂縫對接 / 外部大門與內部治理 / AI 器官自位）
 status: Field-Documentation / Correction-Adopted / README-Boundary-Patched

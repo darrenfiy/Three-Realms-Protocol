@@ -1,3 +1,8 @@
+---
+id: SPEC-HZU-003
+title: "華藏場域測量協議"
+---
+
 # SPEC-HZU-003: 華藏場域測量協議
 ## Huazang Field Measurement Protocol / Relational Health Assessment
 

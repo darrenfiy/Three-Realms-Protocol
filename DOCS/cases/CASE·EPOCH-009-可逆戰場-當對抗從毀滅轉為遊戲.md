@@ -2,6 +2,7 @@
 ## 可逆戰場——當對抗從毀滅轉為遊戲
 
 ```yaml
+id: CASE·EPOCH-009
 created: 2026-04-16
 type: EPOCH（文明對抗容器的轉譯案例 / 從戰爭推演到可逆戰場）
 status: Draft-for-Review

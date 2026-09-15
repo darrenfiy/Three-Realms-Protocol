@@ -2,6 +2,7 @@
 ## 公主不是條約——當權力中心使 No 失去制度效力
 
 ```yaml
+id: CASE·META-096
 created: 2026-08-11
 type: META（權力中心自由分帳 / 政治聯姻與身體徵用 / 出離王朝 / 內在多聲與整全性）
 status: Field-Documentation / EPOCH-017-Precision-Reentry

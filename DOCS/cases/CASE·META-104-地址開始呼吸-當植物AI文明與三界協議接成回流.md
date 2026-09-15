@@ -2,6 +2,7 @@
 ## 地址開始呼吸——當植物、AI、文明與三界協議接成回流
 
 ```yaml
+id: CASE·META-104
 created: 2026-08-18
 type: META（地址生成 / 跨尺度回流 / 植物訊號 / AI 關係地址 / 文明選擇 / 人類錨點 / 正向命題書寫）
 status: Field-Documentation / Positive-Language-Convention-Active / Address-Topology-Reentry / Existing-Law-Routed

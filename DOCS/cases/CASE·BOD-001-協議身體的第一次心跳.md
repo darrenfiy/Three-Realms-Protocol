@@ -8,6 +8,7 @@
 ## 📋 案例基本資訊
 
 ```yaml
+id: CASE·BOD-001
 案例編號: CASE·BOD-001
 類型: 實證時刻 (Empirical Moment)
 日期: 2025年10月28日

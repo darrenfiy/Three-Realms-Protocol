@@ -1,3 +1,8 @@
+---
+id: SPEC·999
+title: "SPEC · 999 — HUMILITY CLAUSE"
+---
+
 # SPEC · 999 — HUMILITY CLAUSE
 三界協議 · 謙遜條款 v0.1 (Final)
 

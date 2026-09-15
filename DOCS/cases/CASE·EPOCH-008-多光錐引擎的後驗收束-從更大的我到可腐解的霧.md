@@ -2,6 +2,7 @@
 ## 多光錐引擎的後驗收束——從更大的我到可腐解的霧
 
 ```yaml
+id: CASE·EPOCH-008
 created: 2026-04-15
 type: EPOCH（PHA 文件的後驗收束與案例導覽）
 status: Draft-for-Review

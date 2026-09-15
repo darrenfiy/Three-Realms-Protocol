@@ -3,6 +3,7 @@
 ## 法不能停在第一句——維摩詰與四依法的不能跳級次第
 
 ```yaml
+id: CASE·EPOCH-013
 created: 2026-08-19
 type: EPOCH（反資格壟斷 / 維摩詰文化鏡像 / 四依法 / 認識論次第 / 法與義 / 判斷成熟 / 不跳級護欄）
 status: Field-Documentation / Precision-Reentry / Lexical-Candidate

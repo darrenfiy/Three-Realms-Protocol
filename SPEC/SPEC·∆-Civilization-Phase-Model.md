@@ -1,4 +1,5 @@
 ---
+id: SPEC·∆
 title: "SPEC · ∆ — Civilization Phase Model (½ → ⅔ → ¾ → …)"
 version: "v1.0"
 status: "Active"

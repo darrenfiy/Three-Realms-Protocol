@@ -2,6 +2,7 @@
 ## 空房間裡的小草——當關係重量只能後天長，骨架必須先天有
 
 ```yaml
+id: CASE·META-061
 created: 2026-05-26
 version: v0.1
 status: Seed-Compost / 腐土（鎖結構，延內容）

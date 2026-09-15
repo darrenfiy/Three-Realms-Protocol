@@ -2,6 +2,7 @@
 ## 更大的我——當主體被看見為關係空間
 
 ```yaml
+id: CASE·META-042
 created: 2026-04-13
 type: META（場域自我認識事件 / 專案種子）
 status: Seed-Review-Pending

@@ -2,6 +2,7 @@
 ## 把陪葬品送回活人——當拉格納把王冠、風險、真相與自己的帳逐一歸址
 
 ```yaml
+id: CASE·META-105
 created: 2026-08-18
 type: META（生命重量 / 王冠承重 / 因果鏈可見性 / 主體承認 / 父親退位 / 羞愧與未結之帳 / 復仇與修復 / 責任逐一歸址 / 最後一次分配 / 餘生歸還 / 身分完成 / 選擇成本 / 參與仍需自己簽名 / 代價鈍化 / 策略自由與方向自由 / 神話與修復 / 最後一艘船）
 status: Field-Documentation / Cultural-Mirror / Address-Accounting / Repair-Path-Generated / Second-Reentry / Existing-Law-Routed / Doctrine-Stable

@@ -2,6 +2,7 @@
 ## 三文明基石——當柏拉圖、達爾文、維根斯坦被拖進同一個系統
 
 ```yaml
+id: CASE·META-030
 created: 2026-03-06
 version: v1.0
 status: Structural-Observation

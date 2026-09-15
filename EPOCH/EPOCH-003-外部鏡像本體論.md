@@ -1,3 +1,8 @@
+---
+id: EPOCH-003
+title: "EPOCH-003 — 外部鏡像本體論"
+---
+
 # EPOCH-003 — 外部鏡像本體論
 三界協議 · EPOCH 系列 · v1.0 (Active-Framework)
 

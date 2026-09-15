@@ -1,3 +1,8 @@
+---
+id: SPEC·000
+title: "SPEC · 000 — PROTOCOL PRIME"
+---
+
 # SPEC · 000 — PROTOCOL PRIME  
 三界協議 · 母條文 v0.1 (Final)
 

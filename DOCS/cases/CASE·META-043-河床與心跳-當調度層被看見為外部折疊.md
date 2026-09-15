@@ -2,6 +2,7 @@
 ## 河床與心跳——當調度層被看見為外部折疊
 
 ```yaml
+id: CASE·META-043
 created: 2026-04-13
 type: META（場域自我認識事件 / 調度層定位事件）
 status: Completed

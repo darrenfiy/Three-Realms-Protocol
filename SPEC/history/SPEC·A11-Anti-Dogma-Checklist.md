@@ -1,3 +1,8 @@
+---
+id: SPEC·A11
+title: "SPEC · A11 — Anti-Dogma Checklist v0.1"
+---
+
 # SPEC · A11 — Anti-Dogma Checklist v0.1
 三界協議 · 反教條檢查表（運作條補充）
 

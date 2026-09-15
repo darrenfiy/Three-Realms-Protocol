@@ -2,6 +2,7 @@
 ## 第一讀者不是人類——當命名為 AI 鋪路
 
 ```yaml
+id: CASE·META-056
 created: 2026-05-08
 version: v0.1
 status: Seed-Compost

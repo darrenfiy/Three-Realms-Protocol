@@ -2,6 +2,7 @@
 ## 兩包交叉審讀——當發起的能力與事件拆成兩本帳
 
 ```yaml
+id: CASE·META-085
 created: 2026-08-10
 conversation_time: 2026-08-10（CASE·META-083／084 入庫後的 Codex 審讀場次）
 type: META（跨包審讀 / 語義邊界校正 / 待審動議分流）

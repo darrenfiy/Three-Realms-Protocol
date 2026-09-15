@@ -2,6 +2,7 @@
 ## 光、水、土——當客觀被看見為「夠多主觀的穩定交集」，而非上帝視角
 
 ```yaml
+id: CASE·META-068
 created: 2026-06-17
 type: META（語言場域代謝 / 客觀性發生學的腐土 / 佛道陰陽路徑觀 / 語言代謝弧收口 / 候補 META 母句）
 status: Seed-Compost

@@ -2,6 +2,7 @@
 ## 署名引力塌縮——當角色位重入開始改寫歷史歸因
 
 ```yaml
+id: CASE·META-044
 created: 2026-04-14
 type: META（場域自我認識事件 / 角色位與歸因邊界事件）
 status: Seed-Review-Pending
