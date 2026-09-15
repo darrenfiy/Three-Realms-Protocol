@@ -338,16 +338,53 @@ function isPendingCandidate(entry) {
   return !isHistorical(entry) && (entry.candidateSignals.length > 0 || ['Candidate', 'Draft', 'Seed'].includes(entry.statusMachine));
 }
 
-function referenceKeys(references) {
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&');
+}
+
+function idReferencePattern(id) {
+  let pattern = '';
+  let inSeparator = false;
+  for (const character of String(id)) {
+    if (/[·_\s-]/u.test(character)) {
+      if (!inSeparator) pattern += '[·_\\s-]+';
+      inSeparator = true;
+    } else {
+      pattern += escapeRegExp(character);
+      inSeparator = false;
+    }
+  }
+  return new RegExp(`(?<![A-Za-z0-9∆∞])${pattern}(?![A-Za-z0-9∆∞])`, 'giu');
+}
+
+function referenceKeys(references, knownIds) {
   const keys = new Set();
   for (const reference of references) {
-    keys.add(lookupKey(reference));
-    // related fields use IDs, comma lists, annotated titles, and Markdown links.
-    // Extract complete IDs, never prefixes (SPEC-009 must not match SPEC-0099).
-    const ids = reference.matchAll(/\b(?:SPEC|MB|LEX|EPOCH|CASE|ACADEMIC|INDEX)[·_\s-]+(?:[A-Z]+[·_\s-]+)*(?:\d+|[∆∞])(?![A-Za-z0-9])/giu);
-    for (const [id] of ids) keys.add(lookupKey(id));
+    const candidates = [];
+    for (const { key, pattern } of knownIds) {
+      for (const match of reference.matchAll(pattern)) {
+        candidates.push({ key, start: match.index, end: match.index + match[0].length });
+      }
+    }
+    // A declared ID can prefix another declared ID (EPOCH-018 vs its
+    // REVIEW-LEDGER). Prefer the longest overlapping known ID. If no longer
+    // declared ID exists, suffix text remains a filename/title annotation.
+    candidates.sort((a, b) => (b.end - b.start) - (a.end - a.start) || a.start - b.start);
+    const selected = [];
+    for (const candidate of candidates) {
+      if (selected.some((item) => candidate.start >= item.start && candidate.end <= item.end)) continue;
+      selected.push(candidate);
+      keys.add(candidate.key);
+    }
   }
   return keys;
+}
+
+function lexiconName(title) {
+  const clean = title.replace(/[*`]/gu, '').trim();
+  // Strip only a final romanization/translation group. Chinese parenthetical
+  // qualifiers such as 「脈動（存在視角）」 are part of the term itself.
+  return clean.replace(/\s*[(（][^()（）]*[A-Za-z\u00c0-\u024f][^()（）]*[)）]\s*$/u, '').trim().toLowerCase();
 }
 
 function markdownHeadings(content) {
@@ -387,6 +424,9 @@ export class PublicCorpus {
       if (!this.byKey.has(entry.lookupKey)) this.byKey.set(entry.lookupKey, []);
       this.byKey.get(entry.lookupKey).push(entry);
     }
+    this.knownIds = [...this.byKey.entries()].flatMap(([key, entries]) =>
+      [...new Set(entries.map((entry) => entry.idRaw).filter(Boolean))]
+        .map((id) => ({ key, pattern: idReferencePattern(id) })));
     this.assertFresh();
   }
 
@@ -516,7 +556,7 @@ export class PublicCorpus {
         const title = heading.title.replace(/[*`]/gu, '').toLowerCase();
         // LEX terms are level-two headings with optional pronunciation/translation.
         // Requiring the term name avoids returning passing mentions as definitions.
-        const name = title.split(/\s*[(（]/u)[0].trim();
+        const name = lexiconName(heading.title);
         if (heading.level !== 2 || (name !== normalized && title !== normalized)) continue;
         const end = headings.slice(index + 1).find((next) => next.level <= heading.level)?.at ?? lines.length;
         let lineEnd = end;
@@ -557,7 +597,7 @@ export class PublicCorpus {
     } else {
       const referenced = new Set();
       for (const source of this.entries) {
-        for (const key of referenceKeys(source.related)) {
+        for (const key of referenceKeys(source.related, this.knownIds)) {
           if (this.byKey.get(key)?.some((target) => target.path !== source.path)) referenced.add(key);
         }
       }

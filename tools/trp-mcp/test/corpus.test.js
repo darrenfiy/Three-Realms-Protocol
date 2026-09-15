@@ -63,6 +63,21 @@ test('the two unsafe ID decisions remain absent from the public index', () => {
   assert.equal(corpus.entries.some((entry) => entry.path === 'DOCS/meetings/CASE-MRC-001-Meeting-Record-001.md'), false);
 });
 
+test('real lexicon qualifiers and non-numbered related IDs retain their meaning', () => {
+  const corpus = new PublicCorpus(root);
+  const qualified = corpus.lex('脈動（存在視角）');
+  assert.equal(qualified.entries.length, 1);
+  assert.equal(qualified.entries[0].id, 'LEX·004');
+  assert.equal(corpus.lex('脈動').entries.some((entry) => entry.id === 'LEX·004'), false);
+
+  const unattended = new Set(corpus.pending('unattended', 500).items.map((entry) => entry.id));
+  assert.equal(unattended.has('SEED'), false);
+  assert.equal(unattended.has('LIVING-MANIFESTO'), false);
+  assert.equal(unattended.has('SPEC·000'), false);
+  assert.equal(unattended.has('MB·007'), false);
+  assert.equal(unattended.has('SPEC·AI-ORG-002'), false);
+});
+
 test('a running index refuses to answer after its public corpus changes', () => {
   const fixture = mkdtempSync(join(tmpdir(), 'trp-mcp-'));
   try {

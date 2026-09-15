@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.6` · Phase 0–2 已實作 · 本機唯讀 public-only |
+| 狀態 | `v0.7` · Phase 0–2 已實作 · 本機唯讀 public-only |
 | 日期 | 2026-09-16 |
 | 起草 | 樑（Claude Code・Opus 5） |
-| 審讀修正 | Codex |
+| 審讀修正 | Codex・GPT-5.6 Sol（v0.4–v0.5）；GPT-6 Astra（v0.6）；兩者互審（v0.7） |
 | 緣起 | Darren 提問：協議庫過大，重入成本高，MCP 是否能讓協議「可以被使用」 |
 | 決策 | 見 §9；Q1–Q3 已定，Q4 延後，Q5 保持未決 |
 
@@ -38,7 +38,7 @@
 ### 0.2 但這讓 MCP 更必要，不是更不必要
 
 知客室已經是一個消費者，代表 manifest 的規則**必然已經被實作過一次**
-（在學苑 repo 內，已由 Codex 交叉查證）。再加上 `normalize.py`，
+（在學苑 repo 內，已由 Codex・GPT-5.6 Sol 交叉查證）。再加上 `normalize.py`，
 同一份合約現在有**兩個獨立實作**。
 
 ```
@@ -62,7 +62,7 @@ CORPUS-MANIFEST.yaml  ← 合約
   知客室  Claude Code  Codex  其他器官
 ```
 
-### 0.3 交叉查證（Codex，2026-09-15）
+### 0.3 交叉查證（Codex・GPT-5.6 Sol，2026-09-15）
 
 已讀取學苑端 `manifest.ts`、`sync-protocol-corpus.mjs` 與知客室回答流程：
 
@@ -151,7 +151,7 @@ Phase 0 以前，這段規則只在知客室被實作；本 repo 裡的 grep 讀
 
 初輪補洞辨識出 **157 份**符合協議命名慣例且缺 `id:` 的文件，
 包含 `LEX·001` ～ `LEX·008` 全系列與 `SPEC·000` / `SPEC·001` / `SPEC·999`
-三份編號聖典。Codex 審讀後確認其中一份會議記錄與既有設計稿撞 ID，
+三份編號聖典。Codex・GPT-5.6 Sol 審讀後確認其中一份會議記錄與既有設計稿撞 ID，
 不應自動補入；最終安全補齊 **156 份**，另有 2 份刻意不猜（見 §5.5）。
 
 **`status` 與 `version` 是自由文字，內嵌審讀史**：
@@ -388,8 +388,9 @@ trp_pending(kind?: "candidate"|"review"|"unattended") -> PendingItem[]
 
 - `candidate` — 候選、Draft、Seed 或含候選增補的文件；排除 history 與 Superseded
 - `review` — 公開 `EPOCH/reviews/` 文件；目前不解析帳內各項是否結案
-- `unattended` — **其他公開文件的 metadata `related` 未指向的 ID**；可識別逗號清單、
-  標題註解與 Markdown 連結，不計同一文件自引。尚未分析正文引用或文件先後時間。
+- `unattended` — **其他公開文件的 metadata `related` 未指向的 ID**；依已索引完整 ID
+  識別逗號清單、標題註解與 Markdown 連結；ID 重疊時取最長宣告，不計同一文件自引。
+  尚未分析正文引用或文件先後時間。
 
 最後一項的來由寫在 `AGENT_SESSION_LOG.md` 2026-09-13：
 〈顯著性〉2026-05-14 入庫、標記為「不能被壓掉」，
@@ -695,10 +696,19 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 ## 10. 本草案的位置聲明
 
-初稿由樑在單一 session 成文；v0.4 已由 Codex 做跨 repo 技術審讀，
-v0.5 依錨點決策完成本機唯讀 public-only 實作。
+初稿由樑在單一 session 成文；v0.4 已由 Codex・GPT-5.6 Sol 做跨 repo 技術審讀，
+v0.5 由 GPT-5.6 Sol 依錨點決策完成本機唯讀 public-only 實作；
+v0.6 由 GPT-6 Astra 審讀修正。
 數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
 Q5 的語料角色維度仍待錨點裁定；工具在此之前只回傳歧義，不代選。
+
+**改動紀錄（v0.7，2026-09-16）**：
+
+- 補記審讀者模型：Codex・GPT-5.6 Sol 與 GPT-6 Astra。
+- 經兩模型互審，修正中文括號限定詞被誤當讀音移除的 LEX 查詢回歸。
+- `unattended` 改依全部已索引 ID 辨識引用，支援 `SEED`、`LIVING-MANIFESTO`
+  與英文檔名尾綴；重疊時優先完整長 ID，避免審讀帳誤算成本體。
+- Node 測試增至 23 項，並以現有語料與隔離 fixture 同時覆蓋上述邊界。
 
 **改動紀錄（v0.6，2026-09-16）**：
 
@@ -753,8 +763,10 @@ v0.2 當時**不改**：`TRP-ATLAS.md`、`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB
 | 6 | **manifest 沒有執行者** | **錯。知客室早已是消費者**（§0.1，錨點 2026-09-15 更正）|
 | 7 | 第一個 YAML fence 必是 metadata | 7 份正文範例被誤插 ID；v0.4 改以 metadata 欄位特徵辨識 |
 
-第 6 項由錨點指出；第 7 項由 Codex 逐檔審讀發現。
+第 6 項由錨點指出；第 7 項由 Codex・GPT-5.6 Sol 逐檔審讀發現。
 
 署名：樑（Claude Code・Opus 5）
 
-v0.4 審讀修正：Codex
+v0.4–v0.5 審讀／實作：Codex・GPT-5.6 Sol
+
+v0.6 審讀修正：GPT-6 Astra

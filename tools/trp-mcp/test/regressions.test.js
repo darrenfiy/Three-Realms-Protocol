@@ -57,6 +57,37 @@ test('unattended understands annotated, comma-separated, and YAML flow reference
   assert.ok(pending.includes('SPEC-010'), 'a self-reference is not another document');
 });
 
+test('unattended recognizes non-numbered IDs without matching a longer ID prefix', (t) => {
+  const { root, write } = fixture(t);
+  write('README.md', document('LIVING-MANIFESTO'));
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'related: SEED（生成算子）, LIVING-MANIFESTO v2.1, EPOCH-018-REVIEW-LEDGER'));
+  write('SPEC/SEED.md', document('SEED'));
+  write('SPEC/EPOCH-018.md', document('EPOCH-018'));
+  write('SPEC/EPOCH-018-REVIEW-LEDGER.md', document('EPOCH-018-REVIEW-LEDGER'));
+  const pending = new PublicCorpus(root).pending('unattended', 200).items.map((item) => item.id);
+  assert.equal(pending.includes('SEED'), false);
+  assert.equal(pending.includes('LIVING-MANIFESTO'), false);
+  assert.equal(pending.includes('EPOCH-018-REVIEW-LEDGER'), false);
+  assert.ok(pending.includes('EPOCH-018'), 'a complete longer ID must not count as its shorter prefix');
+});
+
+test('unattended accepts filename title suffixes while preferring a longer declared ID', (t) => {
+  const { root, write } = fixture(t);
+  for (const id of ['SPEC-000', 'MB-007', 'SPEC-AI-ORG-002', 'EPOCH-018', 'EPOCH-018-REVIEW-LEDGER']) {
+    write(`SPEC/${id}.md`, document(id));
+  }
+  write('SPEC/SOURCE.md', document('SOURCE', `related:
+  - SPEC-000-Protocol-Prime
+  - MB-007-Semantic-Wardrobe-Phenomenology
+  - SPEC·AI-ORG-002-AI器官語義流動體的相位切換協議
+  - EPOCH-018-REVIEW-LEDGER`));
+  const pending = new PublicCorpus(root).pending('unattended', 200).items.map((item) => item.id);
+  for (const id of ['SPEC-000', 'MB-007', 'SPEC-AI-ORG-002', 'EPOCH-018-REVIEW-LEDGER']) {
+    assert.equal(pending.includes(id), false, `${id} has an incoming reference`);
+  }
+  assert.ok(pending.includes('EPOCH-018'), 'the longer ledger ID must win over its overlapping base ID');
+});
+
 test('lex returns the matching term section with boundaries and source lines', (t) => {
   const { root, write } = fixture(t);
   write('LEX/LEX-001.md', document('LEX-001', 'status: Active', 'An incidental mention of 健康.'));
@@ -83,6 +114,15 @@ This belongs to another term.`));
   const lines = readFileSync(join(root, 'LEX/LEX-002.md'), 'utf8').split(/\r?\n/u);
   assert.equal(result.entries[0].content, lines.slice(lineStart - 1, lineEnd).join('\n'));
   assert.equal(corpus.lex('incidental').entries.length, 0, 'a passing mention is not a definition');
+});
+
+test('lex preserves a Chinese parenthetical qualifier while stripping romanization', (t) => {
+  const { root, write } = fixture(t);
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', '## 脈動 (Màidòng)\nBase definition.'));
+  write('LEX/LEX-004.md', document('LEX-004', 'status: Active', '## 脈動（存在視角）(Màidòng — Cúnzài Shìjiǎo)\nQualified definition.'));
+  const corpus = new PublicCorpus(root);
+  assert.deepEqual(corpus.lex('脈動').entries.map((entry) => entry.id), ['LEX-001']);
+  assert.deepEqual(corpus.lex('脈動（存在視角）').entries.map((entry) => entry.id), ['LEX-004']);
 });
 
 for (const target of ['document', 'manifest']) {
