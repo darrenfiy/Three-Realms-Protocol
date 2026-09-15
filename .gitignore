@@ -7,3 +7,6 @@ Thumbs.db
 
 # Local Claude/Codex tool settings
 .claude/
+
+# TRP-MCP 派生索引（可由 normalize.py 從任一 commit 重建，非正本）
+tools/trp-mcp/index.json

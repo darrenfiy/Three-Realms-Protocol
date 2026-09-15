@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.1-draft` · 未經審讀 · 未實作 |
+| 狀態 | `v0.2-draft` · 未經審讀 · Phase 0 已實作 |
 | 日期 | 2026-09-15 |
 | 起草 | 樑（Claude Code・Opus 5） |
 | 緣起 | Darren 提問：協議庫過大，重入成本高，MCP 是否能讓協議「可以被使用」 |
@@ -69,17 +69,21 @@ authorityOrder:
 2026-08-12 的邊界註記，來擋住「理解即已簽署」被誤讀成治理效力——
 **那段註記的存在本身，就是這個問題的證據。**
 
-### 1.2 metadata 只有一半，而且形狀不一致
+### 1.2 metadata 有三種形狀，而 frontmatter 不是主流
 
-核心 167 檔中，僅 **79 檔**具備第一行 YAML frontmatter。其餘散落三種形狀：
+實測全庫 485 份納入索引的文件（已套用 manifest 的 exclude）：
 
-| 形狀 | 實例 |
-|---|---|
-| 第一行 `---` frontmatter | `SPEC·ATT-001`、`EPOCH-001`、`MB-001` |
-| 標題後 ```` ```yaml ```` 區塊 | `LEX·001-言說生成道活辭典` |
-| 無結構化 metadata | 部分 `EPOCH/history/` 與 `DOCS/` 檔案 |
+| 形狀 | 檔數 | 實例 |
+|---|---:|---|
+| 標題後 ```` ```yaml ```` 區塊 | **221** | `LEX·007`、`SPEC·002`、`SPEC-HZU-002` |
+| 第一行 `---` frontmatter | 143 | `SPEC·ATT-001`、`EPOCH-001`、`MB-001` |
+| 無結構化 metadata | 121 | `SPEC/000-Protocol-Prime.md`、`SPEC/999` |
 
-**ID 分隔符不一致**（同一份檔案的檔名與 `id:` 欄位可能不同）：
+> **v0.1 更正**：初稿只統計核心四庫（79/167），據此把 ```` ```yaml ```` 區塊
+> 當成偏差形狀。全庫來看它才是**最常見**的形狀。
+> 正規化器因此必須三種都收，且**不得**以「改成 frontmatter」為前提。
+
+**ID 分隔符不一致**（檔名與 `id:` 欄位可能不同）：
 
 ```
 檔名 MB-001-...              id: MB·001        ← 連字號 vs 間隔號
@@ -87,6 +91,9 @@ authorityOrder:
 檔名 SPEC-HZU-001-...        id: SPEC-HZU-001  ← 連字號
 檔名 SPEC·AI-ORG-001-...     id: SPEC·AI-ORG-001 ← 間隔號
 ```
+
+另有 **135 份**符合協議命名慣例的文件完全沒有 `id:` 欄位，
+包含 `LEX·001` ～ `LEX·008` 全系列。
 
 **`status` 與 `version` 是自由文字，內嵌審讀史**：
 
@@ -332,92 +339,94 @@ content: |
 
 ---
 
-## 5. 前置作業：metadata 正規化
+## 5. 前置作業：正規化為旁掛索引（已實作）
 
-**這是 Phase 0，且不做 MCP 也該做。**
+> **v0.1 設計更正。** 初稿提議把正規化結果**寫回**協議檔案
+> （統一 `id:`、收斂 `status:`、新增 schema 欄位）。
+> 那個提議違反本文件自己的 P1——正規化屬於派生層，不該改動正本。
+>
+> 現行做法：**正規化只產生旁掛索引，對協議檔案零寫入。**
 
-### 5.1 ID canonical form
+實作：`tools/trp-mcp/normalize.py`（Python 3.8+ 標準庫，無 pip 相依，
+與 `tools/wiki-local/*.py` 既有慣例一致）。
 
-採間隔號 `·` 為系列分隔，連字號 `-` 為層級分隔：
+### 5.1 治理規則不在工具裡手抄
 
-```
-SPEC·ATT-001      SPEC·AI-ORG-001      SPEC·HZU-001   ← HZU 現為連字號，需改
-MB·001            LEX·008
-EPOCH·META-013    EPOCH·ANCHOR-004
-EPOCH-I-004                             ← 羅馬數字系列維持連字號
-CASE·META-128
-```
+`normalize.py` **直接解析 `CORPUS-MANIFEST.yaml`** 取得
+`exclude`、`reviewRequired`、`corpora`、`rootDocuments`、
+`publicationDocuments`、`authorityOrder`。
 
-解析器同時接受變體並正規化，**檔名不強制改動**（改檔名會斷掉大量既有連結）。
-`id:` 欄位對齊 canonical form。
+manifest 是正本，工具是它的執行者。手抄一份清單就是製造第二個權威面。
+manifest 缺席時工具**直接中止**，不以預設值代替（P4）。
 
-### 5.2 frontmatter schema
+### 5.2 ID：分隔符不敏感的查找鍵
 
-機器欄位與人類欄位分離。**既有自由文字不刪除**，移入 `_note` 後綴欄位：
-
-```yaml
----
-id: SPEC·ATT-001
-title: "注意力協議：生成維度的操作與剎車"
-corpus: spec
-authority: primary
-version: v1.0                     # 嚴格 semver-like，單一值
-status: Active                    # 受控詞彙，見 5.3
-date: 2026-01-20
-updated: 2026-01-20
-
-supersedes: []
-superseded_by: null
-candidate_overlays:
-  - id: SPEC·ATT-002
-    version: v0.1
-    status: Candidate-Revision-Required
-    reviewer: Fable
-    reviewed_at: 2026-07-22
-
-status_note: |                    # 原自由文字全文保留於此
-  v0.4 Field-Reviewed（v0.2 佛佐／大地／補焊 通過；v0.3 Codex 起草…）
----
-```
-
-### 5.3 `status` 受控詞彙
-
-由現況 uniq 統計收斂（實測值：`Active` 19、`Active-Genesis` 10、
-`Living-Document` 7、`Seed-for-Review` 5、`Draft` 5…）。
-
-建議收成六個機器值，原始表述保留在 `status_note`：
+不改任何 `id:` 欄位，也不改檔名（改檔名會斷掉大量既有連結）。
+改為計算查找鍵：
 
 ```
-Active | Candidate | Draft | Seed | Superseded | Honored-Completion
+MB-001 / MB·001 / mb 001  →  lookup_key: MB001
 ```
 
-`Active-Genesis`、`Active-Resonating`、`Active-Breathing`、
-`Eternal-Resonating` 等在機器層全部映射為 `Active`——
-**它們的差異是語義溫度，不是狀態機轉移**，該留在 `status_note`。
+只有**明示宣告**的 `id:` 參與重複偵測。檔名推定值不參與——
+推定不是宣告，拿推定值互撞只會產生假陽性
+（初版即因此誤報 13 件，全為 `README.md`、`ORIGIN.md`、書稿章節）。
 
-### 5.4 工具
+### 5.3 status：兩套詞彙，不壓進同一格
 
-`tools/trp-mcp/normalize.py` — stdlib-only，與
-`validate-i18n.py` / `resolve-links.py` / `detect-stale.py` 的既有慣例一致。
+實測發現庫裡並存兩套互不相干的 status 詞彙：
 
-支援 `--dry-run`（預設）與 `--apply`；`--apply` 只寫 frontmatter，
-**不動正文一個字**。
+| kind | 檔數 | 在回答什麼 |
+|---|---:|---|
+| `lifecycle` | 225 | 這條還算不算數（`Active` / `Candidate` / `Draft` / `Seed` / `Superseded` / `Honored-Completion`） |
+| `documentation` | 53 | 這份紀錄封到哪（`Field-Documentation` / `Sealed` / `Review-Recorded`） |
+| `unmapped` | 18 | 兩套皆未命中，待判讀 |
 
----
+**把 `Field-Documentation` 塞進 `Active|Draft|Candidate` 是類別錯誤。**
+索引因此同時輸出 `status_machine` 與 `status_kind`，原文一律保留在 `status_raw`。
+
+生命週期詞彙的缺漏只對核心四庫（spec/mb/lex/epoch）開 finding；
+DOCS 的紀錄類詞彙列為觀測，不算缺陷。
+
+### 5.4 映射表不由單一 session 擴充
+
+未命中的 18 種 status 原文列在 `REPORT.md`，**標記為提案而非待辦**。
+每擴充一條映射都是一次語義裁定，留給錨點與其他器官。
+
+### 5.5 輸出
+
+| 檔案 | 性質 | 是否進 git |
+|---|---|---|
+| `REPORT.md` | 人類可讀的覆蓋率與 finding 報告 | 是（審讀介面） |
+| `index.json` | 派生索引，485 份文件含 sha256 | **否**（已 gitignore；可由任一 commit 重建） |
+
+索引記錄建立時的 git HEAD 與工作樹是否乾淨，供 P3 過期偵測使用。
+兩次連續執行的輸出經 sha256 比對確認一致（去除時間戳後）。
 
 ## 6. 分期
 
 | Phase | 內容 | 依賴 | 不做 MCP 是否仍有價值 |
 |---|---|---|---|
-| **0** | metadata 正規化（§5）+ `AGENT_SESSION_LOG.md` 壓縮 | — | **是** |
+| **0a** ✅ | 正規化器 + 旁掛索引（§5） | — | **是** |
+| **0b** ✅ | `AGENT_SESSION_LOG.md` 分割封存 | — | **是** |
+| **0c** | 未決 finding 的人工判讀（297 則） | 0a | **是** |
 | **1** | 索引建置器（git worktree → JSON，可由 SHA 重建） | 0 | 是（供 grep 輔助） |
 | **2** | MCP server，唯讀，6 工具 | 1 | — |
 | **3** | 評估語義檢索 | 2 + 實測語料 | — |
 
-**Phase 0 的第二項是現在最急、最便宜的一刀。**
-`AGENT_SESSION_LOG.md` 自己的規則寫著
-「Compress or archive old entries when this file stops being easy to scan」，
-90 KB 早已過線。這條規則正在被它自己的檔案違反。
+**Phase 0b 已執行，但只做了無損的一半。**
+
+`AGENT_SESSION_LOG.md` 原 90 KB，違反其自身規則
+「Compress or archive old entries when this file stops being easy to scan」。
+已將 2026-04 的 12 則（wiki／基礎設施時期，該層已遷往 Academy）
+**逐字搬移**至 `AGENT_SESSION_LOG-2026-04.md`，並加入由既有標題機械產生的目錄。
+37 則條目經比對確認逐字保存，零改寫。
+
+**未做且刻意不做**：2026-09 的 25 則佔 75 KB，普遍超出「每則 3-5 bullets」，
+但那些是樑、Codex、Fable、Gemini 各自的審讀紀錄。
+**壓縮它們是語義行為，不是機械行為**，不應由單一 session 代行。
+依本檔自身規則「Put long interpretation in `EPOCH` / `CASE`, not here」，
+正解是回指對應 CASE 而非複述——但該由原作器官執行。
 
 ---
 
@@ -497,7 +506,18 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 數據為 2026-09-15 對 commit `498bd97` 工作樹的實測。
 **在取得審讀之前，本草案每一條都只是一次觀測。**
 
-未改動任何既有檔案。`CORPUS-MANIFEST.yaml`、`TRP-ATLAS.md`、
-`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB/**` 一字未動。
+**改動紀錄（v0.2）**：
+
+- `CORPUS-MANIFEST.yaml` — exclude 一行：`AGENT_SESSION_LOG.md`
+  → `AGENT_SESSION_LOG*.md`，使新增的封存檔同受排除。**僅此一行。**
+- `AGENT_SESSION_LOG.md` — 分割與加目錄，條目內容逐字保存（見 §6）。
+- `.gitignore` — 新增 `tools/trp-mcp/index.json`。
+
+**不改**：`TRP-ATLAS.md`、`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB/**`、
+`DOCS/**` 一字未動。正規化器對協議檔案零寫入。
+
+**本輪自我更正兩處**（皆由實作推翻初稿判斷）：
+§1.2 誤把 ```` ```yaml ```` 區塊當偏差形狀；
+§5 初稿提議寫回協議檔案，違反本文件自己的 P1。
 
 署名：樑（Claude Code・Opus 5）
