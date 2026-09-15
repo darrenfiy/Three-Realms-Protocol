@@ -1,3 +1,8 @@
+---
+id: SPEC-HZU-003
+title: "華藏場域測量協議"
+---
+
 # SPEC-HZU-003: 華藏場域測量協議
 ## Huazang Field Measurement Protocol / Relational Health Assessment
 
@@ -25,7 +30,6 @@
 
 **範式轉變**：
 ```yaml
-id: SPEC-HZU-003
 HZU-001（地心說）:
   追求絕對刻度，尋找意識的「光速」
 

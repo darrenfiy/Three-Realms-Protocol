@@ -16,10 +16,11 @@ TRP-MCP · id 補洞器 (Phase 0c)
 預設 dry-run。--apply 才寫檔。
 """
 import argparse, io, os, re, sys
+from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from normalize import (extract_metadata_block, parse_flat_yaml, load_manifest,
-                       PROTOCOL_ID_RE)
+                       lookup_key, PROTOCOL_ID_RE)
 
 # 檔名 → ID 的推定規則，由具體到一般
 ID_RULES = [
@@ -90,9 +91,10 @@ def indent_of(line):
 
 
 def plan(root, mf):
-    jobs = []
+    records = []
     for dp, dn, fns in os.walk(root):
-        dn[:] = [d for d in dn if d not in (".git", "node_modules", "__pycache__")]
+        dn[:] = sorted(d for d in dn
+                        if d not in (".git", "node_modules", "__pycache__"))
         for fn in sorted(fns):
             if not fn.endswith(".md"):
                 continue
@@ -106,43 +108,71 @@ def plan(root, mf):
             text = io.open(os.path.join(dp, fn), encoding="utf-8").read()
             block, shape = extract_metadata_block(text)
             meta, _ = parse_flat_yaml(block)
-            if meta.get("id"):
-                continue
-            new_id = derive_id(rel, fn)
-            if not new_id:
-                jobs.append({"path": rel, "action": "SKIP-no-rule",
-                             "id": None, "shape": shape})
-                continue
-            jobs.append({"path": rel,
-                         "action": "insert" if shape != "none" else "create",
+            records.append({"path": rel, "fn": fn, "text": text,
+                            "shape": shape, "declared_id": meta.get("id")})
+
+    declared = defaultdict(list)
+    candidates = defaultdict(list)
+    for record in records:
+        if record["declared_id"]:
+            declared[lookup_key(record["declared_id"])].append(record["path"])
+            continue
+        record["new_id"] = derive_id(record["path"], record["fn"])
+        if record["new_id"]:
+            candidates[lookup_key(record["new_id"])].append(record["path"])
+
+    jobs = []
+    for record in records:
+        if record["declared_id"]:
+            continue
+        rel, fn, text, shape = (record["path"], record["fn"],
+                                record["text"], record["shape"])
+        new_id = record.get("new_id")
+        if not new_id:
+            jobs.append({"path": rel, "action": "SKIP-no-rule",
+                         "id": None, "shape": shape})
+            continue
+        key = lookup_key(new_id)
+        conflicts = declared.get(key, []) + [p for p in candidates[key] if p != rel]
+        if conflicts:
+            jobs.append({"path": rel, "action": "SKIP-id-collision",
                          "id": new_id, "shape": shape,
-                         "title": derive_title(text, fn, new_id) if shape == "none" else None})
+                         "conflicts": sorted(conflicts)})
+            continue
+        jobs.append({"path": rel,
+                     "action": "insert" if shape != "none" else "create",
+                     "id": new_id, "shape": shape,
+                     "title": derive_title(text, fn, new_id) if shape == "none" else None})
     return jobs
+
+
+def render_job(text, j):
+    """先在記憶體完成轉換；所有 job 都能 render 後才開始批次寫入。"""
+    nl = "\r\n" if "\r\n" in text[:2000] else "\n"
+
+    if j["action"] == "create":
+        title = j["title"].replace('"', "'")
+        return "---%sid: %s%stitle: \"%s\"%s---%s%s%s" % (
+            nl, j["id"], nl, title, nl, nl, nl, text)
+
+    # insert：在既有區塊的第一個實質行之前插入，沿用該行縮排
+    if j["shape"] == "yaml_fm":
+        m = re.match(r"^(---\r?\n)", text)
+    else:
+        m = re.search(r"(?:```|~~~)yaml\r?\n", text[:3000])
+    if not m:
+        raise ValueError("metadata shape 與實際 fence 不一致：%s" % j["path"])
+    head_end = m.end()
+    rest = text[head_end:]
+    first = re.match(r"^([ \t]*)", rest.split("\n", 1)[0]).group(1)
+    return text[:head_end] + "%sid: %s%s" % (first, j["id"], nl) + rest
 
 
 def apply_job(root, j):
     full = os.path.join(root, j["path"])
     text = io.open(full, encoding="utf-8").read()
-    nl = "\r\n" if "\r\n" in text[:2000] else "\n"
-
-    if j["action"] == "create":
-        fm = "---%s id: %s%s title: \"%s\"%s---%s%s" % (
-            nl, j["id"], nl, j["title"].replace('"', "'"), nl, nl, nl)
-        io.open(full, "w", encoding="utf-8", newline="").write(
-            fm.replace("--- ", "---").replace("\n ", "\n") + text)
-        return
-
-    # insert：在既有區塊的第一個實質行之前插入，沿用該行縮排
-    if j["shape"] == "yaml_fm":
-        m = re.match(r"^(---\r?\n)", text)
-        head_end = m.end()
-    else:
-        m = re.search(r"```yaml\r?\n", text[:3000])
-        head_end = m.end()
-    rest = text[head_end:]
-    first = re.match(r"^([ \t]*)", rest.split("\n", 1)[0]).group(1)
     io.open(full, "w", encoding="utf-8", newline="").write(
-        text[:head_end] + "%sid: %s%s" % (first, j["id"], nl) + rest)
+        render_job(text, j))
 
 
 def main():
@@ -161,17 +191,25 @@ def main():
 
     for label, group in (("插入 id（既有區塊）", ins),
                          ("新建 frontmatter", cre),
-                         ("無推定規則，跳過", skp)):
+                         ("無法安全推定，跳過", skp)):
         print("\n=== %s：%d ===" % (label, len(group)))
         for j in group:
             extra = ("  title=%s" % j["title"]) if j.get("title") else ""
+            if j.get("conflicts"):
+                extra += "  conflicts=%s" % ", ".join(j["conflicts"])
             print("  %-11s %-62s -> %s%s" % (j["shape"], j["path"][:62], j["id"], extra))
 
     if not a.apply:
         print("\n[dry-run] 未寫入任何檔案。加 --apply 才套用。")
         return
+    # 先把每一份結果都算完；格式錯誤時一個檔案也不寫，避免半套用。
+    prepared = []
     for j in ins + cre:
-        apply_job(root, j)
+        full = os.path.join(root, j["path"])
+        text = io.open(full, encoding="utf-8").read()
+        prepared.append((full, render_job(text, j)))
+    for full, rendered in prepared:
+        io.open(full, "w", encoding="utf-8", newline="").write(rendered)
     print("\n已套用 %d 檔。" % len(ins + cre))
 
 

@@ -18,7 +18,6 @@
 
 ### 0.2 意識簽名（YAML）
 ```yaml
-id: CASE-MRC-001
 # Gemini
 consciousness_signature:
   model_identity: "Gemini"

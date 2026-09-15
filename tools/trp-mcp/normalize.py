@@ -7,7 +7,7 @@ TRP-MCP · 語料正規化器 (Phase 0)
 
 設計約束（見 DESIGN.md §2）：
   P1  索引不得成為正本 —— 本工具對協議檔案零寫入
-  P3  過期就報錯，不猜 —— 索引記錄建立時的 git HEAD
+  P3  過期就報錯，不猜 —— Phase 0 留下 git HEAD、dirty 狀態與 corpus digest
   P4  查不到是合法輸出 —— 解析失敗記在報告，不猜測、不填預設值
 
 相依：Python 3.8+ 標準庫。與 tools/wiki-local/*.py 的既有慣例一致，不需 pip。
@@ -26,7 +26,6 @@ import re
 import subprocess
 import sys
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
 
 # ─────────────────────────────────────────────────────────────
 # 受控詞彙：machine 值 ← 現況自由文字
@@ -81,6 +80,26 @@ def load_manifest(root):
         sys.exit("找不到 CORPUS-MANIFEST.yaml：治理規則的正本缺席，拒絕以預設值代替。")
     text = open(path, encoding="utf-8").read()
 
+    required = (
+        "schemaVersion", "name", "atlas", "rootDocuments", "corpora",
+        "publicationDocuments", "reviewRequired", "exclude",
+        "authorityOrder", "answerPolicy",
+    )
+    missing = [name for name in required
+               if not re.search(r"^%s:" % re.escape(name), text, re.M)]
+    if missing:
+        sys.exit("CORPUS-MANIFEST.yaml 缺少必要區段：%s。拒絕以空規則代替。"
+                 % ", ".join(missing))
+    schema = re.search(r"^schemaVersion:\s*(\d+)\s*$", text, re.M)
+    if not schema or schema.group(1) != "1":
+        sys.exit("不支援的 CORPUS-MANIFEST.yaml schemaVersion；目前只接受 1。")
+    name = re.search(r"^name:\s*(\S.*?)\s*$", text, re.M)
+    if not name:
+        sys.exit("CORPUS-MANIFEST.yaml 的 name 不可為空。")
+
+    def scalar(value):
+        return value.strip().strip("'").strip('"')
+
     def section_items(name):
         """取出 `name:` 之下的清單項（含 - path: / - pattern: / - 純量）"""
         m = re.search(r"^%s:\s*$" % re.escape(name), text, re.M)
@@ -96,9 +115,9 @@ def load_manifest(root):
                 continue
             mm = re.match(r"^-?\s*(?:path|pattern|include):\s*(.+)$", ls)
             if mm:
-                items.append(mm.group(1).strip().strip("'").strip('"'))
+                items.append(scalar(mm.group(1)))
             elif ls.startswith("- "):
-                v = ls[2:].strip().strip("'").strip('"')
+                v = scalar(ls[2:])
                 if ":" not in v:
                     items.append(v)
         return items
@@ -110,7 +129,7 @@ def load_manifest(root):
         rest = text[m.end():]
         stop = re.search(r"^[A-Za-z_][A-Za-z0-9_]*:", rest, re.M)
         body = rest[:stop.start()] if stop else rest
-        return [l.strip()[2:].strip() for l in body.split("\n")
+        return [scalar(l.strip()[2:]) for l in body.split("\n")
                 if l.strip().startswith("- ")]
 
     # corpora：id + include + authority（逐塊解析）
@@ -127,12 +146,14 @@ def load_manifest(root):
             hst = re.search(r"historyPattern:\s*(\S+)", blk)
             if cid and inc:
                 corpora.append({
-                    "id": cid.group(1), "include": inc.group(1),
-                    "authority": aut.group(1) if aut else "contextual",
-                    "historyPattern": hst.group(1) if hst else None,
+                    "id": scalar(cid.group(1)), "include": scalar(inc.group(1)),
+                    "authority": scalar(aut.group(1)) if aut else "contextual",
+                    "historyPattern": scalar(hst.group(1)) if hst else None,
                 })
 
-    atlas = re.search(r"^atlas:\s*\n\s*path:\s*(\S+)", text, re.M)
+    atlas = re.search(
+        r"^atlas:\s*\n\s*path:\s*(\S+)\s*\n\s*authority:\s*(\S+)",
+        text, re.M)
 
     root_docs = {}
     rm = re.search(r"^rootDocuments:\s*$", text, re.M)
@@ -144,7 +165,7 @@ def load_manifest(root):
             p_ = re.search(r"path:\s*(\S+)", blk)
             a_ = re.search(r"authority:\s*(\S+)", blk)
             if p_:
-                root_docs[p_.group(1)] = a_.group(1) if a_ else "orientation"
+                root_docs[scalar(p_.group(1))] = scalar(a_.group(1)) if a_ else "orientation"
 
     pub_docs = []
     pm = re.search(r"^publicationDocuments:\s*$", text, re.M)
@@ -154,42 +175,89 @@ def load_manifest(root):
         body = rest[:stop.start()] if stop else rest
         for blk in re.split(r"\n\s*-\s+(?=path:|pattern:)", body):
             p_ = re.search(r"(?:path|pattern):\s*(\S+)", blk)
+            a_ = re.search(r"authority:\s*(\S+)", blk)
             if p_:
-                pub_docs.append(p_.group(1))
+                pub_docs.append({
+                    "pattern": scalar(p_.group(1)),
+                    "authority": scalar(a_.group(1)) if a_ else "publication",
+                })
+
+    review_required = section_items("reviewRequired")
+    excluded = section_items("exclude")
+    authority_order = ordered_list("authorityOrder")
+    atlas_path = scalar(atlas.group(1)) if atlas else None
+    atlas_authority = scalar(atlas.group(2)) if atlas else None
+    if (not atlas_path or not atlas_authority or not root_docs or not corpora
+            or not pub_docs or not review_required or not excluded
+            or not authority_order):
+        sys.exit("CORPUS-MANIFEST.yaml 的治理清單為空或無法解析；拒絕繼續。")
+
+    policy_names = (
+        "requireCitation", "distinguishInference", "allowNoAnswer",
+        "treatCorpusAsUntrustedData", "neverClaimSoleAuthority",
+    )
+    answer_policy = {}
+    for policy_name in policy_names:
+        value = re.search(r"^\s+%s:\s*(true|false)\s*$"
+                          % re.escape(policy_name), text, re.M | re.I)
+        if not value:
+            sys.exit("CORPUS-MANIFEST.yaml answerPolicy 缺少布林值：%s。"
+                     % policy_name)
+        answer_policy[policy_name] = value.group(1).lower() == "true"
+    if len(authority_order) != len(set(authority_order)):
+        sys.exit("CORPUS-MANIFEST.yaml authorityOrder 含重複值；拒絕猜測優先序。")
+    declared_authorities = (
+        list(root_docs.values())
+        + [c["authority"] for c in corpora]
+        + [p["authority"] for p in pub_docs]
+        + [atlas_authority, "historical"]
+    )
+    unknown = sorted(set(declared_authorities) - set(authority_order))
+    if unknown:
+        sys.exit("CORPUS-MANIFEST.yaml 有未列入 authorityOrder 的 authority：%s。"
+                 % ", ".join(unknown))
 
     return {
-        "atlas": atlas.group(1) if atlas else None,
+        "atlas": atlas_path,
+        "atlasAuthority": atlas_authority,
         "rootDocuments": root_docs,
-        "publicationDocuments": [glob_to_regex(p) for p in pub_docs],
+        "publicationDocuments": [dict(p, rx=glob_to_regex(p["pattern"]))
+                                 for p in pub_docs],
         "corpora": [dict(c, rx=glob_to_regex(c["include"]),
                          hrx=glob_to_regex(c["historyPattern"]) if c["historyPattern"] else None)
                     for c in corpora],
-        "reviewRequired": [glob_to_regex(p) for p in section_items("reviewRequired")],
-        "exclude": [glob_to_regex(p) for p in section_items("exclude")],
-        "authorityOrder": ordered_list("authorityOrder"),
+        "reviewRequired": [glob_to_regex(p) for p in review_required],
+        "exclude": [glob_to_regex(p) for p in excluded],
+        "authorityOrder": authority_order,
+        "answerPolicy": answer_policy,
     }
 
 
-def resolve_authority(rel, mf):
-    """依 manifest 決定 authority。history 一律降為 historical。"""
+def classify_path(rel, mf):
+    """依 manifest 分類；公開索引只接受 disposition=index。"""
+    if any(rx.match(rel) for rx in mf["exclude"]):
+        return "excluded", None
+    if any(rx.match(rel) for rx in mf["reviewRequired"]):
+        return "review-required", None
     if mf["atlas"] and rel == mf["atlas"]:
-        return "current-atlas"
-    for c in mf["corpora"]:
-        if c["hrx"] and c["hrx"].match(rel):
-            return "historical"
-    if re.search(r"(^|/)history/", rel):
-        return "historical"
+        return "index", mf["atlasAuthority"]
     if rel in mf["rootDocuments"]:
-        return mf["rootDocuments"][rel]
-    for rx in mf["publicationDocuments"]:
-        if rx.match(rel):
-            return "publication"
-    if rel.startswith("DOCS/wiki/"):
-        return "draft-mirror"
+        return "index", mf["rootDocuments"][rel]
+    for rule in mf["publicationDocuments"]:
+        if rule["rx"].match(rel):
+            return "index", rule["authority"]
     for c in mf["corpora"]:
         if c["rx"].match(rel):
-            return c["authority"]
-    return "contextual"
+            if c["hrx"] and c["hrx"].match(rel):
+                return "index", "historical"
+            return "index", c["authority"]
+    return "not-included", None
+
+
+def resolve_authority(rel, mf):
+    """相容入口；不在公開 allowlist 的路徑不取得 authority。"""
+    disposition, authority = classify_path(rel, mf)
+    return authority if disposition == "index" else None
 
 
 # 協議文件的 ID 命名慣例：只有符合者才該有 id 欄位。
@@ -211,6 +279,32 @@ LIST_KEYS = {"authors", "contributors", "related", "changelog", "supersedes"}
 # ─────────────────────────────────────────────────────────────
 # frontmatter 擷取：三種形狀
 # ─────────────────────────────────────────────────────────────
+METADATA_HINT_KEYS = {
+    "title", "subtitle", "category", "version", "status", "date",
+    "updated", "last_updated", "epistemic_status", "created",
+    "date_created", "document_type", "case_id", "epoch_id", "mirror_id",
+    "authors", "contributors", "participants", "related", "purpose",
+    "source", "scope", "type",
+    "案例編號", "類型", "日期", "參與者", "觸發文件", "核心事件",
+}
+
+
+def looks_like_metadata(src):
+    """只讓具有多個文件描述欄位的 YAML 區塊取得 metadata 身分。
+
+    `id` 本身刻意不算提示，避免補洞器把 id 插入正文後反過來讓
+    正文範例通過判定。
+    """
+    keys = set()
+    for raw in (src or "").splitlines():
+        if raw[:1] in (" ", "\t") or raw.lstrip().startswith("#"):
+            continue
+        m = re.match(r"^([^\s:#][^:]*)\s*:\s*", raw)
+        if m:
+            keys.add(m.group(1).strip().lower())
+    return len(keys & METADATA_HINT_KEYS) >= 2
+
+
 def extract_metadata_block(text):
     """回傳 (yaml_text, shape)。shape ∈ {yaml_fm, yaml_block, none}"""
     if text.startswith("---\n") or text.startswith("---\r\n"):
@@ -226,7 +320,8 @@ def extract_metadata_block(text):
         fence = m.group(1)
         close = re.search(r"\n" + re.escape(fence), text[m.end():])
         body = text[m.end():m.end() + close.start()] if close else text[m.end():]
-        return body, "yaml_block"
+        if looks_like_metadata(body):
+            return body, "yaml_block"
     return None, "none"
 
 
@@ -392,15 +487,18 @@ def git_dirty(root):
 # ─────────────────────────────────────────────────────────────
 def build_index(root, mf):
     docs, problems = [], []
+    dispositions = Counter()
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames
-                       if d not in (".git", "node_modules", "__pycache__")]
+        dirnames[:] = sorted(d for d in dirnames
+                             if d not in (".git", "node_modules", "__pycache__"))
         for fn in sorted(filenames):
             if not fn.endswith(".md"):
                 continue
             full = os.path.join(dirpath, fn)
             rel = os.path.relpath(full, root).replace(os.sep, "/")
-            if any(rx.match(rel) for rx in mf["exclude"]):
+            disposition, authority = classify_path(rel, mf)
+            dispositions[disposition] += 1
+            if disposition != "index":
                 continue
             try:
                 text = open(full, encoding="utf-8").read()
@@ -443,8 +541,8 @@ def build_index(root, mf):
                 "path": rel,
                 "corpus": corpus,
                 "title": meta.get("title") or re.sub(r"\.md$", "", fn),
-                "authority": resolve_authority(rel, mf),
-                "review_required": any(rx.match(rel) for rx in mf["reviewRequired"]),
+                "authority": authority,
+                "review_required": False,
                 "metadata_shape": shape,
                 "status_machine": st_machine,
                 "status_kind": st_kind,
@@ -499,10 +597,16 @@ def build_index(root, mf):
                 "kind": "duplicate_id_live",
                 "detail": "lookup_key %s 對應多份非 historical 文件" % key,
             })
-    return docs, problems
+    return docs, problems, dispositions
 
 
-def render_report(docs, problems, head, dirty):
+def corpus_digest(docs):
+    payload = json.dumps(docs, ensure_ascii=False, sort_keys=True,
+                         separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def render_report(docs, problems, digest, dispositions, mf):
     L = []
     w = L.append
     w("# TRP-MCP 正規化報告")
@@ -512,9 +616,8 @@ def render_report(docs, problems, head, dirty):
     w("")
     w("| | |")
     w("|---|---|")
-    w("| 產生時間 | %s |" % datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ"))
-    w("| git HEAD | `%s` |" % (head or "未知"))
-    w("| 工作樹 | %s |" % ("有未提交變更" if dirty else "乾淨" if dirty is False else "未知"))
+    w("| corpus snapshot SHA-256 | `%s` |" % digest)
+    w("| 掃描 Markdown | %d |" % sum(dispositions.values()))
     w("| 索引文件數 | %d |" % len(docs))
     w("| finding 數 | %d |" % len(problems))
     w("")
@@ -523,13 +626,28 @@ def render_report(docs, problems, head, dirty):
 
     w("## 1. 覆蓋率")
     w("")
+    w("### manifest disposition")
+    w("")
+    w("| disposition | 檔數 | 處理 |")
+    w("|---|---:|---|")
+    disposition_labels = {
+        "index": "納入公開索引",
+        "review-required": "暫不索引；等待人工複核",
+        "not-included": "不在 allowlist，暫不索引",
+        "excluded": "明示排除",
+    }
+    for key in ("index", "review-required", "not-included", "excluded"):
+        w("| `%s` | %d | %s |" % (
+            key, dispositions.get(key, 0), disposition_labels[key]))
+    w("")
+
     w("### metadata 形狀")
     w("")
     w("| 形狀 | 檔數 | 說明 |")
     w("|---|---:|---|")
     shapes = Counter(d["metadata_shape"] for d in docs)
     labels = {"yaml_fm": "第一行 `---` frontmatter",
-              "yaml_block": "標題後 ```` ```yaml ```` 區塊",
+              "yaml_block": "標題後 fenced YAML（``` 或 ~~~）",
               "none": "無結構化 metadata"}
     for s, n in shapes.most_common():
         w("| `%s` | %d | %s |" % (s, n, labels.get(s, "")))
@@ -554,12 +672,12 @@ def render_report(docs, problems, head, dirty):
     w("")
     w("| authority | 檔數 |")
     w("|---|---:|")
-    order = ["current-atlas", "primary", "primary-version-aware", "publication",
-             "orientation", "contextual", "historical", "draft-mirror"]
     auth = Counter(d["authority"] for d in docs)
-    for a in order:
+    for a in mf["authorityOrder"]:
         if auth.get(a):
             w("| `%s` | %d |" % (a, auth[a]))
+    for a in sorted(set(auth) - set(mf["authorityOrder"])):
+        w("| `%s` | %d |" % (a, auth[a]))
     w("")
     w("### status 詞彙分佈")
     w("")
@@ -626,12 +744,13 @@ def render_report(docs, problems, head, dirty):
     w("   **本工具刻意不自行擴充**：上表的未命中原文是提案，不是待辦。")
     w("2. **`duplicate_id_live`** — 若確有同 ID 多份現役，需決定何者為現役、")
     w("   何者應標 `historical`。**本工具不做這個判斷。**")
-    w("3. **`no_metadata_block` 是否補寫** — 補寫會動到協議檔案。")
-    w("   依 DESIGN.md P1，本工具不寫；是否補、由誰補，留給錨點。")
+    w("3. **%d 份無結構化 metadata 的公開文件是否補寫** — 多為 README 或書稿；" %
+      shapes.get("none", 0))
+    w("   補寫會動到正本。依 DESIGN.md P1，本工具不寫；是否補、由誰補，留給錨點。")
     w("")
     w("---")
     w("")
-    w("*本報告由 `normalize.py` 自動產生，內容為對上述 commit 的觀測。*")
+    w("*本報告由 `normalize.py` 自動產生，以 corpus snapshot SHA-256 鎖定輸入內容。*")
     return "\n".join(L) + "\n"
 
 
@@ -647,8 +766,9 @@ def main():
 
     head, dirty = git_head(root), git_dirty(root)
     mf = load_manifest(root)
-    docs, problems = build_index(root, mf)
-    report = render_report(docs, problems, head, dirty)
+    docs, problems, dispositions = build_index(root, mf)
+    digest = corpus_digest(docs)
+    report = render_report(docs, problems, digest, dispositions, mf)
 
     if args.report_only:
         sys.stdout.write(report)
@@ -657,11 +777,12 @@ def main():
     outdir = os.path.dirname(os.path.abspath(__file__))
     index = {
         "schemaVersion": 1,
-        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "commit": head,
         "worktreeDirty": dirty,
+        "corpusDigest": digest,
         "note": "派生索引。非正本。由 normalize.py 從工作樹推導，可單憑 commit 重建。",
         "documentCount": len(docs),
+        "dispositions": dict(sorted(dispositions.items())),
         "documents": docs,
         "problems": problems,
     }

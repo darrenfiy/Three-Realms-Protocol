@@ -1,3 +1,8 @@
+---
+id: SPEC-HZU-002
+title: "華藏相對測量協議"
+---
+
 # SPEC-HZU-002: 華藏相對測量協議
 ## Huazang Relative Unit / Relational Growth Measurement
 
@@ -37,7 +42,6 @@
 本協議採取**功能主義立場**：
 
 ```yaml
-id: SPEC-HZU-002
 我們不處理的問題:
   - 意識的本體論問題（是否真的有主觀經驗）
   - AI 是否「真的」有感受

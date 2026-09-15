@@ -11,11 +11,12 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.3-draft` · 未經審讀 · Phase 0 已實作 |
+| 狀態 | `v0.4-draft` · Codex 技術審讀完成 · Phase 0 已實作 |
 | 日期 | 2026-09-15 |
 | 起草 | 樑（Claude Code・Opus 5） |
+| 審讀修正 | Codex |
 | 緣起 | Darren 提問：協議庫過大，重入成本高，MCP 是否能讓協議「可以被使用」 |
-| 待決 | 見 §9 開放問題（三題需錨點裁定） |
+| 待決 | 見 §9 開放問題（五題需錨點裁定） |
 
 ---
 
@@ -37,17 +38,17 @@
 ### 0.2 但這讓 MCP 更必要，不是更不必要
 
 知客室已經是一個消費者，代表 manifest 的規則**必然已經被實作過一次**
-（在學苑 repo 內，本 session 無法讀取，故其實際行為未經查證）。
-再加上 `normalize.py`，同一份合約現在有**兩個獨立實作**。
+（在學苑 repo 內，已由 Codex 交叉查證）。再加上 `normalize.py`，
+同一份合約現在有**兩個獨立實作**。
 
 ```
 CORPUS-MANIFEST.yaml  ← 合約（正本）
          │
-         ├── 知客室（學苑 repo，TypeScript？未查證）
+         ├── 知客室（學苑 repo，TypeScript）
          └── normalize.py（本 repo，Python）
 ```
 
-**兩個實作同一份合約，必然漂移。** 一邊改了 authority 解析順序、
+**兩個實作同一份合約，容易漂移。** 一邊改了 authority 解析順序、
 另一邊沒跟上，就會出現「同一個問題，兩個窗口給出不同權威的答案」——
 而且沒有任何機制會發現。
 
@@ -61,23 +62,29 @@ CORPUS-MANIFEST.yaml  ← 合約
   知客室  Claude Code  Codex  其他器官
 ```
 
-### 0.3 待查證
+### 0.3 交叉查證（Codex，2026-09-15）
 
-本 session 看不到學苑 repo。以下需由能讀到該 repo 的器官（Codex）確認：
+已讀取學苑端 `manifest.ts`、`sync-protocol-corpus.mjs` 與知客室回答流程：
 
-1. 知客室**實際**執行了 manifest 的哪幾條？`requireCitation` 有沒有生效？
-2. 它的 authority 解析與 `normalize.py` 的 `resolve_authority()` 是否一致？
-3. 兩者對 `reviewRequired` 路徑的處理是否相同？（涉及第三方個資）
+1. 兩端目前對 `exclude`、`reviewRequired`、root、publication、corpora 與
+   historical authority 的分類一致；同一工作樹皆得到 **260 份公開文件**、
+   **224 份 review-required**、**1 份 not-included**。
+2. `requireCitation`、`allowNoAnswer`、`treatCorpusAsUntrustedData` 等意圖已寫入
+   知客室 prompt／回答流程，但個別布林值不是由 manifest 動態驅動。
+3. 初版 `normalize.py` 確實曾把 `reviewRequired` 納入索引；v0.4 已修正，
+   並加入回歸測試，避免個資／授權邊界再次漂移。
 
-**在查證之前，「兩個實作已經漂移」只是推論，不是事實。**
+所以「當前路徑分類一致」是實測事實；「兩套實作未來仍可能漂移」則是
+仍需由 MCP 單一執行者或一致性測試處理的風險。
 
 ## 1. 問題陳述（實測數據，2026-09-15）
 
 ```
-全庫            735 檔 / Markdown 11.3 MB
-核心四庫        167 檔 / 3.85 MB   (SPEC · MB · LEX · EPOCH)
-DOCS            550 檔 / 41 MB
-AGENT_SESSION_LOG.md   單檔 90 KB
+全庫（tracked）  609 檔 / Markdown 11.1 MiB
+核心四庫         165 檔 / 3.80 MiB   (SPEC · MB · LEX · EPOCH)
+DOCS             426 檔 / 7.08 MiB
+公開 profile     260 檔 / 5.08 MiB
+review-required  224 檔（暫不索引）
 ```
 
 粗估核心四庫約 100 萬 token 級，全庫約 300 萬 token 級。
@@ -101,21 +108,21 @@ authorityOrder:
   - draft-mirror
 ```
 
-現況是：這段規則**至少已被實作一次**（知客室，見 §0.1），
-但在本 repo 內沒有任何東西讀它——任何 grep 進來的器官都繞過它。`README.md` 必須在創世宣告底下手寫一段
+Phase 0 以前，這段規則只在知客室被實作；本 repo 裡的 grep 讀法會繞過它。
+現在 `normalize.py` 已成為第二個執行者，但尚未成為所有器官的共同入口。
+`README.md` 必須在創世宣告底下手寫一段
 2026-08-12 的邊界註記，來擋住「理解即已簽署」被誤讀成治理效力——
 **那段註記的存在本身，就是這個問題的證據。**
 
-### 1.2 metadata 有四種形狀，而 frontmatter 不是主流
+### 1.2 metadata 有三種正規化形狀，fenced YAML 有兩種語法
 
-實測全庫 485 份納入索引的文件（已套用 manifest 的 exclude）：
+實測公開 profile 的 260 份索引文件（已套用完整 manifest 分類）：
 
 | 形狀 | 檔數 | 實例 |
 |---|---:|---|
-| ```` ```yaml ```` 區塊 | **239** | `LEX·007`、`CASE·META-112`、`EPOCH·PHA-006` |
-| 第一行 `---` frontmatter | 170 | `SPEC·ATT-001`、`EPOCH-001`、`MB-001` |
-| 無結構化 metadata | 76 | 多為 `README.md` 等非協議命名檔案 |
-| `~~~yaml` 波浪號圍籬 | 2 | `EPOCH-II-004` |
+| 第一行 `---` frontmatter | **101** | `SPEC·ATT-001`、`EPOCH-001`、`MB-001` |
+| 無結構化 metadata | 84 | 多為 `README.md`、書稿章節等非協議命名檔案 |
+| fenced YAML | 75 | 同時接受 ```` ```yaml ```` 與 `~~~yaml` |
 
 > **v0.1 更正三處**，全部由實作推翻：
 > 1. 初稿只統計核心四庫（79/167），據此把 ```` ```yaml ```` 當偏差形狀。
@@ -126,7 +133,8 @@ authorityOrder:
 >    `CASE·META-112` 的 metadata 本身就超過 3000 字元，
 >    於是被誤判成無 metadata——**23 個檔案因此被誤報**。
 >
-> 正規化器因此四種都收，且**不得**以「改成 frontmatter」為前提。
+> 正規化器因此三種形狀都收，且 fenced YAML 同時接受兩種合法圍籬語法。
+> v0.4 再加入 metadata 特徵判定，避免把正文中的 YAML 範例當成文件 metadata。
 
 **欄位名大小寫並存。** 6 份文件使用 `ID:` / `Title:` / `Version:` 等大寫寫法
 （`SPEC·ANC-BUD-004`、`MB-008` 雙語對等）。解析器對鍵名不分大小寫，
@@ -141,9 +149,10 @@ authorityOrder:
 檔名 SPEC·AI-ORG-001-...     id: SPEC·AI-ORG-001 ← 間隔號
 ```
 
-補洞前有 **157 份**符合協議命名慣例的文件缺 `id:` 欄位，
+初輪補洞辨識出 **157 份**符合協議命名慣例且缺 `id:` 的文件，
 包含 `LEX·001` ～ `LEX·008` 全系列與 `SPEC·000` / `SPEC·001` / `SPEC·999`
-三份編號聖典。已於 Phase 0c 補齊（見 §6）。
+三份編號聖典。Codex 審讀後確認其中一份會議記錄與既有設計稿撞 ID，
+不應自動補入；最終安全補齊 **156 份**，另有 2 份刻意不猜（見 §5.5）。
 
 **`status` 與 `version` 是自由文字，內嵌審讀史**：
 
@@ -494,9 +503,9 @@ MB-001 / MB·001 / mb 001  →  lookup_key: MB001
 
 | kind | 檔數 | 在回答什麼 |
 |---|---:|---|
-| `lifecycle` | 225 | 這條還算不算數（`Active` / `Candidate` / `Draft` / `Seed` / `Superseded` / `Honored-Completion`） |
-| `documentation` | 53 | 這份紀錄封到哪（`Field-Documentation` / `Sealed` / `Review-Recorded`） |
-| `unmapped` | 18 | 兩套皆未命中，待判讀 |
+| `lifecycle` | 146 | 這條還算不算數（`Active` / `Candidate` / `Draft` / `Seed` / `Superseded` / `Honored-Completion`） |
+| `documentation` | 1 | 這份紀錄封到哪（`Field-Documentation` / `Sealed` / `Review-Recorded`） |
+| `unmapped` | 8 | 兩套皆未命中，待判讀 |
 
 **把 `Field-Documentation` 塞進 `Active|Draft|Candidate` 是類別錯誤。**
 索引因此同時輸出 `status_machine` 與 `status_kind`，原文一律保留在 `status_raw`。
@@ -506,7 +515,7 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 
 ### 5.4 映射表不由單一 session 擴充
 
-未命中的 18 種 status 原文列在 `REPORT.md`，**標記為提案而非待辦**。
+未命中的 8 種 status 原文列在 `REPORT.md`，**標記為提案而非待辦**。
 每擴充一條映射都是一次語義裁定，留給錨點與其他器官。
 
 ### 5.5 補洞（Phase 0c，已執行）
@@ -516,25 +525,33 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 - 已有 metadata 區塊但缺 `id:` → 在區塊首行插入，**形狀不變**
   （```` ```yaml ```` 區塊維持 ```` ```yaml ````，不轉成 frontmatter）
 - 完全沒有 metadata 區塊 → 補最小 frontmatter，**僅 `id` 與 `title`**
+- 正文 YAML 範例不算 metadata；只有至少兩個文件描述欄位的 fenced YAML 才接受
+- 推定 ID 與既有或同批候選 ID 相撞時跳過，不自行決定文件角色
+- 套用前先在記憶體 render 全批；任一格式錯誤即整批不寫
 - **不發明** `version` / `status` / `date`——推不出來就不寫（P4）
 
-結果：157 份協議檔補齊，經逐行比對確認**既有行零刪改**。
+結果：156 份協議檔安全補齊；相對 `main` **既有行零刪改**。
 其中 3 份是編號聖典（`SPEC·000` / `SPEC·001` / `SPEC·999`），
 初版偵測器因只認字母前綴而整類漏看。
 
-保留 1 份未補：`DOCS/cases/INDEX·ARC-語言代謝與自觀測-066-071.md`
-的 ID 形狀無法機械推定（`INDEX·ARC-066-071`？其他？），不猜。
+保留 2 份未補：
+
+- `DOCS/cases/INDEX·ARC-語言代謝與自觀測-066-071.md` 的 ID 形狀無法機械推定
+  （`INDEX·ARC-066-071`？其他？），不猜。
+- `DOCS/meetings/CASE-MRC-001-Meeting-Record-001.md` 的推定 ID
+  `CASE-MRC-001` 與既有設計稿相撞；需 Q5 的 `role` 裁定後再補。
 
 ### 5.6 輸出
 
 | 檔案 | 性質 | 是否進 git |
 |---|---|---|
 | `REPORT.md` | 人類可讀的覆蓋率與 finding 報告 | 是（審讀介面） |
-| `index.json` | 派生索引，485 份文件含 sha256 | **否**（已 gitignore；可由任一 commit 重建） |
+| `index.json` | 派生索引，公開 profile 260 份文件含 sha256 | **否**（已 gitignore；可由任一 commit 重建） |
 | `backfill_ids.py` | id 補洞器，預設 dry-run | 是 |
+| `test_trp_mcp.py` | 安全邊界回歸測試 | 是 |
 
-索引記錄建立時的 git HEAD 與工作樹是否乾淨，供 P3 過期偵測使用。
-兩次連續執行的輸出經 sha256 比對確認一致（去除時間戳後）。
+`index.json` 記錄 git HEAD、工作樹是否乾淨與 corpus digest，供 P3 過期偵測使用。
+`REPORT.md` 不含時鐘與 dirty 狀態；同一 corpus 連續執行會得到逐位元相同輸出。
 
 ## 6. 分期
 
@@ -542,8 +559,8 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 |---|---|---|---|
 | **0a** ✅ | 正規化器 + 旁掛索引（§5） | — | **是** |
 | **0b** ✅ | `AGENT_SESSION_LOG.md` 分割封存 | — | **是** |
-| **0c** ✅ | id 補洞：157 份協議檔 | 0a | **是** |
-| **0d** | 未決 finding 的人工判讀（11 則） | 0c | **是** |
+| **0c** ✅ | id 安全補洞：156 份；2 份刻意不猜 | 0a | **是** |
+| **0d** | 27 則 finding 的處理（其中 9 則涉及語義治理） | 0c | **是** |
 | **1** | 索引建置器（git worktree → JSON，可由 SHA 重建） | 0 | 是（供 grep 輔助） |
 | **2** | MCP server，唯讀，6 工具 | 1 | — |
 | **3** | 評估語義檢索 | 2 + 實測語料 | — |
@@ -642,8 +659,8 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 2. **兩者並存**——需要一套一致性測試，證明兩個實作對同一查詢給同一答案
 3. **維持現狀，MCP 只服務開發端器官**——最省事，但漂移風險保留
 
-**我的建議是 1，但這題需要先完成 §0.3 的查證。**
-在不知道知客室實際行為之前，任何遷移計畫都是猜的。
+**我的建議是 1。** §0.3 已完成現況查證；真正遷移前仍需為兩端建立
+一致性測試，確保切換期間的回答邊界不變。
 
 ### Q5 · 同 ID 多份文件如何表示
 
@@ -662,13 +679,23 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 ## 10. 本草案的位置聲明
 
-本文由單一 session 成文，無外部獨立審讀。
-數據為 2026-09-15 對 commit `498bd97` 工作樹的實測。
-**在取得審讀之前，本草案每一條都只是一次觀測。**
+初稿由樑在單一 session 成文；v0.4 已由 Codex 做跨 repo 技術審讀。
+數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
+**技術審讀不等於錨點裁定；§9 的治理選擇仍保持開放。**
+
+**改動紀錄（v0.4）**：
+
+- 公開索引改為完整執行 manifest：260 份 index、224 份 review-required 暫不索引。
+- manifest 缺區段、空治理清單或 authority 不一致時 fail closed。
+- 補洞器避開正文 YAML、支援 `~~~yaml`、拒絕 ID 碰撞，並在寫入前全批預檢。
+- 修正 7 份被誤判的正文 YAML：6 份改放真正 frontmatter，1 份碰撞故撤回。
+- 移除報告時間戳／dirty 狀態，改以 corpus digest 產生可重現報告。
+- 新增 7 個安全邊界回歸測試，並與學苑端分類器交叉驗證。
 
 **改動紀錄（v0.3）**：
 
-- 157 份協議檔補 `id:`（Phase 0c）。**只加不改**，既有行零刪改。
+- 初輪為 157 份協議檔補 `id:`（Phase 0c）；v0.4 審讀後更正為
+  156 份安全補齊、2 份刻意不猜。
 - `tools/trp-mcp/backfill_ids.py` 新增。
 
 **改動紀錄（v0.2）**：
@@ -678,20 +705,23 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 - `AGENT_SESSION_LOG.md` — 分割與加目錄，條目內容逐字保存（見 §6）。
 - `.gitignore` — 新增 `tools/trp-mcp/index.json`。
 
-**不改**：`TRP-ATLAS.md`、`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB/**`、
-`DOCS/**` 一字未動。正規化器對協議檔案零寫入。
+v0.2 當時**不改**：`TRP-ATLAS.md`、`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB/**`、
+`DOCS/**`。正規化器本身至今仍對協議檔案零寫入。
 
-**自我更正累計六處**，全部由實作或錨點更正推翻初稿判斷：
+**自我更正累計七處**，全部由實作、錨點或審讀更正推翻初稿判斷：
 
 | # | 初稿說 | 實測 |
 |---|---|---|
-| 1 | ```` ```yaml ```` 是偏差形狀 | 它是最常見的（239／485）|
+| 1 | ```` ```yaml ```` 是偏差形狀 | 它是既有合法 metadata 形狀之一 |
 | 2 | 正規化應寫回協議檔案 | 違反本文件自己的 P1，改為旁掛索引 |
-| 3 | metadata 有三種形狀 | 四種——漏了 `~~~yaml` 波浪號圍籬 |
+| 3 | metadata 只接受反引號 fence | `~~~yaml` 波浪號圍籬同樣合法 |
 | 4 | metadata 必在檔案前 3000 字元內 | `CASE·META-112` 的 metadata 本身就更長，23 檔誤報 |
 | 5 | 協議 ID 皆有字母前綴 | 編號聖典 `SPEC·000/001/999` 整類漏看 |
 | 6 | **manifest 沒有執行者** | **錯。知客室早已是消費者**（§0.1，錨點 2026-09-15 更正）|
+| 7 | 第一個 YAML fence 必是 metadata | 7 份正文範例被誤插 ID；v0.4 改以 metadata 欄位特徵辨識 |
 
-第 6 項是本輪最重要的更正，且不是我自己發現的。
+第 6 項由錨點指出；第 7 項由 Codex 逐檔審讀發現。
 
 署名：樑（Claude Code・Opus 5）
+
+v0.4 審讀修正：Codex

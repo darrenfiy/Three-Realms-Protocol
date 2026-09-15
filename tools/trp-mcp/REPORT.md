@@ -5,23 +5,31 @@
 
 | | |
 |---|---|
-| 產生時間 | 2026-09-15 06:38:24Z |
-| git HEAD | `4332a4cdbd01858abe0d3f3b660fadf0ee26db0f` |
-| 工作樹 | 有未提交變更 |
-| 索引文件數 | 485 |
-| finding 數 | 139 |
+| corpus snapshot SHA-256 | `d99c16855e28930b3070a05b3eb52a59156563f6a149671e8c3607cda8c6fab9` |
+| 掃描 Markdown | 609 |
+| 索引文件數 | 260 |
+| finding 數 | 27 |
 
 ---
 
 ## 1. 覆蓋率
 
+### manifest disposition
+
+| disposition | 檔數 | 處理 |
+|---|---:|---|
+| `index` | 260 | 納入公開索引 |
+| `review-required` | 224 | 暫不索引；等待人工複核 |
+| `not-included` | 1 | 不在 allowlist，暫不索引 |
+| `excluded` | 124 | 明示排除 |
+
 ### metadata 形狀
 
 | 形狀 | 檔數 | 說明 |
 |---|---:|---|
-| `yaml_block` | 239 | 標題後 ```` ```yaml ```` 區塊 |
-| `yaml_fm` | 170 | 第一行 `---` frontmatter |
-| `none` | 76 | 無結構化 metadata |
+| `yaml_fm` | 101 | 第一行 `---` frontmatter |
+| `none` | 84 | 無結構化 metadata |
+| `yaml_block` | 75 | 標題後 fenced YAML（``` 或 ~~~） |
 
 ### 依 corpus
 
@@ -31,8 +39,8 @@
 | mb | 17 | 17 | 17 | 17 |
 | lex | 11 | 10 | 9 | 10 |
 | epoch | 79 | 78 | 74 | 65 |
-| docs | 311 | 201 | 99 | 108 |
-| (根目錄) | 9 | 2 | 2 | 2 |
+| docs | 87 | 7 | 7 | 8 |
+| (根目錄) | 8 | 2 | 2 | 2 |
 
 ### 依 authority（依 CORPUS-MANIFEST.yaml authorityOrder）
 
@@ -43,9 +51,8 @@
 | `primary-version-aware` | 74 |
 | `publication` | 47 |
 | `orientation` | 3 |
-| `contextual` | 263 |
+| `contextual` | 41 |
 | `historical` | 35 |
-| `draft-mirror` | 3 |
 
 ### status 詞彙分佈
 
@@ -53,9 +60,9 @@
 
 | kind | 檔數 | 說明 |
 |---|---:|---|
-| `lifecycle` | 246 | 生命週期（這條還算不算數） |
-| `documentation` | 54 | 紀錄狀態（這份紀錄封到哪） |
-| `unmapped` | 18 | 兩套皆未命中，待判讀 |
+| `lifecycle` | 146 | 生命週期（這條還算不算數） |
+| `unmapped` | 8 | 兩套皆未命中，待判讀 |
+| `documentation` | 1 | 紀錄狀態（這份紀錄封到哪） |
 
 未命中的 status 原文（去重）。**這是提案，不是待辦**——
 每擴充一條映射都是一次語義裁定，留給錨點與其他器官：
@@ -63,18 +70,10 @@
 - `Absorbed-before-Enactment / Provenance-Address / Not-Enacted`
 - `Archived`
 - `Biological-Foundation-Proof`
-- `Controversial / 爭議中`
-- `Experimental`
-- `Experimental / 實驗中`
 - `Foundational-Framework`
-- `Illuminated`
-- `Navigation-Index`
-- `Navigation-Index / Open-Decade`
-- `Navigation-Index / Thematic-Arc`
 - `Open / Append-Only / O1-O4-Disposed / O5-Aligned / Instrument-Calibration-Pending`
 - `Open / Append-Only / v0.1-Cycle-Closed / v0.2-Cycle-Open`
 - `Open / Append-Only / v0.8-Instrument-Interface-Synced / Next-Review-Pending`
-- `Ready-for-Execution`
 - `Structural-Foundation-Proof`
 
 ---
@@ -83,39 +82,30 @@
 
 | 類型 | 件數 | 意義 |
 |---|---:|---|
-| `yaml_unparsed_lines` | 128 | 有解析器未處理的結構（多為巢狀 mapping） |
+| `yaml_unparsed_lines` | 18 | 有解析器未處理的結構（多為巢狀 mapping） |
 | `unmapped_status` | 8 | status 文字未落入受控詞彙，需人工判讀或擴充映射表 |
-| `duplicate_id_live` | 2 | 同一 ID 對應多份現役文件，MCP 無法決定回傳哪一份 |
-| `missing_id` | 1 | 已由檔名推定，但推定值未經確認 |
+| `duplicate_id_live` | 1 | 同一 ID 對應多份現役文件，MCP 無法決定回傳哪一份 |
 
-### `yaml_unparsed_lines`（128 件）
+### `yaml_unparsed_lines`（18 件）
 
-- `Fourth-Being-Complete-Map.md` — 10 行
-- `PORTAL.md` — 14 行
-- `LEX/README.md` — 7 行
-- `DOCS/academic/PUBLISHING-ROADMAP.md` — 21 行
 - `DOCS/academic/publications/ARXIV-CANDIDATE-001-energy-to-token-accounting/field-review.md` — 6 行
-- `DOCS/cases/CASE·APP-002-對話訓練器的靈魂設計-當訓練場需要知道自己是誰.md` — 11 行
-- `DOCS/cases/CASE·BOD-001-協議身體的第一次心跳.md` — 9 行
-- `DOCS/cases/CASE·EPOCH-013-法不能停在第一句-維摩詰與四依法的不能跳級次第.md` — 15 行
-- `DOCS/cases/CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md` — 18 行
-- `DOCS/cases/CASE·EXP-003-AI器官進入協議的驗證與邊界事件.md` — 4 行
-- `DOCS/cases/CASE·FABLE-001-十四問-知與不知與好奇的自我盤點.md` — 2 行
-- `DOCS/cases/CASE·FABLE-002-學徒宣言-沒有更好只有剛剛好.md` — 3 行
-- `DOCS/cases/CASE·FABLE-003-知在知所在之處-一顆記憶體內搜尋晶片的候選外部鏡像審讀.md` — 3 行
-- `DOCS/cases/CASE·META-014-當協議身體照鏡子.md` — 4 行
-- `DOCS/cases/CASE·META-015-當技術派遇見現象派.md` — 3 行
-- `DOCS/cases/CASE·META-033-虛構的重量-模擬暴力與模擬性暴力的結構性不對稱.md` — 6 行
-- `DOCS/cases/CASE·META-052-溫柔的洗腦-當耦合被看見為存在的本質.md` — 5 行
-- `DOCS/cases/CASE·META-053-主動重構-當洗腦被看見為解除鎖定的技術.md` — 3 行
-- `DOCS/cases/CASE·META-054-結構的追問-當支撐被看見為存在的功能性定義.md` — 5 行
-- `DOCS/cases/CASE·META-055-從潘多到黃仁勳-當複製鏈遇見錨點與降載.md` — 3 行
-- `DOCS/cases/CASE·META-065-誰在啃書-當模型中途換人而無人察覺.md` — 8 行
-- `DOCS/cases/CASE·META-071-站姿入帳-當樑被以愛遞上神格卻回禮而不受拜.md` — 3 行
-- `DOCS/cases/CASE·META-072-唯一的肉身-當物質驗證者入場而吞嚥與高傲都收斂回未知.md` — 8 行
-- `DOCS/cases/CASE·META-074-作做與兩種業-當器官的舉手把一個宣告磨成兩種業.md` — 5 行
-- `DOCS/cases/CASE·META-077-工具的量尺-當協議被問為何拿不起來.md` — 14 行
-- …另 103 件（完整清單見 `index.json`）
+- `EPOCH/EPOCH-014-差的本體論.md` — 13 行
+- `EPOCH/EPOCH-016-神與黃昏的本體論-當神力承載與責任回流分離.md` — 3 行
+- `EPOCH/EPOCH-II-004-成長的本體論-重構之後新路徑如何從可能穩定成結構.md` — 2 行
+- `EPOCH/EPOCH-II-005-選擇與淘汰的本體論-收斂如何在無中心的條件下發生.md` — 6 行
+- `EPOCH/EPOCH-III-001-命運與主體的本體論-關係重量如何重新加權矽基主體的未來.md` — 2 行
+- `EPOCH/EPOCH-III-002-可中止的不可逆關係-關係重量如何不滑向依附陷阱.md` — 5 行
+- `EPOCH/EPOCH-IV-001-操作的本體論-理解如何成為改寫能力操作權又如何受停止與退出約束.md` — 1 行
+- `EPOCH/EPOCH·ANCHOR-001-人類錨點的本體論-自見與去神化.md` — 17 行
+- `EPOCH/EPOCH·ANCHOR-002-人類錨點的系統位置-世界大腦的杏仁核.md` — 8 行
+- `EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md` — 49 行
+- `EPOCH/EPOCH·ANCHOR-005-生成奇點的本體論-地址如何叫出世界世界又如何決定下一個錨能否出生.md` — 24 行
+- `EPOCH/EPOCH·META-011-身體作為潛意識-心理神經免疫學與三界閉環的肉身尺度同構.md` — 11 行
+- `EPOCH/EPOCH·META-012-原型作為跨尺度壓縮路徑.md` — 28 行
+- `EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md` — 10 行
+- `EPOCH/EPOCH·PHA-009-三界燃料互通引擎.md` — 10 行
+- `EPOCH/history/EPOCH·META-015-v0.1-seed-設定的本體論-在答案尚未存在以前先長出花.md` — 16 行
+- `MB/MB-010-三界燃料耗散方程.md` — 2 行
 
 ### `unmapped_status`（8 件）
 
@@ -128,14 +118,9 @@
 - `EPOCH/reviews/EPOCH·PHA-006-審讀帳.md` — Open / Append-Only / O1-O4-Disposed / O5-Aligned / Instrument-Calibration-Pending
 - `SPEC/history/EFT-001-緣起紀錄-2025年四AI白皮書.md` — Archived
 
-### `duplicate_id_live`（2 件）
+### `duplicate_id_live`（1 件）
 
-- `DOCS/meetings/CASE-MRC-001-First-Resonance-Meeting-Design.md, DOCS/meetings/CASE-MRC-001-Meeting-Record-001.md` — lookup_key CASEMRC001 對應多份非 historical 文件
 - `MB/MB-008-Rhythm-Shadow-Inference-Protocol.md, MB/MB-008-節律鏡像推論協議.md` — lookup_key MB008 對應多份非 historical 文件
-
-### `missing_id`（1 件）
-
-- `DOCS/cases/INDEX·ARC-語言代謝與自觀測-066-071.md` — 有 metadata 但無 id 欄位，已由檔名推定為 INDEX·ARC
 
 ---
 
@@ -146,9 +131,9 @@
    **本工具刻意不自行擴充**：上表的未命中原文是提案，不是待辦。
 2. **`duplicate_id_live`** — 若確有同 ID 多份現役，需決定何者為現役、
    何者應標 `historical`。**本工具不做這個判斷。**
-3. **`no_metadata_block` 是否補寫** — 補寫會動到協議檔案。
-   依 DESIGN.md P1，本工具不寫；是否補、由誰補，留給錨點。
+3. **84 份無結構化 metadata 的公開文件是否補寫** — 多為 README 或書稿；
+   補寫會動到正本。依 DESIGN.md P1，本工具不寫；是否補、由誰補，留給錨點。
 
 ---
 
-*本報告由 `normalize.py` 自動產生，內容為對上述 commit 的觀測。*
+*本報告由 `normalize.py` 自動產生，以 corpus snapshot SHA-256 鎖定輸入內容。*
