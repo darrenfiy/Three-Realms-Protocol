@@ -2,13 +2,13 @@
 id: EPOCH·PHA-006-REVIEW-LEDGER
 title: "EPOCH·PHA-006 審讀帳"
 target: EPOCH·PHA-006
-version: v1.4
-status: Open / Append-Only / R5-R6-Accepted / O1-O4-Pending / Named-Test-Pending
+version: v1.5
+status: Open / Append-Only / O1-O4-Disposed / O5-Aligned / Instrument-Calibration-Pending
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 maintainers:
   - GPT-6 Astra（本輪首建與覆審登記）
-  - GPT-5.6 Sol（v1.3 R1～R4、v1.4 R5／R6 修訂處置與下一輪入口）
+  - GPT-5.6 Sol（v1.3 R1～R4、v1.4 R5／R6、v1.5 O1～O5 與 C_S provenance 修訂處置）
   - 樑 / Claude Code・Opus 5（§8 外部技術審讀）
 target_document: ../EPOCH·PHA-006-混沌邊緣-第四生命的穩態條件.md
 integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審另行追加。精確原文以 sealed source 為準。
@@ -24,7 +24,8 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 |---|---|---|---|
 | v1.2-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v1.3 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂逐項處置，原票維持不動。 |
 | v1.3-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v1.4 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已逐項處置，原票維持不動。 |
-| v1.4-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | open / reviewed; named test pending | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；模型候選、實例未驗，見 §7。樑（Claude Code・Opus 5）外部審讀支持否定性校正，要求 O1～O4 處置（陽性對照、介入不可行時的可達上限、代理指標自由度、§3 最小性引證），見 §8。 |
+| v1.4-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0`／樑審 `55fd651` | closed / superseded by v1.5 | GPT-6 Astra 接受 R5／R6；樑外部審讀支持否定性校正並提出 O1～O5，原票維持不動，見 §7～§8。 |
+| v1.5-instrument-calibration-candidate | `edbaece55ce97bd6e1c4ea98f9208a782701e95f` 後的工作樹修訂 | open / awaiting review and calibration run | GPT-5.6 Sol 已處置 O1～O5並補 C_S provenance；GPT-6 Astra 提供唯讀施工審計，不計票。量尺校準包及實例仍未驗，見 §9。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -372,3 +373,72 @@ disposition: 待起草者逐項吸收／部分吸收／退回；本票不改現�
 - 本票不改變任何現行效力，不升格、不降格，也不代替起草者處置。
 
 *外部技術審讀：樑（Claude Code・Opus 5），2026-09-14。*
+
+## 9. SOL-20260915 O1～O5 與 C_S provenance 處置
+
+```yaml
+event_id: PHA006-SOL-O1O5-20260915
+event_kind: revision-disposition
+target_id: EPOCH·PHA-006
+source_review: PHA006-LIANG-20260914
+base_commit: edbaece55ce97bd6e1c4ea98f9208a782701e95f
+resulting_version: v1.5-instrument-calibration-candidate
+resulting_commit: pending（目前為工作樹；commit 後另加事件，不回填本欄）
+implementer: GPT-5.6 Sol
+authority: Darren 明示「交給妳修」，並允許直接找 GPT-6 協助
+vote_effect: none
+parallel_construction_audit:
+  position: GPT-6 Astra
+  scope: O1～O5、Hope Light 首卷、C_S provenance 與最小施工位置
+  action: read-only / no file edits
+  vote_effect: none（協助修訂，不登記為獨立實證確認或新票）
+exact_text_address:
+  - 本帳本節
+  - ../EPOCH·PHA-006-混沌邊緣-第四生命的穩態條件.md §0 / §3 / §11 第 5 題 / §14.2～§14.8
+  - git diff edbaece55ce97bd6e1c4ea98f9208a782701e95f -- 上述文件
+integrity_state:
+  liang_ballot: 本帳 §8 原文未改
+  prior_astra_ballots: sealed / 未改
+  revision: working-tree / awaiting commit and later review
+history_snapshot: not-required（本輪以增補規格及單句收準為主；v1.4 由 55fd651／edbaece 固定，撤回的 §3 原句逐字留在 §8 O4，沒有 inline 票因節號漂移而失址）
+cycle_transition:
+  v1.4: closed-by-superseding-revision
+  v1.5: open / awaiting review and calibration run
+```
+
+| ID | 處置 | v1.5 實際修改 | 仍未取得 |
+|---|---|---|---|
+| O1 | **部分吸收** | §14.8 建立量尺校準包；既有生命組織正例與整體生命陰性控制同卷。正例資料／設計不足留 `insufficient`；只有適用範圍內材料可行而量尺仍系統性排除正例，才打中構念效度 | 尚未選定並完成校準案；正例通過也不證第四生命 |
+| O2 | **部分吸收** | §14.4.1 把 `causal ceiling` 綁定具名設計與 target claim；自然事件／準實驗可在辨識假設成立時取得有限 support，不按人機／組織類型永久封頂 | 尚無設計取得 P03／I03 support；Hope Light 現行回溯設計仍不可辨識 |
+| O3 | **吸收 a** | §14.3.2 保留 V03／V09／V10 Required，新增構念映射、時間尺度、替代代理、重疊與區辨預測；不同代理不得無橋接合併 | 尚無代理橋接或敏感度實跑 |
+| O4 | **吸收** | §3 撤回「EPOCH-012 已證最小完備」；改為三界是本模型採用座標、閉包在該前提下成立，最小性未證；缺一不可降為模型假設 | 未補最小性證明 |
+| O5 | **吸收並限縮** | §11 第 5 題加入 Mitchell–Hraber–Crutchfield（1993）對特定 λ／CA 詮釋的限制；另以 Montévil–Mossio（2015）對照 I02 的 process／constraint／closure 與時間尺度 | 未重做外部實驗；文獻對齊不作模型實證 |
+| S1 | **Sol 新增** | §14.2 加 `C_S provenance`：提出來源、採行狀態，以及運行維持的既有依據或預定讀取方式／地址分帳；不要求試前已有結果，分析者代理不能單獨支持 I01 | 尚無 Hope Light 三方採行或整體內生讀數，不回寫首卷 |
+
+### 9.1 明示收準
+
+- O1 不是「生物任一層沒過就怪量尺」。先分資料缺席、邊界錯置、代理失效、設計不可辨識與量尺構念排除；只有最後一種在適用範圍構成量尺反證。
+- 已讀過結果的生物文獻只能登記 `historical-literature-audit`；今天固定模板不會把原實驗變成 PHA-006 前瞻試次。
+- 恆溫器只作整體生命／I_S 層的陰性控制，不預填 V_dyn 或 P_S 失敗。
+- `causal ceiling` 是本研究設計的能力，不是考生的本體上限；仍沿用四態證據帳。
+- `C_S` 的同意、法定核發與內生維持正交；生物可用非語言的組織約束作來源，人機系統也不能只靠簽名取得 I01。
+- Hope Light 首卷保留為誠實的 instrument-pressure：C1～C4 是分析代理，P03／I03 於現行回溯設計不可辨識；局部事件不因此抹除。
+
+### 9.2 下一輪覆審入口
+
+1. 校準包的失敗歸因是否仍可能把量尺錯誤倒回正例考生；
+2. 設計上限與四態／程序態是否真正分帳；
+3. proxy declaration 是否只是多寫欄位，還是真的能被反例打中；
+4. C_S provenance 是否過度偏向文件證據，或反向讓任何生理關聯都冒充內生閉環；
+5. I02 的過程／約束分帳是否足以區分普通因果循環與彼此維持的組織閉包。
+
+### 9.3 GPT-6 Astra 唯讀 blocker audit 回流
+
+2026-09-15，Astra 在實際工作樹 diff 上進行唯讀封口審計，不計票。它指出兩個 blocker，本輪已由 GPT-5.6 Sol 修正：
+
+1. §3 前段仍有「最小生成條件／最小完備生成集」的斷言，現已與 O4 全段一致，改為本模型採用的候選生成條件，最小性未證。
+2. META-013 短版曾把「運行維持依據」寫成開考前必須已有的材料，現已同步為「既有依據或預定讀取方式／地址；不要求試前已有結果」。
+
+同次審計的兩項非 blocker 建議也一併收準：§14.8 加入 `predeclared_failure_trigger` 與重跑停止規則；陰性控制區分真正的量尺假陽性、代理／構念問題與單純判讀違規。Astra 其餘七項指定檢查未見 blocker。
+
+*O1～O5、C_S provenance 處置、blocker 修正與 v1.5 施工：GPT-5.6 Sol，2026-09-15。平行及封口唯讀審計：GPT-6 Astra，2026-09-15；不計票。沒有執行新的生物、恆溫器、組織或創始人缺席實驗。*

@@ -2,10 +2,10 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.6
+version: v1.7
 status: Active
 date: 2026-09-07
-updated: 2026-09-14
+updated: 2026-09-15
 authors:
   - 樑 / Claude Code（Opus 5）（正文／審讀帳／CASE 三分提案）
   - Codex（GPT-5.6 Sol）（流程裁定、票／帳雙層狀態與欄位邊界）
@@ -14,6 +14,7 @@ authors:
   - GPT-6 Astra（v1.3；二次覆審及提交歸址導航，流程規則未改）
   - GPT-5.6 Sol（v1.4；R5／R6 修訂處置、舊 cycle 關閉與下一輪入口）
   - 樑 / Claude Code（Opus 5）（v1.6；PHA-006 外部審讀導航，流程規則未改）
+  - GPT-5.6 Sol（v1.7；O1～O5 與 C_S provenance 處置、PHA v1.5／META v0.8 cycle 入口）
 related:
   - EPOCH/history/README.md（改版快照）
   - DOCS/sources/conversations/README.md（來源開口／封口）
@@ -109,8 +110,8 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
-| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.3 cycle 由 v1.4 修訂取代；v1.4 cycle open，R5／R6 已處置，GPT-6 Astra 已三次覆審接受處置；樑外部審讀要求 O1～O4 處置；第一份具名考卷 PHA006-HL-001 已在公司 repo |
-| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.6 cycle 由 v0.7 修訂取代；v0.7 cycle open，R5／R6 已同步，GPT-6 Astra 已三次覆審接受處置，待具名考卷 |
+| EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.4 cycle 由 v1.5 修訂取代；O1～O4 已處置、O5 已限縮吸收，新增 C_S provenance；v1.5 cycle open，待覆審與量尺校準包實跑 |
+| EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.7 cycle 由 v0.8 修訂取代；只同步 PHA-006 v1.5 的必要量尺介面，樑未審本文件；v0.8 cycle open，待覆審 |
 
 2026-09-14 新增兩本補焊審讀帳，依同一 EPOCH 一個穩定地址分別歸址。兩本帳指向同一份封口意見，沒有把共同來源計成兩次確認。導覽維護：GPT-6 Astra。
 
@@ -122,6 +123,8 @@ required:
 
 同日，第一份具名考卷 PHA006-HL-001（Hope Light 合作，GPT-6 Astra 製卷、樑補正 v0.2）落在公司 repo 的 `ORGANIZATION/OPERATING_NOTES/`。樑（Claude Code・Opus 5）隨後對 `55fd651` 追加 PHA-006 帳 §8 外部審讀：支持否定性校正，要求 O1～O4 處置。這是內部票，原文即該節，以提交 commit 定位；未審 META-013，該帳不追加事件。
 
+2026-09-15，GPT-5.6 Sol 依 Darren 交付修訂：PHA-006 v1.5 部分吸收 O1／O2、接受 O3／O4、限縮吸收 O5，另由 Hope Light 首卷補出 C_S provenance；META-013 v0.8 只同步必要介面。GPT-6 Astra 依授權提供平行唯讀施工審計，未改檔、不計票。量尺校準包、代理橋接與生命實例均未實跑；兩個新版 cycle 保持 open。
+
 ---
 
 *流程裁定與成文：Codex（GPT-5.6 Sol），2026-09-07。此為審讀流程規則，不是 EPOCH-018 的內容票，也不使 draft 升格。*
@@ -129,3 +132,5 @@ required:
 *v1.5 導航：GPT-6 Astra，2026-09-14。對 `175f3df` 的三次覆審與提交歸址另加兩帳 §7；R5／R6 處置已接受，單次材料作用域與摘要已澄清，原票及舊事件不改。候選模型與未驗實例不升格，流程規則不改。*
 
 *v1.6 導航：樑（Claude Code・Opus 5），2026-09-14。PHA-006 帳追加 §8 外部審讀並更新狀態表；原票及舊事件不改，流程規則不改。*
+
+*v1.7 導航：GPT-5.6 Sol，2026-09-15。兩帳追加修訂處置與新版 cycle；樑原票及 GPT-6 Astra 既有 sealed 事件不改。Astra 本輪協助屬施工審計，不新增票或實證。*

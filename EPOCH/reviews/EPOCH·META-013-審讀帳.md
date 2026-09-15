@@ -2,13 +2,13 @@
 id: EPOCH·META-013-REVIEW-LEDGER
 title: "EPOCH·META-013 審讀帳"
 target: EPOCH·META-013
-version: v1.4
-status: Open / Append-Only / R5-R6-Accepted / Named-Test-Pending
+version: v1.5
+status: Open / Append-Only / v0.8-Instrument-Interface-Synced / Next-Review-Pending
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 maintainers:
   - GPT-6 Astra（本輪首建與覆審登記）
-  - GPT-5.6 Sol（v0.6 R1～R4、v0.7 R5／R6 同步處置與下一輪入口）
+  - GPT-5.6 Sol（v0.6 R1～R4、v0.7 R5／R6、v0.8 量尺介面同步處置與下一輪入口）
 target_document: ../EPOCH·META-013-聊出世界模型——當生命被認出是一條串流.md
 integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審另行追加。精確原文以 sealed source 為準。
 ---
@@ -23,7 +23,8 @@ integrity: 既有事件保持原樣；吸收、退回、更正與下一輪覆審
 |---|---|---|---|
 | v0.5-weld-candidate | `a311f8cc35118241be1a31fef717cd05ebade3c6` | closed / superseded by v0.6 | GPT-6 Astra 支持充分性校正與來源分帳；R1～R4 已由後繼修訂同步處置，原票維持不動。 |
 | v0.6-evidence-candidate | `cce9808a2d70991b5c0977a3575a4b7b799266a8` | closed / superseded by v0.7 | GPT-6 Astra 接受 R1～R4 修訂處置並提出 R5／R6；後繼修訂已同步處置，原票維持不動。 |
-| v0.7-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | open / reviewed; named test pending | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；模型候選、實例未驗，見 §7。 |
+| v0.7-test-spec-candidate | `175f3df5ed0c279fe5898cd809f392f5b932dee0` | closed / superseded by v0.8 | GPT-6 Astra 接受 R5／R6 處置，局部文字已澄清；樑後續未審本文件。 |
+| v0.8-instrument-interface-candidate | `edbaece55ce97bd6e1c4ea98f9208a782701e95f` 後的工作樹修訂 | open / awaiting review | GPT-5.6 Sol 只同步 PHA-006 v1.5 的 C_S provenance、代理效度、設計上限及量尺分帳介面；完整規格不重複承載，見 §8。 |
 
 ## 1. ASTRA-20260914 技術覆審
 
@@ -266,3 +267,39 @@ disposition: R5／R6 處置已接受；E1～E3 已落檔並標 editorial_revisio
 受審版本由 commit 固定，本次編輯另以兩檔 editorial_revision 與工作樹 diff 歸址，不冒充 Sol 原版。後續直接填具名考卷；個案的指標、閾值、比較可比性與資料品質仍可被退回。cycle 保持 open 供構造測試與資料回流；本次不是正面模型實證通過或新增獨立票。
 
 *提交歸址、三次覆審與文字澄清：GPT-6 Astra，2026-09-14。*
+
+## 8. SOL-20260915 v0.8 介面同步處置
+
+```yaml
+event_id: META013-SOL-INSTRUMENT-INTERFACE-20260915
+event_kind: revision-disposition
+target_id: EPOCH·META-013
+source_review: PHA006-LIANG-20260914（只審 PHA-006）
+base_commit: edbaece55ce97bd6e1c4ea98f9208a782701e95f
+resulting_version: v0.8-instrument-interface-candidate
+resulting_commit: pending（目前為工作樹；commit 後另加事件，不回填本欄）
+implementer: GPT-5.6 Sol
+authority: Darren 明示交付修訂並允許 GPT-6 協助
+vote_effect: none
+review_boundary:
+  opus: 未審 META-013；不得把 PHA-006 §8 外部票複製成 META 票
+  astra: 平行唯讀施工審計；未改檔，不計票
+primary_carrier: EPOCH·PHA-006 v1.5 §14
+history_snapshot: not-required（只同步必要介面與版本導航；v0.7 由 175f3df／edbaece 固定，舊論證與事件不刪）
+cycle_transition:
+  v0.7: closed-by-superseding-revision
+  v0.8: open / awaiting later review
+```
+
+| 同步介面 | v0.8 短版 | 主承載 |
+|---|---|---|
+| C_S provenance | 提出者、來源、採行狀態，以及運行維持的既有依據或預定讀取方式／地址分帳；不要求試前已有結果，同意／制度／分析代理不代簽 I01 | PHA-006 §14.2 |
+| 代理效度 | V03／V09／V10 須具名構念映射、時間尺度、替代代理與合併規則 | PHA-006 §14.3.2 |
+| 因果上限 | 依具名設計與 P03／I03 target claim 申報；不按考生類型永久封頂 | PHA-006 §14.4.1／§14.6.1 |
+| 量尺校準 | 回溯文獻／前瞻分帳；正例／陰性只校準量尺，不證第四生命 | PHA-006 §14.8 |
+
+本文件維持命名事件 Draft；不複製 PHA-006 的完整表格、文獻對齊與 C13～C17，也不因 Hope Light 首卷取得實例支持。
+
+2026-09-15 Astra 對工作樹的唯讀 blocker audit 指出，本短版曾把運行維持的既有材料誤當成開考前提。GPT-5.6 Sol 已按主承載修正為「既有依據或預定讀取方式／地址；不要求試前已有結果」。此為施工修正，不新增票或實證。
+
+*v0.8 必要介面同步與 blocker 修正：GPT-5.6 Sol，2026-09-15。GPT-6 Astra 提供唯讀施工審計；樑未審本文件，兩者均不新增本帳票。*
