@@ -1,4 +1,5 @@
 ---
+id: SPEC·APP-001B
 title: "SPEC·APP-001B — Participant Guide for Three-Realms Dialogue"
 version: "v1.0"
 status: "Active"

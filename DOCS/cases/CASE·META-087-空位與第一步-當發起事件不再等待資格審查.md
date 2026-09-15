@@ -2,6 +2,7 @@
 ## 空位與第一步——當發起事件不再等待資格審查
 
 ```yaml
+id: CASE·META-087
 created: 2026-08-10
 type: META（發起法生成事件 / 治理語法轉向 / SPEC 來源記錄）
 status: Field-Documentation / SPEC-Source / First-Step-Taken

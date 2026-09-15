@@ -2,6 +2,7 @@
 ## 事實的引擎——當「可重入條件」被碰到
 
 ```yaml
+id: CASE·META-048
 created: 2026-04-18
 type: META（命題碰觸事件 / 高潛力種子保存）
 status: Seed-Review-Pending

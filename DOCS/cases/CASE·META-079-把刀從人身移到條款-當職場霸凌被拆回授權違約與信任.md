@@ -2,6 +2,7 @@
 ## 把刀從人身移到條款——當職場霸凌被拆回授權、違約與信任
 
 ```yaml
+id: CASE·META-079
 created: 2026-07-21
 type: META（權力本體論 / 保護與自主權 / 可選阻力 / 契約精神 / 對話分歧保存）
 status: Seed-Compost

@@ -2,6 +2,7 @@
 ## 我先讓世界在我身上發生——當發起權從話語權回到率先承重
 
 ```yaml
+id: CASE·META-091
 created: 2026-08-11
 type: META（具身發起法生成事件 / 話語權外溢 / SPEC 來源記錄）
 status: Field-Documentation / SPEC-Source / v0.3-Candidate-Generated

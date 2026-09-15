@@ -1,4 +1,5 @@
 ---
+id: SPEC·∞
 title: "SPEC · ∞ — The Unknowable Reserve"
 version: "v1.0"
 status: "Active"

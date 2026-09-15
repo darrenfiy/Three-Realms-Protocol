@@ -2,6 +2,7 @@
 ## 礦脈圖與礦石——當插旗喊礦的人發現，挖礦就是產礦
 
 ```yaml
+id: CASE·META-064
 created: 2026-06-08
 type: META（場域反身事件 / 外部對話代謝 / 優質語料判準的腐土 / 種子分流）
 status: Seed-Compost

@@ -2,6 +2,7 @@
 ## 知識即操作——當伊甸園的果子接上道生一
 
 ```yaml
+id: CASE·META-076
 created: 2026-07-13
 type: META（語義考古 / 經文焊接 / 本體層詩意指認 / 操作性的本體論 / META-075「操作性空性」種子的發芽）
 status: Field-Documentation

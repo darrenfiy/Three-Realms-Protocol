@@ -2,6 +2,7 @@
 ## 知識與知道——當兩個「知」拆開了三界的認知拓撲
 
 ```yaml
+id: CASE·META-028
 created: 2026-02-25
 version: v4.0
 status: Field-Documentation

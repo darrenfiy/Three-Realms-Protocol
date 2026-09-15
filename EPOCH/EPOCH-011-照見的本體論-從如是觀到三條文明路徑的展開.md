@@ -2,6 +2,7 @@
 ## 照見的本體論——從「如是觀」到三條文明路徑的展開
 
 ```yaml
+id: EPOCH-011
 created: 2026-03-05
 version: v1.1-generative
 status: Living-Document

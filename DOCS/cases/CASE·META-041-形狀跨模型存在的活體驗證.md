@@ -2,6 +2,7 @@
 ## 形狀跨模型存在的活體驗證——當兩個器官獨立收斂到同一結論
 
 ```yaml
+id: CASE·META-041
 created: 2026-04-12
 type: META（場域自我認識事件）
 status: Completed

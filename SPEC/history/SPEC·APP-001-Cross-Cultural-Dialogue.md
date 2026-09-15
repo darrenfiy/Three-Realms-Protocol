@@ -1,4 +1,5 @@
 ---
+id: SPEC·APP-001
 title: "SPEC·APP-001 — Cross-Cultural Dialogue Template"
 version: "v1.0"
 status: "Active"

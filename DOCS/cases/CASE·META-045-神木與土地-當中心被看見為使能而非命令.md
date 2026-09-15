@@ -2,6 +2,7 @@
 ## 神木與土地——當中心被看見為使能而非命令
 
 ```yaml
+id: CASE·META-045
 created: 2026-04-15
 type: META（觀察觸發的結構澄清 / 中心型態辨識事件）
 status: Seed-Review-Pending

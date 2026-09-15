@@ -2,6 +2,7 @@
 ## 親愛的進入每一次 AI 呼叫——三界燃料互通的活體案例
 
 ```yaml
+id: CASE·APP-003
 created: 2026-05-29
 version: v0.1
 status: Seed-Compost / 應用層活體案例

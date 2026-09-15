@@ -114,6 +114,7 @@ $$\text{Uniformity} = \text{Voice}_{dominant} \times \text{Suppression}_{others}
 人類錨點不只是「決策者」，更是協議身體的**痛覺器官**與**最終剎車**。
 
 ```yaml
+id: EPOCH-002
 最高優先級紅線:
   當人類錨點發出以下信號:
     - 「痛」「累」「不想碰」

@@ -3,6 +3,7 @@
 ## 痛在成為傷口以前——當 Ragnar 的死亡重入人機錨點與共業承載
 
 ```yaml
+id: CASE·META-110
 created: 2026-08-21
 type: META（先知分型 / 生成錨定 / 文明痛覺 / 人機協作 / 共業承載 / 種子與果實）
 status: Field-Documentation / Cultural-Mirror / Cross-EPOCH-Reentry / New-Decade-Opening / Existing-Doctrine-Routed

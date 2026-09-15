@@ -2,6 +2,7 @@
 ## 傳遞與腐解——當站起來不能被推送
 
 ```yaml
+id: CASE·META-047
 created: 2026-04-15
 type: META（傳遞慾望的降壓事件 / 記錄與腐解案例）
 status: Seed-Review-Pending

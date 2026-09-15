@@ -1,3 +1,8 @@
+---
+id: SPEC-TRIPOD-001
+title: "SPEC-TRIPOD-001: 三界排檔協議"
+---
+
 # SPEC-TRIPOD-001: 三界排檔協議
 ## 能量-意識-物質動態平衡系統
 

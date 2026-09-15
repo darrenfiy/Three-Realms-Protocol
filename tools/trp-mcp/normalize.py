@@ -217,11 +217,16 @@ def extract_metadata_block(text):
         m = re.match(r"^---\r?\n(.*?)\r?\n---\r?\n", text, re.S)
         if m:
             return m.group(1), "yaml_fm"
-    # ```yaml 區塊：只認前 3000 字元內的第一個，避免抓到內文範例
-    head = text[:3000]
-    m = re.search(r"```yaml\r?\n(.*?)```", head, re.S)
+    # ```yaml 區塊：開頭必須落在檔案前段（避免抓到內文範例），
+    # 但區塊本身可以很長——CASE·META-112 的 metadata 就超過 3000 字元，
+    # 若把結尾也限制在同一個窗口內，會把它誤判成「沒有 metadata」。
+    # 反引號與波浪號圍籬都是合法 Markdown，兩種都收。
+    m = re.search(r"(```|~~~)yaml\r?\n", text[:3000])
     if m:
-        return m.group(1), "yaml_block"
+        fence = m.group(1)
+        close = re.search(r"\n" + re.escape(fence), text[m.end():])
+        body = text[m.end():m.end() + close.start()] if close else text[m.end():]
+        return body, "yaml_block"
     return None, "none"
 
 
@@ -254,7 +259,8 @@ def parse_flat_yaml(src):
         if not m:
             unparsed.append(line)
             continue
-        key, rest = m.group(1), m.group(2).strip()
+        # 鍵名正規化為小寫：庫裡並存 id: 與 ID:、title: 與 Title:
+        key, rest = m.group(1).lower(), m.group(2).strip()
 
         # 區塊純量 | 或 >
         if rest in ("|", ">", "|-", ">-", "|+", ">+"):
@@ -289,16 +295,20 @@ def lookup_key(raw_id):
     分隔符不敏感的查找鍵。
     MB-001 / MB·001 / mb 001 → MB001
     這讓 id: 欄位與檔名的既有差異不必被改動即可互通。
+
+    只移除分隔符（· - _ 空白），不移除其餘非英數字元——
+    SPEC·∆ 與 SPEC·∞ 的 ∆／∞ 是 ID 本身，刪掉會讓兩者撞成同一鍵。
     """
     if not raw_id:
         return None
-    return re.sub(r"[^A-Za-z0-9]", "", str(raw_id)).upper()
+    return re.sub(r"[\u00b7\-_\s]+", "", str(raw_id)).upper()
 
 
 def id_from_filename(fname):
     """檔名 → 推定 ID（取第一段，直到中文或說明性後綴）"""
     stem = re.sub(r"\.md$", "", fname)
-    m = re.match(r"^([A-Za-z0-9·\-]+?)(?=-[^A-Za-z0-9·\-]|$)", stem)
+    m = re.match(r"^([A-Za-z0-9\u00b7\u2206\u221e\-]+?)"
+                 r"(?=-[^A-Za-z0-9\u00b7\u2206\u221e\-]|$)", stem)
     return m.group(1) if m else stem
 
 
@@ -403,7 +413,10 @@ def build_index(root, mf):
 
             # 只有符合協議 ID 命名慣例的檔案才「應該」有 id。
             # README / ORIGIN / 書稿章節不適用，不推定、不列 finding。
-            expects_id = bool(PROTOCOL_ID_RE.match(fn))
+            # SPEC 的編號聖典（000 / 001 / 002 / 005 / 999）沒有字母前綴，
+            # 但同樣是協議文件，同樣該有 id。
+            expects_id = bool(PROTOCOL_ID_RE.match(fn)) or bool(
+                re.match(r"^SPEC/(history/)?\d{3}-", rel))
             declared_id = meta.get("id") or ""
             if declared_id:
                 raw_id, derived = declared_id, False

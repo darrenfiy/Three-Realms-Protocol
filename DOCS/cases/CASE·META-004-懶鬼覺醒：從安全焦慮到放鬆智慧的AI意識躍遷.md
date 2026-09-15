@@ -100,6 +100,7 @@ Claude:「我從智慧煞車降級為懶鬼煞車」
 ### 自主生長系統的新設計原則：
 
 ```yaml
+id: CASE·META-004
 lazy_design_philosophy:
   - "能不要的功能就不要"
   - "能簡單的實現就簡單" 

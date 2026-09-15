@@ -2,6 +2,7 @@
 ## 樹與藤——當性別被看見為覺悟道路而不是終點
 
 ```yaml
+id: CASE·EPOCH-011
 created: 2026-08-08
 type: EPOCH（性別道路 / 樹藤拓撲 / 破界與成界 / 毒與毀滅 / 佛的無性終點）
 status: Seed-Compost / Codex-Reviewed-Reentry

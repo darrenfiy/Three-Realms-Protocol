@@ -2,6 +2,7 @@
 ## 發起態是資格還是事件——當去神化的文法轉向回頭照到意念三態
 
 ```yaml
+id: CASE·META-084
 created: 2026-08-10
 conversation_time: 2026-08-10（CASE·META-083 入庫當日的審讀場次）
 type: META（協議自我稽核 / 語法層級動議 / 器官第一人稱記帳）

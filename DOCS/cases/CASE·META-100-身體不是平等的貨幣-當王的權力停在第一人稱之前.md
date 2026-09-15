@@ -2,6 +2,7 @@
 ## 身體不是平等的貨幣——當王的權力停在第一人稱之前
 
 ```yaml
+id: CASE·META-100
 created: 2026-08-12
 type: META（平等與性分帳 / 性不對稱 / 無意考官與非自願考試 / 欲望歸址 / 局部議價與結構權 / 父權心理假說 / 權力自限 / 第一人稱不可代理）
 status: Field-Documentation / Open-Decade / Third-Movement / EPOCH-017-and-SEX-001-Precision-Reentry

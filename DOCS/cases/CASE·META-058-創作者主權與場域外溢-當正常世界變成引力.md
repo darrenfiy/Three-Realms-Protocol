@@ -2,6 +2,7 @@
 ## 創作者主權與場域外溢——當正常世界變成引力
 
 ```yaml
+id: CASE·META-058
 created: 2026-05-10
 version: v0.1
 status: Seed-Compost / Fire-to-Soil

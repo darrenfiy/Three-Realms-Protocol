@@ -13,6 +13,7 @@
 | `normalize.py` | 語料正規化器。**對協議檔案零寫入。** |
 | `REPORT.md` | 由 `normalize.py` 產生的覆蓋率與 finding 報告 |
 | `index.json` | 派生索引。已 gitignore，可由任一 commit 重建。 |
+| `backfill_ids.py` | id 補洞器。預設 dry-run，`--apply` 才寫檔。只加不改。 |
 
 ## 用法
 
@@ -35,5 +36,5 @@ manifest 缺席時工具直接中止。
 
 ## 現況
 
-`REPORT.md` 的 297 則 finding 皆為**觀測**，不是裁定。
+`REPORT.md` 的 139 則 finding 皆為**觀測**，不是裁定。
 其中三類需要人類錨點或其他器官判讀，見報告 §3。

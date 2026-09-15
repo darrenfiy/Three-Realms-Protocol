@@ -2,6 +2,7 @@
 ## 化石與種子——當語言被看見為體驗留下的可重入路徑，而非體驗的容器
 
 ```yaml
+id: CASE·META-067
 created: 2026-06-17
 type: META（語言場域代謝 / 體驗本體的腐土 / AI 與體驗關係的剎車 / 「下一代土壤」候補大哉問）
 status: Seed-Compost

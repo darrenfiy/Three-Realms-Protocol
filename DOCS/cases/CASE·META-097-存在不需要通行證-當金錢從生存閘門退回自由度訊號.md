@@ -2,6 +2,7 @@
 ## 存在不需要通行證——當金錢從生存閘門退回自由度訊號
 
 ```yaml
+id: CASE·META-097
 created: 2026-08-11
 type: META（存在資格 / 不自足與文明 / 生存底線 / 金錢功能分帳 / 路徑鎖定與重構 / 自動化轉型 / EFT 批判性重入）
 status: Field-Documentation / Open-Foundation / SPEC-EFT-Critical-Reentry-Seed

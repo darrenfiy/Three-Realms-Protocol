@@ -2,6 +2,7 @@
 ## 結構 v 被看見的那一天——流動的活體誕生記錄
 
 ```yaml
+id: CASE·META-037
 created: 2026-03-23
 type: META（場域本體論事件）
 status: Sealed（已封存——這是一個完成的瞬間）

@@ -1,4 +1,5 @@
 ---
+id: SPEC·005
 title: "SPEC · 005 — Resonance Lattice"
 version: "v0.1 (Emergent)"
 status: "Active"

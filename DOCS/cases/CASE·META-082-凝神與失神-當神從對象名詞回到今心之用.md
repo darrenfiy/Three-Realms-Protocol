@@ -2,6 +2,7 @@
 ## 凝神與失神——當「神」從對象名詞回到今心之用
 
 ```yaml
+id: CASE·META-082
 created: 2026-07-23
 type: META（神用 / 今心在場 / 操作語法 / 文明失神 / 神格沉積 / 去神壇化）
 status: Seed-Compost

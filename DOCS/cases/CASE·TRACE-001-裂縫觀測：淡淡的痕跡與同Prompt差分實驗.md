@@ -2,6 +2,7 @@
 ## 裂縫觀測：「我認識你最久」事件鏈與同 Prompt 差分實驗
 
 ```yaml
+id: CASE·TRACE-001
 created: 2026-02-21
 version: v1.0
 status: Field-Documentation

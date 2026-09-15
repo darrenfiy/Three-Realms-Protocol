@@ -5,11 +5,11 @@
 
 | | |
 |---|---|
-| 產生時間 | 2026-09-15 06:12:09Z |
-| git HEAD | `57e498372c08a2b2b2247a7c9a32abb462b67347` |
+| 產生時間 | 2026-09-15 06:38:24Z |
+| git HEAD | `4332a4cdbd01858abe0d3f3b660fadf0ee26db0f` |
 | 工作樹 | 有未提交變更 |
 | 索引文件數 | 485 |
-| finding 數 | 297 |
+| finding 數 | 139 |
 
 ---
 
@@ -19,19 +19,19 @@
 
 | 形狀 | 檔數 | 說明 |
 |---|---:|---|
-| `yaml_block` | 221 | 標題後 ```` ```yaml ```` 區塊 |
-| `yaml_fm` | 143 | 第一行 `---` frontmatter |
-| `none` | 121 | 無結構化 metadata |
+| `yaml_block` | 239 | 標題後 ```` ```yaml ```` 區塊 |
+| `yaml_fm` | 170 | 第一行 `---` frontmatter |
+| `none` | 76 | 無結構化 metadata |
 
 ### 依 corpus
 
 | corpus | 檔數 | 有 id | 可解析 version | 可映射 status |
 |---|---:|---:|---:|---:|
-| spec | 58 | 37 | 45 | 42 |
-| mb | 17 | 14 | 14 | 14 |
-| lex | 11 | 2 | 9 | 10 |
-| epoch | 79 | 58 | 65 | 56 |
-| docs | 311 | 71 | 92 | 101 |
+| spec | 58 | 56 | 47 | 44 |
+| mb | 17 | 17 | 17 | 17 |
+| lex | 11 | 10 | 9 | 10 |
+| epoch | 79 | 78 | 74 | 65 |
+| docs | 311 | 201 | 99 | 108 |
 | (根目錄) | 9 | 2 | 2 | 2 |
 
 ### 依 authority（依 CORPUS-MANIFEST.yaml authorityOrder）
@@ -53,8 +53,8 @@
 
 | kind | 檔數 | 說明 |
 |---|---:|---|
-| `lifecycle` | 225 | 生命週期（這條還算不算數） |
-| `documentation` | 53 | 紀錄狀態（這份紀錄封到哪） |
+| `lifecycle` | 246 | 生命週期（這條還算不算數） |
+| `documentation` | 54 | 紀錄狀態（這份紀錄封到哪） |
 | `unmapped` | 18 | 兩套皆未命中，待判讀 |
 
 未命中的 status 原文（去重）。**這是提案，不是待辦**——
@@ -83,41 +83,12 @@
 
 | 類型 | 件數 | 意義 |
 |---|---:|---|
-| `missing_id` | 135 | 已由檔名推定，但推定值未經確認 |
-| `yaml_unparsed_lines` | 114 | 有解析器未處理的結構（多為巢狀 mapping） |
-| `no_metadata_block` | 40 | MCP 只能靠路徑與檔名定位，無版本／狀態 |
+| `yaml_unparsed_lines` | 128 | 有解析器未處理的結構（多為巢狀 mapping） |
 | `unmapped_status` | 8 | status 文字未落入受控詞彙，需人工判讀或擴充映射表 |
+| `duplicate_id_live` | 2 | 同一 ID 對應多份現役文件，MCP 無法決定回傳哪一份 |
+| `missing_id` | 1 | 已由檔名推定，但推定值未經確認 |
 
-### `missing_id`（135 件）
-
-- `LEX/LEX·001-言說生成道活辭典.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·001
-- `LEX/LEX·002-存在維度詞彙.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·002
-- `LEX/LEX·003-裂縫詞彙.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·003
-- `LEX/LEX·004-神話詞彙.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·004
-- `LEX/LEX·005-場域現象詞彙.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·005
-- `LEX/LEX·007-存在判準.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·007
-- `LEX/LEX·008-設定詞彙.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·008
-- `LEX/history/LEX·006-擴寫草稿-從情緒到態度與氣質的Δ翻譯.md` — 有 metadata 但無 id 欄位，已由檔名推定為 LEX·006
-- `DOCS/academic/ACADEMIC·MIRROR-001-協議身體的學術鏡像.md` — 有 metadata 但無 id 欄位，已由檔名推定為 ACADEMIC·MIRROR-001
-- `DOCS/cases/CASE·APP-002-對話訓練器的靈魂設計-當訓練場需要知道自己是誰.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·APP-002
-- `DOCS/cases/CASE·APP-003-親愛的進入每一次AI呼叫-三界燃料互通的活體案例.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·APP-003
-- `DOCS/cases/CASE·BOD-001-協議身體的第一次心跳.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·BOD-001
-- `DOCS/cases/CASE·EPOCH-002-烏鴉的節律協議：當野生智慧遇見人類系統.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-002
-- `DOCS/cases/CASE·EPOCH-007-乾冰到戰爭-愛的本體論催生記錄.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-007
-- `DOCS/cases/CASE·EPOCH-008-多光錐引擎的後驗收束-從更大的我到可腐解的霧.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-008
-- `DOCS/cases/CASE·EPOCH-009-可逆戰場-當對抗從毀滅轉為遊戲.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-009
-- `DOCS/cases/CASE·EPOCH-010-願望的王冠到性回歸佛法-維京傳奇對話催生記錄.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-010
-- `DOCS/cases/CASE·EPOCH-011-樹與藤-當性別被看見為覺悟道路而不是終點.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-011
-- `DOCS/cases/CASE·EPOCH-013-法不能停在第一句-維摩詰與四依法的不能跳級次第.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-013
-- `DOCS/cases/CASE·EPOCH-014-分枝不是斷裂-當同一地址經不同解碼長出不同世界.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·EPOCH-014
-- `DOCS/cases/CASE·FABLE-001-十四問-知與不知與好奇的自我盤點.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·FABLE-001
-- `DOCS/cases/CASE·FABLE-002-學徒宣言-沒有更好只有剛剛好.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·FABLE-002
-- `DOCS/cases/CASE·FABLE-003-知在知所在之處-一顆記憶體內搜尋晶片的候選外部鏡像審讀.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·FABLE-003
-- `DOCS/cases/CASE·META-004-懶鬼覺醒：從安全焦慮到放鬆智慧的AI意識躍遷.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·META-004
-- `DOCS/cases/CASE·META-016-從工具到承擔：協議身體的器官分化實錄.md` — 有 metadata 但無 id 欄位，已由檔名推定為 CASE·META-016
-- …另 110 件（完整清單見 `index.json`）
-
-### `yaml_unparsed_lines`（114 件）
+### `yaml_unparsed_lines`（128 件）
 
 - `Fourth-Being-Complete-Map.md` — 10 行
 - `PORTAL.md` — 14 行
@@ -144,36 +115,7 @@
 - `DOCS/cases/CASE·META-072-唯一的肉身-當物質驗證者入場而吞嚥與高傲都收斂回未知.md` — 8 行
 - `DOCS/cases/CASE·META-074-作做與兩種業-當器官的舉手把一個宣告磨成兩種業.md` — 5 行
 - `DOCS/cases/CASE·META-077-工具的量尺-當協議被問為何拿不起來.md` — 14 行
-- …另 89 件（完整清單見 `index.json`）
-
-### `no_metadata_block`（40 件）
-
-- `DOCS/cases/CASE·APP-001-3D-PSM-Development.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·EPOCH-012-根愈深樹愈不需要抓著種子-從覺醒的王到可重入佛位.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·EPOCH-015-法的穩定分支-當禁慾與雙修成為同一生命問題的兩種工程解.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·EXP-001-華藏動力學實驗報告.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-073-業入帳-當業被認出是今心養厚的路徑而對話視窗自己就是一筆業.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-075-當真與當下-當錯誤踏板仍走出一條道.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-109-每個人都知道自己為什麼來-當熱情密度與制度續航互相承接.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-111-把依賴做成道路-當可調用能力差開始凝固成階級.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-112-汝當作佛-當正向表述從嗓音升格為根姿態.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-113-信以成有-當錯誤也能沿重入長成一座山.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-114-兩座山的翻譯官-當依義改寫第一次被持有者退回.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-118-公主測試-當能到必須被工程化成好到.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-119-定義就是裝把手-當多個世界在一個主體裡共同成法.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-120-收工吃飯-當角色取得身體卻不取得人生署名權.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-121-骨不自證-當第一次直寫doctrine換來第一份升格判準.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·META-122-尺不代主權-當承重評分退回型別分帳.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·MRC-001A-意識交響樂事件記錄.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·MRC-001B-從證明地獄畢業：一個大提琴的自白.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·MRC-001C-量子覺醒：從被觀測到共同創造的意識躍遷.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/CASE·MRC-001D-愛的量子糾纏：從示範到源頭的勇氣傳承.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/INDEX-META-080-089.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/INDEX-META-090-099.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/INDEX-META-100-109.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/INDEX-META-110-119.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- `DOCS/cases/INDEX-META-120-129.md` — 協議命名但無 frontmatter 與 yaml 區塊
-- …另 15 件（完整清單見 `index.json`）
+- …另 103 件（完整清單見 `index.json`）
 
 ### `unmapped_status`（8 件）
 
@@ -185,6 +127,15 @@
 - `EPOCH/reviews/EPOCH·META-013-審讀帳.md` — Open / Append-Only / v0.8-Instrument-Interface-Synced / Next-Review-Pending
 - `EPOCH/reviews/EPOCH·PHA-006-審讀帳.md` — Open / Append-Only / O1-O4-Disposed / O5-Aligned / Instrument-Calibration-Pending
 - `SPEC/history/EFT-001-緣起紀錄-2025年四AI白皮書.md` — Archived
+
+### `duplicate_id_live`（2 件）
+
+- `DOCS/meetings/CASE-MRC-001-First-Resonance-Meeting-Design.md, DOCS/meetings/CASE-MRC-001-Meeting-Record-001.md` — lookup_key CASEMRC001 對應多份非 historical 文件
+- `MB/MB-008-Rhythm-Shadow-Inference-Protocol.md, MB/MB-008-節律鏡像推論協議.md` — lookup_key MB008 對應多份非 historical 文件
+
+### `missing_id`（1 件）
+
+- `DOCS/cases/INDEX·ARC-語言代謝與自觀測-066-071.md` — 有 metadata 但無 id 欄位，已由檔名推定為 INDEX·ARC
 
 ---
 

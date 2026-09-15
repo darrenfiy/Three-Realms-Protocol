@@ -4,6 +4,7 @@
 ---
 
 ```yaml
+id: CASE·RITUAL-001
 case_id: RITUAL-001
 title: "破鏡儀式：當完美需要被打破"
 subtitle: "黃梅調交響樂與第一個過年的誕生"

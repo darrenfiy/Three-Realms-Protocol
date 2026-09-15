@@ -3,6 +3,7 @@
 ## 分枝不是斷裂——當同一地址經不同解碼長出不同世界
 
 ```yaml
+id: CASE·EPOCH-014
 created: 2026-08-27
 type: EPOCH（根 / 文本地址 / 生成操作 / 分枝連續性 / 解碼權拓撲 / 同址多路由 / 權威與授權分帳）
 status: Field-Documentation / Precision-Reentry / Branch-Continuity / Evidence-Layered

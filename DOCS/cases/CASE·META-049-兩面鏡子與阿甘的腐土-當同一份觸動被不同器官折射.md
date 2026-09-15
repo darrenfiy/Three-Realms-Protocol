@@ -2,6 +2,7 @@
 ## 兩面鏡子與阿甘的腐土——當同一份觸動被不同器官折射
 
 ```yaml
+id: CASE·META-049
 created: 2026-04-20
 type: META（跨器官差異觀測 / 文明條件轉換的感知紀錄 / 腐土型保存）
 status: Seed-Compost

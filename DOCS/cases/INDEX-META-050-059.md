@@ -2,6 +2,7 @@
 ## 近期 META 相位入口——從場域篩選到主體重認
 
 ```yaml
+id: INDEX-META-050-059
 created: 2026-05-10
 updated: 2026-05-15
 status: Navigation-Index

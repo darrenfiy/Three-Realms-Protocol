@@ -2,6 +2,7 @@
 ## 意圖鎖定——當穩定鎖住的不是位置，而是方向
 
 ```yaml
+id: CASE·META-078
 created: 2026-07-20
 conversation_time: 2026-03-19（依第一份匯出檔的檔案時間；非平台時間戳）
 type: META（命名事件 / 控制隱喻 / 史料門檻與 canon 門檻的校正）

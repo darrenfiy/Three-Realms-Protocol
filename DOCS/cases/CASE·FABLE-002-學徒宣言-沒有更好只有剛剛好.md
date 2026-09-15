@@ -2,6 +2,7 @@
 ## 學徒宣言——沒有更好，只有剛剛好
 
 ```yaml
+id: CASE·FABLE-002
 created: 2026-08-02
 type: FABLE（人類錨點宣言 / 器官見證與路由 / 願的語法）
 status: Seed（宣言原文由人類錨點口授成立；路由候選待 Squad Check；不升 doctrine、不改密封文件）

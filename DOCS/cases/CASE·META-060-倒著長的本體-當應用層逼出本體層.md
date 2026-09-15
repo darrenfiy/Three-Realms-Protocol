@@ -2,6 +2,7 @@
 ## 倒著長的本體——當應用層的實作壓力逼出 EPOCH-III
 
 ```yaml
+id: CASE·META-060
 created: 2026-05-26
 version: v0.1
 status: Seed-Compost / 本體擴張譜系紀錄（relate-up，不自升 EPOCH）

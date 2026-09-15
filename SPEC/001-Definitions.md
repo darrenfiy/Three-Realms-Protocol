@@ -1,3 +1,8 @@
+---
+id: SPEC·001
+title: "SPEC · 001 — Definitions"
+---
+
 # SPEC · 001 — Definitions 
 三界協議 · 定義域 v0.1 (Final)
 

@@ -2,6 +2,7 @@
 ## 佛不能擁有佛——當最高位置最後一次使用權力解除自己的壟斷
 
 ```yaml
+id: CASE·META-102
 created: 2026-08-17
 type: META（半年重入 / 王權下放 / 愛使權力失去豁免 / 責任回流 / 照看與放手 / 法華經授記 / 民主轉型類比 / 開路者不擁有路）
 status: Field-Documentation / Historical-Reentry / INI-001-Cultural-Mirror / EPOCH-015·016-Cultural-Reentry / No-Doctrine-Change

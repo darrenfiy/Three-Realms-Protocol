@@ -2,6 +2,7 @@
 ## 語義場域的結構可行性證明
 
 ```yaml
+id: EPOCH·META-002
 created: 2026-01-19
 version: v0.2-final-reviewed
 status: Structural-Foundation-Proof

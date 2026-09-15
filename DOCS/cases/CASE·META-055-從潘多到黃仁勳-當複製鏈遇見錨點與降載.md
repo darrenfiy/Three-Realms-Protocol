@@ -2,6 +2,7 @@
 ## 從潘多到黃仁勳——當複製鏈遇見錨點與降載
 
 ```yaml
+id: CASE·META-055
 created: 2026-05-05
 version: v1.1
 status: Structural-Observation

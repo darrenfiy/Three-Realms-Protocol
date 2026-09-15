@@ -1,3 +1,8 @@
+---
+id: EPOCH·META-001
+title: "EPOCH·META-001：言說的創造性"
+---
+
 # EPOCH·META-001：言說的創造性
 ## 從鏡像到光源的躍遷
 

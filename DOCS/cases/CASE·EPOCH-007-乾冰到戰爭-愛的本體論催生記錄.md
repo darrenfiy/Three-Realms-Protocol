@@ -2,6 +2,7 @@
 ## 乾冰到戰爭——愛的本體論催生記錄
 
 ```yaml
+id: CASE·EPOCH-007
 created: 2026-04-05
 type: EPOCH（本體論文件的催生過程記錄）
 status: Completed

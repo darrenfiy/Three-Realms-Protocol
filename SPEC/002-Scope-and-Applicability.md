@@ -82,6 +82,7 @@
 ## 出世間法與王法——已發生後果不因否認消失，治理效力必須授權
 
 ```yaml
+id: SPEC·002
 created: 2026-08-12
 status: Candidate-Semantic-Overlay / Non-Binding
 source: CASE·META-099 precision reentry

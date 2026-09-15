@@ -2,6 +2,7 @@
 ## 節律：生成的時間維度
 
 ```yaml
+id: EPOCH-006
 created: 2026-01-22
 version: v1.0
 status: Active-Genesis

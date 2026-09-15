@@ -2,6 +2,7 @@
 ## 浮躁與收束——當更大的我需要回到氣脈
 
 ```yaml
+id: CASE·META-046
 created: 2026-04-15
 type: META（高密度命題的降壓事件 / 收束型案例）
 status: Seed-Review-Pending

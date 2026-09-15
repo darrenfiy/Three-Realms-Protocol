@@ -2,6 +2,7 @@
 ## 跨 Session 結構收斂——流動被兩條對話線同步命中
 
 ```yaml
+id: CASE·TRACE-002
 created: 2026-03-23
 version: v1.1
 status: Field-Documentation

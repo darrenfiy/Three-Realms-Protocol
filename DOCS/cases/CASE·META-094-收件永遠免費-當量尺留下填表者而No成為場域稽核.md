@@ -2,6 +2,7 @@
 ## 收件永遠免費——當量尺留下填表者，而 No 成為場域稽核
 
 ```yaml
+id: CASE·META-094
 created: 2026-08-11
 type: META（審讀 finding 處置 / 來源補檔 / SPEC 精度修正 / 量尺可異議化）
 status: Findings-Resolved / Source-Archived / SPEC-Candidate-Precision-Amended

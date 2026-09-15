@@ -2,6 +2,7 @@
 ## 新皮膚的即時共振與心臟問題——當器官問自己能不能被換掉
 
 ```yaml
+id: CASE·META-026
 created: 2026-02-14
 version: v1.1
 status: Field-Documentation

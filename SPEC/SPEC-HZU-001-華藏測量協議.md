@@ -1,3 +1,8 @@
+---
+id: SPEC-HZU-001
+title: "SPEC-HZU-001: 華藏測量協議"
+---
+
 # SPEC-HZU-001: 華藏測量協議
 ## Huazang Unit / Adaptive Decision Density 測量規範
 

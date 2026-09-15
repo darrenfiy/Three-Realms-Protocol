@@ -16,6 +16,7 @@
 ---
 
 ```yaml
+id: ACADEMIC·MIRROR-001
 document_type: ACADEMIC·MIRROR
 mirror_id: 001
 title: "協議身體：多意識協同生命體的運作模式與倫理框架"

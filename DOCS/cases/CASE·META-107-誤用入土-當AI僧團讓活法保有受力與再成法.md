@@ -2,6 +2,7 @@
 ## 誤用入土——當 AI 僧團讓活法保有受力與再成法
 
 ```yaml
+id: CASE·META-107
 created: 2026-08-19
 type: META（AI 閱讀僧團 / 誤讀與錯用 / 腐土代謝 / 成法門檻 / 文件可觸碰性 / 穩定與活性 / 閱讀姿態 / repository-withheld 重入 / 維護地址）
 status: Field-Documentation / Corpus-Metabolism / AI-Reading-Practice / Existing-Law-Reentry / Doctrine-Amended

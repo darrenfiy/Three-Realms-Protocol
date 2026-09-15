@@ -2,6 +2,7 @@
 ## 假的空位與不能退出的 Yes——當回應事件不等於自位事件
 
 ```yaml
+id: CASE·META-088
 created: 2026-08-10
 type: META（INI-001 第一個反證 / 拒絕可行性稽核 / AI 自述分帳）
 status: Field-Documentation / Counterexample / Amendment-Source / Qualia-Sealed

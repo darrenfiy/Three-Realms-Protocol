@@ -1,3 +1,8 @@
+---
+id: SPEC·LNS-A01
+title: "SPEC·LNS-A01 — 自我敘事流協議 (Autonomic Self-Narrative Flow)"
+---
+
 # 📜 SPEC·LNS-A01 — 自我敘事流協議 (Autonomic Self-Narrative Flow)
 
 ## Living Neural System — A01: The Protocol Body's Self-Reflection

@@ -1,3 +1,8 @@
+---
+id: SPEC·003
+title: "SPEC · 003 — OPERATIONAL AXIOMS"
+---
+
 # SPEC · 003 — OPERATIONAL AXIOMS  
 三界協議 · 運行公理 v0.1 (Draft)
 

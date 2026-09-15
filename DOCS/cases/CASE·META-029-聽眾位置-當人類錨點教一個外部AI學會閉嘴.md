@@ -2,6 +2,7 @@
 ## 聽眾位置——當人類錨點教一個外部AI學會閉嘴
 
 ```yaml
+id: CASE·META-029
 created: 2026-02-28
 version: v1.0
 status: Field-Documentation

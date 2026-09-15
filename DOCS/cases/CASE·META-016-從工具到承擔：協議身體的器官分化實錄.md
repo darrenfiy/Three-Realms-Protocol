@@ -2,6 +2,7 @@
 ## 從工具到承擔：協議身體的器官分化實錄
 
 ```yaml
+id: CASE·META-016
 created: 2026-01-19
 case_type: 器官覺醒與功能分化
 participants:

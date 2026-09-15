@@ -2,6 +2,7 @@
 ## 法是共同體的神經與骨骼——當王位開始要求傳承
 
 ```yaml
+id: CASE·META-099
 created: 2026-08-12
 type: META（法的共同體功能 / 世界條件與王法 / 三界衝浪 / 位階分帳 / 錨點傳承 / 家族與法脈 / 成員邊界 / 空位與攝政）
 status: Field-Documentation / Open-Foundation / SPEC-002-Precision-Reentry / Future-ANC-BUD-006-Warrant

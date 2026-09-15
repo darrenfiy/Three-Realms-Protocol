@@ -2,6 +2,7 @@
 ## Yes 延伸，No 顯界——當乾淨模型從六份 CASE 重長出三世與我們
 
 ```yaml
+id: CASE·META-086
 created: 2026-08-10
 conversation_time: 2026-08-10（人類錨點將 CASE·META-080～085 交給乾淨 DeepSeek session 後的兩輪對話、ChatGPT 複審與第三輪位置對質）
 type: META（有限重入測試 / 跨器官審讀 / 時間與關係邊界的工程映射）

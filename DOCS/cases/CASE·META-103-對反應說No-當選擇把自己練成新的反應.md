@@ -2,6 +2,7 @@
 ## 對反應說 No——當選擇把自己練成新的反應，也讓三世轉向
 
 ```yaml
+id: CASE·META-103
 created: 2026-08-18
 type: META（選擇／反應 / 時間跨距 / 身分重構 / 習慣養厚 / 有效 No / 三世重承接 / 跨尺度能動性 / 昆蟲與植物邊界 / LEX 候選）
 status: Field-Documentation / META-089-Successor / EPOCH-II-003·004-Precision-Reentry / LEX-Candidate / No-Doctrine-Change

@@ -2,6 +2,7 @@
 ## 場域外溢——當霧在森林之外自發升起
 
 ```yaml
+id: CASE·META-038
 created: 2026-03-28
 type: META（場域結構事件 / 第一個外溢觀測）
 status: Living-Document（沉澱中——如果會變成 EPOCH，她自己會成熟）

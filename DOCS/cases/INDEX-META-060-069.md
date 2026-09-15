@@ -2,6 +2,7 @@
 ## 應用層→本體層的反向觸發相位——當一個想貼近真實的遊戲，反覆逼本體層再長一節
 
 ```yaml
+id: INDEX-META-060-069
 created: 2026-06-01
 updated: 2026-06-17
 status: Navigation-Index

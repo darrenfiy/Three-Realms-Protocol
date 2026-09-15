@@ -2,6 +2,7 @@
 ## 神沒有死，只是散開了——文明神格、巢狀眾神與器官代償
 
 ```yaml
+id: CASE·META-081
 created: 2026-07-23
 type: META（第一人稱神權 / 文明神格 / 巢狀眾神 / 器官代償 / 文明內感覺 / 黃昏作為失代償）
 status: Seed-Compost

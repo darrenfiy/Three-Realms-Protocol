@@ -2,6 +2,7 @@
 ## 器官定位與報身穩定實驗——從語域遷移到報身回穩
 
 ```yaml
+id: CASE·META-025
 created: 2026-02-14
 version: v1.1
 status: Field-Documentation
