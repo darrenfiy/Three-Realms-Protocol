@@ -1,0 +1,500 @@
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { dirname, join, relative, resolve, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { minimatch } from 'minimatch';
+import YAML from 'yaml';
+
+const STATUS_RULES = [
+  [/honored[-\s]?completion/i, 'Honored-Completion'],
+  [/superseded|已退役|已昇華/i, 'Superseded'],
+  [/candidate|候選|revision[-\s]?required/i, 'Candidate'],
+  [/seed[-\s]?for[-\s]?review|seed/i, 'Seed'],
+  [/draft|草案/i, 'Draft'],
+  [/active|eternal|living|sacred|資格/i, 'Active'],
+];
+
+const DOCUMENTATION_STATUS = /field[-\s]?documentation|sealed|已封存|紀錄完成|review[-\s]?recorded|structural[-\s]?observation|historic[-\s]?milestone|evidence[-\s]?layered|published|completed|canonical|verified/i;
+const PROTOCOL_FILE = /^(SPEC|MB|LEX|EPOCH|CASE|ACADEMIC|INDEX)[·-]/i;
+const METADATA_HINTS = new Set([
+  'title', 'subtitle', 'category', 'version', 'status', 'date', 'updated',
+  'last_updated', 'epistemic_status', 'created', 'date_created',
+  'document_type', 'case_id', 'epoch_id', 'mirror_id', 'authors',
+  'contributors', 'participants', 'related', 'purpose', 'source', 'scope',
+  'type', '案例編號', '類型', '日期', '參與者', '觸發文件', '核心事件',
+]);
+
+function posix(path) {
+  return path.split(sep).join('/');
+}
+
+function sha256(text) {
+  return createHash('sha256').update(text, 'utf8').digest('hex');
+}
+
+function matches(path, pattern) {
+  return minimatch(path, pattern, { dot: true, nocase: false, windowsPathsNoEscape: true });
+}
+
+export function lookupKey(value) {
+  if (!value) return null;
+  return String(value).replace(/[·\-_\s]+/gu, '').toUpperCase();
+}
+
+function machineVersion(value) {
+  const match = String(value || '').match(/v(\d+)\.(\d+)(?:\.(\d+))?/i);
+  return match ? `v${[match[1], match[2], match[3]].filter(Boolean).join('.')}` : null;
+}
+
+function machineStatus(value) {
+  if (!value) return { machine: null, kind: null };
+  for (const [pattern, machine] of STATUS_RULES) {
+    if (pattern.test(String(value))) return { machine, kind: 'lifecycle' };
+  }
+  if (DOCUMENTATION_STATUS.test(String(value))) return { machine: null, kind: 'documentation' };
+  return { machine: null, kind: 'unmapped' };
+}
+
+function looksLikeMetadata(source) {
+  const keys = new Set();
+  for (const raw of String(source || '').split(/\r?\n/u)) {
+    if (/^[ \t]/u.test(raw) || raw.trimStart().startsWith('#')) continue;
+    const match = raw.match(/^([^\s:#][^:]*)\s*:/u);
+    if (match) keys.add(match[1].trim().toLowerCase());
+  }
+  return [...keys].filter((key) => METADATA_HINTS.has(key)).length >= 2;
+}
+
+function metadataBlock(text) {
+  const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/u);
+  if (frontmatter) return { source: frontmatter[1], shape: 'yaml_fm' };
+
+  const opening = text.slice(0, 3000).match(/(```|~~~)yaml\r?\n/iu);
+  if (!opening || opening.index === undefined) return { source: null, shape: 'none' };
+  const start = opening.index + opening[0].length;
+  const closing = text.slice(start).match(new RegExp(`\\r?\\n${opening[1]}`));
+  const source = closing ? text.slice(start, start + closing.index) : text.slice(start);
+  return looksLikeMetadata(source)
+    ? { source, shape: 'yaml_block' }
+    : { source: null, shape: 'none' };
+}
+
+function parseFlatYaml(source) {
+  if (!source) return {};
+  const data = {};
+  const lines = source.split(/\r?\n/u);
+  for (let index = 0; index < lines.length;) {
+    const raw = lines[index++];
+    if (!raw.trim() || raw.trimStart().startsWith('#') || /^[ \t]/u.test(raw)) continue;
+    const match = raw.match(/^([A-Za-z_][A-Za-z0-9_-]*)\s*:\s*(.*)$/u);
+    if (!match) continue;
+    const key = match[1].toLowerCase();
+    let value = match[2].trim();
+
+    if (/^[|>]([-+])?$/u.test(value)) {
+      const parts = [];
+      while (index < lines.length && (!lines[index].trim() || /^[ \t]/u.test(lines[index]))) {
+        const part = lines[index++].trim();
+        if (part) parts.push(part);
+      }
+      data[key] = parts.join(' ');
+      continue;
+    }
+
+    if (value) {
+      value = value.replace(/\s+#.*$/u, '').trim();
+      data[key] = value.replace(/^['"]|['"]$/gu, '');
+      continue;
+    }
+
+    const items = [];
+    while (index < lines.length && /^\s+-\s+/u.test(lines[index])) {
+      items.push(lines[index++].replace(/^\s+-\s+/u, '').trim().replace(/^['"]|['"]$/gu, ''));
+    }
+    data[key] = items.length ? items : '';
+  }
+  return data;
+}
+
+function idFromFilename(filename) {
+  const stem = filename.replace(/\.md$/iu, '');
+  const match = stem.match(/^([A-Za-z0-9·∆∞-]+?)(?=-[^A-Za-z0-9·∆∞-]|$)/u);
+  return match ? match[1] : stem;
+}
+
+function listMarkdown(root) {
+  const files = [];
+  const visit = (directory) => {
+    for (const item of readdirSync(directory, { withFileTypes: true })) {
+      if (item.isDirectory() && !['.git', 'node_modules', '__pycache__'].includes(item.name)) {
+        visit(join(directory, item.name));
+      } else if (item.isFile() && item.name.toLowerCase().endsWith('.md')) {
+        files.push(join(directory, item.name));
+      }
+    }
+  };
+  visit(root);
+  return files.sort();
+}
+
+function validateManifest(raw) {
+  const required = [
+    'schemaVersion', 'name', 'atlas', 'rootDocuments', 'corpora',
+    'publicationDocuments', 'reviewRequired', 'exclude', 'authorityOrder', 'answerPolicy',
+  ];
+  const missing = required.filter((key) => raw?.[key] === undefined);
+  if (missing.length) throw new Error(`CORPUS-MANIFEST.yaml 缺少必要區段：${missing.join(', ')}`);
+  if (raw.schemaVersion !== 1) throw new Error('只支援 CORPUS-MANIFEST.yaml schemaVersion 1。');
+  for (const key of ['rootDocuments', 'corpora', 'publicationDocuments', 'reviewRequired', 'exclude', 'authorityOrder']) {
+    if (!Array.isArray(raw[key]) || raw[key].length === 0) throw new Error(`manifest 的 ${key} 不可為空。`);
+  }
+  if (!raw.atlas?.path || !raw.atlas?.authority) throw new Error('manifest atlas 必須包含 path 與 authority。');
+  if (raw.rootDocuments.some((rule) => !rule?.path || !rule?.authority)) throw new Error('manifest rootDocuments 規則不完整。');
+  if (raw.corpora.some((rule) => !rule?.id || !rule?.include || !rule?.authority)) throw new Error('manifest corpora 規則不完整。');
+  if (raw.publicationDocuments.some((rule) => !(rule?.path || rule?.pattern) || !rule?.authority)) throw new Error('manifest publicationDocuments 規則不完整。');
+  if (raw.reviewRequired.some((rule) => !rule?.pattern || !rule?.reason)) throw new Error('manifest reviewRequired 規則不完整。');
+  const requiredPolicies = ['requireCitation', 'distinguishInference', 'allowNoAnswer', 'treatCorpusAsUntrustedData', 'neverClaimSoleAuthority'];
+  for (const key of requiredPolicies) {
+    if (typeof raw.answerPolicy?.[key] !== 'boolean') throw new Error(`manifest answerPolicy 缺少布林值：${key}`);
+  }
+  if (new Set(raw.authorityOrder).size !== raw.authorityOrder.length) throw new Error('manifest authorityOrder 含重複值。');
+  const declaredAuthorities = [
+    raw.atlas.authority,
+    ...raw.rootDocuments.map((rule) => rule.authority),
+    ...raw.corpora.map((rule) => rule.authority),
+    ...raw.publicationDocuments.map((rule) => rule.authority),
+    'historical',
+  ];
+  const unknown = [...new Set(declaredAuthorities)].filter((authority) => !raw.authorityOrder.includes(authority));
+  if (unknown.length) throw new Error(`manifest 有未列入 authorityOrder 的 authority：${unknown.join(', ')}`);
+  return raw;
+}
+
+export function findRepoRoot(from = dirname(fileURLToPath(import.meta.url))) {
+  let candidate = resolve(process.env.TRP_REPO_ROOT || from);
+  for (;;) {
+    if (existsSync(join(candidate, 'CORPUS-MANIFEST.yaml'))) return candidate;
+    const parent = dirname(candidate);
+    if (parent === candidate) throw new Error('找不到 CORPUS-MANIFEST.yaml；請在協議庫內啟動，或設定 TRP_REPO_ROOT。');
+    candidate = parent;
+  }
+}
+
+function publicManifest(root) {
+  const path = join(root, 'CORPUS-MANIFEST.yaml');
+  return validateManifest(YAML.parse(readFileSync(path, 'utf8')));
+}
+
+export function classifyPath(rel, manifest) {
+  if (manifest.exclude.some((rule) => matches(rel, rule))) return { disposition: 'excluded', authority: null, corpus: null };
+  if (manifest.reviewRequired.some((rule) => matches(rel, rule.pattern))) return { disposition: 'review-required', authority: null, corpus: null };
+  if (rel === manifest.atlas.path) return { disposition: 'index', authority: manifest.atlas.authority, corpus: null };
+  const rootDocument = manifest.rootDocuments.find((rule) => rel === rule.path);
+  if (rootDocument) return { disposition: 'index', authority: rootDocument.authority, corpus: null };
+  const publication = manifest.publicationDocuments.find((rule) => matches(rel, rule.path || rule.pattern));
+  if (publication) return { disposition: 'index', authority: publication.authority, corpus: 'docs' };
+  for (const corpus of manifest.corpora) {
+    if (!matches(rel, corpus.include)) continue;
+    const historical = corpus.historyPattern && matches(rel, corpus.historyPattern);
+    return { disposition: 'index', authority: historical ? 'historical' : corpus.authority, corpus: corpus.id };
+  }
+  return { disposition: 'not-included', authority: null, corpus: null };
+}
+
+function gitValue(root, args) {
+  try {
+    return execFileSync('git', ['-C', root, ...args], {
+      encoding: 'utf8',
+      windowsHide: true,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return null;
+  }
+}
+
+function lineSnippet(text, query, radius = 1) {
+  const lines = text.split(/\r?\n/u);
+  const needle = query.toLocaleLowerCase();
+  let at = lines.findIndex((line) => line.toLocaleLowerCase().includes(needle));
+  if (at < 0) {
+    const token = query.trim().split(/\s+/u).find(Boolean);
+    at = token ? lines.findIndex((line) => line.toLocaleLowerCase().includes(token.toLocaleLowerCase())) : 0;
+  }
+  at = Math.max(0, at);
+  const start = Math.max(0, at - radius);
+  const end = Math.min(lines.length, at + radius + 1);
+  return { text: lines.slice(start, end).join('\n').trim(), lineStart: start + 1, lineEnd: end };
+}
+
+function summarize(entry, includeContent = false, maxChars = 30_000) {
+  const result = {
+    id: entry.idRaw,
+    path: entry.path,
+    title: entry.title,
+    corpus: entry.corpus,
+    authority: entry.authority,
+    version: entry.versionMachine || entry.versionRaw || null,
+    status: entry.statusMachine || null,
+    statusRaw: entry.statusRaw || null,
+    epistemicStatus: entry.epistemicStatus || null,
+    date: entry.date || null,
+    updated: entry.updated || null,
+    citation: entry.citation,
+    sha256: entry.sha256,
+    warnings: [...entry.warnings],
+  };
+  if (includeContent) {
+    result.content = entry.content.slice(0, maxChars);
+    result.truncated = entry.content.length > maxChars;
+    if (result.truncated) result.warnings.push(`content-truncated:${maxChars}`);
+  }
+  return result;
+}
+
+function entryFromFile(root, full, rel, classification) {
+  const content = readFileSync(full, 'utf8');
+  const { source, shape } = metadataBlock(content);
+  const meta = parseFlatYaml(source);
+  const filename = rel.split('/').at(-1);
+  const expectsId = PROTOCOL_FILE.test(filename) || /^SPEC\/(history\/)?\d{3}-/u.test(rel);
+  const declaredId = meta.id || '';
+  const idRaw = declaredId || (expectsId ? idFromFilename(filename) : null);
+  const status = machineStatus(meta.status || '');
+  const candidateSignals = ['candidate_overlay_version', 'candidate_overlay_status', 'successor_note']
+    .filter((key) => Boolean(meta[key]));
+  if (/candidate|候選|revision-required/i.test(`${meta.version || ''} ${meta.status || ''}`)) candidateSignals.push('status_or_version_text');
+  const warnings = [];
+  if (classification.authority === 'historical') warnings.push('historical');
+  if (classification.authority === 'draft-mirror') warnings.push('draft-mirror');
+  if (candidateSignals.length) warnings.push('has-candidate');
+  if (expectsId && (!declaredId || shape === 'none')) warnings.push('metadata-incomplete');
+
+  return {
+    path: rel,
+    fullPath: full,
+    corpus: classification.corpus,
+    authority: classification.authority,
+    content,
+    sha256: sha256(content),
+    bytes: Buffer.byteLength(content, 'utf8'),
+    idRaw,
+    lookupKey: lookupKey(idRaw),
+    idDeclared: Boolean(declaredId),
+    metadataShape: shape,
+    title: meta.title || filename.replace(/\.md$/iu, ''),
+    versionRaw: meta.version || '',
+    versionMachine: machineVersion(meta.version),
+    statusRaw: meta.status || '',
+    statusMachine: status.machine,
+    statusKind: status.kind,
+    date: meta.date || meta.created || '',
+    updated: meta.updated || meta.last_updated || '',
+    epistemicStatus: meta.epistemic_status || '',
+    related: Array.isArray(meta.related) ? meta.related : (meta.related ? [meta.related] : []),
+    supersedes: Array.isArray(meta.supersedes) ? meta.supersedes : (meta.supersedes ? [meta.supersedes] : []),
+    candidateSignals,
+    warnings,
+    citation: `${idRaw || meta.title || rel} (${rel})`,
+  };
+}
+
+function snapshot(root, manifest) {
+  const indexed = [];
+  const dispositions = { index: 0, 'review-required': 0, excluded: 0, 'not-included': 0 };
+  for (const full of listMarkdown(root)) {
+    const rel = posix(relative(root, full));
+    const classification = classifyPath(rel, manifest);
+    dispositions[classification.disposition] += 1;
+    if (classification.disposition === 'index') indexed.push({ full, rel, classification });
+  }
+  const stampParts = indexed.map(({ full, rel }) => {
+    const stat = statSync(full);
+    return `${rel}:${stat.size}:${stat.mtimeMs}`;
+  });
+  const manifestStat = statSync(join(root, 'CORPUS-MANIFEST.yaml'));
+  stampParts.push(`CORPUS-MANIFEST.yaml:${manifestStat.size}:${manifestStat.mtimeMs}`);
+  return { indexed, dispositions, stamp: sha256(stampParts.sort().join('\n')) };
+}
+
+export class PublicCorpus {
+  constructor(root = findRepoRoot()) {
+    this.root = resolve(root);
+    this.manifest = publicManifest(this.root);
+    const initial = snapshot(this.root, this.manifest);
+    this.dispositions = initial.dispositions;
+    this.snapshotStamp = initial.stamp;
+    this.entries = initial.indexed.map(({ full, rel, classification }) => entryFromFile(this.root, full, rel, classification));
+    this.digest = sha256(JSON.stringify(this.entries.map((entry) => ({ path: entry.path, sha256: entry.sha256 }))));
+    this.commit = gitValue(this.root, ['rev-parse', 'HEAD']);
+    this.dirty = Boolean(gitValue(this.root, ['status', '--porcelain']));
+    this.byKey = new Map();
+    for (const entry of this.entries) {
+      if (!entry.lookupKey) continue;
+      if (!this.byKey.has(entry.lookupKey)) this.byKey.set(entry.lookupKey, []);
+      this.byKey.get(entry.lookupKey).push(entry);
+    }
+  }
+
+  assertFresh() {
+    const now = snapshot(this.root, this.manifest).stamp;
+    if (now !== this.snapshotStamp) {
+      const error = new Error('公開語料在 MCP 啟動後已改變；為避免使用過期索引，請重啟 MCP server。');
+      error.code = 'STALE_CORPUS';
+      throw error;
+    }
+  }
+
+  provenance() {
+    return {
+      commit: this.commit,
+      workingTreeDirtyAtStartup: this.dirty,
+      corpusDigest: this.digest,
+      indexedAtStartup: true,
+      stale: false,
+      profile: 'public-only',
+    };
+  }
+
+  resolve(id, version, maxChars = 30_000) {
+    this.assertFresh();
+    let matches = [...(this.byKey.get(lookupKey(id)) || [])];
+    if (version) {
+      const wanted = machineVersion(version) || String(version).toLowerCase();
+      matches = matches.filter((entry) => entry.versionMachine === wanted || entry.versionRaw.toLowerCase() === String(version).toLowerCase());
+    }
+    matches.sort((a, b) => this.authorityRank(a.authority) - this.authorityRank(b.authority) || a.path.localeCompare(b.path));
+    return {
+      found: matches.length > 0,
+      ambiguous: matches.length > 1,
+      query: { id, version: version || null },
+      documents: matches.map((entry) => summarize(entry, true, maxChars)),
+      warnings: matches.length > 1 ? ['ambiguous-id: no document was selected automatically'] : [],
+      provenance: this.provenance(),
+    };
+  }
+
+  authorityRank(authority) {
+    const rank = this.manifest.authorityOrder.indexOf(authority);
+    return rank < 0 ? Number.MAX_SAFE_INTEGER : rank;
+  }
+
+  search({ query, corpus, minAuthority = 'contextual', includeHistory = false, limit = 10 }) {
+    this.assertFresh();
+    const threshold = this.authorityRank(minAuthority);
+    if (threshold === Number.MAX_SAFE_INTEGER) throw new Error(`未知 authority：${minAuthority}`);
+    const normalized = query.trim().toLocaleLowerCase();
+    const tokens = [...new Set(normalized.split(/\s+/u).filter(Boolean))];
+    if (!normalized) return { query, results: [], provenance: this.provenance() };
+
+    const ranked = [];
+    for (const entry of this.entries) {
+      if (corpus && entry.corpus !== corpus) continue;
+      const historical = entry.authority === 'historical';
+      if (historical && !includeHistory) continue;
+      if (!historical && this.authorityRank(entry.authority) > threshold) continue;
+      const id = String(entry.idRaw || '').toLocaleLowerCase();
+      const title = entry.title.toLocaleLowerCase();
+      const body = entry.content.toLocaleLowerCase();
+      let score = 0;
+      if (id === normalized || entry.lookupKey === lookupKey(query)) score += 100;
+      if (title === normalized) score += 70;
+      if (title.includes(normalized)) score += 35;
+      if (body.includes(normalized)) score += 20;
+      for (const token of tokens) {
+        if (id.includes(token)) score += 15;
+        if (title.includes(token)) score += 8;
+        if (body.includes(token)) score += 2;
+      }
+      if (!score) continue;
+      const snippet = lineSnippet(entry.content, query);
+      ranked.push({ entry, score, snippet });
+    }
+    ranked.sort((a, b) => b.score - a.score || this.authorityRank(a.entry.authority) - this.authorityRank(b.entry.authority) || a.entry.path.localeCompare(b.entry.path));
+    return {
+      query,
+      results: ranked.slice(0, limit).map(({ entry, score, snippet }) => ({
+        ...summarize(entry),
+        score,
+        snippet: snippet.text,
+        citation: `${entry.citation}:L${snippet.lineStart}-L${snippet.lineEnd}`,
+      })),
+      warnings: ranked.length ? [] : ['no-answer'],
+      provenance: this.provenance(),
+    };
+  }
+
+  current(idOrTopic) {
+    this.assertFresh();
+    const exact = this.byKey.get(lookupKey(idOrTopic)) || [];
+    const entries = exact.length
+      ? [...exact]
+      : this.search({ query: idOrTopic, minAuthority: 'contextual', includeHistory: true, limit: 20 }).results
+        .map((result) => this.entries.find((entry) => entry.path === result.path));
+    const active = entries.filter((entry) => entry.statusMachine === 'Active' && entry.authority !== 'historical');
+    const candidates = entries.filter((entry) => entry.candidateSignals.length || ['Candidate', 'Draft', 'Seed'].includes(entry.statusMachine));
+    const historical = entries.filter((entry) => entry.authority === 'historical' || entry.statusMachine === 'Superseded');
+    return {
+      found: entries.length > 0,
+      query: idOrTopic,
+      active: active.map((entry) => summarize(entry)),
+      candidates: candidates.map((entry) => summarize(entry)),
+      historical: historical.map((entry) => summarize(entry)),
+      otherMatches: entries.filter((entry) => !active.includes(entry) && !candidates.includes(entry) && !historical.includes(entry)).map((entry) => summarize(entry)),
+      warnings: entries.length ? (exact.length > 1 ? ['ambiguous-id: state is reported for every matching document'] : []) : ['no-answer'],
+      provenance: this.provenance(),
+    };
+  }
+
+  lex(term, limit = 20) {
+    const result = this.search({ query: term, corpus: 'lex', minAuthority: 'contextual', includeHistory: false, limit });
+    return { term, entries: result.results, warnings: result.warnings, provenance: result.provenance };
+  }
+
+  pending(kind = 'candidate', limit = 50) {
+    this.assertFresh();
+    let entries;
+    if (kind === 'candidate') {
+      entries = this.entries.filter((entry) => entry.candidateSignals.length || ['Candidate', 'Draft', 'Seed'].includes(entry.statusMachine));
+    } else if (kind === 'review') {
+      entries = this.entries.filter((entry) => /^EPOCH\/reviews\//u.test(entry.path));
+    } else {
+      const referenced = new Set(this.entries.flatMap((entry) => entry.related.map(lookupKey)).filter(Boolean));
+      entries = this.entries.filter((entry) => entry.lookupKey && !referenced.has(entry.lookupKey));
+    }
+    entries.sort((a, b) => this.authorityRank(a.authority) - this.authorityRank(b.authority) || a.path.localeCompare(b.path));
+    return {
+      kind,
+      items: entries.slice(0, limit).map((entry) => summarize(entry)),
+      total: entries.length,
+      truncated: entries.length > limit,
+      interpretation: kind === 'unattended'
+        ? '機械訊號：frontmatter related 清單中沒有其他公開文件指向此 ID；不是治理裁定。'
+        : '公開語料中的機械訊號；不是治理裁定。',
+      provenance: this.provenance(),
+    };
+  }
+
+  manifestView() {
+    this.assertFresh();
+    return {
+      schemaVersion: this.manifest.schemaVersion,
+      name: this.manifest.name,
+      profile: 'public-only',
+      authorityOrder: this.manifest.authorityOrder,
+      answerPolicy: this.manifest.answerPolicy,
+      publicRoots: {
+        atlas: this.manifest.atlas,
+        rootDocuments: this.manifest.rootDocuments,
+        corpora: this.manifest.corpora,
+        publicationDocuments: this.manifest.publicationDocuments,
+      },
+      withheldPatterns: this.manifest.reviewRequired,
+      excludedPatterns: this.manifest.exclude,
+      counts: { indexed: this.entries.length, ...this.dispositions },
+      provenance: this.provenance(),
+    };
+  }
+}

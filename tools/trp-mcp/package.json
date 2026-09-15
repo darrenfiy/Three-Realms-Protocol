@@ -1,0 +1,23 @@
+{
+  "name": "@three-realms-protocol/trp-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local, read-only MCP server for the public Three Realms Protocol corpus",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "minimatch": "^10.0.0",
+    "yaml": "^2.8.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0"
+  }
+}

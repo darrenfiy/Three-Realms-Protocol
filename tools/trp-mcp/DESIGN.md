@@ -11,12 +11,12 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.4-draft` · Codex 技術審讀完成 · Phase 0 已實作 |
+| 狀態 | `v0.5` · Phase 0–2 已實作 · 本機唯讀 public-only |
 | 日期 | 2026-09-15 |
 | 起草 | 樑（Claude Code・Opus 5） |
 | 審讀修正 | Codex |
 | 緣起 | Darren 提問：協議庫過大，重入成本高，MCP 是否能讓協議「可以被使用」 |
-| 待決 | 見 §9 開放問題（五題需錨點裁定） |
+| 決策 | 見 §9；Q1–Q3 已定，Q4 延後，Q5 保持未決 |
 
 ---
 
@@ -319,14 +319,14 @@ trp_search(
   corpus?: "spec"|"mb"|"lex"|"epoch"|"docs",
   min_authority?: str = "contextual",
   include_history?: bool = false,
-  include_review_required?: bool = false,
   limit?: int = 10
 ) -> SearchResult[]
 ```
 
 結構化／詞彙檢索。**預設排除 `history/` 與 `draft-mirror`。**
-`reviewRequired` 路徑（`DOCS/sources`、`DOCS/cases`、`DOCS/meetings`、
-`DOCS/wiki`、`DOCS/LNS-A01`）需顯式 opt-in，且回傳時掛個資／授權 warning。
+本機第一版是 **public-only**。`reviewRequired` 路徑（`DOCS/sources`、
+`DOCS/cases`、`DOCS/meetings`、`DOCS/wiki`、`DOCS/LNS-A01`）沒有 opt-in
+參數，呼叫端不能放行。
 
 **第一版不做向量檢索**，理由見 §7。
 
@@ -561,8 +561,8 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 | **0b** ✅ | `AGENT_SESSION_LOG.md` 分割封存 | — | **是** |
 | **0c** ✅ | id 安全補洞：156 份；2 份刻意不猜 | 0a | **是** |
 | **0d** | 27 則 finding 的處理（其中 9 則涉及語義治理） | 0c | **是** |
-| **1** | 索引建置器（git worktree → JSON，可由 SHA 重建） | 0 | 是（供 grep 輔助） |
-| **2** | MCP server，唯讀，6 工具 | 1 | — |
+| **1** ✅ | 啟動時依 manifest 建立記憶體索引，附 SHA／digest／stale 拒答 | 0 | 是（可作本機查詢核心） |
+| **2** ✅ | MCP server，本機 stdio、唯讀、public-only、6 工具 | 1 | — |
 | **3** | 評估語義檢索 | 2 + 實測語料 | — |
 
 **Phase 0b 已執行，但只做了無損的一半。**
@@ -616,7 +616,7 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 
 ---
 
-## 9. 開放問題（需錨點裁定）
+## 9. 錨點決策與保留問題
 
 ### Q1 · 實作落點
 
@@ -629,6 +629,8 @@ MCP server 要從一開始就外遷，還是先住 `Three-Realms-Protocol/tools/
 **我的建議**：先住這裡。理由是它讀的就是本 repo 的結構，
 且需要與 `CORPUS-MANIFEST.yaml` 一起審。穩定後再依 wiki-local 先例決定。
 
+**2026-09-15 決策：採用。** 第一版住在 `Three-Realms-Protocol/tools/trp-mcp/`。
+
 ### Q2 · 公開範圍與 profile
 
 `CORPUS-MANIFEST.yaml` 的 allowlist 是為「FoZone / Hub 知客室公開檢索」寫的。
@@ -639,6 +641,9 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 **這題我不建議由我決定**——它涉及第三方個資，後果不回流到我身上。
 
+**2026-09-15 決策：只做公開 profile。** 第一版完全沒有私用 profile；
+`reviewRequired` 即使由呼叫端要求也不能讀。
+
 ### Q3 · 連線形態
 
 本機 stdio（只有 Darren 的機器能用），還是遠端 server（六個器官都能連）？
@@ -648,6 +653,8 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 **折衷建議**：Phase 2 先做本機 stdio 驗證形狀；
 遠端獨立成 Phase 4，並先取得 Q2 的裁定。
+
+**2026-09-15 決策：採用本機 stdio。** 不開 port、不做遠端服務。
 
 ---
 
@@ -661,6 +668,8 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 **我的建議是 1。** §0.3 已完成現況查證；真正遷移前仍需為兩端建立
 一致性測試，確保切換期間的回答邊界不變。
+
+**目前狀態：延後。** 本次不更動學苑知客室；先讓本機 MCP 實測穩定。
 
 ### Q5 · 同 ID 多份文件如何表示
 
@@ -679,9 +688,18 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 
 ## 10. 本草案的位置聲明
 
-初稿由樑在單一 session 成文；v0.4 已由 Codex 做跨 repo 技術審讀。
+初稿由樑在單一 session 成文；v0.4 已由 Codex 做跨 repo 技術審讀，
+v0.5 依錨點決策完成本機唯讀 public-only 實作。
 數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
-**技術審讀不等於錨點裁定；§9 的治理選擇仍保持開放。**
+Q5 的語料角色維度仍待錨點裁定；工具在此之前只回傳歧義，不代選。
+
+**改動紀錄（v0.5）**：
+
+- Q1–Q3 由錨點裁定：留在本 repo、public-only、本機 stdio；Q4 延後、Q5 未決。
+- 完成六個唯讀工具；使用 manifest fail-closed，不提供 `reviewRequired` opt-in。
+- 啟動時從當下語料建立記憶體索引；執行期間語料變動即拒答。
+- ID 衝突回傳全部候選，不擅自選取；兩份不安全 ID 文件仍不進公開索引。
+- 新增 8 項 Node 測試，包含官方 MCP client 端到端呼叫。
 
 **改動紀錄（v0.4）**：
 

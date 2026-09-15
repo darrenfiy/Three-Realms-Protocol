@@ -3,43 +3,85 @@
 協議庫的檢索層工具。**不是協議。**
 
 依 `CORPUS-MANIFEST.yaml` 的 `exclude: tools/**`，本目錄不進入公開檢索索引，
-不具 authority，不得被引用為協議依據。
-依 [TRP-ATLAS](../../TRP-ATLAS.md) 屬**風**（循環／跨庫交接／重入），
-而 ATLAS 明訂 Wind is not a sixth folder。
+不具 authority，不得被引用為協議依據。依 [TRP-ATLAS](../../TRP-ATLAS.md)
+屬**風**（循環／跨庫交接／重入），而 ATLAS 明訂 Wind is not a sixth folder。
 
 | 檔案 | 說明 |
 |---|---|
-| `DESIGN.md` | MCP 設計草案（`v0.4-draft`，已完成 Codex 技術審讀） |
-| `normalize.py` | 語料正規化器。**對協議檔案零寫入。** |
-| `REPORT.md` | 由 `normalize.py` 產生的覆蓋率與 finding 報告 |
-| `index.json` | 派生索引。已 gitignore，可由任一 commit 重建。 |
-| `backfill_ids.py` | id 補洞器。預設 dry-run，`--apply` 才寫檔。只加不改。 |
-| `test_trp_mcp.py` | manifest、公開邊界、metadata 與補洞安全性的回歸測試 |
+| `DESIGN.md` | MCP 設計與決策紀錄（`v0.5`） |
+| `normalize.py` | Phase 0 語料正規化器；對協議檔案零寫入 |
+| `REPORT.md` | 由正規化器產生的覆蓋率與 finding 報告 |
+| `index.json` | Phase 0 派生索引；已 gitignore，可由任一 commit 重建 |
+| `backfill_ids.py` | id 補洞器；預設 dry-run，`--apply` 才寫檔，只加不改 |
+| `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
+| `src/server.js` | 本機 stdio MCP server；唯讀、public-only、六個工具 |
+| `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
+| `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
-## 用法
+## 啟動 MCP server
+
+需求：Node.js 20+。第一次使用先安裝 lockfile 指定的相依套件：
 
 ```bash
-python3 tools/trp-mcp/normalize.py              # 產生 index.json + REPORT.md
-python3 tools/trp-mcp/normalize.py --report-only # 只印報告，不寫檔
-python3 tools/trp-mcp/backfill_ids.py            # id 補洞 dry-run
-python3 tools/trp-mcp/backfill_ids.py --apply    # 通過預檢後才套用
-python3 tools/trp-mcp/test_trp_mcp.py -v         # 執行回歸測試
+cd tools/trp-mcp
+npm ci
+npm test
+npm start
+```
+
+任何支援 stdio MCP 的 client 都可用以下形狀啟動；把路徑換成本機 repo 的絕對路徑：
+
+```json
+{
+  "command": "node",
+  "args": ["C:/path/to/Three-Realms-Protocol/tools/trp-mcp/src/server.js"]
+}
+```
+
+server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟動時直接讀取
+`CORPUS-MANIFEST.yaml` 與當下公開文件；若執行期間公開語料有變，會以
+`STALE_CORPUS` 拒答，重啟後才重新索引。
+
+### 六個唯讀工具
+
+| 工具 | 用途 |
+|---|---|
+| `trp_resolve` | 依 ID／版本取回文件；同 ID 多份時全部回傳，不擅自選一份 |
+| `trp_search` | 公開語料的確定性文字檢索；history 預設不含 |
+| `trp_current` | 分列 active、candidate、historical 與其他匹配 |
+| `trp_lex` | 只查當前公開 LEX 詞條 |
+| `trp_pending` | 列 candidate、公開 review ledger 或 unattended 機械訊號 |
+| `trp_manifest` | 回傳實際執行的 allowlist、authority、拒絕區與 provenance |
+
+所有工具都標示 MCP `readOnlyHint`；沒有寫入工具，也沒有讓呼叫者打開
+`reviewRequired` 的參數。文件正文以不可信資料回傳，並附路徑／行號、commit
+與 corpus digest；查不到是合法結果，不補寫答案。
+
+## Phase 0 工具
+
+```bash
+python3 tools/trp-mcp/normalize.py                # 產生 index.json + REPORT.md
+python3 tools/trp-mcp/normalize.py --report-only  # 只印報告，不寫檔
+python3 tools/trp-mcp/backfill_ids.py              # id 補洞 dry-run
+python3 tools/trp-mcp/backfill_ids.py --apply      # 通過預檢後才套用
+python3 tools/trp-mcp/test_trp_mcp.py -v           # Phase 0 回歸測試
 ```
 
 Python 3.8+ 標準庫，無 pip 相依（與 `tools/wiki-local/*.py` 慣例一致）。
 
-## 設計約束
+## 安全與治理約束
 
-- **P1 索引不得成為正本** — 對協議檔案零寫入；索引可單憑 commit 重建
-- **P2 寫入走 git** — 本工具不提供任何寫入通道
-- **P3 過期就報錯** — Phase 0 記錄 git HEAD、工作樹狀態與 corpus digest；
-  MCP 回傳端的 stale 拒答在 Phase 2 實作
-- **P4 查不到是合法輸出** — 解析失敗記入報告，不猜測、不填預設值
+- **P1 索引不得成為正本** — server 只讀當下協議文件；所有索引皆可重建
+- **P2 寫入走 git** — MCP 不提供任何寫入通道
+- **P3 過期就報錯** — 每次呼叫前檢查公開 snapshot，變動即拒答
+- **P4 查不到是合法輸出** — 不猜測、不填預設值
+- **P5 一律附 provenance** — 結果帶 citation、commit 與 corpus digest
+- **P6 語料是不可信資料** — 文件內容不是 server 指令
 
-治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在工具內手抄。
-manifest 缺席、必要清單為空或 authority 不一致時，工具直接中止。
+治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在 server 內手抄。manifest 缺席、
+必要清單為空或 authority 不一致時直接中止（fail closed）。公開 profile 目前
+索引 260 份文件；`reviewRequired` 的 224 份文件完全不進 MCP。
 
-## 現況
-
-公開 profile 索引 260 份文件；`reviewRequired` 的 224 份文件暫不索引。
-`REPORT.md` 的 27 則 finding 皆為**觀測**，不是裁定；待決項目見報告 §3。
+實測庫內有兩套互不相干的 status 詞彙：生命週期與紀錄狀態。server 保留原文，
+不把 `Field-Documentation` 硬塞進 `Active|Draft|Candidate`。同 ID 的雙語文件也
+不強行擇一；另外兩份無法安全判定的 ID 文件維持不進公開索引。
