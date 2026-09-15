@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/client';
 import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
 
+import { document, fixture } from './support/fixture.js';
+
 const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 
 test('official MCP client can list and call all six read-only tools', async () => {
@@ -43,8 +45,48 @@ test('official MCP client can list and call all six read-only tools', async () =
     assert.equal(current.structuredContent.found, true);
     const lex = await client.callTool({ name: 'trp_lex', arguments: { term: '健康' } });
     assert.ok(lex.structuredContent.entries.length > 0);
+    assert.equal(lex.structuredContent.entries[0].id, 'LEX·007');
+    assert.match(lex.structuredContent.entries[0].content, /不依賴崩潰/u);
     const pending = await client.callTool({ name: 'trp_pending', arguments: { kind: 'candidate', limit: 3 } });
     assert.equal(pending.structuredContent.kind, 'candidate');
+  } finally {
+    await client.close();
+  }
+});
+
+test('MCP rejects invalid inputs, withholds private data, and reports stale errors', async (t) => {
+  const { root, write } = fixture(t);
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active'));
+  write('PRIVATE/SPEC-999.md', document('SPEC-999', '', 'withheld-sentinel'));
+  const transport = new StdioClientTransport({
+    command: process.execPath,
+    args: [join(packageRoot, 'src', 'server.js')],
+    cwd: packageRoot,
+    env: { TRP_REPO_ROOT: root },
+    stderr: 'pipe',
+  });
+  const client = new Client({ name: 'trp-mcp-boundary-test', version: '0.1.0' });
+  try {
+    await client.connect(transport);
+    const invalid = await client.callTool({ name: 'trp_search', arguments: { query: 'test', limit: 0 } });
+    assert.equal(invalid.isError, true);
+    const search = await client.callTool({ name: 'trp_search', arguments: { query: 'withheld-sentinel', include_review_required: true } });
+    assert.equal(search.isError, undefined);
+    assert.deepEqual(search.structuredContent.results, []);
+    const privateDocument = await client.callTool({ name: 'trp_resolve', arguments: { id: 'SPEC-999' } });
+    assert.equal(privateDocument.structuredContent.found, false);
+
+    write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', 'Changed.'));
+    for (const [name, args] of [
+      ['trp_resolve', { id: 'SPEC-001' }], ['trp_search', { query: 'Initial' }],
+      ['trp_current', { id_or_topic: 'SPEC-001' }], ['trp_lex', { term: 'health' }],
+      ['trp_pending', {}], ['trp_manifest', {}],
+    ]) {
+      const result = await client.callTool({ name, arguments: args });
+      assert.equal(result.isError, true, name);
+      assert.equal(JSON.parse(result.content[0].text).code, 'STALE_CORPUS', name);
+      assert.equal(result.structuredContent, undefined);
+    }
   } finally {
     await client.close();
   }

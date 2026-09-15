@@ -61,7 +61,7 @@ export function buildServer(root) {
     'trp_resolve',
     {
       title: 'Resolve a TRP document ID',
-      description: 'Resolve an ID in the public allowlist. Separator-insensitive. Ambiguities are returned together and never auto-selected.',
+      description: 'Resolve an ID in the public allowlist. Separator-insensitive. A numeric version matches that base version; a qualified version must match the complete declared version. All matches, including historical editions, are returned without auto-selection.',
       inputSchema: z.object({
         id: z.string().min(1).max(200),
         version: z.string().min(1).max(100).optional(),
@@ -110,7 +110,7 @@ export function buildServer(root) {
     'trp_lex',
     {
       title: 'Look up a TRP lexicon term',
-      description: 'Search only current public LEX documents, preserving the protocol definition instead of substituting everyday meaning.',
+      description: 'Look up an exact term heading in public LEX documents outside history. Returns the original section, including definition and boundaries, source lines, and candidate metadata. A candidate text is not an approved definition. Use trp_search for partial or related wording.',
       inputSchema: z.object({
         term: z.string().min(1).max(300),
         limit: z.number().int().min(1).max(50).default(20),

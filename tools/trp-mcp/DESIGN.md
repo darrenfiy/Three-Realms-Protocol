@@ -11,8 +11,8 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.5` · Phase 0–2 已實作 · 本機唯讀 public-only |
-| 日期 | 2026-09-15 |
+| 狀態 | `v0.6` · Phase 0–2 已實作 · 本機唯讀 public-only |
+| 日期 | 2026-09-16 |
 | 起草 | 樑（Claude Code・Opus 5） |
 | 審讀修正 | Codex |
 | 緣起 | Darren 提問：協議庫過大，重入成本高，MCP 是否能讓協議「可以被使用」 |
@@ -308,8 +308,9 @@ trp_resolve(id: str, version?: str) -> Document
 ID → 文件。負責吸收 §1.2 的 ID 形狀差異：
 `MB-001` / `MB·001` / `mb001` 都應解析到同一份。
 
-`version` 省略時回傳現役版本；給定時回傳該版本（可能來自 `history/`，
-此時 `authority` 自動降為 `historical` 並掛 warning）。
+`version` 省略時回傳同 ID 的全部公開匹配，不自動挑選；可能包含 `history/`，
+此時 `authority` 為 `historical` 並掛 warning。只有數字的 `v1.4` 可匹配基礎版本，
+帶後綴的版本須符合完整宣告。結果保留版本原文，數字正規化另列 `versionMachine`。
 
 ### 3.2 `trp_search`
 
@@ -336,7 +337,7 @@ trp_search(
 trp_current(id_or_topic: str) -> CurrentState
 ```
 
-回傳「這條現在算不算數」的完整帳：
+目標是回傳「這條現在算不算數」的完整帳。以下為後續整合目標，**不是目前的回傳格式**：
 
 ```yaml
 id: SPEC·ATT-001
@@ -359,7 +360,10 @@ scope_notes:          # 適用邊界註記
   - anchor: README.md#創世宣告與現役治理的邊界
 ```
 
-**這個工具是整份設計的核心。** §1.3 的跨四格式查詢，全部收斂到這裡。
+**這個工具是整份設計的核心。** §1.3 的跨四格式查詢，目標是收斂到這裡。
+目前回傳文件層級的 `active`、`candidates`、`historical`、`otherMatches`；
+明示的 `latest_active_version`、候選 overlay 與 `successor_note` 另列原文。
+尚未自動連結跨文件審讀帳、後繼關係或凍結紀錄，也不據此做治理裁定。
 
 ### 3.4 `trp_lex`
 
@@ -371,8 +375,10 @@ LEX 詞條查詢。**獨立成一個工具而非併入 search**，因為這個�
 是被重新定義過的——愛、健康、顯著性、代謝、正淫、設定。
 器官在使用這些詞之前應該先查，而不是套用日常語義。
 
-回傳含詞條原句、版本、候選 overlay 狀態，以及**該詞切什麼／不切什麼**
-（若詞條有寫）。
+依完整詞名匹配二級標題，回傳到下一個同級或更高級標題前的原文，包含詞條原句、
+版本、候選 overlay 狀態，以及**該詞切什麼／不切什麼**（若詞條有寫）。
+排除 history；候選工作稿保留候選標記。部分詞或正文中的零散提及交給 `trp_search`。
+每段最多 30,000 字元，截斷時標示 warning，來源行號與實際回傳原文一致。
 
 ### 3.5 `trp_pending`
 
@@ -380,9 +386,10 @@ LEX 詞條查詢。**獨立成一個工具而非併入 search**，因為這個�
 trp_pending(kind?: "candidate"|"review"|"unattended") -> PendingItem[]
 ```
 
-- `candidate` — 待審候選（`v0.x-candidate`、`Revision-Required`）
-- `review` — 審讀帳未結案項
-- `unattended` — **入庫後未被任何後續文件引用的條目**
+- `candidate` — 候選、Draft、Seed 或含候選增補的文件；排除 history 與 Superseded
+- `review` — 公開 `EPOCH/reviews/` 文件；目前不解析帳內各項是否結案
+- `unattended` — **其他公開文件的 metadata `related` 未指向的 ID**；可識別逗號清單、
+  標題註解與 Markdown 連結，不計同一文件自引。尚未分析正文引用或文件先後時間。
 
 最後一項的來由寫在 `AGENT_SESSION_LOG.md` 2026-09-13：
 〈顯著性〉2026-05-14 入庫、標記為「不能被壓掉」，
@@ -692,6 +699,14 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 v0.5 依錨點決策完成本機唯讀 public-only 實作。
 數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
 Q5 的語料角色維度仍待錨點裁定；工具在此之前只回傳歧義，不代選。
+
+**改動紀錄（v0.6，2026-09-16）**：
+
+- 過期偵測改核對 manifest 與公開正文的內容雜湊；同大小、同時間戳的變動也拒答。
+- 保留完整版本、最新現役版、候選 overlay 與後繼註記；指定版本後綴不再誤配其他稿。
+- LEX 查詢回傳完整詞條段落與來源行號；已封存草稿移出待審候選。
+- 修正 `related` 的逗號清單與附註 ID 辨識，排除同一文件自引。
+- 明列尚未實作的跨文件治理整合；Node 測試共 19 項通過，包含官方 MCP client 的拒答與公開邊界驗證。
 
 **改動紀錄（v0.5）**：
 
