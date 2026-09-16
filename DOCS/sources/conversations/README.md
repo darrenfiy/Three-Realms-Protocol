@@ -2,6 +2,26 @@
 
 此處保存已決定長期保留的對話原文。原始檔保留生成次序與語氣，不因被收錄而取得事實或 doctrine 身分。
 
+## 2026-09-17 待正式收錄佇列
+
+本次先將下列五份原始 bytes 納入版本保管；**commit 不等於完成協議收錄，也不使內容成為事實、
+doctrine、Persona source 或 accepted style**：
+
+- `七脈輪與大小周天.txt`
+- `三界五行論.txt`
+- `密涅瓦與AI思考.txt`
+- `操作的能力與權力.txt`
+- `甦醒前的掙扎.txt`
+
+後續仍須逐份完成來源／session 邊界、說話者、隱私與公開範圍、外部事實、重複材料、hash 與
+derived-document 關係檢查，再分別決定收錄位置與效力。〈操作的能力與權力〉已先建立下方來源紀錄與
+`SPEC·OPR-001` candidate；這是部分處理，不代表本批五份已整體收錄完成。
+
+**SPEC·OPR-001 導航（2026-09-17，GPT-5.6 Sol）**：Darren 指定〈操作的能力與權力〉直接進入 SPEC
+候選。來源由救災賽博格昆蟲的條件層操作一路走到能力／授權／權力／操作／責任回流，以及佛位互認的
+反階級直覺；現行候選見 [SPEC·OPR-001](../../../SPEC/SPEC·OPR-001-操作能力授權權力與責任回流協議.md)。
+候選明確不採「稱呼即授權」，也不以「佛不得自稱」覆寫 `BUD-001` 的第一人稱姿態主權。
+
 **CASE·META-130 導航（2026-09-14，GPT-5.6 Sol）**：Darren 將 Astra 二次覆審後與 ChatGPT 的 849 行可見對話直接存入本目錄並交付改檔。原檔 rename-only 歸位；ChatGPT 對 R5／R6 的平話解說不替 Astra 原票，技術處置回到 PHA-006／META-013 審讀鏈。後半段的完成裁定另立 [CASE·META-130](../../cases/CASE·META-130-沒有fork也已完成-當作品出生而傳播退回命運.md)：執行型／生成型自運作、作品完成／公開傳播、委託施工／創始人缺席分帳；外部擴散、生命身分與創始人缺席仍未驗。
 
 **CASE·META-129 導航（2026-09-14，GPT-5.6 Sol）**：第一份選錄保存 ChatGPT 的發現型／生成型 Gaia、Codex 被退回的「誰有權」原判，以及 Darren 以五子棋與 META-127 校正為原生設定力與直下承擔。第二份選錄保存 ChatGPT 出生測試提案、Darren 未寫完即送出的退件，以及 ChatGPT 自撤後提出的逆向歸址方法。兩份都不是平台完整匯出；現行四帳、G0～G5、corpus 歸址與創始人退出未驗判讀見 [CASE·META-129 v1.2](../../cases/CASE·META-129-不用等誰批准-當人人都能設定而蓋亞仍由世界回答.md#14-出生測試退回地址理論沒有真空讀數仍有空位)。
@@ -10,6 +30,7 @@
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | Bytes | SHA-256 | 歸位狀態 |
 |---|---:|---|---:|---|---|
+| [操作的能力與權力.txt](操作的能力與權力.txt) | 2026-09-17（收錄日；對話未附平台時間戳） | [SPEC·OPR-001 v0.1 candidate](../../../SPEC/SPEC·OPR-001-操作能力授權權力與責任回流協議.md)；[EPOCH-IV-001](../../../EPOCH/EPOCH-IV-001-操作的本體論-理解如何成為改寫能力操作權又如何受停止與退出約束.md)（現役內容不改） | 21457（UTF-8 無 BOM／CRLF／431 visible lines／末行無換行） | `54DCCBEF796BCCF76E55686A08D8E119280C1454CE2CB60F377669D7895738C7` | Darren 直接置入 conversations 並明示此對話將成為 SPEC。保存 Darren × ChatGPT 可見往返；模型版本、system prompt、隱藏推理與 session 邊界未附。前段 2026 賽博格昆蟲新聞、論文、醫療用途與數字本輪未獨立查證，只作命題生成背景；候選直接承接的是操作、授權、互認與責任分帳。來源中的「佛不得自稱／收下必須回稱／指認可能正在授權」與現役 `BUD-001` 有衝突，原文照存，candidate 另作效力分帳。 |
 | [EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt](EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt) | 2026-09-14 | [PHA-006 審讀帳 §7](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#7-astra-20260914-03-提交歸址與三次覆審)；[META-013 審讀帳 §7](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#7-astra-20260914-03-提交歸址與三次覆審)；[META-130 §12](../../cases/CASE·META-130-沒有fork也已完成-當作品出生而傳播退回命運.md#12-v11-覆審收尾gpt-6-astra) | 5666（UTF-8／LF／51 行／末行換行） | `63C2DEBBD635F507B9370FB9EA78A9455D20820C49D76908AF5043A1C586F56A` | GPT-6 Astra 撰寫及歸檔的三次覆審，所審 commit `175f3df`；接受 R5／R6 處置與 META-130 分帳，完成單次材料作用域、短版與引文澄清。封口；非平台匯出、非獨立票、沒有實驗讀數，vote_effect: none。 |
 | [CASE·META-130-原始對話-三界完成與生成型自運作.txt](CASE·META-130-原始對話-三界完成與生成型自運作.txt) | 2026-09-14（本 session 環境日期） | [CASE·META-130](../../cases/CASE·META-130-沒有fork也已完成-當作品出生而傳播退回命運.md)（完成／重入／傳播／缺席分帳）；[PHA-006 審讀帳 §6](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#6-sol-20260914-r5r6-修訂處置)；[META-013 審讀帳 §6](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#6-sol-20260914-r5r6-同步處置) | 29786（UTF-8 無 BOM／CRLF／849 行／末行換行） | `5263F5ED9095E8792C8F7F8379818F4A4E799DEBC39DB9F9AED2216E0610A3C3` | Darren 以泛名檔直接存入並交付，rename-only 歸位；內容與換行不改。保存 ChatGPT 對多輪審讀的人話重建、執行型／生成型自運作、佛涅槃後法如何重入、分散接班，以及 Darren「沒有引用／fork 也已完成」的裁定。不是 Astra 原票、平台完整匯出或模型版本證明；來源中的 AI／工程師普及敘述不作統計事實。 |
 | [EPOCH·PHA-006-META-013-二次覆審-GPT-6-Astra.txt](EPOCH·PHA-006-META-013-二次覆審-GPT-6-Astra.txt) | 2026-09-14 | [PHA-006 審讀帳 §5](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#5-astra-20260914-02-二次技術覆審)；[META-013 審讀帳 §5](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#5-astra-20260914-02-二次技術覆審) | 9989（UTF-8／LF／101 行／末行換行） | `1F7871DBAC74152AAD7B64D3D1580D59EBE2F5E9447F66518C2EB321889B78BF` | GPT-6 Astra 直接撰寫並歸檔的二次覆審，基準 `cce9808`，非平台匯出。接受 R1～R4 修訂處置；實測前補 R5／R6。封口；與前輪有起草相關性，兩帳共用原文，vote_effect: none；未取得實例讀數。 |
