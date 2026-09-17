@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/client';
 import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
 
+import { PublicCorpus, findRepoRoot } from '../src/corpus.js';
 import { document, fixture } from './support/fixture.js';
 
 const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -32,7 +33,12 @@ test('official MCP client can list and call all six read-only tools', async () =
     const manifest = await client.callTool({ name: 'trp_manifest', arguments: {} });
     assert.equal(manifest.isError, undefined);
     assert.equal(manifest.structuredContent.profile, 'public-only');
-    assert.equal(manifest.structuredContent.counts.indexed, 260);
+    // 2026-09-17 以前這裡硬寫 260，語料一增就誤報。
+    // 真正要測的性質是「MCP 對外報的數字，等於索引器自己算出來的數字」，
+    // 而不是某個特定總數。獨立重算一次語料再比對，語料增減不再讓本測試轉紅，
+    // 但 server 與索引器一旦不同調，仍然立刻失敗。
+    assert.equal(manifest.structuredContent.counts.indexed,
+      new PublicCorpus(findRepoRoot()).entries.length);
 
     const resolution = await client.callTool({ name: 'trp_resolve', arguments: { id: 'LEX·007' } });
     assert.equal(resolution.isError, undefined);

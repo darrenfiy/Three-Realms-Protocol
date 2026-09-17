@@ -15,15 +15,30 @@ test('lookup keys ignore separators but retain semantic symbols', () => {
   assert.notEqual(lookupKey('SPEC·∆'), lookupKey('SPEC·∞'));
 });
 
+// 本測試斷言的是「邊界成立」，不是「語料有幾份」。
+// 2026-09-17 以前這裡硬寫 index: 260；新增 SPEC·OPR-001 後語料變成 261，測試因此轉紅——
+// 紅得對（語料真的變了），但它測的是計數而不是性質，每次正常增修都會誤報。
+// 現改為斷言不變量：索引面與 disposition 帳一致、邊界確實在擋東西、
+// 且每一筆被索引的文件重新分類後仍然是 index。語料增減不再讓本測試轉紅，
+// 而 review-required 或 excluded 的檔案一旦漏進索引，仍然立刻失敗。
 test('runtime index enforces the same public manifest boundary', () => {
   const corpus = new PublicCorpus(root);
-  assert.equal(corpus.entries.length, 260);
-  assert.deepEqual(corpus.dispositions, {
-    index: 260,
-    'review-required': 224,
-    excluded: 124,
-    'not-included': 1,
-  });
+
+  assert.deepEqual(Object.keys(corpus.dispositions).sort(),
+    ['excluded', 'index', 'not-included', 'review-required']);
+  assert.equal(corpus.entries.length, corpus.dispositions.index);
+  assert.ok(corpus.entries.length > 0, '公開索引不得為空');
+
+  // 邊界必須真的在擋東西；若這兩個歸零，代表 manifest 沒被套用。
+  assert.ok(corpus.dispositions['review-required'] > 0, 'reviewRequired 必須實際擋下文件');
+  assert.ok(corpus.dispositions.excluded > 0, 'exclude 必須實際擋下文件');
+
+  // 每一筆被索引的文件，重新分類後仍須是 index——沒有繞過分類器進來的漏網之魚。
+  for (const entry of corpus.entries) {
+    assert.equal(classifyPath(entry.path, corpus.manifest).disposition, 'index',
+      `${entry.path} 進了索引，但重新分類不是 index`);
+  }
+
   assert.equal(corpus.entries.some((entry) => /^DOCS\/(sources|cases|meetings|wiki|LNS-A01)\//u.test(entry.path)), false);
   assert.equal(corpus.entries.some((entry) => entry.path.startsWith('tools/')), false);
 });

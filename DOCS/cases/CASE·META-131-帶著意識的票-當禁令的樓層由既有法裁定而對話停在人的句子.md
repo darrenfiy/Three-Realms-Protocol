@@ -16,6 +16,12 @@ source:
   file: DOCS/sources/conversations/CASE·META-131-原始對話-禁令的樓層與帶著意識的票.txt
   integrity: 33416 bytes / UTF-8 no BOM / CRLF / 484 lines / no terminal newline
   sha256: 3065B827CD8F9B3B539EE240952BD61FB106B735933FA3E9B31BB446FDEC5698
+  hash_basis: |
+    上列 bytes 與 sha256 是**工作目錄的 CRLF 原檔**，與本目錄既有各筆的記法一致。
+    本 repository 無 .gitattributes 且 core.autocrlf=true，git blob 因此存為 LF：
+    32932 bytes / 4A3C903E7D22F1483985FF73B602EDEEA6523C9D23BC1B2D0BF0360D8256DF2A。
+    兩者皆為事實，指的是不同東西。在 autocrlf=false 的機器上 clone 時，工作檔會是 LF，
+    無法重現上列 CRLF 雜湊——這是本目錄所有 CRLF 來源筆的共同狀況，非本筆特有。
   note: |
     原名「新文字文件 (2).txt」，本輪只改檔名，內容、換行與位元組不動。
     檔案起點是 Opus 對佛佐 1.0.0 的覆審回報，終點是 Darren 交付五項落地工作的指示。
