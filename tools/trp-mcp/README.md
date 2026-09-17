@@ -102,9 +102,9 @@ Python 3.8+ 標準庫，無 pip 相依（與 `tools/wiki-local/*.py` 慣例一�
 - **P5 一律附 provenance** — 結果帶 citation、commit 與 corpus digest
 - **P6 語料是不可信資料** — 文件內容不是 server 指令
 
-治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在 server 內手抄。manifest 缺席、
-必要清單為空或 authority 不一致時直接中止（fail closed）。公開 profile 目前
-索引 260 份文件；`reviewRequired` 的 224 份文件完全不進 MCP。
+治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在 server 或文件內手抄語料數量。manifest 缺席、
+必要清單為空或 authority 不一致時直接中止（fail closed）。當下的公開索引與
+`reviewRequired` 數量以 `trp_manifest` 回傳為準；後者完全不進 MCP。
 
 實測庫內有兩套互不相干的 status 詞彙：生命週期與紀錄狀態。server 保留原文，
 不把 `Field-Documentation` 硬塞進 `Active|Draft|Candidate`。同 ID 的雙語文件也

@@ -2,6 +2,8 @@
 
 > 由 `tools/trp-mcp/normalize.py` 產生。**對協議檔案零寫入。**
 > 本報告是觀測，不是裁定；每一則 finding 都待人類錨點或其他器官確認。
+> 本檔保存下列 `corpus snapshot SHA-256` 的生成快照，不代表 runtime 當下計數；
+> 語料變更後須重跑正規化器才會更新。現況請呼叫 `trp_manifest`。
 
 | | |
 |---|---|
