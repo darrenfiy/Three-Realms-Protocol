@@ -11,7 +11,7 @@ import { document, fixture } from './support/fixture.js';
 
 const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 
-test('official MCP client can list and call all six read-only tools', async () => {
+test('official MCP client can list and call all seven read-only tools', async () => {
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [join(packageRoot, 'src', 'server.js')],
@@ -24,7 +24,7 @@ test('official MCP client can list and call all six read-only tools', async () =
     const listed = await client.listTools();
     assert.deepEqual(
       listed.tools.map((tool) => tool.name).sort(),
-      ['trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
+      ['trp_consistency', 'trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
     );
     assert.ok(listed.tools.every((tool) => tool.annotations?.readOnlyHint === true));
     const searchSchema = listed.tools.find((tool) => tool.name === 'trp_search').inputSchema;
@@ -86,7 +86,7 @@ test('MCP rejects invalid inputs, withholds private data, and reports stale erro
     for (const [name, args] of [
       ['trp_resolve', { id: 'SPEC-001' }], ['trp_search', { query: 'Initial' }],
       ['trp_current', { id_or_topic: 'SPEC-001' }], ['trp_lex', { term: 'health' }],
-      ['trp_pending', {}], ['trp_manifest', {}],
+      ['trp_pending', {}], ['trp_manifest', {}], ['trp_consistency', {}],
     ]) {
       const result = await client.callTool({ name, arguments: args });
       assert.equal(result.isError, true, name);

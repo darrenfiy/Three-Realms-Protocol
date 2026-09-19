@@ -145,6 +145,19 @@ export function buildServer(root) {
     safely(() => corpus.manifestView()),
   );
 
+  server.registerTool(
+    'trp_consistency',
+    {
+      title: 'Find stale version transcriptions',
+      description: 'Report navigation links whose written version no longer matches the target document\'s declared version, split into live navigation, mixed provenance files, and append-only records. Public allowlist only; review-required paths are neither scanned nor reported, so absence of findings there means nothing. Mechanical signal, not a governance ruling.',
+      inputSchema: z.object({
+        limit: z.number().int().min(1).max(200).default(50),
+      }),
+      annotations: READ_ONLY,
+    },
+    safely(({ limit }) => corpus.consistency({ limit })),
+  );
+
   return server;
 }
 

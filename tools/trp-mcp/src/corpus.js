@@ -616,6 +616,110 @@ export class PublicCorpus {
     };
   }
 
+  // 版本轉述檢查：A 檔在連往 B 檔的連結上寫了版本，B 自己宣告的不是那一版。
+  // 宣告只有一處，轉述散在各導航檔；改版漏改就過期，而且沒有人會發現。
+  //
+  // 邊界由結構保證：只掃已進公開索引的文件，reviewRequired 從未被載入，
+  // 因此既不會被當成來源，也不會被當成目標。
+  consistency({ limit = 50 } = {}) {
+    this.assertFresh();
+    const byPath = new Map(this.entries.map((entry) => [entry.path, entry]));
+    const VERSION = /v\d+(?:\.\d+)*(?:-[A-Za-z0-9\u4e00-\u9fff]+(?:-[A-Za-z0-9\u4e00-\u9fff]+)*)?/gu;
+    const LINK = /\[([^\]\n]*)\]\(([^)\n]+)\)/gu;
+    const numeric = (value) => {
+      const hit = /^v(\d+(?:\.\d+)*)/u.exec(value);
+      return hit ? hit[1] : null;
+    };
+    const declaredSet = (entry) => {
+      const out = new Set();
+      for (const field of [entry.versionRaw, entry.latestActiveVersion, entry.candidateOverlay?.version]) {
+        for (const token of String(field || '').match(VERSION) || []) {
+          const n = numeric(token);
+          if (n) out.add(n);
+        }
+      }
+      return out;
+    };
+    // 命中要分三層讀，否則少數真問題會被大量歷史紀錄淹沒。
+    const layerOf = (rel) => {
+      if (rel.startsWith('DOCS/sources/')) return 'mixed';
+      if (/(^|\/)(AGENT_SESSION_LOG\.md$|history\/|reviews\/)/u.test(`/${rel}`)) return 'record';
+      return rel.split('/').pop() === 'README.md' ? 'live' : 'record';
+    };
+
+    let checked = 0;
+    const items = [];
+    for (const source of this.entries) {
+      const dir = source.path.includes('/') ? source.path.slice(0, source.path.lastIndexOf('/')) : '';
+      const lines = String(source.content).split('\n');
+      for (let i = 0; i < lines.length; i += 1) {
+        const line = lines[i];
+        LINK.lastIndex = 0;
+        let hit = LINK.exec(line);
+        while (hit) {
+          const [whole, label, rawTarget] = hit;
+          const target = decodeURIComponent(rawTarget.split('#')[0].trim());
+          if (target.endsWith('.md') && !/^https?:/u.test(target)) {
+            const resolved = posix(join(dir, target));
+            const targetEntry = byPath.get(resolved);
+            if (targetEntry && targetEntry.path !== source.path) {
+              // 版本宣稱只認兩個位置：連結文字內，或同段落的括號內。
+              // 自由散文裡的版本字串（「吸收 v0.1 四票」）是敘述，不是轉述。
+              let tail = line.slice(hit.index + whole.length);
+              for (const stop of ['[', '|']) {
+                const cut = tail.indexOf(stop);
+                if (cut >= 0) tail = tail.slice(0, cut);
+              }
+              const paren = (tail.match(/[（(]([^）)]*)[）)]/gu) || []).join(' ');
+              const claims = [...(label.match(VERSION) || []), ...(paren.match(VERSION) || [])]
+                .filter((token) => numeric(token));
+              if (claims.length) {
+                checked += 1;
+                const declared = declaredSet(targetEntry);
+                if (declared.size) {
+                  for (const claim of claims) {
+                    if (!declared.has(numeric(claim))) {
+                      items.push({
+                        path: source.path,
+                        line: i + 1,
+                        claimed: claim,
+                        declared: [targetEntry.versionRaw, targetEntry.latestActiveVersion,
+                          targetEntry.candidateOverlay?.version].filter(Boolean).join(' '),
+                        target: targetEntry.path,
+                        targetId: targetEntry.idRaw || null,
+                        layer: layerOf(source.path),
+                      });
+                    }
+                  }
+                }
+              }
+            }
+          }
+          hit = LINK.exec(line);
+        }
+      }
+    }
+
+    const order = { live: 0, mixed: 1, record: 2 };
+    items.sort((a, b) => order[a.layer] - order[b.layer] || a.path.localeCompare(b.path) || a.line - b.line);
+    const counts = { live: 0, mixed: 0, record: 0 };
+    for (const item of items) counts[item.layer] += 1;
+    return {
+      checkedClaims: checked,
+      counts,
+      items: items.slice(0, limit),
+      total: items.length,
+      truncated: items.length > limit,
+      interpretation: [
+        '機械訊號，不是治理裁定。live=活導航（各 README），過期即需修正。',
+        'mixed=DOCS/sources 的 README 上半是現役導航、下半是不得倒填的來源表，需人判讀。',
+        'record=快照與審讀帳等 append-only 紀錄，其版本是歷史，預設不動。',
+        '只涵蓋公開索引；reviewRequired 與 excluded 路徑不在檢查範圍，其缺漏不由本結果代表。',
+      ].join(' '),
+      provenance: this.provenance(),
+    };
+  }
+
   manifestView() {
     this.assertFresh();
     return {

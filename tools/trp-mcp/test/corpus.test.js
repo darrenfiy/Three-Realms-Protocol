@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import test from 'node:test';
 
 import { PublicCorpus, classifyPath, findRepoRoot, lookupKey } from '../src/corpus.js';
+import { fixture } from './support/fixture.js';
 
 const root = findRepoRoot();
 
@@ -127,4 +128,67 @@ answerPolicy:
   } finally {
     rmSync(fixture, { recursive: true, force: true });
   }
+});
+
+// ── trp_consistency ──────────────────────────────────────────
+// 斷言的是「轉述過期會被抓到、合法轉述不會被誤報、邊界不被穿透」，
+// 不是「現在有幾則命中」——那會隨語料變動，不該寫進測試。
+
+function consistencyFixture(t) {
+  const { root: fixtureRoot, write } = fixture(t);
+  return { fixtureRoot, write };
+}
+
+test('consistency flags a stale version transcription', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-010.md', '---\nid: SPEC-010\nversion: v1.5\nstatus: Active\n---\n# doc\n');
+  write('SPEC/README.md', '# nav\n\n- [SPEC-010](SPEC-010.md)（v1.3）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  const out = corpus.consistency({});
+  const hit = out.items.find((item) => item.target === 'SPEC/SPEC-010.md');
+  assert.ok(hit, '過期轉述應該被抓到');
+  assert.equal(hit.claimed, 'v1.3');
+  assert.equal(hit.layer, 'live', 'README 屬活導航層');
+});
+
+test('consistency accepts candidate-overlay and latest-active transcriptions', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-011.md',
+    '---\nid: SPEC-011\nversion: v1.4\nlatest_active_version: v1.5\n'
+    + 'candidate_overlay_version: v1.6-candidate\nstatus: Active\n---\n# doc\n');
+  write('SPEC/README.md',
+    '# nav\n\n- [a](SPEC-011.md)（v1.6-candidate）\n- [b](SPEC-011.md)（v1.5）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  assert.deepEqual(corpus.consistency({}).items, [], '引用 overlay 或 latest-active 是合法轉述');
+});
+
+test('consistency ignores version strings that are prose, not transcription', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-012.md', '---\nid: SPEC-012\nversion: v0.2\nstatus: Active\n---\n# doc\n');
+  write('SPEC/README.md', '# nav\n\n見 [SPEC-012](SPEC-012.md) 於改版時吸收 v0.1 四票。\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  assert.deepEqual(corpus.consistency({}).items, [], '散文裡的版本是敘述，不是轉述');
+});
+
+test('consistency separates append-only records from live navigation', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-013.md', '---\nid: SPEC-013\nversion: v2.0\nstatus: Active\n---\n# doc\n');
+  write('SPEC/history/old.md', '---\nid: SPEC-013-OLD\nstatus: Active\n---\n[x](../SPEC-013.md)（v1.0）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  const out = corpus.consistency({});
+  assert.equal(out.counts.live, 0);
+  assert.equal(out.counts.record, 1, 'history/ 下的版本是歷史紀錄，不是活導航');
+});
+
+test('consistency never reads or reports review-required paths', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-014.md', '---\nid: SPEC-014\nversion: v3.0\nstatus: Active\n---\n# doc\n');
+  // 私有檔同時當來源與目標，兩個方向都不該出現在結果裡
+  write('PRIVATE/secret.md', '---\nid: PRIVATE-001\nversion: v9.9\nstatus: Active\n---\n[x](../SPEC/SPEC-014.md)（v0.1）\n');
+  write('SPEC/README.md', '# nav\n\n- [p](../PRIVATE/secret.md)（v0.1）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  const out = corpus.consistency({});
+  const serialized = JSON.stringify(out);
+  assert.ok(!serialized.includes('PRIVATE'), 'reviewRequired 不得出現在輸出中');
+  assert.deepEqual(out.items, [], '私有檔既不是來源也不是目標');
 });

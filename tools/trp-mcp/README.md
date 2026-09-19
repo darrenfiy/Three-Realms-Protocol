@@ -16,7 +16,7 @@
 | `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到、搬遷是否掉內容。零寫入 |
 | `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
 | `test_crosscheck.py` | crosscheck 的正規化、分流、離開碼與非 ASCII 輸出回歸測試 |
-| `src/server.js` | 本機 stdio MCP server；唯讀、public-only、六個工具 |
+| `src/server.js` | 本機 stdio MCP server；唯讀、public-only、七個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
@@ -46,7 +46,7 @@ server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟
 公開語料或治理規則改變、刪除或無法驗證時，會以 `STALE_CORPUS` 拒答，
 重啟後才重新索引。已偵測的變動即使還原，也必須重啟。
 
-### 六個唯讀工具
+### 七個唯讀工具
 
 | 工具 | 用途 |
 |---|---|
@@ -56,6 +56,10 @@ server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟
 | `trp_lex` | 依完整詞名取回公開 LEX 詞條段落，附定義、區辨與候選標記；排除 history |
 | `trp_pending` | 列 candidate、公開 review ledger 或 unattended 機械訊號 |
 | `trp_manifest` | 回傳實際執行的 allowlist、authority、拒絕區與 provenance |
+| `trp_consistency` | 導航連結寫的版本與目標實際宣告的版本是否相符；分活導航／混合／記錄三層 |
+
+`trp_consistency` 只掃公開索引。`reviewRequired` 路徑既不會被當成來源，也不會被當成目標——這不是額外防守，是因為它們從未被載入。因此**該範圍內沒有命中，不代表那裡沒有問題**；
+非公開部分請用本機的 `crosscheck.py`。兩者的分層規則相同，涵蓋範圍不同。
 
 所有工具都標示 MCP `readOnlyHint`；沒有寫入工具，也沒有讓呼叫者打開
 `reviewRequired` 的參數。文件正文以不可信資料回傳，並附路徑／行號、commit
