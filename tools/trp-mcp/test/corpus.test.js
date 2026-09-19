@@ -40,14 +40,18 @@ test('runtime index enforces the same public manifest boundary', () => {
       `${entry.path} 進了索引，但重新分類不是 index`);
   }
 
-  assert.equal(corpus.entries.some((entry) => /^DOCS\/(sources|cases|meetings|wiki|LNS-A01)\//u.test(entry.path)), false);
+  // 2026-09-20：DOCS/cases 依錨點裁示放行（個資掃描後不具可識別性），自此應在索引內。
+  // 其餘四個 reviewRequired pattern 仍須確實擋住——這條斷言保護的是「邊界還在」，
+  // 不是「擋了哪些」；日後若再放行某一類，改的是清單，不是拿掉這條。
+  assert.equal(corpus.entries.some((entry) => /^DOCS\/(sources|meetings|wiki|LNS-A01)\//u.test(entry.path)), false);
+  assert.ok(corpus.entries.some((entry) => entry.path.startsWith('DOCS/cases/')), 'cases 已放行，應在索引內');
   assert.equal(corpus.entries.some((entry) => entry.path.startsWith('tools/')), false);
 });
 
 test('review-required paths fail closed before general DOCS matching', () => {
   const corpus = new PublicCorpus(root);
   assert.equal(classifyPath('DOCS/sources/conversations/example.md', corpus.manifest).disposition, 'review-required');
-  assert.equal(classifyPath('DOCS/cases/example.md', corpus.manifest).disposition, 'review-required');
+  assert.equal(classifyPath('DOCS/cases/example.md', corpus.manifest).disposition, 'index');
   assert.equal(classifyPath('DOCS/meetings/example.md', corpus.manifest).disposition, 'review-required');
   assert.equal(classifyPath('DOCS/wiki/example.md', corpus.manifest).disposition, 'review-required');
   assert.equal(classifyPath('DOCS/LNS-A01/example.md', corpus.manifest).disposition, 'review-required');
@@ -73,9 +77,14 @@ test('search is public, cited, deterministic, and history is opt-in', () => {
   assert.ok(first.results.every((result) => result.authority !== 'historical'));
 });
 
-test('the two unsafe ID decisions remain absent from the public index', () => {
+// 原本這裡斷言兩份「ID 無法安全判定」的文件不得進索引。放行 DOCS/cases 時才發現，
+// 其中 INDEX·ARC 實際上是被 cases 整包封鎖擋著，而不是被 ID 安全性擋著——封鎖一拿掉它就進來了。
+// 真正的問題是它沒有 id 欄位，ID 由檔名推定；已補上宣告，因此改為斷言「不推定」這個性質本身。
+test('indexed documents never rely on a filename-derived ID', () => {
   const corpus = new PublicCorpus(root);
-  assert.equal(corpus.entries.some((entry) => entry.path === 'DOCS/cases/INDEX·ARC-語言代謝與自觀測-066-071.md'), false);
+  const derived = corpus.entries.filter((entry) => entry.idRaw && !entry.idDeclared);
+  assert.deepEqual(derived.map((entry) => entry.path), [],
+    '進了公開索引就不該由檔名推定 ID——server 不替文件宣稱它自己沒宣告的地址');
   assert.equal(corpus.entries.some((entry) => entry.path === 'DOCS/meetings/CASE-MRC-001-Meeting-Record-001.md'), false);
 });
 

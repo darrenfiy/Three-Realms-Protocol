@@ -2,6 +2,7 @@
 ## 一口井在現場挖、井壁長出紋理、最後連挖井的人都走進去站了一次
 
 ```yaml
+id: INDEX·ARC-066-071
 created: 2026-06-17
 status: Navigation-Index / Thematic-Arc
 type: 主題索引（跨 060-069 與 070-079 兩代十年索引的一條自閉合弧）
