@@ -60,6 +60,8 @@ server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟
 
 `trp_consistency` 只掃公開索引。`reviewRequired` 路徑既不會被當成來源，也不會被當成目標——這不是額外防守，是因為它們從未被載入。因此**該範圍內沒有命中，不代表那裡沒有問題**；
 非公開部分請用本機的 `crosscheck.py`。兩者的分層規則相同，涵蓋範圍不同。
+版本比對與 `trp_resolve` 採同一契約：未帶後綴的 `v1.4` 可指向該基版；
+帶後綴的 `v1.4-candidate` 則必須完整相符，不把 draft、seed、candidate 或正式版混為一談。
 
 所有工具都標示 MCP `readOnlyHint`；沒有寫入工具，也沒有讓呼叫者打開
 `reviewRequired` 的參數。文件正文以不可信資料回傳，並附路徑／行號、commit

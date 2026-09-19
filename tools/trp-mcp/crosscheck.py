@@ -65,6 +65,21 @@ def numeric(v):
     return m.group(1) if m else None
 
 
+def version_claim_matches(claim, declared):
+    """未帶後綴可指基版；帶後綴時必須完整相符。
+
+    `v1.4` 可以指向 `v1.4-candidate`，但 `v1.4-draft` 不能把
+    `v1.4-candidate` 當成同一個治理狀態。這與 MCP resolve 的版本契約一致。
+    """
+    base = numeric(claim)
+    if not base:
+        return False
+    tokens = VER_RE.findall(declared or "")
+    if claim != "v" + base:
+        return claim in tokens
+    return any(numeric(token) == base for token in tokens)
+
+
 def all_md(root):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = sorted(d for d in dirnames
@@ -124,9 +139,8 @@ def check_version_claims(root):
                     continue
                 checked += 1
                 dv = declared[tgt]
-                dset = {numeric(x) for x in VER_RE.findall(dv) if numeric(x)}
                 for c in claims:
-                    if numeric(c) not in dset:
+                    if not version_claim_matches(c, dv):
                         mismatch.append((rel, ln, c, dv, tgt))
     return checked, mismatch
 
@@ -200,7 +214,8 @@ def canon(line):
 def check_retention(root, ref):
     try:
         diff = subprocess.run(
-            ["git", "-C", root, "diff", "--unified=0", ref, "--", "*.md"],
+            ["git", "-C", root, "-c", "core.quotepath=false",
+             "diff", "--unified=0", ref, "--", "*.md"],
             capture_output=True, text=True, encoding="utf-8", errors="replace")
     except Exception as e:
         return None, "無法執行 git diff：%s" % e

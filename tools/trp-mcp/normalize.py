@@ -27,6 +27,14 @@ import subprocess
 import sys
 from collections import Counter, defaultdict
 
+# Windows 的預設主控台編碼可能是 CP950，而報告含 CJK 與 emoji。CLI 一律輸出
+# UTF-8，與 crosscheck.py 相同；檔案輸出本來就已明確指定 UTF-8。
+for _stream in ("stdout", "stderr"):
+    try:
+        getattr(sys, _stream).reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # ─────────────────────────────────────────────────────────────
 # 受控詞彙：machine 值 ← 現況自由文字
 # 原始字串一律保留在 status_raw，此處只做機器層映射。
@@ -78,7 +86,8 @@ def load_manifest(root):
     path = os.path.join(root, "CORPUS-MANIFEST.yaml")
     if not os.path.isfile(path):
         sys.exit("找不到 CORPUS-MANIFEST.yaml：治理規則的正本缺席，拒絕以預設值代替。")
-    text = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
 
     required = (
         "schemaVersion", "name", "atlas", "rootDocuments", "corpora",
@@ -501,7 +510,8 @@ def build_index(root, mf):
             if disposition != "index":
                 continue
             try:
-                text = open(full, encoding="utf-8").read()
+                with open(full, encoding="utf-8") as fh:
+                    text = fh.read()
             except Exception as e:
                 problems.append({"path": rel, "kind": "unreadable", "detail": str(e)})
                 continue

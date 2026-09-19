@@ -105,7 +105,8 @@ def plan(root, mf):
                 re.match(r"^SPEC/(history/)?\d{3}-", rel))
             if not expects:
                 continue
-            text = io.open(os.path.join(dp, fn), encoding="utf-8").read()
+            with io.open(os.path.join(dp, fn), encoding="utf-8") as fh:
+                text = fh.read()
             block, shape = extract_metadata_block(text)
             meta, _ = parse_flat_yaml(block)
             records.append({"path": rel, "fn": fn, "text": text,

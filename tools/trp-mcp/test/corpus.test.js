@@ -171,6 +171,26 @@ test('consistency accepts candidate-overlay and latest-active transcriptions', (
   assert.deepEqual(corpus.consistency({}).items, [], '引用 overlay 或 latest-active 是合法轉述');
 });
 
+test('consistency requires an exact match for a qualified version', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-011A.md',
+    '---\nid: SPEC-011A\nversion: v1.4-candidate\nstatus: Candidate\n---\n# doc\n');
+  write('SPEC/README.md', '# nav\n\n- [qualified](SPEC-011A.md)（v1.4-draft）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  const out = corpus.consistency({});
+  assert.equal(out.items.length, 1);
+  assert.equal(out.items[0].claimed, 'v1.4-draft');
+});
+
+test('consistency allows an unqualified base version to match a qualified edition', (t) => {
+  const { fixtureRoot, write } = consistencyFixture(t);
+  write('SPEC/SPEC-011B.md',
+    '---\nid: SPEC-011B\nversion: v1.4-candidate\nstatus: Candidate\n---\n# doc\n');
+  write('SPEC/README.md', '# nav\n\n- [base](SPEC-011B.md)（v1.4）\n');
+  const corpus = new PublicCorpus(fixtureRoot);
+  assert.deepEqual(corpus.consistency({}).items, []);
+});
+
 test('consistency ignores version strings that are prose, not transcription', (t) => {
   const { fixtureRoot, write } = consistencyFixture(t);
   write('SPEC/SPEC-012.md', '---\nid: SPEC-012\nversion: v0.2\nstatus: Active\n---\n# doc\n');

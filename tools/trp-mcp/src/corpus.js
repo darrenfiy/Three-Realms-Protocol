@@ -630,15 +630,22 @@ export class PublicCorpus {
       const hit = /^v(\d+(?:\.\d+)*)/u.exec(value);
       return hit ? hit[1] : null;
     };
-    const declaredSet = (entry) => {
+    const declaredVersions = (entry) => {
       const out = new Set();
       for (const field of [entry.versionRaw, entry.latestActiveVersion, entry.candidateOverlay?.version]) {
         for (const token of String(field || '').match(VERSION) || []) {
-          const n = numeric(token);
-          if (n) out.add(n);
+          if (numeric(token)) out.add(token);
         }
       }
       return out;
+    };
+    // 未帶後綴可指基版；帶後綴時必須完整相符。候選、草稿與正式版
+    // 不能只因數字相同就被視為同一治理狀態。
+    const versionClaimMatches = (claim, declared) => {
+      const base = numeric(claim);
+      if (!base) return false;
+      if (claim !== `v${base}`) return declared.has(claim);
+      return [...declared].some((token) => numeric(token) === base);
     };
     // 命中要分三層讀，否則少數真問題會被大量歷史紀錄淹沒。
     const layerOf = (rel) => {
@@ -675,10 +682,10 @@ export class PublicCorpus {
                 .filter((token) => numeric(token));
               if (claims.length) {
                 checked += 1;
-                const declared = declaredSet(targetEntry);
+                const declared = declaredVersions(targetEntry);
                 if (declared.size) {
                   for (const claim of claims) {
-                    if (!declared.has(numeric(claim))) {
+                    if (!versionClaimMatches(claim, declared)) {
                       items.push({
                         path: source.path,
                         line: i + 1,

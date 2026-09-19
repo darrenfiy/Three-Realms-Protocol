@@ -104,6 +104,20 @@ class TestVersionClaims(unittest.TestCase):
         _, bad = crosscheck.check_version_claims(self.root)
         self.assertEqual(bad, [])
 
+    def test_qualified_version_must_match_exactly(self):
+        # 同一基版的 draft / candidate / 正式版仍是不同治理狀態
+        write(self.root, "T/doc.md", "---\nversion: v1.4-candidate\n---\n")
+        write(self.root, "T/README.md", "- [doc](doc.md)（v1.4-draft）\n")
+        _, bad = crosscheck.check_version_claims(self.root)
+        self.assertEqual([(b[2], b[3]) for b in bad],
+                         [("v1.4-draft", "v1.4-candidate")])
+
+    def test_unqualified_version_matches_same_base(self):
+        write(self.root, "T/doc.md", "---\nversion: v1.4-candidate\n---\n")
+        write(self.root, "T/README.md", "- [doc](doc.md)（v1.4）\n")
+        _, bad = crosscheck.check_version_claims(self.root)
+        self.assertEqual(bad, [])
+
     def test_prose_version_is_not_a_claim(self):
         # 「吸收 v0.1 四票」是敘述，不是轉述；只認連結文字與括號內
         write(self.root, "T/doc.md", "---\nversion: v0.2\n---\n")
@@ -171,6 +185,15 @@ class TestRetentionAndCLI(unittest.TestCase):
         (_, lost), err = crosscheck.check_retention(self.root, "HEAD")
         self.assertIsNone(err)
         self.assertEqual(len(lost), 1)
+
+    def test_unicode_filename_keeps_source_path(self):
+        rel = "SPEC/中文檔名.md"
+        write(self.root, rel, "# 中文\n\n- 一句會被真的刪掉的判讀\n")
+        self.init_repo()
+        write(self.root, rel, "# 中文\n")
+        (_, lost), err = crosscheck.check_retention(self.root, "HEAD")
+        self.assertIsNone(err)
+        self.assertEqual(lost, [(rel, "- 一句會被真的刪掉的判讀")])
 
     def test_bad_ref_exits_nonzero(self):
         self.init_repo()
