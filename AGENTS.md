@@ -1,4 +1,6 @@
-# Three Realms Protocol — Codex instructions
+# Three Realms Protocol — AI 器官工作規矩
+
+本檔為各器官共用。Codex 直接讀本檔；Claude Code 由 [CLAUDE.md](CLAUDE.md) 指向本檔。
 
 ## Default corpus workflow
 
