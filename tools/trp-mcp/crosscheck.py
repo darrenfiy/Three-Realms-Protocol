@@ -11,6 +11,11 @@ normalize.py 的 finding 全是單檔自檢——這份檔自己格式對不對�
 
   version_claim   A 檔在連往 B 檔的連結上寫了版本，B 自己宣告的不是那一版
   nav_coverage    每個 CASE 檔是否至少被 README 或一份 INDEX 分冊連到
+  retention       相對某個 git ref，被刪掉的內容行是否還存在於工作樹某處
+
+retention 是文件搬遷專用的安全網。覆蓋檢查只看「邊還在不在」，看不出
+「內容有沒有變薄」——把一段判讀壓成一行摘要，覆蓋數不會變，判讀卻沒了。
+搬移後跑一次，沒有回報才算真的只搬不刪。
 
 設計約束與 normalize.py 一致：
   P1  對協議檔案零寫入
@@ -21,10 +26,12 @@ normalize.py 的 finding 全是單檔自檢——這份檔自己格式對不對�
     python3 tools/trp-mcp/crosscheck.py
     python3 tools/trp-mcp/crosscheck.py --only version
     python3 tools/trp-mcp/crosscheck.py --only coverage
+    python3 tools/trp-mcp/crosscheck.py --retention HEAD
 """
 
 import argparse
 import os
+import subprocess
 import re
 import sys
 import urllib.parse
@@ -138,17 +145,93 @@ def check_nav_coverage(root):
 
 
 # ─────────────────────────────────────────────────────────────
+# 結構性雜訊：這些行被刪掉不代表 judgment 消失，不值得逐行追蹤。
+NOISE = re.compile(r"^(```|~~~|\|[\s\-:|]*\||-{3,}|={3,}|\s*)$")
+
+
+def canon(line):
+    """只留內容，去掉呈現層差異。
+
+    清單記號、縮排、markdown 連結與強調、全半形冒號都屬於呈現。
+    若不一併正規化，任何一次格式轉換都會被誤報成內容遺失，
+    安全網就會因為常態誤報而失去作用。
+    """
+    t = line.strip()
+    t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)   # [標籤](網址) → 標籤
+    t = re.sub(r"[*`_~]", "", t)                      # 強調記號
+    for _ in range(2):
+        t = re.sub(r"^(?:[-+>]|\d+\.|→|—|·)\s*", "", t)
+    # 冒號在本語料是分隔符號（yaml key 與標題各用一種寫法），不是內容。
+    t = t.replace("：", "").replace(":", "")
+    t = t.replace("（", "(").replace("）", ")")
+    return re.sub(r"\s+", "", t)
+
+
+def check_retention(root, ref):
+    try:
+        diff = subprocess.run(
+            ["git", "-C", root, "diff", "--unified=0", ref, "--", "*.md"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace")
+    except Exception as e:
+        return None, "無法執行 git diff：%s" % e
+    if diff.returncode != 0:
+        return None, "git diff 失敗：%s" % (diff.stderr or "").strip()
+
+    removed, cur = [], None
+    for line in (diff.stdout or "").splitlines():
+        if line.startswith("--- a/"):
+            cur = line[6:]
+        elif line.startswith("-") and not line.startswith("---"):
+            body = line[1:]
+            if not NOISE.match(body) and len(canon(body)) >= 8:
+                removed.append((cur, body))
+
+    present = set()
+    for _, full in all_md(root):
+        text = read(full)
+        if text is None:
+            continue
+        for line in text.splitlines():
+            c = canon(line)
+            if c:
+                present.add(c)
+
+    return (len(removed), [(f, b) for f, b in removed if canon(b) not in present]), None
+
+
+# ─────────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser(description="TRP-MCP 跨檔一致性檢查（唯讀）")
     ap.add_argument("--root", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "..", ".."))
     ap.add_argument("--only", choices=("version", "coverage"),
                     help="只跑其中一個檢查")
+    ap.add_argument("--retention", metavar="REF",
+                    help="只跑內容留存檢查：相對該 git ref，被刪的內容行是否仍存在")
     args = ap.parse_args()
 
     root = os.path.abspath(args.root)
     if not os.path.isdir(os.path.join(root, "SPEC")):
         sys.exit("找不到協議庫根目錄（缺 SPEC/）：%s" % root)
+
+    if args.retention:
+        res, err = check_retention(root, args.retention)
+        print("## retention（相對 %s）" % args.retention)
+        if err:
+            print("  " + err)
+            return
+        n_removed, lost = res
+        print("被刪除的內容行 %d，其中在工作樹中已找不到的 %d 行" % (n_removed, len(lost)))
+        print("")
+        for f, b in lost:
+            print("  %s" % f)
+            print("     %s" % b.strip()[:110])
+        if n_removed and not lost:
+            print("  全部可在別處找到：這是一次搬移，不是刪除。")
+        print("")
+        print("  註：只比對逐字內容。改寫、壓縮成摘要或翻譯都會被判為遺失——")
+        print("      那正是要被看見的情形，請確認是有意為之。")
+        return
 
     if args.only != "coverage":
         checked, mismatch = check_version_claims(root)
