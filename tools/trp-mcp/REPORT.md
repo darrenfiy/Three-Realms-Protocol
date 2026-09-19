@@ -7,9 +7,9 @@
 
 | | |
 |---|---|
-| corpus snapshot SHA-256 | `d99c16855e28930b3070a05b3eb52a59156563f6a149671e8c3607cda8c6fab9` |
-| 掃描 Markdown | 609 |
-| 索引文件數 | 260 |
+| corpus snapshot SHA-256 | `6997eee06db3621158f343af8b26397bdae2c39f7e26996d3159b2ee5c45c741` |
+| 掃描 Markdown | 612 |
+| 索引文件數 | 262 |
 | finding 數 | 27 |
 
 ---
@@ -20,8 +20,8 @@
 
 | disposition | 檔數 | 處理 |
 |---|---:|---|
-| `index` | 260 | 納入公開索引 |
-| `review-required` | 224 | 暫不索引；等待人工複核 |
+| `index` | 262 | 納入公開索引 |
+| `review-required` | 225 | 暫不索引；等待人工複核 |
 | `not-included` | 1 | 不在 allowlist，暫不索引 |
 | `excluded` | 124 | 明示排除 |
 
@@ -29,18 +29,18 @@
 
 | 形狀 | 檔數 | 說明 |
 |---|---:|---|
-| `yaml_fm` | 101 | 第一行 `---` frontmatter |
+| `yaml_fm` | 102 | 第一行 `---` frontmatter |
 | `none` | 84 | 無結構化 metadata |
-| `yaml_block` | 75 | 標題後 fenced YAML（``` 或 ~~~） |
+| `yaml_block` | 76 | 標題後 fenced YAML（``` 或 ~~~） |
 
 ### 依 corpus
 
 | corpus | 檔數 | 有 id | 可解析 version | 可映射 status |
 |---|---:|---:|---:|---:|
-| spec | 58 | 56 | 47 | 44 |
+| spec | 59 | 57 | 48 | 45 |
 | mb | 17 | 17 | 17 | 17 |
 | lex | 11 | 10 | 9 | 10 |
-| epoch | 79 | 78 | 74 | 65 |
+| epoch | 80 | 79 | 75 | 66 |
 | docs | 87 | 7 | 7 | 8 |
 | (根目錄) | 8 | 2 | 2 | 2 |
 
@@ -49,8 +49,8 @@
 | authority | 檔數 |
 |---|---:|
 | `current-atlas` | 1 |
-| `primary` | 59 |
-| `primary-version-aware` | 74 |
+| `primary` | 60 |
+| `primary-version-aware` | 75 |
 | `publication` | 47 |
 | `orientation` | 3 |
 | `contextual` | 41 |
@@ -62,7 +62,7 @@
 
 | kind | 檔數 | 說明 |
 |---|---:|---|
-| `lifecycle` | 146 | 生命週期（這條還算不算數） |
+| `lifecycle` | 148 | 生命週期（這條還算不算數） |
 | `unmapped` | 8 | 兩套皆未命中，待判讀 |
 | `documentation` | 1 | 紀錄狀態（這份紀錄封到哪） |
 
