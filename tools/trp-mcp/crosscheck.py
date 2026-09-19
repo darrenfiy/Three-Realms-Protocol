@@ -37,6 +37,15 @@ import sys
 import urllib.parse
 from collections import Counter
 
+# 輸出一律 UTF-8。本語料含 emoji 與 CJK，而 Windows 主控台預設 CP950／CP437
+# 會在印出時直接拋 UnicodeEncodeError——工具不該因為終端機編碼而崩在報告途中。
+for _stream in ("stdout", "stderr"):
+    try:
+        getattr(sys, _stream).reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from normalize import extract_metadata_block, parse_flat_yaml  # noqa: E402
 
@@ -68,7 +77,8 @@ def all_md(root):
 
 def read(path):
     try:
-        return open(path, encoding="utf-8").read()
+        with open(path, encoding="utf-8") as fh:
+            return fh.read()
     except Exception:
         return None
 
@@ -122,6 +132,26 @@ def check_version_claims(root):
 
 
 # ─────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
+# 版本轉述命中要分三層讀，否則真問題會被歷史紀錄淹沒。
+RECORD_PAT = re.compile(
+    r"(^|/)(AGENT_SESSION_LOG\.md$"          # 施工流水帳
+    r"|history/"                              # 版本快照
+    r"|DOCS/cases/(CASE|INDEX)"               # 個案與已封口分冊
+    r"|reviews/)")
+
+
+def claim_layer(rel):
+    """live=活導航，record=append-only 紀錄，mixed=同檔兩者兼有。"""
+    if rel.startswith("DOCS/sources/"):
+        # 來源目錄的 README 上半是現役導航段落，下半是不得倒填的來源表。
+        return "mixed"
+    if RECORD_PAT.search("/" + rel):
+        return "record"
+    return "live" if os.path.basename(rel) == "README.md" else "record"
+
+
+# ─────────────────────────────────────────────────────────────
 def check_nav_coverage(root):
     cases_dir = os.path.join(root, "DOCS", "cases")
     if not os.path.isdir(cases_dir):
@@ -160,7 +190,7 @@ def canon(line):
     t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)   # [標籤](網址) → 標籤
     t = re.sub(r"[*`_~]", "", t)                      # 強調記號
     for _ in range(2):
-        t = re.sub(r"^(?:[-+>]|\d+\.|→|—|·)\s*", "", t)
+        t = re.sub(r"^(?:#{1,6}|[-+>]|\d+\.|→|—|·)\s*", "", t)
     # 冒號在本語料是分隔符號（yaml key 與標題各用一種寫法），不是內容。
     t = t.replace("：", "").replace(":", "")
     t = t.replace("（", "(").replace("）", ")")
@@ -208,18 +238,23 @@ def main():
                     help="只跑其中一個檢查")
     ap.add_argument("--retention", metavar="REF",
                     help="只跑內容留存檢查：相對該 git ref，被刪的內容行是否仍存在")
+    ap.add_argument("--verbose", action="store_true",
+                    help="version_claim 連記錄層命中也逐筆列出")
+    ap.add_argument("--strict", action="store_true",
+                    help="有 finding 時以離開碼 2 結束（供 pre-commit／CI 使用）")
     args = ap.parse_args()
 
     root = os.path.abspath(args.root)
     if not os.path.isdir(os.path.join(root, "SPEC")):
-        sys.exit("找不到協議庫根目錄（缺 SPEC/）：%s" % root)
+        print("找不到協議庫根目錄（缺 SPEC/）：%s" % root, file=sys.stderr)
+        return 1
 
     if args.retention:
         res, err = check_retention(root, args.retention)
         print("## retention（相對 %s）" % args.retention)
         if err:
             print("  " + err)
-            return
+            return 1
         n_removed, lost = res
         print("被刪除的內容行 %d，其中在工作樹中已找不到的 %d 行" % (n_removed, len(lost)))
         print("")
@@ -231,19 +266,51 @@ def main():
         print("")
         print("  註：只比對逐字內容。改寫、壓縮成摘要或翻譯都會被判為遺失——")
         print("      那正是要被看見的情形，請確認是有意為之。")
-        return
+        print("      本檢查是煙霧警報器，不是火災鑑定書：比對範圍是全庫的正規化行，")
+        print("      同一句出現在無關文件也算「還在」，清單改表格則可能誤判為遺失。")
+        return 2 if (lost and args.strict) else 0
 
     if args.only != "coverage":
         checked, mismatch = check_version_claims(root)
+        buckets = {"live": [], "mixed": [], "record": []}
+        for m in mismatch:
+            buckets[claim_layer(m[0])].append(m)
         print("## version_claim")
-        print("帶版本字串的跨檔連結 %d 條，版號不符 %d 則\n" % (checked, len(mismatch)))
-        for rel, ln, c, dv, tgt in mismatch:
-            print("  %s:%d" % (rel, ln))
-            print("     宣稱 %-20s 實宣告 %-24s → %s" % (c, dv, tgt))
-        print()
-        print("  註：append-only 的來源表、session log 與已封口分冊會在此大量命中。")
-        print("      那裡的版本是「當初蒸餾成哪一版」的歷史紀錄，不該更新；")
-        print("      要判讀的是活導航檔（各 README）的命中。\n")
+        print("帶版本字串的跨檔連結 %d 條，版號不符 %d 則" % (checked, len(mismatch)))
+
+        def dump(items):
+            for rel, ln, c, dv, tgt in items:
+                print("  %s:%d" % (rel, ln))
+                print("     宣稱 %-20s 實宣告 %-24s → %s" % (c, dv, tgt))
+
+        print("")
+        print("### 活導航 %d 則——過期即需修正" % len(buckets["live"]))
+        print("")
+        dump(buckets["live"]) if buckets["live"] else print("  無。")
+
+        print("")
+        print("### 混合層 %d 則——需人判讀" % len(buckets["mixed"]))
+        print("")
+        print("  DOCS/sources/ 的 README 上半是現役導航段落，下半是來源表。")
+        print("  導航段落過期要修；來源表記的是「當初蒸餾成哪一版」，改了就是倒填。")
+        print("  兩者同檔，工具分不出來，請逐筆看它落在哪一段。")
+        if buckets["mixed"]:
+            print("")
+            dump(buckets["mixed"])
+
+        print("")
+        print("### 記錄層 %d 則——預設不動" % len(buckets["record"]))
+        print("")
+        print("  CASE、已封口分冊、session log、快照與審讀帳裡的版本是歷史紀錄。")
+        print("  逐筆列出請加 --verbose。")
+        if args.verbose and buckets["record"]:
+            print("")
+            dump(buckets["record"])
+
+        live = buckets["live"]
+        if args.strict and live:
+            return 2
+        print("")
 
     if args.only != "version":
         cov = check_nav_coverage(root)
@@ -263,4 +330,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

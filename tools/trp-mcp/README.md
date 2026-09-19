@@ -15,6 +15,7 @@
 | `backfill_ids.py` | id 補洞器；預設 dry-run，`--apply` 才寫檔，只加不改 |
 | `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到、搬遷是否掉內容。零寫入 |
 | `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
+| `test_crosscheck.py` | crosscheck 的正規化、分流、離開碼與非 ASCII 輸出回歸測試 |
 | `src/server.js` | 本機 stdio MCP server；唯讀、public-only、六個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
@@ -92,6 +93,9 @@ python3 tools/trp-mcp/backfill_ids.py --apply      # 通過預檢後才套用
 python3 tools/trp-mcp/crosscheck.py                # 跨檔一致性（版本轉述 ＋ 導覽覆蓋）
 python3 tools/trp-mcp/crosscheck.py --only coverage # 只跑導覽覆蓋
 python3 tools/trp-mcp/crosscheck.py --retention HEAD # 搬遷安全網：被刪的內容行還在不在
+python3 tools/trp-mcp/crosscheck.py --verbose      # 連記錄層命中也逐筆列出
+python3 tools/trp-mcp/crosscheck.py --strict       # 有 finding 時離開碼 2（pre-commit／CI）
+python3 tools/trp-mcp/test_crosscheck.py -v        # crosscheck 回歸測試
 python3 tools/trp-mcp/test_trp_mcp.py -v           # Phase 0 回歸測試
 ```
 
@@ -109,6 +113,10 @@ Python 3.8+ 標準庫，無 pip 相依（與 `tools/wiki-local/*.py` 慣例一�
 治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在 server 或文件內手抄語料數量。manifest 缺席、
 必要清單為空或 authority 不一致時直接中止（fail closed）。當下的公開索引與
 `reviewRequired` 數量以 `trp_manifest` 回傳為準；後者完全不進 MCP。
+
+版本轉述命中分三層輸出：**活導航**（各 README，過期即需修正）、**混合層**（`DOCS/sources/` 的 README 上半是現役導航、下半是不得倒填的來源表，工具分不出來，交人判讀）、**記錄層**（CASE、已封口分冊、session log、快照與審讀帳，預設不動）。不分層的話，真正要修的少數會被大量歷史紀錄淹沒。
+
+離開碼：`0` 正常、`1` 工具或參數錯誤（含無效 git ref）、`2` 有 finding 且加了 `--strict`。輸出一律 UTF-8，不受主控台編碼影響。
 
 `retention` 是文件搬遷專用的安全網。覆蓋檢查只看「邊還在不在」，看不出「內容有沒有
 變薄」——把一段判讀壓成一行摘要，覆蓋數不會變，判讀卻沒了。它只比對逐字內容，
