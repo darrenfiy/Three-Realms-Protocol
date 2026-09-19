@@ -13,6 +13,7 @@
 | `REPORT.md` | 由正規化器產生的覆蓋率與 finding 報告 |
 | `index.json` | Phase 0 派生索引；已 gitignore，可由任一 commit 重建 |
 | `backfill_ids.py` | id 補洞器；預設 dry-run，`--apply` 才寫檔，只加不改 |
+| `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到。零寫入 |
 | `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
 | `src/server.js` | 本機 stdio MCP server；唯讀、public-only、六個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
@@ -88,6 +89,8 @@ python3 tools/trp-mcp/normalize.py                # 產生 index.json + REPORT.m
 python3 tools/trp-mcp/normalize.py --report-only  # 只印報告，不寫檔
 python3 tools/trp-mcp/backfill_ids.py              # id 補洞 dry-run
 python3 tools/trp-mcp/backfill_ids.py --apply      # 通過預檢後才套用
+python3 tools/trp-mcp/crosscheck.py                # 跨檔一致性（版本轉述 ＋ 導覽覆蓋）
+python3 tools/trp-mcp/crosscheck.py --only coverage # 只跑導覽覆蓋
 python3 tools/trp-mcp/test_trp_mcp.py -v           # Phase 0 回歸測試
 ```
 
@@ -105,6 +108,11 @@ Python 3.8+ 標準庫，無 pip 相依（與 `tools/wiki-local/*.py` 慣例一�
 治理規則一律讀 `CORPUS-MANIFEST.yaml`，不在 server 或文件內手抄語料數量。manifest 缺席、
 必要清單為空或 authority 不一致時直接中止（fail closed）。當下的公開索引與
 `reviewRequired` 數量以 `trp_manifest` 回傳為準；後者完全不進 MCP。
+
+`normalize.py` 的 finding 全是單檔自檢；跨檔一致性由 `crosscheck.py` 分開承擔，
+不併進 REPORT.md。兩者都是觀測，不是裁定。轉述層的命中要分兩種讀：活導航檔
+（各 README）過期就是過期；append-only 的來源表、session log 與已封口分冊裡的
+版本是歷史紀錄，**不該被更新**，工具無法自動分辨，由人判讀。
 
 實測庫內有兩套互不相干的 status 詞彙：生命週期與紀錄狀態。server 保留原文，
 不把 `Field-Documentation` 硬塞進 `Active|Draft|Candidate`。同 ID 的雙語文件也
