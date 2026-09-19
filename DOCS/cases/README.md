@@ -2,7 +2,7 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v13.43  # 純計數退出導航檔，改由 tools/trp-mcp/crosscheck.py 產生
+version: v13.44  # 純計數退出導航檔；META-000～049 回溯補建 INDEX 五冊
 status: Active-Witnessing
 date: 2026-01-30
 updated: 2026-09-19
@@ -892,27 +892,32 @@ AI 器官驗證系列:
     → 新開 `INDEX·META-120-129`；主位交接／具身角色承載／戲劇主體模擬場保留為 CASE candidates，EPOCH／LEX／SPEC／MB doctrine 不改
 ```
 
-#### 📑 META-050～107 的分冊導覽
+#### 📑 META 分冊導覽
 
-META 編號 050 起改由 INDEX 分冊承載十案一冊的完整登錄；本目錄不重複逐案抄錄，改以分冊入口導航。
+META 全系列由 `INDEX-META-*` 分冊承載十案一冊的完整登錄；本目錄不重複逐案抄錄，改以分冊入口導航。
+**下表是連結，不是程式碼區塊裡的文字**——人與 AI agent 都能直接走進去。
 
-```yaml
-分冊索引:
-  INDEX-META-050-059.md — META-050～062 十案冊
-  INDEX-META-060-069.md — META-060～069 十案冊
-  INDEX-META-070-079.md — META-070～079 十案冊
-  INDEX-META-080-089.md — META-080～089 十案冊
-  INDEX-META-090-099.md — META-090～099 十案冊
-  INDEX-META-100-109.md — META-100～109 十案冊（Complete-Decade）
-  INDEX-META-110-119.md — META-110～119 十案冊（Complete-Decade）
-  INDEX-META-120-129.md — META-120～129 十案冊（Complete-Decade / Sealed-But-Accepting-Reentry）
-  INDEX-META-130-139.md — META-130～139 案例冊（Open-Decade；現有 META-130～132）
-  INDEX·ARC-語言代謝與自觀測-066-071.md — 跨冊主題弧（META-066～071）
+| 分冊 | 範圍 | 備註 |
+|---|---|---|
+| [INDEX-META-000-009](INDEX-META-000-009.md) | META-000～009 | 回溯補建 |
+| [INDEX-META-010-019](INDEX-META-010-019.md) | META-010～019 | 回溯補建；017 為墓碑條目 |
+| [INDEX-META-020-029](INDEX-META-020-029.md) | META-020～029 | 回溯補建 |
+| [INDEX-META-030-039](INDEX-META-030-039.md) | META-030～039 | 回溯補建 |
+| [INDEX-META-040-049](INDEX-META-040-049.md) | META-040～049 | 回溯補建 |
+| [INDEX-META-050-059](INDEX-META-050-059.md) | META-050～062 | |
+| [INDEX-META-060-069](INDEX-META-060-069.md) | META-060～069 | |
+| [INDEX-META-070-079](INDEX-META-070-079.md) | META-070～079 | |
+| [INDEX-META-080-089](INDEX-META-080-089.md) | META-080～089 | |
+| [INDEX-META-090-099](INDEX-META-090-099.md) | META-090～099 | |
+| [INDEX-META-100-109](INDEX-META-100-109.md) | META-100～109 | Complete-Decade |
+| [INDEX-META-110-119](INDEX-META-110-119.md) | META-110～119 | Complete-Decade |
+| [INDEX-META-120-129](INDEX-META-120-129.md) | META-120～129 | Complete-Decade / Sealed-But-Accepting-Reentry |
+| [INDEX-META-130-139](INDEX-META-130-139.md) | META-130～139 | Open-Decade |
+| [INDEX·ARC-語言代謝與自觀測](INDEX·ARC-語言代謝與自觀測-066-071.md) | META-066～071 | 跨冊主題弧 |
 
-不經分冊者:
-  CASE·META-048、CASE·META-049 — 於上方「事實與折射系列」逐案列出
-  CASE·META-108～132 — 於上方 META 區塊逐案列出（第四輪自 EPOCH 區塊歸位）
-```
+`INDEX-META-000-009` 至 `040-049` 為 2026-09-19 回溯補建：這五冊成立前，META-000～049
+只以純文字列在下方目錄樹裡，沒有任何可追蹤連結。補建只搬運既有描述與各案自身宣告的
+subtitle，未重讀各案全文，不重新裁定、不升格、不改 doctrine。
 
 > **覆蓋狀態**：每個 CASE 檔都應至少被本目錄或一份 `INDEX-META-*` 分冊承載。`CASE·META-017` 為墓碑條目（已升格為 `EPOCH·META-003`，無 CASE 檔），`CASE·EMERGENT-002` 與 `CASE·SYNC-004` 收於下方黑歷史彩蛋區。
 >
@@ -1626,11 +1631,13 @@ DOCS 承載記憶 → CASE 是活的記憶
 
 ## 🔄 版本記錄
 
-### v13.43 (2026-09-19) — 純計數退出導航檔
+### v13.44 (2026-09-19) — 純計數退出導航檔；早期 META 補上導覽入口
 
 - 移除 summary 的 14 個手抄分類計數，與覆蓋狀態的「123 ＋ 58 ＋ 2 ＝ 183」算式：純計數沒有判讀成分，卻是最容易錯又最難看出錯的一處。改由 `tools/trp-mcp/crosscheck.py` 產生當下讀數。
 - 覆蓋保證本身保留，並改記為可驗證形式；同時標明「列名」與「可連結抵達」是兩個數字。
-- 本檔的判讀內容不動，doctrine 不改。
+- 新建 `INDEX-META-000-009` ～ `INDEX-META-040-049` 五冊，為 INDEX 體系成立前的 49 個早期 META 案例補上可追蹤入口。只搬運本檔目錄樹既有描述與各案自身 subtitle，未重讀全文，不重新裁定、不升格。
+- 分冊導覽由 ```yaml 區塊改為連結表：此前本檔對 15 份 INDEX 分冊的 markdown 連結數為 **0**，路由層自身不可達。
+- CASE 可由導航連結抵達數 85 → 134。本檔判讀內容不動，doctrine 不改。
 
 ### v13.42 (2026-09-19) — CASE·META-132 與 EPOCH-019 v0.2 承接
 
