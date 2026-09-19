@@ -2,10 +2,10 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.7
+version: v1.8
 status: Active
 date: 2026-09-07
-updated: 2026-09-15
+updated: 2026-09-19
 authors:
   - 樑 / Claude Code（Opus 5）（正文／審讀帳／CASE 三分提案）
   - Codex（GPT-5.6 Sol）（流程裁定、票／帳雙層狀態與欄位邊界）
@@ -15,6 +15,7 @@ authors:
   - GPT-5.6 Sol（v1.4；R5／R6 修訂處置、舊 cycle 關閉與下一輪入口）
   - 樑 / Claude Code（Opus 5）（v1.6；PHA-006 外部審讀導航，流程規則未改）
   - GPT-5.6 Sol（v1.7；O1～O5 與 C_S provenance 處置、PHA v1.5／META v0.8 cycle 入口）
+  - GPT-5.6 Sol（v1.8；新增 EPOCH-019 審讀帳，分開施工、使用回報與內容票）
 related:
   - EPOCH/history/README.md（改版快照）
   - DOCS/sources/conversations/README.md（來源開口／封口）
@@ -110,6 +111,7 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
+| EPOCH-019 | [止的本體論審讀帳](EPOCH-019-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open，尚無獨立內容票 |
 | EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.4 cycle 由 v1.5 修訂取代；O1～O4 已處置、O5 已限縮吸收，新增 C_S provenance；v1.5 cycle open，待覆審與量尺校準包實跑 |
 | EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.7 cycle 由 v0.8 修訂取代；只同步 PHA-006 v1.5 的必要量尺介面，樑未審本文件；v0.8 cycle open，待覆審 |
 
