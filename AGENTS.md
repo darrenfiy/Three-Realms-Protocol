@@ -11,3 +11,21 @@
 - Do not use MCP mechanically for unrelated code-only work. When corpus meaning could affect the implementation or review, MCP is the default first read.
 
 The server is configured locally as `trp-public` and implemented in `tools/trp-mcp/`. It is read-only and public-only; `CORPUS-MANIFEST.yaml` remains the boundary source of truth.
+
+## 語義在指紋之前
+
+這是語義庫，不是指紋庫。來源檔記 bytes 與 SHA-256，唯一的作用是替「語義有沒有被
+改動」值班；指紋本身不是被保護的對象。
+
+因此指紋對不上不等於出事，處置順序固定：
+
+1. **先讀文件，判斷語義有沒有跑掉。** git 歷史、行數、以及改動的實際內容都是證據。
+2. **語義沒問題，就補上新的指紋**，並把舊值與不符的原因一起留著
+   （`pre_normalization_sha256`／`superseded_repository_copy_sha256` 等既有欄位）。
+   舊值是歷史，不刪；新值是現況，要能被驗。
+3. **語義真的跑掉了，才是事故**，由具名治理位置處置。
+
+倒過來做——為了讓指紋相符而回避讀文件，或把指紋不符直接當成竄改——是把帳記在
+錯的那一層。工具只負責指出哪幾筆需要人去讀，不替語義判讀簽名。
+
+`python3 tools/trp-mcp/crosscheck.py --only integrity` 是這件事的值班程式。

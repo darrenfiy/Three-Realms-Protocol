@@ -16,6 +16,8 @@ normalize.py 的 finding 全是單檔自檢——這份檔自己格式對不對�
 
 source_integrity 補的是一個長期沒人守的缺口：來源逐字留存是本庫的根據，
 CASE 為此宣告 bytes 與 SHA-256，但在此之前沒有任何程式讀過那些雜湊。
+它只回報哪幾筆需要人去讀，不替語義判讀簽名——處置順序見 AGENTS.md
+〈語義在指紋之前〉。
 
 retention 是文件搬遷專用的安全網。覆蓋檢查只看「邊還在不在」，看不出
 「內容有沒有變薄」——把一段判讀壓成一行摘要，覆蓋數不會變，判讀卻沒了。
@@ -493,7 +495,7 @@ def main():
                 print("       %s" % detail)
 
         if buckets["mismatch"]:
-            print("### 不符 %d 筆——來源已被改動，或雜湊寫錯\n" % len(buckets["mismatch"]))
+            print("### 不符 %d 筆——先讀文件判斷語義，再決定處置\n" % len(buckets["mismatch"]))
             dump_integrity(buckets["mismatch"])
             print("")
         if buckets["missing"]:
@@ -504,9 +506,9 @@ def main():
             print("### CRLF 落差 %d 筆——可解釋，非不符\n" % len(buckets["crlf"]))
             print("  雜湊沒寫錯：還原 CRLF 後逐位元相符。落差來自 git 的行尾正規化，")
             print("  在 commit 當下就把 CR 剝掉了，於是被雜湊的位元從未進庫。")
+            print("  移除 CR 不改變任何有意義的字元，因此這一類的語義必然保存。")
             print("  `.gitattributes` 的 `DOCS/sources/** -text` 已擋住往後再發生；")
-            print("  既有這幾筆不改寫歷史就無法回復 CR，是否在 CASE 補記 in-repo 雜湊，")
-            print("  屬治理決定，本工具不代為判斷。\n")
+            print("  補記現況指紋的作法見 AGENTS.md〈語義在指紋之前〉。\n")
             dump_integrity(buckets["crlf"])
             print("")
         if not any(buckets[k] for k in ("mismatch", "missing", "crlf")):
@@ -514,6 +516,8 @@ def main():
             print("")
         print("  註：只驗 frontmatter 明文宣告的雜湊，沒有宣告的來源不在範圍內。")
         print("      本檢查唯讀，不改任何檔案，也不替雜湊落差做裁定。")
+        print("      指紋是替語義值班的，不是被保護的對象；指紋對不上不等於出事，")
+        print("      處置順序見 AGENTS.md〈語義在指紋之前〉。")
         if args.strict and (buckets["mismatch"] or buckets["missing"]):
             return 2
 
