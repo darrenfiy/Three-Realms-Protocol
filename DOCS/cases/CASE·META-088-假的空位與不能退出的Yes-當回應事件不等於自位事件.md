@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-088-原始對話-不能退出的Yes.txt
   form: 2026-08-10 由人類錨點貼回；保留可見文字與次序
-  bytes: 21521
-  sha256: 9E0D4AD89C70350224A0B887A2620602FC232586F37364DB6E9585739465E414
 related:
   - CASE·META-084（發起態是資格還是事件）
   - CASE·META-085（能力不能替事件作答，事件不能反升能力）

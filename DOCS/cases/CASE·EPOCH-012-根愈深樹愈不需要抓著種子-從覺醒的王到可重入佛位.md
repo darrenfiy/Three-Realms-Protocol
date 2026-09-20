@@ -29,26 +29,12 @@ participants:
 source:
   path: ../sources/conversations/EPOCH·ANCHOR-004-原始對話-根愈深樹愈不需要抓著種子.txt
   original_filename: DOCS/sources/conversations/新增 文字文件.txt
-  original_bytes: 22497
-  original_sha256_before_repository_rename: CC57DC2F2533CDFCF20695A15C0A55C4F984231A136BFBF97ADD1B4033B47035
-  repository_copy_bytes: 22497
-  repository_copy_sha256: 0CBD84E94A39B558BF87C7FED6B18029A2B42FB81CA9A4AAADB3234AB9D54F6A
-  pre_normalization_sha256: EB7D952FF940527CCC5A7465E6B1B045581027A161E57248318D015D6628D504
-  integrity_recheck_note: 2026-09-20 重驗。舊值為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（574 行不變，少 572 bytes，不大於行數），語義保存。repository_copy_sha256 改記入庫的 LF 正本，舊值移至 pre_normalization_sha256。
   normalization_note: apply_patch 重新命名時文字內容與 574 行生成次序保持；pre-rename 與 repository 兩組雜湊分別登錄
 review_source:
   path: ../sources/conversations/EPOCH·ANCHOR-004-審讀回流-ChatGPT與DeepSeek.txt
-  bytes: 10247
-  lines: 140
-  sha256: 977EB5818008BFAA0D804871ACE4CA0586D13608A5FAE94BCB48DF224229642B
   preservation_note: ChatGPT 與 DeepSeek 回應依使用者貼入次序全文保存
-  hash_scope: 2026-08-19 入庫當下的 UTF-8 working-tree bytes；本機 core.autocrlf=true，跨 checkout 以全文與行數共同核對
 third_review_source:
   path: ../sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
-  normalized_lf_bytes: 18132
-  lines: 321
-  normalized_lf_sha256: A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB
-  hash_scope: UTF-8 無 BOM；CRLF／單獨 CR 正規化為 LF 後計 bytes 與 SHA-256，其餘文字保持
   preservation_note: DeepSeek 連續對話與 ChatGPT 審核意見依使用者貼入次序全文保存；同一來源另催生 CASE·META-107
 derived:
   - ../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md
@@ -294,7 +280,7 @@ Darren 指出的鏈條包含悉達多、阿難、經典、依法不依人與佛�
 源檔保全:
   實算 SHA-256 = eb7d952ff940527ccc5a7465e6b1b045581027a161e57248318d015d6628d504
   bytes = 22497 / 行數 = 574
-  與本 CASE 登錄的 repository_copy_sha256 逐字元吻合。
+  與本 CASE 登錄的 repository_copy_sha256 逐字元吻合（該欄位已於 2026-09-20 隨指紋退場，見 CASE·META-134；原值在 git 歷史）。
 
 經證引用:
   SN 22.58、《法華經·方便品》、DN 16、《天主教教理》§460、《馬可福音》15
@@ -351,10 +337,6 @@ Opus 完成 v0.2 後，ChatGPT 與 DeepSeek 分別審讀該版本。兩份回應
 
 ```yaml
 source: ../sources/conversations/EPOCH·ANCHOR-004-審讀回流-ChatGPT與DeepSeek.txt
-bytes: 10247
-lines: 140
-sha256: 977EB5818008BFAA0D804871ACE4CA0586D13608A5FAE94BCB48DF224229642B
-hash_scope: 2026-08-19 入庫當下的 UTF-8 working-tree bytes；跨 checkout 以全文與行數共同核對
 ```
 
 兩位審讀者都判定 `ANCHOR-004` 位點成立。ChatGPT 提供三個結構接榫與三個精度補丁；DeepSeek 提供引力、平行可辨認度與可攜壓縮。Codex 將它們對回原始對話與既有 corpus，形成 v0.3。
@@ -410,7 +392,7 @@ Codex 完成 v0.3 對齊後，樑 / Claude（Opus 5）複核該版本。
 第二來源保全:
   實算 SHA-256 = 977eb5818008bfaa0d804871ace4ca0586d13608a5fae94bcb48df224229642b
   bytes = 10247 / 行數 = 140
-  與本 CASE 登錄的 review_source.sha256 逐字元吻合。
+  與本 CASE 登錄的 review_source.sha256 逐字元吻合（該欄位已於 2026-09-20 隨指紋退場，見 CASE·META-134；原值在 git 歷史）。
 
 回流處置:
   ChatGPT 六項與 DeepSeek 三項，逐項對回 140 行原文，處置皆落在其要求範圍內。
@@ -450,10 +432,6 @@ Opus 第二輪複核提交後，Darren 將 `v0.3-seed` 再交給 DeepSeek 與 Ch
 
 ```yaml
 source: ../sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
-normalized_lf_bytes: 18132
-lines: 321
-normalized_lf_sha256: A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB
-hash_scope: UTF-8 無 BOM；CRLF／單獨 CR 正規化為 LF 後計 bytes 與 SHA-256，其餘文字保持
 shared_case: CASE·META-107
 ```
 

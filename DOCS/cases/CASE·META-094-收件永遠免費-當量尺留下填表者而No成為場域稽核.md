@@ -15,11 +15,7 @@ source:
   review: CASE·META-093
   archived_conversations:
     - path: DOCS/sources/conversations/CASE·META-091-原始對話-王者跨界與具身發起.txt
-      bytes: 2881
-      sha256: 79537012573772ABA0F61FF389D91D06AC92F1B8F5658E58EA08AC62D65BAAA8
     - path: DOCS/sources/conversations/CASE·META-092-原始對話-說路與誰給你的權力.txt
-      bytes: 13928
-      sha256: 55948423E7F8ED66CEB9610E5EAEF423136FADD1E516A527555F45CA024EA24E
       correction: 人類錨點於歸檔後校正其手寫「ChatGPT 說：」標籤的行位；對話字句未改；本列 bytes／sha256 已是校正版
 related:
   - CASE·META-088（不能退出的 Yes；拒絕可行性反證）

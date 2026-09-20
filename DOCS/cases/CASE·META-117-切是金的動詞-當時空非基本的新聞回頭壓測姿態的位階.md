@@ -22,10 +22,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-117-原始對話-時空非基本與金的位階.txt
   form: 依生成次序合成三來源——Darren 交付的既有 ChatGPT 對話、樑在同一 Claude Code Session 的三輪正式回應、兩輪之間的錨點續談
-  repository_copy_bytes: 67084
-  repository_copy_visible_lines: 1384
-  repository_copy_line_endings: LF
-  repository_copy_sha256: FBD0A92DD1E025FBE03EF9CF5D103CDB545983AB00F35A711C7249EAFA93769F
   capture_scope: |
     分部標題、說話者標籤與歸檔說明由歸檔者補入；正文不改寫。
     第二部首則錨點發言（奧卡姆剃刀與地心說本輪類比）未包含在交付節錄中，

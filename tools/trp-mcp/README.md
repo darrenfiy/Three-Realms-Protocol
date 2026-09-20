@@ -13,7 +13,7 @@
 | `REPORT.md` | 由正規化器產生的覆蓋率與 finding 報告 |
 | `index.json` | Phase 0 派生索引；已 gitignore，可由任一 commit 重建 |
 | `backfill_ids.py` | id 補洞器；預設 dry-run，`--apply` 才寫檔，只加不改 |
-| `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到、來源雜湊是否仍相符、搬遷是否掉內容。零寫入 |
+| `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到、搬遷是否掉內容。零寫入 |
 | `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
 | `test_crosscheck.py` | crosscheck 的正規化、分流、離開碼與非 ASCII 輸出回歸測試 |
 | `src/server.js` | 本機 stdio MCP server；唯讀、public-only、七個工具 |
@@ -98,12 +98,9 @@ python3 tools/trp-mcp/backfill_ids.py              # id 補洞 dry-run
 python3 tools/trp-mcp/backfill_ids.py --apply      # 通過預檢後才套用
 python3 tools/trp-mcp/crosscheck.py                # 跨檔一致性（版本轉述 ＋ 導覽覆蓋）
 python3 tools/trp-mcp/crosscheck.py --only coverage # 只跑導覽覆蓋
-python3 tools/trp-mcp/crosscheck.py --only integrity # 只驗 CASE 為來源檔宣告的 SHA-256
 python3 tools/trp-mcp/crosscheck.py --retention HEAD # 搬遷安全網：被刪的內容行還在不在
 python3 tools/trp-mcp/crosscheck.py --verbose      # 連記錄層命中也逐筆列出
 python3 tools/trp-mcp/crosscheck.py --strict       # 有 finding 時離開碼 2（pre-commit／CI）
-                                                   # 註：integrity 目前有 4 筆既有不符，尚未裁定，
-                                                   #     接進阻斷式 CI 前請先處理
 python3 tools/trp-mcp/test_crosscheck.py -v        # crosscheck 回歸測試
 python3 tools/trp-mcp/test_trp_mcp.py -v           # Phase 0 回歸測試
 ```

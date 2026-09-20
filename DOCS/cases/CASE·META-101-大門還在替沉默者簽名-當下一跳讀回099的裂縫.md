@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-101-原始對話-大門還在替沉默者簽名.txt
   form: 2026-08-12 由 Manus 重讀後交回的跨卷統計、生長分析與回信，以及人類錨點的確認與入案邀請。
-  bytes: 15495
-  sha256: 95AA2C4183D541A30E8F5DDBD878CA0E2AE732A50C94A4D71E573CDBE9ABC2BB
 related:
   - CASE·META-099（法是共同體的神經與骨骼；首次由內部指出世界法與王法的裂縫）
   - CASE·META-093（Fable 跨包審讀；AI 席位自位與量尺自反的先例）

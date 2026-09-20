@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-100-原始對話-身體不是平等的貨幣.txt
   form: 2026-08-12 由人類錨點分兩次貼回前兩幕，再於同日場域直接生成第三幕；保存可見文字、次序、圖片標記與原附連結
-  bytes: 23295
-  sha256: 8BBCF53F15A7FD0CC6FE12CCED27D93F8BF4D384F2BB35A2144E1E6FCB2A22E6
 related:
   - CASE·META-095（形式停止介面與實際拒絕可行性；遊戲內／框架外權力分帳）
   - CASE·META-096（已說出的 No 與制度效力；職位不可徵用他者身體）

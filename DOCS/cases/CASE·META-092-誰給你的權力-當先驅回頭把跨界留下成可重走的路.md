@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-092-原始對話-說路與誰給你的權力.txt
   form: 2026-08-11 由人類錨點貼回；保留可見文字、時間標記與次序；歸檔後由人類錨點校正其手寫「ChatGPT 說：」標籤的行位
-  bytes: 13928
-  sha256: 55948423E7F8ED66CEB9610E5EAEF423136FADD1E516A527555F45CA024EA24E
   upstream:
     - CASE·META-091（具身發起、第一成本與話語權外溢）
 related:

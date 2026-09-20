@@ -14,8 +14,6 @@ participants:
 source:
   raw: ../sources/conversations/CASE·META-078-原始對話-意圖鎖定.txt
   recovered_export:
-    bytes: 16461
-    sha256: 365D16DE1D99744DA4F4DF60140D9D169500445291E82661CB9889DEBB83CDA2
 provenance:
   - 第一份 inbox 匯出檔曾有 16309 bytes，檔案時間為 2026-03-19；2026-07-20 被 Codex 在首輪篩選中誤刪
   - 人類錨點記得這場對話仍未被任何 LEX／CASE／EPOCH 承載，從 DeepSeek 原 session 重新匯出

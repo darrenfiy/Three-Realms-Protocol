@@ -26,12 +26,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-118-原始對話-苦行僧與公主的公路工程.txt
   form: 依生成次序保存 Darren 與 ChatGPT 四輪對話，含 A 的八字回應與其解釋（Darren 轉述）
-  repository_copy_bytes: 26183
-  repository_copy_visible_lines: 847
-  repository_copy_line_endings: LF
-  repository_copy_sha256: CD1460CC890D1CB47E3198E704BCC42765CAFC6199D327A0AFA163F99AAEA6D2
-  pre_v1_2_label_sha256: C10DC88683B59206368B2928D5D07AA0DD1FE3973518AD4FE85DB08614A645C6
-  integrity_recheck_note: 2026-09-20 重驗。舊值記於 v1.1；v1.2 僅泛化隱私遮罩標籤（來源檔第 8 行自述「v1.2 僅泛化遮罩標籤，不改其餘對話文字」），對話正文一字未動，語義保存。repository_copy_sha256 改記現況，舊值移至 pre_v1_2_label_sha256。
   capture_scope: |
     分部標題與說話者標籤由歸檔者補入；正文不改寫，惟有一處依 INDEX·META-110-119 F54
     就 A 的敏感個人史及可識別第三人資料作歸檔限縮。限縮處以〔〕明示，
@@ -44,10 +38,6 @@ source:
 follow_up_source:
   path: ../sources/conversations/CASE·META-118-錨點回流-路已在走與愛的工程問題.txt
   form: Darren 在 v1.1 後的單則錨點回流；原文不改寫，歸檔說明另標
-  repository_copy_bytes: 1845
-  repository_copy_visible_lines: 30
-  repository_copy_line_endings: LF
-  repository_copy_sha256: 9897E6551DBD76AD3DB711928EE2BD20663E1EDDAD415618CD4A50B3A24B8C56
   capture_scope: |
     只保存 Darren 本輪原話；不是 A／Tiffany 的第一人稱、同意、受益讀數或角色接受。
     §10 所引 v1.1 錨點校正仍缺獨立 raw source；本案不由既有 CASE 引文反向補造來源。
@@ -55,10 +45,6 @@ follow_up_source:
 commitment_follow_up_source:
   path: ../sources/conversations/CASE·META-118-錨點回流-如是願與常住承諾重量.txt
   form: Darren 與 ChatGPT 兩輪對話；依附件原次序保存，repository copy 僅補末行 LF
-  repository_copy_bytes: 15591
-  repository_copy_visible_lines: 218
-  repository_copy_line_endings: LF
-  repository_copy_sha256: 4908E0FCA6E327583440B8A8F75383956275498297278CEAF42AFAEF870954C6
   capture_scope: |
     保存「先成法／先入局」、「如是／願」與「香客／常住／戒律」兩輪校正。
     其中關於 A 的敘述均由 Darren 提出；ChatGPT 的回應與讓步是本案材料，不是 A 的第一人稱 Yes，

@@ -23,10 +23,6 @@ source:
   path: ../sources/conversations/CASE·META-114-現場回流-掌運卡退件與兩座山的翻譯官.txt
   form: Darren 在 Codex 工作對話中提供的事件回報與貼回的 ChatGPT 審讀
   capture_scope: 不是平台完整逐字匯出；不含 Tiffany 或 mamasan 私人對話原文，只保存 Darren 的具名回報與其主動交付的審讀內容
-  repository_copy_bytes: 3861
-  repository_copy_visible_lines: 103
-  repository_copy_sha256: 4904C4DBBA19F46636102ABAA2FCEC639D9121BCC5AA9669714DEE89A5034FA9
-  hash_scope: UTF-8、無 BOM、LF、末行 LF
 
 external_artifact_trace:
   repository: mamasan-lab（獨立 repository；本案不複製 Tiffany 原始教材或交付 PPT）

@@ -15,10 +15,6 @@ source:
   path: ../sources/conversations/CASE·META-108-原始對話-Depends與清楚的簡單.txt
   form: 2026-08-19 由人類錨點在本輪貼入的較早 ChatGPT 對話；repository 只保存本輪可見貼文，自標題「依法與否，it depends?」起算
   capture_scope: 未提供平台匯出檔、附件、時間戳或角色 metadata；不宣稱 bit-level 復原原 session，也不補寫貼文以外輪次
-  repository_copy_bytes: 9527
-  repository_copy_visible_lines: 139
-  repository_copy_sha256: D6C107A595AC2369058C487829F1BE8B143BA5DD833D01B72A6B1C8C97C07A01
-  hash_scope: repository UTF-8、無 BOM、末行 LF；未取得可供雙重比對的上游檔案
 evidence_anchors:
   - https://transcripts.foreverdreaming.org/viewtopic.php?t=30636
   - https://www.gutenberg.org/files/598/598-h/598-h

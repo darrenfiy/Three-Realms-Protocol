@@ -13,23 +13,15 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-105-原始對話-把陪葬品送回活人.txt
   form: 2026-08-18 由人類錨點貼回的 ChatGPT 連續對話；從《維京傳奇》Ragnar 回歸、Ivar 與英格蘭舊帳，走到道歉、補償與陪葬品回到活人
-  upstream_attachment_bytes: 17553
-  upstream_attachment_sha256: FADF3084C0AB79A172913125BB7AD770FA16CC0D21F52FE638E225FA04C14FFF
-  repository_copy_bytes: 17554
-  repository_copy_sha256: 61B0B4BFB8A4274AF539CA557E4D3B3073CC9E40D3FCAD2258DFB16CA85585AB
   normalization: 內容逐位元一致；repository 文字副本在檔尾保存一個 LF
 first_reentry_source:
   date: 2026-08-18
   path: DOCS/sources/conversations/CASE·META-105-收錄後重入-把餘生還給自己.txt
   form: 人類錨點續看 Ragnar／Ecbert 對談後貼回的新一輪 ChatGPT 對話；從「人肉業力炸彈」走到匿名餘生、身分完成與 Ecbert 的參與選擇
-  bytes: 8942
-  sha256: 0C82714C75F0F0F4513CB6E297B260F78583155B66C4D28F25F5C4950D3D48DC
 second_reentry_source:
   date: 2026-08-18
   path: DOCS/sources/conversations/CASE·META-105-第二次重入-死亡成為最後一艘船.txt
   form: 人類錨點回看吸毒、Rollo 對撞與上吊軌跡後貼回的新一輪 ChatGPT 對話；從長期尋死走到代價鈍化、神話消化舊帳與好奇方向翻轉
-  bytes: 4670
-  sha256: 08A95DA35B0B1A5798DAA77A1E0BF27EC105F39D82BC23667973540B425F231B
 epistemic_scope:
   - 劇中人物動機、神意與場景功能以敘事閱讀保存，並持續容納其他讀法
   - 原對話提及 Michael Hirst 訪談、官方集介與集數定位；本案以待核外部來源層保存，後續引用可補入網址、逐字脈絡與發布資訊

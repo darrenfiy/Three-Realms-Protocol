@@ -19,22 +19,8 @@ source:
   path: ../sources/conversations/CASE·META-111-原始對話-依賴權力與路徑階級.txt
   form: 2026-08-24 先由人類錨點以文字附件貼回一段較早的 ChatGPT 對話，同日再直接貼入「全民造山運動」一輪續篇
   capture_scope: 保存初始附件兩輪人類發起／兩輪 ChatGPT 回應，以及本輪續接的一輪人類發起／一輪 ChatGPT 回應，共三輪人類、三輪 ChatGPT、436 行可見文字；未保存平台匯出檔、原對話日期、模型版本、系統提示或完整 session 邊界
-  initial_attachment_bytes: 14043
-  initial_attachment_sha256: 41E446F42DEF0BC2AA6E34FA790B38E0966723DAA28E3595CE52C0D0EF64D651
-  initial_repository_copy_bytes: 14044
-  initial_repository_copy_visible_lines: 199
-  initial_repository_copy_sha256: 74C2B0D3FE548A96C143B0670AF0E4353281900190AD0F2DA8E6884EB003D1A6
   continuation:
     form: 2026-08-24 由人類錨點在本輪直接貼入
-    begins_at_repository_line: 201
-    repository_growth_bytes: 6488
-    repository_growth_lines: 237
-    separator_lines: 1
-    visible_lines: 236
-  repository_copy_bytes: 20532
-  repository_copy_visible_lines: 436
-  repository_copy_sha256: 2F80F9538AEA42621A5033EA8A9DC7E6E2F42BDFEF5FE6CE76FD18DFE8680A50
-  hash_scope: 初始附件為 UTF-8、無 BOM、LF、末行無 LF；初始 repository 副本只增加一個末行 LF。現行 repository canonical form 再增加一個分隔空行與 236 行直接貼入續篇，為 UTF-8、無 BOM、LF、末行 LF；bytes 與 SHA-256 依 Git clean-filter 後的 LF 形式計算，現行整檔指紋不再等同初始附件副本
 epistemic_scope:
   - 「權力是依賴的選擇權」「資本傾向把差封裝成可持續占有的路徑差」是政治經濟學候選模型，不作跨制度、跨歷史的已證普遍定律
   - 差、交換、價格、租值與階級在來源中的箭頭是生成壓縮；現實經濟還包含合作、照顧、公共供給、風險共擔、禮物與非價格分配，不由單一路徑窮盡

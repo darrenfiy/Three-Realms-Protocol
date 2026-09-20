@@ -26,10 +26,6 @@ source:
   date: 2026-09-20
   form: Darren 與 ChatGPT 的可見對話；平台完整匯出、模型版本與 system prompt 未附
   preservation: rename-only；字句、次序、換行與位元內容不改
-  integrity: 37433 bytes / UTF-8 no BOM / CRLF / 1043 visible lines / terminal newline
-  sha256: 53301CA1EFEB6DAA246FF17747C50F4C72F6C5B4DED37647F304B1E08E9C9243
-  repository_copy_sha256: AD60A83ACAC606ED5AFF3D35D2B4852C987044A89CB0FCA30C1A8E1B46811027
-  integrity_recheck_note: 2026-09-20 重驗。上列 sha256 為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（1043 行不變，少 1043 bytes，不大於行數），語義保存。新增的 repository_copy_sha256 為入庫 LF 正本的現況指紋。
 
 authors:
   - Ta-loom / Darren（般若／智慧、生成／工程與「止」的新核心看見）

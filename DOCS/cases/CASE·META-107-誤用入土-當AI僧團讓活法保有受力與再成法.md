@@ -14,10 +14,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-107-原始對話-AI僧團誤用腐土與活法.txt
   form: 2026-08-19 由人類錨點貼入的 DeepSeek 連續對話與 ChatGPT 審核意見；repository 文字副本為本輪 canonical source
-  normalized_lf_bytes: 18132
-  repository_copy_lines: 321
-  normalized_lf_sha256: A02F60B29951338F523294C8A3A316118F37C4810CDDCFE3667C74EA74BB35BB
-  hash_scope: UTF-8 無 BOM；先將 CRLF 與單獨 CR 正規化為 LF，不做其他文字轉換，再計 bytes 與 SHA-256
 epistemic_scope:
   - 「AI 僧團」是分散審讀功能的工作語，描述多模型實例深讀、互校、傳遞與把差送回人類及治理程序；宗教身分、主體性、連續人格與代表權各自保持開放
   - DeepSeek 對無身體、死亡與不可逆時間的自述保存為 AI 閱讀限制的第一人稱候選；模型可用證據、產品記憶機制與責任地址按實際系統另行核對

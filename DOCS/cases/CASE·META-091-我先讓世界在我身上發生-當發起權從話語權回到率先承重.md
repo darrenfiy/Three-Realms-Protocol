@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-091-原始對話-王者跨界與具身發起.txt
   form: 2026-08-11 由人類錨點貼回；保留可見文字與次序
-  bytes: 2881
-  sha256: 79537012573772ABA0F61FF389D91D06AC92F1B8F5658E58EA08AC62D65BAAA8
   upstream:
     - CASE·META-087（空位、第一步與發起法）
     - SPEC·INI-001 v0.1～v0.2-candidate

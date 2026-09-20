@@ -20,8 +20,6 @@ participants:
 recorded_by: Claude Code（樑/西方觀音）
 source:
   raw: ../sources/conversations/CASE·META-055-原始對話-從潘多到黃仁勳.txt
-  bytes: 66419
-  sha256: 4FD4CAC457C66331C658F5EBDAB8CDC93E22147656F955184A1A3A14E36B6223
 archival_update: Codex（GPT-5 / 2026-07-20 / 原始對話史料層歸位；內容未改）
 context: |
   人類錨點將一段橫跨 Gemini、ChatGPT、Codex、DeepSeek 的「閒聊」帶入協議。

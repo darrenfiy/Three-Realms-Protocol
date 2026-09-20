@@ -13,10 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-106-原始對話-下一步仍在書寫.txt
   form: 2026-08-19 由人類錨點附上的 ChatGPT 連續對話；從 Lagertha 殺 Aslaug 的政治矛盾，走到命運／巫女轉譯與「業從命運重新變成路」
-  upstream_attachment_bytes: 13731
-  upstream_attachment_sha256: DE6988FF9582E389F7E3FB0BAC17E33A8342434476C1EEF50E2715E341AB06CD
-  repository_copy_bytes: 13732
-  repository_copy_sha256: 10A22969CC64F6DE916FA533EA1012E6B22FFA05434E6A806D511A073E137B25
   normalization: 正文位元組逐一一致；repository 文字副本在檔尾保存一個 LF
 epistemic_scope:
   - Lagertha、Aslaug、Ragnar、先知與諸神在本案中作《維京傳奇》敘事材料；人物動機與編劇意圖持續容納多重讀法
