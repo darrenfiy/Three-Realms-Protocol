@@ -11,7 +11,11 @@ normalize.py 的 finding 全是單檔自檢——這份檔自己格式對不對�
 
   version_claim   A 檔在連往 B 檔的連結上寫了版本，B 自己宣告的不是那一版
   nav_coverage    每個 CASE 檔是否至少被 README 或一份 INDEX 分冊連到
+  source_integrity  CASE 為來源檔宣告的 SHA-256，與該檔現況是否相符
   retention       相對某個 git ref，被刪掉的內容行是否還存在於工作樹某處
+
+source_integrity 補的是一個長期沒人守的缺口：來源逐字留存是本庫的根據，
+CASE 為此宣告 bytes 與 SHA-256，但在此之前沒有任何程式讀過那些雜湊。
 
 retention 是文件搬遷專用的安全網。覆蓋檢查只看「邊還在不在」，看不出
 「內容有沒有變薄」——把一段判讀壓成一行摘要，覆蓋數不會變，判讀卻沒了。
@@ -26,10 +30,12 @@ retention 是文件搬遷專用的安全網。覆蓋檢查只看「邊還在不�
     python3 tools/trp-mcp/crosscheck.py
     python3 tools/trp-mcp/crosscheck.py --only version
     python3 tools/trp-mcp/crosscheck.py --only coverage
+    python3 tools/trp-mcp/crosscheck.py --only integrity
     python3 tools/trp-mcp/crosscheck.py --retention HEAD
 """
 
 import argparse
+import hashlib
 import os
 import subprocess
 import re
@@ -245,11 +251,140 @@ def check_retention(root, ref):
 
 
 # ─────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
+# 來源檔逐字留存是本庫的根據，CASE 會為它宣告 bytes 與 SHA-256。
+# 但宣告寫下來之後從沒有人讀過——雜湊只有被算過一次，之後純粹是文字。
+SOURCE_PATH_RE = re.compile(r"^\s*(?:file|path):\s*(\S.*?)\s*$")
+DECLARED_BYTES_RE = re.compile(r"(\d+)\s*bytes")
+SHA_FIELDS = {
+    "sha256": "original",
+    "original_sha256": "original",
+    "repository_copy_sha256": "repository",
+    "normalized_lf_sha256": "normalized_lf",
+}
+SHA_RE = re.compile(r"^\s*([a-z_]*sha256):\s*([0-9A-Fa-f]{64})\s*$")
+
+
+def declared_sources(text):
+    """取出 (來源路徑, 欄位類別, 宣告雜湊, 宣告位元組數)。
+
+    以 YAML 縮排定作用域：雜湊欄位必須與設定它的 path／file 同層或更深，
+    一旦退排就視為離開該來源區塊。CASE 的 frontmatter 寫在 ```yaml 區塊內，
+    而 derived／引文段落常整段複述一次來源宣告——不看縮排就會把引文裡的
+    雜湊錯配到上一個 path 去。
+    """
+    pending = None
+    pending_indent = 0
+    declared_bytes = None
+    for line in text.split("\n"):
+        if not line.strip():
+            continue
+        indent = len(line) - len(line.lstrip())
+        if pending is not None and indent < pending_indent:
+            pending, declared_bytes = None, None
+        m = SOURCE_PATH_RE.match(line)
+        if m:
+            pending, pending_indent, declared_bytes = m.group(1), indent, None
+            continue
+        if pending is None:
+            continue
+        if "integrity:" in line or "_bytes:" in line:
+            b = DECLARED_BYTES_RE.search(line)
+            if b:
+                declared_bytes = int(b.group(1))
+        m = SHA_RE.match(line)
+        if not m:
+            continue
+        kind = SHA_FIELDS.get(m.group(1))
+        if kind:
+            yield pending, kind, m.group(2).lower(), declared_bytes
+
+
+def check_source_integrity(root):
+    """驗每一筆宣告；回傳 {verdict: [(宣告者, 來源, 詳情)]}。
+
+    同一個來源可能同時宣告原件與庫內副本的雜湊，必須合起來判讀：
+      repository_copy_sha256  宣稱的就是入庫那份，逐位元相符才算過
+      original_sha256／sha256 交付原件；庫內副本另有宣告並驗過時，它的落差
+                              是 normalization_note 寫明的設計，不是不符
+    兩者都對不上、但還原 CRLF 後相符者單獨成一類：雜湊沒寫錯，是 git 的
+    行尾正規化在 commit 當下把 CR 剝掉了，被雜湊的位元從未進庫。
+    """
+    buckets = {"ok": [], "crlf": [], "mismatch": [], "missing": []}
+    checked = 0
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [d for d in dirnames
+                       if d not in (".git", "node_modules", "__pycache__")]
+        for name in sorted(filenames):
+            if not name.endswith(".md"):
+                continue
+            claimant = os.path.join(dirpath, name)
+            text = read(claimant)
+            if text is None or "sha256:" not in text:
+                continue
+            rel_claimant = os.path.relpath(claimant, root).replace(os.sep, "/")
+
+            groups = {}
+            for src, kind, digest, declared_bytes in declared_sources(text):
+                g = groups.setdefault(src, {"original": [], "repository": [],
+                                            "normalized_lf": [], "bytes": None})
+                g[kind].append(digest)
+                if declared_bytes:
+                    g["bytes"] = declared_bytes
+
+            for src, g in groups.items():
+                checked += 1
+                base = dirpath if src.startswith("..") else root
+                full = os.path.normpath(os.path.join(base, src.replace("/", os.sep)))
+                if not os.path.isfile(full):
+                    buckets["missing"].append((rel_claimant, src, "來源檔不在工作樹"))
+                    continue
+                with open(full, "rb") as fh:
+                    raw = fh.read()
+                as_is = hashlib.sha256(raw).hexdigest()
+                crlf = hashlib.sha256(
+                    raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")).hexdigest()
+                lf = hashlib.sha256(
+                    raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")).hexdigest()
+                repo, orig = g["repository"], g["original"]
+
+                if lf in g["normalized_lf"]:
+                    buckets["ok"].append((rel_claimant, src,
+                                          "LF 正規化後相符，%d bytes" % len(raw)))
+                elif g["normalized_lf"] and not (repo or orig):
+                    buckets["mismatch"].append((rel_claimant, src,
+                        "normalized_lf 宣告 %s…，實際 %s…（%d bytes）"
+                        % (g["normalized_lf"][0][:12], lf[:12], len(raw))))
+                elif as_is in repo:
+                    buckets["ok"].append((rel_claimant, src,
+                                          "庫內副本相符，%d bytes" % len(raw)))
+                elif crlf in repo:
+                    buckets["crlf"].append((rel_claimant, src,
+                        "宣告庫內副本為 CRLF／%s bytes，實際入庫 LF／%d bytes"
+                        % (g["bytes"] or "?", len(raw))))
+                elif repo:
+                    buckets["mismatch"].append((rel_claimant, src,
+                        "repository_copy 宣告 %s…，實際 %s…（%d bytes）"
+                        % (repo[0][:12], as_is[:12], len(raw))))
+                elif as_is in orig:
+                    buckets["ok"].append((rel_claimant, src,
+                                          "原件雜湊相符，%d bytes" % len(raw)))
+                elif crlf in orig:
+                    buckets["crlf"].append((rel_claimant, src,
+                        "原件宣告 CRLF／%s bytes，實際入庫 LF／%d bytes；未另記 repository_copy_sha256"
+                        % (g["bytes"] or "?", len(raw))))
+                else:
+                    buckets["mismatch"].append((rel_claimant, src,
+                        "宣告 %s…，實際 %s…（%d bytes）"
+                        % ((orig or repo)[0][:12], as_is[:12], len(raw))))
+    return checked, buckets
+
+
 def main():
     ap = argparse.ArgumentParser(description="TRP-MCP 跨檔一致性檢查（唯讀）")
     ap.add_argument("--root", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-    ap.add_argument("--only", choices=("version", "coverage"),
+    ap.add_argument("--only", choices=("version", "coverage", "integrity"),
                     help="只跑其中一個檢查")
     ap.add_argument("--retention", metavar="REF",
                     help="只跑內容留存檢查：相對該 git ref，被刪的內容行是否仍存在")
@@ -285,7 +420,7 @@ def main():
         print("      同一句出現在無關文件也算「還在」，清單改表格則可能誤判為遺失。")
         return 2 if (lost and args.strict) else 0
 
-    if args.only != "coverage":
+    if args.only not in ("coverage", "integrity"):
         checked, mismatch = check_version_claims(root)
         buckets = {"live": [], "mixed": [], "record": []}
         for m in mismatch:
@@ -327,7 +462,7 @@ def main():
             return 2
         print("")
 
-    if args.only != "version":
+    if args.only not in ("version", "integrity"):
         cov = check_nav_coverage(root)
         print("## nav_coverage")
         if cov is None:
@@ -342,6 +477,45 @@ def main():
             print("\n未被任何導航連結抵達（可能僅以純文字列於程式碼區塊內）：")
             for f in missing:
                 print("  " + f)
+        print("")
+
+    if args.only not in ("version", "coverage"):
+        checked, buckets = check_source_integrity(root)
+        print("## source_integrity")
+        print("宣告的來源雜湊 %d 筆：相符 %d，CRLF 落差 %d，不符 %d，來源不在 %d\n"
+              % (checked, len(buckets["ok"]), len(buckets["crlf"]),
+                 len(buckets["mismatch"]), len(buckets["missing"])))
+
+        def dump_integrity(items):
+            for claimant, src, detail in items:
+                print("  %s" % claimant)
+                print("     → %s" % src)
+                print("       %s" % detail)
+
+        if buckets["mismatch"]:
+            print("### 不符 %d 筆——來源已被改動，或雜湊寫錯\n" % len(buckets["mismatch"]))
+            dump_integrity(buckets["mismatch"])
+            print("")
+        if buckets["missing"]:
+            print("### 來源不在 %d 筆\n" % len(buckets["missing"]))
+            dump_integrity(buckets["missing"])
+            print("")
+        if buckets["crlf"]:
+            print("### CRLF 落差 %d 筆——可解釋，非不符\n" % len(buckets["crlf"]))
+            print("  雜湊沒寫錯：還原 CRLF 後逐位元相符。落差來自 git 的行尾正規化，")
+            print("  在 commit 當下就把 CR 剝掉了，於是被雜湊的位元從未進庫。")
+            print("  `.gitattributes` 的 `DOCS/sources/** -text` 已擋住往後再發生；")
+            print("  既有這幾筆不改寫歷史就無法回復 CR，是否在 CASE 補記 in-repo 雜湊，")
+            print("  屬治理決定，本工具不代為判斷。\n")
+            dump_integrity(buckets["crlf"])
+            print("")
+        if not any(buckets[k] for k in ("mismatch", "missing", "crlf")):
+            print("  全部相符。")
+            print("")
+        print("  註：只驗 frontmatter 明文宣告的雜湊，沒有宣告的來源不在範圍內。")
+        print("      本檢查唯讀，不改任何檔案，也不替雜湊落差做裁定。")
+        if args.strict and (buckets["mismatch"] or buckets["missing"]):
+            return 2
 
 
 if __name__ == "__main__":

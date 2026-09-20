@@ -7,8 +7,10 @@
   2. claim_layer() 的三層分流——分錯就會讓真問題被歷史紀錄淹沒
   3. 版本與覆蓋檢查的核心判讀
   4. CLI 的離開碼與非 ASCII 輸出（CP950 主控台曾在印 emoji 時直接崩潰）
+  5. 來源雜湊驗證——欄位慣例有多種，判錯會把設計好的正規化誤報成竄改
 """
 
+import hashlib
 import os
 import pathlib
 import subprocess
@@ -219,3 +221,92 @@ class TestRetentionAndCLI(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestSourceIntegrity(unittest.TestCase):
+    """來源逐字留存是本庫的根據，但欄位慣例有多種，判讀不能一刀切。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = self.tmp.name
+        (pathlib.Path(self.root) / "SPEC").mkdir()
+
+    def source(self, rel, data):
+        p = pathlib.Path(self.root) / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(data)
+        return hashlib.sha256(data).hexdigest().upper()
+
+    def verdicts(self):
+        _, buckets = crosscheck.check_source_integrity(self.root)
+        return {k: [(c, s) for c, s, _ in v] for k, v in buckets.items()}
+
+    def test_matching_repository_copy_passes(self):
+        digest = self.source("DOCS/sources/a.txt", b"line\n")
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  repository_copy_sha256: %s\n```\n" % digest)
+        self.assertEqual(len(self.verdicts()["ok"]), 1)
+
+    def test_documented_original_drift_is_not_a_mismatch(self):
+        """原件與庫內副本本來就可能不同（EPOCH-013 只多一個末行 LF）。
+
+        庫內副本已宣告且驗過時，原件雜湊的落差是 normalization_note 寫明的
+        設計，不得報成不符。
+        """
+        digest = self.source("DOCS/sources/a.txt", b"line\n")
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  original_sha256: %s\n"
+              "  repository_copy_sha256: %s\n```\n" % ("A" * 64, digest))
+        v = self.verdicts()
+        self.assertEqual(len(v["ok"]), 1)
+        self.assertEqual(v["mismatch"], [])
+
+    def test_crlf_normalisation_is_its_own_verdict(self):
+        """git 在 commit 時剝掉 CR，雜湊沒寫錯，被雜湊的位元卻沒進庫。"""
+        body = b"one\ntwo\n"
+        self.source("DOCS/sources/a.txt", body)
+        crlf = hashlib.sha256(body.replace(b"\n", b"\r\n")).hexdigest().upper()
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  sha256: %s\n```\n" % crlf)
+        v = self.verdicts()
+        self.assertEqual(len(v["crlf"]), 1)
+        self.assertEqual(v["mismatch"], [])
+
+    def test_real_drift_is_reported(self):
+        self.source("DOCS/sources/a.txt", b"changed\n")
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  repository_copy_sha256: %s\n```\n" % ("B" * 64))
+        self.assertEqual(len(self.verdicts()["mismatch"]), 1)
+
+    def test_quoted_declaration_after_dedent_is_not_mispaired(self):
+        """derived／引文段落常整段複述來源宣告。
+
+        不看縮排就會把引文裡的雜湊錯配到上一個 path——EPOCH-012 曾因此
+        被誤報成兩筆不符。
+        """
+        digest = self.source("DOCS/sources/a.txt", b"line\n")
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  repository_copy_sha256: %s\n"
+              "derived:\n"
+              "sha256: %s\n```\n" % (digest, "C" * 64))
+        v = self.verdicts()
+        self.assertEqual(len(v["ok"]), 1)
+        self.assertEqual(v["mismatch"], [])
+
+    def test_historical_snapshot_fields_are_not_verified(self):
+        """initial_* 與 *_before_rename 記的是成長／改名前的狀態，設計上就不等於現況。"""
+        self.source("DOCS/sources/a.txt", b"grown\n")
+        write(self.root, "DOCS/cases/C.md", "```yaml\nsource:\n"
+              "  path: ../sources/a.txt\n"
+              "  initial_attachment_sha256: %s\n"
+              "  original_sha256_before_repository_rename: %s\n```\n"
+              % ("D" * 64, "E" * 64))
+        v = self.verdicts()
+        self.assertEqual(v["mismatch"], [])
+        self.assertEqual(v["ok"], [])
