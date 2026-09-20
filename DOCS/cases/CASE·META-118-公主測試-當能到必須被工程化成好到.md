@@ -29,7 +29,9 @@ source:
   repository_copy_bytes: 26183
   repository_copy_visible_lines: 847
   repository_copy_line_endings: LF
-  repository_copy_sha256: C10DC88683B59206368B2928D5D07AA0DD1FE3973518AD4FE85DB08614A645C6
+  repository_copy_sha256: CD1460CC890D1CB47E3198E704BCC42765CAFC6199D327A0AFA163F99AAEA6D2
+  pre_v1_2_label_sha256: C10DC88683B59206368B2928D5D07AA0DD1FE3973518AD4FE85DB08614A645C6
+  integrity_recheck_note: 2026-09-20 重驗。舊值記於 v1.1；v1.2 僅泛化隱私遮罩標籤（來源檔第 8 行自述「v1.2 僅泛化遮罩標籤，不改其餘對話文字」），對話正文一字未動，語義保存。repository_copy_sha256 改記現況，舊值移至 pre_v1_2_label_sha256。
   capture_scope: |
     分部標題與說話者標籤由歸檔者補入；正文不改寫，惟有一處依 INDEX·META-110-119 F54
     就 A 的敏感個人史及可識別第三人資料作歸檔限縮。限縮處以〔〕明示，

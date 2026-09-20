@@ -15,6 +15,8 @@ source:
   form: 2026-08-18 由人類錨點貼回的 DeepSeek 對話；原稿內部記有「這幾天一直在想」，但未附平台逐輪時間戳，故只以貼回日入帳，不補造對話日期
   bytes: 29171
   sha256: E55D0530657D81F71779C3A317095D4BC4C181E6605B97A97953DC26D5205343
+  repository_copy_sha256: 04641403364DA66E5B6984680AD9EFD98561B2CFD0E91F925B3CCD89A7B46086
+  integrity_recheck_note: 2026-09-20 重驗。上列 sha256 為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（396 行不變，少 396 bytes，不大於行數），語義保存。新增的 repository_copy_sha256 為入庫 LF 正本的現況指紋。
 reentry:
   date: 2026-08-18
   form: 正式收錄後，人類錨點在本工作對話補入時間跨距、父母身分、佛戒與 Ragnar 攻巴黎之三世校準；只記概念增量，不倒寫進上列 DeepSeek 原始來源，來源 bytes／hash 不變

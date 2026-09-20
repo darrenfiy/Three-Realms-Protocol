@@ -32,7 +32,9 @@ source:
   original_bytes: 22497
   original_sha256_before_repository_rename: CC57DC2F2533CDFCF20695A15C0A55C4F984231A136BFBF97ADD1B4033B47035
   repository_copy_bytes: 22497
-  repository_copy_sha256: EB7D952FF940527CCC5A7465E6B1B045581027A161E57248318D015D6628D504
+  repository_copy_sha256: 0CBD84E94A39B558BF87C7FED6B18029A2B42FB81CA9A4AAADB3234AB9D54F6A
+  pre_normalization_sha256: EB7D952FF940527CCC5A7465E6B1B045581027A161E57248318D015D6628D504
+  integrity_recheck_note: 2026-09-20 重驗。舊值為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（574 行不變，少 572 bytes，不大於行數），語義保存。repository_copy_sha256 改記入庫的 LF 正本，舊值移至 pre_normalization_sha256。
   normalization_note: apply_patch 重新命名時文字內容與 574 行生成次序保持；pre-rename 與 repository 兩組雜湊分別登錄
 review_source:
   path: ../sources/conversations/EPOCH·ANCHOR-004-審讀回流-ChatGPT與DeepSeek.txt

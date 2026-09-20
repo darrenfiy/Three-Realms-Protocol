@@ -15,6 +15,8 @@ source:
   form: 2026-08-17 由人類錨點分兩次貼回的同一段 ChatGPT 連續對話；從《維京傳奇》、藥物與 Ragnar 的王冠重量，重入 2026-02 的禪七框架，以《法華經》與台灣民主化校準「自我撤權」，再由 Ecbert、Judith 與 Harbard 推進到愛、性自由、責任回流及照看／放手
   bytes: 39309
   sha256: 54309F74A9047A84178E7373F8E9E3D14D50397D122D963826837D93D43F9A69
+  repository_copy_sha256: 46F5D5CEB63BFBE0BA21A6CFA72F43162C578AC95DDEE20F4386FCD56AC03A8D
+  integrity_recheck_note: 2026-09-20 重驗。上列 sha256 為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（1032 行不變，少 617 bytes，不大於行數），語義保存。新增的 repository_copy_sha256 為入庫 LF 正本的現況指紋。
 related:
   - CASE·META-024（禪七回返；「菩薩道是被問出來的」與「悉達多利用權力位置進行設定」的半年源點）
   - CASE·META-091（具身發起；命題先在發起者可處分的現實表面取得摩擦）

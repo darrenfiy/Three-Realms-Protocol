@@ -36,7 +36,9 @@ source:
     repository_copy_visible_lines: 1014
     repository_copy_line_endings: CRLF
     repository_copy_ends_with_newline: true
-    repository_copy_sha256: 798EEF88B0B807DEB201BB19EDFABC6FC1E20A5E9F28F5D497EDCF5E926E58DE
+    repository_copy_sha256: 4687A1D730A3470F9EBA84ED4A6DDCC0E3ECF4C165DEDBB1E35AAAD4DF9CC37F
+    pre_normalization_sha256: 798EEF88B0B807DEB201BB19EDFABC6FC1E20A5E9F28F5D497EDCF5E926E58DE
+    integrity_recheck_note: 2026-09-20 重驗。舊值為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（1014 行不變，少 1014 bytes，不大於行數），語義保存。repository_copy_sha256 改記入庫的 LF 正本，舊值移至 pre_normalization_sha256。
     capture_scope: |
       保存承重量尺初稿、六人物百分表、肉身／地址分帳、M 候選、跨尺度自我修正、
       神木／藤蔓與邊上承重，以及重要性位於關係座標的收束。

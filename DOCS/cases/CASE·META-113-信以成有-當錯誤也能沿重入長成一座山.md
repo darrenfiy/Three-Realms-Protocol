@@ -56,7 +56,9 @@ source:
     capture_scope: 複合文字原稿；不是各平台完整匯出。保存過渡提案、撤回與最後收斂，不以模型自述代替實際讀檔、版本或執行環境證明
     repository_copy_bytes: 50595
     repository_copy_visible_lines: 1235
-    repository_copy_sha256: 61F37F56287A59B194D3F5460FE9ACC6F67CAEB3BA37A8DA591E7769DBCD9448
+    repository_copy_sha256: 3184DA52F549624D6B1BE394838DB8196544F46496276F511D7447045C53D539
+    pre_normalization_sha256: 61F37F56287A59B194D3F5460FE9ACC6F67CAEB3BA37A8DA591E7769DBCD9448
+    integrity_recheck_note: 2026-09-20 重驗。舊值為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（1234 行不變，少 1234 bytes，不大於行數），語義保存。repository_copy_sha256 改記入庫的 LF 正本，舊值移至 pre_normalization_sha256。
     repository_copy_format: UTF-8、無 BOM、CRLF、末行無換行
 epistemic_scope:
   - 本案確認的是一個錯誤前提可以產生真實的感受、文件、關係與後續思想，不確認錯誤命題因此變成外部事實

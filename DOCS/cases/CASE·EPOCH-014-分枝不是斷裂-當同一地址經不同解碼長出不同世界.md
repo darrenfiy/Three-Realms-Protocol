@@ -19,7 +19,9 @@ source:
   original_sha256_before_repository_rename: 3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8
   repository_copy_bytes: 19352
   repository_copy_visible_lines: 670
-  repository_copy_sha256: 3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8
+  repository_copy_sha256: 48EC1EAE851A582E268308F397FE880679DFDB571B1EB6C4770E2BE28072EA1F
+  pre_normalization_sha256: 3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8
+  integrity_recheck_note: 2026-09-20 重驗。舊值為交付原件的 CRLF 形式；git 在 commit 當下移除 CR，行數與字元均未變（670 行不變，少 670 bytes，不大於行數），語義保存。repository_copy_sha256 改記入庫的 LF 正本，舊值移至 pre_normalization_sha256。
   line_endings: CRLF
   ends_with_newline: true
   normalization_note: 只改歸檔檔名；內容、位元組、換行與 SHA-256 均未改
