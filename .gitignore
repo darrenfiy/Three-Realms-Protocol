@@ -6,7 +6,12 @@ desktop.ini
 Thumbs.db
 
 # Local Claude/Codex tool settings
-.claude/
+# 個人設定不入庫；共用的 session-start hook 與專案設定是例外——
+# 遠端 session 靠它把 tools/trp-mcp 的相依裝起來，不入庫就沒有作用。
+.claude/*
+!.claude/settings.json
+!.claude/hooks/
+.claude/settings.local.json
 
 # TRP-MCP 派生索引（可由 normalize.py 從任一 commit 重建，非正本）
 tools/trp-mcp/index.json
