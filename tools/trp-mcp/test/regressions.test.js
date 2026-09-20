@@ -178,3 +178,24 @@ test('long lex sections report truncation and keep citations on quoted lines', (
   const lines = readFileSync(join(root, 'LEX/LEX-001.md'), 'utf8').split(/\r?\n/u);
   assert.equal(result.content, lines.slice(result.lineStart - 1, result.lineEnd).join('\n'));
 });
+
+// 中文不以空白斷詞，整串查詢是單一 token。舊計分只看 includes，於是「出現 10 次」
+// 與「出現 1 次」同為 22 分，平手後由 authority 決勝——最切題的 CASE 反而沉到第 12 名。
+test('CJK phrase search ranks by frequency, not by authority tie-break', (t) => {
+  const { root, write } = fixture(t);
+  const phrase = '可重認形狀';
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', `這裡只提一次 ${phrase} 而已。`));
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', `${phrase}\n`.repeat(10)));
+  const results = new PublicCorpus(root).search({ query: phrase, limit: 10 }).results;
+  assert.equal(results[0].id, 'SPEC-001', '提及密度高的文件必須排在前面');
+  assert.ok(results[0].score > results[1].score, '不得再全部同分');
+});
+
+test('CJK bigrams let partial concept overlap score without swamping literal hits', (t) => {
+  const { root, write } = fixture(t);
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', '完整詞：可重認形狀。'));
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', '只有部分重疊：形狀與可重入。'));
+  const results = new PublicCorpus(root).search({ query: '可重認形狀', limit: 10 }).results;
+  assert.equal(results.length, 2, '部分重疊仍應被找到');
+  assert.equal(results[0].id, 'LEX-001', '完整命中必須勝過 bigram 部分命中');
+});
