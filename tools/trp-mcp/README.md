@@ -8,7 +8,7 @@
 
 | 檔案 | 說明 |
 |---|---|
-| `DESIGN.md` | MCP 設計與決策紀錄（`v0.7`） |
+| `DESIGN.md` | MCP 設計與決策紀錄（`v0.8`） |
 | `normalize.py` | Phase 0 語料正規化器；對協議檔案零寫入 |
 | `REPORT.md` | 由正規化器產生的覆蓋率與 finding 報告 |
 | `index.json` | Phase 0 派生索引；已 gitignore，可由任一 commit 重建 |
@@ -16,13 +16,15 @@
 | `crosscheck.py` | 跨檔一致性檢查；版本轉述是否過期、CASE 是否被導航連到、搬遷是否掉內容。零寫入 |
 | `test_trp_mcp.py` | Phase 0 manifest、metadata 與補洞安全性回歸測試 |
 | `test_crosscheck.py` | crosscheck 的正規化、分流、離開碼與非 ASCII 輸出回歸測試 |
+| `src/launch.js` | `.mcp.json` 的進入點；先確保相依就緒再動態載入 server |
+| `src/ensure-deps.js` | 依 lockfile 雜湊判斷相依是否就緒，必要時 `npm ci`；launcher 與 SessionStart hook 共用 |
 | `src/server.js` | 本機 stdio MCP server；唯讀、public-only、七個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
 ## 啟動 MCP server
 
-需求：Node.js 20+。第一次使用先安裝 lockfile 指定的相依套件：
+需求：Node.js 20+。本機開發自己管相依：
 
 ```bash
 cd tools/trp-mcp
@@ -36,9 +38,15 @@ npm start
 ```json
 {
   "command": "node",
-  "args": ["C:/path/to/Three-Realms-Protocol/tools/trp-mcp/src/server.js"]
+  "args": ["C:/path/to/Three-Realms-Protocol/tools/trp-mcp/src/launch.js"]
 }
 ```
+
+進入點是 `src/launch.js` 而不是 `src/server.js`：全新 clone 沒有 `node_modules/`
+（已 gitignore），server.js 會在 **import 期**就 `ERR_MODULE_NOT_FOUND`，client 那端
+只看得到 `CONNECTION_CLOSED`。launcher 先比對 lockfile 雜湊，必要時跑一次
+`npm ci`（輸出一律走 stderr，不污染 stdout 的 JSON-RPC 通道），再動態載入 server；
+相依已就緒時只多一次雜湊比對。要繞過這層仍可直接 `node src/server.js`。
 
 server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟動時直接讀取
 `CORPUS-MANIFEST.yaml` 與當下公開文件。每次查詢都先核對 manifest 的內容雜湊，

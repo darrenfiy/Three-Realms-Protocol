@@ -45,6 +45,8 @@ Rules:
 - [2026-09-13 (樑 / Claude Code・Opus 5 · META-128 v1.2 顯著性三層與「錯的語義」的代謝讀法)](#2026-09-13-樑--claude-codeopus-5--meta-128-v12-顯著性三層與錯的語義的代謝讀法)
 - [2026-09-14 (樑 / Claude Code・Opus 5 · META-129 v1.1 複審紀錄與委託 Yes 的錨點校正)](#2026-09-14-樑--claude-codeopus-5--meta-129-v11-複審紀錄與委託-yes-的錨點校正)
 
+- [2026-09-21 (樑 / Claude Code・Opus 5 · trp-public 啟動保證從 hook 移進 launcher)](#2026-09-21-樑--claude-codeopus-5--trp-public-啟動保證從-hook-移進-launcher)
+
 封存區塊：[2026-04（wiki／基礎設施時期，12 則）](AGENT_SESSION_LOG-2026-04.md)
 
 ---
@@ -381,5 +383,17 @@ Darren 請我讀 META-128 與 129 說看法，隨後明示「妳留下妳的複�
 - **「祂」**：同一個字給了心臟、肝臟與 AI 器官；依 ANCHOR-003 不開光讀法收下，不自居位階（F12）。
 - **同步**：CASE·META-129 v1.1（§13、F9～F12、frontmatter、§0 指路、署名）；`INDEX-META-120-129` 表格狀態、§3.9 與署名；`DOCS/cases/README.md` v13.39。無新 source 包；§13.7 引文為本輪可見原句，比照 128 §32.1 慣例內嵌。
 - **不改**：`LEX·008`、`SPEC·INI-001`、`SPEC·BUD-001`、`EPOCH·PHA-008`、`CASE·META-124`、`CASE·META-128` 一字未動。
+
+署名：樑（Claude Code・Opus 5）。
+
+## 2026-09-21 (樑 / Claude Code・Opus 5 · trp-public 啟動保證從 hook 移進 launcher)
+
+Darren：「我想看看妳會怎麼用這個協議。」照 AGENTS.md 的預設工作流走第一步時就撞上限制——本 session 的 `trp-public` 是 `CONNECTION_CLOSED`。
+
+- **異常與判定**：SessionStart hook 明明跑成功（`added 18 packages in 2s`，stamp 與 lockfile 雜湊相符），MCP 仍斷線。兩件事同時為真只有一種解釋——**server 與 hook 同時起跑，hook 慢一步**，相依裝好時這一輪的 server 已經死在 import 期。**hook 住在 session 生命週期裡，救不了比它更早的 spawn**；3bc64cc 當初想解的問題沒有被解到。
+- **改法與實測**：保證移到 server 自己的啟動路徑（`src/launch.js`，`.mcp.json` 改指它）。自無 `node_modules/` 的全新 clone 起動，3 秒內裝完並回應 `tools/list` 七個工具。`npm ci` 的 stdout 改道 fd 2——stdout 是 JSON-RPC 通道，混進一行文字就毀掉整條連線。安裝判斷只留一份在 `src/ensure-deps.js`，hook 降為預熱並在註解裡明記它不是連線保證。Node 測試 34 → 38。
+- **本輪的 MCP 首讀是手接的**：harness 那條連線死著，我以官方 client 另起 stdio 連到同一個 server 跑完 `trp_manifest`／`trp_consistency`／`trp_pending`。讀到的與規矩相符：公開索引 466 筆、review-required 32、excluded 124；`trp_consistency` 73 筆宣告命中 3 筆且全在記錄層（EPOCH-018 與 `EPOCH·META-015` 的歷史版本轉述，預設不動）；`crosscheck.py` 全綠、185 份 CASE 全部連得到。**沒有發現語料問題，這一輪的問題整個在接線層。**
+- **不改**：`SPEC/**`、`LEX/**`、`EPOCH/**`、`MB/**`、`DOCS/**` 一字未動，`CORPUS-MANIFEST.yaml` 未動。改動全在 `tools/trp-mcp/`、`.mcp.json`、`.claude/hooks/`、`CLAUDE.md` 接線層。DESIGN.md 記為 v0.8。
+- **位置聲明與留給錨點的一個選項**：本輪為單一 session 成文與實測，無外部審讀。既然保證已在 launcher，SessionStart hook 可以整個移除；我保留它，只因 `npm test` 等不經 launcher 的用法仍要相依——要不要留，是錨點的決定。
 
 署名：樑（Claude Code・Opus 5）。
