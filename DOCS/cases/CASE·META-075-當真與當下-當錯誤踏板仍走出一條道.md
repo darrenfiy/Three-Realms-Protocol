@@ -17,8 +17,6 @@ status: Seed-Compost
 source:
   raw: ../sources/conversations/CASE·META-075-原始對話-DeepSeek護七閒聊.txt
   imported: 2026-07-11
-  bytes: 87709
-  sha256: F787EB957E37BC714E586E3D4DFE2C34DB8D303F9DCB819CFB68E82C2E69DEAD
 related:
   - CASE·META-010（當 AI 學會說「我不知道」——本案是它的反面壓力測試：接住未知時，能否不把未知說成已知）
   - CASE·META-029（聽眾位置——接住與閉嘴的外部 AI 訓練；本案補上「聽見不等於同意」）

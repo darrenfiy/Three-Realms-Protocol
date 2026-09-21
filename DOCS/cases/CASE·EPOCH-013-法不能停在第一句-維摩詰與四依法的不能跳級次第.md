@@ -14,12 +14,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·EPOCH-013-原始對話-維摩詰與四依法次第.txt
   original_filename: pasted-text.txt
-  original_bytes: 25092
-  original_lines: 946
-  original_sha256: 14E10E9474FEEC5751E11AEF506D5420849F11EB9055B599D7867A657222B1F1
-  repository_copy_bytes: 25093
-  repository_copy_visible_lines: 946
-  repository_copy_sha256: 3E4499EF7DFB29673836BB4B1028274882D1D6D06B6BE30766B0B8A5011CDFC9
   normalization_note: 原始附件無末行換行；repository 副本只增加一個末行 LF，其餘文字與生成次序逐字相同
 derived:
   - ../../EPOCH/EPOCH·ANCHOR-004-根的本體論-錨如何把特殊者的位置寫成無所有人的可重入類型.md（v0.5-seed precision reentry）

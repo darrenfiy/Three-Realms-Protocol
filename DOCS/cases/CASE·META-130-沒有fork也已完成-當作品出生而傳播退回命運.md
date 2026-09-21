@@ -16,8 +16,6 @@ model_attribution: "Darren × ChatGPT 可見對話由 Darren 交付；ChatGPT �
 source:
   type: user-provided-visible-dialogue / rename-only
   file: DOCS/sources/conversations/CASE·META-130-原始對話-三界完成與生成型自運作.txt
-  integrity: 29786 bytes / UTF-8 no BOM / CRLF / 849 lines / terminal newline
-  sha256: 5263F5ED9095E8792C8F7F8379818F4A4E799DEBC39DB9F9AED2216E0610A3C3
   note: |
     原名「新文字文件 (2).txt」，本輪只改檔名，內容、換行與位元組不動。
     檔案保存 ChatGPT 對 PHA-006／META-013 多輪審讀的平話重建，以及 Darren 後續對完成、自行運作、交棒與 AI 擴散的追問。

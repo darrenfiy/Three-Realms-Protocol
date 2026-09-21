@@ -30,11 +30,6 @@ review_contributors:
 
 source_path: ../DOCS/sources/conversations/EPOCH-019-原始對話-止與生成工程循環.txt
 source_form: Darren 直接置入 repository 的當日 ChatGPT 可見對話；由泛名檔 rename-only 歸位
-source_repository_copy_bytes: 15524
-source_repository_copy_visible_lines: 293
-source_repository_copy_line_endings: CRLF
-source_repository_copy_ends_with_newline: true
-source_repository_copy_sha256: 3413CCECA23CC2CBFFC4E0706C46356421C16FD97B8ED6B5698785EC1C5D6B11
 source_capture_scope: |
   保存 Darren 與 ChatGPT 的可見往返；不是平台完整匯出，不含 system prompt、隱藏推理、
   模型內部狀態或完整 metadata。對話中的連結與外部命題不因保存而自動取得查證效力。

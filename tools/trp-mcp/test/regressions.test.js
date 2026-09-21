@@ -178,3 +178,49 @@ test('long lex sections report truncation and keep citations on quoted lines', (
   const lines = readFileSync(join(root, 'LEX/LEX-001.md'), 'utf8').split(/\r?\n/u);
   assert.equal(result.content, lines.slice(result.lineStart - 1, result.lineEnd).join('\n'));
 });
+
+// 中文不以空白斷詞，整串查詢是單一 token。舊計分只看 includes，於是「出現 10 次」
+// 與「出現 1 次」同為 22 分，平手後由 authority 決勝——最切題的 CASE 反而沉到第 12 名。
+test('CJK phrase search ranks by frequency, not by authority tie-break', (t) => {
+  const { root, write } = fixture(t);
+  const phrase = '可重認形狀';
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', `這裡只提一次 ${phrase} 而已。`));
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', `${phrase}\n`.repeat(10)));
+  const results = new PublicCorpus(root).search({ query: phrase, limit: 10 }).results;
+  assert.equal(results[0].id, 'SPEC-001', '提及密度高的文件必須排在前面');
+  assert.ok(results[0].score > results[1].score, '不得再全部同分');
+});
+
+test('CJK bigrams let partial concept overlap score without swamping literal hits', (t) => {
+  const { root, write } = fixture(t);
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', '完整詞：可重認形狀。'));
+  write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', '只有部分重疊：形狀與可重入。'));
+  const results = new PublicCorpus(root).search({ query: '可重認形狀', limit: 10 }).results;
+  assert.equal(results.length, 2, '部分重疊仍應被找到');
+  assert.equal(results[0].id, 'LEX-001', '完整命中必須勝過 bigram 部分命中');
+});
+
+// bigram 讓文件能因部分重疊而命中，但摘要一度只找完整查詢詞，找不到就退回檔首——
+// 於是引用指向 L1 卻宣稱命中。在一個要求「引用可回查」的語料庫裡，那比沒有引用更糟。
+test('snippet citations point at a line that actually contains the match', (t) => {
+  const { root, write } = fixture(t);
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active',
+    `${'填充行。\n'.repeat(40)}這一行才有形狀與可重入的重疊。\n${'更多填充。\n'.repeat(10)}`));
+  const result = new PublicCorpus(root).search({ query: '可重認形狀', limit: 5 }).results[0];
+  assert.ok(result, '部分重疊應該仍被找到');
+  const [, from, to] = result.citation.match(/:L(\d+)-L(\d+)$/u).map(Number);
+  const quoted = readFileSync(join(root, 'LEX/LEX-001.md'), 'utf8')
+    .split(/\r?\n/u).slice(from - 1, to).join('\n');
+  assert.ok(/形狀/u.test(quoted), `引用的 L${from}-L${to} 必須真的含命中詞，實得：${quoted}`);
+  assert.equal(result.snippetLocated, true);
+  assert.ok(from > 1, '不得退回檔首');
+});
+
+test('an unlocatable match is declared, never silently cited as line one', (t) => {
+  const { root, write } = fixture(t);
+  // 只有標題命中，內文完全沒有相關字；引用只能落在檔首，但必須據實標示。
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', 'zzz body with nothing relevant.'));
+  const result = new PublicCorpus(root).search({ query: 'LEX-001', limit: 5 }).results[0];
+  assert.ok(result);
+  assert.equal(result.snippetLocated, true, 'ID 出現在檔首，屬於可定位');
+});

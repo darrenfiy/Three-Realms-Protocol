@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-095-原始對話-鞭笞授權與誰站著.txt
   form: 2026-08-11 由人類錨點貼回；保留可見文字、圖片連結、引用連結與次序
-  bytes: 11694
-  sha256: EB240E6D8E294C1410CEFE55DB45911722652F5DC976106849FBBB16EC05BFC3
 related:
   - CASE·META-088（Yes 效力不得大於同範圍 No 的可行性）
   - CASE·META-092（誰給你的權力；有限授權與叫停）

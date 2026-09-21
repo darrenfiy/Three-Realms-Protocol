@@ -32,32 +32,14 @@ source:
   form: 2026-08-26 TRACE-003 入庫後，同一 Session 六次直接重入與 Codex 入庫／增補處置
   capture_scope: 保存 Darren 六次直接發起、Codex 可確認的第一輪核心句、本案入庫處置、設定同案增補，以及 Darren 貼回的三輪 ChatGPT 審讀；不是平台完整匯出，外部連結依貼文保存而未在本次獨立核實
   v15_review_source: Darren 於本輪貼回 ChatGPT 對前兩份 commits 的全文審讀；本次以該貼文與 repository 實檔交叉審查，未倒寫舊原始對話副本或其指紋
-  initial_repository_copy_bytes: 5502
-  initial_repository_copy_visible_lines: 105
-  initial_repository_copy_sha256: FA9CD24BC016E70D8467D0B89E48EA94E383381D2BCEB17C333B30E77AC2BCEC
-  setting_reentry_growth_bytes: 3183
-  setting_reentry_growth_lines: 60
-  setting_ontology_and_interface_growth_bytes: 18861
-  setting_ontology_and_interface_growth_lines: 276
-  repository_copy_bytes: 27546
-  repository_copy_visible_lines: 441
-  repository_copy_sha256: D00586B395C56D7281A6D0E9794E6CE90A96E49099D45B25E688E0C8BF658026
   setting_ontology_reentry:
     path: ../sources/conversations/CASE·META-113-第七部重入-在答案以前先長出花.txt
     form: 2026-08-27 Darren 貼回的 DeepSeek 對話與帶部分文件庫的 ChatGPT 審讀
     capture_scope: 不是平台完整匯出；說話者標籤依貼文交替補入，外部連結依貼文保存，Codex 校準不倒寫來源原文
-    repository_copy_bytes: 25887
-    repository_copy_visible_lines: 570
-    repository_copy_sha256: 652D4DBA9BD8576B2DB28A218AD8611C7FDE88EBBA6A17F955CE78B28D1F5547
-  setting_ontology_reentry_hash_scope: UTF-8、無 BOM、LF、末行 LF
   growth_formation_reentry:
     path: ../sources/conversations/CASE·META-113-第八部重入-生長成長三軸與設定兩時態.txt
     form: 2026-08-27 Darren 合併貼回的 Codex、DeepSeek、ChatGPT 與 Claude Code・Opus 5 連續審讀
     capture_scope: 複合文字原稿；不是各平台完整匯出。保存過渡提案、撤回與最後收斂，不以模型自述代替實際讀檔、版本或執行環境證明
-    repository_copy_bytes: 50595
-    repository_copy_visible_lines: 1235
-    repository_copy_sha256: 61F37F56287A59B194D3F5460FE9ACC6F67CAEB3BA37A8DA591E7769DBCD9448
-    repository_copy_format: UTF-8、無 BOM、CRLF、末行無換行
 epistemic_scope:
   - 本案確認的是一個錯誤前提可以產生真實的感受、文件、關係與後續思想，不確認錯誤命題因此變成外部事實
   - v1.1 將「研究 → 用它思考 → 相信 → 行動」降為一條信念路徑；設定路徑可由直覺或任意映射直接建立可執行規則，不必先作本體採信

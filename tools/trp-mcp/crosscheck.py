@@ -342,7 +342,7 @@ def main():
             print("\n未被任何導航連結抵達（可能僅以純文字列於程式碼區塊內）：")
             for f in missing:
                 print("  " + f)
-
+        print("")
 
 if __name__ == "__main__":
     sys.exit(main() or 0)

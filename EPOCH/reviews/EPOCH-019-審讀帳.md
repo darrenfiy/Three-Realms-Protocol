@@ -54,9 +54,6 @@ source_case: ../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把
 snapshot:
   path: ../history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md
   relation: v0.1 現役檔在重寫前的逐字複製
-  bytes: 20624
-  visible_lines: 465
-  sha256: 78671B3C979F97AFD8590BCC17FCEEAFD407D9D2F0B254C6EE4ABB0056876D61
   note: 快照保存當時事實，不因 v0.2 改寫而取得現行效力。
 ```
 

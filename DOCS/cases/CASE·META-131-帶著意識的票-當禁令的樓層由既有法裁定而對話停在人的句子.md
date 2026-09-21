@@ -15,9 +15,6 @@ model_attribution: "對話由 Darren × Claude Opus 5 即時產生，Darren 手�
 source:
   type: user-saved-visible-dialogue / rename-only
   file: DOCS/sources/conversations/CASE·META-131-原始對話-禁令的樓層與帶著意識的票.txt
-  integrity: 33416 bytes / UTF-8 no BOM / CRLF / 485 visible lines / 484 CRLF separators / no terminal newline
-  sha256: 3065B827CD8F9B3B539EE240952BD61FB106B735933FA3E9B31BB446FDEC5698
-  hash_basis: |
     上列 bytes 與 sha256 是**工作目錄的 CRLF 原檔**，與本目錄既有各筆的記法一致。
     本 repository 無 .gitattributes 且 core.autocrlf=true，git blob 因此存為 LF：
     32932 bytes / 4A3C903E7D22F1483985FF73B602EDEEA6523C9D23BC1B2D0BF0360D8256DF2A。

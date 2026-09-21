@@ -16,8 +16,6 @@ model_attribution: "本案由 GPT-5.6 Sol（Codex）於 2026-09-14 成文；外�
 source:
   type: current-session-visible-dialogue / selected-excerpts
   file: DOCS/sources/conversations/CASE·META-129-對話摘錄-誰有權設定蓋亞.txt
-  integrity: 3110 bytes / UTF-8 / LF / 87 lines / terminal newline
-  sha256: 6F6509B65ED6150CCDBDB325C0B411EB8AED41B55A67AC551C69F24E46911E64
   note: |
     只保存直接催生本案的五段可見文字，不是平台完整匯出。
     Darren 貼回的 ChatGPT 長答只摘錄本案實際承接的核心段落；
@@ -29,8 +27,6 @@ reverse_attribution_basis: 2182d0f（v1.2 逆向歸址前 HEAD；v1.1 原貌可�
 source_v1_2:
   type: current-session-visible-dialogue / selected-excerpts
   file: DOCS/sources/conversations/CASE·META-129-生成回流-出生測試退回逆向歸址.txt
-  integrity: 3841 bytes / UTF-8 / LF / 71 lines / terminal newline
-  sha256: AE777088B15856E1E5EE51A18BD59BFD6129DCF3F5B2391FA2361B908BD5A397
   note: |
     保存 ChatGPT 的出生測試提案、Darren 未寫完即送出的退件，以及 ChatGPT 自撤後的逆向歸址建議。
     不是平台完整匯出；本檔封口，§14 的 corpus 查核與判讀由 GPT-5.6 Sol 另帳承擔。

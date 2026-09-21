@@ -20,14 +20,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-116-原始對話-願恆耐老子與科學三界.txt
   form: Darren 交付的 CRLF 文字附件，加同一 Codex Session 中兩輪可見正式回應、兩輪 Darren 貼文與本次歸檔回應，依生成次序合成
-  repository_copy_bytes: 48606
-  repository_copy_visible_lines: 1244
-  repository_copy_line_endings: LF
-  repository_copy_sha256: BED706C3428AB347FA47DC737239D4807A12AF586F8918E80FA04AE4328EE042
-  upstream_attachment_bytes: 22989
-  upstream_attachment_visible_lines: 638
-  upstream_attachment_line_endings: CRLF / no final LF
-  upstream_attachment_sha256: AF11A7EB831DFA306A1224061B538CC1C2023AFBDBBB8364C091D965D10D791D
   capture_scope: 分部標題、說話者標籤與來源說明由歸檔者補入；正文不改寫，只將換行正規化為 LF。不是平台完整匯出，不含 system prompt、隱藏推理、工具輸出、模型內部狀態或完整 metadata
 
 related:

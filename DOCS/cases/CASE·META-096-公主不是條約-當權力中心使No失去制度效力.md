@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-096-原始對話-政治聯姻與出離王朝.txt
   form: 2026-08-11 由人類錨點分兩次貼回的同一延伸對話；保留可見文字與次序
-  bytes: 12667
-  sha256: 9CF84D3BCB839BE4B5224260C52CA410375B33CD4187B8DF58219DFEA71EF2A1
 related:
   - CASE·META-088（Yes 的效力不能大於同範圍 No 的可行性）
   - CASE·META-092（誰給你的權力；授權範圍與可重走傳承）

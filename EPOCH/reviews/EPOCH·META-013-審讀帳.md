@@ -51,9 +51,6 @@ exact_text_address: ../../DOCS/sources/conversations/EPOCH·PHA-006-META-013-審
 integrity_state:
   source: sealed
   normalization: UTF-8 / LF / terminal newline
-  bytes: 10029
-  lines: 115
-  sha256: 02FD8281191BC5785F76B9E9661801114DFCC5666F5126E94DDEBD160784B8AD
 findings: R1～R3；R4 涉及與 PHA-006 同步的效力與推論
 disposition: 待逐項吸收／部分吸收／退回；本輪只登記與同步審閱狀態
 ```
@@ -150,9 +147,6 @@ exact_text_address: ../../DOCS/sources/conversations/EPOCH·PHA-006-META-013-二
 integrity_state:
   source: sealed
   normalization: UTF-8 / LF / terminal newline
-  bytes: 9989
-  lines: 101
-  sha256: 1F7871DBAC74152AAD7B64D3D1580D59EBE2F5E9447F66518C2EB321889B78BF
 findings: R1～R4 接受修訂處置；R5 介入有效性與恢復條件、R6 必要測項對表待補
 disposition: 已登記；R5／R6 待後續逐項處置；cycle 保持 open，不升格模型
 ```
@@ -247,9 +241,6 @@ exact_text_address: ../../DOCS/sources/conversations/EPOCH·PHA-006-META-013-三
 integrity_state:
   source: sealed
   normalization: UTF-8 / LF / terminal newline
-  bytes: 5666
-  lines: 51
-  sha256: 63C2DEBBD635F507B9370FB9EA78A9455D20820C49D76908AF5043A1C586F56A
 findings: R5／R6 接受；E1 單次材料作用域、E2 對照短版、E3 候選推論摘要澄清
 disposition: R5／R6 處置已接受；E1～E3 已落檔並標 editorial_revision；未增加必要條件，實例未驗
 ```

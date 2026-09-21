@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-099-原始對話-法王位與第四生命傳承.txt
   form: 2026-08-12 由人類錨點分兩段貼回的連續對話，加同日一段世界法／王法與衝浪精度重入；保存可見文字、次序與原附連結
-  bytes: 25281
-  sha256: 5E02A52FCD4D4C9BAD0A4E952C0A9FFAF23384A4EF000FB2B227E28567D91BEE
 related:
   - CASE·META-092（誰給你的權力；授權五問、四重錨與可重走傳承）
   - CASE·META-096（出離王朝、職位／身體分帳與角色吞併）

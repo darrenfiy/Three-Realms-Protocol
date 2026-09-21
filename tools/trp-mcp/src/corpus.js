@@ -210,18 +210,59 @@ function gitValue(root, args) {
   }
 }
 
-function lineSnippet(text, query, radius = 1) {
-  const lines = text.split(/\r?\n/u);
-  const needle = query.toLocaleLowerCase();
-  let at = lines.findIndex((line) => line.toLocaleLowerCase().includes(needle));
-  if (at < 0) {
-    const token = query.trim().split(/\s+/u).find(Boolean);
-    at = token ? lines.findIndex((line) => line.toLocaleLowerCase().includes(token.toLocaleLowerCase())) : 0;
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/u;
+
+// 中文不以空白斷詞，整串查詢會變成單一 token；只靠 includes 會讓「出現 10 次」
+// 與「出現 3 次」同分，再由 authority 決勝，於是最切題的文件反而沉底。
+function countOccurrences(haystack, needle) {
+  if (!needle) return 0;
+  let total = 0;
+  let from = 0;
+  for (;;) {
+    const at = haystack.indexOf(needle, from);
+    if (at < 0) return total;
+    total += 1;
+    from = at + needle.length;
   }
-  at = Math.max(0, at);
-  const start = Math.max(0, at - radius);
-  const end = Math.min(lines.length, at + radius + 1);
-  return { text: lines.slice(start, end).join('\n').trim(), lineStart: start + 1, lineEnd: end };
+}
+
+// 由 CJK token 衍生字元 bigram，讓部分概念重疊也能排序；權重低於原 token。
+function cjkBigrams(tokens) {
+  const literal = new Set(tokens);
+  const grams = new Set();
+  for (const token of tokens) {
+    if (token.length < 3 || !CJK.test(token)) continue;
+    for (let i = 0; i + 2 <= token.length; i += 1) {
+      const gram = token.slice(i, i + 2);
+      if (!literal.has(gram)) grams.add(gram);
+    }
+  }
+  return [...grams];
+}
+
+// 依序試最具體的線索：完整查詢 → 各 token → CJK bigram。只找完整查詢的話，
+// 靠 bigram 命中的文件會找不到而退回檔首，於是引用指向 L1 卻宣稱命中——
+// 在一個要求「引用可回查」的語料庫裡，那比沒有引用更糟。
+function lineSnippet(text, needles, radius = 1) {
+  const lines = text.split(/\r?\n/u);
+  const lowered = lines.map((line) => line.toLocaleLowerCase());
+  let at = -1;
+  let matched = null;
+  for (const raw of needles) {
+    const needle = String(raw || '').toLocaleLowerCase();
+    if (!needle) continue;
+    const found = lowered.findIndex((line) => line.includes(needle));
+    if (found >= 0) { at = found; matched = needle; break; }
+  }
+  const start = Math.max(0, Math.max(0, at) - radius);
+  const end = Math.min(lines.length, Math.max(0, at) + radius + 1);
+  return {
+    text: lines.slice(start, end).join('\n').trim(),
+    lineStart: start + 1,
+    lineEnd: end,
+    located: at >= 0,
+    matched,
+  };
 }
 
 function summarize(entry, includeContent = false, maxChars = 30_000) {
@@ -484,6 +525,7 @@ export class PublicCorpus {
     if (threshold === Number.MAX_SAFE_INTEGER) throw new Error(`未知 authority：${minAuthority}`);
     const normalized = query.trim().toLocaleLowerCase();
     const tokens = [...new Set(normalized.split(/\s+/u).filter(Boolean))];
+    const grams = cjkBigrams(tokens);
     if (!normalized) return { query, results: [], provenance: this.provenance() };
 
     const ranked = [];
@@ -499,14 +541,20 @@ export class PublicCorpus {
       if (id === normalized || entry.lookupKey === lookupKey(query)) score += 100;
       if (title === normalized) score += 70;
       if (title.includes(normalized)) score += 35;
-      if (body.includes(normalized)) score += 20;
+      const phraseHits = countOccurrences(body, normalized);
+      if (phraseHits) score += 20 + Math.min(20, (phraseHits - 1) * 2);
       for (const token of tokens) {
         if (id.includes(token)) score += 15;
         if (title.includes(token)) score += 8;
-        if (body.includes(token)) score += 2;
+        const tokenHits = countOccurrences(body, token);
+        if (tokenHits) score += 2 + Math.min(10, tokenHits - 1);
+      }
+      for (const gram of grams) {
+        if (title.includes(gram)) score += 4;
+        if (body.includes(gram)) score += 1;
       }
       if (!score) continue;
-      const snippet = lineSnippet(entry.content, query);
+      const snippet = lineSnippet(entry.content, [normalized, ...tokens, ...grams, entry.title, entry.idRaw]);
       ranked.push({ entry, score, snippet });
     }
     ranked.sort((a, b) => b.score - a.score || this.authorityRank(a.entry.authority) - this.authorityRank(b.entry.authority) || a.entry.path.localeCompare(b.entry.path));
@@ -517,6 +565,8 @@ export class PublicCorpus {
         score,
         snippet: snippet.text,
         citation: `${entry.citation}:L${snippet.lineStart}-L${snippet.lineEnd}`,
+        snippetLocated: snippet.located,
+        ...(snippet.located ? {} : { warnings: ['snippet-not-located'] }),
       })),
       warnings: ranked.length ? [] : ['no-answer'],
       provenance: this.provenance(),

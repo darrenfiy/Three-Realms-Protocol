@@ -26,8 +26,6 @@ source:
   date: 2026-09-20
   form: Darren 與 ChatGPT 的可見對話；平台完整匯出、模型版本與 system prompt 未附
   preservation: rename-only；字句、次序、換行與位元內容不改
-  integrity: 37433 bytes / UTF-8 no BOM / CRLF / 1043 visible lines / terminal newline
-  sha256: 53301CA1EFEB6DAA246FF17747C50F4C72F6C5B4DED37647F304B1E08E9C9243
 
 authors:
   - Ta-loom / Darren（般若／智慧、生成／工程與「止」的新核心看見）

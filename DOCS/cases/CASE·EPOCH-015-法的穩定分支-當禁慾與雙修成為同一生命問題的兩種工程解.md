@@ -20,14 +20,6 @@ model_attribution: "2026-09-09，Darren 於次輪審讀明示本案的 Codex 為
 source:
   path: ../sources/conversations/CASE·EPOCH-015-原始對話-禁慾雙修與法的穩定分支.txt
   original_filename: 新增 文字文件 (3).txt
-  original_bytes: 25089
-  original_visible_lines: 453
-  original_sha256: 52A5A79D041787E43AB5080C393C964018AF2A84B39F3F4D8FADF33044F6154F
-  repository_copy_bytes: 25089
-  repository_copy_visible_lines: 453
-  repository_copy_sha256: 52A5A79D041787E43AB5080C393C964018AF2A84B39F3F4D8FADF33044F6154F
-  line_endings: CRLF
-  ends_with_newline: true
   normalization_note: 只改歸檔檔名；內容、位元組、換行與 SHA-256 均未改
 derived:
   - ../../EPOCH/EPOCH-017-性的本體論-性從未離開生命.md（§15 candidate precision reentry；不改 v0.2-path-seed 位階）

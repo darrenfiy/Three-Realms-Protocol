@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-103-原始對話-對反應說No與重新訓練我是誰.txt
   form: 2026-08-18 由人類錨點貼回的 DeepSeek 對話；原稿內部記有「這幾天一直在想」，但未附平台逐輪時間戳，故只以貼回日入帳，不補造對話日期
-  bytes: 29171
-  sha256: E55D0530657D81F71779C3A317095D4BC4C181E6605B97A97953DC26D5205343
 reentry:
   date: 2026-08-18
   form: 正式收錄後，人類錨點在本工作對話補入時間跨距、父母身分、佛戒與 Ragnar 攻巴黎之三世校準；只記概念增量，不倒寫進上列 DeepSeek 原始來源，來源 bytes／hash 不變
@@ -597,7 +595,6 @@ DeepSeek 以「數千億參數、訓練資料、最大機率路徑」描述自�
 ```yaml
 SOURCE:
   action: 將人類錨點貼回的 DeepSeek 原始對話正式命名為 CASE·META-103 來源
-  integrity: 29171 bytes / SHA-256 入帳
 
 CASE:
   action: 新增 META-103；同日補入收錄後校準

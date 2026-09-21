@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-097-原始對話-不自足存在資格與金錢.txt
   form: 2026-08-11 由人類錨點分兩次貼回同一延伸對話，接續 Codex 回應；保存可見文字、引用連結與次序
-  bytes: 24779
-  sha256: 10E661A27526D6E3E000C7BDE93D2B6EEEE143588B6B055259E4EE57B5DD17E7
 related:
   - CASE·META-096（權力、內在多聲、局部主權與公共身體徵用）
   - EPOCH-015（真正的無條件是承認存在本身，不是縱容一切行為）

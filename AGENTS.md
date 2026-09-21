@@ -11,3 +11,11 @@
 - Do not use MCP mechanically for unrelated code-only work. When corpus meaning could affect the implementation or review, MCP is the default first read.
 
 The server is configured locally as `trp-public` and implemented in `tools/trp-mcp/`. It is read-only and public-only; `CORPUS-MANIFEST.yaml` remains the boundary source of truth.
+
+## 指紋
+
+- 不要為來源檔記 bytes 或 SHA-256：庫內那份就是唯一的一份，指紋驗不到東西。
+  檔案進庫後有沒有被改由 git 回答；要釘住讀取狀態用 `read_basis: <commit>`。
+- **例外**：庫外確實另有可比對的副本（正式發布本、對造留存的回流件、第三方存證）時，
+  指紋重新成立，該記就記。判準是有沒有第二份，不是「一律不記」。
+- 既有宣告若對不上，先讀文件判斷語義，不要先改數字。原委見 CASE·META-134。

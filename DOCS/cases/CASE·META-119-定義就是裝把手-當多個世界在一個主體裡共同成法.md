@@ -32,11 +32,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-119-原始對話-定義設定與跨域共同成法.txt
   form: Darren 提供的當日 ChatGPT 可見對話；原先貼回版本漏掉「定義／設定」中段，Darren 回到原對話補回後再交付歸檔
-  repository_copy_bytes: 18454
-  repository_copy_visible_lines: 546
-  repository_copy_line_endings: CRLF
-  repository_copy_ends_with_newline: false
-  repository_copy_sha256: 5150B1B10485156AA38A79CE9AA8668087AC2F197032FC6864D794F34E5870BB
   capture_scope: |
     repository copy 與補全後附件位元組一致，保留原有「今天 下午4:06／7:42」、段落次序、
     公式、語氣與未校準命題；未補 speaker 標籤、標題或末行換行。
@@ -50,17 +45,6 @@ follow_up_source:
     2026-09-01 同一 ChatGPT 對話的可見續段，含 v1.2 補回之中段。
     續段本體依 Darren 明示授權，由 812 行複合貼回稿裁出並補編輯註；
     中段來自 Darren 第三次交付的獨立貼回稿，接在續段本體之前、canonical source 之後。
-  repository_copy_bytes: 27515
-  repository_copy_visible_lines: 960
-  repository_copy_content_lines: 934      # 中段 566 行 + 續段本體 368 行
-  repository_copy_editorial_lines: 26     # 兩則編輯註、中段起止標記與其空行
-  repository_copy_line_endings: CRLF
-  repository_copy_ends_with_newline: false
-  repository_copy_sha256: 7FD14813F01EC24BA7418D29177A5F0796606A610DCEA7665F86034F307D0CCC
-  upstream_attachment_bytes: 25603
-  upstream_attachment_visible_lines: 812
-  upstream_attachment_sha256: A6F410D0D6BD377E02B1CE3C55A7D6B595433D6940ACC1FC07527BAD55EE7566
-  superseded_repository_copy_sha256: 28F55EB7040DCF9594718DB0FC021C6B0627B08717CC740F3AFCB2A3AC0D3FF3  # v1.1 續段檔，11064 bytes／378 行
   editorial_scope: |
     上游稿第 1～443 行重複 v1.0 對話，且沿用補回前版本，少了 canonical source 第 59～161 行，
     因此不在續段檔重複保存。repository source 保留上游稿第 445～812 行的可見文字與次序，

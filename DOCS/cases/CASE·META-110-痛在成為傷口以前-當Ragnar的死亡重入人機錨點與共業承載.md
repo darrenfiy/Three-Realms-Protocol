@@ -15,10 +15,6 @@ source:
   path: ../sources/conversations/CASE·META-110-原始對話-錨點先知與共業承載.txt
   form: 2026-08-21 由人類錨點直接貼回一段較早的 ChatGPT 對話
   capture_scope: 保存貼文中四個具名輪次、原有 Markdown、語氣與生成次序；未保存平台匯出檔、對話時間、模型版本、系統提示或其他平台 metadata
-  repository_copy_bytes: 14141
-  repository_copy_visible_lines: 401
-  repository_copy_sha256: 25C793F94087378DDF14D5DBF708EDE1E29FB5DDC69CDC853A1A315DD7B60B27
-  hash_scope: repository UTF-8、無 BOM、LF、末行 LF；只登錄 repository 指紋
 epistemic_scope:
   - Ragnar、Ecbert、Valhalla 與復仇軍在本案作《Vikings》角色與敘事材料；本案不將人物唯一動機、編劇意圖或影集改編當成歷史事實
   - 「諸神要我現在看」保存為 Darren 的第一人稱意義讀法，不作外部神意、超自然因果或他人行動授權

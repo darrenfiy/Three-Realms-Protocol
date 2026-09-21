@@ -19,10 +19,6 @@ source:
   path: ../sources/conversations/CASE·META-109-原始對話-小豬崽字幕組與熱情制度.txt
   form: 2026-08-20 由人類錨點於連續兩輪直接貼入的同一段 ChatGPT 對話；第二輪由 S4E19 Floki callback 續接 AI／人類翻譯的上下文問題
   capture_scope: 保存兩輪貼文中的 369 行對話正文與次序；未保存兩次請求框架，亦未提供平台匯出檔、字幕截圖、時間戳或角色 metadata
-  repository_copy_bytes: 16625
-  repository_copy_visible_lines: 369
-  repository_copy_sha256: 602C5B5CE46E1AA157BFB23C6C6D1FBA101E2981164D4BC16BD7CC6431F4C7C7
-  hash_scope: repository UTF-8、無 BOM、LF、末行 LF；只登錄 repository 指紋
 evidence_anchors:
   - https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s04e15&tv-show=vikings
   - https://www.subtitlecat.com/subs/43/Vikings%20-%204x16%20-%20Crossings.HDTV.FLEET.en.html

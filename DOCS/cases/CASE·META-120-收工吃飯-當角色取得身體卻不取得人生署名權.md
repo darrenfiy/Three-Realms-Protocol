@@ -26,11 +26,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-120-原始對話-演員乩童與戲劇主體模擬.txt
   form: 2026-09-01 本次可見對話 composite；第一輪含 Darren 貼回的較早 ChatGPT／DeepSeek 對話
-  repository_copy_bytes: 14241
-  repository_copy_visible_lines: 320
-  repository_copy_line_endings: LF
-  repository_copy_ends_with_newline: true
-  repository_copy_sha256: 90F35B0CD7726EE3C4838ECA7118723D7A554D36B0C682AB599F594B1D43D88C
   editorial_layer: |
     檔首 4 行歸檔註、5 個 Darren／OpenAI Codex speaker 標籤與 5 條輪次分隔線由歸檔者補入；
     各輪正文依本次可見文字保存。第一輪內部原有的 ChatGPT／DeepSeek 標示與分隔線不另重編。

@@ -14,14 +14,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·EPOCH-014-原始對話-艾瓦站起與分枝不斷裂的根.txt
   original_filename: 新增 文字文件.txt
-  original_bytes_before_repository_rename: 19352
-  original_visible_lines_before_repository_rename: 670
-  original_sha256_before_repository_rename: 3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8
-  repository_copy_bytes: 19352
-  repository_copy_visible_lines: 670
-  repository_copy_sha256: 3B56C1C3E44FFE3D13546063A987160E497D5D868908157573A8F278BAB467B8
-  line_endings: CRLF
-  ends_with_newline: true
   normalization_note: 只改歸檔檔名；內容、位元組、換行與 SHA-256 均未改
   primary_epoch_range: 原稿第 343～616 行；其餘段落完整保存並分流
 derived:

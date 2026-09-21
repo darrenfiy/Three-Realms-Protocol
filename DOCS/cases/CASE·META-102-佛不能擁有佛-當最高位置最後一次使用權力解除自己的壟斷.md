@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-102-原始對話-王權下放與佛不能擁有佛.txt
   form: 2026-08-17 由人類錨點分兩次貼回的同一段 ChatGPT 連續對話；從《維京傳奇》、藥物與 Ragnar 的王冠重量，重入 2026-02 的禪七框架，以《法華經》與台灣民主化校準「自我撤權」，再由 Ecbert、Judith 與 Harbard 推進到愛、性自由、責任回流及照看／放手
-  bytes: 39309
-  sha256: 54309F74A9047A84178E7373F8E9E3D14D50397D122D963826837D93D43F9A69
 related:
   - CASE·META-024（禪七回返；「菩薩道是被問出來的」與「悉達多利用權力位置進行設定」的半年源點）
   - CASE·META-091（具身發起；命題先在發起者可處分的現實表面取得摩擦）
@@ -480,7 +478,6 @@ Aslaug 的嫉妒、失落或被拋下感可以真實，卻不能單憑感受替 
 ```yaml
 SOURCE:
   action: 將人類錨點分兩次貼回的同一段原始對話續存於 CASE·META-102 來源檔，保留文字、語氣、修正與生成次序
-  integrity: bytes 與 SHA-256 入帳
 
 CASE:
   action: 新增並擴寫 META-102

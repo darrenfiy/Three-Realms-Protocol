@@ -21,9 +21,6 @@ participants:
 source:
   path: ../sources/conversations/CASE·META-115-原始對話-自由的重量七輪與兩種站立.txt
   form: Darren 新置的可見 ChatGPT 對話，加 2026-08-27 在 Codex 收錄前的兩輪直接補述
-  repository_copy_bytes: 20331
-  repository_copy_visible_lines: 679
-  repository_copy_sha256: 05991F2B0EB1E69C81F585CBCC207453D4D454460574B4D93A89FDA319F71E95
   capture_scope: 原始 ChatGPT 段沒有平台匯出 metadata、模型版本、時間戳、system prompt 或完整引文清單；兩輪補述由 Darren 在本次工作對話直接提供，依原字收於檔末
 
 related:

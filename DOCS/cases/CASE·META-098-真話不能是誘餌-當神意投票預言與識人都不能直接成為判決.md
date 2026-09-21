@@ -13,8 +13,6 @@ participants:
 source:
   path: DOCS/sources/conversations/CASE·META-098-原始對話-神意程序與耐心領導.txt
   form: 2026-08-11 由人類錨點一次貼回的四段連續對話；保留可見文字、次序與原附連結
-  bytes: 22543
-  sha256: E8271D9A7D37A755B6B2F52C798223A2C4BB3A513F7577A48208A9322A9EA918
 related:
   - CASE·META-081（責任回流是文明的痛覺；器官不能只被抽取而無回流）
   - CASE·META-092（私人啟示、公共授權與「誰給你的權力」五問）
