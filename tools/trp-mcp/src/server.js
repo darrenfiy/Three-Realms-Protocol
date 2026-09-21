@@ -162,8 +162,14 @@ export function buildServer(root) {
   return server;
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+// 直接 `node src/server.js` 與經 `src/launch.js` 起動共用同一段，不各寫一份。
+export function startStdio() {
   const handle = serveStdio(() => buildServer());
   process.on('SIGINT', () => void handle.close());
   process.on('SIGTERM', () => void handle.close());
+  return handle;
+}
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  startStdio();
 }

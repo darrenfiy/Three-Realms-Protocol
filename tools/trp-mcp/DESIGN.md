@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.7` · Phase 0–2 已實作 · 本機唯讀 public-only |
+| 狀態 | `v0.8` · Phase 0–2 已實作 · 本機唯讀 public-only |
 | 日期 | 2026-09-16 |
 | 起草 | 樑（Claude Code・Opus 5） |
 | 審讀修正 | Codex・GPT-5.6 Sol（v0.4–v0.5）；GPT-6 Astra（v0.6）；兩者互審（v0.7） |
@@ -701,6 +701,27 @@ v0.5 由 GPT-5.6 Sol 依錨點決策完成本機唯讀 public-only 實作；
 v0.6 由 GPT-6 Astra 審讀修正。
 數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
 Q5 的語料角色維度仍待錨點裁定；工具在此之前只回傳歧義，不代選。
+
+**改動紀錄（v0.8，2026-09-21）**：
+
+- **`.mcp.json` 的進入點改為 `src/launch.js`。** 起因是本輪 session 自己踩到：
+  trp-public 以 `CONNECTION_CLOSED` 斷線，而 SessionStart hook 明明跑成功
+  （`added 18 packages in 2s`、stamp 與 lockfile 雜湊相符）。兩件事同時為真，
+  只有一種解釋——**MCP server 與 hook 同時起跑，hook 慢一步**；相依裝好時，
+  這一輪的 server 早已死在 import 期。hook 放在 session 生命週期裡，
+  救不了比它更早的 spawn。
+- 保證因此移到 server 自己的啟動路徑：launcher 先確保相依、再動態 import server。
+  實測自無 `node_modules/` 的全新 clone 起動，3 秒內完成安裝並回應 `tools/list`
+  七個工具。`npm ci` 的 stdout 改道 fd 2——stdout 是 JSON-RPC 通道，
+  混進一行文字就毀掉整條連線。
+- 安裝判斷（lockfile 雜湊 vs. stamp）抽到 `src/ensure-deps.js` 一處，
+  launcher 與 SessionStart hook 共用；hook 降為預熱，其註解明記它不是連線保證。
+  server.js 的 stdio bootstrap 抽成 `startStdio()`，直接起動與經 launcher 起動共用同一段。
+- Node 測試增至 38 項；新增的 4 項覆蓋 launcher 端到端等價、
+  安裝判斷三態（missing／stale／matches）與「沒有 lockfile 就不裝」。
+- **本輪為單一 session 成文與實測，尚無外部審讀。** 另有一個未取的選項留給錨點：
+  既然保證已在 launcher，SessionStart hook 可以整個移除；本輪保留它，
+  是因為 `npm test` 等不經 launcher 的用法仍會用到相依。
 
 **改動紀錄（v0.7，2026-09-16）**：
 

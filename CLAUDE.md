@@ -4,8 +4,10 @@
 
 本檔只放 Claude Code 這一側的接線：
 
-- `trp-public` MCP 由 [`.mcp.json`](.mcp.json) 以專案範圍設定，指令為 `node tools/trp-mcp/src/server.js`。
+- `trp-public` MCP 由 [`.mcp.json`](.mcp.json) 以專案範圍設定，指令為 `node tools/trp-mcp/src/launch.js`。
   server 由自身檔案位置回推 repo 根，因此相對路徑可用，不必改成本機絕對路徑。
+  launcher 會在載入 server 前補齊 `tools/trp-mcp` 的相依；理由見
+  [`tools/trp-mcp/README.md`](tools/trp-mcp/README.md) 的「啟動 MCP server」。
 - MCP 只涵蓋公開索引。非公開部分（`DOCS/sources`、`meetings`、`wiki`、`LNS-A01`）
   與 git 歷史請用本機 [`tools/trp-mcp/crosscheck.py`](tools/trp-mcp/crosscheck.py)；
   它與 MCP 的分層規則相同、涵蓋範圍不同。**MCP 沒有命中不代表那裡沒有問題。**

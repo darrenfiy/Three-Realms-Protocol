@@ -2,7 +2,7 @@
   "mcpServers": {
     "trp-public": {
       "command": "node",
-      "args": ["tools/trp-mcp/src/server.js"]
+      "args": ["tools/trp-mcp/src/launch.js"]
     }
   }
 }
