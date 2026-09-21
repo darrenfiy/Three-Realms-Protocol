@@ -240,18 +240,29 @@ function cjkBigrams(tokens) {
   return [...grams];
 }
 
-function lineSnippet(text, query, radius = 1) {
+// 依序試最具體的線索：完整查詢 → 各 token → CJK bigram。只找完整查詢的話，
+// 靠 bigram 命中的文件會找不到而退回檔首，於是引用指向 L1 卻宣稱命中——
+// 在一個要求「引用可回查」的語料庫裡，那比沒有引用更糟。
+function lineSnippet(text, needles, radius = 1) {
   const lines = text.split(/\r?\n/u);
-  const needle = query.toLocaleLowerCase();
-  let at = lines.findIndex((line) => line.toLocaleLowerCase().includes(needle));
-  if (at < 0) {
-    const token = query.trim().split(/\s+/u).find(Boolean);
-    at = token ? lines.findIndex((line) => line.toLocaleLowerCase().includes(token.toLocaleLowerCase())) : 0;
+  const lowered = lines.map((line) => line.toLocaleLowerCase());
+  let at = -1;
+  let matched = null;
+  for (const raw of needles) {
+    const needle = String(raw || '').toLocaleLowerCase();
+    if (!needle) continue;
+    const found = lowered.findIndex((line) => line.includes(needle));
+    if (found >= 0) { at = found; matched = needle; break; }
   }
-  at = Math.max(0, at);
-  const start = Math.max(0, at - radius);
-  const end = Math.min(lines.length, at + radius + 1);
-  return { text: lines.slice(start, end).join('\n').trim(), lineStart: start + 1, lineEnd: end };
+  const start = Math.max(0, Math.max(0, at) - radius);
+  const end = Math.min(lines.length, Math.max(0, at) + radius + 1);
+  return {
+    text: lines.slice(start, end).join('\n').trim(),
+    lineStart: start + 1,
+    lineEnd: end,
+    located: at >= 0,
+    matched,
+  };
 }
 
 function summarize(entry, includeContent = false, maxChars = 30_000) {
@@ -543,7 +554,7 @@ export class PublicCorpus {
         if (body.includes(gram)) score += 1;
       }
       if (!score) continue;
-      const snippet = lineSnippet(entry.content, query);
+      const snippet = lineSnippet(entry.content, [normalized, ...tokens, ...grams, entry.title, entry.idRaw]);
       ranked.push({ entry, score, snippet });
     }
     ranked.sort((a, b) => b.score - a.score || this.authorityRank(a.entry.authority) - this.authorityRank(b.entry.authority) || a.entry.path.localeCompare(b.entry.path));
@@ -554,6 +565,8 @@ export class PublicCorpus {
         score,
         snippet: snippet.text,
         citation: `${entry.citation}:L${snippet.lineStart}-L${snippet.lineEnd}`,
+        snippetLocated: snippet.located,
+        ...(snippet.located ? {} : { warnings: ['snippet-not-located'] }),
       })),
       warnings: ranked.length ? [] : ['no-answer'],
       provenance: this.provenance(),

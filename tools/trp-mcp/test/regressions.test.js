@@ -199,3 +199,28 @@ test('CJK bigrams let partial concept overlap score without swamping literal hit
   assert.equal(results.length, 2, '部分重疊仍應被找到');
   assert.equal(results[0].id, 'LEX-001', '完整命中必須勝過 bigram 部分命中');
 });
+
+// bigram 讓文件能因部分重疊而命中，但摘要一度只找完整查詢詞，找不到就退回檔首——
+// 於是引用指向 L1 卻宣稱命中。在一個要求「引用可回查」的語料庫裡，那比沒有引用更糟。
+test('snippet citations point at a line that actually contains the match', (t) => {
+  const { root, write } = fixture(t);
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active',
+    `${'填充行。\n'.repeat(40)}這一行才有形狀與可重入的重疊。\n${'更多填充。\n'.repeat(10)}`));
+  const result = new PublicCorpus(root).search({ query: '可重認形狀', limit: 5 }).results[0];
+  assert.ok(result, '部分重疊應該仍被找到');
+  const [, from, to] = result.citation.match(/:L(\d+)-L(\d+)$/u).map(Number);
+  const quoted = readFileSync(join(root, 'LEX/LEX-001.md'), 'utf8')
+    .split(/\r?\n/u).slice(from - 1, to).join('\n');
+  assert.ok(/形狀/u.test(quoted), `引用的 L${from}-L${to} 必須真的含命中詞，實得：${quoted}`);
+  assert.equal(result.snippetLocated, true);
+  assert.ok(from > 1, '不得退回檔首');
+});
+
+test('an unlocatable match is declared, never silently cited as line one', (t) => {
+  const { root, write } = fixture(t);
+  // 只有標題命中，內文完全沒有相關字；引用只能落在檔首，但必須據實標示。
+  write('LEX/LEX-001.md', document('LEX-001', 'status: Active', 'zzz body with nothing relevant.'));
+  const result = new PublicCorpus(root).search({ query: 'LEX-001', limit: 5 }).results[0];
+  assert.ok(result);
+  assert.equal(result.snippetLocated, true, 'ID 出現在檔首，屬於可定位');
+});
