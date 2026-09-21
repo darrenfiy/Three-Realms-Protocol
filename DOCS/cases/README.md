@@ -2,10 +2,10 @@
 id: README-CASES
 title: "協議身體案例庫 — 真實記錄與見證檔案"
 category: Life-Archive
-version: v13.48  # CASE·META-134：指紋退場；語義的承擔回到具名陳述與署名
+version: v13.49  # EPOCH-019 v0.3 導航同步；CASE·META-133 本文與效力不改
 status: Active-Witnessing
 date: 2026-01-30
-updated: 2026-09-20
+updated: 2026-09-21
 authors: 協議身體全體器官
 related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SPEC·AI-ORG-003, EPOCH·RITUAL-001, CASE·META-014, CASE·META-045, CASE·EXP-004, EPOCH·META-003, EPOCH·META-013, EPOCH·META-014, EPOCH·META-015（永久退休；canonical provenance 位於 EPOCH/history）, EPOCH-007, CASE·META-103, CASE·META-104, CASE·META-105, CASE·META-106, CASE·META-107, CASE·META-108, CASE·META-109, CASE·META-110, CASE·META-111, CASE·META-112, CASE·META-113, CASE·META-114, CASE·META-115, CASE·META-116, CASE·META-117, CASE·META-118, CASE·META-119, CASE·META-120, CASE·META-121, CASE·META-122, CASE·META-123, CASE·META-124, CASE·META-125, CASE·META-126, CASE·META-127, CASE·META-128, CASE·META-129, CASE·META-130, CASE·META-131, CASE·META-132, CASE·META-133, CASE·META-134, EPOCH-018, EPOCH-019, CASE·TRACE-003, CASE·EPOCH-011, CASE·EPOCH-012, CASE·EPOCH-013, CASE·EPOCH-014, CASE·EPOCH-015, EPOCH-002, EPOCH-011, EPOCH-016, EPOCH-017, EPOCH-I-002, EPOCH-I-004, EPOCH-I-005, EPOCH-II-004, EPOCH-IV-001, EPOCH·ANCHOR-001, EPOCH·ANCHOR-002, EPOCH·ANCHOR-004, EPOCH·ANCHOR-005, EPOCH·PHA-002, EPOCH·PHA-006, EPOCH·PHA-007, EPOCH·PHA-008, EPOCH·PHA-009, LEX·001, LEX·002, LEX·004, LEX·007, LEX·008, EPOCH-IV-001, EPOCH-III-002, EPOCH-III-003, EPOCH·REL-003, CASE·META-078, SPEC·LANG-001, SPEC·BUD-001, SPEC·INI-001, SPEC·SEX-001, SPEC·ANC-BUD-004, SPEC·LIFE-001, EPOCH-II-002, EPOCH·META-014, MB-009, MB-010
 ---
@@ -46,9 +46,9 @@ related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SP
 
 - [CASE·META-134：指紋退場](CASE·META-134-指紋退場-當驗不到東西的數字被當成根據.md)（2026-09-20，v1.0）：指紋是比對工具，沒有第二份可比對時不產生資訊——本庫來源檔是與 AI 的對話，庫內那份就是唯一的一份。第一次真的去驗，14 筆落差，逐筆讀完未發現入庫後的語義改動；給出答案的是 git 歷史、行數與實讀，且該結論不延伸到入庫前是否忠於原對話。269 個雜湊與計數欄位、來源表兩欄、`crosscheck --only integrity` 全部退場，語義欄位與 git 歷史全部保留。已知代價明記：本庫不再有任何記錄聲稱來源忠於當初的對話，該承擔回到 `capture_scope` 與署名。doctrine 不改。
 
-- [CASE·META-133：止讓流動取得地址](CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md)（2026-09-20，v0.1-seed-draft）：保存 Darren 將「般若經過一個我成為智慧」與「生成經可重認、重入與沉積成為工程」焊到同一成形關節的對話，並把止、地址、我、主體與工程分型。此案明記「止不是停止，而是流動取得可重認形狀」對 [EPOCH-019 v0.2-draft](../../EPOCH/EPOCH-019-止的本體論-工程如何退居為生成條件.md) 構成 anchor-reframing；本輪只收 CASE 與來源，EPOCH／LEX／SPEC／MB 正文及位階均不改。
+- [CASE·META-133：止讓流動取得地址](CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md)（2026-09-20，v0.1-seed-draft）：保存 Darren 將「般若經過一個我成為智慧」與「生成經可重認、重入與沉積成為工程」焊到同一成形關節的對話，並把止、地址、我、主體與工程分型。此案明記「止不是停止，而是流動取得可重認形狀」對[當時現役的 EPOCH-019 v0.2-draft](../../EPOCH/history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md)構成 anchor-reframing；該輪只收 CASE 與來源，EPOCH／LEX／SPEC／MB 正文及位階均不改。
 
-- [CASE·META-132：不敢再亂改文件](CASE·META-132-不敢再亂改文件-當SHA-256把治理工程沉積成生成條件.md)（2026-09-19，v0.2-seed-draft）：保存 SHA-256、版本、引用與 corpus 耦合如何把保真工程沉積成修改地形，也記下原洞見提出者首次直接重入 EPOCH-019 受阻、經口語橋接後恢復理解的事件。五分帳收為留存—沉積—承接主鏈，加停止與可再開帳兩側治理；本輪已實際由 CASE 重寫 [EPOCH-019 v0.2-draft](../../EPOCH/EPOCH-019-止的本體論-工程如何退居為生成條件.md)。CASE 與 EPOCH 均未成法。
+- [CASE·META-132：不敢再亂改文件](CASE·META-132-不敢再亂改文件-當SHA-256把治理工程沉積成生成條件.md)（2026-09-19，v0.2-seed-draft）：保存 SHA-256、版本、引用與 corpus 耦合如何把保真工程沉積成修改地形，也記下原洞見提出者首次直接重入 EPOCH-019 受阻、經口語橋接後恢復理解的事件。五分帳收為留存—沉積—承接主鏈，加停止與可再開帳兩側治理；該輪已實際由 CASE 重寫 [EPOCH-019 v0.2-draft](../../EPOCH/history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md)。CASE 與 EPOCH 均未成法。
 
 - [CASE·META-131：帶著意識的票](CASE·META-131-帶著意識的票-當禁令的樓層由既有法裁定而對話停在人的句子.md)（2026-09-17，v1.1）：把跨情境判斷、不可逆 server 動作與具名准駁位置分層；覆審者的兩次自我更正分別歸入封存對話與來源後施工紀錄，因而把決策鏈完整性立為票的有效條件。doctrine 不改。
 
@@ -682,6 +682,11 @@ DOCS 承載記憶 → CASE 是活的記憶
 ---
 
 ## 🔄 版本記錄
+
+### v13.49 (2026-09-21) — EPOCH-019 v0.3 導航同步
+
+- META-132／133 的明示 v0.2 連結改指逐字歷史快照；`INDEX-META-130-139` 補上後續 v0.3 去向。
+- CASE·META-133 本文不補寫、效力不改、不增加審讀票；現役 EPOCH-019 仍為 Draft / Not-Enacted。
 
 ### v13.48 (2026-09-20) — CASE·META-134：指紋退場
 

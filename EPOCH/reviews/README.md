@@ -2,10 +2,10 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.8
+version: v1.9
 status: Active
 date: 2026-09-07
-updated: 2026-09-19
+updated: 2026-09-21
 authors:
   - 樑 / Claude Code（Opus 5）（正文／審讀帳／CASE 三分提案）
   - Codex（GPT-5.6 Sol）（流程裁定、票／帳雙層狀態與欄位邊界）
@@ -16,6 +16,7 @@ authors:
   - 樑 / Claude Code（Opus 5）（v1.6；PHA-006 外部審讀導航，流程規則未改）
   - GPT-5.6 Sol（v1.7；O1～O5 與 C_S provenance 處置、PHA v1.5／META v0.8 cycle 入口）
   - GPT-5.6 Sol（v1.8；新增 EPOCH-019 審讀帳，分開施工、使用回報與內容票）
+  - Codex（v1.9；EPOCH-019 v0.2 關輪、v0.3 從零開審）
 related:
   - EPOCH/history/README.md（改版快照）
   - DOCS/sources/conversations/README.md（來源開口／封口）
@@ -111,7 +112,7 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
-| EPOCH-019 | [止的本體論審讀帳](EPOCH-019-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open，尚無獨立內容票 |
+| EPOCH-019 | [止的本體論審讀帳](EPOCH-019-審讀帳.md) | v0.1／v0.2 cycle closed；v0.3 cycle open，0 張獨立內容票 |
 | EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.4 cycle 由 v1.5 修訂取代；O1～O4 已處置、O5 已限縮吸收，新增 C_S provenance；v1.5 cycle open，待覆審與量尺校準包實跑 |
 | EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.7 cycle 由 v0.8 修訂取代；只同步 PHA-006 v1.5 的必要量尺介面，樑未審本文件；v0.8 cycle open，待覆審 |
 
@@ -127,6 +128,8 @@ required:
 
 2026-09-15，GPT-5.6 Sol 依 Darren 交付修訂：PHA-006 v1.5 部分吸收 O1／O2、接受 O3／O4、限縮吸收 O5，另由 Hope Light 首卷補出 C_S provenance；META-013 v0.8 只同步必要介面。GPT-6 Astra 依授權提供平行唯讀施工審計，未改檔、不計票。量尺校準包、代理橋接與生命實例均未實跑；兩個新版 cycle 保持 open。
 
+2026-09-21，EPOCH-019 依 CASE·META-133 重開第一定義：v0.2 逐字快照歸入 history，舊 cycle 以 0 票關閉；逐項處置另入原審讀帳，v0.3 以 0 張獨立內容票重新開輪。CASE 生成來源、本輪相鄰本體對讀與起草工作均記 `vote_effect: none`。
+
 ---
 
 *流程裁定與成文：Codex（GPT-5.6 Sol），2026-09-07。此為審讀流程規則，不是 EPOCH-018 的內容票，也不使 draft 升格。*
@@ -136,3 +139,5 @@ required:
 *v1.6 導航：樑（Claude Code・Opus 5），2026-09-14。PHA-006 帳追加 §8 外部審讀並更新狀態表；原票及舊事件不改，流程規則不改。*
 
 *v1.7 導航：GPT-5.6 Sol，2026-09-15。兩帳追加修訂處置與新版 cycle；樑原票及 GPT-6 Astra 既有 sealed 事件不改。Astra 本輪協助屬施工審計，不新增票或實證。*
+
+*v1.9 導航：Codex，2026-09-21。EPOCH-019 v0.2 關輪、v0.3 開輪；本次只更新導航與流程狀態，不新增內容票。*

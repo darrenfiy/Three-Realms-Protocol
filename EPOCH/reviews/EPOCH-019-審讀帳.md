@@ -2,15 +2,17 @@
 id: EPOCH-019-REVIEW-LEDGER
 title: "EPOCH-019 審讀帳"
 target: EPOCH-019
-version: v0.1
-status: Open / Append-Only / v0.1-Cycle-Closed / v0.2-Cycle-Open
+version: v0.2
+status: Open / Append-Only / v0.1-Cycle-Closed / v0.2-Cycle-Closed / v0.3-Cycle-Open
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-09-21
 maintainers:
   - Codex（GPT-5.6 Sol；首建、v0.1 事件正規化與 v0.2 處置）
+  - Codex（v0.3 anchor-reframing、v0.2 關輪與新輪入口）
 integrity: 既有事件不得改寫；更正另立事件並回指。精確文字以 sealed source、frozen snapshot 或具名 CASE 地址為準。
 target_document: ../EPOCH-019-止的本體論-工程如何退居為生成條件.md
 source_case: ../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把治理工程沉積成生成條件.md
+reframing_case: ../../DOCS/cases/CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md
 ---
 
 # EPOCH-019 審讀帳
@@ -22,7 +24,8 @@ source_case: ../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把
 | review cycle | 狀態 | 獨立內容票 | 結果 |
 |---|---|---:|---|
 | v0.1-draft | closed / rewritten | 0 | Astra 參與起草前施工；Darren 首次直接重入受阻後，正文由 v0.2 取代。 |
-| v0.2-draft | open | 0 | CASE-grounded 重寫完成；待未參與起草者實測，不升 candidate。 |
+| v0.2-draft | closed / anchor-reframed | 0 | 五分帳保留；CASE·META-133 重開第一定義後，由 v0.3 取代。 |
+| v0.3-draft | open | 0 | 從零開審；CASE 來源與本輪起草位置均不計票。 |
 
 ## 1. 票與非票事件
 
@@ -31,7 +34,9 @@ source_case: ../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把
 | E019-v01-R1 | v0.1 起草前 | GPT-6 Astra | `vote_effect: none`；施工語義審查 | 其意見進入 v0.1 大綱與正文，不能作獨立通過票 | [封存施工覆審](../../DOCS/sources/conversations/EPOCH-019-施工覆審-GPT-6-Astra.txt) |
 | E019-v01-U1 | v0.1 使用回報 | Darren | `vote_effect: none`；首次直接重入受阻 | 原洞見提出者回報「有點看不太懂」；後續口語橋接恢復理解，故不記為永久不可重入 | [CASE·META-132 §2](../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把治理工程沉積成生成條件.md#2-第一次過早壓縮case-尚未沉積epoch-已經出生) |
 | E019-v01-M1 | v0.1 → v0.2 材料 | ChatGPT（模型版本未附） | `vote_effect: none`；問題診斷與重寫提案 | 提出三加二、尺度校正、可再開帳與縮文方向，並起草 CASE v0.1；其後續對話未另存 sealed source | [CASE·META-132 §4、§7、§10](../../DOCS/cases/CASE·META-132-不敢再亂改文件-當SHA-256把治理工程沉積成生成條件.md) |
-| E019-v02-D1 | v0.2-draft | Codex・GPT-5.6 Sol | `vote_effect: none`；改寫與流程處置 | 曾起草 v0.1 並改寫 v0.2，永久屬於動過手的位置，不能投本輪獨立票 | [現役 v0.2](../EPOCH-019-止的本體論-工程如何退居為生成條件.md)；[v0.1 快照](../history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md) |
+| E019-v02-D1 | v0.2-draft | Codex・GPT-5.6 Sol | `vote_effect: none`；改寫與流程處置 | 曾起草 v0.1 並改寫 v0.2，永久屬於動過手的位置，不能投本輪獨立票 | [當時現役的 v0.2](../history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md)；[v0.1 快照](../history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md) |
+| E019-v02-U2 | v0.2 → v0.3 生成來源 | Darren × ChatGPT（模型版本未附） | `vote_effect: none`；anchor-reframing | 原洞見提出者把止重新看成可重認形狀的成形門檻；該對話已歸 CASE，能觸發重寫，不能充作獨立通過票 | [CASE·META-133](../../DOCS/cases/CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md) |
+| E019-v03-D1 | v0.3-draft | Codex | `vote_effect: none`；重寫與流程處置 | 對讀相鄰本體、保存 v0.2 快照、重寫正文並重開 review cycle；屬動過手的位置 | [現役 v0.3](../EPOCH-019-止的本體論-工程如何退居為生成條件.md)；[v0.2 快照](../history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md) |
 
 ## 2. v0.1 → v0.2 逐項處置
 
@@ -69,6 +74,51 @@ snapshot:
 
 若第 5 題答案是肯定，本稿應退回 CASE 或併入既有文件，不以文句流暢維持地址。
 
+## 5. v0.2 → v0.3 逐項處置
+
+| 審讀／使用項 | 來源 | 處置 | 去處／理由 |
+|---|---|---|---|
+| 「止」應先回答流動何時成為可重認的「這一個」 | CASE·META-133 H1／§11 | 吸收 | v0.3 §1：升為成形門檻第一定義，補具名系統、尺度、觀察窗與不變項。 |
+| 「止是第一次取得地址」容易把成形與地址黏在一起 | CASE·META-133 H2 | 吸收並分型 | §2：止回答形狀成立；地址沿 ANCHOR-005 回答如何指回來處與重入條件。 |
+| 可重認不自動等於我或主體 | CASE·META-133 H3／I-005 | 吸收 | §2：一般地址、第一人稱承接與 I-005 的厚主體判準分帳。 |
+| 工程需要實際承接、路徑加厚與結構嵌入 | CASE·META-133 H4／I-002 | 吸收 | §2.5；可重認只開門，不替工程代簽。 |
+| 「第一次」未必有可定位瞬間 | CASE·META-133 C2／II-004 §3.1 | 吸收 | §1.2：形成時與證成時分開；允許門檻區間與事後回認。 |
+| v0.2 的「不再以原方式續行」如何保存 | CASE·META-133 §11／Q7 | 降階保留 | §1.4、§3、§4：下移為成形後的最小後效與治理軸；四型改記為續行後效。 |
+| v0.2 的留存—沉積—承接與可再開帳 | v0.2 主文 | 保留 | §4：五帳改放在止之後，不再替止下第一定義。 |
+| 般若／智慧是否升入 EPOCH 主命題 | CASE·META-133 H5／C3 | 退回升格、保留來源 | §7：保留生成入口與護欄；無佛教史、宗義與跨域證據，不升 doctrine。 |
+| 與 II-004、ANCHOR-005 的重疊 | corpus 對讀 | 新增退場條款 | §8、§10、§11：若無新增可檢查差異，退回 CASE 或併入相鄰文件。 |
+
+## 6. v0.2 快照與關輪
+
+```yaml
+snapshot:
+  path: ../history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md
+  relation: v0.2 現役檔在 anchor-reframing 重寫前的逐字複製
+  read_basis: c336e9ded21984d4a3065a0c1c6726f1164648b6
+  note: 快照保存當時事實；不因 v0.3 重寫而取得現行效力。
+
+cycle_closure:
+  cycle: v0.2-draft
+  independent_content_votes: 0
+  reason: CASE·META-133 使第一定義重開；舊五分帳經處置後承接至 v0.3。
+  vote_effect: none
+```
+
+## 7. v0.3 下一輪入口
+
+下一位審讀者應先聲明未參與 v0.3 起草或大綱，再用一個自己的具名事件回答：
+
+1. 成形止能否在沒有操作停止的事件中產生可辨認差？
+2. 操作停止但沒有形成可重認形狀的反例，是否得到不同答案？
+3. 漸進成形時，門檻區間與證成時差是否足以防止補造「第一瞬間」？
+4. 止、地址、第一人稱、主體與工程是否各有不同證據？
+5. 若只用 II-004／ANCHOR-005／I-002／IV-001，是否已能作出同樣判讀？
+6. 有害工程、無中心工程與未留下公共地址的形狀是否都能被本稿處理？
+
+若第 5 題答案是肯定，v0.3 應退回 CASE 或併入相鄰文件，不升 candidate。
+
 ---
 
 *首建、v0.1 關輪與 v0.2 處置：Codex・GPT-5.6 Sol，2026-09-19。*
+
+*v0.2 關輪、v0.3 anchor-reframing 與新輪入口：Codex，2026-09-21。*

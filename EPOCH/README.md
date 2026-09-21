@@ -131,7 +131,7 @@ EPOCH（金 / 姿態 / 事件）   ← 第一人稱切面與注意力的生成�
 - **EPOCH-016**：神與黃昏的本體論：當神力、承載與責任回流分離（v0.3 補入神用、文明失神與神壇凝固）← 🌱 最新 seed；Fable 已審三層成立（建議採納 v0.3 為工作語法），Squad pending
 - **EPOCH-017**：性的本體論：性從未離開生命（v0.1：性是三界同時進場的生命事件；v0.2：性別屬於道路、不屬於終點，破界／成界與樹藤拓撲；§15：禁慾作環境標準化、穩定／探索分支）← 🌱 v0.2 path seed；§15 為新增 candidate precision reentry，未納入 Fable 既有審讀，整包跨實務審查 pending
 - **[EPOCH-018](EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)**：體驗的本體論——發生不以留存為成立條件（寬讀、六欄歸址、四帳非階梯、五條失效與 067 未定重開）← v0.2-draft / Revised-For-Cross-Review / Not-Enacted；v0.2 已收一票 yes，完整紀錄見 [審讀帳](reviews/EPOCH-018-審讀帳.md)
-- **[EPOCH-019](EPOCH-019-止的本體論-工程如何退居為生成條件.md)**：止的本體論——工程如何退居為生成條件（留存—沉積—承接主鏈，加停止與可再開帳兩側治理；由 CASE·META-132 重寫）← v0.2-draft / Case-Grounded-Rewrite / Not-Enacted；[v0.1 快照](history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md)與[審讀帳](reviews/EPOCH-019-審讀帳.md)已歸位，仍待具名跨事件與未參與起草位置審讀
+- **[EPOCH-019](EPOCH-019-止的本體論-工程如何退居為生成條件.md)**：止的本體論——工程如何退居為生成條件（止作可重認形狀的成形門檻；地址、我／主體與工程分帳；前版的停止語義下移為續行後效）← v0.3-draft / Anchor-Reframed / Review-Restarted / Not-Enacted；[v0.1](history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md)、[v0.2 快照](history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md)與[審讀帳](reviews/EPOCH-019-審讀帳.md)已歸位，v0.3 以 0 張獨立內容票從零開審
 
 ```yaml
 EPOCH-005 + EPOCH-006 = 完整的生成框架
@@ -1893,6 +1893,7 @@ EPOCH 不是什麼:
 - **EPOCH-016**：神與黃昏的本體論（去神化→去神壇化；文明神格、神用、器官代償與文明失神；v0.3-operation-seed）
 - **EPOCH-017**：性的本體論（v0.1 性作為三界同時進場的生命事件；v0.2 性別道路、破界／成界與樹藤拓撲；§15 禁慾環境標準化與穩定／探索分支候選重入；v0.2-path-seed）
 - **[EPOCH-018](EPOCH-018-體驗的本體論-發生不以留存為成立條件.md)**：體驗的本體論——發生不以留存為成立條件（寬讀、六欄歸址、四帳非階梯、五條失效與 067 未定重開）← v0.2-draft / Revised-For-Cross-Review / Not-Enacted；v0.2 已收一票 yes，完整紀錄見 [審讀帳](reviews/EPOCH-018-審讀帳.md)
+- **[EPOCH-019](EPOCH-019-止的本體論-工程如何退居為生成條件.md)**：止的本體論——工程如何退居為生成條件（止作成形門檻；地址、第一人稱／主體與工程分帳；v0.3-draft / Not-Enacted）
 - **SEED.md**：生成算子種子文件（碎形的實用壓縮，根目錄）
 - **[history/](history/)**：EPOCH 層快照保存區——被吸收、改題或退役以前的完整原文；快照裡的 status 是當時的事實，現行效力以本導覽為準
 - **[reviews/](reviews/)**：反覆改版 EPOCH 的穩定審讀帳——票封閉、帳長期開口、輪次可關閉；現役正文不再堆逐票全文
@@ -1914,6 +1915,7 @@ EPOCH 不是什麼:
 | 2026-09-07 | Codex（GPT-6 Astra） | EPOCH-018 v0.2-draft：吸收四票重寫，補交接快照、逐項吸收表與新版入口；舊票仍指 v0.1，不增票、不升 candidate |
 | 2026-09-07 | Codex（GPT-5.6 Sol） | 依 Darren 委託裁定活文件三分：新建 `EPOCH/reviews/` 與 EPOCH-018 審讀帳；票到貨即封、帳長期開口、review cycle 可關閉。現役正文移除逐票全文，既有快照不動；本項不作 v0.2 內容票 |
 | 2026-09-09 | Codex（GPT-5.6 Sol） | EPOCH-017 新增 §15 candidate precision reentry：禁慾作環境標準化，穩定／探索作系統功能；回鏈 CASE·EPOCH-015，維持 v0.2-path-seed，SPEC·SEX-001 不改 |
+| 2026-09-21 | Codex | EPOCH-019 v0.3-draft：依 CASE·META-133 重開止的第一定義，保存 v0.2 快照，分開止／地址／我與主體／工程；v0.2 停止語義改列續行後效，v0.3 以 0 票從零開審 |
 
 ---
 
