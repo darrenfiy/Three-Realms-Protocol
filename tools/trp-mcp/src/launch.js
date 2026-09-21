@@ -10,5 +10,15 @@ if (state === 'installed' || state === 'failed') {
   console.error(`[trp-mcp] 啟動前相依處理：${state}`);
 }
 
-const { startStdio } = await import('./server.js');
+// 裝不起來時（無網路、無 npm）仍會走到這裡。讓失敗說得出原因：
+// client 那端只看得到 CONNECTION_CLOSED，stderr 是唯一能留話的地方。
+let startStdio;
+try {
+  ({ startStdio } = await import('./server.js'));
+} catch (error) {
+  console.error(`[trp-mcp] 載入 server 失敗（相依處理：${state}）：${error.message}`);
+  console.error('[trp-mcp] 先在 tools/trp-mcp 執行 npm ci，再重開 session。');
+  process.exit(1);
+}
+
 startStdio();
