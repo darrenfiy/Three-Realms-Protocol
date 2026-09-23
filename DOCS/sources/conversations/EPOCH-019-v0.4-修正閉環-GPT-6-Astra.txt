@@ -1,0 +1,59 @@
+EPOCH-019 v0.4 修正閉環——GPT-6 Astra 最終複核全文
+
+capture_scope:
+- 以下為 Codex・GPT-6 Astra 對 EPOCH-019 v0.4-draft working tree、審讀帳及 v0.3 原票全文的最終唯讀複核。
+- 這是同一 reviewer 對 E019-v03-R1 的修正閉環，不是第二份獨立審讀、不是 affirmative pass，也不改寫 v0.3 的 no。
+- 除本檔頭、BEGIN／END 邊界與 Markdown hard-break 行尾兩空白正規化外，正文依 reviewer 交付文字保存。
+
+--- BEGIN VERBATIM CLOSURE ---
+
+reviewer: Codex・GPT-6 Astra
+review relation: same reviewer revision closure
+reviewed target: 本次 working tree 的 EPOCH-019 v0.4-draft、審讀帳及原票全文
+closure verdict: **closed——本次指定修正已完成；維持 Draft / Bridge / Not-Enacted。**
+
+沿用本輪已確認的 `STALE_CORPUS` 狀態，以精確路徑唯讀核對，未修改檔案。
+
+| 項目 | 最終狀態 | 核對結果 |
+|---|---|---|
+| R1 | closed | §0 不預設先後；§1.4 不預簽地址或操作；§5 已移除成形必早於沉積的普遍句。 |
+| R2 | closed | 五帳保持非線性；承接與沉積證據分開；停止教訓更換追蹤物的要求保留。 |
+| R3 | closed | §6.8 限縮為版本內容同一；§6.9 提供固定輸入、辨認規則、不變項、允許變動及三值結果，足以重做程序檢查。 |
+| R4 | closed | 以橋接改定位完成處置，沒有把綜合便利或穩定編號宣告為獨立本體證成。 |
+| C1 | closed | 第一人稱不再由地址出生；開場亦取消必經先後語氣。 |
+| C2 | closed | 工程表格已補具名操作或介入史，與三層分帳對齊。 |
+| C3 | closed | 版本例與構造例分別承擔同一性和成形判讀，已足以關閉本次可重入性建議；不表示完成外部事件驗證。 |
+
+§6.9 的結果可依規則直接重做：F1 缺邊、F2 不成閉環；F3 滿足門檻，F4 在改名與幾何變動後仍為同類，F5 因遮蔽只能判資料不足。「第一次」明確限於本觀察窗，沒有倒推出世界中的絕對首次。構造測試與外部實證的身分也已分開。
+
+原票全文 `DOCS/sources/conversations/EPOCH-019-v0.3-獨立審讀-GPT-6-Astra.txt` 的 BEGIN／END 內正文，與我逐字再交付的 ballot 相符。檔頭清楚交代再交付來源及不新增票；審讀帳 §8 明標摘要並連至全文，原 `no`、scope、相關性揭露、零通過票及提示揭露均忠實。E019-v04-R1 保留第一次 `partially_closed`，沒有被此次結案倒寫。
+
+本次沒有新的必要修正。此結案只確認原發現已被處置，不撤回 v0.3 的否決，也不替 v0.4 核發獨立本體資格。
+
+```yaml
+closure_verdict: closed
+review_relation: same_reviewer_revision_closure
+target: EPOCH-019 v0.4-draft working tree
+findings:
+  R1: closed
+  R2: closed
+  R3: closed
+  R4: closed
+  C1: closed
+  C2: closed
+  C3: closed
+ballot_preservation: faithful
+ledger_preservation: faithful
+original_ballot_verdict: no
+original_ballot_effect: unchanged
+new_independent_reviews_added: 0
+affirmative_pass_votes_added: 0
+candidate_effect: none
+enactment_effect: none
+cross_event_validation_effect: none
+remaining_required_rewrites_for_this_closure: []
+```
+
+這是**同一 reviewer 的修正閉環**：0 新獨立審讀、0 affirmative pass，candidate／enactment 均為 none。
+
+--- END VERBATIM CLOSURE ---

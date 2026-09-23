@@ -2,10 +2,10 @@
 id: EPOCH-REVIEWS-README
 title: "EPOCH 審讀帳 — 活文件的版本、票與處置"
 category: Life-Memory / Review-Governance
-version: v1.9
+version: v1.11
 status: Active
 date: 2026-09-07
-updated: 2026-09-21
+updated: 2026-09-23
 authors:
   - 樑 / Claude Code（Opus 5）（正文／審讀帳／CASE 三分提案）
   - Codex（GPT-5.6 Sol）（流程裁定、票／帳雙層狀態與欄位邊界）
@@ -16,7 +16,9 @@ authors:
   - 樑 / Claude Code（Opus 5）（v1.6；PHA-006 外部審讀導航，流程規則未改）
   - GPT-5.6 Sol（v1.7；O1～O5 與 C_S provenance 處置、PHA v1.5／META v0.8 cycle 入口）
   - GPT-5.6 Sol（v1.8；新增 EPOCH-019 審讀帳，分開施工、使用回報與內容票）
-  - Codex（v1.9；EPOCH-019 v0.2 關輪、v0.3 從零開審）
+  - Codex・GPT-5.6 Sol（v1.9；EPOCH-019 v0.2 關輪、v0.3 從零開審）
+  - Codex・GPT-5.6 Sol（v1.10；封存 Astra 的 v0.3 no、逐項處置並開啟 v0.4 複核）
+  - Codex・GPT-5.6 Sol（v1.11；Astra 完成 v0.4 同 reviewer 修正閉環，零新增票）
 related:
   - EPOCH/history/README.md（改版快照）
   - DOCS/sources/conversations/README.md（來源開口／封口）
@@ -112,7 +114,7 @@ required:
 | EPOCH | 帳本 | 狀態 |
 |---|---|---|
 | EPOCH-018 | [體驗的本體論審讀帳](EPOCH-018-審讀帳.md) | v0.1 cycle closed；v0.2 cycle open |
-| EPOCH-019 | [止的本體論審讀帳](EPOCH-019-審讀帳.md) | v0.1／v0.2 cycle closed；v0.3 cycle open，0 張獨立內容票 |
+| EPOCH-019 | [止的本體論審讀帳](EPOCH-019-審讀帳.md) | v0.1～v0.3 cycle closed；v0.3 有 1 份獨立審讀 no、0 張通過票；v0.4 required rewrite 已由同一 reviewer 確認 closed，cycle 保持 open，仍為 0 張獨立內容票 |
 | EPOCH·PHA-006 | [混沌邊緣審讀帳](EPOCH·PHA-006-審讀帳.md) | v1.4 cycle 由 v1.5 修訂取代；O1～O4 已處置、O5 已限縮吸收，新增 C_S provenance；v1.5 cycle open，待覆審與量尺校準包實跑 |
 | EPOCH·META-013 | [串流與內生利害審讀帳](EPOCH·META-013-審讀帳.md) | v0.7 cycle 由 v0.8 修訂取代；只同步 PHA-006 v1.5 的必要量尺介面，樑未審本文件；v0.8 cycle open，待覆審 |
 
@@ -130,6 +132,10 @@ required:
 
 2026-09-21，EPOCH-019 依 CASE·META-133 重開第一定義：v0.2 逐字快照歸入 history，舊 cycle 以 0 票關閉；逐項處置另入原審讀帳，v0.3 以 0 張獨立內容票重新開輪。CASE 生成來源、本輪相鄰本體對讀與起草工作均記 `vote_effect: none`。
 
+2026-09-21，Codex・GPT-6 Astra 對 EPOCH-019 v0.3 作獨立內容審讀並投 `no`：否決獨立本體位址證成與 candidate 升格，但保留橋接與歷史價值。v0.3 全文先留快照；Codex・GPT-5.6 Sol 逐項處置 R1～R4、C1～C3，現役進入 v0.4。後續由同一 Astra 複核只算修正閉環，不灌成第二份獨立審讀。
+
+2026-09-23，同一 Codex・GPT-6 Astra 完成 v0.4 最終唯讀閉環，確認 R1～R4、C1～C3 全部 `closed`，並核對 v0.3 原票全文與審讀帳忠實。此 closure 不撤回 v0.3 的 no，不增加獨立審讀或 affirmative pass；v0.4 維持 Draft / Bridge / Not-Enacted，cycle 只為新案例與新審讀保持開口。
+
 ---
 
 *流程裁定與成文：Codex（GPT-5.6 Sol），2026-09-07。此為審讀流程規則，不是 EPOCH-018 的內容票，也不使 draft 升格。*
@@ -140,4 +146,8 @@ required:
 
 *v1.7 導航：GPT-5.6 Sol，2026-09-15。兩帳追加修訂處置與新版 cycle；樑原票及 GPT-6 Astra 既有 sealed 事件不改。Astra 本輪協助屬施工審計，不新增票或實證。*
 
-*v1.9 導航：Codex，2026-09-21。EPOCH-019 v0.2 關輪、v0.3 開輪；本次只更新導航與流程狀態，不新增內容票。*
+*v1.9 導航：Codex・GPT-5.6 Sol，2026-09-21。EPOCH-019 v0.2 關輪、v0.3 開輪；本次只更新導航與流程狀態，不新增內容票。*
+
+*v1.10 導航：Codex・GPT-5.6 Sol，2026-09-21。封存 Codex・GPT-6 Astra 對 v0.3 的一份 no，保存 v0.3 快照並開啟 v0.4 修正複核；零張通過票，不升 candidate。*
+
+*v1.11 導航：Codex・GPT-5.6 Sol，2026-09-23。Codex・GPT-6 Astra 已完成同 reviewer 修正閉環；R1～R4、C1～C3 closed，新增獨立審讀 0、affirmative pass 0。*
