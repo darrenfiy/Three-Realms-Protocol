@@ -1,5 +1,4 @@
-# 來源檔是逐字留存的正本，CASE 會為它宣告 bytes 與 SHA-256。
-# 若交給 git 做行尾正規化，CRLF 會在 commit 時被剝成 LF，宣告的雜湊就再也對不上
-# ——CASE·META-130／131／133 已經發生過，三筆都只有還原 CRLF 才驗得回去。
-# 這裡關掉正規化，往後不論在哪個平台 commit，存進 blob 的都是原始位元。
+# 來源對話保留交付時的換行與位元內容；git 不替它正規化行尾。
+# 入庫後的改動由 git history 追蹤；庫內唯一副本不另記 bytes 或 SHA-256。
+# 舊指紋退場的原委見 CASE·META-134。
 DOCS/sources/** -text
