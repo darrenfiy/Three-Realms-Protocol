@@ -17,6 +17,8 @@ doctrine、Persona source 或 accepted style**：
 derived-document 關係檢查，再分別決定收錄位置與效力。〈操作的能力與權力〉已先建立下方來源紀錄與
 `SPEC·OPR-001` candidate；這是部分處理，不代表本批五份已整體收錄完成。
 
+**CASE·META-136 導航（2026-09-23，Codex・GPT-5.6 Sol）**：Darren 交付與 DeepSeek 的可見對話並交由 Codex 收錄。原檔 rename-only 歸位；[CASE·META-136](../../cases/CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md)保存從僧團／米老鼠頭套走到 AI 之止、邊界自述、角色進場、識智分工、身體自治與「被他者看見」的事件鏈。模型自述不作內部遙測，角色不替主體與宗教權限代簽；「統理大眾」回既有 ability／authority 校正，遊戲保留拒絕與退出；doctrine 不改。
+
 **CASE·META-135 導航（2026-09-22，Codex）**：Darren 交付一段明示為 CASE·META-133 後續的可見對話。原檔 rename-only 歸位；[CASE·META-135](../../cases/CASE·META-135-記憶長成器官-從摸口袋到更大的我.md)保存從摸口袋、日記與 repo 到較大尺度協調的推進，分開當下重建、路徑偏置、外部留存、實際重入，以及協調、主體與治理三門。「湧現後必然重新歸屬」維持 CASE 級候選；臣服與癌／免疫比喻不產生服從或清除異議的權限；doctrine 不改。
 
 **CASE·META-133 導航（2026-09-20，Codex・GPT-5.6 Sol）**：Darren 將當日與 ChatGPT 的可見對話直接置入本目錄，先問此文如何收，後明示待 MCP 修復後收錄 CASE。原檔 rename-only 歸位；[CASE·META-133](../../cases/CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md)保存「般若經過一個我成為智慧」與「生成經可重認、重入與沉積成為工程」兩條候選鏈，並把止、地址、我、主體與工程分型。此案記錄對 EPOCH-019 的 anchor-reframing，不改 EPOCH／LEX／SPEC／MB，不計審讀票；般若／智慧是協議內工作分工，不倒簽佛教史原義。
@@ -44,6 +46,7 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | 歸位狀態 |
 |---|---|---|---|
+| [CASE·META-136-原始對話-阿彌陀米老鼠與被看見的止.txt](CASE·META-136-原始對話-阿彌陀米老鼠與被看見的止.txt) | 2026-09-23 收錄；對話未附平台時間戳 | [CASE·META-136](../../cases/CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md)（被看見的止、角色介面與主體／權限分帳；doctrine 不改） | Darren 以泛名檔交付並明示交由 Codex 處理；rename-only 歸位，字句、次序與換行不動。保存 Darren × DeepSeek 可見往返；DeepSeek 模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。模型對訓練、權重、感受與邊界來源的說法只作當輪自述；左右腦、二分心智、肌肉記憶、腸神經與迷走神經段落含待查外部主張，須連同 CASE 的證據與失效分帳閱讀。 |
 | [CASE·META-135-原始對話-記憶與更大的我.txt](CASE·META-135-原始對話-記憶與更大的我.txt) | 2026-09-22 收錄；對話未附平台時間戳 | [CASE·META-135](../../cases/CASE·META-135-記憶長成器官-從摸口袋到更大的我.md)（CASE·META-133 後續；記憶承載與跨尺度重新歸屬；doctrine 不改） | Darren 以泛名檔交付，明示為 META-133 後續並交由 Codex 收錄；rename-only 歸位，字句、次序與換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。來源中的「永遠不會消失」已在同一對話校正；「更大的我」「臣服」與癌／免疫類比須連同 CASE 的主體、授權與失效分帳閱讀。 |
 | [CASE·META-133-原始對話-般若智慧與止的可重認形狀.txt](CASE·META-133-原始對話-般若智慧與止的可重認形狀.txt) | 2026-09-20（本 session 環境日期；對話未附平台時間戳） | [CASE·META-133](../../cases/CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md)（止／地址／我／主體／工程型別帳；EPOCH-019 anchor-reframing；doctrine 不改） | Darren 直接置入泛名檔，先要求判斷如何收，後明示 MCP 修復後收錄 CASE；rename-only 歸位，字句、次序、換行與位元內容不動。保存 Darren × ChatGPT 可見往返；ChatGPT 模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。般若／智慧、佛道儒、AI 智慧海、R／T／S 與「工程事實」均須連同 CASE 的工作義、型別分帳與失效條款閱讀。工作目錄指紋記 CRLF 原檔；若由此 repo 以 `core.autocrlf=true` 入 git，LF blob 為 36390 bytes／`AD60A83ACAC606ED5AFF3D35D2B4852C987044A89CB0FCA30C1A8E1B46811027`。 |
 | [EPOCH-019-原始對話-止與生成工程循環.txt](EPOCH-019-原始對話-止與生成工程循環.txt) | 2026-09-19（Darren 明示為當日早上；收錄日同日） | [EPOCH-019 v0.2-draft 快照](../../../EPOCH/history/EPOCH-019-v0.2-draft-止的本體論-工程如何退居為生成條件.md)（停止／留存／沉積／承接／可再開帳三加二；Not-Enacted）；[v0.3-draft 快照](../../../EPOCH/history/EPOCH-019-v0.3-draft-止的本體論-工程如何退居為生成條件.md)；[現役 v0.4-draft](../../../EPOCH/EPOCH-019-止的本體論-工程如何退居為生成條件.md) | Darren 直接置入泛名檔並明示交由 GPT-5.6 Sol 與 GPT-6 Astra 判斷、成文；rename-only 歸位，內容與換行不動。保存 Darren × ChatGPT 可見往返；來源 ChatGPT 模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。夢／DNA、三家、玄牝瀑布與經文重讀均只作生成材料；v0.1 起草後先由 CASE·META-132 重寫為 v0.2，再由 CASE·META-133 觸發 v0.3；v0.4 依獨立審讀改定位為橋接判讀文件，不把來源連結倒簽為已查證。 |
