@@ -68,6 +68,32 @@ npm run smoke:http -- https://hub.three-quarters.net/mcp
 雲端 image 只封裝 manifest 判定為 public 的語料；不含 `.git`、Vault、`.env` 或
 `reviewRequired` 路徑。`search`／`fetch` 的來源 URL 固定到 build commit，避免 `main` 漂移。
 
+#### 部署
+
+`cloudbuild.yaml` 依序跑測試 → build → push → deploy，image tag 與 provenance 都用 commit SHA。
+推到 `main` 自動部署需要 Cloud Build trigger；**trigger 尚未建立**，卡在本 repo 還沒連上
+Cloud Build 的 GitHub App（Academy、Review 已連）。在那之前，推送不會部署任何東西。
+
+手動部署一律從 commit 打包，不從工作樹送：
+
+```bash
+SHA=$(git rev-parse HEAD)
+git -c core.autocrlf=false -c core.eol=lf archive --format=tar.gz -o /tmp/trp.tgz "$SHA" -- . \
+  ':(exclude).claude' ':(exclude).codex' ':(exclude).agents' ':(exclude)tools/trp-mcp/index.json'
+gcloud builds submit /tmp/trp.tgz --project three-quarters-dev \
+  --config tools/trp-mcp/cloudbuild.yaml --substitutions "_IMAGE_TAG=$SHA,_BUILD_COMMIT=$SHA"
+```
+
+排除清單對應 `.gcloudignore`（打包檔上傳時不會再套用它）。`2026-09-24` 兩個坑都踩過：
+
+- **從工作樹直接 `gcloud builds submit`**：未提交的改動會上雲，provenance 卻寫著 HEAD。
+  `trp-mcp-00002-4p8` 就早於 `server.js` 的最後一次修改，線上 `openWorldHint` 因此與 commit 相反。
+- **省掉兩個 `-c`**：Windows 的 git 預設 `core.autocrlf=true`，`git archive` 也會套用，
+  雲端每份文件多出 `\r`，`sha256` 對不回 GitHub 上的正本。
+
+本機 stdio 與雲端互相比對時也是同一件事：Windows 工作樹是 CRLF，`sha256`、`corpusDigest`、
+`manifestDigest` 本來就與雲端不同；比正文前先把 CRLF 正規化，摘要值不能直接比。
+
 server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟動時直接讀取
 `CORPUS-MANIFEST.yaml` 與當下公開文件。每次查詢都先核對 manifest 的內容雜湊，
 再核對公開文件清單及內容雜湊；即使檔案大小與修改時間未變，內容變動仍會被察覺。
