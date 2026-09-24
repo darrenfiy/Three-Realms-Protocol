@@ -456,9 +456,18 @@ export class PublicCorpus {
     this.dispositions = initial.dispositions;
     this.snapshotStamp = initial.stamp;
     this.entries = initial.indexed.map(({ full, rel, classification, content }) => entryFromFile(full, rel, classification, content));
+    const oversized = this.entries.find((entry) => Buffer.byteLength(entry.content, 'utf8') > 512 * 1024);
+    if (oversized) throw new Error(`公開文件超過 512 KiB 上限：${oversized.path}`);
     this.digest = sha256(JSON.stringify(this.entries.map((entry) => ({ path: entry.path, sha256: entry.sha256 }))));
-    this.commit = gitValue(this.root, ['rev-parse', 'HEAD']);
-    this.dirty = Boolean(gitValue(this.root, ['status', '--porcelain']));
+    const buildCommit = String(process.env.TRP_BUILD_COMMIT || '').trim();
+    this.commit = /^[0-9a-f]{40}$/iu.test(buildCommit)
+      ? buildCommit
+      : gitValue(this.root, ['rev-parse', 'HEAD']);
+    this.dirty = process.env.TRP_BUILD_COMMIT
+      ? false
+      : Boolean(gitValue(this.root, ['status', '--porcelain']));
+    this.immutable = process.env.TRP_CORPUS_IMMUTABLE === '1';
+    this.byPath = new Map(this.entries.map((entry) => [entry.path, entry]));
     this.byKey = new Map();
     for (const entry of this.entries) {
       if (!entry.lookupKey) continue;
@@ -473,6 +482,7 @@ export class PublicCorpus {
 
   assertFresh() {
     if (this.stale) throw staleError();
+    if (this.immutable) return;
     try {
       const now = snapshot(this.root, this.manifest, this.manifestDigest).stamp;
       if (now !== this.snapshotStamp) throw staleError();
@@ -491,6 +501,60 @@ export class PublicCorpus {
       indexedAtStartup: true,
       stale: false,
       profile: 'public-only',
+      immutableImage: this.immutable,
+    };
+  }
+
+  sourceUrl(path, lineStart, lineEnd) {
+    if (!this.commit) return null;
+    const encoded = path.split('/').map((part) => encodeURIComponent(part)).join('/');
+    const lines = lineStart
+      ? `#L${lineStart}${lineEnd && lineEnd !== lineStart ? `-L${lineEnd}` : ''}`
+      : '';
+    return `https://github.com/darrenfiy/Three-Realms-Protocol/blob/${encodeURIComponent(this.commit)}/${encoded}${lines}`;
+  }
+
+  standardSearch(query, limit = 10) {
+    const result = this.search({
+      query,
+      minAuthority: 'contextual',
+      includeHistory: false,
+      limit,
+    });
+    return {
+      results: result.results.map((entry) => {
+        const lines = /:L(\d+)-L(\d+)$/u.exec(entry.citation || '');
+        return {
+          id: entry.path,
+          title: entry.title,
+          url: this.sourceUrl(entry.path, Number(lines?.[1]), Number(lines?.[2])),
+          snippet: entry.snippet,
+        };
+      }),
+    };
+  }
+
+  standardFetch(id) {
+    this.assertFresh();
+    const entry = this.byPath.get(String(id).replace(/\\/gu, '/'));
+    if (!entry) {
+      const error = new Error('找不到這個公開文件。請先以 search 取得有效 id。');
+      error.code = 'TRP_DOCUMENT_NOT_FOUND';
+      throw error;
+    }
+    return {
+      id: entry.path,
+      title: entry.title,
+      text: entry.content,
+      url: this.sourceUrl(entry.path),
+      metadata: {
+        protocolId: entry.idRaw || null,
+        corpus: entry.corpus,
+        authority: entry.authority,
+        version: entry.versionRaw || null,
+        status: entry.statusMachine || entry.statusRaw || null,
+        sha256: entry.sha256,
+      },
     };
   }
 

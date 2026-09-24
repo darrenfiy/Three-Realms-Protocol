@@ -8,7 +8,7 @@
 
 | 檔案 | 說明 |
 |---|---|
-| `DESIGN.md` | MCP 設計與決策紀錄（`v0.8`） |
+| `DESIGN.md` | MCP 設計與決策紀錄（`v0.9`） |
 | `normalize.py` | Phase 0 語料正規化器；對協議檔案零寫入 |
 | `REPORT.md` | 由正規化器產生的覆蓋率與 finding 報告 |
 | `index.json` | Phase 0 派生索引；已 gitignore，可由任一 commit 重建 |
@@ -18,8 +18,10 @@
 | `test_crosscheck.py` | crosscheck 的正規化、分流、離開碼與非 ASCII 輸出回歸測試 |
 | `src/launch.js` | `.mcp.json` 的進入點；先確保相依就緒再動態載入 server |
 | `src/ensure-deps.js` | 依 lockfile 雜湊判斷相依是否就緒，必要時 `npm ci`；launcher 與 SessionStart hook 共用 |
-| `src/server.js` | 本機 stdio MCP server；唯讀、public-only、七個工具 |
+| `src/server.js` | stdio 與 HTTP 共用的唯讀、public-only MCP server；九個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
+| `src/http.js` | 雲端 Streamable HTTP transport（`/mcp`、`/healthz`） |
+| `Dockerfile` / `cloudbuild.yaml` | public-only image 與 Cloud Run 部署設定 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
 ## 啟動 MCP server
@@ -48,13 +50,31 @@ npm start
 `npm ci`（輸出一律走 stderr，不污染 stdout 的 JSON-RPC 通道），再動態載入 server；
 相依已就緒時只多一次雜湊比對。要繞過這層仍可直接 `node src/server.js`。
 
+### 公開雲端入口
+
+正式端點是：
+
+```text
+https://hub.three-quarters.net/mcp
+```
+
+它是公開、匿名、唯讀的 Streamable HTTP MCP，不需要 OAuth 或 API key。Cloud Run origin
+採 internal ingress，外部 client 一律使用上面的 Hub 網址。可用官方 MCP client 做 smoke test：
+
+```bash
+npm run smoke:http -- https://hub.three-quarters.net/mcp
+```
+
+雲端 image 只封裝 manifest 判定為 public 的語料；不含 `.git`、Vault、`.env` 或
+`reviewRequired` 路徑。`search`／`fetch` 的來源 URL 固定到 build commit，避免 `main` 漂移。
+
 server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟動時直接讀取
 `CORPUS-MANIFEST.yaml` 與當下公開文件。每次查詢都先核對 manifest 的內容雜湊，
 再核對公開文件清單及內容雜湊；即使檔案大小與修改時間未變，內容變動仍會被察覺。
 公開語料或治理規則改變、刪除或無法驗證時，會以 `STALE_CORPUS` 拒答，
 重啟後才重新索引。已偵測的變動即使還原，也必須重啟。
 
-### 七個唯讀工具
+### 九個唯讀工具
 
 | 工具 | 用途 |
 |---|---|
@@ -65,13 +85,15 @@ server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟
 | `trp_pending` | 列 candidate、公開 review ledger 或 unattended 機械訊號 |
 | `trp_manifest` | 回傳實際執行的 allowlist、authority、拒絕區與 provenance |
 | `trp_consistency` | 導航連結寫的版本與目標實際宣告的版本是否相符；分活導航／混合／記錄三層 |
+| `search` | MCP 慣例的精簡全文搜尋；結果 id 是唯一 repo-relative path |
+| `fetch` | 依 `search` 回傳的 id 取回完整公開文件與固定 commit 的來源 URL |
 
 `trp_consistency` 只掃公開索引。`reviewRequired` 路徑既不會被當成來源，也不會被當成目標——這不是額外防守，是因為它們從未被載入。因此**該範圍內沒有命中，不代表那裡沒有問題**；
 非公開部分請用本機的 `crosscheck.py`。兩者的分層規則相同，涵蓋範圍不同。
 版本比對與 `trp_resolve` 採同一契約：未帶後綴的 `v1.4` 可指向該基版；
 帶後綴的 `v1.4-candidate` 則必須完整相符，不把 draft、seed、candidate 或正式版混為一談。
 
-所有工具都標示 MCP `readOnlyHint`；沒有寫入工具，也沒有讓呼叫者打開
+所有工具都標示 MCP `readOnlyHint`，且固定 corpus 標示 `openWorldHint: false`；沒有寫入工具，也沒有讓呼叫者打開
 `reviewRequired` 的參數。文件正文以不可信資料回傳，並附路徑／行號、commit
 與 corpus digest；查不到是合法結果，不補寫答案。
 

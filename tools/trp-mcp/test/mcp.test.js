@@ -11,7 +11,7 @@ import { document, fixture } from './support/fixture.js';
 
 const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 
-test('official MCP client can list and call all seven read-only tools', async () => {
+test('official MCP client can list and call all nine read-only tools', async () => {
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [join(packageRoot, 'src', 'server.js')],
@@ -24,7 +24,7 @@ test('official MCP client can list and call all seven read-only tools', async ()
     const listed = await client.listTools();
     assert.deepEqual(
       listed.tools.map((tool) => tool.name).sort(),
-      ['trp_consistency', 'trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
+      ['fetch', 'search', 'trp_consistency', 'trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
     );
     assert.ok(listed.tools.every((tool) => tool.annotations?.readOnlyHint === true));
     const searchSchema = listed.tools.find((tool) => tool.name === 'trp_search').inputSchema;
@@ -39,6 +39,16 @@ test('official MCP client can list and call all seven read-only tools', async ()
     // 但 server 與索引器一旦不同調，仍然立刻失敗。
     assert.equal(manifest.structuredContent.counts.indexed,
       new PublicCorpus(findRepoRoot()).entries.length);
+
+    const standardSearch = await client.callTool({ name: 'search', arguments: { query: '健康' } });
+    assert.ok(standardSearch.structuredContent.results.length > 0);
+    assert.match(standardSearch.structuredContent.results[0].id, /\.md$/u);
+    const fetched = await client.callTool({
+      name: 'fetch',
+      arguments: { id: standardSearch.structuredContent.results[0].id },
+    });
+    assert.equal(fetched.structuredContent.id, standardSearch.structuredContent.results[0].id);
+    assert.ok(fetched.structuredContent.text.length > 0);
 
     const resolution = await client.callTool({ name: 'trp_resolve', arguments: { id: 'LEX·007' } });
     assert.equal(resolution.isError, undefined);
@@ -87,6 +97,7 @@ test('MCP rejects invalid inputs, withholds private data, and reports stale erro
       ['trp_resolve', { id: 'SPEC-001' }], ['trp_search', { query: 'Initial' }],
       ['trp_current', { id_or_topic: 'SPEC-001' }], ['trp_lex', { term: 'health' }],
       ['trp_pending', {}], ['trp_manifest', {}], ['trp_consistency', {}],
+      ['search', { query: 'Initial' }], ['fetch', { id: 'SPEC/SPEC-001.md' }],
     ]) {
       const result = await client.callTool({ name, arguments: args });
       assert.equal(result.isError, true, name);

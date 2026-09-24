@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 狀態 | `v0.8` · Phase 0–2 已實作 · 本機唯讀 public-only |
+| 狀態 | `v0.9` · Phase 0–3 已實作 · 本機與公開雲端皆為唯讀 public-only |
 | 日期 | 2026-09-16 |
 | 起草 | 樑（Claude Code・Opus 5） |
 | 審讀修正 | Codex・GPT-5.6 Sol（v0.4–v0.5）；GPT-6 Astra（v0.6）；兩者互審（v0.7） |
@@ -297,7 +297,7 @@ manifest 已宣告 `treatCorpusAsUntrustedData: true`。
 
 ---
 
-## 3. 工具面（刻意窄，6 個）
+## 3. 工具面（領域工具刻意窄，另加標準發現工具）
 
 ### 3.1 `trp_resolve`
 
@@ -570,7 +570,8 @@ DOCS 的紀錄類詞彙列為觀測，不算缺陷。
 | **0c** ✅ | id 安全補洞：156 份；2 份刻意不猜 | 0a | **是** |
 | **0d** | 27 則 finding 的處理（其中 9 則涉及語義治理） | 0c | **是** |
 | **1** ✅ | 啟動時依 manifest 建立記憶體索引，附 SHA／digest／stale 拒答 | 0 | 是（可作本機查詢核心） |
-| **2** ✅ | MCP server，本機 stdio、唯讀、public-only、6 工具 | 1 | — |
+| **2** ✅ | MCP server，本機 stdio、唯讀、public-only、7 個領域工具 | 1 | — |
+| **3** ✅ | Streamable HTTP、標準 `search`／`fetch`、Cloud Run internal origin 與 Hub 公開入口 | 2 | — |
 | **3** | 評估語義檢索 | 2 + 實測語料 | — |
 
 **Phase 0b 已執行，但只做了無損的一半。**
@@ -662,7 +663,13 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 **折衷建議**：Phase 2 先做本機 stdio 驗證形狀；
 遠端獨立成 Phase 4，並先取得 Q2 的裁定。
 
-**2026-09-15 決策：採用本機 stdio。** 不開 port、不做遠端服務。
+**2026-09-15 決策：採用本機 stdio。** 當時不開 port、不做遠端服務。
+
+**2026-09-24 決策：遠端服務已另案接受，前述限制被取代但保留為歷史。**
+正式方向是公開、匿名、唯讀的 Streamable HTTP MCP；本機 stdio 繼續保留。
+跨 repo 邊界、部署形狀、護欄與回滾見 Control-Room：
+`PM/DECISIONS/2026-09-24-trp-mcp-public-cloud.md` 與
+`PM/BLUEPRINTS/trp-mcp-public-cloud.md`。
 
 ---
 
@@ -678,6 +685,9 @@ MCP 要單一 profile（嚴守公開 allowlist），還是分
 一致性測試，確保切換期間的回答邊界不變。
 
 **目前狀態：延後。** 本次不更動學苑知客室；先讓本機 MCP 實測穩定。
+
+**2026-09-24 複核：仍延後。** 公開 MCP 上雲不等於 Hub 知客室遷移；本輪只讓 Hub
+提供 `/mcp` 的透明 transport proxy，不把既有知客室改接 MCP。
 
 ### Q5 · 同 ID 多份文件如何表示
 
@@ -701,6 +711,17 @@ v0.5 由 GPT-5.6 Sol 依錨點決策完成本機唯讀 public-only 實作；
 v0.6 由 GPT-6 Astra 審讀修正。
 數據為 2026-09-15 對本 PR 工作樹的實測，輸入指紋見 `REPORT.md`。
 Q5 的語料角色維度仍待錨點裁定；工具在此之前只回傳歧義，不代選。
+
+**改動紀錄（v0.9，2026-09-24）**：
+
+- 新增 stateless Streamable HTTP transport，正式公開入口為
+  `https://hub.three-quarters.net/mcp`；匿名、唯讀、無 OAuth。
+- 新增標準 `search`／`fetch`，總計九個工具；既有七個領域工具與 stdio 工作流保留。
+- Build staging 僅複製 manifest 的 public corpus；image 不含 `.git`、Vault、`.env` 或
+  `reviewRequired` 路徑，且公開文件設 512 KiB build-time 上限。
+- MCP origin 使用 Cloud Run internal ingress；Hub 同 project VPC 提供唯一公開薄代理。
+- GPT-6 Astra 對本版實作做獨立安全複核；staging、Origin、URL、method cleanup、commit
+  provenance、runtime service account 與 build context 問題均已套用修正。
 
 **改動紀錄（v0.8，2026-09-21）**：
 

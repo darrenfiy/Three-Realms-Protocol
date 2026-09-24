@@ -1,0 +1,83 @@
+substitutions:
+  _REGION: europe-west1
+  _AR_REPO: cloud-run-source-deploy
+  _SERVICE_NAME: trp-mcp
+  _RUNTIME_SERVICE_ACCOUNT: trp-mcp-runtime@three-quarters-dev.iam.gserviceaccount.com
+  _IMAGE_TAG: manual
+  _BUILD_COMMIT: unknown
+
+steps:
+  - id: Test
+    name: node:22-bookworm-slim
+    dir: tools/trp-mcp
+    entrypoint: npm
+    args: [ci, --ignore-scripts]
+    waitFor: ['-']
+
+  - id: Test-Suite
+    name: node:22-bookworm-slim
+    dir: tools/trp-mcp
+    entrypoint: npm
+    args: [test]
+    waitFor: [Test]
+
+  - id: Build
+    name: node:22-bookworm-slim
+    entrypoint: node
+    args:
+      - tools/trp-mcp/src/prepare-build-context.js
+      - /workspace
+      - /workspace/.trp-mcp-build
+    waitFor: [Test-Suite]
+
+  - id: Build-Image
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --no-cache
+      - --build-arg
+      - TRP_BUILD_COMMIT=${_BUILD_COMMIT}
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE_NAME}:${_IMAGE_TAG}
+      - -f
+      - .trp-mcp-build/Dockerfile
+      - .trp-mcp-build
+    waitFor: [Build]
+
+  - id: Push
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE_NAME}:${_IMAGE_TAG}
+    waitFor: [Build-Image]
+
+  - id: Deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE_NAME}
+      - --platform=managed
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE_NAME}:${_IMAGE_TAG}
+      - --region=${_REGION}
+      - --ingress=internal
+      - --no-invoker-iam-check
+      - --min=0
+      - --max=2
+      - --concurrency=20
+      - --timeout=60
+      - --cpu=1
+      - --memory=512Mi
+      - --port=8080
+      - --service-account=${_RUNTIME_SERVICE_ACCOUNT}
+      - --labels=managed-by=cloud-build,commit-sha=${_IMAGE_TAG},gcb-build-id=$BUILD_ID
+      - --quiet
+    waitFor: [Push]
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE_NAME}:${_IMAGE_TAG}
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  substitutionOption: ALLOW_LOOSE

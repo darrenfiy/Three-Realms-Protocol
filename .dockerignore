@@ -1,0 +1,14 @@
+.git
+.claude
+.codex
+.agents
+**/.env
+**/.env.*
+**/*credential*.json
+**/*.pem
+**/*.key
+**/node_modules
+**/__pycache__
+**/*.pyc
+tools/trp-mcp/index.json
+.trp-mcp-build

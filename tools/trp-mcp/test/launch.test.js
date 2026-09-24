@@ -25,7 +25,7 @@ function pkgFixture(t, { lockfile = '{"lockfileVersion":3}', stamp = null } = {}
 
 // launcher 存在的唯一理由：相依缺席時 server.js 會在 import 期就死，
 // client 只看得到 CONNECTION_CLOSED。相依就緒時它必須與直接起動完全等價。
-test('launcher serves the same seven read-only tools over stdio', async () => {
+test('launcher serves the same nine read-only tools over stdio', async () => {
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [join(packageRoot, 'src', 'launch.js')],
@@ -38,7 +38,7 @@ test('launcher serves the same seven read-only tools over stdio', async () => {
     const listed = await client.listTools();
     assert.deepEqual(
       listed.tools.map((tool) => tool.name).sort(),
-      ['trp_consistency', 'trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
+      ['fetch', 'search', 'trp_consistency', 'trp_current', 'trp_lex', 'trp_manifest', 'trp_pending', 'trp_resolve', 'trp_search'],
     );
     const manifest = await client.callTool({ name: 'trp_manifest', arguments: {} });
     assert.equal(manifest.isError, undefined);
