@@ -71,10 +71,16 @@ npm run smoke:http -- https://hub.three-quarters.net/mcp
 #### 部署
 
 `cloudbuild.yaml` 依序跑測試 → build → push → deploy，image tag 與 provenance 都用 commit SHA。
-推到 `main` 自動部署需要 Cloud Build trigger；**trigger 尚未建立**，卡在本 repo 還沒連上
-Cloud Build 的 GitHub App（Academy、Review 已連）。在那之前，推送不會部署任何東西。
+**推到 `main` 即自動部署**：Cloud Build trigger `trp-mcp-main`（`three-quarters-dev`，global），
+`_IMAGE_TAG`／`_BUILD_COMMIT` 帶 `$COMMIT_SHA`。不設路徑篩選，因為公開語料散在全庫；
+測試不過就不部署。手動重跑：
 
-手動部署一律從 commit 打包，不從工作樹送：
+```bash
+gcloud builds triggers run trp-mcp-main --project three-quarters-dev --branch main
+```
+
+非得從本機送時（例如 trigger 故障），一律從**已推送的** commit 打包，不從工作樹送；
+未推送的 commit 會讓來源 URL 在 GitHub 上找不到：
 
 ```bash
 SHA=$(git rev-parse HEAD)
