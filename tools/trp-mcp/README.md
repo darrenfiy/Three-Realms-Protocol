@@ -131,6 +131,14 @@ server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟
 
 ### 查詢結果的讀法
 
+- **署名與 authority 是兩件事。** `attribution` 只照錄文件開頭 YAML metadata
+  已明示的 `author(s)`、`contributor(s)`、`participant(s)` 與 `speaker(s)`；沒寫就回傳
+  `status: "unknown"` 與空清單，不從 Git 作者、正文自稱或文風推測。單數、複數及
+  現有中文欄名皆可照錄；`evidence.headerShape` 與 `declaredFields` 指出實際讀到的標頭形狀與欄位。
+  只有文件最前的 frontmatter，或前面至多只有 Markdown 標題的 YAML 區塊算標頭；正文範例不會被當成署名。
+  物件等無法無損照錄的值保留 unknown，並在 `warnings` 標明，不自行改寫成人名。
+  這些欄位是來源證據，不自動表示版權、授權、真實身分或治理 authority。新文件需要署名時，
+  直接在開頭 YAML 寫明對應欄位；舊文件沒有可核對證據時保留 unknown，不為了補齊而倒填。
 - **版本保留完整原文。** `version` 不會把 `v1.4-candidate` 縮成 `v1.4`；
   數字部分另列 `versionMachine`。`trp_resolve` 的 `version: "v1.4"` 可查該基礎版本，
   `version: "v1.4-candidate"` 則須與完整宣告一致；不存在的後綴不會偷偷換成別版。

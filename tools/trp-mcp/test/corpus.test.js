@@ -57,6 +57,132 @@ test('review-required paths fail closed before general DOCS matching', () => {
   assert.equal(classifyPath('DOCS/LNS-A01/example.md', corpus.manifest).disposition, 'review-required');
 });
 
+test('attribution preserves only explicit opening metadata across search, fetch, and resolve', (t) => {
+  const { root: fixtureRoot, write } = fixture(t);
+  write('SPEC/SPEC-101.md', `---
+id: SPEC-101
+title: Frontmatter attribution
+status: Active
+author: Darren
+contributors: [Claude Code, DeepSeek]
+speakers:
+  - FoZone
+---
+
+Attribution evidence token.
+`);
+  write('LEX/LEX-102.md', `# LEX-102
+
+\`\`\`yaml
+id: LEX-102
+title: Fenced attribution
+status: Active
+authors:
+  - Protocol Body
+participants: [Darren, FoZone]
+\`\`\`
+
+Fenced attribution evidence token.
+`);
+  write('SPEC/SPEC-103.md', `---
+id: SPEC-103
+title: Unknown attribution
+status: Active
+---
+
+Body attribution evidence token.
+
+authors: A body claim must not become metadata
+`);
+
+  const corpus = new PublicCorpus(fixtureRoot);
+  const searched = corpus.search({ query: 'Attribution evidence token', limit: 10 }).results;
+  const frontmatter = searched.find((entry) => entry.path === 'SPEC/SPEC-101.md');
+  assert.deepEqual(frontmatter.attribution, {
+    status: 'declared',
+    authors: ['Darren'],
+    contributors: ['Claude Code', 'DeepSeek'],
+    participants: [],
+    speakers: ['FoZone'],
+    evidence: { headerShape: 'yaml_fm', declaredFields: ['author', 'contributors', 'speakers'] },
+    warnings: [],
+  });
+
+  const fetched = corpus.standardFetch('LEX/LEX-102.md');
+  assert.deepEqual(fetched.metadata.attribution, {
+    status: 'declared',
+    authors: ['Protocol Body'],
+    contributors: [],
+    participants: ['Darren', 'FoZone'],
+    speakers: [],
+    evidence: { headerShape: 'yaml_block', declaredFields: ['authors', 'participants'] },
+    warnings: [],
+  });
+
+  const standardResult = corpus.standardSearch('Body attribution evidence token').results[0];
+  assert.equal(standardResult.attribution.status, 'unknown');
+  assert.deepEqual(standardResult.attribution.authors, []);
+  assert.deepEqual(standardResult.attribution.evidence,
+    { headerShape: 'yaml_fm', declaredFields: [] });
+
+  const resolved = corpus.resolve('SPEC-103');
+  assert.equal(resolved.documents[0].attribution.status, 'unknown');
+  assert.equal(JSON.stringify(resolved.documents[0].attribution).includes('body claim'), false);
+});
+
+test('attribution rejects body YAML examples and unsupported objects while accepting opening Chinese fields', (t) => {
+  const { root: fixtureRoot, write } = fixture(t);
+  write('SPEC/SPEC-104.md', `# Guide
+
+這是正文教學範例。
+
+\`\`\`yaml
+id: SPEC-104
+title: Body example
+status: Active
+authors: [Example Person]
+\`\`\`
+`);
+  write('SPEC/SPEC-105.md', `# 開頭署名
+
+\`\`\`yaml
+id: SPEC-105
+title: Chinese attribution
+作者: 佛佐
+貢獻者: [Darren, Claude Code]
+\`\`\`
+
+可公開正文。
+`);
+  write('SPEC/SPEC-106.md', `---
+id: SPEC-106
+title: Structured attribution
+status: Active
+authors:
+  name: Must not be flattened
+---
+
+Structured value.
+`);
+
+  const corpus = new PublicCorpus(fixtureRoot);
+  assert.equal(corpus.standardFetch('SPEC/SPEC-104.md').metadata.attribution.status, 'unknown');
+  assert.deepEqual(corpus.standardFetch('SPEC/SPEC-104.md').metadata.attribution.evidence,
+    { headerShape: 'none', declaredFields: [] });
+
+  const chinese = corpus.resolve('SPEC-105').documents[0].attribution;
+  assert.equal(chinese.status, 'declared');
+  assert.deepEqual(chinese.authors, ['佛佐']);
+  assert.deepEqual(chinese.contributors, ['Darren', 'Claude Code']);
+  assert.deepEqual(chinese.evidence,
+    { headerShape: 'yaml_block', declaredFields: ['作者', '貢獻者'] });
+
+  const structured = corpus.resolve('SPEC-106').documents[0].attribution;
+  assert.equal(structured.status, 'unknown');
+  assert.deepEqual(structured.authors, []);
+  assert.deepEqual(structured.warnings, ['unsupported-attribution-value:authors']);
+});
+
 test('ambiguous live IDs are returned together, never auto-selected', () => {
   const corpus = new PublicCorpus(root);
   const result = corpus.resolve('MB·008');

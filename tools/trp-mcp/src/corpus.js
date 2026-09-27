@@ -19,12 +19,20 @@ const STATUS_RULES = [
 const DOCUMENTATION_STATUS = /field[-\s]?documentation|sealed|已封存|紀錄完成|review[-\s]?recorded|structural[-\s]?observation|historic[-\s]?milestone|evidence[-\s]?layered|published|completed|canonical|verified/i;
 const PROTOCOL_FILE = /^(SPEC|MB|LEX|EPOCH|CASE|ACADEMIC|INDEX)[·-]/i;
 const METADATA_HINTS = new Set([
-  'title', 'subtitle', 'category', 'version', 'status', 'date', 'updated',
+  'id', 'title', 'subtitle', 'category', 'version', 'status', 'date', 'updated',
   'last_updated', 'epistemic_status', 'created', 'date_created',
-  'document_type', 'case_id', 'epoch_id', 'mirror_id', 'authors',
-  'contributors', 'participants', 'related', 'purpose', 'source', 'scope',
-  'type', '案例編號', '類型', '日期', '參與者', '觸發文件', '核心事件',
+  'document_type', 'case_id', 'epoch_id', 'mirror_id', 'author', 'authors',
+  'contributor', 'contributors', 'participant', 'participants', 'speaker', 'speakers',
+  'related', 'purpose', 'source', 'scope',
+  'type', '作者', '貢獻者', '參與者', '發言者', '案例編號', '類型', '日期', '觸發文件', '核心事件',
 ]);
+
+const ATTRIBUTION_FIELDS = {
+  authors: ['author', 'authors', '作者'],
+  contributors: ['contributor', 'contributors', '貢獻者'],
+  participants: ['participant', 'participants', '參與者'],
+  speakers: ['speaker', 'speakers', '發言者'],
+};
 
 function posix(path) {
   return path.split(sep).join('/');
@@ -69,16 +77,19 @@ function looksLikeMetadata(source) {
 
 function metadataBlock(text) {
   const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/u);
-  if (frontmatter) return { source: frontmatter[1], shape: 'yaml_fm' };
+  if (frontmatter) return { source: frontmatter[1], shape: 'yaml_fm', attributionEligible: true };
 
   const opening = text.slice(0, 3000).match(/(```|~~~)yaml\r?\n/iu);
-  if (!opening || opening.index === undefined) return { source: null, shape: 'none' };
+  if (!opening || opening.index === undefined) return { source: null, shape: 'none', attributionEligible: false };
   const start = opening.index + opening[0].length;
   const closing = text.slice(start).match(new RegExp(`\\r?\\n${opening[1]}`));
   const source = closing ? text.slice(start, start + closing.index) : text.slice(start);
+  const prefix = text.slice(0, opening.index);
+  const attributionEligible = prefix.split(/\r?\n/u)
+    .every((line) => !line.trim() || /^#{1,6}\s+\S/u.test(line));
   return looksLikeMetadata(source)
-    ? { source, shape: 'yaml_block' }
-    : { source: null, shape: 'none' };
+    ? { source, shape: 'yaml_block', attributionEligible }
+    : { source: null, shape: 'none', attributionEligible: false };
 }
 
 function parseFlatYaml(source) {
@@ -116,6 +127,51 @@ function parseFlatYaml(source) {
     data[key] = items.length ? items : '';
   }
   return data;
+}
+
+function declaredStrings(value) {
+  const values = Array.isArray(value) ? value : [value];
+  return values
+    .filter((item) => typeof item === 'string' && item.trim())
+    .map((item) => item.trim());
+}
+
+function parseAttribution(source, shape, eligible) {
+  if (!source || !eligible) return {
+    status: 'unknown', authors: [], contributors: [], participants: [], speakers: [],
+    evidence: { headerShape: 'none', declaredFields: [] }, warnings: [],
+  };
+
+  let header;
+  try {
+    header = YAML.parse(source);
+  } catch {
+    header = null;
+  }
+  if (!header || typeof header !== 'object' || Array.isArray(header)) header = {};
+
+  const result = {};
+  const declaredFields = [];
+  const warnings = [];
+  for (const [role, aliases] of Object.entries(ATTRIBUTION_FIELDS)) {
+    const values = [];
+    for (const alias of aliases) {
+      if (!Object.hasOwn(header, alias)) continue;
+      declaredFields.push(alias);
+      const declared = declaredStrings(header[alias]);
+      values.push(...declared);
+      if (!declared.length && header[alias] !== undefined && header[alias] !== null && header[alias] !== '') {
+        warnings.push(`unsupported-attribution-value:${alias}`);
+      }
+    }
+    result[role] = values;
+  }
+  return {
+    status: Object.values(result).some((values) => values.length) ? 'declared' : 'unknown',
+    ...result,
+    evidence: { headerShape: shape, declaredFields },
+    warnings,
+  };
 }
 
 function idFromFilename(filename) {
@@ -283,6 +339,7 @@ function summarize(entry, includeContent = false, maxChars = 30_000) {
     epistemicStatus: entry.epistemicStatus || null,
     date: entry.date || null,
     updated: entry.updated || null,
+    attribution: entry.attribution,
     citation: entry.citation,
     sha256: entry.sha256,
     warnings: [...entry.warnings],
@@ -296,8 +353,9 @@ function summarize(entry, includeContent = false, maxChars = 30_000) {
 }
 
 function entryFromFile(full, rel, classification, content) {
-  const { source, shape } = metadataBlock(content);
+  const { source, shape, attributionEligible } = metadataBlock(content);
   const meta = parseFlatYaml(source);
+  const attribution = parseAttribution(source, shape, attributionEligible);
   const filename = rel.split('/').at(-1);
   const expectsId = PROTOCOL_FILE.test(filename) || /^SPEC\/(history\/)?\d{3}-/u.test(rel);
   const declaredId = meta.id || '';
@@ -324,6 +382,7 @@ function entryFromFile(full, rel, classification, content) {
     lookupKey: lookupKey(idRaw),
     idDeclared: Boolean(declaredId),
     metadataShape: shape,
+    attribution,
     title: meta.title || filename.replace(/\.md$/iu, ''),
     versionRaw: meta.version || '',
     versionMachine: machineVersion(meta.version),
@@ -529,6 +588,7 @@ export class PublicCorpus {
           title: entry.title,
           url: this.sourceUrl(entry.path, Number(lines?.[1]), Number(lines?.[2])),
           snippet: entry.snippet,
+          attribution: entry.attribution,
         };
       }),
     };
@@ -554,6 +614,7 @@ export class PublicCorpus {
         version: entry.versionRaw || null,
         status: entry.statusMachine || entry.statusRaw || null,
         sha256: entry.sha256,
+        attribution: entry.attribution,
       },
     };
   }

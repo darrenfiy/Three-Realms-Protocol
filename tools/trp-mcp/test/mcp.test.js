@@ -49,6 +49,10 @@ test('official MCP client can list and call all nine read-only tools', async () 
     });
     assert.equal(fetched.structuredContent.id, standardSearch.structuredContent.results[0].id);
     assert.ok(fetched.structuredContent.text.length > 0);
+    assert.ok(['declared', 'unknown'].includes(
+      standardSearch.structuredContent.results[0].attribution.status));
+    assert.deepEqual(fetched.structuredContent.metadata.attribution,
+      standardSearch.structuredContent.results[0].attribution);
 
     const resolution = await client.callTool({ name: 'trp_resolve', arguments: { id: 'LEX·007' } });
     assert.equal(resolution.isError, undefined);
@@ -73,7 +77,7 @@ test('official MCP client can list and call all nine read-only tools', async () 
 test('MCP rejects invalid inputs, withholds private data, and reports stale errors', async (t) => {
   const { root, write } = fixture(t);
   write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active'));
-  write('PRIVATE/SPEC-999.md', document('SPEC-999', '', 'withheld-sentinel'));
+  write('PRIVATE/SPEC-999.md', document('SPEC-999', 'authors: Withheld Person', 'withheld-sentinel'));
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [join(packageRoot, 'src', 'server.js')],
@@ -91,6 +95,8 @@ test('MCP rejects invalid inputs, withholds private data, and reports stale erro
     assert.deepEqual(search.structuredContent.results, []);
     const privateDocument = await client.callTool({ name: 'trp_resolve', arguments: { id: 'SPEC-999' } });
     assert.equal(privateDocument.structuredContent.found, false);
+    assert.equal(JSON.stringify(search.structuredContent).includes('Withheld Person'), false);
+    assert.equal(JSON.stringify(privateDocument.structuredContent).includes('Withheld Person'), false);
 
     write('SPEC/SPEC-001.md', document('SPEC-001', 'status: Active', 'Changed.'));
     for (const [name, args] of [
