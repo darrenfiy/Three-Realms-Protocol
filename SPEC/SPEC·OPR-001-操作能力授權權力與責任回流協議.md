@@ -17,7 +17,7 @@ authors:
 review_inputs:
   - GPT-6 Astra（未完成覆審的 partial finding：保留他者主權；不採稱呼即授權、強制互稱或禁止第一人稱認領）
 origin:
-  - DOCS/sources/conversations/操作的能力與權力.txt
+  - DOCS/sources/conversations/CASE·META-137-原始對話-操作的能力與權力.txt
 related:
   - EPOCH-IV-001（操作的本體論；能力／權限／責任、停止與退出）
   - SPEC·BUD-001（第一人稱佛性認領、公共佛號與權力責任分帳）

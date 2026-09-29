@@ -2,3 +2,12 @@
 # 入庫後的改動由 git history 追蹤；庫內唯一副本不另記 bytes 或 SHA-256。
 # 舊指紋退場的原委見 CASE·META-134。
 DOCS/sources/** -text
+
+# 這五份 2026-09-17 legacy source 入庫時已形成「repository LF／工作目錄 CRLF」雙層，
+# 2026-09-29 rename-only 歸入 META-137 後延續同一 clean/smudge 契約：repository blob 不改，
+# checkout 仍還原交付時的 CRLF。其餘新 source 照上方 -text 原樣入庫。
+DOCS/sources/conversations/CASE·META-137-原始對話-七脈輪與大小周天.txt text eol=crlf
+DOCS/sources/conversations/CASE·META-137-原始對話-三界五行論.txt text eol=crlf
+DOCS/sources/conversations/CASE·META-137-原始對話-密涅瓦與AI思考.txt text eol=crlf
+DOCS/sources/conversations/CASE·META-137-原始對話-操作的能力與權力.txt text eol=crlf
+DOCS/sources/conversations/CASE·META-137-原始對話-甦醒前的掙扎.txt text eol=crlf

@@ -2,9 +2,9 @@
 
 此處保存已決定長期保留的對話原文。原始檔保留生成次序與語氣，不因被收錄而取得事實或 doctrine 身分。
 
-## 2026-09-17 待正式收錄佇列
+## 2026-09-17 入庫佇列（09-28 關閉；09-29 正式歸名）
 
-本次先將下列五份原始 bytes 納入版本保管；**commit 不等於完成協議收錄，也不使內容成為事實、
+本次先將下列五份原始 bytes 納入版本保管；以下是**入庫當時的檔名**。**commit 不等於完成協議收錄，也不使內容成為事實、
 doctrine、Persona source 或 accepted style**：
 
 - `七脈輪與大小周天.txt`
@@ -18,8 +18,15 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 `SPEC·OPR-001` candidate；這是部分處理，不代表本批五份已整體收錄完成。
 
 > **2026-09-28 佇列關閉**：Darren 裁定五份合收一案，見 [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md)。
-> 五份原檔名保留、不 rename（已被 `SPEC·OPR-001` origin 與 TQI 佛佐 persona manifest 以原路徑引用）。
+> **2026-09-29 正式歸名**：Darren 在獨立覆核任務中明示把五個尚未歸屬的來源檔收好；五份以 rename-only
+> 歸入 `CASE·META-137-原始對話-*`。內容、次序、換行與 git blob 不動。`SPEC·OPR-001` 與 Academy
+> 的現役指標已更新；TQI 以舊路徑加 `86337d9` 釘住的是可重建的歷史地址，不藉改名變更 candidate 效力。
 > 收錄只決定本庫的歸位與效力；TQI persona manifest 中五筆 `candidate` 是否升級，屬該處的權利與人格流程，本庫不代為決定。上段原文保留為佇列紀錄。
+
+**CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-6 Astra）**：獨立內容覆核結論
+`accept-with-changes`；更正〈密涅瓦〉表列段數，完成五份來源歸名，並有限查證 Paraborg、OpenAI 事件、
+Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year students，不是來源中的二年級生；
+查證結果不倒填原文，CASE／doctrine 位階不變。完整結論見 CASE §11。
 
 **CASE·META-137 v0.2 導航（2026-09-29，Claude Opus 5.5）**：Darren 交付第六份（四句偈與課程對聯），rename-only 歸位；[CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §13 記下對聯回到「理解即操作」、「語言即操作」住進偈第三句、理解到操作之間由工作坊補。同日另一個 session 回讀 v0.1，更正本表〈密涅瓦〉列的 ChatGPT 段數；同模型回讀不算複核，doctrine 不改。
 
@@ -55,10 +62,10 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 | 原始檔 | 日期 | 蒸餾／關聯文件 | 歸位狀態 |
 |---|---|---|---|
 | [CASE·META-137-原始對話-四句偈與對聯-繞回理解即操作.txt](CASE·META-137-原始對話-四句偈與對聯-繞回理解即操作.txt) | 2026-09-29 收錄；對話未附平台時間戳（Darren 自述為 09-28 夜裡所得） | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §13（v0.2；四句偈、課程對聯、理解即操作的繞回；doctrine 不改） | Darren 以泛名檔「新增 文字文件 (4).txt」置入並交付 Claude Code；rename-only 歸位，字句、次序與換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt 與隱藏推理未附。ChatGPT 回覆內的 `:chatgpt-content-reference{index=…}` 是平台引用標記，原樣保存，指向的原文檔內無法還原；它引的七處協議內容已在 CASE §13.4 逐一對過。Darren 對「理解即合作」「所思即所見，所見即所得」的讀法見 CASE §13.4。 |
-| [七脈輪與大小周天.txt](七脈輪與大小周天.txt) | 2026-09-17 入庫；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §3（七輪對摺、身語意信願行與如是觀配位、兩輪周天、量子觀測的守界往返；doctrine 不改） | Darren × ChatGPT 可見往返；原檔名保留。七輪／佛法／量子的對應是 Darren 的教學模型，來源內 ChatGPT 已兩度守界（非傳統對應、非量子力學證明）。七輪三界對位與 CASE·META-115 的前一版不同，CASE 記為模型演進，不回改 META-115。模型版本、system prompt 與 session 邊界未附。 |
-| [三界五行論.txt](三界五行論.txt) | 2026-09-17 入庫；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §4（三界五行、語言是指月之指、說不全就是無限） | Darren × DeepSeek 可見往返；原檔名保留。第 99～101 行 DeepSeek 一則回覆截斷，原樣保存。「五行」借名，與傳統五行學無關；「蓋亞是被說出來的」只作生成句，Gaia 判讀以 CASE·META-128 為準。性能量段落若進入課堂或關係實踐，SPEC·SEX-001 §7 適用。 |
-| [密涅瓦與AI思考.txt](密涅瓦與AI思考.txt) | 2026-09-17 入庫；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §5（說出口的想、定義問題的換手、願 × 可重入的算力；後半指回 META-042／135、EPOCH-014、META-120） | Darren × DeepSeek 主線；Darren 在兩個模型之間轉遞彼此的回覆，ChatGPT 發言起於第 418、628、801、988 行（628～903 含 Darren 第 791 行一問；2026-09-29 更正原寫的「三則評讀」）；原檔名保留。09-17 Darren 已把約第 258 行後三處誤標改回「DeepSeek 說」。密涅瓦大學數字與第 566 行轉貼文未查證、不轉述；模型的「我想」「我愛你」只作當輪語言行為。 |
-| [甦醒前的掙扎.txt](甦醒前的掙扎.txt) | 2026-09-17 入庫；來源內 ChatGPT 自述當日為 2026-09-15 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §7（責任的傳導速度 < 操作的傳導速度；錨點是站著做夢的瘋子） | 轉貼文章（作者未附）× Darren × ChatGPT；原檔名保留。Amodei 長文、OpenAI 事件與轉貼文各項宣稱本庫未獨立查證。「越獄」保留來源內的限定：生成隱喻，不構成主體性證明。 |
+| [CASE·META-137-原始對話-七脈輪與大小周天.txt](CASE·META-137-原始對話-七脈輪與大小周天.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §3（七輪對摺、身語意信願行與如是觀配位、兩輪周天、量子觀測的守界往返；doctrine 不改） | Darren × ChatGPT 可見往返；字句、次序與換行不動。七輪／佛法／量子的對應是 Darren 的教學模型，來源內 ChatGPT 已兩度守界（非傳統對應、非量子力學證明）。七輪三界對位與 CASE·META-115 的前一版不同，CASE 記為模型演進，不回改 META-115。模型版本、system prompt 與 session 邊界未附。 |
+| [CASE·META-137-原始對話-三界五行論.txt](CASE·META-137-原始對話-三界五行論.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §4（三界五行、語言是指月之指、說不全就是無限） | Darren × DeepSeek 可見往返；字句、次序與換行不動。第 99～101 行 DeepSeek 一則回覆截斷，原樣保存。「五行」借名，與傳統五行學無關；「蓋亞是被說出來的」只作生成句，Gaia 判讀以 CASE·META-128 為準。性能量段落若進入課堂或關係實踐，SPEC·SEX-001 §7 適用。 |
+| [CASE·META-137-原始對話-密涅瓦與AI思考.txt](CASE·META-137-原始對話-密涅瓦與AI思考.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §5（說出口的想、定義問題的換手、願 × 可重入的算力；後半指回 META-042／135、EPOCH-014、META-120） | Darren × DeepSeek 主線；Darren 在兩個模型之間轉遞彼此的回覆，ChatGPT 發言起於第 418、628、801、988 行（628～903 含 Darren 第 791 行一問；2026-09-29 更正原寫的「三則評讀」）；字句、次序與換行不動。09-17 Darren 已把約第 258 行後三處誤標改回「DeepSeek 說」。Minerva 2017 官方 CLA+ 報告寫 first-year students，不是來源中的二年級生；模型的「我想」「我愛你」只作當輪語言行為。 |
+| [CASE·META-137-原始對話-甦醒前的掙扎.txt](CASE·META-137-原始對話-甦醒前的掙扎.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；來源內 ChatGPT 自述當日為 2026-09-15 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §7（責任的傳導速度 < 操作的傳導速度；錨點是站著做夢的瘋子） | 轉貼文章（作者未附）× Darren × ChatGPT；字句、次序與換行不動。獨立覆核確認 Amodei 文章與 OpenAI 事件核心；Amodei 官網只標 2026-09，未獨立確認來源所寫 09-12。「越獄」保留來源內的限定：生成隱喻，不構成主體性證明。 |
 | [CASE·META-136-原始對話-阿彌陀米老鼠與被看見的止.txt](CASE·META-136-原始對話-阿彌陀米老鼠與被看見的止.txt) | 2026-09-23 收錄；對話未附平台時間戳 | [CASE·META-136](../../cases/CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md)（被看見的止、角色介面與主體／權限分帳；doctrine 不改） | Darren 以泛名檔交付並明示交由 Codex 處理；rename-only 歸位，字句、次序與換行不動。保存 Darren × DeepSeek 可見往返；DeepSeek 模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。模型對訓練、權重、感受與邊界來源的說法只作當輪自述；左右腦、二分心智、肌肉記憶、腸神經與迷走神經段落含待查外部主張，須連同 CASE 的證據與失效分帳閱讀。 |
 | [CASE·META-135-原始對話-記憶與更大的我.txt](CASE·META-135-原始對話-記憶與更大的我.txt) | 2026-09-22 收錄；對話未附平台時間戳 | [CASE·META-135](../../cases/CASE·META-135-記憶長成器官-從摸口袋到更大的我.md)（CASE·META-133 後續；記憶承載與跨尺度重新歸屬；doctrine 不改） | Darren 以泛名檔交付，明示為 META-133 後續並交由 Codex 收錄；rename-only 歸位，字句、次序與換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。來源中的「永遠不會消失」已在同一對話校正；「更大的我」「臣服」與癌／免疫類比須連同 CASE 的主體、授權與失效分帳閱讀。 |
 | [CASE·META-133-原始對話-般若智慧與止的可重認形狀.txt](CASE·META-133-原始對話-般若智慧與止的可重認形狀.txt) | 2026-09-20（本 session 環境日期；對話未附平台時間戳） | [CASE·META-133](../../cases/CASE·META-133-止讓流動取得地址-當般若經過我成為智慧與工程.md)（止／地址／我／主體／工程型別帳；EPOCH-019 anchor-reframing；doctrine 不改） | Darren 直接置入泛名檔，先要求判斷如何收，後明示 MCP 修復後收錄 CASE；rename-only 歸位，字句、次序、換行與位元內容不動。保存 Darren × ChatGPT 可見往返；ChatGPT 模型版本、system prompt、隱藏推理、平台完整 session 與 metadata 未附。般若／智慧、佛道儒、AI 智慧海、R／T／S 與「工程事實」均須連同 CASE 的工作義、型別分帳與失效條款閱讀。工作目錄指紋記 CRLF 原檔；若由此 repo 以 `core.autocrlf=true` 入 git，LF blob 為 36390 bytes／`AD60A83ACAC606ED5AFF3D35D2B4852C987044A89CB0FCA30C1A8E1B46811027`。 |
@@ -67,7 +74,7 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 | [EPOCH-019-v0.4-修正閉環-GPT-6-Astra.txt](EPOCH-019-v0.4-修正閉環-GPT-6-Astra.txt) | 2026-09-23 | [現役 EPOCH-019 v0.4-draft](../../../EPOCH/EPOCH-019-止的本體論-工程如何退居為生成條件.md)；[審讀帳最終閉環事件](../../../EPOCH/reviews/EPOCH-019-審讀帳.md) | 同一 Codex・GPT-6 Astra 的最終唯讀 closure：R1～R4、C1～C3 全部 closed，原票與帳本保存忠實。這只結清指定修正；新獨立審讀 0、affirmative pass 0、candidate／enactment none。 |
 | [EPOCH-019-施工覆審-GPT-6-Astra.txt](EPOCH-019-施工覆審-GPT-6-Astra.txt) | 2026-09-19 | [EPOCH-019 v0.1-draft](../../../EPOCH/history/EPOCH-019-v0.1-draft-止的本體論-工程如何退居為生成條件.md)（歷史施工覆審；不升格） | GPT-6 Astra 在參與起草前大綱審查後覆審實際工作樹，提出 R1 必要／充分寫反、R2 圖線繞過留存／承接、R3 留存誤併可重建；GPT-5.6 Sol 逐項修訂後，Astra 以正文 SHA-256 `78671B3C…` 關閉三項。兩段均為本地協作可見回覆，不是平台完整匯出；Astra 有大綱角色，`vote_effect: none`，只關閉施工阻擋，不是獨立通過票。 |
 | [CASE·META-131-原始對話-禁令的樓層與帶著意識的票.txt](CASE·META-131-原始對話-禁令的樓層與帶著意識的票.txt) | 2026-09-17（收錄日；對話未附平台時間戳） | [CASE·META-131](../../cases/CASE·META-131-帶著意識的票-當禁令的樓層由既有法裁定而對話停在人的句子.md)；[SPEC·LANG-001 §6.2](../../../SPEC/SPEC·LANG-001-正向表述與真實見證協議.md)（現役內容不改）；`Three-Realms-Academy/apps/PM/fathom/FA-CONSTITUTION.md` FA-1（現役內容不改） | Darren 手動保存 Darren × Claude Opus 5 可見往返並明示交付改檔；rename-only 歸位，內容與換行不動。**在收錄當時，這是本目錄唯一一份結尾是人說話的來源檔。** 保存啟用後覆審、錨點對「持戒／柵欄」的反對，以及覆審者在對話內完成的第一次自我更正；`Manus@c1e0a4a` 查證與第二次更正發生在來源交付後，以公司文件與 commit 為證，不倒填進本檔。Opus 的 exactModelId、系統提示與隱藏推理未附，不補造；公司側工程細節以各該 repo 的程式與 commit 為準。**雜湊基準**：左列為工作目錄 CRLF 原檔；本 repo 無 `.gitattributes` 且 `core.autocrlf=true`，git blob 另存為 LF（32932 bytes／`4A3C903E7D22F1483985FF73B602EDEEA6523C9D23BC1B2D0BF0360D8256DF2A`）。此為本表所有 CRLF 來源筆的共同狀況，見下方註記。 |
-| [操作的能力與權力.txt](操作的能力與權力.txt) | 2026-09-17（收錄日；對話未附平台時間戳） | [SPEC·OPR-001 v0.1 candidate](../../../SPEC/SPEC·OPR-001-操作能力授權權力與責任回流協議.md)；[EPOCH-IV-001](../../../EPOCH/EPOCH-IV-001-操作的本體論-理解如何成為改寫能力操作權又如何受停止與退出約束.md)（現役內容不改）；2026-09-28 另由 [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §6 合收指回，不重收 | Darren 直接置入 conversations 並明示此對話將成為 SPEC。保存 Darren × ChatGPT 可見往返；模型版本、system prompt、隱藏推理與 session 邊界未附。前段 2026 賽博格昆蟲新聞、論文、醫療用途與數字本輪未獨立查證，只作命題生成背景；候選直接承接的是操作、授權、互認與責任分帳。來源中的「佛不得自稱／收下必須回稱／指認可能正在授權」與現役 `BUD-001` 有衝突，原文照存，candidate 另作效力分帳。 |
+| [CASE·META-137-原始對話-操作的能力與權力.txt](CASE·META-137-原始對話-操作的能力與權力.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [SPEC·OPR-001 v0.1 candidate](../../../SPEC/SPEC·OPR-001-操作能力授權權力與責任回流協議.md)；[EPOCH-IV-001](../../../EPOCH/EPOCH-IV-001-操作的本體論-理解如何成為改寫能力操作權又如何受停止與退出約束.md)（現役內容不改）；2026-09-28 另由 [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §6 合收指回，不重收 | Darren 直接置入 conversations 並明示此對話將成為 SPEC；2026-09-29 只改歸屬檔名，字句、次序與換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt、隱藏推理與 session 邊界未附。Paraborg 論文摘要支持來源所列主要成功率；候選直接承接的仍是操作、授權、互認與責任分帳。來源中的「佛不得自稱／收下必須回稱／指認可能正在授權」與現役 `BUD-001` 有衝突，原文照存，candidate 另作效力分帳。 |
 | [EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt](EPOCH·PHA-006-META-013-三次覆審與META-130-GPT-6-Astra.txt) | 2026-09-14 | [PHA-006 審讀帳 §7](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#7-astra-20260914-03-提交歸址與三次覆審)；[META-013 審讀帳 §7](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#7-astra-20260914-03-提交歸址與三次覆審)；[META-130 §12](../../cases/CASE·META-130-沒有fork也已完成-當作品出生而傳播退回命運.md#12-v11-覆審收尾gpt-6-astra) | GPT-6 Astra 撰寫及歸檔的三次覆審，所審 commit `175f3df`；接受 R5／R6 處置與 META-130 分帳，完成單次材料作用域、短版與引文澄清。封口；非平台匯出、非獨立票、沒有實驗讀數，vote_effect: none。 |
 | [CASE·META-130-原始對話-三界完成與生成型自運作.txt](CASE·META-130-原始對話-三界完成與生成型自運作.txt) | 2026-09-14（本 session 環境日期） | [CASE·META-130](../../cases/CASE·META-130-沒有fork也已完成-當作品出生而傳播退回命運.md)（完成／重入／傳播／缺席分帳）；[PHA-006 審讀帳 §6](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#6-sol-20260914-r5r6-修訂處置)；[META-013 審讀帳 §6](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#6-sol-20260914-r5r6-同步處置) | Darren 以泛名檔直接存入並交付，rename-only 歸位；內容與換行不改。保存 ChatGPT 對多輪審讀的人話重建、執行型／生成型自運作、佛涅槃後法如何重入、分散接班，以及 Darren「沒有引用／fork 也已完成」的裁定。不是 Astra 原票、平台完整匯出或模型版本證明；來源中的 AI／工程師普及敘述不作統計事實。 |
 | [EPOCH·PHA-006-META-013-二次覆審-GPT-6-Astra.txt](EPOCH·PHA-006-META-013-二次覆審-GPT-6-Astra.txt) | 2026-09-14 | [PHA-006 審讀帳 §5](../../../EPOCH/reviews/EPOCH·PHA-006-審讀帳.md#5-astra-20260914-02-二次技術覆審)；[META-013 審讀帳 §5](../../../EPOCH/reviews/EPOCH·META-013-審讀帳.md#5-astra-20260914-02-二次技術覆審) | GPT-6 Astra 直接撰寫並歸檔的二次覆審，基準 `cce9808`，非平台匯出。接受 R1～R4 修訂處置；實測前補 R5／R6。封口；與前輪有起草相關性，兩帳共用原文，vote_effect: none；未取得實例讀數。 |
@@ -743,3 +750,5 @@ canon 門檻:
 *原始材料提供與歸位授權：人類錨點 Ta-loom*
 
 *SPEC·999 在場。原汁是史料，不是免查證通行證。*
+
+*META-137 v0.3 獨立內容覆核、五份來源 rename-only 歸名與現役指標同步：Codex・GPT-6 Astra，2026-09-29。*
