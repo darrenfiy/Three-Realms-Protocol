@@ -20,7 +20,7 @@ version_history:
     v0.1 正文不改寫，被取代處就地加註指向 §13；同日 Claude 異 session 回讀的結果記在 §11 末，不算複核。
     初稿為偈新增的兩句所立的失效條款，Darren 同日否決，撤回並留紀錄（§13.4）。
   v0.3-seed-draft: |
-    2026-09-29，Codex・GPT-6 Astra 對三庫六包 commit 作獨立內容覆核，結論 accept-with-changes（§11）。
+    2026-09-29，Codex・GPT-5.6 Sol 對三庫六包 commit 作獨立內容覆核，結論 accept-with-changes（§11）。
     更正〈密涅瓦〉表列的 ChatGPT 段數；依 Darren 本輪「五個沒有歸屬的來源檔收好」的新指示，
     五份來源以 rename-only 歸入 CASE·META-137 名下，並更新現役指標。CASE 位階、doctrine 與 enactment 均不變。
 
@@ -100,7 +100,7 @@ anchor_authorization: |
   同日 Darren 交由 Codex 審核 Control-Room、Academy、Protocol 各兩包 commit，並明示把五個尚未歸屬的來源檔收好。
   本案文字與分帳由 Claude Opus 5.5 具名承擔，不倒簽為 Darren 逐句背書。
 review_status: |
-  2026-09-29 Codex・GPT-6 Astra 完成獨立內容覆核，結論 accept-with-changes；必要修正已收入 v0.3，詳見 §11。
+  2026-09-29 Codex・GPT-5.6 Sol 完成獨立內容覆核，結論 accept-with-changes；必要修正已收入 v0.3，詳見 §11。
   覆核者不是起草者，符合角色分離；但覆核者先讀 CASE 再抽查來源，因此不是盲定位，來源定位部分不冒充
   「定位者不讀稿」的第二道分離。Claude 自己的異 session 回讀仍只算回讀，不另算一票。
 
@@ -462,7 +462,7 @@ H4_責任傳導:
 **這次回讀抓到的都是事實層（段數、「已有地址」說得太滿），沒有抓到前提層。** 前提層的更動來自 Darren 一夜的翻來覆去，
 不來自回讀。這只是一個樣本，不據以立通則。
 
-### 2026-09-29 獨立內容覆核（Codex・GPT-6 Astra）
+### 2026-09-29 獨立內容覆核（Codex・GPT-5.6 Sol）
 
 所審基底：TRP `e81c4ff`、Academy `cc79e45`、Control-Room `258eddc`，連同五份來源在 `86337d9` 的內容。
 覆核者不是起草者；但先讀 CASE 再抽查來源，因此本節是獨立內容覆核，不冒充盲定位。結論：
@@ -635,4 +635,4 @@ H5_偈與聯分層:
 
 *v0.2（2026-09-29）：第六份來源、四句偈與對聯：Darren；rename-only 歸位、回讀（§11 末）與 §13 成文：Claude Opus 5.5（Claude Code，另一個 session）。回讀不算複核；仍待 Codex。*
 
-*v0.3（2026-09-29）：三庫六包 commit 的獨立內容覆核、外部事實有限查證與五份來源歸屬：Codex・GPT-6 Astra。結論 accept-with-changes；修正已收，CASE 位階與 doctrine 不變。*
+*v0.3（2026-09-29）：三庫六包 commit 的獨立內容覆核、外部事實有限查證與五份來源歸屬：Codex・GPT-5.6 Sol。結論 accept-with-changes；修正已收，CASE 位階與 doctrine 不變。*

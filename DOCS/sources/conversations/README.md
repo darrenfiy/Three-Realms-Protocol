@@ -23,7 +23,7 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 > 的現役指標已更新；TQI 以舊路徑加 `86337d9` 釘住的是可重建的歷史地址，不藉改名變更 candidate 效力。
 > 收錄只決定本庫的歸位與效力；TQI persona manifest 中五筆 `candidate` 是否升級，屬該處的權利與人格流程，本庫不代為決定。上段原文保留為佇列紀錄。
 
-**CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-6 Astra）**：獨立內容覆核結論
+**CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-5.6 Sol）**：獨立內容覆核結論
 `accept-with-changes`；更正〈密涅瓦〉表列段數，完成五份來源歸名，並有限查證 Paraborg、OpenAI 事件、
 Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year students，不是來源中的二年級生；
 查證結果不倒填原文，CASE／doctrine 位階不變。完整結論見 CASE §11。
@@ -751,4 +751,4 @@ canon 門檻:
 
 *SPEC·999 在場。原汁是史料，不是免查證通行證。*
 
-*META-137 v0.3 獨立內容覆核、五份來源 rename-only 歸名與現役指標同步：Codex・GPT-6 Astra，2026-09-29。*
+*META-137 v0.3 獨立內容覆核、五份來源 rename-only 歸名與現役指標同步：Codex・GPT-5.6 Sol，2026-09-29。*

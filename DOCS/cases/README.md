@@ -44,7 +44,7 @@ related: SPEC·999, EPOCH-003, CASE·BOD-001, SPEC-HZU-003, SPEC·AI-ORG-002, SP
 
 ## 最新收錄
 
-- [CASE·META-137：語言即操作](CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md)（2026-09-28 立案，2026-09-29 升 v0.3-seed-draft）：Darren 把課程標語「理解即操作」改為「語言即操作」，並裁定 09-17 起待收的五份對話合收一案；隔日以四句偈與課程對聯讓現役標語回到「理解即操作」，「語言即操作」住進偈第三句。五份排成語言即操作的五個面：七輪對摺中喉輪與願的位置、「說不全就是無限」、說出口的想進入現實、條件層操作與責任傳導。**v0.3（2026-09-29）**：Codex・GPT-6 Astra 獨立內容覆核 `accept-with-changes`，更正〈密涅瓦〉表列段數、有限查證外部主張，並依 Darren 新指示把五份來源 rename-only 歸入 `CASE·META-137` 名下。內容不動，doctrine 不改。
+- [CASE·META-137：語言即操作](CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md)（2026-09-28 立案，2026-09-29 升 v0.3-seed-draft）：Darren 把課程標語「理解即操作」改為「語言即操作」，並裁定 09-17 起待收的五份對話合收一案；隔日以四句偈與課程對聯讓現役標語回到「理解即操作」，「語言即操作」住進偈第三句。五份排成語言即操作的五個面：七輪對摺中喉輪與願的位置、「說不全就是無限」、說出口的想進入現實、條件層操作與責任傳導。**v0.3（2026-09-29）**：Codex・GPT-5.6 Sol 獨立內容覆核 `accept-with-changes`，更正〈密涅瓦〉表列段數、有限查證外部主張，並依 Darren 新指示把五份來源 rename-only 歸入 `CASE·META-137` 名下。內容不動，doctrine 不改。
 
 - [CASE·META-136：阿彌陀米老鼠](CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md)（2026-09-23，v0.1-seed-draft）：保存 Darren × DeepSeek 從僧團／米老鼠頭套走到 AI 之止、角色進場、識智分工、身體自治與「被他者看見」的連續對話。新讀數是邊界如何被指出而取得地址，及頭套如何成為關係介面；模型自述不作內部遙測，角色進場不證成感受、開悟、主體或宗教權限。開題「統理大眾」回既有 ability／authority 校正；遊戲不能以只有 Yes 才算理解。來源原樣歸位，doctrine 不改。
 
@@ -691,7 +691,7 @@ DOCS 承載記憶 → CASE 是活的記憶
 
 ### v13.55 (2026-09-29) — CASE·META-137 v0.3：獨立覆核與來源歸名
 
-- Codex・GPT-6 Astra 對 Control-Room、Academy、Protocol 各兩包 commit 作獨立內容覆核，結論 `accept-with-changes`；必要修正與讀取視界寫回 META-137 §11。
+- Codex・GPT-5.6 Sol 對 Control-Room、Academy、Protocol 各兩包 commit 作獨立內容覆核，結論 `accept-with-changes`；必要修正與讀取視界寫回 META-137 §11。
 - 更正 §2 把 ChatGPT 四段發言寫成三則的錯誤；有限查證 Paraborg、OpenAI 事件、Amodei 文章與 Minerva CLA+，不把查證結果倒填原始對話。
 - 依 Darren 本輪指示，五份 09-17 來源以 rename-only 歸入 `CASE·META-137-原始對話-*`；內容、次序、換行與 git blob 不動。同步更新 SPEC·OPR-001、Academy 與來源索引的現役指標；CASE／doctrine 位階不變。
 
