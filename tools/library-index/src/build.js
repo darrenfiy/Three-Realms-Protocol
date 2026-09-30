@@ -10,12 +10,13 @@ import { validateArtifact } from './validate.js';
 const here = dirname(fileURLToPath(import.meta.url));
 const toolRoot = resolve(here, '..');
 
-function git(root, args) {
-  return execFileSync('git', ['-C', root, ...args], {
+function git(root, args, { trim = true } = {}) {
+  const output = execFileSync('git', ['-C', root, ...args], {
     encoding: 'utf8',
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
-  }).trim();
+  });
+  return trim ? output.trim() : output;
 }
 
 function posix(path) {
@@ -38,10 +39,14 @@ function assertCommitAncestor(root, readBasis) {
   }
 }
 
+function nulSeparatedPaths(output) {
+  return output.split('\0').filter(Boolean).map((path) => posix(path));
+}
+
 function changedPaths(root, readBasis) {
-  const tracked = git(root, ['diff', '--name-only', '--diff-filter=ACDMRTUXB', readBasis, '--']);
-  const untracked = git(root, ['ls-files', '--others', '--exclude-standard']);
-  return [...new Set(`${tracked}\n${untracked}`.split(/\r?\n/u).map((path) => posix(path.trim())).filter(Boolean))];
+  const tracked = git(root, ['diff', '--no-renames', '--name-only', '-z', '--diff-filter=ACDMRTUXB', readBasis, '--'], { trim: false });
+  const untracked = git(root, ['ls-files', '--others', '--exclude-standard', '-z'], { trim: false });
+  return [...new Set([...nulSeparatedPaths(tracked), ...nulSeparatedPaths(untracked)])];
 }
 
 export function sourceChangesSince(root, readBasis, corpus) {

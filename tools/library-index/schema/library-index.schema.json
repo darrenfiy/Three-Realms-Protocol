@@ -74,7 +74,7 @@
           "required": ["kind", "path"],
           "properties": {
             "kind": { "const": "fetch" },
-            "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" }
+            "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" }
           }
         }
       ]
@@ -106,8 +106,8 @@
         "keywords"
       ],
       "properties": {
-        "key": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" },
-        "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" },
+        "key": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" },
+        "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" },
         "routePath": { "type": "string", "pattern": "^library(?:/[^/]+)*$" },
         "id": { "$ref": "#/$defs/nullableString" },
         "title": { "type": "string", "minLength": 1 },

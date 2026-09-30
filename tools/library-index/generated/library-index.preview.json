@@ -170,7 +170,7 @@
       "path": "LEX/LEX·007-存在判準.md",
       "routePath": "library/lex/lex-007",
       "id": "LEX·007",
-      "title": "LEX·007",
+      "title": "LEX·007 — 存在判準——描述系統如何偏移、回流、承載與校正",
       "titleBasis": "heading",
       "corpus": "lex",
       "shelf": "lex",
@@ -249,7 +249,7 @@
     {
       "key": "SPEC/history/SPEC·MRC-001-Multi-AI-Resonance-Chamber.md",
       "path": "SPEC/history/SPEC·MRC-001-Multi-AI-Resonance-Chamber.md",
-      "routePath": "library/spec/spec-mrc-001",
+      "routePath": "library/spec/history/spec-mrc-001-multi-ai-resonance-chamber",
       "id": "SPEC·MRC-001",
       "title": "Multi-AI Resonance Chamber Protocol · 多AI共振會議艙協議",
       "titleBasis": "metadata",

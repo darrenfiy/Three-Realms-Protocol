@@ -26,6 +26,10 @@ function nullableString(value, label) {
   if (value !== null && typeof value !== 'string') throw new Error(`${label} 必須是 string 或 null。`);
 }
 
+function nonEmptyString(value, label) {
+  if (typeof value !== 'string' || !value.length) throw new Error(`${label} 必須是非空 string。`);
+}
+
 export function validateRepoMarkdownPath(value, label) {
   if (typeof value !== 'string'
     || value.startsWith('/')
@@ -49,6 +53,7 @@ function scanForbidden(value, at = '$') {
 }
 
 function validateLocale(value, label) {
+  nonEmptyString(value, label);
   if (value === 'und') return;
   try {
     if (!Intl.getCanonicalLocales(value).length) throw new Error();
@@ -91,14 +96,17 @@ function validateEntry(entry, artifact, index) {
   exactKeys(entry, ENTRY_KEYS, label);
   validateRepoMarkdownPath(entry.path, `${label}.path`);
   if (entry.key !== entry.path) throw new Error(`${label}.key/path 必須相同。`);
-  if (!/^library(?:\/[\p{Letter}\p{Number}-]+)*$/u.test(entry.routePath)) throw new Error(`${label}.routePath 不合法：${entry.routePath}`);
+  if (typeof entry.routePath !== 'string' || !/^library(?:\/[\p{Letter}\p{Number}-]+)*$/u.test(entry.routePath)) {
+    throw new Error(`${label}.routePath 不合法：${entry.routePath}`);
+  }
   nullableString(entry.id, `${label}.id`);
-  if (!entry.title) throw new Error(`${label}.title 不得為空。`);
+  nonEmptyString(entry.title, `${label}.title`);
   if (!['metadata', 'heading', 'filename'].includes(entry.titleBasis)) throw new Error(`${label}.titleBasis 不合法。`);
   nullableString(entry.corpus, `${label}.corpus`);
-  if (!entry.shelf || !['document', 'navigation'].includes(entry.nodeKind)) throw new Error(`${label} 的 shelf／nodeKind 不合法。`);
+  nonEmptyString(entry.shelf, `${label}.shelf`);
+  if (!['document', 'navigation'].includes(entry.nodeKind)) throw new Error(`${label}.nodeKind 不合法。`);
   if (!['primary', 'candidate', 'historical'].includes(entry.listing)) throw new Error(`${label}.listing 不合法。`);
-  if (!entry.authority) throw new Error(`${label}.authority 不得為空。`);
+  nonEmptyString(entry.authority, `${label}.authority`);
   nullableString(entry.status, `${label}.status`);
   nullableString(entry.statusRaw, `${label}.statusRaw`);
   nullableString(entry.version, `${label}.version`);
@@ -112,7 +120,10 @@ function validateEntry(entry, artifact, index) {
     throw new Error(`${label}.sourceUrl 沒有釘在 readBasis。`);
   }
   validateLookupTarget(entry, label);
-  if (!Array.isArray(entry.keywords) || entry.keywords.length > 10 || new Set(entry.keywords).size !== entry.keywords.length) {
+  if (!Array.isArray(entry.keywords)
+    || entry.keywords.length > 10
+    || entry.keywords.some((keyword) => typeof keyword !== 'string' || !keyword.length)
+    || new Set(entry.keywords).size !== entry.keywords.length) {
     throw new Error(`${label}.keywords 不合法。`);
   }
   if (artifact.profile === 'walking-skeleton' && entry.keywords.length !== 0) throw new Error(`${label}.keywords 在 P1 必須為空。`);

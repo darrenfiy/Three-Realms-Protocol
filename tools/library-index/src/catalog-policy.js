@@ -49,7 +49,7 @@ function cleanHeading(value) {
     .trim();
 }
 
-export function firstMarkdownH1(content) {
+function firstMarkdownHeading(content, level) {
   const lines = String(content || '').split(/\r?\n/u);
   let inFrontmatter = lines[0]?.trim() === '---';
   let fence = null;
@@ -68,16 +68,29 @@ export function firstMarkdownH1(content) {
       fence = opening[1];
       continue;
     }
-    const heading = line.match(/^ {0,3}#(?!#)\s+(.+?)\s*$/u);
+    const heading = line.match(new RegExp(`^ {0,3}#{${level}}(?!#)\\s+(.+?)\\s*$`, 'u'));
     if (heading) return cleanHeading(heading[1]) || null;
   }
   return null;
+}
+
+export function firstMarkdownH1(content) {
+  return firstMarkdownHeading(content, 1);
+}
+
+export function firstMarkdownH2(content) {
+  return firstMarkdownHeading(content, 2);
 }
 
 export function displayTitleFor(entry) {
   const stem = filenameStem(entry.path);
   if (entry.title && entry.title !== stem) return { title: entry.title, titleBasis: 'metadata' };
   const heading = firstMarkdownH1(entry.content);
+  if (heading && entry.idRaw && lookupKey(heading) === lookupKey(entry.idRaw)) {
+    const subtitle = firstMarkdownH2(entry.content);
+    if (subtitle) return { title: `${entry.idRaw} — ${subtitle}`, titleBasis: 'heading' };
+    return { title: stem, titleBasis: 'filename' };
+  }
   if (heading) return { title: heading, titleBasis: 'heading' };
   return { title: stem, titleBasis: 'filename' };
 }
@@ -118,6 +131,11 @@ function idCounts(entries) {
   return result;
 }
 
+export function canonicalRouteIdKeys(entries, policy) {
+  const counts = idCounts(entries.filter((entry) => listingFor(entry, policy) !== 'historical'));
+  return new Set([...counts.entries()].filter(([, count]) => count === 1).map(([key]) => key));
+}
+
 function lookupTargetFor(entry, nodeKind, idIsUnique) {
   if (nodeKind === 'navigation') return null;
   if (entry.idRaw && idIsUnique) return { kind: 'resolve', id: entry.idRaw };
@@ -129,13 +147,15 @@ function cloneCandidateOverlay(value) {
   return { version: value.version || null, status: value.status || null };
 }
 
-function describeEntry(entry, corpus, policy, counts) {
+function describeEntry(entry, corpus, policy, lookupCounts, canonicalRouteKeys) {
   const nodeKind = nodeKindFor(entry, policy);
   const key = lookupKey(entry.idRaw);
-  const idIsUnique = Boolean(key && counts.get(key) === 1);
+  const idIsUnique = Boolean(key && lookupCounts.get(key) === 1);
+  const useIdRoute = Boolean(key && canonicalRouteKeys.has(key)
+    && listingFor(entry, policy) !== 'historical');
   const title = displayTitleFor(entry);
   const locale = sourceLocaleFor(entry, policy);
-  const routePath = routePathFor(entry, { idIsUnique, nodeKind, policy });
+  const routePath = routePathFor(entry, { useIdRoute, nodeKind, policy });
   const sourceUrl = corpus.sourceUrl(entry.path);
   if (!sourceUrl) throw new Error(`無法為來源產生 commit-pinned URL：${entry.path}`);
 
@@ -165,10 +185,11 @@ function describeEntry(entry, corpus, policy, counts) {
 }
 
 export function allCatalogEntries(corpus, policy) {
-  const counts = idCounts(corpus.entries);
+  const lookupCounts = idCounts(corpus.entries);
+  const canonicalRouteKeys = canonicalRouteIdKeys(corpus.entries, policy);
   const entries = corpus.entries
     .filter((entry) => isEligible(entry, policy))
-    .map((entry) => describeEntry(entry, corpus, policy, counts));
+    .map((entry) => describeEntry(entry, corpus, policy, lookupCounts, canonicalRouteKeys));
   assertUniqueRoutes(entries);
   return entries.sort((left, right) => textCompare(left.routePath, right.routePath) || textCompare(left.path, right.path));
 }

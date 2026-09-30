@@ -5,7 +5,9 @@ function assertSupportedPolicy(policy) {
     || policy.case !== 'lower'
     || policy.separatorCharacters !== '·_whitespace'
     || policy.otherPunctuation !== 'hyphen'
-    || policy.duplicateIdStrategy !== 'path') {
+    || policy.duplicateIdStrategy !== 'path'
+    || policy.idRouteEligibility !== 'single-non-historical'
+    || policy.historicalRouteStrategy !== 'path') {
     throw new Error(`不支援的 route policy revision：${policy.revision || 'unknown'}`);
   }
 }
@@ -40,12 +42,12 @@ function pathSegments(entry, nodeKind, routePolicy) {
   return parts.map((part) => slugSegment(part, routePolicy));
 }
 
-export function routePathFor(entry, { idIsUnique, nodeKind, policy }) {
+export function routePathFor(entry, { useIdRoute, nodeKind, policy }) {
   const override = policy.routeOverrides?.[entry.path];
   if (override) return override;
 
   const corpusSegment = entry.corpus || 'orientation';
-  if (nodeKind !== 'navigation' && entry.idRaw && idIsUnique) {
+  if (nodeKind !== 'navigation' && entry.idRaw && useIdRoute) {
     return posix.join('library', corpusSegment, slugSegment(entry.idRaw, policy.routePolicy));
   }
 

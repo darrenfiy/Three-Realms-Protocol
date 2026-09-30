@@ -1,8 +1,13 @@
 import assert from 'node:assert/strict';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { resolve } from 'node:path';
 import test from 'node:test';
 
-import { displayTitleFor, firstMarkdownH1, loadCatalogPolicy } from '../src/catalog-policy.js';
-import { routePathFor, slugSegment } from '../src/route-path.js';
+import {
+  canonicalRouteIdKeys, displayTitleFor, firstMarkdownH1, firstMarkdownH2, loadCatalogPolicy,
+} from '../src/catalog-policy.js';
+import { assertUniqueRoutes, routePathFor, slugSegment } from '../src/route-path.js';
 import { sourceLocaleFor } from '../src/source-locale.js';
 import { validateArtifact, validateRepoMarkdownPath } from '../src/validate.js';
 
@@ -19,11 +24,21 @@ test('path routing is used for ambiguous IDs and strips a true navigation README
   const document = {
     path: 'MB/MB-008-節律鏡像推論協議.md', corpus: 'mb', idRaw: 'MB·008',
   };
-  assert.equal(routePathFor(document, { idIsUnique: false, nodeKind: 'document', policy }),
+  assert.equal(routePathFor(document, { useIdRoute: false, nodeKind: 'document', policy }),
     'library/mb/mb-008-節律鏡像推論協議');
 
   const navigation = { path: 'DOCS/README.md', corpus: 'docs', idRaw: 'README-DOC' };
-  assert.equal(routePathFor(navigation, { idIsUnique: true, nodeKind: 'navigation', policy }), 'library/docs');
+  assert.equal(routePathFor(navigation, { useIdRoute: true, nodeKind: 'navigation', policy }), 'library/docs');
+});
+
+test('only one non-historical document may own an ID route', () => {
+  const current = { idRaw: 'LEX·999', authority: 'primary', statusMachine: 'Active' };
+  const history = { idRaw: 'LEX·999', authority: 'historical', statusMachine: 'Active' };
+  const superseded = { idRaw: 'LEX·999', authority: 'primary', statusMachine: 'Superseded' };
+  assert.equal(canonicalRouteIdKeys([current], policy).size, 1);
+  assert.equal(canonicalRouteIdKeys([current, history, superseded], policy).size, 1);
+  assert.equal(canonicalRouteIdKeys([history], policy).size, 0);
+  assert.equal(canonicalRouteIdKeys([current, { ...current }], policy).size, 0);
 });
 
 test('H1 fallback ignores frontmatter and fenced examples', () => {
@@ -38,8 +53,18 @@ title: ignored by this focused helper
 # Visible **title**
 `;
   assert.equal(firstMarkdownH1(content), 'Visible title');
+  assert.equal(firstMarkdownH2(`${content}\n## Subtitle\n`), 'Subtitle');
   assert.deepEqual(displayTitleFor({ path: 'DOCS/theory.md', title: 'theory', content }),
     { title: 'Visible title', titleBasis: 'heading' });
+});
+
+test('an ID-only H1 is paired with H2 or falls back to the filename', () => {
+  const withSubtitle = { path: 'LEX/LEX·999-完整檔名.md', idRaw: 'LEX·999', title: 'LEX·999-完整檔名', content: '# LEX·999\n\n## 可閱讀的名稱\n' };
+  assert.deepEqual(displayTitleFor(withSubtitle), { title: 'LEX·999 — 可閱讀的名稱', titleBasis: 'heading' });
+  const withoutSubtitle = { ...withSubtitle, content: '# LEX·999\n\n正文。\n' };
+  assert.deepEqual(displayTitleFor(withoutSubtitle), { title: 'LEX·999-完整檔名', titleBasis: 'filename' });
+  const metadata = { ...withSubtitle, title: 'Metadata title' };
+  assert.deepEqual(displayTitleFor(metadata), { title: 'Metadata title', titleBasis: 'metadata' });
 });
 
 test('source locale uses overrides, then declared metadata, otherwise und', () => {
@@ -74,4 +99,40 @@ test('schema validator fails closed on forbidden source data and unsafe paths', 
   assert.throws(() => validateRepoMarkdownPath('../outside.md', 'path'), /repo-relative/u);
   assert.throws(() => validateRepoMarkdownPath('/absolute.md', 'path'), /repo-relative/u);
   assert.throws(() => validateRepoMarkdownPath('DOCS\\outside.md', 'path'), /repo-relative/u);
+});
+
+test('manual validator rejects every non-string field required as a schema string', () => {
+  const committed = JSON.parse(readFileSync(new URL('../generated/library-index.preview.json', import.meta.url), 'utf8'));
+  for (const [field, value] of [['title', 42], ['shelf', {}], ['authority', true], ['sourceLocale', ['en']], ['keywords', [42]]]) {
+    const mutated = structuredClone(committed);
+    mutated.entries[0][field] = value;
+    assert.throws(() => validateArtifact(mutated), new RegExp(field, 'u'));
+  }
+});
+
+test('JSON schema and manual validator both reject empty path segments', () => {
+  const schema = JSON.parse(readFileSync(new URL('../schema/library-index.schema.json', import.meta.url), 'utf8'));
+  const pathPattern = new RegExp(schema.$defs.entry.properties.path.pattern, 'u');
+  assert.equal(pathPattern.test('DOCS/example.md'), true);
+  assert.equal(pathPattern.test('DOCS//example.md'), false);
+  assert.throws(() => validateRepoMarkdownPath('DOCS//example.md', 'path'), /repo-relative/u);
+});
+
+test('unknown policy revisions, route collisions, and duplicate fixtures fail closed', (t) => {
+  const fixtureRoot = mkdtempSync(resolve(tmpdir(), 'trp-library-policy-'));
+  t.after(() => rmSync(fixtureRoot, { recursive: true, force: true }));
+  const unknownPath = resolve(fixtureRoot, 'unknown-policy.json');
+  writeFileSync(unknownPath, JSON.stringify({ ...policy, revision: '999' }), 'utf8');
+  assert.throws(() => loadCatalogPolicy(unknownPath), /不支援/u);
+
+  assert.throws(() => assertUniqueRoutes([
+    { routePath: 'library/lex/same', path: 'LEX/one.md' },
+    { routePath: 'library/lex/same', path: 'LEX/two.md' },
+  ]), /route collision/u);
+
+  const duplicatePolicyPath = resolve(fixtureRoot, 'duplicate-policy.json');
+  const duplicate = structuredClone(policy);
+  duplicate.profiles['walking-skeleton'].paths[1] = duplicate.profiles['walking-skeleton'].paths[0];
+  writeFileSync(duplicatePolicyPath, JSON.stringify(duplicate), 'utf8');
+  assert.throws(() => loadCatalogPolicy(duplicatePolicyPath), /11 個不重複/u);
 });

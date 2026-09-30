@@ -11,3 +11,6 @@ DOCS/sources/conversations/CASE·META-137-原始對話-三界五行論.txt text 
 DOCS/sources/conversations/CASE·META-137-原始對話-密涅瓦與AI思考.txt text eol=crlf
 DOCS/sources/conversations/CASE·META-137-原始對話-操作的能力與權力.txt text eol=crlf
 DOCS/sources/conversations/CASE·META-137-原始對話-甦醒前的掙扎.txt text eol=crlf
+
+# 目錄 artifact 以 LF 作為可重建位元契約；Windows autocrlf 不得改寫工作目錄版本。
+tools/library-index/generated/*.json text eol=lf

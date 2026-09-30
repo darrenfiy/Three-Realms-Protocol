@@ -70,6 +70,8 @@
     },
     "otherPunctuation": "hyphen",
     "duplicateIdStrategy": "path",
+    "idRouteEligibility": "single-non-historical",
+    "historicalRouteStrategy": "path",
     "navigationIndexNames": [
       "README.md",
       "INDEX.md"

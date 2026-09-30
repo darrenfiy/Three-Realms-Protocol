@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, resolve } from 'node:path';
 import test from 'node:test';
 
-import { PublicCorpus, findRepoRoot } from '../../trp-mcp/src/corpus.js';
+import { PublicCorpus, findRepoRoot, lookupKey } from '../../trp-mcp/src/corpus.js';
 import { buildArtifact, serializeArtifact, sourceChangesSince } from '../src/build.js';
 import { loadCatalogPolicy } from '../src/catalog-policy.js';
 
@@ -29,6 +31,24 @@ function corpusAt(readBasis) {
 }
 
 const corpus = corpusAt(artifact.readBasis);
+let fullArtifact;
+
+function fullArtifactForTest() {
+  fullArtifact ||= buildArtifact({ root, profile: 'full', readBasis: artifact.readBasis, policy });
+  return fullArtifact;
+}
+
+function fixtureGit(fixtureRoot, args) {
+  return execFileSync('git', ['-C', fixtureRoot, ...args], {
+    encoding: 'utf8', windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
+  }).trim();
+}
+
+function writeFixture(fixtureRoot, path, content) {
+  const target = resolve(fixtureRoot, ...path.split('/'));
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, content, 'utf8');
+}
 
 function byPath(path) {
   const entry = artifact.entries.find((item) => item.path === path);
@@ -42,6 +62,44 @@ test('committed preview is deterministic and matches the current generator', () 
   assert.equal(serializeArtifact(first), serializeArtifact(second));
   assert.equal(serializeArtifact(first), artifactSource);
   assert.deepEqual(sourceChangesSince(root, artifact.readBasis, corpus), []);
+});
+
+test('generated JSON has an LF checkout contract and LF bytes', () => {
+  const attribute = fixtureGit(root, ['check-attr', 'eol', '--', 'tools/library-index/generated/library-index.preview.json']);
+  assert.match(attribute, /: eol: lf$/u);
+  assert.equal(artifactSource.includes('\r'), false);
+});
+
+test('freshness catches Unicode tracked, untracked, deleted, and renamed public paths', (t) => {
+  const fixtureRoot = mkdtempSync(resolve(tmpdir(), 'trp-library-freshness-'));
+  t.after(() => rmSync(fixtureRoot, { recursive: true, force: true }));
+  fixtureGit(fixtureRoot, ['init']);
+  fixtureGit(fixtureRoot, ['config', 'user.email', 'library-index@example.invalid']);
+  fixtureGit(fixtureRoot, ['config', 'user.name', 'Library Index Test']);
+
+  const modified = 'LEX/LEX·901-會修改.md';
+  const deleted = 'LEX/LEX·902-會刪除.md';
+  const movedOutside = 'LEX/LEX·903-移出公開.md';
+  const renamedOld = 'LEX/LEX·904-公開改名.md';
+  const renamedNew = 'LEX/LEX·904-公開新名.md';
+  const untracked = 'SPEC/SPEC·901-未追蹤.md';
+  for (const path of [modified, deleted, movedOutside, renamedOld]) writeFixture(fixtureRoot, path, '# fixture\n');
+  fixtureGit(fixtureRoot, ['add', '.']);
+  fixtureGit(fixtureRoot, ['commit', '-m', 'fixture basis']);
+  const basis = fixtureGit(fixtureRoot, ['rev-parse', 'HEAD']);
+
+  writeFixture(fixtureRoot, modified, '# 已修改\n');
+  rmSync(resolve(fixtureRoot, ...deleted.split('/')));
+  mkdirSync(resolve(fixtureRoot, 'tools'), { recursive: true });
+  fixtureGit(fixtureRoot, ['mv', movedOutside, 'tools/archived.md']);
+  renameSync(resolve(fixtureRoot, ...renamedOld.split('/')), resolve(fixtureRoot, ...renamedNew.split('/')));
+  writeFixture(fixtureRoot, untracked, '# 未追蹤\n');
+
+  const changed = sourceChangesSince(fixtureRoot, basis, corpus);
+  for (const path of [modified, deleted, movedOutside, renamedOld, renamedNew, untracked]) {
+    assert.ok(changed.includes(path), `freshness 漏掉 ${path}`);
+  }
+  assert.equal(changed.includes('tools/archived.md'), false);
 });
 
 test('preview contains exactly the eleven policy fixtures and nothing outside PublicCorpus', () => {
@@ -77,14 +135,14 @@ test('duplicate IDs use path routes and exact fetch targets in every profile', (
   assert.match(english.routePath, /^library\/mb\/mb-008-rhythm-shadow/u);
   assert.match(chinese.routePath, /^library\/mb\/mb-008-節律鏡像推論協議$/u);
 
-  const full = buildArtifact({ root, profile: 'full', readBasis: artifact.readBasis, policy });
+  const full = fullArtifactForTest();
   const fullRoutes = new Map(full.entries.map((entry) => [entry.path, entry.routePath]));
   for (const entry of artifact.entries) assert.equal(entry.routePath, fullRoutes.get(entry.path));
   assert.equal(new Set(full.entries.map((entry) => entry.routePath)).size, full.entries.length);
 });
 
 test('every full-catalog resolve is unique and every fetch target is exact', () => {
-  const full = buildArtifact({ root, profile: 'full', readBasis: artifact.readBasis, policy });
+  const full = fullArtifactForTest();
   for (const entry of full.entries) {
     if (!entry.lookupTarget) continue;
     if (entry.lookupTarget.kind === 'resolve') {
@@ -96,6 +154,27 @@ test('every full-catalog resolve is unique and every fetch target is exact', () 
       assert.equal(corpus.standardFetch(entry.lookupTarget.path).id, entry.path);
     }
   }
+});
+
+test('full catalog never reduces a display title to only its protocol ID', () => {
+  const idOnly = fullArtifactForTest().entries.filter((entry) => entry.id
+    && lookupKey(entry.title) === lookupKey(entry.id));
+  assert.deepEqual(idOnly.map((entry) => entry.path), []);
+});
+
+test('one current document keeps the ID route while history uses path routes', () => {
+  const lex006 = fullArtifactForTest().entries.filter((entry) => entry.id === 'LEX·006');
+  const current = lex006.filter((entry) => entry.listing !== 'historical');
+  const history = lex006.filter((entry) => entry.listing === 'historical');
+  assert.equal(current.length, 1);
+  assert.ok(history.length >= 1);
+  assert.equal(current[0].routePath, 'library/lex/lex-006');
+  assert.equal(current[0].lookupTarget.kind, 'fetch');
+  assert.ok(history.every((entry) => entry.routePath !== 'library/lex/lex-006'));
+
+  const historicalFixture = byPath('SPEC/history/SPEC·MRC-001-Multi-AI-Resonance-Chamber.md');
+  assert.equal(historicalFixture.listing, 'historical');
+  assert.notEqual(historicalFixture.routePath, 'library/spec/spec-mrc-001');
 });
 
 test('version layers, candidate state, publication, and historical priority survive projection', () => {
@@ -134,4 +213,13 @@ test('artifact never contains source bodies or per-file fingerprints', () => {
   const serialized = JSON.stringify(artifact);
   assert.equal(/"(?:sha256|bytes|content)"\s*:/u.test(serialized), false);
   assert.ok(artifact.entries.every((entry) => entry.keywords.length === 0));
+});
+
+test('missing walking-skeleton fixtures fail closed', () => {
+  const missing = structuredClone(policy);
+  missing.profiles['walking-skeleton'].paths[0] = 'LEX/LEX·999-不存在.md';
+  assert.throws(
+    () => buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy: missing }),
+    /不在公開 catalog 候選/u,
+  );
 });

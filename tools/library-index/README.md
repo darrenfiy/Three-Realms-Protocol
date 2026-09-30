@@ -46,18 +46,32 @@ existing `readBasis`, confirms that no public Markdown or corpus manifest change
 after that commit, regenerates in memory, and compares bytes. Tool-only and
 artifact-only commits do not make the source stale.
 
+Changed paths are read from Git as NUL-delimited records with rename detection
+disabled. Unicode paths, deletions, untracked public files, and a move from the
+public corpus into an excluded area therefore all make the artifact stale.
+Generated JSON is fixed to LF by `.gitattributes`; byte comparison is not relaxed
+for Windows checkouts.
+
 Run `build:preview` only when intentionally choosing the current HEAD as a new
 source basis. If public Markdown is dirty relative to that basis, the build fails
 closed; commit the source change first, then rebuild.
 
 ## Display and routing rules
 
-- Display title: metadata title → first Markdown H1 → filename. `titleBasis`
-  records which source won; the online MCP title behavior is unchanged.
-- An ID gets a human-readable ID route and `resolve` target only when it is unique
-  across the entire public corpus.
-- Duplicate IDs use path-derived routes and exact `fetch` targets, even in the
-  preview profile. Preview and full therefore keep the same URL.
+- Display title: metadata title → first Markdown H1 → filename. When the H1 is
+  only the protocol ID, it is paired with the first H2; without an H2 it falls
+  back to the more informative filename. `titleBasis` records which source won;
+  the online MCP title behavior is unchanged.
+- Route ownership and lookup safety are separate. The sole non-historical
+  document for an ID owns the short ID route; every historical document uses a
+  path route. Two or more non-historical documents with the same ID all use path
+  routes. This preserves the current document's route when history is added, but
+  does not promise stability if a second current document is later introduced.
+- A `resolve` target is emitted only when the ID is unique across the entire
+  public corpus. Every ambiguous ID uses an exact `fetch` target, regardless of
+  which document owns the short route.
+- Preview and full calculate route ownership from the same full public corpus,
+  so a document keeps the same URL across profiles.
 - Route normalization is frozen in `catalog-policy.json`. A collision fails the
   build and must be handled with a reviewed `routeOverrides` entry.
 - Historical listing outranks a source document's raw lifecycle status in the
@@ -70,3 +84,5 @@ closed; commit the source change first, then rebuild.
   P1-A.
 
 Keywords remain empty in P1. Model-generated keyword work belongs to P2.
+The hand-written validator is tested against the schema's required string and
+path constraints; invalid field types and empty path segments fail closed.
