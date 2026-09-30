@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://three-quarters.net/schemas/trp-library-index-v1.json",
+  "title": "Three Realms Protocol Library Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "artifactType",
+    "profile",
+    "derived",
+    "notice",
+    "readBasis",
+    "catalogPolicyRevision",
+    "generatorRevision",
+    "keywordPolicyRevision",
+    "generation",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactType": { "const": "trp-library-index" },
+    "profile": { "enum": ["walking-skeleton", "full"] },
+    "derived": { "const": true },
+    "notice": { "const": "Derived navigation data; not protocol source text." },
+    "readBasis": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "catalogPolicyRevision": { "const": "1" },
+    "generatorRevision": { "const": "1" },
+    "keywordPolicyRevision": { "type": "null" },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "provider", "model", "promptRevision"],
+      "properties": {
+        "mode": { "const": "deterministic" },
+        "provider": { "type": "null" },
+        "model": { "type": "null" },
+        "promptRevision": { "type": "null" }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "candidateOverlay": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["version", "status"],
+      "properties": {
+        "version": { "$ref": "#/$defs/nullableString" },
+        "status": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "lookupTarget": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": {
+            "kind": { "const": "resolve" },
+            "id": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "path"],
+          "properties": {
+            "kind": { "const": "fetch" },
+            "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" }
+          }
+        }
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "path",
+        "routePath",
+        "id",
+        "title",
+        "titleBasis",
+        "corpus",
+        "shelf",
+        "nodeKind",
+        "listing",
+        "authority",
+        "status",
+        "statusRaw",
+        "version",
+        "latestActiveVersion",
+        "candidateOverlay",
+        "sourceLocale",
+        "sourceLocaleBasis",
+        "sourceUrl",
+        "lookupTarget",
+        "keywords"
+      ],
+      "properties": {
+        "key": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" },
+        "path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^\\\\\\u0000-\\u001F]+\\.md$" },
+        "routePath": { "type": "string", "pattern": "^library(?:/[^/]+)*$" },
+        "id": { "$ref": "#/$defs/nullableString" },
+        "title": { "type": "string", "minLength": 1 },
+        "titleBasis": { "enum": ["metadata", "heading", "filename"] },
+        "corpus": { "type": ["string", "null"] },
+        "shelf": { "type": "string", "minLength": 1 },
+        "nodeKind": { "enum": ["document", "navigation"] },
+        "listing": { "enum": ["primary", "candidate", "historical"] },
+        "authority": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/nullableString" },
+        "statusRaw": { "$ref": "#/$defs/nullableString" },
+        "version": { "$ref": "#/$defs/nullableString" },
+        "latestActiveVersion": { "$ref": "#/$defs/nullableString" },
+        "candidateOverlay": { "$ref": "#/$defs/candidateOverlay" },
+        "sourceLocale": { "type": "string", "minLength": 2 },
+        "sourceLocaleBasis": { "enum": ["catalog-override", "metadata", "und"] },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "lookupTarget": { "$ref": "#/$defs/lookupTarget" },
+        "keywords": {
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

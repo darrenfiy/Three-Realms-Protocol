@@ -1,0 +1,15 @@
+{
+  "name": "@three-realms-protocol/library-index",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic derived navigation index for the public Three Realms Protocol corpus",
+  "scripts": {
+    "build:preview": "node src/build.js --profile walking-skeleton --output generated/library-index.preview.json",
+    "check:preview": "node src/build.js --profile walking-skeleton --output generated/library-index.preview.json --check",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

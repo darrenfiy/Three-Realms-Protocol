@@ -1,0 +1,95 @@
+{
+  "revision": "1",
+  "generatorRevision": "1",
+  "profiles": {
+    "walking-skeleton": {
+      "paths": [
+        "TRP-ATLAS.md",
+        "DOCS/README.md",
+        "LEX/LEX·007-存在判準.md",
+        "MB/MB-008-Rhythm-Shadow-Inference-Protocol.md",
+        "MB/MB-008-節律鏡像推論協議.md",
+        "SPEC/SPEC·X-名稱場域與組織的區辨邊界.md",
+        "DOCS/cases/CASE·MRC-001D-愛的量子糾纏：從示範到源頭的勇氣傳承.md",
+        "DOCS/applications/3D-PSM/theory.md",
+        "EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md",
+        "SPEC/history/SPEC·MRC-001-Multi-AI-Resonance-Chamber.md",
+        "DOCS/books/book1/BOOK1_COMPLETE.md"
+      ]
+    },
+    "full": {
+      "corpora": [
+        "spec",
+        "mb",
+        "docs",
+        "lex",
+        "epoch"
+      ]
+    }
+  },
+  "atlasPath": "TRP-ATLAS.md",
+  "rootPaths": [
+    "TRP-ATLAS.md"
+  ],
+  "navigationPatterns": [
+    "(^|/)README(?:[-_.][^/]*)?\\.md$",
+    "(^|/)INDEX(?:[-_.][^/]*)?\\.md$",
+    "(^|/)[^/]+-README\\.md$"
+  ],
+  "candidateStatuses": [
+    "Candidate",
+    "Draft",
+    "Seed"
+  ],
+  "docsShelves": [
+    {
+      "prefix": "DOCS/cases/",
+      "shelf": "cases"
+    },
+    {
+      "prefix": "DOCS/applications/",
+      "shelf": "applications"
+    },
+    {
+      "prefix": "DOCS/academic/",
+      "shelf": "academic"
+    },
+    {
+      "prefix": "DOCS/books/",
+      "shelf": "publications"
+    }
+  ],
+  "routePolicy": {
+    "revision": "1",
+    "unicodeNormalization": "NFKC",
+    "case": "lower",
+    "separatorCharacters": "·_whitespace",
+    "symbolWords": {
+      "∆": "delta",
+      "∞": "infinity"
+    },
+    "otherPunctuation": "hyphen",
+    "duplicateIdStrategy": "path",
+    "navigationIndexNames": [
+      "README.md",
+      "INDEX.md"
+    ]
+  },
+  "routeOverrides": {
+    "TRP-ATLAS.md": "library"
+  },
+  "sourceLocaleOverrides": {
+    "TRP-ATLAS.md": "en",
+    "DOCS/README.md": "zh-TW",
+    "LEX/LEX·007-存在判準.md": "zh-TW",
+    "MB/MB-008-Rhythm-Shadow-Inference-Protocol.md": "en",
+    "MB/MB-008-節律鏡像推論協議.md": "zh-TW",
+    "SPEC/SPEC·X-名稱場域與組織的區辨邊界.md": "zh-TW",
+    "DOCS/cases/CASE·MRC-001D-愛的量子糾纏：從示範到源頭的勇氣傳承.md": "zh-TW",
+    "DOCS/applications/3D-PSM/theory.md": "zh-Hans",
+    "EPOCH/EPOCH·META-014-受託的本體論-當改寫能力進入不屬於自己的世界.md": "zh-TW",
+    "SPEC/history/SPEC·MRC-001-Multi-AI-Resonance-Chamber.md": "zh-TW",
+    "DOCS/books/book1/BOOK1_COMPLETE.md": "zh-TW"
+  },
+  "listingOverrides": {}
+}
