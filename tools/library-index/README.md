@@ -18,9 +18,9 @@ The governing cross-repository contract is Control-Room
 - `walking-skeleton` has eleven contract fixtures. `full` uses the same code and
   schema; there is no second full-catalog generator.
 - The committed full artifact contains every eligible entry in the five public
-  corpora plus the Atlas orientation node. Tests pin the reviewed corpus, DOCS
-  shelf, and lifecycle counts so a source change requires an explicit rebuild
-  and review.
+  corpora plus the Atlas orientation node, as of its `readBasis`. Tests pin the
+  reviewed corpus, DOCS shelf, and lifecycle counts, so every rebuild is an
+  explicit, reviewed step. When a rebuild is required is defined below.
 
 ## Fresh setup
 
@@ -48,15 +48,39 @@ file necessarily appears in a later commit. An Academy lock therefore records:
 - `readBasis`: the source commit recorded inside it.
 
 Post-commit verification uses `check:preview` and `check:full`. Each command
-preserves that artifact's existing `readBasis`, confirms that no public Markdown
-or corpus manifest changed after that commit, regenerates in memory, and compares
-bytes. Tool-only and artifact-only commits do not make the source stale.
+keeps that artifact's existing `readBasis`, regenerates the catalog in memory
+from the working tree with URLs still pinned to that `readBasis`, and compares
+it with the committed JSON entry by entry. When no public source changed, the
+comparison is byte-for-byte, as before. Tool-only and artifact-only commits do
+not make the source stale.
 
 Changed paths are read from Git as NUL-delimited records with rename detection
 disabled. Unicode paths, deletions, untracked public files, and a move from the
-public corpus into an excluded area therefore all make the artifact stale.
+public corpus into an excluded area are therefore all seen.
 Generated JSON is fixed to LF by `.gitattributes`; byte comparison is not relaxed
 for Windows checkouts.
+
+## When to rebuild
+
+The artifact is a pinned snapshot; consumers show it with its `readBasis` and
+fetch sources at that commit, so it may lag the corpus. Drift since `readBasis`
+falls into two classes (`classifyDrift` in `src/build.js`):
+
+- **Rebuild required** — `check:*` and the tests fail until a rebuild:
+  - `CORPUS-MANIFEST.yaml` changed (public boundary);
+  - catalog policy or generator revision changed;
+  - an entry in SPEC, LEX, EPOCH, MB, or the root documents was added, or any
+    of its catalog fields (title, ID, version, status, route, locale, …) changed;
+  - any catalog entry was removed or renamed;
+  - an entry changed although its own source did not (generator drift, or a
+    route or lookup target moved because of another document).
+- **Accumulates** — reported by `check:*`, does not fail, and is picked up by
+  the next rebuild: an entry under `DOCS/` (cases, applications, publications,
+  academic) was added or had catalog fields changed.
+
+A change to body text that leaves every catalog field unchanged is not drift at
+all. New cases therefore appear in the Library at the next rebuild; anyone may
+rebuild earlier.
 
 Run either build command only when intentionally choosing the current HEAD as a
 new source basis. If public Markdown is dirty relative to that basis, the build

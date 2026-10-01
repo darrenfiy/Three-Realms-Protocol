@@ -73,15 +73,8 @@ function corpusAt(root, readBasis) {
   }
 }
 
-export function buildArtifact({
-  root = findRepoRoot(),
-  profile = 'walking-skeleton',
-  readBasis = currentCommit(root),
-  policy = loadCatalogPolicy(),
-} = {}) {
-  const corpus = corpusAt(root, readBasis);
-  assertSourceFresh(root, readBasis, corpus);
-  const artifact = {
+function assembleArtifact({ profile, readBasis, policy, entries }) {
+  return {
     schemaVersion: 1,
     artifactType: 'trp-library-index',
     profile,
@@ -97,9 +90,83 @@ export function buildArtifact({
       model: null,
       promptRevision: null,
     },
-    entries: entriesForProfile(corpus, policy, profile),
+    entries,
   };
-  return validateArtifact(artifact);
+}
+
+function headerOf(artifact) {
+  const { entries, ...header } = artifact;
+  return header;
+}
+
+// 寫出 artifact 時 requireFresh 必須為 true：readBasis 之後的來源變動不能被標成 readBasis 的內容。
+// 只有比對與測試會關掉它，用工作樹內容配上舊 readBasis 的網址，逐筆對照已提交的條目。
+export function buildArtifact({
+  root = findRepoRoot(),
+  profile = 'walking-skeleton',
+  readBasis = currentCommit(root),
+  policy = loadCatalogPolicy(),
+  requireFresh = true,
+} = {}) {
+  const corpus = corpusAt(root, readBasis);
+  if (requireFresh) assertSourceFresh(root, readBasis, corpus);
+  return validateArtifact(assembleArtifact({
+    profile, readBasis, policy, entries: entriesForProfile(corpus, policy, profile),
+  }));
+}
+
+// 只有 DOCS 底下（案例、應用、出版、學術）的新增與欄位變動可以累積到下次重建。
+// 公開邊界、generator／policy、主要語料（SPEC／LEX／EPOCH／MB 與根目錄文件）的條目變動，
+// 任何條目刪除，以及來源沒動條目卻變了，都必須重建。
+const ACCUMULABLE_CORPORA = new Set(['docs']);
+
+export function classifyDrift({ artifact, expectedHeader, currentEntries, changedSources, buildError = null }) {
+  const changed = new Set(changedSources);
+  const major = [];
+  const minor = [];
+  if (changed.has('CORPUS-MANIFEST.yaml')) major.push({ path: 'CORPUS-MANIFEST.yaml', reason: 'public-boundary' });
+  if (JSON.stringify(headerOf(artifact)) !== JSON.stringify(expectedHeader)) {
+    major.push({ path: null, reason: 'generator-or-policy' });
+  }
+  if (buildError) {
+    major.push({ path: null, reason: 'build-error', detail: buildError });
+    return { changedSources: [...changed], major, minor };
+  }
+
+  const bucketFor = (entry) => (ACCUMULABLE_CORPORA.has(entry.corpus) ? minor : major);
+  const current = new Map(currentEntries.map((entry) => [entry.path, entry]));
+  const committed = new Map(artifact.entries.map((entry) => [entry.path, entry]));
+  for (const [path, entry] of committed) {
+    const now = current.get(path);
+    if (!now) major.push({ path, reason: 'removed' });
+    else if (JSON.stringify(now) === JSON.stringify(entry)) continue;
+    else if (!changed.has(path)) major.push({ path, reason: 'changed-without-source-change' });
+    else bucketFor(entry).push({ path, reason: 'changed' });
+  }
+  for (const [path, entry] of current) {
+    if (!committed.has(path)) bucketFor(entry).push({ path, reason: 'added' });
+  }
+  return { changedSources: [...changed], major, minor };
+}
+
+export function catalogDrift({ root = findRepoRoot(), artifact, policy = loadCatalogPolicy() }) {
+  const corpus = corpusAt(root, artifact.readBasis);
+  const changedSources = sourceChangesSince(root, artifact.readBasis, corpus);
+  const expectedHeader = headerOf(assembleArtifact({
+    profile: artifact.profile, readBasis: artifact.readBasis, policy, entries: [],
+  }));
+  let currentEntries = [];
+  let buildError = null;
+  try {
+    currentEntries = entriesForProfile(corpus, policy, artifact.profile);
+  } catch (error) {
+    buildError = error.message;
+  }
+  return classifyDrift({ artifact, expectedHeader, currentEntries, changedSources, buildError });
+}
+
+function formatDriftItems(items) {
+  return items.map(({ path, reason, detail }) => `  ${reason}: ${path || '(artifact)'}${detail ? ` — ${detail}` : ''}`).join('\n');
 }
 
 export function serializeArtifact(artifact) {
@@ -129,27 +196,45 @@ function defaultOutput(profile) {
   return resolve(toolRoot, 'generated', profile === 'walking-skeleton' ? 'library-index.preview.json' : 'library-index.json');
 }
 
-function existingReadBasis(path) {
-  if (!existsSync(path)) throw new Error(`--check 找不到 artifact：${path}`);
-  const parsed = JSON.parse(readFileSync(path, 'utf8'));
-  if (!/^[0-9a-f]{40}$/u.test(parsed.readBasis || '')) throw new Error(`既有 artifact 沒有有效 readBasis：${path}`);
-  return parsed.readBasis;
+function checkCommittedArtifact({ root, output, profile, readBasis }) {
+  if (!existsSync(output)) throw new Error(`--check 找不到 artifact：${output}`);
+  const existing = readFileSync(output, 'utf8');
+  const artifact = validateArtifact(JSON.parse(existing));
+  if (artifact.profile !== profile) throw new Error(`artifact profile 是 ${artifact.profile}，不是 ${profile}：${output}`);
+  if (readBasis && readBasis !== artifact.readBasis) throw new Error(`artifact readBasis 是 ${artifact.readBasis}，不是 ${readBasis}：${output}`);
+  if (serializeArtifact(artifact) !== existing) throw new Error(`artifact 不是 generator 的標準序列化：${output}`);
+
+  const policy = loadCatalogPolicy();
+  const drift = catalogDrift({ root, artifact, policy });
+  if (drift.major.length) {
+    throw new Error(`artifact 有必須重建的變動；請 commit 來源後以新的 HEAD 重建：\n${formatDriftItems(drift.major)}`);
+  }
+  if (!drift.minor.length) {
+    const rebuilt = serializeArtifact(buildArtifact({ root, profile, readBasis: artifact.readBasis, policy, requireFresh: false }));
+    if (rebuilt !== existing) throw new Error(`artifact 與 generator／policy 不一致：${output}`);
+  }
+
+  const lines = [`library-index check passed: ${profile}, ${artifact.readBasis}`];
+  if (drift.minor.length) {
+    lines.push(`累積 ${drift.minor.length} 筆 DOCS 一般變動，下次重建時一併收入：`, formatDriftItems(drift.minor));
+  } else if (drift.changedSources.length) {
+    lines.push(`來源有 ${drift.changedSources.length} 筆變動，目錄欄位不受影響。`);
+  }
+  process.stdout.write(`${lines.join('\n')}\n`);
 }
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
   const root = findRepoRoot();
   const output = resolve(args.output || defaultOutput(args.profile));
-  const readBasis = args.readBasis || (args.check ? existingReadBasis(output) : currentCommit(root));
-  const serialized = serializeArtifact(buildArtifact({ root, profile: args.profile, readBasis }));
 
   if (args.check) {
-    const existing = readFileSync(output, 'utf8');
-    if (existing !== serialized) throw new Error(`artifact 與 generator／policy 不一致：${output}`);
-    process.stdout.write(`library-index check passed: ${args.profile}, ${readBasis}\n`);
+    checkCommittedArtifact({ root, output, profile: args.profile, readBasis: args.readBasis });
     return;
   }
 
+  const readBasis = args.readBasis || currentCommit(root);
+  const serialized = serializeArtifact(buildArtifact({ root, profile: args.profile, readBasis }));
   mkdirSync(dirname(output), { recursive: true });
   writeFileSync(output, serialized, 'utf8');
   process.stdout.write(`library-index written: ${output}\nreadBasis: ${readBasis}\n`);

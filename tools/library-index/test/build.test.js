@@ -6,7 +6,7 @@ import { dirname, resolve } from 'node:path';
 import test from 'node:test';
 
 import { PublicCorpus, findRepoRoot, lookupKey } from '../../trp-mcp/src/corpus.js';
-import { buildArtifact, serializeArtifact, sourceChangesSince } from '../src/build.js';
+import { buildArtifact, catalogDrift, classifyDrift, serializeArtifact, sourceChangesSince } from '../src/build.js';
 import { loadCatalogPolicy } from '../src/catalog-policy.js';
 
 const root = findRepoRoot();
@@ -35,6 +35,8 @@ function corpusAt(readBasis) {
 
 const corpus = corpusAt(artifact.readBasis);
 const fullCorpus = corpusAt(fullArtifact.readBasis);
+const previewDrift = catalogDrift({ root, artifact, policy });
+const fullDrift = catalogDrift({ root, artifact: fullArtifact, policy });
 
 function fullArtifactForTest() {
   return fullArtifact;
@@ -73,20 +75,78 @@ function byFullPath(path) {
   return entry;
 }
 
-test('committed preview is deterministic and matches the current generator', () => {
-  const first = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy });
-  const second = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy });
+test('committed preview is deterministic and has no drift that requires a rebuild', () => {
+  const first = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy, requireFresh: false });
+  const second = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy, requireFresh: false });
   assert.equal(serializeArtifact(first), serializeArtifact(second));
-  assert.equal(serializeArtifact(first), artifactSource);
-  assert.deepEqual(sourceChangesSince(root, artifact.readBasis, corpus), []);
+  assert.equal(serializeArtifact(artifact), artifactSource);
+  assert.deepEqual(previewDrift.major, []);
+  if (!previewDrift.minor.length) assert.equal(serializeArtifact(first), artifactSource);
 });
 
-test('committed full catalog is deterministic and matches the current generator', () => {
-  const first = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy });
-  const second = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy });
+test('committed full catalog is deterministic and has no drift that requires a rebuild', () => {
+  const first = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy, requireFresh: false });
+  const second = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy, requireFresh: false });
   assert.equal(serializeArtifact(first), serializeArtifact(second));
-  assert.equal(serializeArtifact(first), fullArtifactSource);
-  assert.deepEqual(sourceChangesSince(root, fullArtifact.readBasis, fullCorpus), []);
+  assert.equal(serializeArtifact(fullArtifact), fullArtifactSource);
+  assert.deepEqual(fullDrift.major, []);
+  if (!fullDrift.minor.length) assert.equal(serializeArtifact(first), fullArtifactSource);
+});
+
+test('writing an artifact still requires sources to match readBasis', () => {
+  if (!sourceChangesSince(root, fullArtifact.readBasis, fullCorpus).length) return;
+  assert.throws(
+    () => buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy }),
+    /來源自 readBasis 後已變動/u,
+  );
+});
+
+test('drift splits rebuild-required changes from DOCS changes that can accumulate', () => {
+  const entry = (path, corpus, extra = {}) => ({ path, corpus, title: path, version: null, ...extra });
+  const committed = {
+    schemaVersion: 1,
+    readBasis: 'a'.repeat(40),
+    entries: [
+      entry('DOCS/cases/same.md', 'docs'),
+      entry('DOCS/cases/edited.md', 'docs'),
+      entry('DOCS/cases/rerouted.md', 'docs'),
+      entry('EPOCH/bumped.md', 'epoch'),
+      entry('EPOCH/content-only.md', 'epoch'),
+      entry('LEX/removed.md', 'lex'),
+    ],
+  };
+  const { entries, ...expectedHeader } = committed;
+  const currentEntries = [
+    entry('DOCS/cases/same.md', 'docs'),
+    entry('DOCS/cases/edited.md', 'docs', { version: 'v0.2' }),
+    entry('DOCS/cases/rerouted.md', 'docs', { title: 'moved by another entry' }),
+    entry('EPOCH/bumped.md', 'epoch', { version: 'v0.2' }),
+    entry('EPOCH/content-only.md', 'epoch'),
+    entry('DOCS/cases/new.md', 'docs'),
+    entry('SPEC/new.md', 'spec'),
+  ];
+  const changedSources = [
+    'DOCS/cases/edited.md', 'EPOCH/bumped.md', 'EPOCH/content-only.md',
+    'LEX/removed.md', 'DOCS/cases/new.md', 'SPEC/new.md',
+  ];
+  const drift = classifyDrift({ artifact: committed, expectedHeader, currentEntries, changedSources });
+  assert.deepEqual(drift.minor, [
+    { path: 'DOCS/cases/edited.md', reason: 'changed' },
+    { path: 'DOCS/cases/new.md', reason: 'added' },
+  ]);
+  assert.deepEqual(drift.major, [
+    { path: 'DOCS/cases/rerouted.md', reason: 'changed-without-source-change' },
+    { path: 'EPOCH/bumped.md', reason: 'changed' },
+    { path: 'LEX/removed.md', reason: 'removed' },
+    { path: 'SPEC/new.md', reason: 'added' },
+  ]);
+
+  const boundary = classifyDrift({ artifact: committed, expectedHeader, currentEntries: entries, changedSources: ['CORPUS-MANIFEST.yaml'] });
+  assert.deepEqual(boundary.major, [{ path: 'CORPUS-MANIFEST.yaml', reason: 'public-boundary' }]);
+  const generator = classifyDrift({ artifact: committed, expectedHeader: { ...expectedHeader, schemaVersion: 2 }, currentEntries: entries, changedSources: [] });
+  assert.deepEqual(generator.major, [{ path: null, reason: 'generator-or-policy' }]);
+  const broken = classifyDrift({ artifact: committed, expectedHeader, currentEntries: [], changedSources: [], buildError: 'route collision' });
+  assert.deepEqual(broken.major, [{ path: null, reason: 'build-error', detail: 'route collision' }]);
 });
 
 test('generated JSON has an LF checkout contract and LF bytes', () => {
@@ -141,10 +201,12 @@ test('preview contains exactly the eleven policy fixtures and nothing outside Pu
 });
 
 test('full catalog contains every eligible public entry across the five corpora', () => {
+  const pending = new Set(fullDrift.minor.filter(({ reason }) => reason === 'added').map(({ path }) => path));
   const expected = fullCorpus.entries
     .filter((entry) => policy.rootPaths.includes(entry.path)
       || policy.profiles.full.corpora.includes(entry.corpus))
     .map((entry) => entry.path)
+    .filter((path) => !pending.has(path))
     .sort();
   const actual = fullArtifact.entries.map((entry) => entry.path).sort();
   assert.equal(fullArtifact.profile, 'full');
@@ -328,7 +390,7 @@ test('missing walking-skeleton fixtures fail closed', () => {
   const missing = structuredClone(policy);
   missing.profiles['walking-skeleton'].paths[0] = 'LEX/LEX·999-不存在.md';
   assert.throws(
-    () => buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy: missing }),
+    () => buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy: missing, requireFresh: false }),
     /不在公開 catalog 候選/u,
   );
 });
