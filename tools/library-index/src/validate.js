@@ -126,7 +126,9 @@ function validateEntry(entry, artifact, index) {
     || new Set(entry.keywords).size !== entry.keywords.length) {
     throw new Error(`${label}.keywords 不合法。`);
   }
-  if (artifact.profile === 'walking-skeleton' && entry.keywords.length !== 0) throw new Error(`${label}.keywords 在 P1 必須為空。`);
+  if (artifact.keywordPolicyRevision === null && entry.keywords.length !== 0) {
+    throw new Error(`${label}.keywords 在 P1 必須為空。`);
+  }
 }
 
 export function validateArtifact(artifact) {

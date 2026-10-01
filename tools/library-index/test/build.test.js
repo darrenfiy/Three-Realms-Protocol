@@ -14,6 +14,9 @@ const policy = loadCatalogPolicy();
 const artifactPath = resolve(root, 'tools/library-index/generated/library-index.preview.json');
 const artifactSource = readFileSync(artifactPath, 'utf8');
 const artifact = JSON.parse(artifactSource);
+const fullArtifactPath = resolve(root, 'tools/library-index/generated/library-index.json');
+const fullArtifactSource = readFileSync(fullArtifactPath, 'utf8');
+const fullArtifact = JSON.parse(fullArtifactSource);
 
 function corpusAt(readBasis) {
   const previousCommit = process.env.TRP_BUILD_COMMIT;
@@ -31,11 +34,19 @@ function corpusAt(readBasis) {
 }
 
 const corpus = corpusAt(artifact.readBasis);
-let fullArtifact;
+const fullCorpus = corpusAt(fullArtifact.readBasis);
 
 function fullArtifactForTest() {
-  fullArtifact ||= buildArtifact({ root, profile: 'full', readBasis: artifact.readBasis, policy });
   return fullArtifact;
+}
+
+function countsBy(entries, keyFor) {
+  const counts = {};
+  for (const entry of entries) {
+    const key = keyFor(entry);
+    counts[key] = (counts[key] || 0) + 1;
+  }
+  return counts;
 }
 
 function fixtureGit(fixtureRoot, args) {
@@ -64,10 +75,23 @@ test('committed preview is deterministic and matches the current generator', () 
   assert.deepEqual(sourceChangesSince(root, artifact.readBasis, corpus), []);
 });
 
+test('committed full catalog is deterministic and matches the current generator', () => {
+  const first = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy });
+  const second = buildArtifact({ root, profile: 'full', readBasis: fullArtifact.readBasis, policy });
+  assert.equal(serializeArtifact(first), serializeArtifact(second));
+  assert.equal(serializeArtifact(first), fullArtifactSource);
+  assert.deepEqual(sourceChangesSince(root, fullArtifact.readBasis, fullCorpus), []);
+});
+
 test('generated JSON has an LF checkout contract and LF bytes', () => {
-  const attribute = fixtureGit(root, ['check-attr', 'eol', '--', 'tools/library-index/generated/library-index.preview.json']);
-  assert.match(attribute, /: eol: lf$/u);
-  assert.equal(artifactSource.includes('\r'), false);
+  for (const [path, source] of [
+    ['tools/library-index/generated/library-index.preview.json', artifactSource],
+    ['tools/library-index/generated/library-index.json', fullArtifactSource],
+  ]) {
+    const attribute = fixtureGit(root, ['check-attr', 'eol', '--', path]);
+    assert.match(attribute, /: eol: lf$/u);
+    assert.equal(source.includes('\r'), false);
+  }
 });
 
 test('freshness catches Unicode tracked, untracked, deleted, and renamed public paths', (t) => {
@@ -110,6 +134,55 @@ test('preview contains exactly the eleven policy fixtures and nothing outside Pu
   assert.ok(artifact.entries.every((entry) => publicPaths.has(entry.path)));
 });
 
+test('full catalog contains every eligible public entry across the five corpora', () => {
+  const expected = fullCorpus.entries
+    .filter((entry) => policy.rootPaths.includes(entry.path)
+      || policy.profiles.full.corpora.includes(entry.corpus))
+    .map((entry) => entry.path)
+    .sort();
+  const actual = fullArtifact.entries.map((entry) => entry.path).sort();
+  assert.equal(fullArtifact.profile, 'full');
+  assert.equal(fullArtifact.entries.length, 464);
+  assert.deepEqual(actual, expected);
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.corpus || 'orientation'), {
+    orientation: 1,
+    docs: 292,
+    epoch: 84,
+    lex: 11,
+    mb: 17,
+    spec: 59,
+  });
+});
+
+test('full catalog DOCS shelves and lifecycle statistics match the reviewed source snapshot', () => {
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.shelf), {
+    orientation: 1,
+    other: 1,
+    academic: 8,
+    applications: 23,
+    publications: 55,
+    cases: 205,
+    epoch: 84,
+    lex: 11,
+    mb: 17,
+    spec: 59,
+  });
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.listing), {
+    primary: 319,
+    candidate: 106,
+    historical: 39,
+  });
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.status || 'null'), {
+    Active: 138,
+    Candidate: 34,
+    Draft: 19,
+    'Honored-Completion': 2,
+    null: 209,
+    Seed: 61,
+    Superseded: 1,
+  });
+});
+
 test('title fallback records whether metadata, heading, or filename supplied the display title', () => {
   const atlas = byPath('TRP-ATLAS.md');
   assert.equal(atlas.title, 'TRP Atlas — 三界五行圖譜入口');
@@ -146,12 +219,12 @@ test('every full-catalog resolve is unique and every fetch target is exact', () 
   for (const entry of full.entries) {
     if (!entry.lookupTarget) continue;
     if (entry.lookupTarget.kind === 'resolve') {
-      const result = corpus.resolve(entry.lookupTarget.id);
+      const result = fullCorpus.resolve(entry.lookupTarget.id);
       assert.equal(result.ambiguous, false, entry.path);
       assert.equal(result.documents.length, 1, entry.path);
       assert.equal(result.documents[0].path, entry.path);
     } else {
-      assert.equal(corpus.standardFetch(entry.lookupTarget.path).id, entry.path);
+      assert.equal(fullCorpus.standardFetch(entry.lookupTarget.path).id, entry.path);
     }
   }
 });
@@ -202,17 +275,25 @@ test('version layers, candidate state, publication, and historical priority surv
 });
 
 test('source URLs are pinned and navigation nodes never create lookup targets', () => {
-  assert.match(artifact.readBasis, /^[0-9a-f]{40}$/u);
-  for (const entry of artifact.entries) {
-    assert.equal(entry.sourceUrl, corpus.sourceUrl(entry.path), entry.path);
-    if (entry.nodeKind === 'navigation') assert.equal(entry.lookupTarget, null, entry.path);
+  for (const [candidate, candidateCorpus] of [[artifact, corpus], [fullArtifact, fullCorpus]]) {
+    assert.match(candidate.readBasis, /^[0-9a-f]{40}$/u);
+    for (const entry of candidate.entries) {
+      assert.equal(entry.sourceUrl, candidateCorpus.sourceUrl(entry.path), entry.path);
+      if (entry.nodeKind === 'navigation') assert.equal(entry.lookupTarget, null, entry.path);
+    }
   }
 });
 
 test('artifact never contains source bodies or per-file fingerprints', () => {
-  const serialized = JSON.stringify(artifact);
-  assert.equal(/"(?:sha256|bytes|content)"\s*:/u.test(serialized), false);
-  assert.ok(artifact.entries.every((entry) => entry.keywords.length === 0));
+  for (const candidate of [artifact, fullArtifact]) {
+    const serialized = JSON.stringify(candidate);
+    assert.equal(/"(?:sha256|bytes|content)"\s*:/u.test(serialized), false);
+    assert.ok(candidate.entries.every((entry) => entry.keywords.length === 0));
+  }
+
+  const prematureKeywords = structuredClone(fullArtifact);
+  prematureKeywords.entries[0].keywords = ['not-yet'];
+  assert.throws(() => serializeArtifact(prematureKeywords), /keywords 在 P1 必須為空/u);
 });
 
 test('missing walking-skeleton fixtures fail closed', () => {

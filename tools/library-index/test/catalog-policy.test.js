@@ -110,12 +110,17 @@ test('manual validator rejects every non-string field required as a schema strin
   }
 });
 
-test('JSON schema and manual validator both reject empty path segments', () => {
+test('JSON schema and manual validator share path and P1 keyword limits', () => {
   const schema = JSON.parse(readFileSync(new URL('../schema/library-index.schema.json', import.meta.url), 'utf8'));
   const pathPattern = new RegExp(schema.$defs.entry.properties.path.pattern, 'u');
   assert.equal(pathPattern.test('DOCS/example.md'), true);
   assert.equal(pathPattern.test('DOCS//example.md'), false);
   assert.throws(() => validateRepoMarkdownPath('DOCS//example.md', 'path'), /repo-relative/u);
+  assert.equal(schema.$defs.entry.properties.keywords.maxItems, 0);
+
+  const committed = JSON.parse(readFileSync(new URL('../generated/library-index.preview.json', import.meta.url), 'utf8'));
+  committed.entries[0].keywords = ['not-yet'];
+  assert.throws(() => validateArtifact(committed), /keywords 在 P1 必須為空/u);
 });
 
 test('unknown policy revisions, route collisions, and duplicate fixtures fail closed', (t) => {

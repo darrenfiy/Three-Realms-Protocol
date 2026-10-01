@@ -17,6 +17,10 @@ The governing cross-repository contract is Control-Room
 - Generated JSON contains no document body, bytes, or per-file SHA-256.
 - `walking-skeleton` has eleven contract fixtures. `full` uses the same code and
   schema; there is no second full-catalog generator.
+- The committed full artifact contains every eligible entry in the five public
+  corpora plus the Atlas orientation node. Tests pin the reviewed corpus, DOCS
+  shelf, and lifecycle counts so a source change requires an explicit rebuild
+  and review.
 
 ## Fresh setup
 
@@ -26,8 +30,10 @@ tool's locked dependencies first, from the Protocol repo root:
 ```powershell
 npm ci --prefix tools/trp-mcp
 npm run build:preview --prefix tools/library-index
+npm run build:full --prefix tools/library-index
 npm test --prefix tools/library-index
 npm run check:preview --prefix tools/library-index
+npm run check:full --prefix tools/library-index
 ```
 
 These commands also work in a non-PowerShell CI shell because they do not depend
@@ -41,10 +47,10 @@ file necessarily appears in a later commit. An Academy lock therefore records:
 - `artifactCommit`: the commit that contains this JSON;
 - `readBasis`: the source commit recorded inside it.
 
-Post-commit verification uses `check:preview`. It preserves the artifact's
-existing `readBasis`, confirms that no public Markdown or corpus manifest changed
-after that commit, regenerates in memory, and compares bytes. Tool-only and
-artifact-only commits do not make the source stale.
+Post-commit verification uses `check:preview` and `check:full`. Each command
+preserves that artifact's existing `readBasis`, confirms that no public Markdown
+or corpus manifest changed after that commit, regenerates in memory, and compares
+bytes. Tool-only and artifact-only commits do not make the source stale.
 
 Changed paths are read from Git as NUL-delimited records with rename detection
 disabled. Unicode paths, deletions, untracked public files, and a move from the
@@ -52,9 +58,9 @@ public corpus into an excluded area therefore all make the artifact stale.
 Generated JSON is fixed to LF by `.gitattributes`; byte comparison is not relaxed
 for Windows checkouts.
 
-Run `build:preview` only when intentionally choosing the current HEAD as a new
-source basis. If public Markdown is dirty relative to that basis, the build fails
-closed; commit the source change first, then rebuild.
+Run either build command only when intentionally choosing the current HEAD as a
+new source basis. If public Markdown is dirty relative to that basis, the build
+fails closed; commit the source change first, then rebuild.
 
 ## Display and routing rules
 
@@ -80,9 +86,11 @@ closed; commit the source change first, then rebuild.
 ## Outputs
 
 - `generated/library-index.preview.json`: committed P1 walking skeleton.
-- `generated/library-index.json`: future full metadata catalog; not produced by
-  P1-A.
+- `generated/library-index.json`: committed P1-C full metadata catalog. At
+  `readBasis a2b7046`, it contains 464 entries: Atlas orientation plus SPEC 59,
+  MB 17, DOCS 292, LEX 11, and EPOCH 84.
 
-Keywords remain empty in P1. Model-generated keyword work belongs to P2.
+Keywords remain empty in both P1 profiles. Model-generated keyword work belongs
+to P2.
 The hand-written validator is tested against the schema's required string and
 path constraints; invalid field types and empty path segments fail closed.
