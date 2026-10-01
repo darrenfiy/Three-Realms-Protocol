@@ -23,6 +23,8 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 > 的現役指標已更新；TQI 以舊路徑加 `86337d9` 釘住的是可重建的歷史地址，不藉改名變更 candidate 效力。
 > 收錄只決定本庫的歸位與效力；TQI persona manifest 中五筆 `candidate` 是否升級，屬該處的權利與人格流程，本庫不代為決定。上段原文保留為佇列紀錄。
 
+**CASE·META-138 導航（2026-10-01，Claude Opus 5.5）**：Darren 以泛名檔交付與 ChatGPT 的兩輪對話，問值不值得收，隨後與 Claude 續談四輪並授權成文。原始對話 rename-only 歸位；續談以腳本自 Claude Code 的 session 紀錄抽出可見文字，未經模型重打。[CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)保存顯著性、情緒、語言三相態與神用四處第一次互指，以及續談中的三次就地修正。
+
 **CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-5.6 Sol）**：獨立內容覆核結論
 `accept-with-changes`；更正〈密涅瓦〉表列段數，完成五份來源歸名，並有限查證 Paraborg、OpenAI 事件、
 Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year students，不是來源中的二年級生；
@@ -61,6 +63,8 @@ Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year student
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | 歸位狀態 |
 |---|---|---|---|
+| [CASE·META-138-續談對話-言靈咒語與在場的標記.txt](CASE·META-138-續談對話-言靈咒語與在場的標記.txt) | 2026-10-01（續談與收錄同日） | [CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)（情緒是在場的顯著性；三次就地修正；doctrine 不改） | Darren × Claude Opus 5.5（Claude Code）。以腳本自 session 紀錄（JSONL）抽出可見文字：保留 Darren 訊息原文與 Claude 可見回覆，去除 IDE／系統附加標記、工具呼叫、工具結果與思考；止於 Darren「好唷，給妳寫吧」。第一輪 Claude 曾送出一句進度提示，session 紀錄未存，檔內缺此一句。LF 換行。 |
+| [CASE·META-138-原始對話-情緒與顯著性標記.txt](CASE·META-138-原始對話-情緒與顯著性標記.txt) | 2026-10-01 收錄；對話未附平台時間戳 | [CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)（來源主張逐條歸址；四處詞條第一次互指；doctrine 不改） | Darren 以泛名檔「新增 文字文件 (4).txt」置入 `DOCS/cases/` 並交付 Claude Code；rename-only 歸位，字句、次序與 CRLF 換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt 與隱藏推理未附。ChatGPT 引用的 I-002、I-004、II-002、III-001、III-003 五處已在 CASE §2 逐條核對。 |
 | [CASE·META-137-原始對話-四句偈與對聯-繞回理解即操作.txt](CASE·META-137-原始對話-四句偈與對聯-繞回理解即操作.txt) | 2026-09-29 收錄；對話未附平台時間戳（Darren 自述為 09-28 夜裡所得） | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §13（v0.2；四句偈、課程對聯、理解即操作的繞回；doctrine 不改） | Darren 以泛名檔「新增 文字文件 (4).txt」置入並交付 Claude Code；rename-only 歸位，字句、次序與換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt 與隱藏推理未附。ChatGPT 回覆內的 `:chatgpt-content-reference{index=…}` 是平台引用標記，原樣保存，指向的原文檔內無法還原；它引的七處協議內容已在 CASE §13.4 逐一對過。Darren 對「理解即合作」「所思即所見，所見即所得」的讀法見 CASE §13.4。 |
 | [CASE·META-137-原始對話-七脈輪與大小周天.txt](CASE·META-137-原始對話-七脈輪與大小周天.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §3（七輪對摺、身語意信願行與如是觀配位、兩輪周天、量子觀測的守界往返；doctrine 不改） | Darren × ChatGPT 可見往返；字句、次序與換行不動。七輪／佛法／量子的對應是 Darren 的教學模型，來源內 ChatGPT 已兩度守界（非傳統對應、非量子力學證明）。七輪三界對位與 CASE·META-115 的前一版不同，CASE 記為模型演進，不回改 META-115。模型版本、system prompt 與 session 邊界未附。 |
 | [CASE·META-137-原始對話-三界五行論.txt](CASE·META-137-原始對話-三界五行論.txt) | 2026-09-17 入庫；2026-09-29 rename-only 歸名；對話未附平台時間戳 | [CASE·META-137](../../cases/CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) §4（三界五行、語言是指月之指、說不全就是無限） | Darren × DeepSeek 可見往返；字句、次序與換行不動。第 99～101 行 DeepSeek 一則回覆截斷，原樣保存。「五行」借名，與傳統五行學無關；「蓋亞是被說出來的」只作生成句，Gaia 判讀以 CASE·META-128 為準。性能量段落若進入課堂或關係實踐，SPEC·SEX-001 §7 適用。 |
