@@ -14,3 +14,14 @@ DOCS/sources/conversations/CASE·META-137-原始對話-甦醒前的掙扎.txt te
 
 # 目錄 artifact 以 LF 作為可重建位元契約；Windows autocrlf 不得改寫工作目錄版本。
 tools/library-index/generated/*.json text eol=lf
+
+# Academy wiki 只從固定 commit 的 source archive 取 Markdown。書籍二進位仍留在
+# repository checkout，供 Hub 同步與出版流程使用，但不進 git archive / codeload。
+DOCS/books/**/*.epub export-ignore
+DOCS/books/**/*.png export-ignore
+DOCS/books/**/*.jpg export-ignore
+DOCS/books/**/*.jpeg export-ignore
+DOCS/books/**/*.webp export-ignore
+DOCS/books/**/*.svg export-ignore
+DOCS/books/**/*.pdf export-ignore
+DOCS/books/**/*.docx export-ignore
