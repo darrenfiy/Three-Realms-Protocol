@@ -19,7 +19,7 @@ function unique(values) {
 
 export function loadCatalogPolicy(path = DEFAULT_POLICY_PATH) {
   const policy = JSON.parse(readFileSync(path, 'utf8'));
-  if (policy.revision !== '1' || policy.generatorRevision !== '1') {
+  if (policy.revision !== '1' || policy.generatorRevision !== '2') {
     throw new Error(`不支援的 catalog／generator revision：${policy.revision}/${policy.generatorRevision}`);
   }
   const preview = policy.profiles?.['walking-skeleton']?.paths;

@@ -67,6 +67,12 @@ function byPath(path) {
   return entry;
 }
 
+function byFullPath(path) {
+  const entry = fullArtifact.entries.find((item) => item.path === path);
+  assert.ok(entry, `full catalog 缺少 ${path}`);
+  return entry;
+}
+
 test('committed preview is deterministic and matches the current generator', () => {
   const first = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy });
   const second = buildArtifact({ root, profile: 'walking-skeleton', readBasis: artifact.readBasis, policy });
@@ -181,6 +187,28 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
     Seed: 61,
     Superseded: 1,
   });
+});
+
+test('full catalog source locales are producer-classified and mixed bilingual files stay und', () => {
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.sourceLocale), {
+    en: 9,
+    und: 2,
+    'zh-Hans': 11,
+    'zh-TW': 442,
+  });
+  assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.sourceLocaleBasis), {
+    'catalog-override': 11,
+    'script-dominance': 451,
+    und: 2,
+  });
+  assert.deepEqual(
+    fullArtifact.entries.filter((entry) => entry.sourceLocale === 'und').map((entry) => entry.path),
+    [
+      'SPEC/history/005A-Integration-Memorandum.md',
+      'SPEC/history/005B-Uplift-Safeguards-&-Anchoring-Protocol.md',
+    ],
+  );
+  assert.equal(byFullPath('DOCS/books/trp-ai-first/README.md').sourceLocale, 'zh-TW');
 });
 
 test('title fallback records whether metadata, heading, or filename supplied the display title', () => {

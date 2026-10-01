@@ -25,7 +25,7 @@
     "notice": { "const": "Derived navigation data; not protocol source text." },
     "readBasis": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
     "catalogPolicyRevision": { "const": "1" },
-    "generatorRevision": { "const": "1" },
+    "generatorRevision": { "const": "2" },
     "keywordPolicyRevision": { "type": "null" },
     "generation": {
       "type": "object",
@@ -123,7 +123,7 @@
         "latestActiveVersion": { "$ref": "#/$defs/nullableString" },
         "candidateOverlay": { "$ref": "#/$defs/candidateOverlay" },
         "sourceLocale": { "type": "string", "minLength": 2 },
-        "sourceLocaleBasis": { "enum": ["catalog-override", "metadata", "und"] },
+        "sourceLocaleBasis": { "enum": ["catalog-override", "metadata", "script-dominance", "und"] },
         "sourceUrl": { "type": "string", "format": "uri" },
         "lookupTarget": { "$ref": "#/$defs/lookupTarget" },
         "keywords": {

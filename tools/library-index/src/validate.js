@@ -113,7 +113,7 @@ function validateEntry(entry, artifact, index) {
   nullableString(entry.latestActiveVersion, `${label}.latestActiveVersion`);
   validateCandidateOverlay(entry.candidateOverlay, `${label}.candidateOverlay`);
   validateLocale(entry.sourceLocale, `${label}.sourceLocale`);
-  if (!['catalog-override', 'metadata', 'und'].includes(entry.sourceLocaleBasis)) throw new Error(`${label}.sourceLocaleBasis 不合法。`);
+  if (!['catalog-override', 'metadata', 'script-dominance', 'und'].includes(entry.sourceLocaleBasis)) throw new Error(`${label}.sourceLocaleBasis 不合法。`);
   const encodedPath = entry.path.split('/').map((segment) => encodeURIComponent(segment)).join('/');
   const expectedSourceUrl = `https://github.com/darrenfiy/Three-Realms-Protocol/blob/${artifact.readBasis}/${encodedPath}`;
   if (entry.sourceUrl !== expectedSourceUrl) {
@@ -139,7 +139,7 @@ export function validateArtifact(artifact) {
   if (!['walking-skeleton', 'full'].includes(artifact.profile)) throw new Error(`未知 profile：${artifact.profile}`);
   if (artifact.derived !== true || artifact.notice !== 'Derived navigation data; not protocol source text.') throw new Error('artifact 必須明標 derived navigation data。');
   if (!/^[0-9a-f]{40}$/u.test(artifact.readBasis)) throw new Error('readBasis 必須是完整 40-hex commit。');
-  if (artifact.catalogPolicyRevision !== '1' || artifact.generatorRevision !== '1' || artifact.keywordPolicyRevision !== null) {
+  if (artifact.catalogPolicyRevision !== '1' || artifact.generatorRevision !== '2' || artifact.keywordPolicyRevision !== null) {
     throw new Error('artifact revision 不符合 v1。');
   }
   exactKeys(artifact.generation, GENERATION_KEYS, 'generation');

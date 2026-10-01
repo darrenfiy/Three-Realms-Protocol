@@ -67,11 +67,51 @@ test('an ID-only H1 is paired with H2 or falls back to the filename', () => {
   assert.deepEqual(displayTitleFor(metadata), { title: 'Metadata title', titleBasis: 'metadata' });
 });
 
-test('source locale uses overrides, then declared metadata, otherwise und', () => {
+test('source locale uses overrides, declared metadata, then deterministic script dominance', () => {
   assert.deepEqual(sourceLocaleFor({ path: 'DOCS/applications/3D-PSM/theory.md', content: '' }, policy),
     { sourceLocale: 'zh-Hans', sourceLocaleBasis: 'catalog-override' });
   assert.deepEqual(sourceLocaleFor({ path: 'DOCS/example.md', content: '---\nlanguage: fr\ntitle: Exemple\n---\n' }, policy),
     { sourceLocale: 'fr', sourceLocaleBasis: 'metadata' });
+
+  const traditional = '# 原文\n\n這是一份繁體中文文件，說明協議如何保護關係與選擇。'.repeat(3)
+    + '\n```js\nconst englishNoise = "must not win classification";\n```\n'
+    + '[來源](https://example.com/a/very/long/english/path)';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/traditional.md', content: traditional }, policy),
+    { sourceLocale: 'zh-TW', sourceLocaleBasis: 'script-dominance' });
+
+  const simplified = '# 原文\n\n这是一份简体中文文件，说明协议如何保护关系与选择。'.repeat(3);
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/simplified.md', content: simplified }, policy),
+    { sourceLocale: 'zh-Hans', sourceLocaleBasis: 'script-dominance' });
+
+  const english = '# Source\n\nThis document is written in English and remains the original source text.';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/english.md', content: english }, policy),
+    { sourceLocale: 'en', sourceLocaleBasis: 'script-dominance' });
+
+  const technicalIndex = '# 中文工作台\n\n這裡收納協議文件與章節工作包；這些記錄維持繁體原文，並保護閱讀者的選擇。\n'
+    + Array.from({ length: 20 }, (_, index) => `- [TRP_AI_FIRST_CH${index}_DRAFT_v0.1.md](chapters/TRP_AI_FIRST_CH${index}_DRAFT_v0.1.md)`).join('\n');
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/technical-index.md', content: technicalIndex }, policy),
+    { sourceLocale: 'zh-TW', sourceLocaleBasis: 'script-dominance' });
+
+  const mixed = `${'這是繁體中文內容'.repeat(6)} ${'This is English content '.repeat(3)}`;
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/mixed.md', content: mixed }, policy),
+    { sourceLocale: 'und', sourceLocaleBasis: 'und' });
+  const variantAmbiguous = '天地人心生死日月山水火木金土'.repeat(3);
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/variant-ambiguous.md', content: variantAmbiguous }, policy),
+    { sourceLocale: 'und', sourceLocaleBasis: 'und' });
+
+  const scriptBoundary = '這國語體學術實義頭條變當將abcdefg';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/script-boundary.md', content: scriptBoundary }, policy),
+    { sourceLocale: 'zh-TW', sourceLocaleBasis: 'script-dominance' });
+  const belowScriptBoundary = '這國語體學術實義頭條變當abcdefgh';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/below-script-boundary.md', content: belowScriptBoundary }, policy),
+    { sourceLocale: 'und', sourceLocaleBasis: 'und' });
+
+  const variantBoundary = '這國語體汉天地人心生死日月山水火木金土佛';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/variant-boundary.md', content: variantBoundary }, policy),
+    { sourceLocale: 'zh-TW', sourceLocaleBasis: 'script-dominance' });
+  const mixedVariants = '這國語汉体天地人心生死日月山水火木金土佛';
+  assert.deepEqual(sourceLocaleFor({ path: 'DOCS/mixed-variants.md', content: mixedVariants }, policy),
+    { sourceLocale: 'und', sourceLocaleBasis: 'und' });
   assert.deepEqual(sourceLocaleFor({ path: 'DOCS/unknown.md', content: '# 無宣告\n' }, policy),
     { sourceLocale: 'und', sourceLocaleBasis: 'und' });
 });
@@ -85,7 +125,7 @@ test('schema validator fails closed on forbidden source data and unsafe paths', 
     notice: 'Derived navigation data; not protocol source text.',
     readBasis: 'a'.repeat(40),
     catalogPolicyRevision: '1',
-    generatorRevision: '1',
+    generatorRevision: '2',
     keywordPolicyRevision: null,
     generation: { mode: 'deterministic', provider: null, model: null, promptRevision: null },
     entries: [],

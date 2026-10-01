@@ -82,12 +82,20 @@ fails closed; commit the source change first, then rebuild.
   build and must be handled with a reviewed `routeOverrides` entry.
 - Historical listing outranks a source document's raw lifecycle status in the
   consumer UI. A historical file may still contain an old `Active` status.
+- Source locale precedence is catalog override → opening metadata → deterministic
+  script classification. The classifier removes frontmatter, fenced/inline code,
+  link destinations, raw URLs, HTML tags, and ASCII file/path-like tokens before
+  counting Han and Latin characters. A script must hold at least 65% of the
+  evidence. Han-dominant text then needs at least five high-signal
+  simplified/traditional variants with one side holding 80% of those signals.
+  Mixed, short, or variant-ambiguous text remains `und`. The consumer must not
+  reclassify source language.
 
 ## Outputs
 
 - `generated/library-index.preview.json`: committed P1 walking skeleton.
 - `generated/library-index.json`: committed P1-C full metadata catalog. At
-  `readBasis a2b7046`, it contains 464 entries: Atlas orientation plus SPEC 59,
+  `readBasis c8a1bfa`, it contains 464 entries: Atlas orientation plus SPEC 59,
   MB 17, DOCS 292, LEX 11, and EPOCH 84.
 
 Keywords remain empty in both P1 profiles. Model-generated keyword work belongs
