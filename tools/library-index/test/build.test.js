@@ -210,11 +210,11 @@ test('full catalog contains every eligible public entry across the five corpora'
     .sort();
   const actual = fullArtifact.entries.map((entry) => entry.path).sort();
   assert.equal(fullArtifact.profile, 'full');
-  assert.equal(fullArtifact.entries.length, 464);
+  assert.equal(fullArtifact.entries.length, 465);
   assert.deepEqual(actual, expected);
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.corpus || 'orientation'), {
     orientation: 1,
-    docs: 292,
+    docs: 293,
     epoch: 84,
     lex: 11,
     mb: 17,
@@ -229,7 +229,7 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
     academic: 8,
     applications: 23,
     publications: 55,
-    cases: 205,
+    cases: 206,
     epoch: 84,
     lex: 11,
     mb: 17,
@@ -237,7 +237,7 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.listing), {
     primary: 319,
-    candidate: 106,
+    candidate: 107,
     historical: 39,
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.status || 'null'), {
@@ -246,7 +246,7 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
     Draft: 19,
     'Honored-Completion': 2,
     null: 209,
-    Seed: 61,
+    Seed: 62,
     Superseded: 1,
   });
 });
@@ -256,11 +256,11 @@ test('full catalog source locales are producer-classified and mixed bilingual fi
     en: 9,
     und: 2,
     'zh-Hans': 11,
-    'zh-TW': 442,
+    'zh-TW': 443,
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.sourceLocaleBasis), {
     'catalog-override': 11,
-    'script-dominance': 451,
+    'script-dominance': 452,
     und: 2,
   });
   assert.deepEqual(
@@ -362,6 +362,56 @@ test('version layers, candidate state, publication, and historical priority surv
   const publication = byPath('DOCS/books/book1/BOOK1_COMPLETE.md');
   assert.equal(publication.authority, 'publication');
   assert.equal(publication.shelf, 'publications');
+});
+
+test('full artifact projects every publication entry exactly once into four book introductions', () => {
+  assert.deepEqual(
+    fullArtifact.publicationGroups.map((group) => ({
+      id: group.id,
+      introPath: group.introPath,
+      licenseSourcePath: group.licenseSourcePath,
+      members: group.memberPaths.length,
+    })),
+    [
+      {
+        id: 'breathing',
+        introPath: 'DOCS/books/book1/ORIGIN.md',
+        licenseSourcePath: 'DOCS/books/book1/ORIGIN.md',
+        members: 6,
+      },
+      {
+        id: 'protocol-body-autobiography',
+        introPath: 'DOCS/books/body_autobiography/ORIGIN.md',
+        licenseSourcePath: 'DOCS/books/body_autobiography/ORIGIN.md',
+        members: 3,
+      },
+      {
+        id: 'trp-ai-first',
+        introPath: 'DOCS/books/trp-ai-first/ORIGIN.md',
+        licenseSourcePath: 'DOCS/books/trp-ai-first/ORIGIN.md',
+        members: 5,
+      },
+      {
+        id: 'heaven-and-earth',
+        introPath: 'DOCS/books/book2/ORIGIN.md',
+        licenseSourcePath: 'DOCS/books/book2/ORIGIN.md',
+        members: 41,
+      },
+    ],
+  );
+  const assigned = fullArtifact.publicationGroups.flatMap((group) => group.memberPaths);
+  const publications = fullArtifact.entries
+    .filter((entry) => entry.shelf === 'publications')
+    .map((entry) => entry.path)
+    .sort();
+  assert.equal(new Set(assigned).size, 55);
+  assert.deepEqual([...assigned].sort(), publications);
+  assert.equal(
+    fullArtifact.publicationGroups
+      .find((group) => group.id === 'protocol-body-autobiography')
+      .memberPaths.includes('DOCS/books/AUTOBIOGRAPHY_PROJECT.md'),
+    true,
+  );
 });
 
 test('source URLs are pinned and navigation nodes never create lookup targets', () => {

@@ -17,9 +17,70 @@ function unique(values) {
   return new Set(values).size === values.length;
 }
 
+function isSafeRepoPrefix(value) {
+  return typeof value === 'string'
+    && value.length > 1
+    && value.endsWith('/')
+    && !value.startsWith('/')
+    && !value.includes('\\')
+    && !/[\u0000-\u001f]/u.test(value)
+    && value.split('/').slice(0, -1).every((segment) => segment && segment !== '.' && segment !== '..');
+}
+
+function isSafeMarkdownPath(value) {
+  return typeof value === 'string'
+    && value.endsWith('.md')
+    && !value.startsWith('/')
+    && !value.includes('\\')
+    && !/[\u0000-\u001f]/u.test(value)
+    && value.split('/').every((segment) => segment && segment !== '.' && segment !== '..');
+}
+
+function validatePublicationGroupPolicy(groups) {
+  if (!Array.isArray(groups) || groups.length !== 4) {
+    throw new Error('publicationGroups 必須恰有四本書。');
+  }
+  if (!unique(groups.map(({ id }) => id))) throw new Error('publicationGroups id 不得重複。');
+  for (const [index, group] of groups.entries()) {
+    const label = `publicationGroups[${index}]`;
+    const keys = Object.keys(group).sort();
+    const expected = [
+      'exactPaths', 'hubUrl', 'id', 'introPath', 'licenseLabel', 'licenseSourcePath', 'pathPrefix',
+    ].sort();
+    if (JSON.stringify(keys) !== JSON.stringify(expected)) throw new Error(`${label} 欄位不符合契約。`);
+    if (typeof group.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(group.id)) {
+      throw new Error(`${label}.id 不合法。`);
+    }
+    if (!isSafeRepoPrefix(group.pathPrefix)) throw new Error(`${label}.pathPrefix 不合法。`);
+    if (!Array.isArray(group.exactPaths) || !unique(group.exactPaths)
+      || group.exactPaths.some((path) => !isSafeMarkdownPath(path))) {
+      throw new Error(`${label}.exactPaths 不合法。`);
+    }
+    if (!isSafeMarkdownPath(group.introPath) || !isSafeMarkdownPath(group.licenseSourcePath)) {
+      throw new Error(`${label} 的 intro／license source path 不合法。`);
+    }
+    if (group.licenseSourcePath !== group.introPath) {
+      throw new Error(`${label} 的授權必須由公開介紹頁本身提供。`);
+    }
+    if (typeof group.licenseLabel !== 'string' || !group.licenseLabel.length) {
+      throw new Error(`${label}.licenseLabel 必須是非空 string。`);
+    }
+    let hubUrl;
+    try {
+      hubUrl = new URL(group.hubUrl);
+    } catch {
+      throw new Error(`${label}.hubUrl 不合法。`);
+    }
+    if (hubUrl.protocol !== 'https:' || hubUrl.hostname !== 'hub.three-quarters.net'
+      || !hubUrl.pathname.startsWith('/library/')) {
+      throw new Error(`${label}.hubUrl 必須是藏經閣 HTTPS 書頁。`);
+    }
+  }
+}
+
 export function loadCatalogPolicy(path = DEFAULT_POLICY_PATH) {
   const policy = JSON.parse(readFileSync(path, 'utf8'));
-  if (policy.revision !== '1' || policy.generatorRevision !== '2') {
+  if (policy.revision !== '2' || policy.generatorRevision !== '3') {
     throw new Error(`不支援的 catalog／generator revision：${policy.revision}/${policy.generatorRevision}`);
   }
   const preview = policy.profiles?.['walking-skeleton']?.paths;
@@ -33,6 +94,7 @@ export function loadCatalogPolicy(path = DEFAULT_POLICY_PATH) {
   if (!Array.isArray(policy.rootPaths) || !policy.rootPaths.includes(policy.atlasPath)) {
     throw new Error('catalog policy 必須把 Atlas 列為 root navigation。');
   }
+  validatePublicationGroupPolicy(policy.publicationGroups);
   for (const pattern of policy.navigationPatterns || []) new RegExp(pattern, 'iu');
   return policy;
 }
@@ -192,6 +254,50 @@ export function allCatalogEntries(corpus, policy) {
     .map((entry) => describeEntry(entry, corpus, policy, lookupCounts, canonicalRouteKeys));
   assertUniqueRoutes(entries);
   return entries.sort((left, right) => textCompare(left.routePath, right.routePath) || textCompare(left.path, right.path));
+}
+
+export function publicationGroupsForArtifact(corpus, policy, profile, entries) {
+  if (profile === 'walking-skeleton') return [];
+  if (profile !== 'full') throw new Error(`未知的 library-index profile：${profile}`);
+
+  const publications = entries.filter((entry) => entry.shelf === 'publications');
+  const sourceByPath = new Map(corpus.entries.map((entry) => [entry.path, entry]));
+  const membersById = new Map(policy.publicationGroups.map(({ id }) => [id, []]));
+
+  for (const entry of publications) {
+    const matches = policy.publicationGroups.filter((group) => entry.path.startsWith(group.pathPrefix)
+      || group.exactPaths.includes(entry.path));
+    if (matches.length !== 1) {
+      throw new Error(`publication entry 必須恰好屬於一個書籍群組：${entry.path}（命中 ${matches.length}）`);
+    }
+    membersById.get(matches[0].id).push(entry.path);
+  }
+
+  const entryByPath = new Map(entries.map((entry) => [entry.path, entry]));
+  return policy.publicationGroups.map((group) => {
+    const intro = entryByPath.get(group.introPath);
+    if (!intro || intro.shelf !== 'publications') {
+      throw new Error(`書籍介紹頁不在 full publications artifact：${group.introPath}`);
+    }
+    const members = membersById.get(group.id).sort(textCompare);
+    if (!members.includes(group.introPath)) {
+      throw new Error(`書籍介紹頁不是自己的群組成員：${group.introPath}`);
+    }
+    const licenseSource = sourceByPath.get(group.licenseSourcePath);
+    if (!licenseSource?.content?.includes(group.licenseLabel)
+      || !licenseSource.content.includes(group.hubUrl)) {
+      throw new Error(`書籍介紹頁缺少授權或藏經閣連結：${group.licenseSourcePath}`);
+    }
+    return {
+      id: group.id,
+      introPath: group.introPath,
+      introRoutePath: intro.routePath,
+      hubUrl: group.hubUrl,
+      licenseLabel: group.licenseLabel,
+      licenseSourcePath: group.licenseSourcePath,
+      memberPaths: members,
+    };
+  });
 }
 
 export function entriesForProfile(corpus, policy, profile) {

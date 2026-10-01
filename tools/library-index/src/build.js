@@ -4,7 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { PublicCorpus, classifyPath, findRepoRoot } from '../../trp-mcp/src/corpus.js';
-import { entriesForProfile, loadCatalogPolicy } from './catalog-policy.js';
+import { entriesForProfile, loadCatalogPolicy, publicationGroupsForArtifact } from './catalog-policy.js';
 import { validateArtifact } from './validate.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -73,9 +73,9 @@ function corpusAt(root, readBasis) {
   }
 }
 
-function assembleArtifact({ profile, readBasis, policy, entries }) {
+function assembleArtifact({ profile, readBasis, policy, entries, publicationGroups }) {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     artifactType: 'trp-library-index',
     profile,
     derived: true,
@@ -90,12 +90,13 @@ function assembleArtifact({ profile, readBasis, policy, entries }) {
       model: null,
       promptRevision: null,
     },
+    publicationGroups,
     entries,
   };
 }
 
 function headerOf(artifact) {
-  const { entries, ...header } = artifact;
+  const { entries, publicationGroups, ...header } = artifact;
   return header;
 }
 
@@ -110,8 +111,13 @@ export function buildArtifact({
 } = {}) {
   const corpus = corpusAt(root, readBasis);
   if (requireFresh) assertSourceFresh(root, readBasis, corpus);
+  const entries = entriesForProfile(corpus, policy, profile);
   return validateArtifact(assembleArtifact({
-    profile, readBasis, policy, entries: entriesForProfile(corpus, policy, profile),
+    profile,
+    readBasis,
+    policy,
+    entries,
+    publicationGroups: publicationGroupsForArtifact(corpus, policy, profile, entries),
   }));
 }
 
@@ -152,16 +158,24 @@ export function classifyDrift({ artifact, expectedHeader, currentEntries, change
 export function catalogDrift({ root = findRepoRoot(), artifact, policy = loadCatalogPolicy() }) {
   const corpus = corpusAt(root, artifact.readBasis);
   const changedSources = sourceChangesSince(root, artifact.readBasis, corpus);
-  const expectedHeader = headerOf(assembleArtifact({
-    profile: artifact.profile, readBasis: artifact.readBasis, policy, entries: [],
-  }));
   let currentEntries = [];
+  let currentPublicationGroups = [];
   let buildError = null;
   try {
     currentEntries = entriesForProfile(corpus, policy, artifact.profile);
+    currentPublicationGroups = publicationGroupsForArtifact(
+      corpus, policy, artifact.profile, currentEntries,
+    );
   } catch (error) {
     buildError = error.message;
   }
+  const expectedHeader = headerOf(assembleArtifact({
+    profile: artifact.profile,
+    readBasis: artifact.readBasis,
+    policy,
+    entries: currentEntries,
+    publicationGroups: currentPublicationGroups,
+  }));
   return classifyDrift({ artifact, expectedHeader, currentEntries, changedSources, buildError });
 }
 

@@ -106,6 +106,11 @@ fails closed; commit the source change first, then rebuild.
   build and must be handled with a reviewed `routeOverrides` entry.
 - Historical listing outranks a source document's raw lifecycle status in the
   consumer UI. A historical file may still contain an old `Active` status.
+- Schema v2 emits four `publicationGroups` in the full artifact. Their exact
+  `memberPaths` partition the `publications` shelf, point to one public
+  `ORIGIN.md` introduction each, and carry the matching Hub URL and license
+  source. The walking skeleton emits an empty group list. Academy therefore
+  does not duplicate the Hub's path-prefix map or invent license metadata.
 - Source locale precedence is catalog override → opening metadata → deterministic
   script classification. The classifier removes frontmatter, fenced/inline code,
   link destinations, raw URLs, HTML tags, and ASCII file/path-like tokens before
@@ -118,9 +123,11 @@ fails closed; commit the source change first, then rebuild.
 ## Outputs
 
 - `generated/library-index.preview.json`: committed P1 walking skeleton.
-- `generated/library-index.json`: committed P1-C full metadata catalog. At
-  `readBasis c8a1bfa`, it contains 464 entries: Atlas orientation plus SPEC 59,
-  MB 17, DOCS 292, LEX 11, and EPOCH 84.
+- `generated/library-index.json`: committed full metadata catalog. At
+  `readBasis 1652d5e`, it contains 465 entries: Atlas orientation plus SPEC 59,
+  MB 17, DOCS 293, LEX 11, and EPOCH 84. Its four publication groups cover all
+  55 publication entries exactly once; 51 book manuscript routes can redirect
+  to four canonical introductions without losing Protocol-side MCP access.
 
 Keywords remain empty in both P1 profiles. Model-generated keyword work belongs
 to P2.

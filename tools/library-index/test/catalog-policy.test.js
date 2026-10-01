@@ -118,16 +118,17 @@ test('source locale uses overrides, declared metadata, then deterministic script
 
 test('schema validator fails closed on forbidden source data and unsafe paths', () => {
   const minimal = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     artifactType: 'trp-library-index',
     profile: 'walking-skeleton',
     derived: true,
     notice: 'Derived navigation data; not protocol source text.',
     readBasis: 'a'.repeat(40),
-    catalogPolicyRevision: '1',
-    generatorRevision: '2',
+    catalogPolicyRevision: '2',
+    generatorRevision: '3',
     keywordPolicyRevision: null,
     generation: { mode: 'deterministic', provider: null, model: null, promptRevision: null },
+    publicationGroups: [],
     entries: [],
   };
   assert.deepEqual(validateArtifact(structuredClone(minimal)), minimal);

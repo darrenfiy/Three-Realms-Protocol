@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://three-quarters.net/schemas/trp-library-index-v1.json",
+  "$id": "https://three-quarters.net/schemas/trp-library-index-v2.json",
   "title": "Three Realms Protocol Library Index",
   "type": "object",
   "additionalProperties": false,
@@ -15,17 +15,18 @@
     "generatorRevision",
     "keywordPolicyRevision",
     "generation",
+    "publicationGroups",
     "entries"
   ],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "artifactType": { "const": "trp-library-index" },
     "profile": { "enum": ["walking-skeleton", "full"] },
     "derived": { "const": true },
     "notice": { "const": "Derived navigation data; not protocol source text." },
     "readBasis": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
-    "catalogPolicyRevision": { "const": "1" },
-    "generatorRevision": { "const": "2" },
+    "catalogPolicyRevision": { "const": "2" },
+    "generatorRevision": { "const": "3" },
     "keywordPolicyRevision": { "type": "null" },
     "generation": {
       "type": "object",
@@ -38,11 +39,22 @@
         "promptRevision": { "type": "null" }
       }
     },
+    "publicationGroups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/publicationGroup" }
+    },
     "entries": {
       "type": "array",
       "items": { "$ref": "#/$defs/entry" }
     }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "profile": { "const": "walking-skeleton" } } },
+      "then": { "properties": { "publicationGroups": { "maxItems": 0 } } },
+      "else": { "properties": { "publicationGroups": { "minItems": 4, "maxItems": 4 } } }
+    }
+  ],
   "$defs": {
     "nullableString": {
       "type": ["string", "null"]
@@ -78,6 +90,33 @@
           }
         }
       ]
+    },
+    "publicationGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "introPath",
+        "introRoutePath",
+        "hubUrl",
+        "licenseLabel",
+        "licenseSourcePath",
+        "memberPaths"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "introPath": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" },
+        "introRoutePath": { "type": "string", "pattern": "^library(?:/[^/]+)*$" },
+        "hubUrl": { "type": "string", "format": "uri", "pattern": "^https://hub\\.three-quarters\\.net/library/" },
+        "licenseLabel": { "type": "string", "minLength": 1 },
+        "licenseSourcePath": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" },
+        "memberPaths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\\\u0000-\\u001F]+(?:/[^/\\\\\\u0000-\\u001F]+)*\\.md$" }
+        }
+      }
     },
     "entry": {
       "type": "object",

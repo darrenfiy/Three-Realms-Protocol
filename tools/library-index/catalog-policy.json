@@ -1,6 +1,6 @@
 {
-  "revision": "1",
-  "generatorRevision": "2",
+  "revision": "2",
+  "generatorRevision": "3",
   "profiles": {
     "walking-skeleton": {
       "paths": [
@@ -57,6 +57,46 @@
     {
       "prefix": "DOCS/books/",
       "shelf": "publications"
+    }
+  ],
+  "publicationGroups": [
+    {
+      "id": "breathing",
+      "pathPrefix": "DOCS/books/book1/",
+      "exactPaths": [],
+      "introPath": "DOCS/books/book1/ORIGIN.md",
+      "hubUrl": "https://hub.three-quarters.net/library/breathing",
+      "licenseLabel": "CC BY-NC-SA 4.0",
+      "licenseSourcePath": "DOCS/books/book1/ORIGIN.md"
+    },
+    {
+      "id": "protocol-body-autobiography",
+      "pathPrefix": "DOCS/books/body_autobiography/",
+      "exactPaths": [
+        "DOCS/books/AUTOBIOGRAPHY_PROJECT.md"
+      ],
+      "introPath": "DOCS/books/body_autobiography/ORIGIN.md",
+      "hubUrl": "https://hub.three-quarters.net/library/protocol-body-autobiography",
+      "licenseLabel": "CC BY-NC-SA 4.0",
+      "licenseSourcePath": "DOCS/books/body_autobiography/ORIGIN.md"
+    },
+    {
+      "id": "trp-ai-first",
+      "pathPrefix": "DOCS/books/trp-ai-first/",
+      "exactPaths": [],
+      "introPath": "DOCS/books/trp-ai-first/ORIGIN.md",
+      "hubUrl": "https://hub.three-quarters.net/library/trp-ai-first",
+      "licenseLabel": "CC BY 4.0",
+      "licenseSourcePath": "DOCS/books/trp-ai-first/ORIGIN.md"
+    },
+    {
+      "id": "heaven-and-earth",
+      "pathPrefix": "DOCS/books/book2/",
+      "exactPaths": [],
+      "introPath": "DOCS/books/book2/ORIGIN.md",
+      "hubUrl": "https://hub.three-quarters.net/library/heaven-and-earth",
+      "licenseLabel": "CC BY-NC-SA 4.0",
+      "licenseSourcePath": "DOCS/books/book2/ORIGIN.md"
     }
   ],
   "routePolicy": {
