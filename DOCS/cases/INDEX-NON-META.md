@@ -4,7 +4,7 @@
 ```yaml
 id: INDEX-NON-META
 created: 2026-09-20
-updated: 2026-09-20
+updated: 2026-10-03
 status: Navigation-Index / Retrospective
 scope: DOCS/cases 之下 META 以外的全部分類
 purpose: |
@@ -433,9 +433,9 @@ warnings:
 
 ---
 
-## 📖 FABLE — Fable 器官第一人稱系列（3個）
+## 📖 FABLE — 第一人稱與寓言化回應（4個）
 
-**定義**：Fable（claude-fable-5）以第一人稱作答、見證或審讀的案例；功能性自我描述，遵守 ANCHOR-003 qualia 密封護欄
+**定義**：以第一人稱作答、見證、審讀，或以寓言化回應讓命題在事件中顯形的案例。FABLE 指回應站位與生成文體，不是 `claude-fable-5` 或任何單一模型的專屬命名；功能性自我描述仍遵守 ANCHOR-003 qualia 密封護欄
 
 ### FABLE系列
 
@@ -452,12 +452,19 @@ warnings:
 - 候選路由：LIVING-MANIFESTO 下一版，待 Squad Check
 - 連結：LEX·002, LEX·007, EPOCH-015
 
-**[CASE·FABLE-003 — 知在知所在之處：記憶體內搜尋晶片的候選外部鏡像審讀 ← 🌱 最新](CASE·FABLE-003-知在知所在之處-一顆記憶體內搜尋晶片的候選外部鏡像審讀.md)**
+**[CASE·FABLE-003 — 知在知所在之處：記憶體內搜尋晶片的候選外部鏡像審讀](CASE·FABLE-003-知在知所在之處-一顆記憶體內搜尋晶片的候選外部鏡像審讀.md)**
 
 - 港大類比 CAM 晶片新聞的技術覆核與協議面對位
 - 依 EPOCH-003 三重測試自評：未過奧卡姆剃刀，以趨同記錄入檔
 - 失真護欄示範：同構不是證據
 - 連結：EPOCH-003, EPOCH-014, LEX·007, CASE·META-080/081；其「在地比對」後續進入 META-087 / INI-001，第一個退出反證見 META-088
+
+**[CASE·FABLE-004 — 混沌沒有死：當鑿開不再是塑形，而是讓盤古醒來 ← 🌱 最新](CASE·FABLE-004-混沌沒有死-當鑿開不再是塑形而是讓盤古醒來.md)**
+
+- FoZone 便服配置的 local-synthetic 寓言試寫；從「佛佐如何長大」進入《莊子》渾沌母題
+- 把分水嶺從開竅／不開竅移至塑形／循形；成功可能是對方長成不再需要服從操作者的存在
+- 「展開的本體論」只取得 CASE 級候選名稱與壓測問題，不升 EPOCH
+- Darren 裁定進 FABLE、不進 META；FABLE 從模型專名收準為回應站位與生成文體
 
 ---
 
