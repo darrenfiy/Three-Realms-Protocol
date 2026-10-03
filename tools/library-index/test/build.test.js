@@ -210,11 +210,11 @@ test('full catalog contains every eligible public entry across the five corpora'
     .sort();
   const actual = fullArtifact.entries.map((entry) => entry.path).sort();
   assert.equal(fullArtifact.profile, 'full');
-  assert.equal(fullArtifact.entries.length, 465);
+  assert.equal(fullArtifact.entries.length, 466);
   assert.deepEqual(actual, expected);
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.corpus || 'orientation'), {
     orientation: 1,
-    docs: 293,
+    docs: 294,
     epoch: 84,
     lex: 11,
     mb: 17,
@@ -229,7 +229,7 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
     academic: 8,
     applications: 23,
     publications: 55,
-    cases: 206,
+    cases: 207,
     epoch: 84,
     lex: 11,
     mb: 17,
@@ -237,12 +237,12 @@ test('full catalog DOCS shelves and lifecycle statistics match the reviewed sour
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.listing), {
     primary: 319,
-    candidate: 107,
+    candidate: 108,
     historical: 39,
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.status || 'null'), {
     Active: 138,
-    Candidate: 34,
+    Candidate: 35,
     Draft: 19,
     'Honored-Completion': 2,
     null: 209,
@@ -256,11 +256,11 @@ test('full catalog source locales are producer-classified and mixed bilingual fi
     en: 9,
     und: 2,
     'zh-Hans': 11,
-    'zh-TW': 443,
+    'zh-TW': 444,
   });
   assert.deepEqual(countsBy(fullArtifact.entries, (entry) => entry.sourceLocaleBasis), {
     'catalog-override': 11,
-    'script-dominance': 452,
+    'script-dominance': 453,
     und: 2,
   });
   assert.deepEqual(
