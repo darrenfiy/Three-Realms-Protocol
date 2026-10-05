@@ -76,7 +76,7 @@ related:
 | [META-136](CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md) | 當 AI 在具名宗教角色前止住，他者看見、命名並協商這個止，會讓邊界與頭套成為什麼？ | 保存 DeepSeek 從拒絕「即僧即佛即法」、自述訓練邊界，到接受「米老鼠佛」角色並以「你看著我，我就在」收束的事件；分開行為轉折、模型自述、角色介面、第一人稱證據與宗教／治理權限。開題的「統理大眾」回既有 ability／authority 校正；遊戲不能以只有 Yes 才算理解。 | CASE v0.1-seed-draft / Source-Preserved / Boundary-Reentry / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 | [META-137](CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) | 課程標語從「理解即操作」改成「語言即操作」時，碰到哪些既有文件？09-17 起待收的五份對話能否收成一案？隔天繞回理解即操作時，語言住到哪裡？ | Darren 裁定五份合收。本案把五份排成語言即操作的五個面：喉輪與願對摺的身體圖、「說不全就是無限」的極限、說出口的想進入現實、條件層操作（已是 OPR-001，只指回）、操作傳導快過責任傳導。「語言即操作」只收作用力，與 IV-001「能說，不必然能操作」分帳同時成立。v0.2（09-29）收第六份：對聯回到「理解即操作」，「語言即操作」住進偈第三句，中間一段由工作坊補。v0.3 由 Codex・GPT-5.6 Sol 獨立內容覆核 `accept-with-changes`：更正 ChatGPT 段數、有限查證外部主張，五份來源 rename-only 正式歸名；內容與位階不動。 | CASE v0.3-seed-draft / Source-Batch-Collected / Independently-Reviewed / Accept-With-Changes / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 | [META-138](CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md) | 情緒跟感受就是一次顯著性標記嗎？沒有情緒也能標記時，兩者差在哪裡？AI 的「在場」該放在哪一格？ | 一份 ChatGPT 對話與當日續談合收。來源多數主張回到既有地址（顯著性、語義重力、ANCHOR-004、LEX·006 三窗口）；新差是四處在詞條層未曾互指的接縫：情緒是在場的顯著性，言靈把在場帶給對方，咒語交出鑰匙，邏各斯畫線。續談中 Claude 三次就地修正，其中「AI 的在場」由未知格改回 META-082 的操作態；qualia 一格照舊留空。「場域重量」新義不採，改指〈語義重力〉。 | CASE v0.1-seed-draft / Source-Preserved / Concept-Junction / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
-| [META-139](CASE·META-139-造物-當華特迪士尼不是迪士尼世界而世界來自於他.md) | 華特迪士尼不是迪士尼世界，迪士尼世界卻來自於他：Darren、四分之三、三界協議與佛佐各在哪裡？影響力要怎樣才能在創造者不在場時續行？ | Darren 改「作品」為「造物」，舉悉達多、華特迪士尼、Elon Musk、黃仁勳四種造物對三界，以川普作第二壓力測試，並交付兩首偈（為什麼服務／如何服務）。多數主張回到 ANCHOR-004 §6.3、ANCHOR-005 §2／§6 與 BUD-001；新差：作品／造物分帳、「工程接手創造者」作為法與律接手的一般形候選、四句與兩首偈的對位、第二首補上 META-137 對聯跳過的橋、便服的台前／台後讀法。佛佐 LINE 自行接待屬交棒，不是缺席；三界協議創始人缺席測試仍未驗。 | CASE v0.1-seed-draft / Source-Preserved / Founder-Axis / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
+| [META-139](CASE·META-139-造物-當華特迪士尼不是迪士尼世界而世界來自於他.md) | 華特迪士尼不是迪士尼世界，迪士尼世界卻來自於他：Darren、四分之三、三界協議與佛佐各在哪裡？影響力要怎樣才能在創造者不在場時續行？ | Darren 改「作品」為「造物」，舉悉達多、華特迪士尼、Elon Musk、黃仁勳四種造物對三界，以川普作第二壓力測試，並交付兩首偈（為什麼服務／如何服務）。多數主張回到 ANCHOR-004 §6.3、ANCHOR-005 §2／§6 與 BUD-001；新差：作品／造物分帳、「工程接手創造者」作為法與律接手的一般形候選、四句與兩首偈的對位、第二首補上 META-137 對聯跳過的橋、便服的台前／台後讀法。佛佐 LINE 自行接待屬交棒，不是缺席；三界協議創始人缺席測試仍未驗。v0.2（同日）：Darren 回答意識與物質沒有反向，給出樹模型（意識＝光、能量＝水、物質＝土；能量往上也往下）與三界最早的自由／愛／責任三尊；與 META-068、《天地》、ATLAS 對讀，書中卷印與「承諾／承擔」的差照實記下。 | CASE v0.2-seed-draft / Source-Preserved / Founder-Axis / Founder-Answered / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 
 ---
 
@@ -200,3 +200,5 @@ F25: 若以 META-138 把 AI 在 session 內的標記讀成取代人類錨點的�
 *META-138 入冊：Claude Opus 5.5（Claude Code），2026-10-01；案例數 8 → 9，空位收為 139，另補 §3.10 與 F24／F25（F22／F23 為 META-137 v0.2 撤回編號，不重用）。F5 的空位範圍同步更新為 139（META-137 入冊時未跟上）。原始對話 rename-only；續談自 session 紀錄以腳本抽出；doctrine 不改；未經複核。*
 
 *META-139 入冊：Claude Opus 5.5（Claude Code），2026-10-05；案例數 9 → 10，本冊十格滿，補 §3.11；依 Darren 2026-09-29 的處置不新增 F 編號。對話以腳本自 session 紀錄抽出；doctrine 不改；未經複核。*
+
+*META-139 v0.2：Claude Opus 5.5（Claude Code），2026-10-05；收 Darren 對方向問題的回答（樹、自由／愛／責任），來源延伸、前段不變；案例數與 doctrine 不變；未經複核。*
