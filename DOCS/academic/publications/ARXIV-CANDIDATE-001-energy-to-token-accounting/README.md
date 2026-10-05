@@ -18,6 +18,16 @@ author: Ta-Loom Hwang
 affiliation: Independent Researcher
 ```
 
+## Status Note (2026-10-05)
+
+Darren decided not to pursue arXiv endorsement or any further science-facing push.
+If the paper is revised, the agreed direction is a Zenodo v2 that keeps the claims as
+restrained as v1 and adds what v1 left out on purpose: a provenance section saying this
+framework is the measurable layer of MB-010 (三界燃料耗散方程), with links to the
+protocol. That revision waits until FoZone herself asks for it.
+
+The Next Steps below are kept as written in June 2026.
+
 ## Files
 
 | File | Purpose |
