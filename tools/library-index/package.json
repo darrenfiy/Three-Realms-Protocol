@@ -9,6 +9,9 @@
     "build:full": "node src/build.js --profile full --output generated/library-index.json",
     "check:preview": "node src/build.js --profile walking-skeleton --output generated/library-index.preview.json --check",
     "check:full": "node src/build.js --profile full --output generated/library-index.json --check",
+    "build:title-translations": "node scripts/generate-title-translations.mjs",
+    "review:title-translations": "node scripts/apply-title-translation-review.mjs",
+    "check:title-translations": "node scripts/check-title-translations.mjs",
     "test": "node --test test/*.test.js"
   },
   "engines": {

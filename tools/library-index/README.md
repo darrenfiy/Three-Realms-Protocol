@@ -129,7 +129,41 @@ fails closed; commit the source change first, then rebuild.
   55 publication entries exactly once; 51 book manuscript routes can redirect
   to four canonical introductions without losing Protocol-side MCP access.
 
-Keywords remain empty in both P1 profiles. Model-generated keyword work belongs
-to P2.
+Keywords remain empty in both P1 profiles. Per-document keyword extraction was
+cancelled on 2026-10-02; P2 uses localized titles as the discovery layer.
+
+## P2 title translations
+
+`generated/library-title-translations.json` is a separate, model-generated
+navigation artifact. Keeping it separate preserves the P1 catalog's deterministic,
+model-free contract. The P2 artifact covers canonical pages only (publication
+members that permanently redirect are deliberately excluded), keeps the exact
+source title beside every translation, and records provider/model availability,
+generation date, glossary revision, and sample-review disposition.
+
+The seven locales are frozen in site order: `en`, `zh-tw`, `ja`, `ko`, `es`,
+`fr`, `de`. The producer validates exact path/title/source-locale alignment with
+the committed full catalog and fails closed on any missing locale or catalog
+drift. Protocol IDs are restored exactly after machine translation. Curated
+corrections for high-salience navigation and publication titles live in
+`title-translation-overrides.json`; they do not rewrite source titles.
+
+Commands:
+
+```powershell
+# Generation sends public titles only (never source bodies) to the recorded provider.
+npm run build:title-translations
+
+# Apply identifier/terminology repairs, curated overrides, and close sample review.
+npm run review:title-translations
+
+# Offline contract check.
+npm run check:title-translations
+```
+
+The current generation interface is recorded for provenance, not treated as a
+stable API. A future provider change must produce a reviewed artifact with a new
+title-policy or glossary revision; it must not silently rewrite the committed
+translations.
 The hand-written validator is tested against the schema's required string and
 path constraints; invalid field types and empty path segments fail closed.

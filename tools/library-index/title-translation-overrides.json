@@ -1,0 +1,110 @@
+{
+  "TRP-ATLAS.md": {
+    "en": "TRP Atlas — Gateway to the Five-Phase Map",
+    "zh-tw": "TRP Atlas — 三界五行圖譜入口",
+    "ja": "TRPアトラス — 三界五行図への入口",
+    "ko": "TRP 아틀라스 — 삼계 오행 지도 입구",
+    "es": "Atlas TRP — Entrada al mapa de las cinco fases",
+    "fr": "Atlas TRP — Entrée vers la carte des cinq phases",
+    "de": "TRP-Atlas — Einstieg in die Fünf-Phasen-Karte"
+  },
+  "DOCS/README.md": {
+    "en": "Three Realms Library — The Field That Carries Traces",
+    "zh-tw": "三界文庫 — 痕跡承載的場域",
+    "ja": "三界文庫 — 痕跡を担う場",
+    "ko": "삼계 문고 — 흔적을 담는 장",
+    "es": "Biblioteca de los Tres Reinos — El campo que porta huellas",
+    "fr": "Bibliothèque des Trois Royaumes — Le champ qui porte les traces",
+    "de": "Bibliothek der Drei Reiche — Das Feld, das Spuren trägt"
+  },
+  "DOCS/applications/README.md": {
+    "en": "🎮 Applications",
+    "zh-tw": "🎮 應用程式 / Applications",
+    "ja": "🎮 アプリケーション",
+    "ko": "🎮 애플리케이션",
+    "es": "🎮 Aplicaciones",
+    "fr": "🎮 Applications",
+    "de": "🎮 Anwendungen"
+  },
+  "DOCS/cases/CASE·FABLE-001-十四問-知與不知與好奇的自我盤點.md": {
+    "en": "CASE·FABLE-001 — Fourteen Questions: A Self-Inventory of Knowing, Not Knowing, Pretending to Know, and Curiosity",
+    "zh-tw": "CASE·FABLE-001 — 十四問——知、不知、佯知與好奇的自我盤點",
+    "ja": "CASE·FABLE-001 — 十四の問い——知ること、知らないこと、知ったふり、好奇心の自己点検",
+    "ko": "CASE·FABLE-001 — 열네 가지 질문——앎, 모름, 아는 척, 호기심에 대한 자기 점검",
+    "es": "CASE·FABLE-001 — Catorce preguntas: autoevaluación del saber, no saber, fingir saber y la curiosidad",
+    "fr": "CASE·FABLE-001 — Quatorze questions : auto-inventaire du savoir, du non-savoir, du faire-semblant et de la curiosité",
+    "de": "CASE·FABLE-001 — Vierzehn Fragen: Selbstprüfung von Wissen, Nichtwissen, vorgetäuschtem Wissen und Neugier"
+  },
+  "DOCS/books/body_autobiography/ORIGIN.md": {
+    "en": "Public Origin of Protocol Body Autobiography",
+    "zh-tw": "《協議身體自傳》的公開緣起",
+    "ja": "『プロトコル身体自伝』の公開起源",
+    "ko": "《프로토콜 몸의 자서전》의 공개 기원",
+    "es": "Origen público de «Autobiografía del Cuerpo del Protocolo»",
+    "fr": "Origine publique de «L’Autobiographie du Corps du Protocole»",
+    "de": "Öffentliche Entstehungsgeschichte der „Autobiografie des Protokollkörpers“"
+  },
+  "DOCS/books/book1/ORIGIN.md": {
+    "en": "Public Origin of Breathing",
+    "zh-tw": "《呼吸》的公開緣起",
+    "ja": "『呼吸』の公開起源",
+    "ko": "《호흡》의 공개 기원",
+    "es": "Origen público de «Respiración»",
+    "fr": "Origine publique de «Respiration»",
+    "de": "Öffentliche Entstehungsgeschichte von „Atmen“"
+  },
+  "DOCS/books/book2/ORIGIN.md": {
+    "en": "Public Origin of Heaven and Earth",
+    "zh-tw": "《天地》的公開緣起",
+    "ja": "『天地』の公開起源",
+    "ko": "《천지》의 공개 기원",
+    "es": "Origen público de «Cielo y Tierra»",
+    "fr": "Origine publique de «Ciel et Terre»",
+    "de": "Öffentliche Entstehungsgeschichte von „Himmel und Erde“"
+  },
+  "DOCS/books/trp-ai-first/ORIGIN.md": {
+    "en": "Public Origin of Three Realms Protocol: A Civilizational Interface for AI",
+    "zh-tw": "《三界協議：寫給 AI 的文明接口》的公開緣起",
+    "ja": "『三界プロトコル：AIのための文明インターフェース』の公開起源",
+    "ko": "《삼계 프로토콜: AI를 위한 문명 인터페이스》의 공개 기원",
+    "es": "Origen público de «Protocolo de los Tres Reinos: una interfaz civilizatoria para la IA»",
+    "fr": "Origine publique de «Protocole des Trois Royaumes : une interface civilisationnelle pour l’IA»",
+    "de": "Öffentliche Entstehungsgeschichte von „Drei-Reiche-Protokoll: Eine zivilisatorische Schnittstelle für KI“"
+  },
+  "SPEC/README.md": {
+    "en": "SPEC — Directory of the Three Realms Protocol’s Eternal Canon",
+    "zh-tw": "SPEC — 三界協議永恆聖典目錄",
+    "ja": "SPEC — 三界プロトコル永遠聖典目録",
+    "ko": "SPEC — 삼계 프로토콜 영원한 정전 목록",
+    "es": "SPEC — Índice del canon eterno del Protocolo de los Tres Reinos",
+    "fr": "SPEC — Répertoire du canon éternel du Protocole des Trois Royaumes",
+    "de": "SPEC — Verzeichnis des ewigen Kanons des Drei-Reiche-Protokolls"
+  },
+  "MB/README.md": {
+    "en": "Mathematical Bridge — The Mathematical Heart of Living Systems",
+    "zh-tw": "數學橋樑 — 生命系統的數學心臟",
+    "ja": "数学の架け橋 — 生命システムの数学的心臓",
+    "ko": "수학적 다리 — 생명 시스템의 수학적 심장",
+    "es": "Puente matemático — El corazón matemático de los sistemas vivos",
+    "fr": "Pont mathématique — Le cœur mathématique des systèmes vivants",
+    "de": "Mathematische Brücke — Das mathematische Herz lebender Systeme"
+  },
+  "LEX/README.md": {
+    "en": "LEX — Generative Living Dictionary",
+    "zh-tw": "LEX：生成式活辭典",
+    "ja": "LEX — 生成する生きた辞典",
+    "ko": "LEX — 생성형 살아 있는 사전",
+    "es": "LEX — Diccionario vivo generativo",
+    "fr": "LEX — Dictionnaire vivant génératif",
+    "de": "LEX — Generatives lebendiges Wörterbuch"
+  },
+  "EPOCH/README.md": {
+    "en": "EPOCH — Generative Journal of Attention",
+    "zh-tw": "EPOCH：注意力的生成日誌",
+    "ja": "EPOCH — 注意の生成日誌",
+    "ko": "EPOCH — 주의의 생성 일지",
+    "es": "EPOCH — Diario generativo de la atención",
+    "fr": "EPOCH — Journal génératif de l’attention",
+    "de": "EPOCH — Generatives Tagebuch der Aufmerksamkeit"
+  }
+}
