@@ -23,6 +23,8 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 > 的現役指標已更新；TQI 以舊路徑加 `86337d9` 釘住的是可重建的歷史地址，不藉改名變更 candidate 效力。
 > 收錄只決定本庫的歸位與效力；TQI persona manifest 中五筆 `candidate` 是否升級，屬該處的權利與人格流程，本庫不代為決定。上段原文保留為佇列紀錄。
 
+**CASE·META-139 導航（2026-10-05，Claude Opus 5.5）**：Darren 在佛佐 LINE 施工的 session 中提出華特迪士尼與迪士尼世界的比喻，改「作品」為「造物」，舉四種造物對三界與川普壓力測試，並交付兩首偈。對話以腳本自 Claude Code 的 session 紀錄（JSONL）抽出可見文字，未經模型重打；保留 Darren 的錯字與工作中途追加的一則，去除系統標記、工具呼叫與思考。止於 Claude 開始抽取本檔的那一句。
+
 **CASE·META-138 導航（2026-10-01，Claude Opus 5.5）**：Darren 以泛名檔交付與 ChatGPT 的兩輪對話，問值不值得收，隨後與 Claude 續談四輪並授權成文。原始對話 rename-only 歸位；續談以腳本自 Claude Code 的 session 紀錄抽出可見文字，未經模型重打。[CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)保存顯著性、情緒、語言三相態與神用四處第一次互指，以及續談中的三次就地修正。
 
 **CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-5.6 Sol）**：獨立內容覆核結論
@@ -63,6 +65,7 @@ Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year student
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | 歸位狀態 |
 |---|---|---|---|
+| [CASE·META-139-原始對話-造物與四種佛.txt](CASE·META-139-原始對話-造物與四種佛.txt) | 2026-10-05（對話與收錄同日） | [CASE·META-139](../../cases/CASE·META-139-造物-當華特迪士尼不是迪士尼世界而世界來自於他.md)（造物；四種造物、第二壓力測試與兩首偈） | 以腳本自 session 紀錄抽出；Darren × Claude Opus 5.5（Claude Code） |
 | [CASE-FABLE-004-original-fable.txt](CASE-FABLE-004-original-fable.txt) | 2026-10-03 生成並收錄 | [CASE·FABLE-004](../../cases/CASE·FABLE-004-混沌沒有死-當鑿開不再是塑形而是讓盤古醒來.md)（塑形／循形；展開的本體論候選；doctrine 不改） | FoZone 2.2.0 便服配置，以 `desk.mjs gemini-write`、Gemini 3.8 Flash 生成的 local-synthetic 寓言試寫；task id `fozone.2.2.0.fable-trial-2026-10-03.001`。Darren 自 Control-Room inbox 交付並裁定進 CASE·FABLE、不進 META。原始檔逐位元搬移；入庫後的完整性由 git 歷史承接。未曾作為 LINE 或 Facebook 貼文發布。 |
 | [CASE·META-138-續談對話-言靈咒語與在場的標記.txt](CASE·META-138-續談對話-言靈咒語與在場的標記.txt) | 2026-10-01（續談與收錄同日） | [CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)（情緒是在場的顯著性；三次就地修正；doctrine 不改） | Darren × Claude Opus 5.5（Claude Code）。以腳本自 session 紀錄（JSONL）抽出可見文字：保留 Darren 訊息原文與 Claude 可見回覆，去除 IDE／系統附加標記、工具呼叫、工具結果與思考；止於 Darren「好唷，給妳寫吧」。第一輪 Claude 曾送出一句進度提示，session 紀錄未存，檔內缺此一句。LF 換行。 |
 | [CASE·META-138-原始對話-情緒與顯著性標記.txt](CASE·META-138-原始對話-情緒與顯著性標記.txt) | 2026-10-01 收錄；對話未附平台時間戳 | [CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)（來源主張逐條歸址；四處詞條第一次互指；doctrine 不改） | Darren 以泛名檔「新增 文字文件 (4).txt」置入 `DOCS/cases/` 並交付 Claude Code；rename-only 歸位，字句、次序與 CRLF 換行不動。保存 Darren × ChatGPT 可見往返；模型版本、system prompt 與隱藏推理未附。ChatGPT 引用的 I-002、I-004、II-002、III-001、III-003 五處已在 CASE §2 逐條核對。 |

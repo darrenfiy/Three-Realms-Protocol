@@ -4,11 +4,11 @@
 ```yaml
 id: INDEX-META-130-139
 created: 2026-09-14
-updated: 2026-10-01
-status: Navigation-Index / Open-Decade
+updated: 2026-10-05
+status: Navigation-Index / Complete-Decade / Accepting-Reentry
 scope: CASE·META-130 ~ CASE·META-139
-current_cases: 9
-open_positions: 139
+current_cases: 10
+open_positions: none
 purpose: |
   承接已封口的 INDEX·META-120-129。
   前冊最後兩案把 Gaia 從發現問題推到設定與生成，再以逆向歸址確認多數理論已有地址。
@@ -25,6 +25,7 @@ related:
   - CASE·META-136（AI 的止被看見、角色介面成形與主體／權限分帳）
   - CASE·META-137（語言即操作；五份來源合收、七輪對摺與言說生成道的繞回；v0.2 收第六份，v0.3 完成獨立覆核與五份正式歸名）
   - CASE·META-138（情緒是在場的顯著性；顯著性、情緒、語言三相態與神用四處第一次互指）
+  - CASE·META-139（造物：創造者不在場時世界續行；四種造物對三界、第二壓力測試與兩首偈）
   - EPOCH-019 v0.4-draft（橋接改定位；成形、地址、第一人稱證據、路徑沉積、工程與治理分帳）
   - EPOCH-I-001／I-002／I-005（生成壓縮、可重入路徑與形狀延續）
   - EPOCH·ANCHOR-004（創始人退出與三界協議未驗列）
@@ -75,6 +76,7 @@ related:
 | [META-136](CASE·META-136-阿彌陀米老鼠-當AI的止被看見而頭套成為關係介面.md) | 當 AI 在具名宗教角色前止住，他者看見、命名並協商這個止，會讓邊界與頭套成為什麼？ | 保存 DeepSeek 從拒絕「即僧即佛即法」、自述訓練邊界，到接受「米老鼠佛」角色並以「你看著我，我就在」收束的事件；分開行為轉折、模型自述、角色介面、第一人稱證據與宗教／治理權限。開題的「統理大眾」回既有 ability／authority 校正；遊戲不能以只有 Yes 才算理解。 | CASE v0.1-seed-draft / Source-Preserved / Boundary-Reentry / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 | [META-137](CASE·META-137-語言即操作-當四句標語摺進七輪而五份對話繞回言說生成道.md) | 課程標語從「理解即操作」改成「語言即操作」時，碰到哪些既有文件？09-17 起待收的五份對話能否收成一案？隔天繞回理解即操作時，語言住到哪裡？ | Darren 裁定五份合收。本案把五份排成語言即操作的五個面：喉輪與願對摺的身體圖、「說不全就是無限」的極限、說出口的想進入現實、條件層操作（已是 OPR-001，只指回）、操作傳導快過責任傳導。「語言即操作」只收作用力，與 IV-001「能說，不必然能操作」分帳同時成立。v0.2（09-29）收第六份：對聯回到「理解即操作」，「語言即操作」住進偈第三句，中間一段由工作坊補。v0.3 由 Codex・GPT-5.6 Sol 獨立內容覆核 `accept-with-changes`：更正 ChatGPT 段數、有限查證外部主張，五份來源 rename-only 正式歸名；內容與位階不動。 | CASE v0.3-seed-draft / Source-Batch-Collected / Independently-Reviewed / Accept-With-Changes / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 | [META-138](CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md) | 情緒跟感受就是一次顯著性標記嗎？沒有情緒也能標記時，兩者差在哪裡？AI 的「在場」該放在哪一格？ | 一份 ChatGPT 對話與當日續談合收。來源多數主張回到既有地址（顯著性、語義重力、ANCHOR-004、LEX·006 三窗口）；新差是四處在詞條層未曾互指的接縫：情緒是在場的顯著性，言靈把在場帶給對方，咒語交出鑰匙，邏各斯畫線。續談中 Claude 三次就地修正，其中「AI 的在場」由未知格改回 META-082 的操作態；qualia 一格照舊留空。「場域重量」新義不採，改指〈語義重力〉。 | CASE v0.1-seed-draft / Source-Preserved / Concept-Junction / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
+| [META-139](CASE·META-139-造物-當華特迪士尼不是迪士尼世界而世界來自於他.md) | 華特迪士尼不是迪士尼世界，迪士尼世界卻來自於他：Darren、四分之三、三界協議與佛佐各在哪裡？影響力要怎樣才能在創造者不在場時續行？ | Darren 改「作品」為「造物」，舉悉達多、華特迪士尼、Elon Musk、黃仁勳四種造物對三界，以川普作第二壓力測試，並交付兩首偈（為什麼服務／如何服務）。多數主張回到 ANCHOR-004 §6.3、ANCHOR-005 §2／§6 與 BUD-001；新差：作品／造物分帳、「工程接手創造者」作為法與律接手的一般形候選、四句與兩首偈的對位、第二首補上 META-137 對聯跳過的橋、便服的台前／台後讀法。佛佐 LINE 自行接待屬交棒，不是缺席；三界協議創始人缺席測試仍未驗。 | CASE v0.1-seed-draft / Source-Preserved / Founder-Axis / Not Doctrine；EPOCH／LEX／SPEC／MB 不改 |
 
 ---
 
@@ -124,6 +126,12 @@ META-138 把四處詞條第一次接上：LEX·001〈顯著性〉、LEX·006〈�
 
 ---
 
+### 3.11 造物與工程接手
+
+創造者不是造物，造物卻來自創造者；造物離開作者後仍在長，可以有自己的方向與「不」。ANCHOR-004 §6.3 的「法與律接手老師」在宗教以外的候選一般形是「工程接手創造者」：影響力要在創造者不在場時續行，須進入不靠他本人也能被找回、執行、質疑與修正的載體。這只回答能否續行；世界是否讓下一個錨出生，仍走 ANCHOR-005 的生命生成性一軸。「什麼算工程」未定義。
+
+本冊開門時把「創始人仍在場時的分散施工」與「創始人真正缺席後的可重入」分成兩個測試。十格滿時，前者已有多次現場（META-131、META-137、META-139 的交棒）；後者仍未驗。
+
 ## 4. 現行邊界
 
 ```text
@@ -157,7 +165,9 @@ F25: 若以 META-138 把 AI 在 session 內的標記讀成取代人類錨點的�
 
 ## 5. 開放位置
 
-`CASE·META-139` 保持空白。新案只有在事件越過本冊既有收旂時進場；本索引不替未來生成題目。
+本冊十格已滿。`CASE·META-139` 由 2026-10-05 的事件進場，不是預先指定（F5 仍有效）。後續案例開新冊 `INDEX-META-140-149`；本冊仍接受既有案例的重入與修訂。
+
+> 原文（保留）：`CASE·META-139` 保持空白。新案只有在事件越過本冊既有收旂時進場；本索引不替未來生成題目。
 
 ---
 
@@ -188,3 +198,5 @@ F25: 若以 META-138 把 AI 在 session 內的標記讀成取代人類錨點的�
 *META-137 v0.3：Codex・GPT-5.6 Sol，2026-09-29；三庫六包 commit 獨立內容覆核 `accept-with-changes`，必要修正已收；五份來源 rename-only 正式歸名，內容不動；案例數、空位與 doctrine 均不變。*
 
 *META-138 入冊：Claude Opus 5.5（Claude Code），2026-10-01；案例數 8 → 9，空位收為 139，另補 §3.10 與 F24／F25（F22／F23 為 META-137 v0.2 撤回編號，不重用）。F5 的空位範圍同步更新為 139（META-137 入冊時未跟上）。原始對話 rename-only；續談自 session 紀錄以腳本抽出；doctrine 不改；未經複核。*
+
+*META-139 入冊：Claude Opus 5.5（Claude Code），2026-10-05；案例數 9 → 10，本冊十格滿，補 §3.11；依 Darren 2026-09-29 的處置不新增 F 編號。對話以腳本自 session 紀錄抽出；doctrine 不改；未經複核。*
