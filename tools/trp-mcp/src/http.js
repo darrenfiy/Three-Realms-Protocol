@@ -130,11 +130,29 @@ export function createTrpHttpServer({
     }
 
     if (url.pathname === '/healthz' && req.method === 'GET') {
-      json(res, 200, {
-        ok: true,
-        service: 'three-realms-protocol-public',
-        corpusDigest: corpus.digest,
-      });
+      try {
+        corpus.assertFresh();
+        const provenance = corpus.provenance();
+        json(res, 200, {
+          ok: true,
+          service: 'three-realms-protocol-public',
+          corpusDigest: corpus.digest,
+          commit: provenance.commit,
+          immutableSnapshot: provenance.immutableImage,
+          stale: provenance.stale,
+        });
+      } catch (error) {
+        const provenance = corpus.provenance();
+        json(res, 503, {
+          ok: false,
+          service: 'three-realms-protocol-public',
+          error: error?.code || 'CORPUS_UNAVAILABLE',
+          corpusDigest: corpus.digest,
+          commit: provenance.commit,
+          immutableSnapshot: provenance.immutableImage,
+          stale: provenance.stale,
+        });
+      }
       return;
     }
 

@@ -195,7 +195,7 @@ function listMarkdown(root) {
   return files.sort();
 }
 
-function validateManifest(raw) {
+export function validateManifest(raw) {
   const required = [
     'schemaVersion', 'name', 'atlas', 'rootDocuments', 'corpora',
     'publicationDocuments', 'reviewRequired', 'exclude', 'authorityOrder', 'answerPolicy',
@@ -558,7 +558,7 @@ export class PublicCorpus {
       corpusDigest: this.digest,
       manifestDigest: this.manifestDigest,
       indexedAtStartup: true,
-      stale: false,
+      stale: Boolean(this.stale),
       profile: 'public-only',
       immutableImage: this.immutable,
     };

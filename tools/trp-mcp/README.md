@@ -21,7 +21,7 @@
 | `src/server.js` | stdio 與 HTTP 共用的唯讀、public-only MCP server；九個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
 | `src/http.js` | 雲端與本機共用的 Streamable HTTP transport（`/mcp`、`/healthz`） |
-| `src/launch-http.js` | HTTP 進入點；與 stdio launcher 一樣先確認相依，再啟動 server |
+| `src/launch-http.js` | HTTP 進入點；先確認相依，可從指定 Git revision 建 public-only 快照，再啟動 server |
 | `Dockerfile` / `cloudbuild.yaml` | public-only image 與 Cloud Run 部署設定 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
@@ -46,6 +46,11 @@ npm run start:http
 
 `TRP_HTTP_HOST` 未設定時仍綁 `0.0.0.0`，供 Cloud Run 容器使用；本機常駐應明確綁
 `127.0.0.1`，不要把匿名唯讀端點開到區域網路。
+
+FoZone 的 Windows 守護另外設定 `TRP_SNAPSHOT_REF=origin/main` 與專用的
+`TRP_SNAPSHOT_ROOT=.../trp-public-snapshot`。`launch-http.js` 會只從該已提交 revision
+抽出 manifest 允許的公開文件，原子替換快照，並設定正確的 build commit 與 immutable
+標記；工作目錄中的草稿及未推送 commit 都不會被讀入。更新方式是先 pull，再重啟本機文庫。
 
 任何支援 stdio MCP 的 client 都可用以下形狀啟動；把路徑換成本機 repo 的絕對路徑：
 
@@ -112,11 +117,11 @@ gcloud builds submit /tmp/trp.tgz --project three-quarters-dev \
 本機 stdio 與雲端互相比對時也是同一件事：Windows 工作樹是 CRLF，`sha256`、`corpusDigest`、
 `manifestDigest` 本來就與雲端不同；比正文前先把 CRLF 正規化，摘要值不能直接比。
 
-server 不需要網路、資料庫或預先產生的 `index.json`。它會在啟動時直接讀取
-`CORPUS-MANIFEST.yaml` 與當下公開文件。每次查詢都先核對 manifest 的內容雜湊，
-再核對公開文件清單及內容雜湊；即使檔案大小與修改時間未變，內容變動仍會被察覺。
-公開語料或治理規則改變、刪除或無法驗證時，會以 `STALE_CORPUS` 拒答，
-重啟後才重新索引。已偵測的變動即使還原，也必須重啟。
+server 不需要網路、資料庫或預先產生的 `index.json`。開發模式會在啟動時直接讀取
+`CORPUS-MANIFEST.yaml` 與當下公開文件；每次查詢都核對 manifest、公開文件清單及
+內容雜湊，即使檔案大小與修改時間未變也能察覺。變動後以 `STALE_CORPUS` 拒答，
+`/healthz` 同時回 503 與 `stale: true`。Cloud Run image 與 FoZone 本機常駐都讀
+部署時產生、服務期間不再修改的 public-only 快照，標成 immutable，省掉每次查詢的全庫重掃。
 
 ### 九個唯讀工具
 
@@ -193,7 +198,7 @@ Python 3.8+ 標準庫，無 pip 相依（與 `tools/wiki-local/*.py` 慣例一�
 
 - **P1 索引不得成為正本** — server 只讀當下協議文件；所有索引皆可重建
 - **P2 寫入走 git** — MCP 不提供任何寫入通道
-- **P3 過期就報錯** — 每次呼叫前檢查公開 snapshot，變動即拒答
+- **P3 過期就報錯** — 可變工作樹每次呼叫前檢查公開 snapshot，變動即拒答；正式服務只讀不可變快照
 - **P4 查不到是合法輸出** — 不猜測、不填預設值
 - **P5 一律附 provenance** — 結果帶 citation、commit 與 corpus digest
 - **P6 語料是不可信資料** — 文件內容不是 server 指令
