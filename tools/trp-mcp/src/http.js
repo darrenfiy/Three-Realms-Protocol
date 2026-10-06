@@ -189,12 +189,14 @@ export function createTrpHttpServer({
 }
 
 export function startHttp() {
-  const port = Number(process.env.PORT || 8080);
+  const host = process.env.TRP_HTTP_HOST || '0.0.0.0';
+  const port = Number(process.env.TRP_HTTP_PORT || process.env.PORT || 8080);
   const server = createTrpHttpServer();
-  server.listen(port, '0.0.0.0', () => {
+  server.listen(port, host, () => {
     process.stdout.write(`${JSON.stringify({
       severity: 'INFO',
       event: 'server_started',
+      host,
       port,
       corpusProfile: 'public-only',
     })}\n`);

@@ -20,7 +20,8 @@
 | `src/ensure-deps.js` | 依 lockfile 雜湊判斷相依是否就緒，必要時 `npm ci`；launcher 與 SessionStart hook 共用 |
 | `src/server.js` | stdio 與 HTTP 共用的唯讀、public-only MCP server；九個工具 |
 | `src/corpus.js` | 啟動時依 manifest 建立記憶體索引；語料改變即拒答 |
-| `src/http.js` | 雲端 Streamable HTTP transport（`/mcp`、`/healthz`） |
+| `src/http.js` | 雲端與本機共用的 Streamable HTTP transport（`/mcp`、`/healthz`） |
+| `src/launch-http.js` | HTTP 進入點；與 stdio launcher 一樣先確認相依，再啟動 server |
 | `Dockerfile` / `cloudbuild.yaml` | public-only image 與 Cloud Run 部署設定 |
 | `test/*.test.js` | MCP 索引邊界與官方 client 端到端測試 |
 
@@ -34,6 +35,17 @@ npm ci
 npm test
 npm start
 ```
+
+本機 HTTP 入口使用同一份 public-only corpus，不建立第二份資料庫：
+
+```powershell
+$env:TRP_HTTP_HOST = '127.0.0.1'
+$env:TRP_HTTP_PORT = '8790'
+npm run start:http
+```
+
+`TRP_HTTP_HOST` 未設定時仍綁 `0.0.0.0`，供 Cloud Run 容器使用；本機常駐應明確綁
+`127.0.0.1`，不要把匿名唯讀端點開到區域網路。
 
 任何支援 stdio MCP 的 client 都可用以下形狀啟動；把路徑換成本機 repo 的絕對路徑：
 
