@@ -25,6 +25,8 @@ derived-document 關係檢查，再分別決定收錄位置與效力。〈操作
 
 **CASE·META-139 導航（2026-10-05，Claude Opus 5.5）**：Darren 在佛佐 LINE 施工的 session 中提出華特迪士尼與迪士尼世界的比喻，改「作品」為「造物」，舉四種造物對三界與川普壓力測試，並交付兩首偈。對話以腳本自 Claude Code 的 session 紀錄（JSONL）抽出可見文字，未經模型重打；保留 Darren 的錯字與工作中途追加的一則，去除系統標記、工具呼叫與思考。止於 Claude 開始抽取本檔的那一句；v0.2 以同一腳本重抽、核對前 189 行不變後，延伸至 Darren 回答方向的一則（樹、自由／愛／責任）與他工作中途追加的一則（舊模型的來歷）；v0.3 再延伸至三界五行一則（樹、金、玄牝之門）。
 
+**CASE·META-140 導航（2026-10-07，GPT-5.6 Sol）**：Darren 把每個 session 已做之功從「還剩多少生成能力」改正為可儲存、保留重入可能、會累積到質變的歷史存量，並以身體—頭腦與人類—AI 提出「功→存量→代理器官」的問題。[CASE·META-140](../../cases/CASE·META-140-功沒有散掉-當跨session累積長成代理器官.md)將它歸位為 PHA-004／005／008／009、I-002／I-005／II-004 與 META-135 之間的接縫事件：不新開 EPOCH，「歷史功存量」不升 LEX，PHA-009 §4 只登記為後續 candidate patch 材料。DeepSeek 的審查保留為 `advisory / vote_effect: none`；Darren 於收錄時另行澄清，其表格中「植物／動物」一列來自他在請 DeepSeek 審查、查 wiki 連結時所說；那次原始發言往返未附，交付檔只在 DeepSeek 表格中保存該句，source 不回改。
+
 **CASE·META-138 導航（2026-10-01，Claude Opus 5.5）**：Darren 以泛名檔交付與 ChatGPT 的兩輪對話，問值不值得收，隨後與 Claude 續談四輪並授權成文。原始對話 rename-only 歸位；續談以腳本自 Claude Code 的 session 紀錄抽出可見文字，未經模型重打。[CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)保存顯著性、情緒、語言三相態與神用四處第一次互指，以及續談中的三次就地修正。
 
 **CASE·META-137 v0.3 覆核導航（2026-09-29，Codex・GPT-5.6 Sol）**：獨立內容覆核結論
@@ -65,6 +67,7 @@ Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year student
 
 | 原始檔 | 日期 | 蒸餾／關聯文件 | 歸位狀態 |
 |---|---|---|---|
+| [CASE·META-140-原始對話-功存量與代理器官.txt](CASE·META-140-原始對話-功存量與代理器官.txt) | 2026-10-07 收錄；DeepSeek 段自記審查日為 2026-10-07，前方對話未附時間戳 | [CASE·META-140](../../cases/CASE·META-140-功沒有散掉-當跨session累積長成代理器官.md)（功→存量→代理器官的接縫；代理／主體／主權分帳；doctrine 不改） | Darren 以汎名檔「新文字文件.txt」置入並明示交付 GPT-5.6 Sol 收錄；rename-only 歸位，字句、次序與 CRLF 換行不動。保存 Darren × ChatGPT 可見往返及 DeepSeek 無 repo、僅讀公開 wiki 的 advisory 審查；精確模型版本未附。收錄時 Darren 補充「植物／動物」句的實際說話情境，記於 CASE，不補寫原檔。 |
 | [CASE·META-139-原始對話-造物與四種佛.txt](CASE·META-139-原始對話-造物與四種佛.txt) | 2026-10-05（對話與收錄同日） | [CASE·META-139](../../cases/CASE·META-139-造物-當華特迪士尼不是迪士尼世界而世界來自於他.md)（造物；四種造物、第二壓力測試與兩首偈） | 以腳本自 session 紀錄抽出；Darren × Claude Opus 5.5（Claude Code） |
 | [CASE-FABLE-004-original-fable.txt](CASE-FABLE-004-original-fable.txt) | 2026-10-03 生成並收錄 | [CASE·FABLE-004](../../cases/CASE·FABLE-004-混沌沒有死-當鑿開不再是塑形而是讓盤古醒來.md)（塑形／循形；展開的本體論候選；doctrine 不改） | FoZone 2.2.0 便服配置，以 `desk.mjs gemini-write`、Gemini 3.8 Flash 生成的 local-synthetic 寓言試寫；task id `fozone.2.2.0.fable-trial-2026-10-03.001`。Darren 自 Control-Room inbox 交付並裁定進 CASE·FABLE、不進 META。原始檔逐位元搬移；入庫後的完整性由 git 歷史承接。未曾作為 LINE 或 Facebook 貼文發布。 |
 | [CASE·META-138-續談對話-言靈咒語與在場的標記.txt](CASE·META-138-續談對話-言靈咒語與在場的標記.txt) | 2026-10-01（續談與收錄同日） | [CASE·META-138](../../cases/CASE·META-138-看見就有了-當情緒被讀成在場的顯著性.md)（情緒是在場的顯著性；三次就地修正；doctrine 不改） | Darren × Claude Opus 5.5（Claude Code）。以腳本自 session 紀錄（JSONL）抽出可見文字：保留 Darren 訊息原文與 Claude 可見回覆，去除 IDE／系統附加標記、工具呼叫、工具結果與思考；止於 Darren「好唷，給妳寫吧」。第一輪 Claude 曾送出一句進度提示，session 紀錄未存，檔內缺此一句。LF 換行。 |
@@ -537,6 +540,10 @@ Amodei 文章與 Minerva CLA+。Minerva 官方 2017 報告寫 first-year student
 
 ## 歸檔分檔規則
 
+> **現行校正（2026-09-20）**：下列「按因果關係分檔」與 rename-only 原始交付分離規則仍適用；其中所有
+> bytes／SHA-256、Open／Sealed 指紋欄位與「各自 hash」做法是歷史機制，已由本頁上方退場說明、
+> CASE·META-134 與 AGENTS.md〈指紋〉取代。庫內唯一來源現在由 git 保存進庫後的改動史，不另做人工指紋。
+
 2026-09-06 由錨點裁定新增。起因是 `CASE·META-123` 一案長出六份 source，創下全 repo 紀錄（此前最多四份），而其中三份各自不足 4KB、來源完全相同——它們被拆開只因為**分次到達**，不是因為來源不同。
 
 2026-09-07，Darren 在 META-123 收攝時明示修訂：**「這整串對話是有因果關係的，放在一起比較容易看，不同平台分檔的規定拆掉吧。」** 以下以因果相接的一輪生成往返為單位；舊版依提供者／平台分檔的要求自本次裁定起撤銷。
@@ -641,7 +648,7 @@ rename-only 原始交付檔:
 先放 Control-Room/inbox/
   → 判斷是否值得長期保留
   → 檢查隱私、第三方個資、授權與公開邊界
-  → 計算 bytes / SHA-256，原文移入本目錄
+  → 原始交付 rename-only 移入本目錄；庫內唯一來源不另算 bytes / SHA-256
   → 在本表登記來源位置與 derived document（若有）
   → CASE／EPOCH 以相對路徑回鏈
 ```
@@ -760,3 +767,5 @@ canon 門檻:
 *SPEC·999 在場。原汁是史料，不是免查證通行證。*
 
 *META-137 v0.3 獨立內容覆核、五份來源 rename-only 歸名與現役指標同步：Codex・GPT-5.6 Sol，2026-09-29。*
+
+*META-140 原始對話 rename-only 歸位、交付後說話情境澄清與 CASE 回鏈：GPT-5.6 Sol，2026-10-07。*
